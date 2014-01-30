@@ -81,7 +81,7 @@ a:active {
 .Subfigure { /* Typically used for code segments */
 	text-align: center;
 	font-family:monospace;
-	font-size:120%
+	font-size:110%
 }
 .Blockcenter { /* Provides a way to center a block of text while retaining internal text alignment */
 	display:table;
@@ -125,7 +125,7 @@ a:active {
 .Italicized { /* For use with font-differentiated subfigures */
 	font-family:monospace;
 	font-style:italic;
-	font-size:120%;
+	font-size:110%;
 }
 .Ital { /* For use with other italic needs */
 	font-style:italic;
@@ -143,6 +143,8 @@ a:active {
 }
 .Center { /* Centers with limited width */
 	width:70%;
+	display:block;
+	position:relative;
 	margin: auto auto;
 }
 .Centered { /* Full center */

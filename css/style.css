@@ -1,14 +1,18 @@
 body {
     background-color: white;
     color: black;
-    font-size: 87.5%;
-    font-family: Courier New, 'Lucida Sans Unicode';
+    font-family: monospace;
     line-height: 1;
     text-align: left;
 }
 
+.body {
+    margin: 0 auto;
+    width: 100%;
+}
+
 button[type=button] {
-    width: 48%;
+    width: 40%;
     height: 2.6em;
 }
 
@@ -18,10 +22,10 @@ button[type=button] {
 }
 
 .leftcontent {
-    width: 65%;
+    width: 96%;
     float: left;
     border-radius: 5px;
-    border-radius: 5px;
+    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     margin-top: 1%;
     padding-right: 5px;
@@ -33,33 +37,26 @@ button[type=button] {
 }
 
 .txtarea {
-    width: 100%;
+    width: 98.5%;
 	height: 100%;
 	overflow: auto;
 }
 
-.middlecontent {
-    width: auto;
-    float: left;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    margin-top: 2.9%;
-    padding-top: 1px;
-    
-	padding-right: 5px;
+div {
+	width:98%;
+	margin:auto auto;
+	font-family:monospace;
+	overflow: auto;
 }
 
 .toprightcontent {
-    width: 33%;
+    width: 98%;
     float: left;
-    background-color: white;
     border-radius: 5px;
-    border-radius: 5px;
+    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    margin-top: 1%;
-    padding-left: 5.5px;
-	margin-left: 5px;
-    padding-top: 1px;
+    margin-top: 0.5%;
+    /* padding-left: 5.5px; */
 }
 
 .toprightcontent h4 {
@@ -68,31 +65,35 @@ button[type=button] {
 }
 
 .righttxtarea {
-    /*width: 96%*/;
-	height: 100%;
+    width: 98%;
+	/* height: 100%; */
     resize: none;
 }
 
 .rightbuttons {
-    padding-left: 1px;
+	width:50%;
+	height:100%;
+	padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     padding-bottom: 2px;
 }
 
 .bottomrightcontent {
-    width: 33%;
+    width: 98%;
     float: left;
     border-radius: 5px;
-    border-radius: 5px;
+    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     margin-top: 0.5%;
-    padding-left: 5.5px;
-	margin-left: 5px;
+    /* padding-left: 5.5px; */
 }
 
 .bottomrighttxtarea {
-    width: 96%;
-	height: 215px;
-	overflow: auto;
+	overflow:auto;
+    width: 98%;
+	height: 100px;
+    resize: none;
 	border: 1px solid black;
 }
 
@@ -112,7 +113,6 @@ button[type=button] {
 	border-collapse:collapse;
 	padding: 0px;
 	margin: 0px;
-	font-family:Courier New;
 	white-space: nowrap;
 }
 .codeTableTd {
@@ -131,7 +131,19 @@ button[type=button] {
 	padding: 0px;
 	margin: 0px;
 }
+.innerTable7 {
+	border: none;
+	border-collapse:collapse;
+	padding: 0px;
+	margin: 0px;
+}
 .innerTable10 {
+	border: none;
+	border-collapse:collapse;
+	padding: 0px;
+	margin: 0px;
+}
+.innerTable12 {
 	border: none;
 	border-collapse:collapse;
 	padding: 0px;
@@ -149,7 +161,19 @@ button[type=button] {
 	padding: 0px;
 	margin: 0px;
 }
+.innerTable16 {
+	border: none;
+	border-collapse:collapse;
+	padding: 0px;
+	margin: 0px;
+}
 .innerTable18 {
+	border: none;
+	border-collapse:collapse;
+	padding: 0px;
+	margin: 0px;
+}
+.innerTable19 {
 	border: none;
 	border-collapse:collapse;
 	padding: 0px;
@@ -167,19 +191,31 @@ button[type=button] {
 	padding: 0px;
 	margin: 0px;
 }
-.innerTable27 {
-	border: none;
-	border-collapse:collapse;
-	padding: 0px;
-	margin: 0px;
-}
 .innerTable23 {
 	border: none;
 	border-collapse:collapse;
 	padding: 0px;
 	margin: 0px;
 }
+.innerTable24 {
+	border: none;
+	border-collapse:collapse;
+	padding: 0px;
+	margin: 0px;
+}
+.innerTable27 {
+	border: none;
+	border-collapse:collapse;
+	padding: 0px;
+	margin: 0px;
+}
 .innerTable28 {
+	border: none;
+	border-collapse:collapse;
+	padding: 0px;
+	margin: 0px;
+}
+.innerTable29 {
 	border: none;
 	border-collapse:collapse;
 	padding: 0px;
@@ -206,5 +242,4 @@ button[type=button] {
 .normal {
 	border-spacing: 15px 1px;
 	border-collapse: separate;
-	
 }

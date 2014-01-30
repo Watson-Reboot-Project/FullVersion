@@ -9,11 +9,18 @@
 
 		<title>Watson</title>
 
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	    <link href = "css/ch08.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<link rel='stylesheet' href='css/generalmedia.css'>
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-		<link href='css/ch08.css' rel='stylesheet' type="text/css">
-		
-		<script src="js/jquery-1.10.2.js"></script>
 		<script src="js/jquery-ui.js"></script>
 		
 		<meta name="description" content="">
@@ -28,100 +35,36 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="header" style="scroll:none; width:100%">
-				<a href="index.html"><h3 style="margin:0; color: white;">8.6.3 REPETITION</h3></a>
-			</div>
-			<!-- End header -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
-			<!-- Navbar division -->
-
-			<div id="headnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 25%"><a href="labs.html">LABS</a></td>
-
-						<td style="width: 25%"><a href="documentation.html">DOCUMENTATION</a></td>
-
-						<td style="width: 25%"><a href="tutorials.html">TUTORIALS</a></td>
-
-						<td style="width: 25%"><a href="about.html">ABOUT</a></td>
-
-					</tr>
-
-				</table>
-
-			</div><!-- End nav -->
-
-			<div id="chapnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 15%"><a href="chapters.html">CHAPTERS</a></td>
-
-						<td style="width: 5%"><a href="ch01.html">01</a></td>
-
-						<td style="width: 5%"><a href="ch02.html">02</a></td>
-
-						<td style="width: 5%"><a href="ch03.html">03</a></td>
-
-						<td style="width: 5%"><a href="ch04.html">04</a></td>
-
-						<td style="width: 5%"><a href="ch05.html">05</a></td>
-
-						<td style="width: 5%"><a href="ch06.html">06</a></td>
-
-						<td style="width: 5%"><a href="ch07.html">07</a></td>
-
-						<td style="width: 5%"><a href="ch08.html">08</a></td>
-
-						<td style="width: 5%"><a href="ch09.html">09</a></td>
-
-						<td style="width: 5%"><a href="ch10.html">10</a></td>
-
-						<td style="width: 5%"><a href="ch11.html">11</a></td>
-
-						<td style="width: 5%"><a href="ch12.html">12</a></td>
-
-						<td style="width: 5%"><a href="ch13.html">13</a></td>
-
-						<td style="width: 5%"><a href="ch14.html">14</a></td>
-
-						<td style="width: 5%"><a href="ch15.html">15</a></td>
-
-					</tr>
-
-				</table>
-
-			</div>
-			<!-- End nav -->
 			<!--Floating nav -->
-				<!-- Previous -->
-				<style>
-				div.floating-previous
-				{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%; overflow:none; scroll: none; opacity:0.5;}
-				div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-previous">
-				<a href="ch08s6p2.html">
-				<img style="border:0;" src="Images/left-arrow.png" alt="Previous page" width="40">
-				</a>
-				</div>
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; right: 1px; left:auto; top:45%; scroll: none; opacity:0.5;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch08s7.html">
-				<img style="border:0;" src="Images/right-arrow.png" alt="Next page" width="40">
-				</a>
-				</div>
-			<!-- End floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch08s6p2.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch08s7.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
 			<!-- Main content -->
+			<p class="Section">8.6.3 Repetition</p>
 			<p>
 				Repetition is the name given to the class of control constructs that allow computer programs to repeat a task over and over. You should already have some familiarity with this concept from your study of the Watson Graphics Language (WGL), since WGL includes a repetition construct of the form:
 			</p>
@@ -292,7 +235,7 @@
 
 			<h5 class="P136">The final total is... 150</h5>
 			-->
-			<div id="fig18Div"></div>
+			<div id="fig18Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.18: A program to compute the sum of an arbitrary number of non-negative numbers using a “While” loop
 			</p>
@@ -441,7 +384,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig19Div"></div>
+			<div id="fig19Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.19: &nbsp; A program to compute the sum of N numbers using a “while” loop
 			</p>
@@ -637,7 +580,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig21Div"></div>
+			<div id="fig21Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.21: &nbsp; A program to compute the sum of N numbers using a “For” loop
 			</p>
@@ -1018,7 +961,7 @@
 				</tr>
 			</table>
 			-->
-			<div id="fig22Div"></div>
+			<div id="fig22Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.22: &nbsp; A program to average grades using a “For” loop and an “If-Else” construct
 			</p>
@@ -1270,7 +1213,7 @@
 				2 times 12 equals 24&nbsp;  &nbsp; 4 times 12 equals 48
 			</p>
 			-->
-			<div id="fig23Div"></div>
+			<div id="fig23Div" class="divness"></div>
 
 			<p class="Figure">
 				Figure 8.23: &nbsp; A program that prints the multiplication table using nested “For” loops.
@@ -1413,7 +1356,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig24Div"></div>
+			<div id="fig24Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.24: &nbsp; Beer – the iterative version
 			</p>

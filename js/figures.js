@@ -33,122 +33,41 @@ function Figure(figureNum) {
 	var promptInput = "";
 	var promptFlag = false;
 	var editCellID;
+	var defaultPromptInput;
 	var attemptingToRun = false;
 	var shiftDown = false;
+	var dummyVar = 0;
+	var showVarBox = true;
+	var showScope = false;
 	
 	this.walkButton = walkButton;
 	this.runButton = runButton;
 	this.updateVariables = updateVariables;
-	
-	/*
-	 * Older HTML 
-	 * figDiv = document.getElementById("fig" + figureNum + "Div");
-	figDiv.innerHTML = '<div class="leftcontent" readonly> \
-							<h4>Code Window</h4> \
-							<div class="txtarea" style="height:495px;border-style:ridge;"> \
-								<table id="fig' + figureNum + 'Editor" class="codeTable"></table> \
-							</div> \
-						</div> \
-						<aside class="toprightcontent"> \
-							<h4>Program Output</h4> \
-							<table id="fig' + figureNum + 'Output" class="normal"</table> \
-							<div class="rightbuttons"> \
-								<button type="button" id="fig' + figureNum + 'Run" onclick="figure' + figureNum + '.runButton()">Run</button> \
-								<button type="button" onclick="figure' + figureNum + '.walkButton()">Walk</button> \
-							</div> \
-						</aside> \
-						<aside class="bottomrightcontent"> \
-							<h4>Variables</h4> \
-							<div id="fig' + figureNum + 'VarBox" class="bottomrighttxtarea"> \
-								<table id="fig' + figureNum + 'VarTable" class="normal"></table> \
-							</div> \
-							</aside> ';
-	*/
-	
-	/* Old HTML
+
 	figDiv = document.getElementById("fig" + figureNum + "Div");
 	figDiv.innerHTML = '<div class="leftcontent" readonly> \
-							<h4>&nbsp;Code Window</h4> \
-							<div class="txtarea" style="height:100%; min-height:200px; max-height:450px; border-style:ridge;"> \
+							<p class="Bolded">&nbsp;Program definition</p> \
+							<div class="txtarea" style="height:100%; max-height:400px; border-style:ridge;"> \
 								<table id="fig' + figureNum + 'Editor" class="codeTable"></table> \
 							</div> \
 						</div> \
-						
-						<aside class="toprightcontent"> \
-							<h4>Program Output</h4> \
-							<div id="fig' + figureNum + 'VarBox" class="bottomrighttxtarea"> \
-							<table id="fig' + figureNum + 'Output" class="righttxtarea" style="white-space:nowrap;" readonly></table> \
+						<div class="rightbuttons" style="height:100%;"> \
+								<button type="button" style="margin-left:5%; margin-right: auto; margin-top:5px;" id="fig' + figureNum + 'Run">Run</button> \
+								<button type="button" style="margin-right:5%; margin-left: auto; margin-top:5px;" id="fig' + figureNum + 'Walk" onclick="figure' + figureNum + '.walkButton()">Walk</button> \
 							</div> \
-						</aside> \
-						<aside class="bottomrightcontent"> \
-							<h4>&nbsp;Variables</h4> \
+						<div class="bottomrightcontent" id="fig'+ figureNum + 'OutVarBox"style="clear: left;"> \
+							<p class="Bolded">&nbsp;Internal Variables</p> \
 							<div id="fig' + figureNum + 'VarBox" class="bottomrighttxtarea"> \
 								<table id="fig' + figureNum + 'VarTable" class="normal"></table> \
 							</div> \
-							</aside> \
-							<div class="rightbuttons" style="height:100%;"> \
-								<button type="button" style="margin-left:5%; margin-top:5px;" id="fig' + figureNum + 'Run" onclick="figure' + figureNum + '.runButton()">Run</button> \
-								<button type="button" style="margin-right:5%; margin-top:5px;" onclick="figure' + figureNum + '.walkButton()">Walk</button> \
-							</div> ';
-	*/
-	
-	/* Bimarsh
-	figDiv = document.getElementById("fig" + figureNum + "Div");
-	figDiv.innerHTML = '<div> \
-							<div class="leftcontent" readonly> \
-								<h4>Code Window</h4> \
-								<div id="txtbox" class="txtarea" style="height:250px;border-style:ridge;"> \
-									<table id="fig' + figureNum + 'Editor" class="codeTable"></table> \
-								</div> \
 							</div> \
-							<div class="rightbuttons" style="clear:left;padding-top:10px;"> \
-								<button type="button" id="fig' + figureNum + 'Run">Run</button> \
-								<button type="button" id="fig' + figureNum + 'Walk" onclick="figure' + figureNum + '.walkButton()">Walk</button> \
-							</div> \
-							<div> \
-							<aside class="leftcontent" style="clear:left"> \
-								<div id="fig' + figureNum + 'OutVarBox" class="txtarea"> \
-									<h4>Variables</h4> \
-									<div id="fig' + figureNum + 'VarBox" class="bottomrighttxtarea"> \
-										<table id="fig' + figureNum + 'VarTable" class="normal"></table> \
-									</div> \
-								</div> \
-							</aside> \
-							<aside class="bottomrightcontent" style="clear: left"> \
-								<h4>Program Output</h4> \
-								<div id="fig' + figureNum + 'VarBox" class="bottomrighttxtarea"> \
-								<table id="fig' + figureNum + 'Output" class="normal"</table> \
-								</div> \
-							</aside> \
-						</div>'	
-	*/		
-	
-	
-	figDiv = document.getElementById("fig" + figureNum + "Div");
-	figDiv.innerHTML = '<div class="divness leftcontent" readonly> \
-							<h4>&nbsp;&nbsp;Program definition</h4> \
-							<div class="txtarea divness" style="height:100%; min-height:200px; max-height:300px; border-style:ridge;"> \
-								<table id="fig' + figureNum + 'Editor" class="codeTable"></table> \
-							</div> \
-						</div> \
-						<div class="divness rightbuttons" style="height:100%;"> \
-								<button type="button" style="margin-left:5%; margin-top:5px;" id="fig' + figureNum + 'Run">Run</button> \
-								<button type="button" style="margin-right:5%; margin-top:5px;" id="fig' + figureNum + 'Walk" onclick="figure' + figureNum + '.walkButton()">Walk</button> \
-							</div> \
-						<div class="divness bottomrightcontent" id="fig'+ figureNum + 'OutVarBox"style="clear: left;"> \
-							<h4>&nbsp;&nbsp;&nbsp;Variables</h4> \
-							<div id="fig' + figureNum + 'VarBox" class="divness bottomrighttxtarea"> \
-								<table id="fig' + figureNum + 'VarTable" class="normal"></table> \
-							</div> \
-							</div> \
-						<div class="divness toprightcontent" style="clear: left; "> \
-							<h4>&nbsp;&nbsp;&nbsp;Program input/output behavior</h4> \
-							<div id="fig' + figureNum + 'OutputBox" class="divness bottomrighttxtarea"> \
+						<div class="toprightcontent" style="clear: left; "> \
+							<p class="Bolded">&nbsp;Program input/output behavior<p> \
+							<div id="fig' + figureNum + 'OutputBox" class="bottomrighttxtarea"> \
 							<table id="fig' + figureNum + 'OutputTable" class="righttxtarea" style="white-space:nowrap;"></table> \
 							</div> \
 						</div> ';	
 													
-	//<textarea id="fig' + figureNum + 'Output" class="righttxtarea" rows="12" wrap="off" style="width:96.5%" readonly></textarea> \
 	
 	outputTable = document.getElementById("fig" + figureNum + "OutputTable");
 	var outputBox = document.getElementById("fig" + figureNum + "OutputBox");
@@ -213,6 +132,7 @@ function Figure(figureNum) {
 			editor.addOneLineElement('write', ['"There are "']);
 			editor.addOneLineElement('write', ['12 + 1']);
 			editor.addOneLineElement('write', ['" cookies in a baker\'s dozen."']);
+			showVarBox = false;
 		}
 		else if (figureNum == 6) {	// no bugs reported
 			// figure 6 code
@@ -301,6 +221,7 @@ function Figure(figureNum) {
 			editor.addOneLineElement('writeln', ['"You\'re too old to be a baller."']);
 			for (var i = 0; i < 3; i++) editor.incSelRow();
 			editor.addOneLineElement('writeln', ['"You\'re too old and poor."']);
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 16) {
 			// figure 16 code (not sure about this one either, but let's do it)
@@ -328,6 +249,7 @@ function Figure(figureNum) {
 			editor.incSelRow();
 			editor.addOneLineElement('write', ['"The final total is... "']);
 			editor.addOneLineElement('writeln', ['total']);
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 19) {
             //Figure 19 code inserted by Weston Cossey
@@ -348,6 +270,7 @@ function Figure(figureNum) {
             editor.incSelRow();
             editor.addOneLineElement('write', ['"The final total is... "']);
             editor.addOneLineElement('writeln', ['total']);
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 21) {	// fixed counter issue
 			// figure 21 code
@@ -366,6 +289,7 @@ function Figure(figureNum) {
 			editor.incSelRow();
 			editor.addOneLineElement('write', ['"The final total is... "']);
 			editor.addOneLineElement('writeln', ['total']);
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 22) {	// no bugs reported
 			editor.addVariable('variable', [ 'numberOfGrades', 'NUMERIC' ]);
@@ -392,6 +316,7 @@ function Figure(figureNum) {
 			for (var i = 0; i < 3; i++) editor.incSelRow();
 			editor.addOneLineElement('writeln', ['"undefined"']);
 			editor.incSelRow();
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 23) {	// fixed for loop counter issue
 			// figure 23 code
@@ -429,7 +354,7 @@ function Figure(figureNum) {
 		else if (figureNum == 27) {
 			editor.addVariable('variable', ['a', 'NUMERIC']);
 			editor.addVariable('variable', ['b', 'NUMERIC']);
-			editor.addFunction(['power', 'x', 'y', 'Returns numeric']);
+			editor.addFunction(['power', 'x', 'Numeric', 'y', 'Numeric', 'Returns numeric']);
 			for (var i = 0; i < 2; i++) editor.decSelRow();
 			editor.addVariable('variable', [ 'z', 'NUMERIC' ]);
 			editor.addVariable('variable', [ 'i', 'NUMERIC' ]);
@@ -446,6 +371,8 @@ function Figure(figureNum) {
 			editor.addOneLineElement('write', [ 'a' ]);
 			editor.addOneLineElement('write', [ '" raised to the third power is "' ]);
 			editor.addOneLineElement('write', [ 'b']);
+			showScope = true;
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 28) {
 			editor.addVariable('variable', ['a', 'NUMERIC']);
@@ -454,7 +381,7 @@ function Figure(figureNum) {
 			editor.addVariable('variable', ['d', 'NUMERIC']);
 			editor.addVariable('variable', ['x', 'NUMERIC']);
 			editor.addVariable('variable', ['y', 'NUMERIC']);
-			editor.addFunction(['power', 'x', 'y', 'Returns numeric']);
+			editor.addFunction(['power', 'x', 'Numeric', 'y', 'Numeric', 'Returns numeric']);
 			for (var i = 0; i < 2; i++) editor.decSelRow();
 			editor.addVariable('variable', [ 'z', 'NUMERIC' ]);
 			editor.addVariable('variable', [ 'i', 'NUMERIC' ]);
@@ -476,11 +403,13 @@ function Figure(figureNum) {
 										'+&nbsp;', 'c&nbsp;', '*&nbsp;', 'x&nbsp;', '+&nbsp;', 'd', ';']);
 			editor.addOneLineElement('write', [ '"A*X**3 + B*X**2 + C*X + D = "']);
 			editor.addOneLineElement('writeln', [ 'y' ]);
+			showScope = true;
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 29) {
 			// figure 29 code
 			editor.addVariable('variable', [ 'count', 'NUMERIC' ]);
-			editor.addFunction(['singsong', 'beers', 'Returns nothing']);
+			editor.addFunction(['singsong', 'beers', 'Numeric', 'Returns nothing']);
 			editor.decSelRow();
 			editor.decSelRow();
 			editor.addWhile(['beers', '>', '0']);
@@ -495,15 +424,19 @@ function Figure(figureNum) {
 			editor.addOneLineElement('writeln', ['" bottles of beer on the wall."']);
 			editor.addOneLineElement('writeln', ['" "']);
 			editor.incSelRow();
+			editor.addDummyLine();
+			editor.incSelRow();
 			editor.incSelRow();
 			editor.incSelRow();
 			editor.addOneLineElement('numericPrompt', ['count', '"How many bottles?"', '0']);
 			editor.addOneLineElement('functionCall', ['singsong', 'count' ]);
 			editor.addOneLineElement('writeln', ['"Later..."']);
+			showScope = true;
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 30) {	// no bugs reported
 			editor.addVariable('variable', ['count', 'NUMERIC']);
-			editor.addFunction(['singsong', 'beers', 'Returns nothing']);
+			editor.addFunction(['singsong', 'beers', 'Numeric', 'Returns nothing']);
 			editor.decSelRow(); editor.decSelRow();
 			editor.addIfThen(['beers', '&gt;', '0']);
 			editor.decSelRow();
@@ -517,17 +450,21 @@ function Figure(figureNum) {
 			editor.addOneLineElement('writeln', ['" bottles of beer on the wall."']);
 			editor.addOneLineElement('writeln', ['" "']);
 			editor.addOneLineElement('functionCall', ['singsong', 'beers' ]);
+			editor.incSelRow();
+			editor.addDummyLine();
 			//editor.addOneLineElement('writeln', ['"test"']);
-			for (var i = 0; i < 4; i++) editor.incSelRow();
+			for (var i = 0; i < 3; i++) editor.incSelRow();
 			editor.addOneLineElement('numericPrompt', ['count', '"How many bottles?"', '0']);
 			editor.addOneLineElement('functionCall', ['singsong', 'count' ]);
 			editor.addOneLineElement('writeln', ['"Later..."']);
+			showScope = true;
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 32) {	// no bugs reported
 			// figure 32 code
 			
 			editor.addVariable('variable', ['count', 'NUMERIC']);
-			editor.addFunction(['singsong', 'beers', 'Returns nothing']);
+			editor.addFunction(['singsong', 'beers', 'Numeric',	'Returns nothing']);
 			editor.decSelRow(); editor.decSelRow();
 			editor.addIfElse(['beers', '&gt;', '0']);
 			for (var i = 0; i < 4; i++) editor.decSelRow();
@@ -544,15 +481,19 @@ function Figure(figureNum) {
 			editor.addOneLineElement('writeln', ['"Hic. "']);
 			for (var i = 0; i < 3; i++) editor.incSelRow();
 			editor.addOneLineElement('writeln', ['"We\'re out of beer."']);
-			for (var i = 0; i < 4; i++) editor.incSelRow();
+			editor.incSelRow();
+			editor.addDummyLine();
+			for (var i = 0; i < 3; i++) editor.incSelRow();
 			editor.addOneLineElement('numericPrompt', ['count', '"How many bottles?"', '0']);
 			editor.addOneLineElement('functionCall', ['singsong', 'count' ]);
 			editor.addOneLineElement('writeln', ['"Later..."']);
+			showScope = true;
+			editor.showLineCount(true);
 		}
 		else if (figureNum == 38) {
 			editor.addVariable('variable', [ 'TOP', 'NUMERIC' ]);
 			editor.addVariable('array', [ 'STACK', '100', 'NUMERIC']);
-			editor.addFunction([ 'push', 'item', 'Returns nothing' ]);
+			editor.addFunction([ 'push', 'item', 'Numeric', 'Returns nothing' ]);
 			for (var i = 0; i < 2; i++) editor.decSelRow();
 			editor.addIfThen(['TOP', '&lt;', '99']);
 			editor.decSelRow();
@@ -577,6 +518,8 @@ function Figure(figureNum) {
 			editor.addOneLineElement('writeln', [ 'pop()' ]);
 			editor.addOneLineElement('writeln', [ 'pop()' ]);
 			editor.addOneLineElement('writeln', [ 'pop()' ]);
+			showScope = true;
+			editor.showLineCount(true);
 		}
 		
 
@@ -615,6 +558,11 @@ function Figure(figureNum) {
 		};
 		interpreter.setProperty(scope, 'document1writeln', interpreter.createNativeFunction(wrapper4));
 
+		var wrapper5 = function () {	
+			//return interpreter.createPrimitive(outputTable.value += text + "\n");
+			return interpreter.createPrimitive(dummyVar++);
+		};
+		interpreter.setProperty(scope, 'dummyFunction', interpreter.createNativeFunction(wrapper5));
 	};
 	
 	function outputWrite(text) {
@@ -638,10 +586,10 @@ function Figure(figureNum) {
 		return temp;
 	}
 
-	function promptFunc(promptType, text1) {
+	function promptFunc(promptType, promptStr, defaultStr) {
 		var cell = outputTable.rows[outputTable.rows.length - 1].cells[0];
 		cell.setAttribute("style", "height:1em");
-		cell.textContent += text1.slice(1, text1.length - 1);
+		cell.textContent += promptStr.slice(1, promptStr.length - 1);
 		var row = outputTable.insertRow(outputTable.rows.length);
 		row.insertCell(0);
 		cell.contentEditable = false;
@@ -655,7 +603,12 @@ function Figure(figureNum) {
 		cell.setAttribute("type", "number");
 		editCellID = id;
 		
-		console.log("Prompt:" + promptType);
+		if (defaultStr.charAt(0) == '"') {
+			if (defaultStr.length == 2) defaultPromptInput = "";
+			else defaultPromptInput = defaultStr.slice(1, defaultStr.length - 1);
+		}
+		else defaultPromptInput = defaultStr;
+		
 		if (promptType == "numeric") setupNumericPrompt(id);
 		else setupStringPrompt(id);
 		
@@ -667,7 +620,6 @@ function Figure(figureNum) {
 	}
 	
 	function setupNumericPrompt(id) {
-		console.log("Setting this.");
 		$("#" + id).keyup(function (event) {
 			var code = event.which || event.keyCode;
 			if (code == 16) {
@@ -679,8 +631,6 @@ function Figure(figureNum) {
 	
 		$("#" + id).keydown(function (event) {
 			var code = event.which || event.keyCode;
-			console.log("Here.");
-			console.log("Code: " + code);
 			if (code == 16) {
 				shiftDown = true;	// shift key, don't allow anything while this is held down
 			}
@@ -688,8 +638,11 @@ function Figure(figureNum) {
 				// allow this
 			}
 			else if (code == 109 || code == 189 || code == 173) {	// a dash (negative number possibility)
-				console.log("Dash detected.");
 				if (promptInput.length != 0) { event.preventDefault(); return; } // only allow a dash at the 0 index position
+			}
+			else if (code == 110 || code == 190) {	// a period was pressed for a decimal point
+				if (promptInput.indexOf(".") >= 0) { event.preventDefault(); return } // a decimal point already exists; there can't be another
+				else { /* allow it go through; do nothing */ }
 			}
 			else if (code == 10 || code == 13) {
 				// enter key, allow it for now (will be caught by key press)
@@ -708,8 +661,10 @@ function Figure(figureNum) {
 			if (code == 10 || code == 13) {	// enter key was pressed
 				event.preventDefault();
 				if (cell.textContent == "" || cell.textContent.length == 0) {
-					alert("You should probably enter some input first!");
-					return;
+					promptInput = defaultPromptInput;
+					cell.textContent += defaultPromptInput;
+					//alert("You should probably enter some input first!");
+					//return;
 				}
 				
 				cell.contentEditable = false;
@@ -740,8 +695,10 @@ function Figure(figureNum) {
 			if (code == 10 || code == 13) {	// enter key was pressed
 				event.preventDefault();
 				if (cell.textContent == "" || cell.textContent.length == 0) {
-					alert("You should probably enter some input first!");
-					return;
+					promptInput = defaultPromptInput;
+					cell.textContent += defaultPromptInput;
+					//alert("You should probably enter some input first!");
+					//return;
 				}
 				
 				cell.contentEditable = false;
@@ -783,7 +740,16 @@ function Figure(figureNum) {
 			return;
 		}
 		
-		if (checkIfPrompt(true) == true) return;
+		//if (checkIfPrompt(true) == true) return;
+		var editCell = document.getElementById(editCellID);
+		if (promptFlag == true && promptInput.length == 0) {
+			promptInput = defaultPromptInput;
+			if (editCell) editCell.textContent += promptInput;
+			promptFlag = false;
+		}
+		else promptFlag = false;
+		
+		if (editCell) editCell.contentEditable = false;
 		
 		slideVarBox("down");
 		
@@ -811,14 +777,14 @@ function Figure(figureNum) {
 			return;
 		}
 		else {
-			if (attemptingToRun == false && checkIfPrompt(false) == true) {
+			if (attemptingToRun == false && checkIfPrompt() == true) {
 				$("#" + editCellID).focus();
 				attemptingToRun = true;
 				_runButton.textContent = "Pause";
 				_walkButton.textContent = "Reset";
 				return;
 			}
-			else if (attemptingToRun == true && checkIfPrompt(false) == true) {
+			else if (attemptingToRun == true && checkIfPrompt() == true) {
 				attemptingToRun = false;
 				_runButton.textContent = "Run";
 				_walkButton.textContent = "Walk";
@@ -844,6 +810,8 @@ function Figure(figureNum) {
 	}
 	
 	function slideVarBox(dir) {
+		if (showVarBox == false) return;
+		
 		if (!slidDown && dir == "down") {
 			$("#fig" + figureNum + "OutVarBox").slideDown("medium", function() {
 				varBox.scrollTop = varBox.scrollHeight;
@@ -882,7 +850,7 @@ function Figure(figureNum) {
 		while (flag == false) {
 			var promptRes = editor.checkPromptFlag();
 			if (promptRes[0] == true) {
-				promptFunc(promptRes[1], promptRes[2]);
+				promptFunc(promptRes[1], promptRes[2], promptRes[3]);
 				haltFlag = true;
 				promptFlag = true;
 				if (runMode == true) clearInterval(intervalID);
@@ -925,9 +893,8 @@ function Figure(figureNum) {
 		return true;
 	}
 
-	function checkIfPrompt(alertFlag) {
+	function checkIfPrompt() {
 		if (promptFlag == true && (promptInput == "" || promptInput.length == 0)) {
-			if (alertFlag) alert("You must enter input before you can do that.");
 			$('#' + editCellID).focus();
 			return true;
 		}
@@ -959,16 +926,19 @@ function Figure(figureNum) {
 			for (var i = 0; i < varArr.length; i++) {
 				if (scope == varArr[i][0] && (varArr[i][1] == leftValue || varArr[i][1].data == leftValue)) {
 					if (varArr[i].length == 2) varrArr[i].push(rightValue);
-					else varArr[i][2] = rightValue;
+					else varArr[i][3] = rightValue;
 					found = true;
 					break;
 				}
 			}
 			if (!found) {
-				if (leftValue.data && rightValue.data) varArr.push([scope, leftValue.data, rightValue.data]);
-				else if (leftValue.data) varArr.push([scope, leftValue.data, rightValue]);
-				else if (rightValue.data) varArr.push([scope, leftValue, rightValue.data]);
-				else varArr.push([scope, leftValue, rightValue]);
+				var dataType = editor.getDatatypeSelectedLine();
+				if (dataType === null) dataType = (isString(rightValue)) ? "text" : "numeric";
+				
+				if (leftValue.data && rightValue.data) varArr.push([scope, leftValue.data, dataType, rightValue.data]);
+				else if (leftValue.data) varArr.push([scope, leftValue.data, dataType, rightValue]);
+				else if (rightValue.data) varArr.push([scope, leftValue, dataType, rightValue.data]);
+				else varArr.push([scope, leftValue, dataType, rightValue]);
 				
 				if (!scopeExists(scope)) scopeArr.push(scope);
 			}
@@ -1025,27 +995,64 @@ function Figure(figureNum) {
 		var cell;
 		var scopeNum;
 		
-		row = varTable.insertRow(0);
-		for (var i = 0; i < 3; i++) {
-			cell = row.insertCell(i);
-			if (i == 0) cell.textContent = "scope";
-			else if (i == 1) cell.textContent = "variable";
-			else cell.textContent = "value";
-		}
-		
-		for (var i = 0; i < varArr.length; i++) {
-			row = varTable.insertRow(i + 1);
-			for (var j = 0; j < 3; j++) {
-				scopeNum = getScopeNum(varArr[i][0]);
-				if (scopeNum < 0) {
-					varArr.splice(i, 1);
-					break;
+		if (showScope) {
+			row = varTable.insertRow(0);
+			for (var i = 0; i < 4; i++) {
+				cell = row.insertCell(i);
+				if (i == 0) cell.textContent = "level";
+				else if (i == 1) cell.textContent = "variable";
+				else if (i == 2) cell.textContent = "type";
+				else cell.textContent = "value";
+			}
+
+			
+			for (var i = 0; i < varArr.length; i++) {
+				row = varTable.insertRow(i + 1);
+				for (var j = 0; j < 4; j++) {
+					scopeNum = getScopeNum(varArr[i][0]);
+					if (scopeNum < 0) {
+						varArr.splice(i, 1);
+						break;
+					}
+					cell = row.insertCell(j);
+					if (j == 0) cell.textContent = getScopeNum(varArr[i][0]);
+					else if (j == 1) cell.textContent = varArr[i][1];
+					else if (j == 2) cell.textContent = varArr[i][2];
+					else cell.textContent = varArr[i][3];
 				}
-				cell = row.insertCell(j);
-				if (j == 0) cell.textContent = getScopeNum(varArr[i][0]);
-				else if (j == 1) cell.textContent = varArr[i][1];
-				else cell.textContent = varArr[i][2];
+			}
+		}
+		else {
+		
+			row = varTable.insertRow(0);
+			for (var i = 0; i < 3; i++) {
+				cell = row.insertCell(i);
+				if (i == 0) cell.textContent = "variable";
+				else if (i == 1) cell.textContent = "type";
+				else cell.textContent = "value";
+			}
+			
+			for (var i = 0; i < varArr.length; i++) {
+				row = varTable.insertRow(i + 1);
+				for (var j = 0; j < 3; j++) {
+					scopeNum = getScopeNum(varArr[i][0]);
+					if (scopeNum < 0) {
+						varArr.splice(i, 1);
+						break;
+					}
+					cell = row.insertCell(j);
+					if (j == 0) cell.textContent = varArr[i][1];
+					else if (j == 1) cell.textContent = varArr[i][2];
+					else cell.textContent = varArr[i][3];
+				}
 			}
 		}
 	}
+	
+	var toString = Object.prototype.toString;
+
+	isString = function (obj) {
+		return toString.call(obj) == '[object String]';
+	}
+	
 }

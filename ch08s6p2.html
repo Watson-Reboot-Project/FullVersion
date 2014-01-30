@@ -9,11 +9,18 @@
 
 		<title>Watson</title>
 
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	    <link href = "css/ch08.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<link rel='stylesheet' href='css/generalmedia.css'>
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-		<link href='css/ch08.css' rel='stylesheet' type="text/css">
-		
-		<script src="js/jquery-1.10.2.js"></script>
 		<script src="js/jquery-ui.js"></script>
 		
 		<meta name="description" content="">
@@ -28,101 +35,38 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="header">
-				<a href="index.html"><h3 style="margin:0; color: white;">8.6.2 SELECTION</h3></a>
-			</div>
-			<!-- End header -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
-			<!-- Navbar division -->
-
-			<div id="headnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 25%"><a href="labs.html">LABS</a></td>
-
-						<td style="width: 25%"><a href="documentation.html">DOCUMENTATION</a></td>
-
-						<td style="width: 25%"><a href="tutorials.html">TUTORIALS</a></td>
-
-						<td style="width: 25%"><a href="about.html">ABOUT</a></td>
-
-					</tr>
-
-				</table>
-
-			</div><!-- End nav -->
-
-			<div id="chapnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 15%"><a href="chapters.html">CHAPTERS</a></td>
-
-						<td style="width: 5%"><a href="ch01.html">01</a></td>
-
-						<td style="width: 5%"><a href="ch02.html">02</a></td>
-
-						<td style="width: 5%"><a href="ch03.html">03</a></td>
-
-						<td style="width: 5%"><a href="ch04.html">04</a></td>
-
-						<td style="width: 5%"><a href="ch05.html">05</a></td>
-
-						<td style="width: 5%"><a href="ch06.html">06</a></td>
-
-						<td style="width: 5%"><a href="ch07.html">07</a></td>
-
-						<td style="width: 5%"><a href="ch08.html">08</a></td>
-
-						<td style="width: 5%"><a href="ch09.html">09</a></td>
-
-						<td style="width: 5%"><a href="ch10.html">10</a></td>
-
-						<td style="width: 5%"><a href="ch11.html">11</a></td>
-
-						<td style="width: 5%"><a href="ch12.html">12</a></td>
-
-						<td style="width: 5%"><a href="ch13.html">13</a></td>
-
-						<td style="width: 5%"><a href="ch14.html">14</a></td>
-
-						<td style="width: 5%"><a href="ch15.html">15</a></td>
-
-					</tr>
-
-				</table>
-
-			</div>
 			<!--Floating nav -->
-				<!-- Previous -->
-				<style>
-				div.floating-previous
-				{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%; opacity:0.5;}
-				div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-previous">
-				<a href="ch08s6p1.html">
-				<img style="border:0;" src="Images/left-arrow.png" alt="Previous page" width="40">
-				</a>
-				</div>
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; left: auto; right:1px; top:45%; opacity:0.5;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch08s6p3.html">
-				<img style="border:0;" src="Images/right-arrow.png" alt="Next page" width="40">
-				</a>
-				</div>
-			<!-- End floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch08s6p1.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch08s6p3.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			<p class="Section">8.6.2 Selection</p>
 			<p>
 				Selection statements give imperative languages the ability to make choices based on the results of certain condition tests. These condition tests take the form of <span class="Bolded">Boolean expressions</span>, which are expressions that evaluate to either <span class="Italicized">true</span> or <span class="Italicized">false</span>.<span class="Footnote"><span class="Footnote" title="Footnote: Boolean expressions are named for the mathematician George Boole. Hence, the word “Boolean” should always be capitalized."><a href="#ftn5" id="body_ftn5">5</a></span></span> &nbsp; There are various types of Boolean expressions, but the types supported in Watson JavaScript are based on relational operators. <span class="Bolded">Relational operators</span> compare two expressions of like type to determine whether their values satisfy some criterion. The general form of all Boolean expressions supported in Watson JavaScript is:
 			</p>
@@ -377,7 +321,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig12Div"></div>
+			<div id="fig12Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.12: &nbsp; A program that illustrates selection via If-Else
 			</p>
@@ -513,7 +457,7 @@
 				&nbsp;  &nbsp; The absolute value of the negative number, -5, is 5.
 			</p>
 			-->
-			<div id="fig13Div"></div>
+			<div id="fig13Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.13: &nbsp; A program that illustrates multi-statement “then” and “else” blocks
 			</p>
@@ -644,7 +588,7 @@
 			</p>
 			-->
 			
-			<div id="fig14Div"></div>
+			<div id="fig14Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.14: &nbsp; A program that illustrates nested If-Else statements
 			</p>
@@ -751,7 +695,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig16Div"></div>
+			<div id="fig16Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.16: &nbsp; A program that illustrates selection via If
 			</p>

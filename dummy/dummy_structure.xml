@@ -1,0 +1,17 @@
+<ch>
+	<name>Digital Logic</name>
+	<link>digitallogic.html</link>
+</ch>
+<ch>
+	<name>assembly</name>
+	<link>assembly.html</link>
+		<sub>
+			<name>numbers</name>
+			<link>numbers.html</link>
+		</sub>
+</ch>
+<ch>		
+	<name>graphics</name>
+	<link>graphics.html</link>		
+</ch>
+

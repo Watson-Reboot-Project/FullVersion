@@ -3,8 +3,9 @@
     border: none;
 }
 
-ul.nav a:hover { color: #99B7D3 !important; }
+ul.nav a:hover { color: #FFF; }
 @media screen and (max-width: 640px) {.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #FFF;}}
+
 
 .navbar .nav > li > a {
   float: none;
@@ -26,37 +27,35 @@ ul.nav a:hover { color: #99B7D3 !important; }
 
 .dropdown-menu > li > a:hover{ background-color: rgb(77, 112, 182); }
 
-.navbar .btn a:hover { background-color: #C6D8E9; }
 
 
-body #clickme{
+#clickme{
 
 	padding-left: 89.5%;
-	padding-top: 1.5%;
+	padding-top: .5%;
 }
 
-body #main_header{
+#main_header > h1{
 
-  text-align: center;
+  text-align: left;
   color: rgb(77, 112, 182);
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
 
+#main_header_img {
+
+  float: center;
+  max-width: 30%;
 }
 
 .page-wrapper {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
 }
 
-body { padding-top: 10%;}
-@media screen and (max-width: 640px) { body { padding-top: 20%;}}
+body { padding-top: 5%; }
+@media screen and (max-width: 640px) { body { padding-top: 15%;}}
 
-#fade-background{
-    position: absolute;
-    left:0px;
-    top:0px;
-    z-index:-1;
-}
 .navbar .navbar-collapse {
   text-align: center;
 }
@@ -69,9 +68,28 @@ body { padding-top: 10%;}
 }
 
 
-#error-background{ width: 40%; }
+.small-img{ width: 10%; }
+.medium-img{ width: 50%; }
+.large-img{ width: 90%; }
 .pagination-centered{ text-align: center; }
 
+.thumbnail { border: 2px solid rgb(77, 112, 182); }
+
+.btn-launch:hover {
+    background-color: #5CB85C;
+    border-color: #99B7D3;
+    color: #FFF;
+}
+.btn-launch {
+    background-color: #C6D8E9;
+    border-color: #99B7D3;
+    color: #FFFFFF;
+}
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
 
 
 

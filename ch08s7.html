@@ -9,11 +9,18 @@
 
 		<title>Watson</title>
 
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	    <link href = "css/ch08.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<link rel='stylesheet' href='css/generalmedia.css'>
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-		<link href='css/ch08.css' rel='stylesheet' type="text/css">
-		
-		<script src="js/jquery-1.10.2.js"></script>
 		<script src="js/jquery-ui.js"></script>
 		
 		<meta name="description" content="">
@@ -28,101 +35,38 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="header">
-				<a href="index.html"><h3 style="margin:0; color: white;">8.7 FUNCTIONS</h3></a>
-			</div>
-			<!-- End header -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
-			<!-- Navbar division -->
-
-			<div id="headnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 25%"><a href="labs.html">LABS</a></td>
-
-						<td style="width: 25%"><a href="documentation.html">DOCUMENTATION</a></td>
-
-						<td style="width: 25%"><a href="tutorials.html">TUTORIALS</a></td>
-
-						<td style="width: 25%"><a href="about.html">ABOUT</a></td>
-
-					</tr>
-
-				</table>
-
-			</div><!-- End nav -->
-
-			<div id="chapnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 15%"><a href="chapters.html">CHAPTERS</a></td>
-
-						<td style="width: 5%"><a href="ch01.html">01</a></td>
-
-						<td style="width: 5%"><a href="ch02.html">02</a></td>
-
-						<td style="width: 5%"><a href="ch03.html">03</a></td>
-
-						<td style="width: 5%"><a href="ch04.html">04</a></td>
-
-						<td style="width: 5%"><a href="ch05.html">05</a></td>
-
-						<td style="width: 5%"><a href="ch06.html">06</a></td>
-
-						<td style="width: 5%"><a href="ch07.html">07</a></td>
-
-						<td style="width: 5%"><a href="ch08.html">08</a></td>
-
-						<td style="width: 5%"><a href="ch09.html">09</a></td>
-
-						<td style="width: 5%"><a href="ch10.html">10</a></td>
-
-						<td style="width: 5%"><a href="ch11.html">11</a></td>
-
-						<td style="width: 5%"><a href="ch12.html">12</a></td>
-
-						<td style="width: 5%"><a href="ch13.html">13</a></td>
-
-						<td style="width: 5%"><a href="ch14.html">14</a></td>
-
-						<td style="width: 5%"><a href="ch15.html">15</a></td>
-
-					</tr>
-
-				</table>
-
-			</div>
 			<!--Floating nav -->
-				<!-- Previous -->
-				<style>
-				div.floating-previous
-				{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%; overflow:none; scroll: none; opacity:0.5;}
-				div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-previous">
-				<a href="ch08s6p3.html">
-				<img style="border:0;" src="Images/left-arrow.png" alt="Previous page" width="40">
-				</a>
-				</div>
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; right: 1px; left:auto; top:45%; scroll: none; opacity:0.5;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch08s8.html">
-				<img style="border:0;" src="Images/right-arrow.png" alt="Next page" width="40">
-				</a>
-				</div>
-			<!-- End floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch08s6p3.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch08s8.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			<p class="Section">8.7 Functions</p>
 			<p>
 				This section is concerned with creating and using function subprograms. A</span> <span class="Bolded">subprogram</span> is a program within a program. Very few “real” programs are written as one long piece of code. Instead, traditional imperative programs generally consist of large numbers of relatively simple subprograms that work together to accomplish some complex task. While it is theoretically possible to write large programs without the use of subprograms, as a practical matter any significant program must be decomposed into manageable pieces if humans are to write and maintain it.
 			</p>
@@ -359,7 +303,7 @@
 				document.write(b);&nbsp;
 			</p>
 			-->
-			<div id="fig27Div"></div>
+			<div id="fig27Div" class="divness"></div>
 
 			<p class="Figure">
 				Figure 8.27: &nbsp; A program to raise an integer value to the third power
@@ -576,7 +520,7 @@
 				document.writeln(y);
 			</p>
 			-->
-			<div id="fig28Div"></div>
+			<div id="fig28Div" class="divness"></div>
 
 			<p class="Figure">
 				Figure 8.28: &nbsp; A program to compute the value of &nbsp; <span class="Subfigure">A X</span><span class="T51">3</span><span class="Subfigure">+ B X</span><span class="T51">2</span><span class="Subfigure">+ C X + D</span>
@@ -702,14 +646,14 @@
 			</p>
 			-->
 			
-			<div id="fig29Div"></div>
+			<div id="fig29Div" class="divness"></div>
 
 
 			<p class="Figure">
 				Figure 8.29: Beer – the iterative subprogram version
 			</p>
 			
-			<div id="fig29Div"></div>
+			<div id="fig29Div" class="divness"></div>
 
 			<p class="Section">
 				Exercises for Section 8.7

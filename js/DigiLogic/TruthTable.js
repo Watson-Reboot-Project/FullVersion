@@ -1,4 +1,4 @@
-function TruthTable(container) {
+function TruthTable(container, figureNum) {
 	var suffix = container.substring(container.length - 1);
 	var numOut;
 	var visible = true;
@@ -86,8 +86,8 @@ function TruthTable(container) {
 		tbl.appendChild(tbdy);
 		
 		
-		body.appendChild(tbl);
-		//document.getElementById("topDiv1").appendChild(tbl);
+		//body.appendChild(tbl);
+		document.getElementById("topDiv" + figureNum).appendChild(tbl);
 		
 		/*
 		var thead = document.createElement('thead'); // create element for header
@@ -138,7 +138,7 @@ function TruthTable(container) {
 		var flag = true;
 		var i;
 		var myTable = document.getElementById("table" + suffix);
-		
+		console.log(row);
 		for (i = 1; i < rows + 1; i++) {
 			for (var j = 0; j < cols; j++) {
 				myTable.rows[i].cells[j].innerHTML = myTable.rows[i].cells[j].textContent;
@@ -155,6 +155,7 @@ function TruthTable(container) {
 			if (flag == true)
 				break;
 		}
+
 		if (i == rows + 1) { return; }
 		for (var j = 0; j < cols; j++) {
 			myTable.rows[i].cells[j].innerHTML = "<font color = '#00FF00'>" + myTable.rows[i].cells[j].innerHTML + "</font>";
@@ -181,7 +182,7 @@ function TruthTable(container) {
 	
 	function showTruthTable(bool) { visible = bool; }
 	
-	function setTruthTableScale(scale, padding) {
+	function setTruthTableScale(scale, horPadding, verPadding) {
 		var table = document.getElementById("table" + suffix);
 		if (table === null) return;
 		
@@ -189,8 +190,10 @@ function TruthTable(container) {
 		for (var i = 0; i < table.rows.length; i++) {
 			for (var j = 0; j < table.rows[0].cells.length; j++) {
 				var td = table.rows[i].cells[j];
-				td.style.paddingLeft = padding + "px";
-				td.style.paddingRight = padding + "px";
+				td.style.paddingLeft = horPadding + "px";
+				td.style.paddingRight = horPadding + "px";
+				td.style.paddingTop = verPadding + "px";
+				td.style.paddingBottom = verPadding + "px";
 				//td.style.fontSize = (scale + 15) + "%";
 				td.style.fontSize = scale + "%";
 				td.width = scale + "%";

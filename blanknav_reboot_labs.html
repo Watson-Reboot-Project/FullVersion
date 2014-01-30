@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="Images/favicon.ico"> <!-- Favicon -->
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title> TESTER </title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	
+	</head>
+
+	<body>
+
+
+		<img class="navbar-fixed-top" id="clickme" src="Images/max.png" > <!-- plus sign img -->
+		<!--<img class="navbar-fixed-top" id="fade-background" src="Images/fade.png" > <!-- plus sign img -->
+		<div class="navbar navbar-default navbar-fixed-top" id="navbar"> <!--navbar-static-top-->
+			<div class="container"> <!-- navbar container -->
+					<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse"> <!--Header button-->
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+					</button>
+
+					<div class="navbar-brand pull-left">
+						<a class="brand" href = "blanknav_reboot.html"> <img id="logo" src="Images/logo3.png"></a> <!--Logo in navbar -->
+					</div>
+
+					<div class = "collapse navbar-collapse navHeaderCollapse"> <!-- collapse navbar -->
+						<ul class = "nav navbar-nav navbar-right">
+							<li class="dropdown"> <a href="#" class = "dropdown-toggle btn" data-toggle = "dropdown">Chapters<b class = "caret"></b></a>
+								<ul class="dropdown-menu"> 
+							  		<li> <a href="ch01.html">Chapter 1</a></li>
+							  		<li> <a href="ch02.html">Chapter 2</a></li>
+							  		<li> <a href="ch03.html">Chapter 3</a></li>
+							  		<li> <a href="ch04.html">Chapter 4</a></li>
+							  		<li> <a href="ch05.html">Chapter 5</a></li>
+							  		<li> <a href="ch06.html">Chapter 6</a></li>
+							  		<li> <a href="ch07.html">Chapter 7</a></li>
+							  		<li> <a href="ch08.html">Chapter 8</a></li>
+							  		<li> <a href="ch09.html">Chapter 9</a></li>
+							  		<li> <a href="ch10.html">Chapter 10</a></li>
+							  		<li> <a href="ch11.html">Chapter 11</a></li>
+							  		<li> <a href="ch12.html">Chapter 12</a></li>
+							  		<li> <a href="ch13.html">Chapter 13</a></li>
+							  		<li> <a href="ch14.html">Chapter 14</a></li>
+							  		<li> <a href="error.html">Error Page</a></li>
+							  	</ul>
+							</li>
+							<li><a href = "#d">Documentation</a></li>
+							<li><a href = "#t">Tutorials</a></li>
+							<li><a href = "#a">About</a></li>
+							<li><a id="min"><img src="Images/minus_bar.png"></a></li> <!-- Misuc bar image -->
+						</ul>	
+					</div> <!-- END collapse navbar -->
+				</div>  <!-- END navbar container -->
+			</div> <!-- END navbar-static-top -->
+
+	  <script>
+		var toggle = 0;
+		  $('#min').click(
+		  function() {
+		  $('#navbar').slideUp('slow'); $('#fade-background').slideUp('slow');
+						toggle=1;
+		  }
+		  );
+		  $('#clickme').click(
+		  function() {
+		  $('#navbar').slideDown('slow'); $('#fade-background').slideDown('slow');
+						toggle=0;
+		  }
+		  );
+			var timer; /* disapearing navbar, disapearing plus sing, next and prev. arrows */
+			$(document).mousemove(function() {
+				if (timer) {
+					clearTimeout(timer);
+					timer = 0;
+				}
+
+				if (toggle==0) {$('#navbar').fadeIn(); $('#rarrow').fadeIn(); $('#larrow').fadeIn(); $('#fade-background').fadeIn();}
+				else {$('#clickme').fadeIn(); $('#rarrow').fadeIn(); $('#larrow').fadeIn();}
+				timer = setTimeout(function() {
+					$('#navbar').fadeOut(); $('#clickme').fadeOut();
+					$('#rarrow').fadeOut(); $('#larrow').fadeOut();
+					$('#fade-background').fadeOut();
+				}, 3000)
+			});
+	  </script>
+
+		<!------------------------------ Main content [BODY] ---------------------------->
+	  	<div class="page-wrapper">
+	  		<a id="tippytop"> </a>
+
+
+	  		<div class="jumbotron" id="main_header">
+		        <h1>Watson Labs </h1>
+		        The Watson Project is a set of interactive labs implemented in Java, designed as a companion to introductory computer science courses. The labs are meant to reinforce fundamental computer science concepts through interactive examples and structured activities. 
+		        Labs in Watson will cover the following subjects: 
+		        <ul>
+					<li>spreadsheet and database applications</li>
+				    <li>data structures</li>
+				    <li>computer graphics</li>
+				    <li>JavaScript-based programming</li>
+				    <li>object-oriented programming concepts</li>
+				    <li>assembly language and machine architecture</li>
+				    <li>digital logic </li>
+				</ul>
+			    
+		     </div>
+				
+			<div class="row"><!-- Row 1 begin--> 
+				  <div class="col-sm-3">
+				    <div class="thumbnail">
+				      <a href="blanknav_reboot_labs-spreadsheet.html"><img src="icon_img/spreadsheet_thumbnail.png" alt="Spreadsheet"/> </a>
+				      <div class="caption">
+				        <h3>Spreadsheet</h3>
+					    <a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+
+				 <div class="col-sm-3">
+				    <div class="thumbnail">
+				      <a href="#"><img src="icon_img/database_thumbnail.png" alt="Database" /></a>
+				      <div class="caption">
+				        <h3>Database</h3>
+					       <!-- <p>The Watson Database Lab serves as an introduction to the basic tools and queries of typical database systems. The lab consists of twenty activities concerning database operations. The activities cover the basics of building relations, querying a database, and selecting entries. Each of these functions are integral to the understanding relational databases and the concepts that drive them. The student will be taken from very easy queries and selections into increasingly more difficult situations that require compound queries. These activities will lead to a greater understanding of database concepts.
+					        </p>--><a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+
+				 <div class="col-sm-3">
+				    <div class="thumbnail">
+				      <a href="#"><img src="icon_img/datastructures_thumbnail.png" alt="Data Structures" /></a>
+				      <div class="caption">
+				        <h3>Data Structures</h3>
+					        <!--<p>The Data Structures Lab provides an overview of basic data structures used in programming. The data structures covered in this lab are the stack, the queue, the array, the linked-list, and the tree. These data structures, when combined with algorithms, can be used to solve complex tasks. Also this lab shows how using different data structures can affect memory differently.
+					        </p>--><a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+
+				<div class="col-sm-3">
+				    <div class="thumbnail">
+				      <a href="#"><img src="icon_img/graphics_thumbnail.png" alt="Data Structures" /></a>
+				      <div class="caption">
+				        <h3>Graphics</h3>
+					        <!--<p>The Data Structures Lab provides an overview of basic data structures used in programming. The data structures covered in this lab are the stack, the queue, the array, the linked-list, and the tree. These data structures, when combined with algorithms, can be used to solve complex tasks. Also this lab shows how using different data structures can affect memory differently.
+					        </p>--><p><a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+			</div> <!-- [END] Row 1  -->
+
+			<div class="row"><!-- Row 2 begin--> 
+				  <div class="col-sm-3">
+				    <div class="thumbnail">
+				      <a href="#"><img src="icon_img/javascript_thumbnail.png" alt="JavaScript"/></a>
+				      <div class="caption">
+				        <h3>JavaScript</h3>
+					       <!-- <p>The JavaScript Lab continues the introduction to programming provided by the Graphics Lab. This lab is based on an augmented subset of the JavaScript programming language. While one goal of this lab is to enable the user to write simple programs in the widely available JavaScript programming language, the focus is on fundamental concepts, such as sequence, selection, repetition, and functions, rather than on particular syntactic features. Thus, the lab enforces concepts such as strong typing that are usually absent from JavaScript and includes several Watson-specific Input / Output instructions. The point-and-click syntax-directed program editor used in the Graphics Lab is also included in the JavaScript Lab -- freeing users to concentrate on program design rather than being forced to track down syntax errors.
+					        </p> --><p><a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+
+				 <div class="col-sm-3">
+				    <div class="thumbnail">
+				     <a href="#"><img src="icon_img/objectoriented_thumbnail.png" alt="Object-Oriented" /></a>
+				      <div class="caption">
+				        <h3>Object Oriented</h3>
+					       <!-- <p>The object-oriented programming lab is intended to reinforce the concepts associated with object-oriented languages, and present common data structures in terms of objects. This lab covers objects, classes, inheritance and information hiding. In addition to these object-oriented topics, arrays, stacks, and queues are presented in terms of objects and classes. A code viewing window illustrates the relationship between objects and the actual code that makes up a class. As the methods and parameters are edited and added, the code view window updates to show how methods interact as a part of a class.
+					        </p>--><a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+
+				 <div class="col-sm-3">
+				    <div class="thumbnail">
+				     <a href="#"> <img src="icon_img/assemble_thumbnail.png" alt="Assembly" /></a>
+				      <div class="caption">
+				        <h3>Assembly</h3>
+					        <!--<p> The Watson Assembly Lab serves as an introduction to the basic commands, syntax, and operation of a typical assembly level language. The lab consists of six exercises and eleven activity sections. The activities of the lab demonstrate the operation of assembly level programming. This is not a specific ssembly language introduced, but a general assembly language that can be applied to other assembly languages. The lab covers how a machine is able to translate assembly code into machine code. The code displayed can be tracked in the binary displayed for a better understanding of how the machine works.
+					        </p>--> <a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+
+				<div class="col-sm-3">
+				    <div class="thumbnail">
+				     <a href="#"><img src="icon_img/digitallogic_thumbnail.png" alt="Digital Logic" /></a>
+				      <div class="caption">
+				        <h3>Digital Logic</h3>
+					        <!--<p>The Digital Logic lab introduces users to the concept of circuits and logic. This lab covers how to build a ciruit from logic gates. Using different logic gates and combining their outputs can create new logic tables. Also this shows a user how the machine is able to do mathematical operations on the hardware level. Finally the lab teaches users Boolean Algebra and truth tables.
+					        </p>--> <a href="#" class="btn btn-launch">Launch</a>
+				      </div>
+				    </div>
+				</div>
+			</div> <!-- row container -->			
+
+
+		</div> <!-- End page wrapper -->
+	  	<!------------------------------ END Main content [BODY] ---------------------------->
+
+	  	<div class ="container">
+	  			&nbsp;
+				<p> -- </p>
+				<p> <a href="index.html">Home</a> </p>
+				<p> <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a> </p>
+
+			<footer>
+				<p>
+					&copy; Copyright  by Burt
+				</p>
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
