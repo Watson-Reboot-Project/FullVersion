@@ -112,7 +112,7 @@ a:active {
 }
 .Footnote { /* Used with footnotes */
 	font-size: 80%;
-	vertical-align:top;
+	vertical-align:super;
 }
 .Emphasized { /* Bold, italic, and center for super emphasis */
 	font-weight: bold;

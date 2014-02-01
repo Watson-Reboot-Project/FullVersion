@@ -177,7 +177,7 @@ function Figure(figureNum) {
             editor.decSelRow();
             editor.decSelRow();
             editor.decSelRow();
-            editor.addOneLineElement('writeln', ['"No beer for you"']);
+            editor.addOneLineElement('writeln', ['"No beer for you."']);
             editor.incSelRow();
             editor.incSelRow();
             editor.incSelRow();

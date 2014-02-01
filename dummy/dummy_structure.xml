@@ -3,15 +3,16 @@
 	<link>digitallogic.html</link>
 </ch>
 <ch>
-	<name>assembly</name>
+	<name>Assembly</name>
 	<link>assembly.html</link>
 		<sub>
-			<name>numbers</name>
+			<name>Numbers</name>
 			<link>numbers.html</link>
 		</sub>
 </ch>
 <ch>		
-	<name>graphics</name>
+	<name>Graphics</name>
 	<link>graphics.html</link>		
 </ch>
+
 
