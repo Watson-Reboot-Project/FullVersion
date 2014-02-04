@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch11s4p1b.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch11s4p1d.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+			
+			<p class="Section">
+				11.4.1.3 Binary arithmetic
+			</p>
+			
+			<p>
+				So far we have learned how to represent unsigned numbers in base ten, base two, and base sixteen.  We have also studied ways of converting numbers between these three bases.  We now turn our attention to the question of how arithmetic operations, such as addition and multiplication, can be performed on unsigned binary numbers.<span class="Footnote" title="Footnote: We’ll hold off on subtraction until we discuss ways of representing negative numbers in the next part of this section."><a href="#ftn4" id="body_ftn4">[4]</a></span>
+			</p>
+			
+			<p>
+				Let’s begin by examining binary addition of single digit numbers.   First of all, zero plus zero equals zero, which is represented in binary as: 
+			</p>
+			
+			<p class="Subfigure">
+				0 + 0 = 0
+			</p>
+			
+			<p>
+				Zero plus one and one plus zero both equal one.  These expressions are represented as:
+			</p>
+			
+			<p class="Subfigure">
+				0 + 1 = 1
+			</p>
+			
+			<p class="Subfigure">
+				1 + 0 = 1
+			</p>
+			
+			<p>
+				Finally, one plus one equals two.  But, two cannot be represented as a single binary digit.  Instead, we record a zero in the one’s position and carry a one over to the two’s position.
+			</p>
+			
+			<p>
+				This situation can be represented as:
+			</p>
+			
+			<p class="Subfigure">
+				1 + 1 = 0  [carry 1]
+			</p>
+			
+			<p>
+				Multi-digit binary addition uses the same strategy employed in decimal addition.  One works right to left from the units column to the most significant digit making sure that the carry from the previous column is added to the current column.  Because the carry digit for a particular column may be “1” at the same time the corresponding digits of both of the numbers being added are also “1”, it is possible to encounter “one plus one plus one equal three” while performing addition.  Since 11<span class="Subscript">two</span> equals three, “1”should be placed in the current position and another “1” carried over to the position immediately to the left of the current position.  This situation can be represented as:
+			</p>
+			
+			<p class="Subfigure">
+				1 + 1 + 1 = 1 [carry 1]
+			</p>
+			
+			<p>
+				Figure 11.19 illustrates two separate binary addition operations.  Part (a) of the figure presents the addition of 38<span class="Subscript">ten</span> + 15<span class="Subscript">ten</span> = 53<span class="Subscript">ten</span> written in both its binary and decimal form.  Part (b) of the figure involves slightly larger numbers, but the principle is the same.  The expression 43<span class="Subscript">ten</span> + 58<span class="Subscript">ten</span> = 101<span class="Subscript">ten</span> is shown in both its binary and decimal form.
+			</p>
+			
+			<img src="Images/AssemblyIMGS/fig11-19a.png" alt="" class="Image">
+			
+			<p class="Figure">
+				Part (a) – Thirty-eight plus fifteen
+			</p>
+			
+			<img src="Images/AssemblyIMGS/fig11-19b.png" alt="" class="Image">
+			
+			<p class="Figure">
+				Part (b) – Forty-three plus fifty-eight
+			</p>
+			
+			<p class="Figure">
+				Figure 11.19:  Addition in base two and base ten
+			</p>
+			
+			<p>
+				Binary multiplication is also fairly simple.  Zero times zero equals zero, as does zero times one and one times zero.  One times one equals one.  These expressions can be represented in base two as:
+			</p>
+			
+			<p class="Subfigure">
+				0 &#215; 0 = 0
+			</p>
+			
+			<p class="Subfigure">
+				0 &#215; 1 = 0
+			</p>
+			
+			<p class="Subfigure">
+				1 &#215; 0 = 0
+			</p>
+			
+			<p class="Subfigure">
+				1 &#215; 1 = 1
+			</p>
+			
+			<p>
+				Notice that none of these four expressions generate a carry and only one generates a result other than zero.  As we will see below, these features lead to binary multiplication being easy to perform, in fact easier to perform than decimal multiplication.
+			</p>
+			
+			<p>
+				Multiplication of multi-digit binary numbers works in a manner similar to multiplication of decimal numbers.  As we all learned in grade school, multiplication problems are solved by adding together several partial products.  A partial product is formed by multiplying a single digit of the bottom number times the entire top number.  For example, given the base ten multiplication problem 472 &#215; 104, we would solve it in the following way.
+			</p>
+			
+			<!--ill4
+			<table border="0" cellspacing="0" cellpadding="0" class="Table32">
+			<colgroup><col width="49"/><col width="49"/><col width="49"/><col width="49"/><col width="49"/></colgroup><tr class="Table321"><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p class="P19"> </p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p class="P19"> </p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>4</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>7</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>2</p></td></tr><tr class="Table321"><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p class="P19"> </p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p class="P19"> </p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p>1</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p>0</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p>4</p></td></tr><tr class="Table321"><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p class="P19"> </p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>1</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>8</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>8</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>8</p></td></tr><tr class="Table321"><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p>4</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p>7</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p>2</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p class="P19"> </p></td><td style="text-align:left;width:0.4438in; " class="Table32_A2"><p class="P19"> </p></td></tr><tr class="Table321"><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>4</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>9</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>0</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>8</p></td><td style="text-align:left;width:0.4438in; " class="Table32_A1"><p>8</p></td></tr></table>
+			-->
+			
+			<img src="Images/AssemblyIMGS/ill11-4.png" alt="" class="Image">
+			
+			<p>
+				The first partial product is given by multiplying 4 times 472, which is 1888.  The second partial product is computed as 0 times 472, which is 0.  Normally we do not write down zero partial products.  The final partial product is 1 times 472.   Notice that we write this partial product so that its rightmost digit is directly under the digit of the second number that we multiplied by (i.e., 1). We then add the partial products, column by column from right to left, in order to obtain the final answer, 49,088 in this case.  
+			</p>
+			
+			<p>
+				We apply this same strategy to perform binary multiplication.  Figure 11.20 illustrates two separate binary multiplication operations.  Part (a) of the figure presents 19<span class="Subscript">ten</span> &#215; 5<span class="Subscript">ten</span> = 95<span class="Subscript">ten</span> (10011<span class="Subscript">two</span> &#215; 101<span class="Subscript">two</span> = 1011111<span class="Subscript">two</span>) in both binary and decimal notations.
+			</p>
+			
+			<img src="Images/AssemblyIMGS/fig11-20a.png" alt="" class="Image">
+
+			<p class="Figure">
+				Part (a) – Nineteen times five
+			</p>
+			
+			<img src="Images/AssemblyIMGS/fig11-20b.png" alt="" class="Image">
+
+			<p class="Figure">
+				Part (b) – One hundred forty-three times nineteen
+			</p>
+			
+			<p class="Figure">
+				Figure 11.20:  Multiplication in base two and base ten
+			</p>
+			
+			<p>
+				Again we form partial products by multiplying the top number by each of the digits of the bottom number.  Since the rightmost digit of the second number is “1”, the first partial product is given by 1 times 10011, or 10011.  The rightmost digit of this partial product is aligned with the rightmost digit of the second number.  We do not record the partial product for zero times something, so multiplying the first number by the second digit of the second number, “0”, doesn’t generate anything.  The final partial product is computed as 1 times 10011 where the rightmost digit of this result is aligned beneath the third digit of the second number. The partial products are then added to obtain the final result, 1011111<span class="Subscript">two</span>.
+			</p>
+			
+			<p>
+				As we have just seen, in binary multiplication the formation of the partial products is very easy since we are only multiplying by “1” ( in which case we copy the top number into the proper position ) or “0” ( in which case we do nothing ).  The only “difficult” steps in this process are making sure we align the partial products correctly and compute the sum of those products accurately.
+			</p>
+			
+			<p>
+				Part (b) of Figure 11.20 illustrates binary multiplication on somewhat larger numbers. We copy the top number as a partial product everywhere there is a 1 digit in the second number, each time making sure we align the partial product so that the least significant digit is directly underneath the 1 we are multiplying by.  We get the final result by adding the partial products together.
+			</p>
+			
+			<p>
+				When adding together the partial products it is important that we handle the carry values properly.  Because there is no limit on the size of the numbers to be multiplied, it is possible that there will be a large number of partial products.  This situation can lead to carry values that extend over multiple columns.  To illustrate, if, when summing partial products, we encounter a column of five 1’s, we would add 1 + 1 + 1 + 1 + 1 to get 101<span class="Subscript">two.</span>  We would then need to write a “1” in the current column and carry “10”; placing the “0” in the column immediately to the left of the current column and the “1” immediately to the left of that column.  This is no different from the situation we encounter when adding up a long series of decimal numbers.  If the current column of digits added to one hundred and one, we would place a “1” in the current column, carry a “0” to the next column, and carry “1” to the column after that.
+			</p>
+			
+			<p>
+				Now let’s take a closer look at the summation of the partial products in Part (b) of Figure 11.20.  The rightmost column of partial products offers no problem.  It is simply “1” plus nothing, giving a result of “1” with no carry.  The second column requires us to add 1 + 1 resulting in a “0” with “1” carried over to the third column.  Column three is interesting and is illustrated below:
+			</p>
+			
+			<!--ill5
+			<table border="0" cellspacing="0" cellpadding="0" class="Table35">
+			<colgroup><col width="45"/><col width="45"/><col width="45"/><col width="45"/><col width="45"/></colgroup><tr class="Table351"><td style="text-align:left;width:0.4021in; " class="Table35_A1"><p class="P47">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_A1"><p class="P47">0</p></td><td style="text-align:left;width:0.4021in; " class="Table35_A1"><p class="P47">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_A1"><p class="P48"> </p></td><td style="text-align:left;width:0.4028in; " class="Table35_A1"><p class="P48"> </p></td></tr><tr class="Table351"><td style="text-align:left;width:0.4021in; " class="Table35_A2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table35_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table35_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_E2"><p class="Subfigure">1</p></td></tr><tr class="Table351"><td style="text-align:left;width:0.4021in; " class="Table35_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table35_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_E3"><p class="P44"> </p></td></tr><tr class="Table351"><td style="text-align:left;width:0.4021in; " class="Table35_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table35_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_D4"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table35_E4"><p class="P44"> </p></td></tr><tr class="Table351"><td style="text-align:left;width:0.4021in; " class="Table35_A5"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table35_B5"><p class="P44"> </p></td><td style="text-align:left;width:0.4021in; " class="Table35_C5"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table35_D5"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table35_E5"><p class="P44"> </p></td></tr><tr class="Table351"><td style="text-align:left;width:0.4021in; " class="Table35_A6"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table35_B6"><p class="P44"> </p></td><td style="text-align:left;width:0.4021in; " class="Table35_C6"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table35_D6"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table35_E6"><p class="Subfigure">1</p></td></tr></table>
+			-->
+			
+			<img src="Images/AssemblyIMGS/ill11-5.png" alt="" class="Image">
+			
+			<p>
+				The sum of the digits in column three, including the carry, is four, 100<span class="Subscript">two</span>.  Hence, a “0” is written in column three, a “0” is carried to column four and a “1” to column five.
+			</p>
+			
+			<p>
+				Column four contains three 1’s giving us a sum of 11<span class="Subscript">two</span>.  Hence, we write a “1” in column four and carry a “1” to column five. Note that the “1” we just carried to column five joins the carry of “1” already in that column.
+			</p>
+			
+			<!--ill6
+			<table border="0" cellspacing="0" cellpadding="0" class="Table36">
+			<colgroup><col width="45"/><col width="45"/><col width="45"/><col width="45"/><col width="45"/></colgroup><tr class="Table361"><td style="text-align:left;width:0.4021in; " class="Table36_A1"><p class="P47">1</p><p class="P47">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_A1"><p class="P48"> </p><p class="P47">0</p></td><td style="text-align:left;width:0.4021in; " class="Table36_A1"><p class="P48"> </p><p class="P47">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_A1"><p class="P48"> </p></td><td style="text-align:left;width:0.4028in; " class="Table36_A1"><p class="P48"> </p></td></tr><tr class="Table361"><td style="text-align:left;width:0.4021in; " class="Table36_A2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table36_B2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table36_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_E2"><p class="Subfigure">1</p></td></tr><tr class="Table361"><td style="text-align:left;width:0.4021in; " class="Table36_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_B2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table36_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_E3"><p class="P44"> </p></td></tr><tr class="Table361"><td style="text-align:left;width:0.4021in; " class="Table36_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_B2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table36_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_D4"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table36_E4"><p class="P44"> </p></td></tr><tr class="Table361"><td style="text-align:left;width:0.4021in; " class="Table36_A5"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table36_B5"><p class="P44"> </p></td><td style="text-align:left;width:0.4021in; " class="Table36_C5"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table36_D5"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table36_E5"><p class="P44"> </p></td></tr><tr class="Table361"><td style="text-align:left;width:0.4021in; " class="Table36_A6"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table36_B6"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table36_C6"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table36_D6"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table36_E6"><p class="Subfigure">1</p></td></tr></table>
+			-->
+			
+			<img src="Images/AssemblyIMGS/ill11-6.png" alt="" class="Image">
+			
+			<p>
+				Column five now contains a total of five 1’s (including the two carries).  Since five is written in binary as 101<span class="Subscript">two</span>, we write a “1” in column five, carry a “0” into column six and a “1” into column seven.  The current state of the summation of partial products after adding the contents of column five is illustrated below:
+			</p>
+			
+			<!--ill7
+			<table border="0" cellspacing="0" cellpadding="0" class="Table37">
+			<colgroup><col width="45"/><col width="45"/><col width="45"/><col width="45"/><col width="45"/><col width="45"/><col width="45"/></colgroup><tr class="Table371"><td style="text-align:left;width:0.4021in; " class="Table37_A1"><p class="P48"> </p><p class="P47">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_A1"><p class="P48"> </p><p class="P47">0</p></td><td style="text-align:left;width:0.4021in; " class="Table37_A1"><p class="P47">1</p><p class="P47">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_A1"><p class="P48"> </p><p class="P47">0</p></td><td style="text-align:left;width:0.4021in; " class="Table37_A1"><p class="P48"> </p><p class="P47">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_A1"><p class="P48"> </p></td><td style="text-align:left;width:0.4028in; " class="Table37_A1"><p class="P48"> </p></td></tr><tr class="Table371"><td style="text-align:left;width:0.4021in; " class="Table37_A2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4021in; " class="Table37_A2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4021in; " class="Table37_C2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table37_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_E2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_G2"><p class="Subfigure">1</p></td></tr><tr class="Table371"><td style="text-align:left;width:0.4021in; " class="Table37_A2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4021in; " class="Table37_A2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4021in; " class="Table37_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_E2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_G3"><p class="P44"> </p></td></tr><tr class="Table371"><td style="text-align:left;width:0.4021in; " class="Table37_A2"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4021in; " class="Table37_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_C2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_A2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_E2"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_F4"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table37_G4"><p class="P44"> </p></td></tr><tr class="Table371"><td style="text-align:left;width:0.4021in; " class="Table37_A5"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_B5"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_C5"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_D5"><p class="P44"> </p></td><td style="text-align:left;width:0.4021in; " class="Table37_E5"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table37_F5"><p class="P44"> </p></td><td style="text-align:left;width:0.4028in; " class="Table37_G5"><p class="P44"> </p></td></tr><tr class="Table371"><td style="text-align:left;width:0.4021in; " class="Table37_A6"><p class="P44"> </p></td><td style="text-align:left;width:0.4021in; " class="Table37_B6"><p class="P44"> </p></td><td style="text-align:left;width:0.4021in; " class="Table37_C6"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4028in; " class="Table37_D6"><p class="Subfigure">1</p></td><td style="text-align:left;width:0.4021in; " class="Table37_E6"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table37_F6"><p class="Subfigure">0</p></td><td style="text-align:left;width:0.4028in; " class="Table37_G6"><p class="Subfigure">1</p></td></tr></table>
+			-->
+			
+			<img src="Images/AssemblyIMGS/ill11-7.png" alt="" class="Image">
+			
+			<p>
+				The remainder of the computation is carried out in a similar manner, always being careful to handle the carries properly.  The final result of the computation can be seen in Part (b) of Figure 11.20.
+			</p>
+			
+			<p class="Section">
+				Exercises for Section 11.4.1.3
+			</p>
+			
+			<ol>
+				<li>
+					Add the following pairs of binary numbers. 
+				<img src="Images/AssemblyIMGS/ex11-4-1-3-num1.png" alt="" class="Image">
+			<!--table of stuff
+			<table border="0" cellspacing="0" cellpadding="0" class="Table38">
+			<colgroup><col width="105"/><col width="194"/><col width="69"/><col width="194"/></colgroup><tr class="Table381"><td style="text-align:left;width:0.95in; " class="Table38_A1"><p class="P12">a.</p></td><td style="text-align:left;width:1.75in; " class="Table38_A1"><p>1010 + 1010</p></td><td style="text-align:left;width:0.625in; " class="Table38_A1"><p class="P12">d.</p></td><td style="text-align:left;width:1.75in; " class="Table38_A1"><p class="P12">1001 0111 + 1101 0110</p></td></tr><tr class="Table381"><td style="text-align:left;width:0.95in; " class="Table38_A1"><p class="P12">b.</p></td><td style="text-align:left;width:1.75in; " class="Table38_A1"><p>1111 0000 + 0000 1111</p></td><td style="text-align:left;width:0.625in; " class="Table38_A1"><p class="P12">e.</p></td><td style="text-align:left;width:1.75in; " class="Table38_A1"><p>0001 1111 + 1</p></td></tr><tr class="Table381"><td style="text-align:left;width:0.95in; " class="Table38_A1"><p class="P12">c.</p></td><td style="text-align:left;width:1.75in; " class="Table38_A1"><p>10 + 1111</p></td><td style="text-align:left;width:0.625in; " class="Table38_A1"><p class="P12">f.</p></td><td style="text-align:left;width:1.75in; " class="Table38_A1"><p>1011 1011 + 0011 0100</p></td></tr></table>
+				-->
+				</li>
+				<br/>
+				<li>
+					Multiply the following pairs of binary numbers. 
+					<img src="Images/AssemblyIMGS/ex11-4-1-3-num2.png" alt="" class="Image">
+			<!--table of stuff		
+			<table border="0" cellspacing="0" cellpadding="0" class="Table39">
+			<colgroup><col width="105"/><col width="194"/><col width="69"/><col width="194"/></colgroup><tr class="Table391"><td style="text-align:left;width:0.95in; " class="Table39_A1"><p class="P12">a.</p></td><td style="text-align:left;width:1.75in; " class="Table39_A1"><p>1010 &#215;1010</p></td><td style="text-align:left;width:0.625in; " class="Table39_A1"><p class="P12">d.</p></td><td style="text-align:left;width:1.75in; " class="Table39_A1"><p><span class="T3">1001 1100 </span>&#215;<span class="T3"> 0110 0110</span></p></td></tr><tr class="Table391"><td style="text-align:left;width:0.95in; " class="Table39_A1"><p class="P12">b.</p></td><td style="text-align:left;width:1.75in; " class="Table39_A1"><p><span class="T3">10 </span>&#215;<span class="T3"> 11 1111</span></p></td><td style="text-align:left;width:0.625in; " class="Table39_A1"><p class="P12">e.</p></td><td style="text-align:left;width:1.75in; " class="Table39_A1"><p><span class="T3">11 </span>&#215;<span class="T3"> 1001 1011</span></p></td></tr><tr class="Table391"><td style="text-align:left;width:0.95in; " class="Table39_A1"><p class="P12">c.</p></td><td style="text-align:left;width:1.75in; " class="Table39_A1"><p><span class="T3">10011 </span>&#215;<span class="T3"> 11 0111</span></p></td><td style="text-align:left;width:0.625in; " class="Table39_A1"><p class="P12">f.</p></td><td style="text-align:left;width:1.75in; " class="Table39_A1"><p>1001 1011 &#215; 11</p></td></tr></table>
+				-->
+				</li>
+			</ol>
+			
+			<!-- End main content -->
+			<hr />
+			<!-- Footnotes -->
+			<p class="Section">
+				Footnotes
+			</p>
+			
+			<p class="Footnote"><span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn4" href="#body_ftn4">[4]</a></span> We’ll hold off on subtraction until we discuss ways of representing negative numbers in the next part of this section.</p>
+			
+			<!-- Footnotes End -->
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+			<!--
+			<footer>
+				<p>
+					&copy; Copyright  by Burt
+				</p>
+			</footer>
+			-->
+		</div>
+	</body>
+</html>
