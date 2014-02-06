@@ -14,6 +14,8 @@
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	</head>
 
@@ -110,7 +112,8 @@
 				<span>A circuit to implement the behavior of this table will need two inputs (one for each of the single-bit numbers) and two outputs (one for the sum and one for the carry). Constructing such a circuit is fairly straightforward. Notice that the values in the S column correspond to an exclusive or,</span> <span class="Ital">xor</span> <span>, of the two inputs, while the values in the C column correspond to an</span> <span class="Ital">and</span> <span>of both inputs. The circuit can thus be constructed from these two sub-circuits as illustrated in Figure 12.13.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.13</h1>
+			<div id="topDiv-13" class="Centered"></div>
+			<div id="container-13" class="Centered"></div>
 
 			<p class="Figure">
 				Figure 12.13: An implementation of a “half adder”
@@ -207,11 +210,30 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 		</div>
+		<script src="js/DigiLogic/Controller.js"></script>
+			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
+			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
+			<script src="js/DigiLogic/NotGate.js"></script>
+			<script src="js/DigiLogic/Connector.js"></script>
+			<script src="js/DigiLogic/InputNode.js"></script>
+			<script src="js/DigiLogic/OutputNode.js"></script>
+			<script src="js/DigiLogic/PopupMenu.js"></script>
+			<script src="js/DigiLogic/Figures.js"></script>
+			<script src="js/DigiLogic/TruthTable.js"></script>
+			<script src="js/DigiLogic/Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+		
+		<script>
+			var figure13 = new DigitalLogicFigure("container-13", "13"); 
+		</script>
 	</body>
 </html>

@@ -10,9 +10,34 @@ function Figures(setup, controller, truthTable) {
 		
 		if (figureNum == 'and') {
 			var header = [ "A", "B", "Z" ];
-			adjustScale(250, 100, width, height);
-			checkTable(300, 100, width, height, 0.8, 2, 1, header, false, false);
-			setup.setRatio(100, 310);
+			truthTable.showTruthTable(true);
+			truthTable.createTable(2, 1, header, false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(217);
+			
+			var inputA;
+			var inputB;
+			
+			if (inputVals === null) {
+				inputA = controller.addInput(5, 12, "A", 0);
+				inputB = controller.addInput(5, 38, "B", 0);
+			}
+			else {
+				inputA = controller.addInput(5, 12, "A", inputVals[0]);
+				inputB = controller.addInput(5, 38, "B", inputVals[1]);
+			}
+			
+			var and = controller.addAndGate(50, 25);
+			var output = controller.addOutput(190, 25, "Z");
+			
+			controller.connectComponents(inputA, and, [1]);
+			controller.connectComponents(inputB, and, [2]);
+			controller.connectComponents(and, output);
+		}
+		else if (figureNum == 'andNTT') {
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(217);
 			
 			var inputA;
 			var inputB;
@@ -35,9 +60,34 @@ function Figures(setup, controller, truthTable) {
 		}
 		else if (figureNum == 'or') {
 			var header = [ "A", "B", "Z" ];
-			adjustScale(250, 100, width, height);
-			checkTable(300, 100, width, height, 0.8, 2, 1, header, false, false);
-			setup.setRatio(100, 310);
+			truthTable.showTruthTable(true);
+			truthTable.createTable(2, 1, header, false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(217);
+			
+			var inputA;
+			var inputB;
+			
+			if (inputVals === null) {
+				inputA = controller.addInput(5, 12, "A", 0);
+				inputB = controller.addInput(5, 38, "B", 0);
+			}
+			else {
+				inputA = controller.addInput(5, 12, "A", inputVals[0]);
+				inputB = controller.addInput(5, 38, "B", inputVals[1]);
+			}
+			
+			var or = controller.addOrGate(50, 25);
+			var output = controller.addOutput(190, 25, "Z");
+			
+			controller.connectComponents(inputA, or, [1]);
+			controller.connectComponents(inputB, or, [2]);
+			controller.connectComponents(or, output);
+		}
+		else if (figureNum == 'orNTT') {
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(217);
 			
 			var inputA;
 			var inputB;
@@ -60,9 +110,31 @@ function Figures(setup, controller, truthTable) {
 		}
 		else if (figureNum == 'not') {
 			var header = [ "A", "Z" ];
-			adjustScale(250, 100, width, height);
-			checkTable(300, 100, width, height, 0.8, 1, 1, header, false, false);
-			setup.setRatio(100, 310);
+			truthTable.showTruthTable(true);
+			truthTable.createTable(1, 1, header, false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(217);
+			
+			var inputA;
+			var inputB;
+			
+			if (inputVals === null) {
+				inputA = controller.addInput(5, 25, "A", 0);
+			}
+			else {
+				inputA = controller.addInput(5, 25, "A", inputVals[0]);
+			}
+			
+			var not = controller.addNotGate(50, 25);
+			var output = controller.addOutput(200, 25, "Z");
+			
+			controller.connectComponents(inputA, not);
+			controller.connectComponents(not, output);
+		}
+		else if (figureNum == 'notNTT') {
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(230);
 			
 			var inputA;
 			var inputB;
@@ -81,9 +153,12 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(not, output);
 		}
 		else if (figureNum == 'nor') {
-			adjustScale(200, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(100, 200);
+			/*var header = [ "A", "B", "Z" ];
+			truthTable.createTable(2, 1, header, false);
+			truthTable.showTruthTable(true);*/
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(250);
 			
 			var inputA;
 			var inputB;
@@ -105,9 +180,12 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(nor, output);
 		}
 		else if (figureNum == 'nand') {
-			adjustScale(200, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(100, 200);
+			/*var header = [ "A", "B", "Z" ];
+			truthTable.showTruthTable(true);
+			truthTable.createTable(2, 1, header, false);*/
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(230);
 			
 			var inputA;
 			var inputB;
@@ -128,10 +206,32 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(inputB, nand, [2]);
 			controller.connectComponents(nand, output);
 		}
+		else if (figureNum == 'nand0') {
+			var header = [ "A", "B", "Z" ];
+			truthTable.createTable(2, 1, header, false);
+			truthTable.showTruthTable(true);
+			setup.setInitHeight(100);
+			setup.setInitWidth(376);
+			
+			var inputA;
+			var inputB;
+			
+			inputA = controller.addInput(5, 12, "A", 0);
+			inputB = controller.addInput(5, 38, "B", 0);
+			
+			var and = controller.addAndGate(50, 25);
+			var not = controller.addNotGate(175, 25);
+			var output = controller.addOutput(350, 25, "Z");
+			
+			controller.connectComponents(inputA, and, [1]);
+			controller.connectComponents(inputB, and, [2]);
+			controller.connectComponents(and, not, [0]);
+			controller.connectComponents(not, output);
+		}
 		else if (figureNum == 'and3') {
-			adjustScale(200, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(100, 200);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(230);
 			
 			var inputA;
 			var inputB;
@@ -156,9 +256,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(and, output);
 		}
 		else if (figureNum == 'or3') {
-			adjustScale(200, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(100, 200);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(230);
 			
 			var inputA;
 			var inputB;
@@ -183,9 +283,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(or, output);
 		}
 		else if (figureNum == 'and4') {
-			adjustScale(200, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(100, 200);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(130);
+			setup.setInitWidth(230);
 			
 			var inputA;
 			var inputB;
@@ -215,9 +315,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(and, output);
 		}
 		else if (figureNum == 'or4') {
-			adjustScale(200, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(100, 200);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(130);
+			setup.setInitWidth(230);
 			
 			var inputA;
 			var inputB;
@@ -245,10 +345,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(or, output);
 		}
 		else if (figureNum == 'a') { // pg 409
-			var header = ["A", "B", "C", "Z"];
-			adjustScale(470, 250, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(250, 600);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(130);
+			setup.setInitWidth(450);
 			
 			var input1;
 			var input2;
@@ -276,9 +375,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(and, output);
 		}
 		else if (figureNum == 'b') { // pg 412
-			adjustScale(300, 125, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(125, 300);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(150);
+			setup.setInitWidth(350);
 			
 			var inputA;
 			var inputB;
@@ -312,9 +411,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(or3, output);
 		}
 		else if (figureNum == 'c') { // first circuit page 415
-			adjustScale(400, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(50, 400);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(85);
+			setup.setInitWidth(400);
 			
 			var inputA;
 			var inputB;
@@ -338,9 +437,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(and, output);
 		}
 		else if (figureNum == 'd') { // second circuit page 415
-			adjustScale(400, 100, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(50, 400);
+			truthTable.showTruthTable(false);
+			setup.setInitHeight(100);
+			setup.setInitWidth(400);
 			
 			var inputA;
 			var inputB;
@@ -367,9 +466,8 @@ function Figures(setup, controller, truthTable) {
 			var header = ["A", "B", "Z"];
 			truthTable.showTruthTable(true);
 			truthTable.createTable(2, 1, header, false);
-			setup.setInitWidth(615);
-			setup.setInitHeight(200);
-			setup.setMaxWidth(720);
+			setup.setInitWidth(600);
+			setup.setInitHeight(175);
 			
 			var input1;
 			var input2;
@@ -480,7 +578,6 @@ function Figures(setup, controller, truthTable) {
 			truthTable.createTable(2, 2, header, false);
 			setup.setInitWidth(875);
 			setup.setInitHeight(300);
-			setup.setMaxWidth(1050);
 			
 			var input1;
 			var input2;
@@ -526,14 +623,11 @@ function Figures(setup, controller, truthTable) {
 		}
 		else if (figureNum == 16) { // 3-8 decoder
 			var header = ["A2", "A1", "A0", "D7", "D6", "D5", "D4", "D3", "D2", "D1", "D0"];
-			//adjustScale(700, 750, width, height);
-			//checkTable(750, 750, width, height, 0.8, 3, 8, header, false, false);
-			//setup.setRatio(650, 700);
 			truthTable.showTruthTable(true);
 			truthTable.createTable(3, 8, header, false);
 			setup.setInitHeight(750);
-			setup.setInitWidth(750);
-			setup.setMaxWidth(1200);
+			setup.setInitWidth(775);
+			setup.setInitScale(0.7);
 			
 			var input1;
 			var input2;
@@ -667,10 +761,10 @@ function Figures(setup, controller, truthTable) {
 		}
 		else if (figureNum == 17) {	//8-3 decoder
 			var header = ["D7", "D6", "D5", "D4", "D3", "D2", "D1", "D0", "A2", "A1", "A0" ];
-			adjustScale(600, 400, width, height);
-			checkTable(665, 400, width, height, 1, 8, 3, header, true, false);
-			setup.setRatio(400, 665);
-			setup.setInitHeight(665);
+			truthTable.showTruthTable(true);
+			truthTable.createTable(8, 3, header, true);
+			setup.setInitWidth(660);
+			setup.setInitHeight(400);
 			
 			var input7;
 			var input6;
@@ -749,9 +843,10 @@ function Figures(setup, controller, truthTable) {
 		}
 		else if (figureNum == 18) { // two-input multiplexor
 			var header = [ "S", "D1", "D0", "Z" ];
-			adjustScale(500, 250, width, height);
-			checkTable(550, 250, width, height, 1, 3, 1, header, false, false);
-			setup.setRatio(300, 600);
+			truthTable.showTruthTable(true);
+			truthTable.createTable(3, 1, header, false);
+			setup.setInitWidth(500);
+			setup.setInitHeight(175);
 			
 			var input1;
 			var input2;
@@ -786,9 +881,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(or, output);
 		}
 		else if (figureNum == 19) { // four-input multiplexor
-			adjustScale(500, 450, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(450, 500);
+			truthTable.showTruthTable(false);
+			setup.setInitWidth(675);
+			setup.setInitHeight(425);
 			
 			var inputS0;
 			var inputS1;
@@ -862,9 +957,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(or, output);
 		}
 		else if (figureNum == 21) { // four-output demultiplexor
-			adjustScale(500, 330, width, height);
-			checkTable(0, 0, 0, 0, 0, 0, 0, 0, 0, true);
-			setup.setRatio(330, 500);
+			truthTable.showTruthTable(false);
+			setup.setInitWidth(550);
+			setup.setInitHeight(375);
 			
 			var inputS0;
 			var inputS1;

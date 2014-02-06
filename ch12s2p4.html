@@ -14,6 +14,9 @@
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	</head>
 
@@ -101,7 +104,9 @@
 				Any device, whose operation can be defined in terms of a truth table or Boolean expression, can be implemented using only the fundamental logic gates: <span class="Ital">and</span>, <span class="Ital">or</span>, and <span class="Ital">not</span>. However, a number of additional gates are usually defined, as they prove useful for practical purposes. For example, it is frequently the case that a <span class="Ital">not</span> will immediately follow an <span class="Ital">and</span> gate, like so:
 			</p>
 
-			<h1>INSERT FIGURE</h1>
+			<div id="topDiv-nand0" class="Centered"></div>
+			<div id="container-nand0" class="Centered"></div>
+			
 			<p>
 				<span>Since this is such a common occurrence, the circuit has been given a name (</span> <span class="Ital">nand</span> <span>) and a gate symbol (the</span> <span class="Ital">and</span> <span>symbol combined with the bubble from the</span> <span class="Ital">not</span> <span>symbol). Similarly,</span> <span class="Ital">not</span> <span>often follows</span> <span class="Ital">or</span> <span>, so there is a</span> <span class="Ital">nor</span> <span>gate whose symbol is the bubble from the</span> <span class="Ital">not</span> <span>attached to the</span> <span class="Ital">or</span> <span>symbol.</span>
 			</p>
@@ -113,13 +118,30 @@
 			<p>
 				<span>As another example, the basic</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates support only two inputs, but a circuit designer will frequently need to</span> <span class="Ital">and</span> <span>or</span> <span class="Ital">or</span> <span>more than two inputs. For this reason multi-input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates exist. Figure 12.10 presents the three and four input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates along with their Boolean expressions. </span>
 			</p>
-
-			<h1>INSERT FIGURE 12.9</h1>
+			<p class="Centered">Nand Gate</p>
+			<div id="topDiv-nand" class="Centered"></div>
+			<div id="container-nand" class="Centered"></div>
+			<p class="Centered">Nor Gate</p>
+			<div id="topDiv-nor" class="Centered"></div>
+			<div id="container-nor" class="Centered"></div>
+			
 			<p class="Figure">
 				Figure 12.9: <span class="Ital">Nand</span> and <span class="Ital">nor</span> gates
 			</p>
 
-			<h1>INSERT FIGURE 12.10</h1>
+			<div id="topDiv-and3" class="Centered"></div>
+			<div id="container-and3" class="Centered"></div>
+			
+			<div id="topDiv-or3" class="Centered"></div>
+			<div id="container-or3" class="Centered"></div>
+			
+				
+			<div id="topDiv-and4" class="Centered"></div>
+			<div id="container-and4" class="Centered"></div>
+			
+			<div id="topDiv-or4" class="Centered"></div>
+			<div id="container-or4" class="Centered"></div>
+			
 			<p class="Figure">
 				<span>Figure 12.10: Three and four input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates</span>
 			</p>
@@ -127,7 +149,10 @@
 			<p>
 				While these gates are often quite convenient, remember that it is always possible to construct equivalent circuits from the underlying two-input gates. For example, the circuit:
 			</p>
-
+			
+			<div id="topDiv-b" class="Centered"></div>
+			<div id="container-b" class="Centered"></div>
+				
 			<p>
 				<span>represents one possible implementation of a four-input</span> <span class="Ital">or</span> <span>.</span> <span class="Footnote"><a href="#ftn1" id="body_ftn1">[1]</a></span> <span>&nbsp;The other multi-input gates can be constructed in a similar manner.</span>
 			</p>
@@ -265,11 +290,37 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 		</div>
+		<script src="js/DigiLogic/Controller.js"></script>
+			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
+			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
+			<script src="js/DigiLogic/NotGate.js"></script>
+			<script src="js/DigiLogic/Connector.js"></script>
+			<script src="js/DigiLogic/InputNode.js"></script>
+			<script src="js/DigiLogic/OutputNode.js"></script>
+			<script src="js/DigiLogic/PopupMenu.js"></script>
+			<script src="js/DigiLogic/Figures.js"></script>
+			<script src="js/DigiLogic/TruthTable.js"></script>
+			<script src="js/DigiLogic/Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+		
+		<script>
+			var figurenand0 = new DigitalLogicFigure("container-nand0", "nand0");
+			var figurenand = new DigitalLogicFigure("container-nand", "nand");
+			var figurenor = new DigitalLogicFigure("container-nor", "nor");
+			var figureand3 = new DigitalLogicFigure("container-and3", "and3");
+			var figureor3 = new DigitalLogicFigure("container-or3", "or3"); 
+			var figureand4 = new DigitalLogicFigure("container-and4", "and4");
+			var figureor4 = new DigitalLogicFigure("container-or4", "or4"); 
+			var figureb = new DigitalLogicFigure("container-b", "b"); 
+		</script>
 	</body>
 </html>

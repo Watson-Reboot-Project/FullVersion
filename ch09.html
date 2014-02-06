@@ -881,13 +881,16 @@
 			<p>
 				(defun head (L)
 			</p>
+			
 			<p class="Subblockcenter">
-				<span> (car L)</span>
+				<span> </span>(car L)
 			</p>
+			
 			<p>
-				<span>   )</span>
+				)
 			</p>
 			</span>
+
 			<p>
 				The definition is a list.  The first element of that list is the keyword <span class="Subfigure">defun</span>, an atom.  The second element of the list is the name of the function we are defining, <span class="Subfigure">head</span>.  The third element of every <span class="Subfigure">defun</span> list is always itself a list.  This list contains symbolic atoms that will act as placeholders for the function’s inputs.  
 			</p>
@@ -928,60 +931,31 @@
 			<p class="Figure">
 				(a) The general format of the <span class="Subfigure">defun</span> procedure
 			</p>
-
-			<p class="Subfigure">
-				<span class="T9">  </span>(defun head (L)
+			<span class="Blockcenter">
+			<p>
+				(defun head (L)
 			</p>
-			<p class="P28">
-				<span> </span><span> (car L)</span>
+			
+			<p class="Subblockcenter">
+				<span> </span>(car L)
 			</p>
-			<p class="P28">
-				<span>    )</span>
+			
+			<p>
+				)
 			</p>
+			</span>
 			<p class="Figure">
 				(b) Definition of a function that returns the first element (head) of a list
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(head (quote </span><span class="T11">(this is a list)</span><span class="Subfigure">))</span>
-			</p>
-			<div class="P11">
-				<p>
-					 
-				</p>
-				<p>
-					 
-				</p>
-			</div>
-			<p>
-				<span> </span><span> </span><span> </span><span> </span><span> </span><span>  <span class="Subfigure">quote</span></span>
-			</p>
-
-			<p class="P12">
-				(this is a list)
-			</p>
-			<div class="P13">
-				<p>
-					 
-				</p>
-			</div>
-			<p class="P27">
-				 <span class="T8">head</span>                      
-			</p>
-			<p class="P36">
-				<span class="T9"> </span>car
-			</p>
-
-			<p class="P12">
-				this
-			</p>
+			<h1>INSERT MISSINGOBJECT HERE</h1>
 
 			<p class="Figure">
 				(c) Invocation and return of user-defined function <span class="Subfigure">head</span>
 			</p>
 
 			<p class="Figure">
-				Figure 9.11:  An overview of user-defined functions in Lisp
+				Figure 9.12:  An overview of user-defined functions in Lisp
 			</p>
 
 			<p>
@@ -993,56 +967,54 @@
 			</p>
 
 			<p>
-				Figure 9.11 contains a summary of user-defined Lisp functions.  Part (a) describes the format of the <span class="Subfigure">defun</span> procedure.  Part (b) presents our example user-defined function, <span class="Subfigure">head</span>.  Part (c) illustrates function invocation and return using the definition given in Part (b).
+				Figure 9.12 contains a summary of user-defined Lisp functions.  Part (a) describes the format of the <span class="Subfigure">defun</span> procedure.  Part (b) presents our example user-defined function, <span class="Subfigure">head</span>.  Part (c) illustrates function invocation and return using the definition given in Part (b).
 			</p>
 
 			<p>
 				Let’s look at some additional function definitions.  First up, we could do for <span class="Subfigure">cdr</span> what we did for <span class="Subfigure">car</span> – create a new function with the same functionality but a better name.  Here is a definition for a new version of <span class="Subfigure">cdr</span> called <span class="Subfigure">tail</span>.
 			</p>
 
-			<p class="Subfigure">
-				<span class="T9">  </span>(defun tail (L)
+			<span class="Blockcenter">			
+			<p>
+				(defun tail (L)
 			</p>
-			<p class="P28">
-				<span> </span><span> (cdr L)</span>
+			<p class="Subblockcenter">
+				<span>  </span>(cdr L)
 			</p>
-			<p class="P4">
-				<span>  </span><span> </span><span> </span><span>    )</span><span> </span><span> </span>
+			<p>
+				)
 			</p>
-			<p class="P4">
-				 
-			</p>
+			</span>
 			<p>
 				It also might be useful if we defined a group of functions that retrieved the second, third, and fourth elements of a list, since those are tasks that are performed quite frequently.   One way of defining <span class="Subfigure">second</span>, using only built-in functions, would be
 			</p>
 
-			<p class="Subfigure">
+			<span class="Blockcenter">
+			<p>
 				(defun second (L)
 			</p>
-			<p class="P28">
-				<span> </span><span> (car (cdr L))</span>
+			<p class="Subblockcenter">
+				<span>  </span>(car (cdr L))
 			</p>
-			<p class="P28">
-				<span>  )</span>
+			<p>
+				)
 			</p>
-			<p class="P4">
-				 
-			</p>
+			</span>
 			<p>
 				We could also define <span class="Subfigure">second</span> using <span class="Subfigure">head</span> and <span class="Subfigure">tail</span>.
 			</p>
-			<p class="P4">
-				 
+
+			<span class="Blockcenter">
+			<p>
+				(defun second (L)
 			</p>
-			<p class="Subfigure">
-				<span class="T9">  </span>(defun second (L)
+			<p class="Subblockcenter">
+				<span>  </span>(head (tail L))
 			</p>
-			<p class="P28">
-				<span> </span><span> (head (tail L))</span>
+			<p>
+				)
 			</p>
-			<p class="P28">
-				<span>    )</span>
-			</p>
+			</span>
 
 			<p>
 				Definitions of <span class="Subfigure">third</span> and <span class="Subfigure">fourth</span> are left as exercises.  Most versions of Lisp include <span class="Subfigure">second</span>, <span class="Subfigure">third</span>, and <span class="Subfigure">fourth</span> as built-in functions, but they are called by the more cryptic names <span class="Subfigure">cadr</span>, <span class="Subfigure">caddr</span>, and <span class="Subfigure">cadddr</span>, due to their underlying definitions – i.e., <span class="Subfigure">cadr</span> is implemented as<span class="Subfigure">(car(cdr L))</span>, <span class="Subfigure">caddr</span> as <span class="Subfigure">(car(cdr(cdr L)))</span>, and so forth.
@@ -1051,51 +1023,50 @@
 			<p>
 				In addition to list manipulation based functions, mathematical functions can also be written in Lisp.  For example,
 			</p>
-			<p class="P4">
-				 
+			<span class="Blockcenter">
+			<p>
+				(defun second (NUM)
 			</p>
-			<p class="Subfigure">
-				<span class="T9">  </span>(defun square (NUM)
+			<p class="Subblockcenter">
+				<span>  </span>( * NUM NUM)
 			</p>
-			<p class="P28">
-				<span> </span><span> ( * NUM NUM )</span>
+			<p>
+				)
 			</p>
-			<p class="P28">
-				<span>   )</span>
-			</p>
+			</span>
 
 			<p>
 				Defines a function that takes a numeric atom, a number, and returns its <span class="Subfigure">square</span> – i.e., multiplies the number by itself.  A slightly more complex mathematical oriented example would be a function that converts a temperature reading from degrees Fahrenheit to degrees Celsius.  The conversion formula is <span class="Subfigure">C = (F – 32)/1.8</span>.  Here is the function definition in Lisp using the name <span class="Subfigure">f-to-c</span>:
 			</p>
-
-			<p class="Emphasized">
-				<span class="T9">        </span>(defun f-to-c (TEMP)
+			<span class="Blockcenter">
+			<p>
+				(defun f-to-c (TEMP)
 			</p>
-			<p class="Emphasized">
-				<span class="T9">            </span>( / ( - TEMP 32) 1.8)
+			<p class="Subblockcenter">
+				<span>  </span>( / ( - TEMP 32) 1.8)
 			</p>
-			<p class="Emphasized">
-				<span class="T9">        </span>)
+			<p>
+				)
 			</p>
-
+			</span>
 			<p>
 				Calling <span class="Subfigure">(f-to-c 32)</span> returns <span class="Subfigure">0.0</span>, <span class="Subfigure">while</span><span class="Subfigure">(f-to-c 212)</span> returns <span class="Subfigure">100.0</span>.
 			</p>
-			<p class="Figure">
-				<span class="T5"> </span><span class="Subfigure">(cond (</span><span class="Italicized">condition</span><span class="Subscript">1</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">1</span><span class="Subfigure">)</span>
+			<p class="Blockcenter">
+				<span class="Subfigure">(cond (</span><span class="Italicized">condition</span><span class="Subscript">1</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">1</span><span class="Subfigure">)</span>
 			</p>
-			<p class="P20">
-				<span class="T5">      </span><span class="Subfigure">(</span><span class="Italicized">condition</span><span class="Subscript">2</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">2</span><span class="Subfigure">)</span>
+			<p class="Subfigure">
+				<span class="Subfigure">(</span><span class="Italicized">condition</span><span class="Subscript">2</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">2</span><span class="Subfigure">)</span>
 			</p>
-			<p class="P20">
-				<span class="T5">          </span> :             :
+			<p class="Subfigure">
+			 :             :
 			</p>
-			<p class="P20">
-				<span class="T5">      </span><span class="Subfigure">(</span><span class="Italicized">condition</span><span class="Subscript">n</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">n</span><span class="Subfigure">))</span>
+			<p class="Subfigure">
+				<span class="Subfigure">(</span><span class="Italicized">condition</span><span class="Subscript">n</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">n</span><span class="Subfigure">))</span>
 			</p>
 
 			<p class="Figure">
-				Figure 9.12:  The format of the <span class="Subfigure">cond</span> function
+				Figure 9.13:  The format of the <span class="Subfigure">cond</span> function
 			</p>
 
 			<p>
@@ -1272,11 +1243,6 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 		</div>
 	</body>
 </html>

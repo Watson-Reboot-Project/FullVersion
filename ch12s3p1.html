@@ -14,6 +14,9 @@
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	</head>
 
@@ -101,7 +104,7 @@
 				<span>An “exclusive or”, or</span> <span class="Ital">xor</span> <span>, has two inputs and a single output. Its behavior is defined by the following truth table, where the inputs are labeled “A” and “B” and the output is labeled “Z”.</span>
 			</p>
 
-			<h1>INSERT XOR</h1>
+			<h1>INSERT XOR TABLE</h1>
 
 			<p>
 				<span>Like the standard two-input</span> <span class="Ital">or</span> <span>, the</span> <span class="Ital">xor</span> <span>produces a “1” (true) when either of its inputs are “1”, and a “0” (false) when both of its inputs are “0”. The difference between</span> <span class="Ital">or</span> <span>and</span> <span class="Ital">xor</span> <span>appears in the case when both inputs are “1”. The standard</span> <span class="Ital">or</span> <span>produces a “1” in this case. The</span> <span class="Ital">xor</span> <span>generates a “0”. In other words, the “exclusive or” outputs a “1” when either,</span> <span class="Ital">but not both</span> <span>, of its inputs are “1”. </span>
@@ -127,7 +130,8 @@
 				The following sub-circuit will generate a “1” when input A is “0” and input B is “1”.
 			</p>
 
-			<h1>INSERT SUB-CIRCUIT</h1>
+			<div id="topDiv-c" class="Centered"></div>
+			<div id="container-c" class="Centered"></div>
 
 			<p>
 				<span>It works by negating A and feeding that result (together with B) into an</span> <span class="Ital">and</span> <span>gate.  &nbsp;Since both of the inputs to an</span> <span class="Ital">and</span> <span>must be “1” for it to produce a “1”, the original value of A must be “0”, while the value of B must be “1”. Under all other circumstances this sub-circuit produces “0”. Thus, this circuit successfully captures the meaning of line two of the</span> <span class="Ital">xor</span> <span>truth table.</span>
@@ -136,10 +140,8 @@
 			<p>
 				<span>A sub-circuit to implement line three of the</span> <span class="Ital">xor</span> <span>truth table can be constructed similarly.</span>
 			</p>
-
-			<p>
-				<span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> <span class="Bolded">A</span> <span></span> <span class="Bolded">B</span>
-			</p>
+			<div id="topDiv-d" class="Centered"></div>
+			<div id="container-d" class="Centered"></div>
 
 			<p>
 				This circuit generates a “1” whenever input A is “1” and the input B is “0”. Under all other circumstances it produces a “0”.
@@ -149,7 +151,8 @@
 				<span>Figure 12.11 illustrates a complete</span> <span class="Ital">xor</span> <span>circuit, which contains the two sub-circuits joined together by an</span> <span class="Ital">or</span> <span>gate. This is reasonable, since the</span> <span class="Ital">xor</span> <span>can be true either by way of the first sub-circuit or the second. Note that due to the manner in which the two sub-circuits were constructed, it is impossible for both of them to be true at the same time.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.11</h1>
+			<div id="topDiv-11" class="Centered"></div>
+			<div id="container-11" class="Centered"></div>
 			<p class="Figure">
 				Figure 12.11: An implementation of <span class="Ital">xor</span>
 			</p>
@@ -157,7 +160,7 @@
 			<p>
 				<span>A new feature introduced in this circuit diagram is the connection point. Each of the two sub-circuits making up the</span> <span class="Ital">xor</span> <span>requires access to both inputs. Hence, the wires that represented these inputs had to be “split” in some way. We indicate a branch, or connection, point in a circuit diagram by a dot. Connection points allow a wire to be “split” so that its current state can “flow” to multiple destinations.  Here is what a connection point looks like graphically.</span>
 			</p>
-
+			<!-- Connector image -->
 			<p>
 				<span>The pin on the left is the input to the connection point, or connector. The top, right, and bottom pins are the outputs. Hence, this connector splits the input wire three ways. In the</span> <span class="Ital">xor</span> <span>circuit diagram a two-way, rather than three-way split was required, so one of the output pins is not drawn.</span>
 			</p>
@@ -165,7 +168,7 @@
 			<p>
 				<span>Connection points should not be confused with wires that just happen to cross one another by chance. In such a case there is</span> <span class="Ital">no</span> <span>connection between the wires, so their signals do not interfere in any way. (Think of the wires as insulated and just lying across one another.) &nbsp;Wires that cross but are not connect are represented graphically in the following way:</span>
 			</p>
-
+			<!-- Connect point image -->
 			<p>
 				<span>You should convince yourself that the circuit of Figure 12.11 does indeed implement the truth table for</span> <span class="Ital">xor</span> <span>. However, you should not come away from this discussion thinking that the circuit of Figure 12.11 is the only way (or even the most efficient way) to implement the</span> <span class="Ital">xor</span> <span>behavior. The approach to circuit design of identifying the lines of the truth table that generate a “1”, implementing sub-circuits to generate a “1” only under those circumstances, and then connecting all of the sub-circuits together via an</span> <span class="Ital">or</span> <span>, works. But, it frequently results in circuits that are more complex than really necessary. </span>
 			</p>
@@ -208,11 +211,32 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 		</div>
+		<script src="js/DigiLogic/Controller.js"></script>
+			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
+			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
+			<script src="js/DigiLogic/NotGate.js"></script>
+			<script src="js/DigiLogic/Connector.js"></script>
+			<script src="js/DigiLogic/InputNode.js"></script>
+			<script src="js/DigiLogic/OutputNode.js"></script>
+			<script src="js/DigiLogic/PopupMenu.js"></script>
+			<script src="js/DigiLogic/Figures.js"></script>
+			<script src="js/DigiLogic/TruthTable.js"></script>
+			<script src="js/DigiLogic/Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+		
+		<script>
+			var figurec = new DigitalLogicFigure("container-c", "c"); 
+			var figured = new DigitalLogicFigure("container-d", "d");
+			var figurexor = new DigitalLogicFigure("container-11", "11");  
+		</script>
 	</body>
 </html>

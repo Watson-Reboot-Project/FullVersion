@@ -31,23 +31,23 @@ function TruthTable(container, figureNum) {
 		//tbl.border = '2'; // set border thickness
 		tbl.style.borderCollapse='separate';
 		tbl.style.borderSpacing="0";
-		tbl.style.width = "10%";
-		tbl.style.height = "10%";
+		//tbl.style.width = "10%";
+		//tbl.style.height = "10%";
 		var tbdy = document.createElement('tbody');
 		
 		var tr = document.createElement('tr');
 		for (var i = 0; i < headerVals.length; i++) {
 			var td = document.createElement('td');
 			td.innerHTML = "<b>" + headerVals[i] + "</b>";
-			td.style.fontSize = "10%";
-			td.width = "10%";
-			td.height = "10%";
+			//td.style.fontSize = "10%";
+			//td.width = "10%";
+			//td.height = "10%";
 			td.align = 'center'; // center the text
 			
 			//if (i != 0)	td.style.paddingLeft = "10%";
 			//if (i != headerVals.length - 1) td.style.paddingRight = "10%";
-			td.style.paddingLeft = "5px";
-			td.style.paddingRight = "5px";
+			//td.style.paddingLeft = "5px";
+			//td.style.paddingRight = "5px";
 			
 			if(i == (cols-numOutputs)){
 				//left border
@@ -69,14 +69,14 @@ function TruthTable(container, figureNum) {
 				
 				//if (j != 0)	td.style.paddingLeft = "10%";
 				//if (j != cols - 1) td.style.paddingRight = "10%";
-				td.style.paddingLeft = "5px";
-				td.style.paddingRight = "5px";
+				//td.style.paddingLeft = "5px";
+				//td.style.paddingRight = "5px";
 				
 				//set alignment
 				td.align = 'center'; // center the text
-				td.style.fontSize = "10%";
-				td.width = "10%";
-				td.height = "10%";
+				//td.style.fontSize = "10%";
+				//td.width = "10%";
+				//td.height = "10%";
 				
 				tr.appendChild(td);
 
@@ -86,8 +86,10 @@ function TruthTable(container, figureNum) {
 		tbl.appendChild(tbdy);
 		
 		
+		console.log("Suffix: " + suffix);
 		//body.appendChild(tbl);
-		document.getElementById("topDiv" + figureNum).appendChild(tbl);
+		console.log("This is " + figureNum);
+		document.getElementById("topDiv-" + figureNum).appendChild(tbl);
 		
 		/*
 		var thead = document.createElement('thead'); // create element for header
@@ -138,7 +140,7 @@ function TruthTable(container, figureNum) {
 		var flag = true;
 		var i;
 		var myTable = document.getElementById("table" + suffix);
-		console.log(row);
+		
 		for (i = 1; i < rows + 1; i++) {
 			for (var j = 0; j < cols; j++) {
 				myTable.rows[i].cells[j].innerHTML = myTable.rows[i].cells[j].textContent;
@@ -186,7 +188,6 @@ function TruthTable(container, figureNum) {
 		var table = document.getElementById("table" + suffix);
 		if (table === null) return;
 		
-		console.log("Setting ratio: " + scale);
 		for (var i = 0; i < table.rows.length; i++) {
 			for (var j = 0; j < table.rows[0].cells.length; j++) {
 				var td = table.rows[i].cells[j];
@@ -196,8 +197,8 @@ function TruthTable(container, figureNum) {
 				td.style.paddingBottom = verPadding + "px";
 				//td.style.fontSize = (scale + 15) + "%";
 				td.style.fontSize = scale + "%";
-				td.width = scale + "%";
-				td.height = scale + "%";
+				//td.width = scale + "%";
+				//td.height = scale + "%";
 			}
 		}
 	}

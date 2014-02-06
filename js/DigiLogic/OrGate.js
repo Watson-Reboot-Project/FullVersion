@@ -70,11 +70,21 @@ function OrGate(initX, initY, setName, id, setup) {
 	gateShape = new Kinetic.Shape({
 			drawFunc : function (context) {
 				// begin custom shape
+				/*
 				context.beginPath();
 				context.moveTo(gScale * 50, gScale * 0);
 				context.quadraticCurveTo(gScale * 75, gScale * 0, gScale * 100, gScale * 25);
 				context.quadraticCurveTo(gScale * 75, gScale * 50, gScale * 50, gScale * 50);
 				context.quadraticCurveTo(gScale * 75, gScale * 25, gScale * 50, gScale * 0);
+				*/
+				context.beginPath();
+				context.moveTo(50, 0);
+				context.lineTo(70, 0);
+				context.quadraticCurveTo(95, 0, 110, 25);
+				context.quadraticCurveTo(95, 50, 70, 50);
+				context.lineTo(50, 50);
+				context.quadraticCurveTo(75, 25, 50, 0);
+				
 				// complete custom shape
 				context.closePath();
 				// KineticJS specific context method

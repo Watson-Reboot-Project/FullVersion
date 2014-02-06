@@ -14,6 +14,9 @@
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	</head>
 
@@ -112,7 +115,9 @@
 			<p>
 				Consider the following circuit and its corresponding Boolean expression.
 			</p>
-
+			<div id="topDiv-a" class="Centered"></div>
+			<div id="container-a" class="Centered">
+			</div>
 			<p class="Figure">
 				<span class="Bolded">Z &nbsp;= &nbsp;( A + B )  C</span>
 			</p>
@@ -121,7 +126,14 @@
 				<span>We can be sure that the circuit and the expression are functionally equivalent by examining how the Boolean expression could be derived from the circuit. Since inputs A and B are fed into an</span> <span class="Ital">or</span> <span>gate in the circuit, the variables A and B are combined via the corresponding “+” operator in the Boolean expression. The output of the</span> <span class="Ital">or</span> <span>is fed into an</span> <span class="Ital">and</span> <span>gate (along with input C) in the circuit. Thus, the result of the expression “(A + B)” is combined with variable C using the “</span> <span></span> <span>” operator in the Boolean expression.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.8</h1>
+			<div id="topDiv-andNTT" class="Centered"></div>
+			<div id="container-andNTT" class="Centered"></div>
+			
+			<div id="topDiv-orNTT" class="Centered"></div>
+			<div id="container-orNTT" class="Centered"></div>
+			
+			<div id="topDiv-notNTT" class="Centered"></div>
+			<div id="container-notNTT" class="Centered"></div>
 			<p class="Figure">
 				Figure 12.8: Boolean expressions for the three fundamental logic gates
 			</p>
@@ -176,11 +188,33 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 		</div>
+		<script src="js/DigiLogic/Controller.js"></script>
+			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
+			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
+			<script src="js/DigiLogic/NotGate.js"></script>
+			<script src="js/DigiLogic/Connector.js"></script>
+			<script src="js/DigiLogic/InputNode.js"></script>
+			<script src="js/DigiLogic/OutputNode.js"></script>
+			<script src="js/DigiLogic/PopupMenu.js"></script>
+			<script src="js/DigiLogic/Figures.js"></script>
+			<script src="js/DigiLogic/TruthTable.js"></script>
+			<script src="js/DigiLogic/Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+		
+		<script>
+			var figureandNTT = new DigitalLogicFigure("container-andNTT", "andNTT");
+			var figureorNTT = new DigitalLogicFigure("container-orNTT", "orNTT");
+			var figurenotNTT = new DigitalLogicFigure("container-notNTT", "notNTT");
+			var figurea = new DigitalLogicFigure("container-a", "a"); 
+		</script>
 	</body>
 </html>

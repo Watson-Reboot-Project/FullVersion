@@ -14,6 +14,9 @@
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	</head>
 
@@ -109,7 +112,8 @@
 				<span>Figure 12.18 presents an implementation of a two-input multiplexer. It has two data lines, one selector line, and a single output. When the selector line, S, is set to “0”, the current value of D</span><span class="Subscript">0</span> <span>(either a “1” or a “0”) becomes the output of the circuit, regardless of the value of line D</span><span class="Subscript">1</span> <span>. The circuit is, in a sense, “listening” to D</span><span class="Subscript">0</span> <span>and “ignoring” D</span><span class="Subscript">1</span> <span>. When S is “1”, the opposite situation exists. The output of the multiplexer becomes the current value of D</span><span class="Subscript">1</span> <span>, and D</span><span class="Subscript">0</span> <span>is ignored.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.18</h1>
+			<div id="topDiv-18" class="Centered"></div>
+			<div id="container-18" class="Centered"></div>
 			<p class="Figure">
 				Figure 12.18: An implementation of a two-input multiplexer.
 			</p>
@@ -123,7 +127,8 @@
 			<p>
 				<span>Figure 12.19 illustrates a somewhat more complex multiplexer, a four-input MUX. The four-input MUX has two selector lines, four data lines, and a single output line. Placing a “0” on both S</span><span class="Subscript">1</span> <span>and S</span><span class="Subscript">0</span> <span>, corresponding to 00</span><span class="Subscript">two</span> <span>, or zero, causes the value of D</span><span class="Subscript">0</span> <span>to be sent to the output line. Setting S</span><span class="Subscript">1</span> <span>to “0” and S</span><span class="Subscript">0</span> <span>to “1”, corresponding to 01</span><span class="Subscript">two</span> <span>, or one, causes D</span><span class="Subscript">1</span> <span>to be the active line. Likewise, S</span><span class="Subscript">1</span> <span>= “1” and S</span><span class="Subscript">0</span> <span>= “0”, meaning 10</span><span class="Subscript">two</span> <span>, or two, focuses attention on D</span><span class="Subscript">2</span> <span>. Finally, S</span><span class="Subscript">1</span> <span>= “1” and S</span><span class="Subscript">0</span> <span>= “1”, meaning 11</span><span class="Subscript">two</span> <span>, or three, causes the D</span><span class="Subscript">3</span> <span>input to be transferred to the output line.</span>
 			</p>
-			<h1>INSERT FIGURE 12.19</h1>
+			<div id="topDiv-19" class="Centered"></div>
+			<div id="container-19" class="Centered"></div>
 
 			<p class="Figure">
 				Figure 12.19: An implementation of a four-input multiplexer
@@ -180,7 +185,8 @@
 				<span>Notice that when Data Channel Zero is active (S</span><span class="Subscript">1</span> <span>= “0”, S</span><span class="Subscript">0</span> <span>= “0”), its bit pattern, (“0”, “1”, “0”, “1”, “0”, “1”, “0”, “1”) is copied to the output channel. Likewise, when Data Channel One is active (S</span><span class="Subscript">1</span> <span>= “0”, S</span><span class="Subscript">0</span> <span>= “1”), its bit pattern (“1”, “1”, “1”, “1”, “0”, “0”, “0”, “0”) is copied to the output channel.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.21</h1>
+			<div id="topDiv-21" class="Centered"></div>
+			<div id="container-21" class="Centered"></div>
 			<p class="Figure">
 				Figure 12.21: An implementation of a four-output demultiplexer
 			</p>
@@ -276,11 +282,33 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 		</div>
+		
+		<script src="js/DigiLogic/Controller.js"></script>
+			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
+			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
+			<script src="js/DigiLogic/NotGate.js"></script>
+			<script src="js/DigiLogic/Connector.js"></script>
+			<script src="js/DigiLogic/InputNode.js"></script>
+			<script src="js/DigiLogic/OutputNode.js"></script>
+			<script src="js/DigiLogic/PopupMenu.js"></script>
+			<script src="js/DigiLogic/Figures.js"></script>
+			<script src="js/DigiLogic/TruthTable.js"></script>
+			<script src="js/DigiLogic/Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+		
+		<script>
+			var figuren21 = new DigitalLogicFigure("container-21", "21");
+			var figure19 = new DigitalLogicFigure("container-19", "19");
+			var figure18 = new DigitalLogicFigure("container-18", "18");
+		</script>
 	</body>
 </html>

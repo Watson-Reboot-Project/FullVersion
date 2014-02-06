@@ -15,6 +15,8 @@
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	</head>
 
@@ -118,15 +120,19 @@
 				<span>The functionality of the</span> <span class="Ital">and</span> <span>gate can be implemented by the series circuit introduced in Section 12.2.1. In fact, you may have noticed that the truth table for</span> <span class="Ital">and</span> <span>is identical to the table of values given in Figure 12.3 for two switches in series, if “open” / “off” is replaced by “0” and “closed / “on” is replaced by “1”.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.5</h1>
+			<div id="topDiv-and" class="Centered"></div>
+			<div id="container-and" class="Centered"></div>
+			
 			<p class="Figure">
 				Figure 12.5: An <span class="Ital">and</span> gate
-			</p>
+			</p> <br /> <br />
 
-			<h1>INSERT FIGURE 12.6</h1>
+			<div id="topDiv-or" class="Centered"></div>
+			<div id="container-or" class="Centered">
+			</div>
 			<p class="Figure">
 				Figure 12.6: An <span class="Ital">or</span> gate
-			</p>
+			</p><br />
 
 			<p>
 				The reason that truth tables are called “truth tables” is that if “1” is taken to mean “true” and “0” is taken to mean “false” then the output of the table defines the circumstances under which the specified logical operation is true. For example, in common English usage, “A and B” will be true only when both A and B are true. The statement: “My cat is old and fat” is only true when the cat in question is both “old” and “fat”. If my pet cat were either young, or skinny, or both, then the statement about her would be false.
@@ -148,7 +154,9 @@
 				<span>You should convince yourself that the behavior of the</span> <span class="Ital">or</span> <span>gate captures the semantics of the word</span> <span class="Ital">or</span> <span>as it is commonly used. The statement: “My cat is either on the couch or under the bed.” is true if either the phrase “my cat is on the couch” is true or the phrase “my cat is under the bed” is true. The original statement is false only when neither of these phrases is true.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.7</h1>
+			<div id="topDiv-not" class="Centered"></div>
+			<div id="container-not" class="Centered">
+			</div>
 			<p class="Figure">
 				<span>Figure 12.7: A</span> <span class="Ital">not</span> <span>Gate</span>
 			</p>
@@ -169,14 +177,12 @@
 				<span>It is natural to ask at this point what an equivalent circuit consisting of logic gates would look like. Since switches A and B are in parallel, this portion of the circuit can be represented using an</span> <span class="Ital">or</span> <span>gate. The output of that part of the circuit is in series with C, so it can be modeled with an</span> <span class="Ital">and</span> <span>gate. The logic gate circuit shown below is thus equivalent to the switch circuit given above.</span>
 			</p>
 			
-			<div id="container1" class="Center">
-			<div id="tableDiv1"></div></div>
-
+			<div id="topDiv-a" class="Centered"></div>
+			<div id="container-a" class="Centered">
+			</div>
 			<p class="Section">
 				Exercises for Section 12.2.2
 			</p>
-			<div id="container2" class="Center">
-			<div id="tableDiv2"></div></div>
 			
 			<ol>
 				<li>
@@ -217,15 +223,18 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 			
 			<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
 			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
 			<script src="js/DigiLogic/NotGate.js"></script>
 			<script src="js/DigiLogic/Connector.js"></script>
 			<script src="js/DigiLogic/InputNode.js"></script>
@@ -235,12 +244,12 @@
 			<script src="js/DigiLogic/TruthTable.js"></script>
 			<script src="js/DigiLogic/Setup.js"></script>
 			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
-			<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		
 		<script>
-			var figure1 = new DigitalLogicFigure("container1", 1, 500, 250);
-			var figure2 = new DigitalLogicFigure("container2", 18, 600, 250);
+			var figureand = new DigitalLogicFigure("container-and", "and");
+			var figureor = new DigitalLogicFigure("container-or", "or");
+			var figurenot = new DigitalLogicFigure("container-not", "not");
+			var figurea = new DigitalLogicFigure("container-a", "a"); 
 		</script>
 		</div>
 	</body>

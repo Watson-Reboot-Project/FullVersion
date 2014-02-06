@@ -4,6 +4,7 @@ function Setup(container, figureNo) {
 	var initHeight;
 	var initWidth;
 	var initTableWidth;
+	var initScale = 1;
 	var maxWidth;
 	var initOffset;
 	
@@ -17,7 +18,7 @@ function Setup(container, figureNo) {
 	this.setInitHeight = setInitHeight;
 	this.setInitWidth = setInitWidth;
 	this.setMaxWidth = setMaxWidth;
-	
+	this.setInitScale = setInitScale;
 	
 	var timeout = false;
 	
@@ -87,31 +88,29 @@ function Setup(container, figureNo) {
 	resizeTop();
 	
 	function resizeTop() {
-		width = document.getElementById(container).offsetWidth
-		//width = window.innerWidth;
+		width = document.getElementById(container).offsetWidth;
+		//document.getElementById("tableDiv-" + figureNo).offsetWidth = document.getElementById(container).offsetWidth;
+		// width = window.innerWidth;
 		height = window.innerHeight;
 		
-		//console.log(document.getElementById(container).offsetWidth);
-		var ratio = width / (initWidth);
+		var ratio = width / initWidth;
 		console.log("Ratio: " + ratio);
-		if (ratio <= 1) {
+		if (ratio <= initScale) {
 			stage.setScale(ratio);
 			stage.setSize(initWidth * ratio, initHeight * ratio);
-			if (width <= 400) truthTable.setTruthTableScale((ratio * 0.9) * 100, 1, 0);
-			else if (width <= 600) truthTable.setTruthTableScale((ratio * 0.9) * 100, 3, 1);
-			else if (width <= 800) truthTable.setTruthTableScale((ratio * 1.3) * 100, 4, 0);
-			truthTable.setTableOffset((stage.getWidth() / 2) - (truthTable.getTableWidth() / 2));
+			truthTable.setTruthTableScale((ratio * 1.2) * 100, 3, 0);
+			//truthTable.setTableOffset((stage.getWidth() / 2) - (truthTable.getTableWidth() / 2));
+			truthTable.setTableOffset((width / 2) - (truthTable.getTableWidth() / 2));
 		}
 		else {
-			console.log("Scale is 1");
-			stage.setScale(1);
-			stage.setSize(initWidth * 1, initHeight * 1);
-			truthTable.setTruthTableScale(80, 5, 0);
-			truthTable.setTableOffset((stage.getWidth() / 2) - (truthTable.getTableWidth() / 2));
+			stage.setScale(initScale);
+			stage.setSize(initWidth * initScale, initHeight * initScale);
+			if (ratio * (1.5) >= 1) truthTable.setTruthTableScale(100, 6, 0);
+			else truthTable.setTruthTableScale((initScale * 1.5) * 100, 6, 0);
+			//truthTable.setTableOffset((stage.getWidth() / 2) - (truthTable.getTableWidth() / 2));
+			truthTable.setTableOffset((width / 2) - (truthTable.getTableWidth() / 2));
 		}
 		
-		//width = document.getElementById("wrapper").offsetWidth;
-
 		timeout = false;
 	}
 	
@@ -160,6 +159,8 @@ function Setup(container, figureNo) {
 	function setInitHeight(height) { initHeight = height; }
 	
 	function setInitWidth(width) { initWidth = width; }
+	
+	function setInitScale(scale) { initScale = scale; }
 	
 	function setMaxWidth(width) { maxWidth = width; }
 }

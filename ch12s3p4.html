@@ -91,32 +91,6 @@
 
 			</div>
 			<!-- End nav -->
-			<!--Floating nav -->
-				<style>
-				div.floating-menuL
-				{position:fixed;z-index:200;left:1px;width:20px;top:45%;}
-				div.floating-menuL a, div.floating-menuL h3 {display:block;margin:0 0.5em;}
-				</style>
-				<style>
-				div.floating-menuR
-				{position:fixed;z-index:200;right:11px;width:20px;top:45%;}
-				div.floating-menuR a, div.floating-menuR h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-menuL">
-				<a href="http://www.example.com ">
-					<span>
-						<object width="20px" height="60px" type="image/svg+xml" data="Images/left-arrow.svg">Your browser does not support SVG</object>
-					</span>
-				</a>
-				</div>
-				<div class="floating-menuR">
-				<a href="http://www.example.com ">
-					<span>
-						<object width="20px" height="60px" type="image/svg+xml" data="Images/right-arrow.svg">Your browser does not support SVG</object>
-					</span>
-				</a>
-				</div>
-				<!-- End floating nav -->
 
 			<!-- Main content -->
 			<p>
@@ -148,10 +122,8 @@
 			</p>
 			
 			
-			<div id="topDiv16" class="Center"></div>
-			<div id="container16" class="Center">
-			<div id="tableDiv"></div> 
-			</div>
+			<div id="topDiv-16" class="Centered"></div>
+			<div id="container-16" class="Centered"></div>
 			
 			<p class="Figure">
 				Figure 12.16: An implementation of a three-to-eight decoder
@@ -195,10 +167,8 @@
 				<span>How are we to deal with these “undefined” configurations when constructing the corresponding circuit? &nbsp;One way is to simply ignore the disallowed input configurations. This approach will work fine as long as we can be</span> <span class="Ital">sure</span> <span>that the illegal states can never occur.</span>
 			</p>
 			
-			<div id="topDiv13" class="Center"></div>
-			<div id="container13" class="Center">
-				<div id="tableDiv"></div>
-			</div>
+			<div id="topDiv-17" class="Centered"></div>
+			<div id="container-17" class="Centered"></div>
 			<p class="Figure">
 				Figure 12.17: An implementation of an eight-to-three encoder
 			</p>
@@ -272,13 +242,10 @@
 
 			</div>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 			
-			<script src="js/DigiLogic/Controller.js"></script>
+			</script>
+		</div>
+		<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
 			<script src="js/DigiLogic/AndGate3.js"></script>
 			<script src="js/DigiLogic/AndGate4.js"></script>
@@ -303,9 +270,8 @@
 			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 			
 			<script>
-			var figure16 = new DigitalLogicFigure("container16", 16);
-			var figure13 = new DigitalLogicFigure("container13", 13);
+			var figure16 = new DigitalLogicFigure("container-16", "16");
+			var figure17 = new DigitalLogicFigure("container-17", "17");
 			</script>
-		</div>
 	</body>
 </html>

@@ -14,6 +14,10 @@
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 
 	</head>
 
@@ -118,13 +122,17 @@
 			<p>
 				<span>Producing a “sub-circuit” for line one of the table isn’t really that difficult either. In order to have a sub-circuit that generates “1” when both inputs are “0”, simply invert, or not, each of the inputs and send the results into an</span> <span class="Ital">and</span> <span>gate, like so:</span>
 			</p>
-
+			
+			<div id="topDiv-e" class="Centered"></div>
+			<div id="container-e" class="Centered"></div>
+			
 			<p>
 				This sub-circuit will produce a “1” only when both of its inputs are “0”.
 			</p>
 
-			<h1>INSERT SUB-CIRCUIT</h1>
-			<h1>INSERT FIGURE 12.12</h1>
+			
+			<div id="topDiv-12" class="Centered"></div>
+			<div id="container-12" class="Centered"></div>
 			<p class="Figure">
 				Figure 12.12: An implementation of the one-bit comparator for equality
 			</p>
@@ -258,12 +266,32 @@
 			<div>
 
 			</div>
-
-			<footer>
-				<p>
-					&copy; Copyright  by Burt
-				</p>
-			</footer>
 		</div>
+		
+		<script src="js/DigiLogic/Controller.js"></script>
+			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
+			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
+			<script src="js/DigiLogic/NotGate.js"></script>
+			<script src="js/DigiLogic/Connector.js"></script>
+			<script src="js/DigiLogic/InputNode.js"></script>
+			<script src="js/DigiLogic/OutputNode.js"></script>
+			<script src="js/DigiLogic/PopupMenu.js"></script>
+			<script src="js/DigiLogic/Figures.js"></script>
+			<script src="js/DigiLogic/TruthTable.js"></script>
+			<script src="js/DigiLogic/Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+		
+		<script>
+			var figuree = new DigitalLogicFigure("container-e", "e");
+			var figure12 = new DigitalLogicFigure("container-12", "12"); 
+		</script>
 	</body>
 </html>

@@ -81,9 +81,17 @@ function AndGate4(initX, initY, setName, id, setup) {
 	gateShape = new Kinetic.Shape({
 			drawFunc : function (context) {
 				// begin custom shape
+				//context.beginPath();
+				//context.moveTo(scale * 50, 0);
+				//context.quadraticCurveTo(scale * 125, scale * 25, scale * 50, scale * 50);
+				
 				context.beginPath();
-				context.moveTo(scale * 50, 0);
-				context.quadraticCurveTo(scale * 125, scale * 25, scale * 50, scale * 50);
+				context.moveTo(50, 0);
+				context.lineTo(70, 0);
+				context.quadraticCurveTo(95, 0, 100, 25);
+				context.quadraticCurveTo(95, 50, 70, 50);
+				context.lineTo(50, 50);
+				
 				// complete custom shape
 				context.closePath();
 				// KineticJS specific context method
