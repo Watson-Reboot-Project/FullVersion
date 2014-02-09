@@ -9,7 +9,16 @@
 
 		<title>Watson</title>
 
-		<link rel='stylesheet' href='css/generalmedia.css'>
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -25,74 +34,35 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="header">
-				<a href="index.html"><h3 style="margin:0; color: white;">WATSON HOME</h3></a>
-			</div>
-			<!-- End header -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
-			<!-- Navbar division -->
-
-			<div id="headnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 25%"><a href="labs.html">LABS</a></td>
-
-						<td style="width: 25%"><a href="documentation.html">DOCUMENTATION</a></td>
-
-						<td style="width: 25%"><a href="tutorials.html">TUTORIALS</a></td>
-
-						<td style="width: 25%"><a href="about.html">ABOUT</a></td>
-
-					</tr>
-
-				</table>
-
-			</div><!-- End nav -->
-
-			<div id="chapnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 15%"><a href="chapters.html">CHAPTERS</a></td>
-
-						<td style="width: 5%"><a href="ch01.html">01</a></td>
-
-						<td style="width: 5%"><a href="ch02.html">02</a></td>
-
-						<td style="width: 5%"><a href="ch03.html">03</a></td>
-
-						<td style="width: 5%"><a href="ch04.html">04</a></td>
-
-						<td style="width: 5%"><a href="ch05.html">05</a></td>
-
-						<td style="width: 5%"><a href="ch06.html">06</a></td>
-
-						<td style="width: 5%"><a href="ch07.html">07</a></td>
-
-						<td style="width: 5%"><a href="ch08.html">08</a></td>
-
-						<td style="width: 5%"><a href="ch09.html">09</a></td>
-
-						<td style="width: 5%"><a href="ch10.html">10</a></td>
-
-						<td style="width: 5%"><a href="ch11.html">11</a></td>
-
-						<td style="width: 5%"><a href="ch12.html">12</a></td>
-
-						<td style="width: 5%"><a href="ch13.html">13</a></td>
-
-						<td style="width: 5%"><a href="ch14.html">14</a></td>
-
-						<td style="width: 5%"><a href="ch15.html">15</a></td>
-
-					</tr>
-
-				</table>
-
-			</div>
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch12s2p2.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch12s2p4.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
+			<!-- End nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -105,7 +75,7 @@
 			</p>
 
 			<p>
-				<span>The operator</span> <span class="Ital">and</span> <span>is written as a dot “</span> <span></span> <span>”,</span> <span class="Ital">or</span> <span>is written as a plus “+”, and</span> <span class="Ital">not</span> <span>is written as a horizontal bar drawn over the expression being negated. The behavior of these three Boolean operators is identical to the behavior of the corresponding logic gates. Thus, the expression “A</span> <span></span> <span>B”, meaning “A and B”, will be “1” (true) when the variables A and B are both “1” (true). The expression “A + B”, meaning “A or B”, will be true when either or both variables are true. Not A, written “ A ”, will be “0” when A is “1” and “1” when A is “0”.</span>
+				<span>The operator</span> <span class="Ital">and</span> <span>is written as a dot “</span> <span>&#9679;</span> <span>”,</span> <span class="Ital">or</span> <span>is written as a plus “+”, and</span> <span class="Ital">not</span> <span>is written as a horizontal bar drawn over the expression being negated. The behavior of these three Boolean operators is identical to the behavior of the corresponding logic gates. Thus, the expression “A</span> <span>&#9679;</span> <span>B”, meaning “A and B”, will be “1” (true) when the variables A and B are both “1” (true). The expression “A + B”, meaning “A or B”, will be true when either or both variables are true. Not A, written “ A ”, will be “0” when A is “1” and “1” when A is “0”.</span>
 			</p>
 
 			<p>
@@ -119,11 +89,11 @@
 			<div id="container-a" class="Centered">
 			</div>
 			<p class="Figure">
-				<span class="Bolded">Z &nbsp;= &nbsp;( A + B )  C</span>
+				<span class="Bolded">Z &nbsp;= &nbsp;( A + B ) &#9679; C</span>
 			</p>
 
 			<p>
-				<span>We can be sure that the circuit and the expression are functionally equivalent by examining how the Boolean expression could be derived from the circuit. Since inputs A and B are fed into an</span> <span class="Ital">or</span> <span>gate in the circuit, the variables A and B are combined via the corresponding “+” operator in the Boolean expression. The output of the</span> <span class="Ital">or</span> <span>is fed into an</span> <span class="Ital">and</span> <span>gate (along with input C) in the circuit. Thus, the result of the expression “(A + B)” is combined with variable C using the “</span> <span></span> <span>” operator in the Boolean expression.</span>
+				<span>We can be sure that the circuit and the expression are functionally equivalent by examining how the Boolean expression could be derived from the circuit. Since inputs A and B are fed into an</span> <span class="Ital">or</span> <span>gate in the circuit, the variables A and B are combined via the corresponding “+” operator in the Boolean expression. The output of the</span> <span class="Ital">or</span> <span>is fed into an</span> <span class="Ital">and</span> <span>gate (along with input C) in the circuit. Thus, the result of the expression “(A + B)” is combined with variable C using the “</span> <span>&#9679;</span> <span>” operator in the Boolean expression.</span>
 			</p>
 
 			<div id="topDiv-andNTT" class="Centered"></div>
@@ -139,7 +109,7 @@
 			</p>
 
 			<p>
-				<span>As in ordinary algebra, Boolean algebra uses parentheses to indicate which operands go with which operators. The Boolean expression “A + (B</span> <span></span> <span>C)” represents a completely different circuit from “(A + B)</span> <span></span> <span>C”. In the first, B and C are fed into an</span> <span class="Ital">and</span> <span>gate, with the result being sent (along with A) into an</span> <span class="Ital">or</span> <span>gate. In the second, A and B are fed into an</span> <span class="Ital">or</span> <span>gate, with the result being combined with C via an</span> <span class="Ital">and</span> <span>gate.</span>
+				<span>As in ordinary algebra, Boolean algebra uses parentheses to indicate which operands go with which operators. The Boolean expression “A + (B</span> <span>&#9679;</span> <span>C)” represents a completely different circuit from “(A + B)</span> <span>&#9679;</span> <span>C”. In the first, B and C are fed into an</span> <span class="Ital">and</span> <span>gate, with the result being sent (along with A) into an</span> <span class="Ital">or</span> <span>gate. In the second, A and B are fed into an</span> <span class="Ital">or</span> <span>gate, with the result being combined with C via an</span> <span class="Ital">and</span> <span>gate.</span>
 			</p>
 
 			<p>

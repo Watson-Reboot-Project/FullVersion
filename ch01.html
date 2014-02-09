@@ -94,32 +94,32 @@
 	});
   </script>
 
- 	<!--Floating nav -->
-		<!-- Previous -->
-		<style>
-		div.floating-previous
-		{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		</style>
-		<div class="floating-previous">
-		<a href="index.html">
-		<img style="border:0;" src="Images/left-arrow.png" alt="Previous page" width="40">
-		</a>
-		</div>
-		<!-- Next -->
-		<style>
-		div.floating-next
-		{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		</style>
-		<div class="floating-next">
-		<a href="ch02.html">
-		<img style="border:0;" src="Images/right-arrow.png" alt="Next page" width="40">
-		</a>
-		</div>
-	<!-- End floating nav -->
-  <div class="page-wrapper">
-  	<div id="main_header" class="container"> <!-- Container begin--> <h1> Chapter 1 </h1></div>
+		<!--Floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="index.html">
+				<img style="border:0;" src="Images/left-arrow.png" alt="Previous page" width="40">
+				</a>
+			</div>
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="ch02.html">
+				<img style="border:0;" src="Images/right-arrow.png" alt="Next page" width="40">
+				</a>
+			</div>
+		<!-- End floating nav -->
+		<div class="page-wrapper">
+		<div id="main_header" class="container"> <!-- Container begin--> <h1> Chapter 1 </h1></div>
 
 		   <!------------------------------ Main content [BODY] ---------------------------->			
 			
@@ -158,7 +158,7 @@
 			</p>
 	
 			<p>
-				If you stopped someone on the street and asked him “What do computer scientists do?” you would probably get a response along the lines of “They work with computers” – that is, of course, assuming they didn’t tell you to “get lost”<span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Or something even less polite."><a href="#ftn1" id="body_ftn1">[1]</a></span></span>.  
+				If you stopped someone on the street and asked him “What do computer scientists do?” you would probably get a response along the lines of “They work with computers” – that is, of course, assuming they didn’t tell you to “get lost”<span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Or something even less polite."><a href="#ftn1" id="body_ftn1">[1]</a></span></span>.  
 			</p>
 	
 			<p>
@@ -215,7 +215,7 @@
 				&nbsp;
 			</p>
 			
-			<p class="Subsection">
+			<p class="Section">
 				1.3.1  How are computers used?  
 			</p>
 	
@@ -299,7 +299,7 @@
 				&nbsp;
 			</p>
 			
-			<p class="Subsection">
+			<p class="Section">
 				1.3.2  How does computer software work?  
 			</p>
 	
@@ -384,12 +384,16 @@
 			</p>
 
 			<!-- Format -->
-			<p class="Subfigure">read (tempc);</p>
-			<p class="Subfigure">tempf = (1.8 * tempc) + 32;</p>
-			<p class="Subfigure">write(tempf);</p>
-			<p class="Subfigure">(a) A code fragment written in the imperative style </p>
-			<p class="Subfigure">(write(add (multiply 1.8 (read)) 32))</p>
-			<p class="Subfigure">(b) A code fragment written in the functional style</p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">read (tempc);</span></li>
+				<li><span class="Subfigure">tempf = (1.8 * tempc) + 32;</span></li>
+				<li><span class="Subfigure">write(tempf);</span></li>
+			</ul>
+			<p class="Figure">(a) A code fragment written in the imperative style </p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(write(add (multiply 1.8 (read)) 32))</span></li>
+			</ul>
+			<p class="Figure">(b) A code fragment written in the functional style</p>
 	
 			<p class="Figure">
 				Figure 1.1:  Examples of the functional and imperative paradigms
@@ -451,7 +455,7 @@
 				&nbsp;
 			</p>
 			
-			<p class="Subsection">
+			<p class="Section">
 				1.3.3  How does computer hardware work?  
 			</p>
 
@@ -482,7 +486,7 @@
 			</p>
 	
 			<p>
-				The storage capacity of memory devices, both main memory and secondary storage, tend to increase rapidly over time.  Historically, they have doubled approximately once every 18 months.  This observation, known as <span class="Bolded">Moore’s law</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Named after Intel co-founder Gordon Moore."><a href="#ftn2" id="body_ftn2">[2]</a></span></span>, has remained true since the introduction of computers more than half a century ago. 
+				The storage capacity of memory devices, both main memory and secondary storage, tend to increase rapidly over time.  Historically, they have doubled approximately once every 18 months.  This observation, known as <span class="Bolded">Moore’s law</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Named after Intel co-founder Gordon Moore."><a href="#ftn2" id="body_ftn2">[2]</a></span></span>, has remained true since the introduction of computers more than half a century ago. 
 			</p>
 	
 			<p>
@@ -557,7 +561,7 @@
 				&nbsp;
 			</p>
 			
-			<p class="Subsection">
+			<p class="Section">
 				1.3.4  What are the limitations and potential of computers?  
 			</p>
 	
@@ -608,7 +612,7 @@
 			</p>
 		
 			<p>
-				The final model of computing, the <span class="Bolded">Turing machine</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: “Turing” is always capitalized, since Turing machines are named after their inventor, the mathematician and computer scientist Alan Turing."><a href="#ftn3" id="body_ftn3">[3]</a></span></span>, is essentially a finite automaton with unlimited memory.  Turing machines can solve the same class of problems as general-purpose computers.  However, it can be proven that certain, apparently straightforward, problems cannot be solved by Turing machines.  This means that there are some problems that have no computable solution – no computer program can be written to solve these problems, <span class="Ital">ever</span>. 
+				The final model of computing, the <span class="Bolded">Turing machine</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: “Turing” is always capitalized, since Turing machines are named after their inventor, the mathematician and computer scientist Alan Turing."><a href="#ftn3" id="body_ftn3">[3]</a></span></span>, is essentially a finite automaton with unlimited memory.  Turing machines can solve the same class of problems as general-purpose computers.  However, it can be proven that certain, apparently straightforward, problems cannot be solved by Turing machines.  This means that there are some problems that have no computable solution – no computer program can be written to solve these problems, <span class="Ital">ever</span>. 
 			</p>
 		
 			<p>
@@ -644,7 +648,7 @@
 			</p>
 		
 			<p>
-				In 1984, Doug Lenat launched the Cyc project with the aim of constructing a vast encyclopedia of common sense knowledge.  One goal of Cyc is to give computers the ability to understand natural languages, such as English, by laying the foundation of knowledge that is necessary to make sense of the world.  Two decades later, the development of Cyc continues.<span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: In fact, an open source version of Cyc is now publicly available at http://www.opencyc.org. "><a href="#ftn4" id="body_ftn4">[4]</a></span></span>  While Cyc’s progress to date in natural language understanding and common sense reasoning has been painfully slow, Lenat believes Cyc will one day be able to learn by reading, much as a human does.  
+				In 1984, Doug Lenat launched the Cyc project with the aim of constructing a vast encyclopedia of common sense knowledge.  One goal of Cyc is to give computers the ability to understand natural languages, such as English, by laying the foundation of knowledge that is necessary to make sense of the world.  Two decades later, the development of Cyc continues.<span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: In fact, an open source version of Cyc is now publicly available at http://www.opencyc.org. "><a href="#ftn4" id="body_ftn4">[4]</a></span></span>  While Cyc’s progress to date in natural language understanding and common sense reasoning has been painfully slow, Lenat believes Cyc will one day be able to learn by reading, much as a human does.  
 			</p>
 		
 			<p>
@@ -721,9 +725,7 @@
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
-	</div> <!-- End container -->		
 								
-  </div> <!-- End page wrapper -->
   <!------------------------------ [END] Main content [BODY] ---------------------------->
 
 			<nav>
@@ -741,6 +743,7 @@
 			<div>
 
 			</div>
+		</div> <!-- End page wrapper -->
 
 	</body>
 </html>
