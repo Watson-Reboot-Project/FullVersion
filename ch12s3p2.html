@@ -114,7 +114,7 @@
 				The design for the one-bit comparator for equality can be extended to multi-bit numbers. The two-bit comparator for equality has the following truth table:
 			</p>
 
-			<h1>INSERT TWO-BIT COMPARATOR</h1>
+			<img src="Images/fig12-twobitcomp.png" alt="" class="ImageTall">
 
 			<p>
 				<span>This table consists of 16 rows, since it has four input bits. (Remember, the number of rows of a truth table is always 2</span><span class="Superscript">n</span> <span>where</span> <span class="Ital">n</span> <span>is the number of input bits.) &nbsp;In the table, A</span><span class="Subscript">0</span> <span>represents the low-order bit of input A and A</span><span class="Subscript">1</span> <span>represents the high-order bit of A. Likewise, B</span><span class="Subscript">0</span> <span>is the low-order bit of B and B</span><span class="Subscript">1</span> <span>is the high-order bit. Hence, the first row of the table represents inputs of A = 00</span><span class="Subscript">two</span> <span>and B = 00</span><span class="Subscript">two</span> <span>, which are equal, so the output, Z, is “1” (true). Likewise, the second row of the table represents A = 00</span><span class="Subscript">two</span> <span>and B = 01</span><span class="Subscript">two</span> <span>, which are not equal, so the output, Z, is “0” (false).</span>
@@ -124,7 +124,8 @@
 				To get a clearer idea of what this circuit does, let’s examine only those rows of the table in which the output is “1” (true). There are four cases in which the two-bit comparator for equality generates a “1”. They are:
 			</p>
 
-			<h1>INSERT CASES</h1>
+			<img src="Images/fig12-cases.png" alt="" class="ImageTall">
+			
 			<p>
 				<span>The first row corresponds to the case where both A and B are zero (00</span><span class="Subscript">two</span> <span>). The second row captures the case where both inputs are one (01</span><span class="Subscript">two</span> <span>), the third where the inputs are two (10</span><span class="Subscript">two</span> <span>), and the fourth where they are three (11</span><span class="Subscript">two</span> <span>).</span>
 			</p>
@@ -145,7 +146,7 @@
 				<span>A careful inspection of the above table will show that a “1” should be generated whenever the low-order bits of both inputs (A</span><span class="Subscript">0</span> <span>and B</span><span class="Subscript">0</span> <span>) are equal</span> <span class="Ital">and</span> <span>the high-order bits of the inputs (A</span><span class="Subscript">1</span> <span>and B</span><span class="Subscript">1</span> <span>) are equal as well. Hence, routing inputs A</span><span class="Subscript">0</span> <span>and B</span><span class="Subscript">0</span> <span>into a one-bit comparator for equality; and inputs A</span><span class="Subscript">1</span> <span>and B</span><span class="Subscript">1</span> <span>into a separate one-bit comparator for</span> <span>equality, then sending both of these results into an</span> <span class="Ital">and</span> <span>gate, will produce a circuit with the desired behavior. This circuit is outlined below:</span>
 			</p>
 
-			<h1>INSERT ONE-BIT COMPARATOR</h1>
+			<img src="Images/fig12-onebitcomp.png" alt="" class="Image">
 
 			<p>
 				The circuit is based on the idea that two-bit numbers are equal if both their low-order and high-order bits are identical. An actual implementation of the circuit would require that the boxes marked “one-bit comparator” be replaced with comparator circuitry along the lines of that shown in Figure 12.12. You are asked to do precisely this in one of the exercises at the end of this section.
@@ -155,7 +156,7 @@
 				In addition to comparators for equality, comparators for other conditions, such as “less than” and “greater than”, can be constructed. While most of the details are left as exercises, I’ll get you started by giving you this truth table for the one-bit comparator for “less than” (i.e., “A &lt; B”).
 			</p>
 
-			<h1>INSERT TRUTH TABLE</h1>
+			<img src="Images/fig12-onebitcomptable.png" alt="" class="ImageTall">
 
 			<p class="Section">
 				Exercises for Section 12.3.2
@@ -217,6 +218,7 @@
 				</li>
 			</ol>
 			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>

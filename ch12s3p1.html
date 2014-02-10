@@ -73,7 +73,7 @@
 				<span>An “exclusive or”, or</span> <span class="Ital">xor</span> <span>, has two inputs and a single output. Its behavior is defined by the following truth table, where the inputs are labeled “A” and “B” and the output is labeled “Z”.</span>
 			</p>
 
-			<h1>INSERT XOR TABLE</h1>
+			<img src="Images/fig12-xortable.png" alt="" class="ImageTall">
 
 			<p>
 				<span>Like the standard two-input</span> <span class="Ital">or</span> <span>, the</span> <span class="Ital">xor</span> <span>produces a “1” (true) when either of its inputs are “1”, and a “0” (false) when both of its inputs are “0”. The difference between</span> <span class="Ital">or</span> <span>and</span> <span class="Ital">xor</span> <span>appears in the case when both inputs are “1”. The standard</span> <span class="Ital">or</span> <span>produces a “1” in this case. The</span> <span class="Ital">xor</span> <span>generates a “0”. In other words, the “exclusive or” outputs a “1” when either,</span> <span class="Ital">but not both</span> <span>, of its inputs are “1”. </span>
@@ -142,7 +142,9 @@
 				<span>You should convince yourself that the circuit of Figure 12.11 does indeed implement the truth table for</span> <span class="Ital">xor</span> <span>. However, you should not come away from this discussion thinking that the circuit of Figure 12.11 is the only way (or even the most efficient way) to implement the</span> <span class="Ital">xor</span> <span>behavior. The approach to circuit design of identifying the lines of the truth table that generate a “1”, implementing sub-circuits to generate a “1” only under those circumstances, and then connecting all of the sub-circuits together via an</span> <span class="Ital">or</span> <span>, works. But, it frequently results in circuits that are more complex than really necessary. </span>
 			</p>
 
-			<span>For example, our implementation of</span> <span class="Ital">xor</span> <span>requires five gates (not counting connectors). An implementation that requires only four gates can be developed from the Boolean expression Z = (A + B)</span> <span></span> <span>(A</span> <span></span> <span>B).</span>
+			<p>
+				For example, our implementation of <span class="Ital">xor</span> requires five gates (not counting connectors). An implementation that requires only four gates can be developed from the Boolean expression Z = (A + B) &#9679; &not;(A &#9679; B).
+			</p>
 
 			<p class="Section">
 				Exercises for Section 12.3.1
@@ -151,7 +153,7 @@
 			<ol>
 				<li>
 					<p>
-						Draw the circuit diagram for the implementation of <span class="Ital">xor</span> <span>given by the Boolean expression: Z = (A + B)</span> <span></span> <span>(A</span> <span></span> <span>B)</span>&nbsp;
+						Draw the circuit diagram for the implementation of <span class="Ital">xor</span> given by the Boolean expression: Z = (A + B) &#9679; &not;(A &#9679; B)&nbsp;
 				</li>
 
 				<li>
@@ -161,6 +163,7 @@
 				</li>
 			</ol>
 			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>

@@ -67,13 +67,13 @@
 				<span>An R-S flip-flop can be constructed from two interconnected</span> <span class="Ital">nor</span> <span>gates. Figure 12.23 illustrates such an R-S flip-flop. As discussed in Section 12.2.4, a</span> <span class="Ital">nor</span> <span>is simply an</span> <span class="Ital">or</span> <span>gate followed by a</span> <span class="Ital">not</span> <span>gate. For clarity, Figure 12.23 shows the two</span> <span class="Ital">nor</span> <span>gates of the flip-flop as having been decomposed into their underlying</span> <span class="Ital">or</span> <span>and</span> <span class="Ital">not</span> <span>gates.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.23</h1>
+			<img src="Images/fig12-23.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 12.23: R-S Flip-flop
 			</p>
 
-			<h1>INSERT FIGURE 12.24</h1>
+			<img src="Images/fig12-24.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 12.24: An R-S flip-flop holding a “1”
@@ -95,7 +95,7 @@
 				If we apply a “1” to the R (reset) input, in order to place a “0” into the bit, the following events occur. The output of the top <span class="Ital">nor</span> <span>gate (the Q signal) goes low, this is fed back to the input of the bottom</span> <span class="Ital">nor</span> <span>gate, which causes its output (the Q signal) to go high. This signal is fed back to the top</span> <span class="Ital">nor</span>gate, but since it already has another high input there is no change in the output – it remains low. This is a stable circuit, as shown in Figure 12.25. The flip-flop has been reset to “0”.
 			</p>
 
-			<h1>INSERT FIGURE 12.25</h1>
+			<img src="Images/fig12-25.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 12.25: An R-S flip-flop reset to “0”
@@ -109,11 +109,13 @@
 				<span>Now we apply a high signal to the S (set) input, in order to set the bit to “1”. This action causes the following events to occur. The output of the bottom</span> <span class="Ital">nor</span> <span>gate becomes 0 since one of its inputs is now high. This low signal is applied as an input to the top</span> <span class="Ital">nor</span> <span>gate, where the R input is also low. The output of the top</span> <span class="Ital">nor</span> <span>is forced high, and this high output is fed back into the bottom</span> <span class="Ital">nor</span> <span>gate, which does not change its state since its other input was already high. The flip-flop has been set to “1”, as can be seen in Figure 12.27.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.26</h1>
+			<img src="Images/fig12-26.png" alt="" class="Image">
+			
 			<p class="Figure">
 				Figure 12.26: An R-S flip-flop holding a “0”
 			</p>
-			<h1>INSERT FIGURE 12.27</h1>
+			
+			<img src="Images/fig12-27.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 12.27: An R-S flip-flop set to “1”
@@ -127,11 +129,14 @@
 				<span>Notice that state of the flip-flop shown in Figure 12.28 is identical to its original state given in Figure 12.24. They both represent the flip-flop in its “1” state, with “0” on both input lines. Comparing Figure 12.26 and Figure 12.28 illustrates another feature of flip-flops. That is that the value output by the circuit is</span> <span class="Ital">not</span> <span>solely dependent on its current inputs. When the R and S inputs are both low, “0”, the value output on the Q line depends on whether the most recent high, “1”, input was on the set line or the reset line. Figure 12.26 shows the circuit outputting a “0” on Q, because the most recent input</span> <span>operation was “reset”. Figure 12.28 shows the circuit outputting a “1”, because the most recent input operation was “set”.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.28</h1>
+			<img src="Images/fig12-28.png" alt="" class="Image">
+			
 			<p class="Figure">
 				Figure 12.28: An R-S flip-flop holding a “1”
 			</p>
-			<h1>INSERT FIGURE 12.29</h1>
+			
+			<img src="Images/fig12-29.png" alt="" class="Image">
+			
 			<p class="Figure">
 				Figure 12.29: An R-S flip-flop in a stable but invalid state
 			</p>
@@ -157,6 +162,7 @@
 				</li>
 			</ol>
 			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>

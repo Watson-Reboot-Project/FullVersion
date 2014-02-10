@@ -75,7 +75,7 @@
 				The fundamental design of this binary cell is based on the R-S flip-flop of Figure12.23 though there are some significant differences. To begin with, the cell has three inputs and a single output. The inputs are labeled “Select”, “Read/write”, and “Input”. The output line is labeled “Output”.
 			</p>
 
-			<h1>INSERT FIGURE 12.34</h1>
+			<img src="Images/fig12-34.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 12.34: A Binary cell (BC) for RAM memory
@@ -104,7 +104,8 @@
 			<p>
 				<span>The reason for this is that the</span> <span class="Ital">and</span> <span>gates that guard the R and S inputs of the flip-flop will both have two of their inputs set high: the “select” and “Read/write” inputs. Thus, if “Input” is high, S (set) will receive a high and the flip-flop will store a “1”. If, on the other hand, “Input” is low, then R (reset) which receives a negated version of “Input” will go high and the flip-flop will reset to “0”. Note that having a negated version of the input line run into R is a clever idea, since it prevents the R-S flip-flop from ever entering into its invalid state. (Recall from our discussion of R-S flip-flops in Section 12.4 that if R and S are ever set to “1” at the same time the flip-flop enters a stable, but invalid state.)</span>
 			</p>
-			<h1>INSERT FIGURE 12.35 </h1>
+			
+			<img src="Images/fig12-35.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 12.35: A Binary Cell – encapsulated view
@@ -130,7 +131,8 @@
 				<span>On the left side of the circuit diagram, a two-bit address (A</span><span class="Subscript">1</span> <span>and A</span><span class="Subscript">0</span> <span>) is input. This address is fed into a two-to-four decoder that generates a high signal down the data line corresponding to the word of memory to be accessed (either read or written).  The decoder also accepts an “enable” input. This input essentially tells the decoder whether the bit pattern currently on the input address lines is a valid memory address that is to be decoded, or whether the circuit should just ignore this bit pattern for the moment.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.36</h1>
+			<img src="Images/fig12-36.png" alt="" class="Image">
+			
 			<p class="Figure">
 				Figure 12.36: A 4 x 2 RAM memory
 			</p>
@@ -171,6 +173,7 @@
 				</li>
 			</ol>
 			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
