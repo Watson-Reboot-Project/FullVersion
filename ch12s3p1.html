@@ -22,10 +22,11 @@
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 	</head>
 
@@ -162,6 +163,10 @@
 					</p>
 				</li>
 			</ol>
+			<!-- Sandbox -->
+			<!--
+			<p class="Section">Scratch Pad</p>
+			<div id="sandbox1" style='border: solid 1px;'></div>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -184,7 +189,8 @@
 			</div>
 
 		</div>
-		<script src="js/DigiLogic/Controller.js"></script>
+			<!-- Figure js -->
+			<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
 			<script src="js/DigiLogic/AndGate3.js"></script>
 			<script src="js/DigiLogic/AndGate4.js"></script>
@@ -204,11 +210,27 @@
 			<script src="js/DigiLogic/TruthTable.js"></script>
 			<script src="js/DigiLogic/Setup.js"></script>
 			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+			
+			<!-- Sandbox js -->
+			<script src="js/DigiLogic/SB_Controller.js"></script>
+			<script src="js/DigiLogic/SB_AndGate.js"></script>
+			<script src="js/DigiLogic/SB_OrGate.js"></script>
+			<script src="js/DigiLogic/SB_NotGate.js"></script>
+			<script src="js/DigiLogic/SB_Connector.js"></script>
+			<script src="js/DigiLogic/SB_InputNode.js"></script>
+			<script src="js/DigiLogic/SB_OutputNode.js"></script>
+			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
+			<script src="js/DigiLogic/SB_Exercises.js"></script>
+			<script src="js/DigiLogic/SB_TruthTable.js"></script>
+			<script src="js/DigiLogic/SB_Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
+			<script src="js/DigiLogic/Evaluate.js"></script>
 		
 		<script>
 			var figurec = new DigitalLogicFigure("container-c", "c"); 
 			var figured = new DigitalLogicFigure("container-d", "d");
-			var figurexor = new DigitalLogicFigure("container-11", "11");  
+			var figure11 = new DigitalLogicFigure("container-11", "11");  
+			var lab = new DigitalLogicsLab("sandbox1"); 
 		</script>
 	</body>
 </html>

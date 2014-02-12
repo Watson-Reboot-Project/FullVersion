@@ -22,10 +22,11 @@
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 	</head>
 
@@ -230,6 +231,12 @@
 				</li>
 			</ol>
 			
+			<!-- Sandbox -->
+			<!--
+			<p class="Section">Scratch Pad</p>
+			<div id="sandbox1" style='border: solid 1px;'></div>
+			<!-- End Sandbox -->
+			
 			<p class="Section">Footnotes</p>
 			<p class="Footnote">
 				<span class="footnodeNumber"><a class="Footnote" href="#body_ftn1" id="ftn1">[1]</a></span> <span>&nbsp;</span>The fully-parenthesized Boolean expression for this implementation of the four-input <span class="Ital">or</span> is
@@ -261,7 +268,8 @@
 			</div>
 
 		</div>
-		<script src="js/DigiLogic/Controller.js"></script>
+			<!-- Figure js -->
+			<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
 			<script src="js/DigiLogic/AndGate3.js"></script>
 			<script src="js/DigiLogic/AndGate4.js"></script>
@@ -281,6 +289,21 @@
 			<script src="js/DigiLogic/TruthTable.js"></script>
 			<script src="js/DigiLogic/Setup.js"></script>
 			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+			
+			<!-- Sandbox js -->
+			<script src="js/DigiLogic/SB_Controller.js"></script>
+			<script src="js/DigiLogic/SB_AndGate.js"></script>
+			<script src="js/DigiLogic/SB_OrGate.js"></script>
+			<script src="js/DigiLogic/SB_NotGate.js"></script>
+			<script src="js/DigiLogic/SB_Connector.js"></script>
+			<script src="js/DigiLogic/SB_InputNode.js"></script>
+			<script src="js/DigiLogic/SB_OutputNode.js"></script>
+			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
+			<script src="js/DigiLogic/SB_Exercises.js"></script>
+			<script src="js/DigiLogic/SB_TruthTable.js"></script>
+			<script src="js/DigiLogic/SB_Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
+			<script src="js/DigiLogic/Evaluate.js"></script>
 		
 		<script>
 			var figurenand0 = new DigitalLogicFigure("container-nand0", "nand0");
@@ -291,6 +314,7 @@
 			var figureand4 = new DigitalLogicFigure("container-and4", "and4");
 			var figureor4 = new DigitalLogicFigure("container-or4", "or4"); 
 			var figureb = new DigitalLogicFigure("container-b", "b"); 
+			var lab = new DigitalLogicsLab("sandbox1"); 
 		</script>
 	</body>
 </html>

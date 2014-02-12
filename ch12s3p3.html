@@ -19,9 +19,10 @@
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 	</head>
 
@@ -69,7 +70,8 @@
 				An “adder”, as its name implies, is a circuit for adding binary numbers. In Chapter 11 (Section 11.4.1.3) we studied binary arithmetic, including binary addition. As you may recall from that discussion, the addition of two single-bit binary numbers can be defined by a table such as:
 			</p>
 
-			<h1>INSERT TABLE</h1>
+			<img src="Images/fig12-addertable.png" alt="Adder Table" class="ImageTall">
+			
 			<p>
 				<span>where “A” and “B” represent the two single-bit inputs, “S” represents the sum of those inputs, and “C” represents a possible carry. The first line of the table illustrates “0 + 0” equals “0”. Lines two and three correspond to “0 + 1” and “1 + 0” both of which equal “1”. The last line of the table represents “1 + 1” which equals two (10</span><span class="Subscript">two</span> <span>). This value is represented by placing a “0” in S, the sum, and a “1” in C, the carry.</span>
 			</p>
@@ -89,7 +91,7 @@
 				<span>This circuit is called a “half adder”. While a half</span> <span>adder does add two single-bit numbers and can generate a carry, it has no provision for a carry</span> <span class="Ital">input</span> <span>into the circuit. Recall from our discussion of binary addition that when adding two multi-bit binary numbers one works column by column from right to left making sure that the carry bit from the previous column is added into the current column. Here is an illustration of this process on six and seven, represented as four-bit unsigned binary numbers.</span>
 			</p>
 
-			<h1>INSERT ILLUSTRATION</h1>
+			<img src="Images/fig12-carryillus.png" alt="" class="Image">
 
 			<p>
 				A half adder could be used to add the right-most (low-order) bits of the two numbers, but it is not general enough to add the digits of an arbitrary column, since it does not support a carry as input.
@@ -99,12 +101,15 @@
 				<span>A “full adder” overcomes this limitation of the half adder by allowing a carry to be fed into the circuit along with a bit from each of the numbers to be added. Thus, a full adder will have three inputs: the two bits being added plus the carry in. Only two output bits, the “sum” and “carry out”, are needed because the largest result that can be produced by the circuit will be three (11</span><span class="Subscript">two</span> <span>). This occurs when all three inputs are set to “1”. Here is a complete truth table for a full adder. The inputs have been labeled “C</span><span class="Subscript">in</span> <span>”, “A”, and “B”; the outputs “C</span><span class="Subscript">out</span> <span>” and “S”.</span>
 			</p>
 
-			<h1>INSERT TABLE</h1>
+			<img src="Images/fig12-carrytable.png" alt="" class="Image">
+			
 			<p>
 				Designing a circuit to implement this behavior “from scratch” would be challenging. However, through careful observation and the use of two half adders, the job is manageable. Since we’ll be using half adders to build the full adder, our circuit diagram will be simpler if we imagine the half adder encapsulated into a “black box”, as shown below:
 			</p>
 
-			<h1>INSERT FIGURE 12.14</h1>
+			<img src="Images/fig12-halfadderillus.png" alt="" class="ImageTall">
+			<img src="Images/fig12-fulladderillus.png" alt="" class="Image">
+			
 			<p class="Figure">
 				Figure 12.14: A full adder implemented using two half adders
 			</p>
@@ -120,12 +125,14 @@
 			<p>
 				Just as we encapsulated the half adder, we can encapsulate the single-bit full adder into a black box.
 			</p>
+			
+			<img src="Images/fig12-fulladderencap.png" alt="" class="ImageTall">
 
 			<p>
 				<span>This representation looks a little different than the circuit of Figure 12.14 because it has been rotated clockwise 90</span> <span></span> <span>to make the following diagram easier to read. Be assured, however, that the inputs, outputs, behavior, and internal details of the circuit remain unchanged.</span>
 			</p>
 
-			<h1>INSERT FIGURE 12.15</h1>
+			<img src="Images/fig12-fourbitadder.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 12.15: An implementation for a four-bit adder using four one-bit adders
@@ -156,6 +163,11 @@
 					</p>
 				</li>
 			</ol>
+			<!-- Sandbox -->
+			<!--
+			<p class="Section">Scratch Pad</p>
+			<div id="sandbox1" style='border: solid 1px;'></div>
+
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -178,7 +190,8 @@
 			</div>
 
 		</div>
-		<script src="js/DigiLogic/Controller.js"></script>
+			<!-- Figure js -->
+			<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
 			<script src="js/DigiLogic/AndGate3.js"></script>
 			<script src="js/DigiLogic/AndGate4.js"></script>
@@ -198,9 +211,25 @@
 			<script src="js/DigiLogic/TruthTable.js"></script>
 			<script src="js/DigiLogic/Setup.js"></script>
 			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+			
+			<!-- Sandbox js -->
+			<script src="js/DigiLogic/SB_Controller.js"></script>
+			<script src="js/DigiLogic/SB_AndGate.js"></script>
+			<script src="js/DigiLogic/SB_OrGate.js"></script>
+			<script src="js/DigiLogic/SB_NotGate.js"></script>
+			<script src="js/DigiLogic/SB_Connector.js"></script>
+			<script src="js/DigiLogic/SB_InputNode.js"></script>
+			<script src="js/DigiLogic/SB_OutputNode.js"></script>
+			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
+			<script src="js/DigiLogic/SB_Exercises.js"></script>
+			<script src="js/DigiLogic/SB_TruthTable.js"></script>
+			<script src="js/DigiLogic/SB_Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
+			<script src="js/DigiLogic/Evaluate.js"></script>
 		
 		<script>
 			var figure13 = new DigitalLogicFigure("container-13", "13"); 
+			var lab = new DigitalLogicsLab("sandbox1"); 
 		</script>
 	</body>
 </html>

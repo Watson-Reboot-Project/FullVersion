@@ -447,9 +447,11 @@
 			<p>
 				In order to begin to understand these differences let’s consider how we would go about constructing a spreadsheet that would convert a temperature expressed in degrees Celsius into one expressed in degrees Fahrenheit.  The standard equation that expresses the relationship between these two temperature scales is:
 			</p>
-		
-			<h1>INSERT MATH FORMULA</h1>
-		
+			
+			<ul class="Blockcenter">
+				<img src="Images/fig2-fahrenheit.png" alt="">
+			
+			</ul>
 			<p>
 				This expression cannot be entered directly into a spreadsheet for two main reasons.  First, it refers to the variables <span class="Ital">F</span> and <span class="Ital">C</span> rather than to spreadsheet cell locations, and second the expression is an equation.  The first point is rather obvious; the second point is subtle but important.  Mathematical equations are essentially statements of fact, which say that two quantities are equal.  Spreadsheet formulas, instead of expressing equivalence, specify a sequence of mathematical operations that are to be performed.
 			</p>
@@ -500,7 +502,9 @@
 				Another example of spreadsheet formulas can be found by returning to Figure 2.3.  The spreadsheet of Figure 2.3 computes the average of three grades, stored in cells C2, C3, and C4, and places the result into cell C6.  Since the average of three grades is given by the equation: 
 			</p>
 		
-			<h1>INSERT AVERAGE FORMULA</h1>
+			<ul class="Blockcenter">
+				<img src="Images/fig2-average.png" alt="">
+			</ul>
 		
 			<p>
 				the formula: 
@@ -554,39 +558,9 @@
 				Parentheses may also be nested to create more complex expressions.  For example, the expression 
 			</p>
 		
-		<!--Next 'div' was a 'text:p'.--><div class="Figure"><!--Next '
-			span' is a draw:frame.
-		--><span style="height:0.3929in;width:0.7807in; padding:0; " class="fr5" id="Object3"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow>
-         <mstyle mathsize="12pt">
-          <mrow>
-           <mrow>
-            <mrow>
-             <mn>5</mn>
-             <mo stretchy="false">×</mo>
-             <mrow>
-              <mfrac>
-               <mrow>
-                <mrow>
-                 <mi mathvariant="italic">A1</mi>
-                 <mo stretchy="false">+</mo>
-                 <mn>3</mn>
-                </mrow>
-               </mrow>
-               <mrow>
-                <mrow>
-                 <mi mathvariant="italic">A5</mi>
-                 <mo stretchy="false">−</mo>
-                 <mn>3</mn>
-                </mrow>
-               </mrow>
-              </mfrac>
-             </mrow>
-            </mrow>
-           </mrow>
-          </mrow>
-         </mstyle>
-         <mrow/>
-        </mrow></math><img style="height:0.998cm;width:1.983cm;" alt="" src="data:image/*;base64,AQAJAAADIQEAAAMAFQAAAAAABQAAAAkCAAAAAAQAAAACAQEABQAAAAEC////AAQAAAAuARgABQAAADECAQAAAAUAAAALAgAAAAAFAAAADALgA2AGEgAAACYGDwAaAP////8AABAAAADA////uP///yAGAACYAwAACwAAACYGDwAMAE1hdGhUeXBlAADAAAkAAAD6AgAAEAAAAAAAAAAiAAQAAAAtAQAABQAAABQCAAIyAgUAAAATAgACIAYVAAAA+wKA/gAAAAAAAJABAAAAAAQCABBUaW1lcyBOZXcgUm9tYW4AGQAEAAAALQEBAAgAAAAyCowDXgUBAAAAMwAIAAAAMgqMA0gDAQAAADUACAAAADIKbgFGBQEAAAAzAAgAAAAyCm4BQgMBAAAAMQAIAAAAMgpgAi4AAQAAADUAEAAAAPsCgP4AAAAAAACQAQAAAAIAAgAQU3ltYm9sAAAEAAAALQECAAQAAADwAQEACAAAADIKjANKBAEAAAAtAAgAAAAyCm4BLAQBAAAAKwAIAAAAMgpgAhgBAQAAALQAFQAAAPsCgP4AAAAAAACQAQEAAAAEAgAQVGltZXMgTmV3IFJvbWFuABkABAAAAC0BAQAEAAAA8AECAAgAAAAyCowDagIBAAAAQQAIAAAAMgpuAYICAQAAAEEACgAAACYGDwAKAP////8BAAAAAAAQAAAA+wIQAAcAAAAAALwCAAAAAAECAiJTeXN0ZW0AbgQAAAAtAQIABAAAAPABAQADAAAAAAA="/></span></div><div style="clear:both; line-height:0; width:0; height:0; margin:0; padding:0;"> </div>
+			<ul class="Blockcenter">
+				<img src="Images/fig2-complex.png" alt="">
+			</ul>
 		
 			<p>
 			can be represented by the formula:    <span class="Subfigure">= 5  * ( ( A1 + 3 ) / ( A5 – 3 ) )</span>.
@@ -705,101 +679,13 @@
 				<br/>
 				<li>
 					Show how a spreadsheet for computing both the area and circumference of a circle, given its radius, could be constructed.  For each cell of the spreadsheet, show exactly what should be entered.  The relevant equations are:
-			
-				<!--Next 'div' was a 'text:p'.--><div class="Figure"><!--Next '
-					span' is a draw:frame.
-				--><span style="height:0.7862in;width:1.5728in; padding:0; " class="fr5" id="Object8"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow>
-				 <mrow>
-				  <mtable>
-				   <mtr>
-					<mtd>
-					 <mrow>
-					  <mstyle mathsize="12pt">
-					   <mrow>
-						<mrow>
-						 <mrow>
-						  <mstyle mathvariant="italic">
-						   <mrow>
-							<mtext>Circumference</mtext>
-						   </mrow>
-						  </mstyle>
-						  <mo stretchy="false">=</mo>
-						  <mn>2ΠR</mn>
-						 </mrow>
-						</mrow>
-					   </mrow>
-					  </mstyle>
-					  <mrow/>
-					 </mrow>
-					</mtd>
-				   </mtr>
-				   <mtr>
-					<mtd>
-					 <mrow>
-					  <mstyle mathsize="12pt">
-					   <mrow>
-						<mrow>
-						 <mrow>
-						  <mstyle mathvariant="italic">
-						   <mrow>
-							<mtext>Area</mtext>
-						   </mrow>
-						  </mstyle>
-						  <mo stretchy="false">=</mo>
-						  <msup>
-						   <mi mathvariant="italic">ΠR</mi>
-						   <mrow>
-							<mstyle mathsize="8pt">
-							 <mrow>
-							  <mrow>
-							   <mn>2</mn>
-							  </mrow>
-							 </mrow>
-							</mstyle>
-						   </mrow>
-						  </msup>
-						 </mrow>
-						</mrow>
-					   </mrow>
-					  </mstyle>
-					  <mrow/>
-					 </mrow>
-					</mtd>
-				   </mtr>
-				   <mtr>
-					<mtd>
-					 <mrow>
-					  <mrow>
-					   <mi>Π</mi>
-					   <mo stretchy="false">=</mo>
-					   <mn>3</mn>
-					  </mrow>
-					  <mtext>.</mtext>
-					  <mtext>14159</mtext>
-					  <mrow/>
-					 </mrow>
-					</mtd>
-				   </mtr>
-				   <mtr>
-					<mtd>
-					 <mrow>
-					  <mrow>
-					   <mi>R</mi>
-					   <mo stretchy="false">=</mo>
-					   <mstyle mathvariant="italic">
-						<mrow>
-						 <mtext>radius</mtext>
-						</mrow>
-					   </mstyle>
-					  </mrow>
-					  <mrow/>
-					 </mrow>
-					</mtd>
-				   </mtr>
-				  </mtable>
-				 </mrow>
-				 <mrow/>
-				</mrow></math><img style="height:1.9969cm;width:3.9949cm;" alt="" src="data:image/*;base64,AQAJAAADeQEAAAIAFQAAAAAABQAAAAkCAAAAAAQAAAACAQEABQAAAAEC////AAQAAAAuARgABQAAADECAQAAAAUAAAALAgAAAAAFAAAADALACOANEgAAACYGDwAaAP////8AABAAAADA////uv///6ANAAB6CAAACwAAACYGDwAMAE1hdGhUeXBlAAAAAhUAAAD7AoD+AAAAAAAAkAEBAAAABAIAEFRpbWVzIE5ldyBSb21hbgA4AAQAAAAtAQAACgAAADIKXQjTAgYAAAByYWRpdXMIAAAAMgpdCEYAAQAAAFIACAAAADIK3QMPBgEAAABSAAkAAAAyCt0DWAAEAAAAQXJlYQgAAAAyCmwBnwwBAAAAUgAJAAAAMgpsAQAHAwAAAG5jZQAMAAAAMgpsAS4ACgAAAENpcmN1bWZlcmUQAAAA+wKA/gAAAAAAAJABAAAAAgACABBTeW1ib2wAAAQAAAAtAQEABAAAAPABAAAIAAAAMgpdCJsBAQAAAD0ACAAAADIKHQbMAQEAAAA9AAgAAAAyCh0GNAABAAAAUAAIAAAAMgrdA94EAQAAAFAACAAAADIK3QOsAwEAAAA9AAgAAAAyCmwBbgsBAAAAUAAIAAAAMgpsAXYJAQAAAD0AFQAAAPsCgP4AAAAAAACQAQAAAAAEAgAQVGltZXMgTmV3IFJvbWFuADgABAAAAC0BAAAEAAAA8AEBAAoAAAAyCh0GGAQFAAAAMTQxNTkACAAAADIKHQa4AwEAAAAuAAgAAAAyCh0G+AIBAAAAMwAIAAAAMgpsAa4KAQAAADIAFQAAAPsCIP8AAAAAAACQAQAAAAAEAgAQVGltZXMgTmV3IFJvbWFuAAYABAAAAC0BAQAEAAAA8AEAAAgAAAAyCjEDHwcBAAAAMgAKAAAAJgYPAAoA/////wEAAAAAABAAAAD7AhAABwAAAAAAvAIAAAAAAQICIlN5c3RlbQBuBAAAAC0BAAAEAAAA8AEBAAMAAAAAAA=="/></span></div><div style="clear:both; line-height:0; width:0; height:0; margin:0; padding:0;"> </div>
+					
+					<ul class="Blockcenter">
+						<li><span class="Subfigure"><span class="Ital">Circumference</span> = 2ΠR</span></li>
+						<li><span class="Subfigure"><span class="Ital">Area</span> = ΠR<span class="Superscript">2</span></span></li>
+						<li><span class="Subfigure">Π = 3.14159</span></li>
+						<li><span class="Subfigure"><span class="Ital">R</span> = <span class="Ital">radius</span></span></li>
+					</ul>
 				</li>
 			</ol>
 		
@@ -1108,8 +994,8 @@
 				<br/>
 				<li>
 					Suppose you are a member of a long-range planning team at NASA.  Your team is looking into the feasibility of constructing a wheel-shaped space station that would spin to simulate Earth-normal gravity.  Both the size of the station and its rate of spin affect the “artificial gravity” on the station.  The underlying physics equation describing this relationship is: 
-			
-					<h1>INSERT EQUATION</h1>
+					
+					<img src="Images/fig2-gravform.png" alt="" class="Blockcenter">
 			
 					<ul class="Blockcenter">
 						<li>Where:</li>
@@ -1129,17 +1015,19 @@
 							</li>
 						</ul>
 					</ul>
-					<p class="P42">
+					<br/>
+					<p>
 						Construct a table showing the radius, <span class="Ital">R</span>, needed in order to have acceleration equal to that produced by Earth-normal gravity, in a wheel-shaped space station that rotates, <span class="Ital">T</span>, once in 10 seconds, 20 seconds, 30 seconds, … , 60 seconds.  Acceleration due to gravity on the surface of the Earth, <span class="Ital">A</span>, is 32 feet per second per second.  The particular version of the above formula that you need to solve for is:
 					</p>
 				
-					<h1>INSERT EQUATION</h1>
+					<img src="Images/fig2-gravform2.png" alt="" class="Blockcenter">
 
 				</li>
 				<br/>
 				<li>
 					The reliability of a new experimental rocket is estimated to be 95%.  Construct a table showing the likelihood of an accident occurring during one or more of its first 8 launches.  Likelihood of success over all <span class="Ital">N</span> trials is calculated as: 
-						 
+					<br/>
+					<br/>
 					<p class="Subfigure">
 						<span class="Ital">reliability on one launch attempt</span><span class="Superscript">N</span>
 					</p>

@@ -20,10 +20,11 @@
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 	</head>
 
@@ -89,7 +90,7 @@
 				The behavior of the two-input multiplexer is summarized in the following truth table.
 			</p>
 
-			<h1>INSERT TRUTH TABLE</h1>
+			<img src="Images/fig12-twoinputmultiplex.png" alt="" class="ImageTall">
 
 			<p>
 				<span>Figure 12.19 illustrates a somewhat more complex multiplexer, a four-input MUX. The four-input MUX has two selector lines, four data lines, and a single output line. Placing a “0” on both S</span><span class="Subscript">1</span> <span>and S</span><span class="Subscript">0</span> <span>, corresponding to 00</span><span class="Subscript">two</span> <span>, or zero, causes the value of D</span><span class="Subscript">0</span> <span>to be sent to the output line. Setting S</span><span class="Subscript">1</span> <span>to “0” and S</span><span class="Subscript">0</span> <span>to “1”, corresponding to 01</span><span class="Subscript">two</span> <span>, or one, causes D</span><span class="Subscript">1</span> <span>to be the active line. Likewise, S</span><span class="Subscript">1</span> <span>= “1” and S</span><span class="Subscript">0</span> <span>= “0”, meaning 10</span><span class="Subscript">two</span> <span>, or two, focuses attention on D</span><span class="Subscript">2</span> <span>. Finally, S</span><span class="Subscript">1</span> <span>= “1” and S</span><span class="Subscript">0</span> <span>= “1”, meaning 11</span><span class="Subscript">two</span> <span>, or three, causes the D</span><span class="Subscript">3</span> <span>input to be transferred to the output line.</span>
@@ -125,18 +126,18 @@
 				The four-input multiplexer can be represented by a “black box” such as the following.
 			</p>
 
-			<h1>INSERT BLACK BOX</h1>
-			<p>
+			<img src="Images/fig12-fourmuxinput.png" alt="" class="Image">
+			<img src="Images/fig12-fourmuxinputdata.png" alt="" class="Image">
+			
+			<p class="Figure">
 				(a) &nbsp;MUX transmitting input Data Channel Zero on output Channel Z
 			</p>
 
-			<h1>INSERT A</h1>
-			<p>
+			<img src="Images/fig12-fourinputmuxdata.png" alt="" class="Image">
+			
+			<p class="Figure">
 				(b) &nbsp;MUX transmitting input Data Channel One on output Channel Z
 			</p>
-
-			<h1>INSERT B</h1>
-			<h1>INSERT FIGURE 12.20</h1>
 
 			<p class="Figure">
 				Figure 12.20: An illustration of the behavior of multiplexers
@@ -173,24 +174,26 @@
 			<p>
 				Here is a “black box” representation of the four-output demultiplexer, or DEMUX.
 			</p>
-			<h1>INSERT BLACK BOX</h1>
+			
+			<img src="Images/fig12-fouroutputmux.png" alt="" class="Image">
+			
 			<p>
 				<span>Figure 12.22 illustrates the behavior of the four-input DEMUX over time. The input lines and output lines are labeled with the data streams flowing down them. During the period of time illustrated in Figure 12.22(a), selector line S</span><span class="Subscript">1</span> <span>is held at one and S</span><span class="Subscript">0</span> <span>is held at zero, making output Data Channel Two the “active” data channel. In part (b), S</span><span class="Subscript">1</span> <span>and S</span><span class="Subscript">0</span> <span>are both one, activating output Data Channel Three. These examples illustrate how a demultiplexer can “broadcast” an input data stream down one of many different output channels. Changing S</span><span class="Subscript">1</span> <span>,S</span><span class="Subscript">0</span> <span>switches the “broadcast” to a different output channel.</span>
 			</p>
 
-			<h1>INSERT BROADCAST</h1>
-			<p>
+			<img src="Images/fig12-fouroutputmuxdata2.png" alt="" class="Image">
+			
+			<p class="Figure">
 				(a) DEMUX transmitting input Channel A on output Data Channel Two
 			</p>
 
-			<h1>INSERT A</h1>
-			<p>
+			<img src="Images/fig12-fouroutputmuxdata3.png" alt="" class="Image">
+			
+			<p class="Figure">
 				(b) &nbsp;DEMUX transmitting input Channel A on output Data Channel Three
 			</p>
-			<h1>INSERT B</h1>
-
-			<h1>INSERT FIGURE 12.22</h1>
-			<p>
+			
+			<p class="Figure">
 				Figure 12.22: An illustration of the behavior of demultiplexers
 			</p>
 
@@ -223,6 +226,12 @@
 					</p>
 				</li>
 			</ol>
+			<!-- Sandbox -->
+			<!--
+			<p class="Section">Scratch Pad</p>
+			<div id="sandbox1" style='border: solid 1px;'></div>
+			<!-- End Sandbox -->
+			
 			<p class="Section">Footnotes</p>
 			<p class="Footnote">
 				<span class="footnodeNumber"><a class="Footnote" href="#body_ftn2" id="ftn2">[2]</a></span> <span>&nbsp;</span>Rhymes with “sucks”.
@@ -252,7 +261,8 @@
 
 		</div>
 		
-		<script src="js/DigiLogic/Controller.js"></script>
+			<!-- Figure js -->
+			<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
 			<script src="js/DigiLogic/AndGate3.js"></script>
 			<script src="js/DigiLogic/AndGate4.js"></script>
@@ -272,11 +282,27 @@
 			<script src="js/DigiLogic/TruthTable.js"></script>
 			<script src="js/DigiLogic/Setup.js"></script>
 			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
-		
+			
+			<!-- Sandbox js -->
+			<script src="js/DigiLogic/SB_Controller.js"></script>
+			<script src="js/DigiLogic/SB_AndGate.js"></script>
+			<script src="js/DigiLogic/SB_OrGate.js"></script>
+			<script src="js/DigiLogic/SB_NotGate.js"></script>
+			<script src="js/DigiLogic/SB_Connector.js"></script>
+			<script src="js/DigiLogic/SB_InputNode.js"></script>
+			<script src="js/DigiLogic/SB_OutputNode.js"></script>
+			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
+			<script src="js/DigiLogic/SB_Exercises.js"></script>
+			<script src="js/DigiLogic/SB_TruthTable.js"></script>
+			<script src="js/DigiLogic/SB_Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
+			<script src="js/DigiLogic/Evaluate.js"></script>
+			
 		<script>
 			var figuren21 = new DigitalLogicFigure("container-21", "21");
 			var figure19 = new DigitalLogicFigure("container-19", "19");
 			var figure18 = new DigitalLogicFigure("container-18", "18");
+			var lab = new DigitalLogicsLab("sandbox1"); 
 		</script>
 	</body>
 </html>

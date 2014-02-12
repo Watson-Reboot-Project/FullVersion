@@ -1,5 +1,4 @@
 function TruthTable(container, figureNum) {
-	var suffix = container.substring(container.length - 1);
 	var numOut;
 	var visible = true;
 	var rows;
@@ -27,7 +26,7 @@ function TruthTable(container, figureNum) {
 		numOut = numOutputs;
 		var body = document.getElementById(container).childNodes[0]; // grab the div element for the table
 		var tbl = document.createElement('table'); // create a table element
-		tbl.id = "table" + suffix; // set its ID
+		tbl.id = "table" + figureNum; // set its ID
 		//tbl.border = '2'; // set border thickness
 		tbl.style.borderCollapse='separate';
 		tbl.style.borderSpacing="0";
@@ -86,9 +85,9 @@ function TruthTable(container, figureNum) {
 		tbl.appendChild(tbdy);
 		
 		
-		console.log("Suffix: " + suffix);
+		console.log("Suffix: " + figureNum);
+		console.log("topDiv-" + figureNum);
 		//body.appendChild(tbl);
-		console.log("This is " + figureNum);
 		document.getElementById("topDiv-" + figureNum).appendChild(tbl);
 		
 		/*
@@ -126,7 +125,7 @@ function TruthTable(container, figureNum) {
 	function setTable(values) {
 		if (visible == false) return;
 
-		var myTable = document.getElementById("table" + suffix); // grab the table by ID
+		var myTable = document.getElementById("table" + figureNum); // grab the table by ID
 		for (var i = 0; i < rows; i++) { // for all rows
 			for (var j = 0; j < cols; j++) { // for all columns
 				//set table values
@@ -139,7 +138,7 @@ function TruthTable(container, figureNum) {
 		if (visible == false) return;
 		var flag = true;
 		var i;
-		var myTable = document.getElementById("table" + suffix);
+		var myTable = document.getElementById("table" + figureNum);
 		
 		for (i = 1; i < rows + 1; i++) {
 			for (var j = 0; j < cols; j++) {
@@ -167,25 +166,25 @@ function TruthTable(container, figureNum) {
 	function highlightFirstRow() {
 		if (visible == false) return;
 		
-		var myTable = document.getElementById('table' + suffix); // grab the table by ID
+		var myTable = document.getElementById('table' + figureNum); // grab the table by ID
 		for (var i = 0; i < cols; i++)
 			myTable.rows[1].cells[i].innerHTML = "<font color = '#00FF00'>" + myTable.rows[1].cells[i].innerHTML + "</font>";
 	}
 	
 	function getTableWidth() {
-		var table = document.getElementById("table" + suffix);
+		var table = document.getElementById("table" + figureNum);
 		if (table !== null) return table.offsetWidth;
 	}
 	
 	function setTableOffset(num) {
-		var table = document.getElementById("table" + suffix);
+		var table = document.getElementById("table" + figureNum);
 		if (table !== null) table.style.marginLeft=num + "px";
 	}
 	
 	function showTruthTable(bool) { visible = bool; }
 	
 	function setTruthTableScale(scale, horPadding, verPadding) {
-		var table = document.getElementById("table" + suffix);
+		var table = document.getElementById("table" + figureNum);
 		if (table === null) return;
 		
 		for (var i = 0; i < table.rows.length; i++) {

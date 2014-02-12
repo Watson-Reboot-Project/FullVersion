@@ -36,7 +36,7 @@
 								  		<li> <a href="ch01.html">Chapter 1</a></li>
 								  		<li> <a href="ch02.html">Chapter 2</a></li>
 								  		<li> <a href="ch03.html">Chapter 3</a></li>
-								  		<li> <a href="ch04">Chapter 4</a></li>
+								  		<li> <a href="ch04.html">Chapter 4</a></li>
 								  		<li> <a href="ch05.html">Chapter 5</a></li>
 								  		<li> <a href="ch06.html">Chapter 6</a></li>
 								  		<li> <a href="ch07.html">Chapter 7</a></li>
@@ -118,7 +118,9 @@
 				</a>
 			</div>
 		<!-- End floating nav -->
+		<!-- page-wrapper is Design's wrapper for fiddling-->
 		<div class="page-wrapper">
+		<!--<div id="wrapper"> This is the one used in other pages-->
 		<div id="main_header" class="container"> <!-- Container begin--> <h1> Chapter 1 </h1></div>
 
 		   <!------------------------------ Main content [BODY] ---------------------------->			
@@ -475,11 +477,11 @@
 				<span class="Bolded">Main memory</span> is where the programs and data that are currently being used are located.  Main memory is often referred to as <span class="Bolded">RAM</span>, which stands for Random Access Memory.  This acronym is derived from the fact that the CPU may access the contents of main memory in any order – there is no fixed or predefined sequence.  In 2003, a new personal computer typically had between 512 megabytes to one gigabyte of main memory, meaning they could store somewhere between one half to one billion characters.  
 			</p>
 	
-			<h1>INSERT FIGURE 1.2</h1>
+			<img src="Images/fig1-2.png" alt="A block diagram of a computer" class="Image">
 	
 			<p class="Figure">
-				Figure 1.2:  A block diagram of a computer<
-			/p>
+				Figure 1.2:  A block diagram of a computer
+			</p>
 
 			<p>
 				<span class="Bolded">Secondary storage</span> is used to hold programs and data that are likely to be needed sometime in the near future.  Disk drives are the most common secondary storage devices.  The capacity of secondary storage devices purchased in 2003 ranged from about 40 to 120 gigabytes, meaning they could store somewhere between 40 to 120 billion characters.
@@ -601,7 +603,7 @@
 				<span class="Bolded">Finite state automata</span> consist of a collection of states (usually drawn as circles) and transitions between states (usually drawn as labeled arrows).  Finite state automata are simple machines, with a limited amount of memory, that can process strings of input data one character at a time.  As each character is read, the automaton traverses the transition labeled with the input character.  After all input characters have been read, the input is accepted if the automaton is in a special “accepting” state.  Otherwise the input is rejected.  Figure 1.3 shows a finite state automaton that accepts all strings of zeros and ones that begin with a one.  Even though finite automata are quite limited in what they can do, they are still quite useful.  For example, programs based on finite automata are used to create efficient pattern matchers.
 			</p>
 	
-			<h1>INSERT FIGURE 1.3</h1>
+			<img src="Images/fig1-3.png" alt="A finite automaton that accepts all strings of zeros and ones that begin with a one" class="Image">
 		
 			<p class="Figure">
 				Figure 1.3:  A finite automaton that accepts all strings of zeros and ones that begin with a one

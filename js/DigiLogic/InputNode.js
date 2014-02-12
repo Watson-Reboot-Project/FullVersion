@@ -47,7 +47,7 @@ function InputNode(initX, initY, setText, initValue, setName, id, setup) {
     compShape = new Kinetic.Rect({
         x: gScale * 15,
         y: gScale * 20,
-        width: gScale * 10,
+        width: gScale * 20,
         height: gScale * 10,
         fill: 'black',
         stroke: 'black',

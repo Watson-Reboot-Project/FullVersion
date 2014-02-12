@@ -42,9 +42,9 @@ function OutputNode(initX, initY, setText, setName, id, setup) {
 
 	// make the rectangle
     compShape = new Kinetic.Rect({
-        x: gScale * 15,
+        x: gScale * 5,
         y: gScale * 20,
-        width: gScale * 10,
+        width: gScale * 20,
         height: gScale * 10,
         stroke: 'black',
         strokeWidth: 1
@@ -61,7 +61,7 @@ function OutputNode(initX, initY, setText, setName, id, setup) {
 
 	// create the first plugout line
 	plugin = new Kinetic.Line({
-		points : [gScale * 0, gScale * 25, gScale * 15, gScale * 25],
+		points : [gScale * -10, gScale * 25, gScale * 5, gScale * 25],
 		stroke : 'black',
 		strokeWidth : 1,
 		lineCap : 'round',
@@ -72,7 +72,7 @@ function OutputNode(initX, initY, setText, setName, id, setup) {
 	transFg = new Kinetic.Rect({
 		x: gScale * 0,
 		y: gScale * 0,
-		width: gScale * 25,
+		width: gScale * 30,
 		height: gScale * 40
 	});
 	

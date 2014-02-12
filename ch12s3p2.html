@@ -22,10 +22,11 @@
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 
 	</head>
@@ -82,7 +83,7 @@
 				Comparators come in different sizes, based on the width of their inputs. The simplest comparator is the one-bit comparator for equality. This circuit takes in two single-bit numbers and generates a “1” if they are equal and a “0” otherwise. Here is the truth table for the one-bit comparator for equality. The inputs are labeled “A” and “B”. The output is labeled “Z”.
 			</p>
 
-			<h1>INSERT THE THING</h1>
+			<img src="Images/fig12-ztable.png" alt="Z Table" class="ImageTall">
 
 			<p>
 				<span>In order to implement a circuit with this behavior, we first note the lines of the truth table that generate a “1”. These are lines one and four. Let’s look first at line four. This line of the table says that Z should be “1” when both A and B are “1”. Implementing a circuit that will generate “1” under this circumstance, and no other, is trivial since the two-input</span> <span class="Ital">and</span> <span>gate already does exactly what we want. </span>
@@ -217,6 +218,11 @@
 					</p>
 				</li>
 			</ol>
+			<!-- Sandbox -->
+			<!--
+			<p class="Section">Scratch Pad</p>
+			<div id="sandbox1" style='border: solid 1px;'></div>
+			
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -239,7 +245,8 @@
 			</div>
 		</div>
 		
-		<script src="js/DigiLogic/Controller.js"></script>
+			<!-- Figure js -->
+			<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
 			<script src="js/DigiLogic/AndGate3.js"></script>
 			<script src="js/DigiLogic/AndGate4.js"></script>
@@ -259,10 +266,26 @@
 			<script src="js/DigiLogic/TruthTable.js"></script>
 			<script src="js/DigiLogic/Setup.js"></script>
 			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+			
+			<!-- Sandbox js -->
+			<script src="js/DigiLogic/SB_Controller.js"></script>
+			<script src="js/DigiLogic/SB_AndGate.js"></script>
+			<script src="js/DigiLogic/SB_OrGate.js"></script>
+			<script src="js/DigiLogic/SB_NotGate.js"></script>
+			<script src="js/DigiLogic/SB_Connector.js"></script>
+			<script src="js/DigiLogic/SB_InputNode.js"></script>
+			<script src="js/DigiLogic/SB_OutputNode.js"></script>
+			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
+			<script src="js/DigiLogic/SB_Exercises.js"></script>
+			<script src="js/DigiLogic/SB_TruthTable.js"></script>
+			<script src="js/DigiLogic/SB_Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
+			<script src="js/DigiLogic/Evaluate.js"></script>
 		
 		<script>
 			var figuree = new DigitalLogicFigure("container-e", "e");
-			var figure12 = new DigitalLogicFigure("container-12", "12"); 
+			var figure12 = new DigitalLogicFigure("container-12", "12");
+			var lab = new DigitalLogicsLab("sandbox1"); 
 		</script>
 	</body>
 </html>

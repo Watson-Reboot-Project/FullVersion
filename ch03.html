@@ -9,7 +9,16 @@
 
 		<title>Watson</title>
 
-		<link rel='stylesheet' href='css/generalmedia.css'>
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -22,80 +31,37 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="header">
-				<a href="index.html"><h3 style="margin:0; color: white;">CHAPTER 3:INFORMATION STORAGE AND RETRIEVAL</h3></a>
-			</div>
-			<!-- End header -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
-			<!-- Navbar division -->
-
-			<div id="headnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 25%"><a href="labs.html">LABS</a></td>
-
-						<td style="width: 25%"><a href="documentation.html">DOCUMENTATION</a></td>
-
-						<td style="width: 25%"><a href="tutorials.html">TUTORIALS</a></td>
-
-						<td style="width: 25%"><a href="about.html">ABOUT</a></td>
-
-					</tr>
-
-				</table>
-
-			</div><!-- End nav -->
-
-			<div id="chapnav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 15%"><a href="chapters.html">CHAPTERS</a></td>
-
-						<td style="width: 5%"><a href="ch01.html">01</a></td>
-
-						<td style="width: 5%"><a href="ch02.html">02</a></td>
-
-						<td style="width: 5%"><a href="ch03.html">03</a></td>
-
-						<td style="width: 5%"><a href="ch04.html">04</a></td>
-
-						<td style="width: 5%"><a href="ch05.html">05</a></td>
-
-						<td style="width: 5%"><a href="ch06.html">06</a></td>
-
-						<td style="width: 5%"><a href="ch07.html">07</a></td>
-
-						<td style="width: 5%"><a href="ch08.html">08</a></td>
-
-						<td style="width: 5%"><a href="ch09.html">09</a></td>
-
-						<td style="width: 5%"><a href="ch10.html">10</a></td>
-
-						<td style="width: 5%"><a href="ch11.html">11</a></td>
-
-						<td style="width: 5%"><a href="ch12.html">12</a></td>
-
-						<td style="width: 5%"><a href="ch13.html">13</a></td>
-
-						<td style="width: 5%"><a href="ch14.html">14</a></td>
-
-						<td style="width: 5%"><a href="ch15.html">15</a></td>
-
-					</tr>
-
-				</table>
-
-			</div>
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch02.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch04.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
 			<!-- End nav -->
-			<!-- Main content -->
 
-			<p>
-				&nbsp;
-			</p>
+			<!-- Main content -->
 
 			<p class="Section">
 				3.1 Introduction
@@ -125,10 +91,6 @@
 				Finally, Section 3.5 examines how data appears to the end-user. The two most common end-user views of data are discussed: the view of the file system provided by the operating system, and the view of data provided by relational database systems. This second view will be explored in depth, due to the importance of relational database systems as end-user applications.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Section">
 				3.2 The hardware level
 			</p>
@@ -137,7 +99,10 @@
 				A <span class="Bolded">disk drive</span> is an electromechanical device for storing and retrieving data. Disk drives contain one or more <span class="Bolded">disks</span>, which are platters that rotate inside the drive unit. These platters are coated with a special magnetic material that allows information to be recorded on the disk by manipulating the orientation of the magnetic fields on the surface of the platter. Data stored on a disk is said to be in a <span class="Bolded">non-volatile</span> form, meaning it will not be lost when power to the drive is turned off.
 			</p>
 
-			<h1>INSERT FIGURE 3.1</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-1pt1.png" alt="Four views of information storage and retrieval" class="Image">
+			<img src="Images/InfoStorageRetrIMGS/fig3-1pt2.png" alt="Four views of information storage and retrieval" class="Image">
+			<img src="Images/InfoStorageRetrIMGS/fig3-1pt3.png" alt="Four views of information storage and retrieval" class="Image">
+			<img src="Images/InfoStorageRetrIMGS/fig3-1pt4.png" alt="Four views of information storage and retrieval" class="Image">
 
 			<p class="Figure">
 				Figure 3.1: Four views of information storage and retrieval
@@ -155,7 +120,8 @@
 				Regardless of whether a disk is hard or floppy, it will be divided into tracks and sectors. <span class="Bolded">Tracks</span> are concentric circles, kind of like the rings of a tree, onto which data may be written. Each track is divided into a number of equal sized regions known as <span class="Bolded">sectors</span>. Sectors are the smallest addressable unit on a disk drive. Data is both written to and read from disk drives an entire sector at a time.
 			</p>
 
-			<h1>INSERT FIGURE 3.2</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-2.png" alt="The organization of a disk drive" class="Image">
+			
 			<p class="Figure">
 				Figure 3.2: The organization of a disk drive
 			</p>
@@ -212,10 +178,6 @@
 				Of these three delays, average seek time tends to be the largest (about 10 milliseconds) and average rotational latency the next largest (about 5 milliseconds). Transfer time is usually quite small in comparison to the other two. Thus a hard drive on a modern PC can usually perform an I/O operation in under 20 milliseconds (0.02 seconds). Although this may seem very fast to a human, it is quite slow compared to a CPU capable of processing billions of instructions per second. In fact, I/O (Input/Output) is the single largest bottleneck in computing speed.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Section">
 				3.3 The file organization level
 			</p>
@@ -228,7 +190,7 @@
 				Computer scientists and engineers have solved this problem by constructing levels of software that reside between the end-user and the disk drive controller. These levels of software hide the low-level details of where information is physically located on the disk enabling data to be organized and accessed in more meaningful ways.
 			</p>
 
-			<h1>INSERT FIGURE 3.3</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-3.png" alt="The fields of a student record" class="Image">
 
 			<p class="Figure">
 				Figure 3.3: The fields of a student record
@@ -242,7 +204,8 @@
 				Being able to refer to data using these logical groupings is much more convenient than being forced to think in terms of tracks and sectors, but how are these concepts actually implemented? Typically, all of the fields that make up a record are placed in a fixed order and stored in physically adjacent locations. In other words, all of the parts of a record, (e.g., name, age, major, etc.) are stored next to one another. Figure 3.3 illustrates one possibility for organizing student records. These records consist of eight fields that occur in the order: name, age, major, ID, sex, address, city, and state. The number of characters (bytes) required to represent each field is given in the figure. The total length of a student record corresponding to this organization will be 83 bytes. An actual record that follows this organization is shown in Figure 3.4. The title of each field, and its position in the 83-character-long record, is indicated. Since “spaces” are real characters that must be stored in the record, they are represented in Figure 3.4 using the</span> <span class="Bolded">•</span> symbol.
 			</p>
 
-			<h1>INSERT FIGURE 3.4</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-4.png" alt="An example of a student record" class="Image">
+			
 			<p class="Figure">
 				Figure 3.4: An example of a student record
 			</p>
@@ -271,10 +234,6 @@
 				There are three common approaches to storing multi-sector files on disk drives: contiguous storage, linked storage, and indexed storage.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Section">
 				3.3.1 Contiguous storage
 			</p>
@@ -286,7 +245,10 @@
 			<p>
 				Figure 3.5 presents a collection of files stored using the contiguous approach, and illustrates their track and sector locations on a diagram of a three track, 24-sector disk.
 			</p>
-			<h1>INSERT FIGURE 3.5</h1>
+			
+			<img src="Images/InfoStorageRetrIMGS/fig3-5pt1.png" alt="A collection of contiguous files stored on a disk" class="Image">
+			<img src="Images/InfoStorageRetrIMGS/fig3-5pt2.png" alt="A collection of contiguous files stored on a disk" class="Image">
+			
 			<p class="Figure">
 				Figure 3.5: A collection of contiguous files stored on a disk
 			</p>
@@ -302,7 +264,10 @@
 			<p>
 				In Figure 3.5, ten out of 24 total sectors are unused, yet a three-sector file cannot be stored due to the fact that the necessary number of contiguous sectors is not available. To most people this situation would be unacceptable. How would you feel if you had a disk that was only 58% full, yet refused to store a file that was less than one third the size of “available” space? Rather miffed, I would think.
 			</p>
-			<h1>INSERT FIGURE 3.6</h1>
+			
+			<img src="Images/InfoStorageRetrIMGS/fig3-6pt1.png" alt="A collection of contiguous files after defragging" class="Image">
+			<img src="Images/InfoStorageRetrIMGS/fig3-6pt2.png" alt="A collection of contiguous files after defragging" class="Image">
+			
 			<p class="Figure">
 				Figure 3.6: A collection of contiguous files after defragging
 			</p>
@@ -311,11 +276,7 @@
 				A disk is said to be</span> <span class="Bolded">fragmented</span> when files are spread throughout the disk, leaving the free space in small scattered “clumps”. One way this fragmentation problem can be overcome is to occasionally</span> <span class="Bolded">defragment</span>, or “</span><span class="Bolded">defrag</span>”, the disk by moving the location of files so that all of the free sectors can be placed together. Performing a defragmentation operation can be time consuming. Essentially, every file on the disk must be examined and the contents of many files copied to new sectors. Figure 3.6 shows how the disk of Figure 3.5 might look after being defragged. Because the process of defragging a disk can literally take many hours to complete, contiguous storage is generally avoided.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.3.2 Linked storage
 			</p>
 
@@ -335,13 +296,15 @@
 				Notice that the number of records stored per sector varies from file to file. The reason for this is that the sizes of records differ from one file to another while the sector size is fixed for a particular disk drive. If it seems odd that record sizes vary, remember that record size is determined by the amount of data the file’s creator decided to store per item. An employee record is unlikely to be the same size as a student record, which is probably not the same size as a credit card record.
 			</p>
 
-			<h1>INSERT FIGURE 3.7</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-7pt1.png" alt="A collection of linked files stored on a disk" class="Image">
+			<img src="Images/InfoStorageRetrIMGS/fig3-7pt2.png" alt="A collection of linked files stored on a disk" class="Image">
+			
 			<p class="Figure">
 				Figure 3.7: A collection of linked files stored on a disk
 			</p>
 
 			<div>
-				As stated above, the primary advantage of the linked file representation is that it uses space efficiently. Linked storage allows us to make use of all of the sectors of a drive. It would be quite easy to add a three, five, or even 10 sector file to the disk of Figure 3.7 – without the need to perform a costly defragmentation operation. Of course, it is true that there is some overhead associated with devoting a portion of each sector to storing the address of the “next” sector, but this overhead is very small. In fact, for the simple three track, eight sector disk we are using in our illustration, a single byte (character) per sector would be more than sufficient.</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: A byte is eight bits. Two of these bits could be used to indicate which track: 00 for A, 01 for B, and 10 for C. Four bits could be used to represent the sector number as a standard binary number. Binary numbers are discussed in detail in Chapter 11."><a href="#ftn1" id="body_ftn1">1</a></span></span>
+				As stated above, the primary advantage of the linked file representation is that it uses space efficiently. Linked storage allows us to make use of all of the sectors of a drive. It would be quite easy to add a three, five, or even 10 sector file to the disk of Figure 3.7 – without the need to perform a costly defragmentation operation. Of course, it is true that there is some overhead associated with devoting a portion of each sector to storing the address of the “next” sector, but this overhead is very small. In fact, for the simple three track, eight sector disk we are using in our illustration, a single byte (character) per sector would be more than sufficient.</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: A byte is eight bits. Two of these bits could be used to indicate which track: 00 for A, 01 for B, and 10 for C. Four bits could be used to represent the sector number as a standard binary number. Binary numbers are discussed in detail in Chapter 11."><a href="#ftn1" id="body_ftn1">[1]</a></span></span>
 			</div>
 
 			<p>
@@ -349,7 +312,7 @@
 			</p>
 
 			<div>
-				While defragging a disk, in order to make space to store a file, is not necessary under linked storage, the defragmentation operation can still be performed occasionally to speed up file retrieval time. This is because in addition to grouping all of the free sectors of a disk together, defragging linked files involves placing the individual sectors of the files into contiguous locations and updating their “next sector” pointers. After defragging a disk, each of the sectors of a file will point to the very next physical sector.</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Except, of course, for the very last sector of each file which will still contain an “end of file” indicator."><a href="#ftn2" id="body_ftn2">2</a></span></span> In this case, retrieval of a linked file can take place just a quickly as retrieval of a contiguous file. Of course, as files are added, modified, and deleted, the disk will slowly become fragmented again – resulting in increasing file retrieval times – until another defrag operation is performed.</span>
+				While defragging a disk, in order to make space to store a file, is not necessary under linked storage, the defragmentation operation can still be performed occasionally to speed up file retrieval time. This is because in addition to grouping all of the free sectors of a disk together, defragging linked files involves placing the individual sectors of the files into contiguous locations and updating their “next sector” pointers. After defragging a disk, each of the sectors of a file will point to the very next physical sector.</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Except, of course, for the very last sector of each file which will still contain an “end of file” indicator."><a href="#ftn2" id="body_ftn2">[2]</a></span></span> In this case, retrieval of a linked file can take place just a quickly as retrieval of a contiguous file. Of course, as files are added, modified, and deleted, the disk will slowly become fragmented again – resulting in increasing file retrieval times – until another defrag operation is performed.</span>
 			</div>
 
 			<p>
@@ -360,29 +323,28 @@
 				Before leaving the topic of linked files, one additional question needs to be addressed: how is the</span> <span class="Ital">first</span> sector of each file determined? As we have seen, once the disk drive begins reading a linked file, the current sector will always contain the location of the next sector of the file. But this leaves open the question of how the initial sector is located in the first place. Somehow the system must know where each file begins. Furthermore, this is true regardless of whether the file is linked or contiguous.
 			</p>
 
-			<h1>INSERT FIGURE 3.8</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-8pt1.png" alt="A collection of linked files after defragging" class="Image">
+			<img src="Images/InfoStorageRetrIMGS/fig3-8pt2.png" alt="A collection of linked files after defragging" class="Image">
+			
 			<p class="Figure">
 				Figure 3.8: A collection of linked files after defragging
 			</p>
 
-			<h1>INSERT FIGURE 3.9</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-9.png" alt="A Root Directory Table for the files of Figure 3.8" class="Image">
+			
 			<p class="Figure">
 				Figure 3.9: A Root Directory Table for the files of Figure 3.8
 			</p>
 
 			<div>
-				This problem is usually resolved by having a special location on the disk (such as Track A, Sector 1) set aside to hold a Root Directory. The</span> <span class="Bolded">Root Directory</span> is a table that records the name and initial sector of every file that resides on a disk. This table is often loaded into the computer’s memory (RAM) when the machine is booted or the disk is first accessed. Given this table, it is a simple matter to retrieve any file since its initial track and sector are known. Figure 3.9 presents a root directory table that could be used for the disk of Figure 3.8.</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Note that in reality the root directory is just one part of an overall file system, such as FAT32 or NTFS, that serves to organize the disk in order to enable file access and manage space that has not yet been allocated."><a href="#ftn3" id="body_ftn3">3</a></span></span> </span>
+				This problem is usually resolved by having a special location on the disk (such as Track A, Sector 1) set aside to hold a Root Directory. The</span> <span class="Bolded">Root Directory</span> is a table that records the name and initial sector of every file that resides on a disk. This table is often loaded into the computer’s memory (RAM) when the machine is booted or the disk is first accessed. Given this table, it is a simple matter to retrieve any file since its initial track and sector are known. Figure 3.9 presents a root directory table that could be used for the disk of Figure 3.8.</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Note that in reality the root directory is just one part of an overall file system, such as FAT32 or NTFS, that serves to organize the disk in order to enable file access and manage space that has not yet been allocated."><a href="#ftn3" id="body_ftn3">[3]</a></span></span> </span>
 			</div>
 
 			<p>
 				As an interesting side note, you may have heard that sometimes files can be recovered even after they have been “deleted” from a disk. The reason for this is that when an operating system erases a file, it deletes the file’s entry from the root directory and marks as “free” the sectors that had been devoted to storing the file. This is done in order to save time. It is much easier (and hence faster) to simply change one entry in a table, rather than overwriting the contents of every block of a file with “blanks”, or some other character. Data recovery programs scan through the entire disk a sector at a time retrieving the data stored in sectors that have been marked “free”. In order to truly delete sensitive data, a disk drive should be reformatted and overwritten with new data.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.3.3 Indexed storage
 			</p>
 
@@ -402,7 +364,8 @@
 				Most information retrieval transactions require that a particular record be retrieved (e.g., an employee record, or a student record) given that record’s key (e.g., an employee name or student ID number). With either contiguous or linked storage the only way to get a particular record, such as the record with key 55555519, is to walk through the file one sector at a time until the block with that record is encountered. If the file were long, say a 10,000 record student file, this process could be very time consuming.
 			</p>
 
-			<h1>INSERT FIGURE 3.10</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-10.png" alt="An illustration of the indexed file storage technique" class="Image">
+			
 			<p class="Figure">
 				Figure 3.10: An illustration of the indexed file storage technique
 			</p>
@@ -427,10 +390,6 @@
 				To summarize, contiguous storage is the simplest and fastest technique for reading an entire file in sequential order due to the fact that all of the records of the files are stored in physically adjacent sectors minimizing the seek and rotational latencies. This advantage is offset by the need to perform costly defragmentation operations in order to keep free sectors grouped together. Both linked and indexed storage allow all of the sectors of a drive to be used for storing files since they do not require that the data blocks making up a file be physically located in adjacent sectors. Linked storage is somewhat more space efficient than indexed, since indexed requires one additional data block per file to hold the file’s index table. The primary advantage of indexed storage over linked and contiguous is that it enables access to</span> <span class="Ital">individual</span> records in a file using only two read operations. To improve retrieval times when reading linked and indexed files sequentially defragmentation can be performed.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Section">
 				3.4 The programmer level
 			</p>
@@ -451,11 +410,7 @@
 				In order to prevent the present discussion from becoming bogged down in irrelevant details, the “programming language” used in this section is a generic language that illustrates features common to most general-purpose programming languages. While every general-purpose procedural programming language, such as Java and C++, will include commands similar to those presented here, the exact syntax and semantics of those commands will vary from language to language.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.4.1 File access commands
 			</p>
 
@@ -596,11 +551,7 @@
 				This command either returns a value of TRUE (indicating the end of the file has been reached) or FALSE (indicating that the end of file has not yet been reached).
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.4.2 A simple example
 			</p>
 
@@ -615,70 +566,41 @@
 			<p>
 				The program’s intended behavior can be expressed by the following “pseudo code”.
 			</p>
-
-			<p class="Subfigure">
-				Open the student records file
-				<br/>
-				Create a new file to hold the names of all CS majors
-				<br/>
-				While we haven't reached the end of the student records file
-				<br/>
-				Read the next student record from the student records file
-				<br/>
-				If the current student’s major is “CS” then
-			</p>
-
-			<p class="Subfigure">
-				Write that student’s name in the names file
-			</p>
-
-			<p class="Subfigure">
-				After examining all of the student records, close both files
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">Open the student records file</span></li>
+				<li><span class="Subfigure">Create a new file to hold the names of all CS majors</span></li>
+				<li><span class="Subfigure">While we haven't reached the end of the student records file</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">Read the next student record from the student records file</span></li>
+					<li><span class="Subfigure">If the current student’s major is “CS” then</span></li>
+					<ul class="Subblockcenter">
+						<li><span class="Subfigure">Write that student’s name in the names file</span></li>
+					</ul>
+				</ul>
+				<li><span class="Subfigure">After examining all of the student records, close both files</span></li>
+			</ul>
 
 			<p>
 				Figure 3.11 contains the actual program command sequence. Note that the program opens the input file in read_only mode since the original “Students” file will not be modified in any way. The output file is created in read_write mode, since the program will modify it. The</span> While</span> loop and</span> If</span> statements are discussed in Part III of this text, but their intent should be clear from the above English and pseudo code descriptions.
 			</p>
-
-			<p class="Subfigure">
-				Open (InFile, “C:\UniversityData\Students”, read_only);
-			</p>
-
-			<p class="Subfigure">
-				Create (OutFile, “C:\NamesOfAllCSMajors”, read_write);
-			</p>
-
-			<p class="Subfigure">
-				While Not (End_of_file (InFile))
-			</p>
-
-			<p class="Subfigure">
-				{
-			</p>
-
-			<p class="Subfigure">
-				Read (InFile, StudentRecord);
-			</p>
-
-			<p class="Subfigure">
-				If (StudentRecord.Major == “CS”)
-			</p>
-
-			<p class="Subfigure">
-				Write (OutFile, StudentRecord.Name );
-			</p>
-
-			<p class="Subfigure">
-				}
-			</p>
-
-			<p class="Subfigure">
-				Close (OutFile);
-			</p>
-
-			<p class="Subfigure">
-				Close (InFile);
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">Open (InFile, “C:\UniversityData\Students”, read_only);</span></li>
+				<li><span class="Subfigure">Create (OutFile, “C:\NamesOfAllCSMajors”, read_write);</span></li>
+				<li><span class="Subfigure">While Not (End_of_file (InFile))</span></li>
+				<li><span class="Subfigure">{</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">Read (InFile, StudentRecord);</span></li>
+					<li><span class="Subfigure">If (StudentRecord.Major == “CS”)</span></li>
+					<ul class="Subblockcenter">
+						<li><span class="Subfigure">Write (OutFile, StudentRecord.Name );</span></li>
+					</ul>
+				</ul>
+				<li><span class="Subfigure">}</span></li>
+				<li><span class="Subfigure">Close (OutFile);</span></li>
+				<li><span class="Subfigure">Close (InFile);</span></li>
+			</ul>
 
 			<p class="Figure">
 				Figure 3.11: A portion of a program to generate a list of the names of all CS majors
@@ -688,11 +610,7 @@
 				Before the widespread adoption of relational databases, computer programs, such as the one above, had to be written and debugged in order to answer almost any question about the data maintained by an organization. While this was often more expedient than trying to answer the question by going through the data by hand, it was, nevertheless, far from an optimal solution. Section 3.5.2 examines relational databases, the end-user application that has overcome many of the problems associated with the storage and retrieval of large quantities of data.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.4.3 Buffering and direct access
 			</p>
 
@@ -732,10 +650,6 @@
 				Again, all of these details are hidden from the application programmer. From the point of view of the application program, a record with a particular key is requested and the record either shows up or a message indicating that it could not be found is returned.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Section">
 				3.5 The end-user level
 			</p>
@@ -744,11 +658,7 @@
 				This section addresses how data appears to the end-user of a computer system. End-users generally access data in two ways: through the operating system interface, and through end-user applications. The first part of this section describes how end-users can access and organize data via the operating system. The second part examines, in some detail, an application designed specifically for manipulating large quantities of data, the relational database.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.1 The operating system interface
 			</p>
 
@@ -760,7 +670,8 @@
 				An example directory structure is outlined in Figure 3.12. Files are indicated by “document” icons, and directories by “file folder” icons. The data is organized into a single main directory “letters”. Letters is subdivided into two subdirectories: “personal” letters and “business” letters. Personal letters includes letters to “Mom” and to “Pat,” your significant other, plus one letter to your Cousin It. Note that “CousinIt” is a file, or document, containing a single letter, while “Pat” is a directory containing multiple letters. If you were planning to write more than one letter to Cousin It, you would probably make a separate directory to hold these letters, as was done for Mom.
 			</p>
 
-			<h1>INSERT FIGURE 13.12</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-12.png" alt="Overview of a file system" class="Image">
+			
 			<p class="Figure">
 				Figure 3.12: Overview of a file system
 			</p>
@@ -781,7 +692,7 @@
 				For example, if a file contains an image in JPEG format, then that file must be opened by a program capable of viewing JPEG images. A file containing a text-based document, such as a memo or report, must be opened by a different kind of program, a word processor. Associating particular application programs with the file types they recognize, enables the operating system to launch an appropriate program when a file’s icon is double-clicked. Figure 3.13 shows what my computer’s desktop looks like after double-clicking the icon for “component_view.pdf” which is a Portable Document Format file associated with Adobe’s Acrobat Reader program. Windows launches Acrobat Reader and then automatically loads the data file “component_view.pdf”.
 			</p>
 
-			<h1>INSERT FIGURE 3.13</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-13.png" alt="A PDF file viewed with Adobe’s Acrobat Reader" class="Image">
 
 			<p class="Figure">
 				Figure 3.13: A PDF file viewed with Adobe’s Acrobat Reader
@@ -901,11 +812,7 @@
 				Although it is certainly important for you to understand how to interact with the particular operating system currently run by your computer, it is equally important that you understand the</span> <span class="Ital">kinds</span> of operations supported by all existing operating systems – especially since these operations are likely to be supported by future operating systems for years to come. While the details of</span> <span class="Ital">how</span> these operations are performed do and will vary from system to system, knowing</span> <span class="Italicized">what</span> to expect will accelerate the learning process.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.2 Relational Database systems
 			</p>
 
@@ -942,7 +849,9 @@
 					</p>
 				</li>
 			</ul>
-			<h1>INSERT FIGURE 3.14</h1>
+			
+			<img src="Images/InfoStorageRetrIMGS/fig3-14.png" alt="The “Faculty” relation – part of a university database" class="Image">
+			
 			<p class="Figure">
 				Figure 3.14: The “Faculty” relation – part of a university database
 			</p>
@@ -951,11 +860,7 @@
 				In order to answer these kinds of questions, a university database must maintain information on faculty, students, courses offered, and grades earned.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.2.1 Relations, attributes, and tuples
 			</p>
 
@@ -975,7 +880,7 @@
 				Figure 3.15 presents another relation from our university database. This relation is the “Students” relation, which keeps up with all of the various kinds of information maintained about students. The “Students” relation consists of eight attributes: “Sname”, “Age”, “Major”, “ID”, “Sex”, “Address”, “City”, and “State”; and twenty tuples, one for each student attending this (quite small) university.
 			</p>
 
-			<h1 id="3.15">INSERT FIGURE 3.15</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-15.png" alt="the “Students” relation – part of a university database" class="Image">
 
 			<p class="Figure">
 				Figure 3.15: the “Students” relation – part of a university database
@@ -1017,11 +922,7 @@
 				A</span> <span class="Bolded">query</span> may be thought of as a question posed to the database. Query operators act on existing relations and always produce new relations as output.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.2.2 The “select” operator
 			</p>
 
@@ -1053,30 +954,32 @@
 				The “operator” field will be replaced by a comparison operator, such as:
 			</p>
 
-			<p class="Subfigure">
-				&lt; less than </span>
+			<ul class="Blockcenter">
+				&lt; less than &nbsp; &nbsp; &nbsp; &nbsp; &le;  less than or equal to
 				<br />
-				&le; </span> less than or equal to
-			</p>
-
-			<p class="Subfigure">
-				&gt; greater than </span>
+				&gt; greater than &nbsp;&nbsp; &ge;  greater than or equal to
 				<br />
-				&ge; </span> greater than or equal to
-			</p>
-
-			<p class="Subfigure">
 				= equal to
+			</ul>
+
+			<p class="Subfigure">
+				
+				
+				
+			</p>
+
+			<p class="Subfigure">
+				
 			</p>
 
 			<p>
 				The last three fields of the select command (attribute operator value) form a condition test. This test will be either unambiguously true or false for each tuple of the relation being queried. Those tuples for which the condition is true are copied to the resulting answer relation. Tuples for which the condition is false are not copied.
 			</p>
 
-			<h1>INSERT FIGURE 3.16</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-16.png" alt="Results of Select from Students where Major = “CS”" class="Image">
 
 			<p class="Figure">
-				Figure 3.16: Results of </span> Select from Students where Major = “CS”
+				Figure 3.16: Results of Select from Students where Major = “CS”
 			</p>
 
 			<p>
@@ -1123,10 +1026,6 @@
 				In summary, the “select” operator creates a new relation that consists of selected rows, or tuples, of an existing relation. The rows are selected based on the outcome of a condition test. Remember to use the “select” operator when you are interested in retrieving “complete records” about a subset of the entries stored in a relation.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Section">
 				Exercises for Section 3.5.2.2
 			</p>
@@ -1161,11 +1060,7 @@
 				</li>
 			</ol>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.2.3 The “project” operator
 			</p>
 
@@ -1174,7 +1069,7 @@
 			</p>
 
 			<div>
-				The</span> <span class="Bolded">project</span> operator</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Pronounced “pro -ject”, as in “projector”."><a href="#ftn4" id="body_ftn4">4</a></span></span> is used to retrieve particular attributes, or columns, from a relation. For example,</span>
+				The</span> <span class="Bolded">project</span> operator</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Pronounced “pro -ject”, as in “projector”."><a href="#ftn4" id="body_ftn4">[4]</a></span></span> is used to retrieve particular attributes, or columns, from a relation. For example,</span>
 			</div>
 
 			<p class="Subfigure">
@@ -1201,13 +1096,13 @@
 				Figure 3.18 presents another relation from our university database. This relation, the “Courses” relation, contains information about the university’s course offerings. The relation would contain an entry for every section of every course ever offered. Each row, or tuple, of this relation includes the name of the faculty member who taught the course, the sequence number of the particular section, the name of the course, the quarter and year offered, and the number of credit hours the course is worth.
 			</p>
 
-			<h1>INSERT FIGURE 3.17</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-17.png" alt="Results of Project Fname, Phone from Faculty" class="Image">
 
 			<p class="Figure">
 				Figure 3.17: Results of Project Fname, Phone from Faculty
 			</p>
 
-			<h1>INSERT FIGURE 3.18</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-18.png" alt="The “Courses” relation – part of a university database" class="Image">
 
 			<p class="Figure">
 				Figure 3.18: The “Courses” relation – part of a university database
@@ -1229,10 +1124,10 @@
 				Note that the relation of Figure 3.19 contains only eight tuples, whereas there are eleven tuples in its parent relation, “Courses”. The reason for this discrepancy is that duplicate entries have been eliminated. Relations are generally considered to “sets” of tuples, and as such, duplicate entries are not allowed. “Project” operations often generate tables that contain some duplicate rows, but most relational database packages will delete these duplicates automatically.
 			</p>
 
-			<h1>INSERT FIGURE 3.19</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-19.png" alt="Results of Project Course, Credits from Courses" class="Image">
 
 			<p class="Figure">
-				Figure 3.19: Results of </span>Project Course, Credits from Courses
+				Figure 3.19: Results of Project Course, Credits from Courses
 			</p>
 
 			<p>
@@ -1249,10 +1144,6 @@
 
 			<p>
 				In summary, the “project” operator creates a new relation that consists of a subset of the columns, or attributes, of an existing relation. Every tuple of the parent relation will contribute to the projected relation, but duplicate rows will be deleted. Unlike “select”, there is no condition test associated with “project”. Remember to use the “project” operator when you are interested in retrieving particular fields of a relation.
-			</p>
-
-			<p>
-				&nbsp;
 			</p>
 
 			<p class="Section">
@@ -1283,11 +1174,7 @@
 					</p>
 				</li>
 			</ol>
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.2.4 Queries involving both “select” and “project”
 			</p>
 
@@ -1340,7 +1227,7 @@
 			</p>
 
 			<div>
-				It is interesting to note that during the discussion of the programmer’s view of data in Section 3.4, we constructed a program that essentially answered the same question. That program, presented in Figure 3.11, is ten lines long and requires knowledge of file systems and programming concepts in order to be developed.</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Actually, Figure 3.11 does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer."><a href="#ftn5" id="body_ftn5">5</a></span></span>
+				It is interesting to note that during the discussion of the programmer’s view of data in Section 3.4, we constructed a program that essentially answered the same question. That program, presented in Figure 3.11, is ten lines long and requires knowledge of file systems and programming concepts in order to be developed.</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Actually, Figure 3.11 does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer."><a href="#ftn5" id="body_ftn5">[5]</a></span></span>
 			</div>
 
 			<p>
@@ -1425,10 +1312,6 @@
 				This solution concentrates first on determining the attributes needed to solve the problem, rather than the tuples needed to do so. Such an approach makes a lot of sense when dealing with tables that contain large numbers of attributes, since it helps us to focus on which parts of a relation are relevant to the question being answered.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Section">
 				Exercises for Section 3.5.2.4
 			</p>
@@ -1475,11 +1358,7 @@
 				</li>
 			</ol>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.2.5 The “join” operator
 			</p>
 
@@ -1495,7 +1374,7 @@
 				An example will make this clear. Consider the two tables, Alpha and Beta, shown in Figure 3.20. These two tables share attribute “Z” in common and so may be joined. Since Alpha has three columns and Beta also has three columns, the resulting table will have five columns (3 + 3 – 1). Every tuple of Alpha will be compared to every tuple of Beta. Assuming we are performing an equijoin, those tuples in which Alpha.Z equals Beta.Z will be joined together to form a tuple in the resulting relation. So, for example, since the “Z” in row one of Alpha matches the “Z” in row one of Beta, they will form a tuple in the combined relation. Row one of Alpha with row two of Beta also forms a tuple. As does row three of Alpha with row four of Beta. Since no other tuples satisfy the specified condition, the relation resulting from this join contains only these three tuples.
 			</p>
 
-			<h1>INSERT FIGURE 3.20</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-20.png" alt="A join of relations Alpha and Beta over attribute “Z”" class="Image">
 
 			<p class="Figure">
 				Figure 3.20: A join of relations Alpha and Beta over attribute “Z”
@@ -1529,11 +1408,7 @@
 				where the fields “relation1” and “relation2” will be replaced by the names of existing relations and “shared_attribute” will be replaced by the name of the attribute they share in common.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p class="Subsection">
+			<p class="Section">
 				3.5.2.6 Queries involving “select”, “project”, and “join”
 			</p>
 
@@ -1553,7 +1428,7 @@
 				The relation produced by this expression, Rel1, will contain all of the attributes of both Courses and Faculty (with the exception that Fname will be listed only once). Hence, there would be 11 attributes in the resulting relation: Fname, Seq_no, Course, Quarter, Year, Credits, Dept, Office, Phone, SSN, and Salary. Due to the fact that the Fname field in each row of Courses will match up with one (and only one) Fname entry in the Faculty relation, Rel1 will contain exactly the same number of tuples as Courses, eleven.
 			</p>
 
-			<h1>INSERT FIGURE 3.21</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-21.png" alt="A relation, Rel4, together with the expressions that generated it" class="Image">
 
 			<p class="Figure">
 				Figure 3.21: A relation, Rel4, together with the expressions that generated it
@@ -1601,7 +1476,7 @@
 				</li>
 			</ul>
 
-			<h1>INSERT FIGURE 3.22</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-22.png" alt="The “Grades” relation – part of a university database" class="Image">
 
 			<p class="Figure">
 				Figure 3.22: The “Grades” relation – part of a university database
@@ -1661,18 +1536,15 @@
 				Step one can be accomplished via the following compound select statement:
 			</p>
 
-			<p class="Subfigure">
-				R1 &#8592; Select from Courses where Fname = “Carpenter J.”    and
-				<br />
-				Course = “Math 241” and
-				<br />
-				Quarter = “Spring”and
-				<br />
-				Year = 2013
-			</p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">R1 &#8592; Select from Courses where Fname = “Carpenter J.”    and</span></li>
+				<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Course = “Math 241” &nbsp; &nbsp; and</span></li>
+				<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Quarter = “Spring”&nbsp; &nbsp; &nbsp; &nbsp;and</span></li>
+				<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Year = 2013</span></li>
+			</ul>
 
 			<div>
-				We now have a relation that contains a single tuple – the one concerning Jenna Carpenter’s spring 2013 offering of Math 241.</span><span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: If Dr. Carpenter had taught multiple sections of Math 241 during the Spring 2013 quarter, multiple tuples would be listed in this relation – one for each section. However, the wording of the original question makes it unlikely that she was teaching multiple sections of that class that quarter."><a href="#ftn6" id="body_ftn6">6</a></span></span>
+				We now have a relation that contains a single tuple – the one concerning Jenna Carpenter’s spring 2013 offering of Math 241.</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: If Dr. Carpenter had taught multiple sections of Math 241 during the Spring 2013 quarter, multiple tuples would be listed in this relation – one for each section. However, the wording of the original question makes it unlikely that she was teaching multiple sections of that class that quarter."><a href="#ftn6" id="body_ftn6">[6]</a></span></span>
 			</div>
 
 			<p>
@@ -1699,7 +1571,7 @@
 				R4 &#8592; Project ID from R3
 			</p>
 
-			<h1>INSERT FIGURE 3.23</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-23.png" alt="Relation R3 – the student numbers and grades of all students who took Math 241 in the spring of 2013 under Dr. Carpente" class="Image">
 
 			<p class="Figure">
 				Figure 3.23: Relation R3 – the student numbers and grades of all students
@@ -1731,16 +1603,12 @@
 				Although the rows of this table are shown sorted by both last name and student ID number, relational database theory treats relations are</span> <span class="Ital">unordered</span> sets of tuples, so the order of the rows in the displayed table is technically unpredictable. Most commercially available database applications, however, allow the user to easily sort the rows of a table into any order he or she desires.
 			</p>
 
-			<h1>INSERT FIGURE 3.24</h1>
+			<img src="Images/InfoStorageRetrIMGS/fig3-24.png" alt="Relation R6 – The names and ID numbers of all students who took Math 241 in the spring of 2013 under Dr. Carpenter" class="Image">
 
 			<p class="Figure">
 				Figure 3.24: Relation R6 – The names and ID numbers of all students
 				<br />
 				who took Math 241 in the spring of 2013 under Dr. Carpenter
-			</p>
-
-			<p>
-				&nbsp;
 			</p>
 
 			<p class="Section">
@@ -1795,43 +1663,41 @@
 				</li>
 			</ol>
 
-			<p>
-				&nbsp;
-			</p>
-
+			<br/>
+			<!-- Footnotes -->
+			<hr/>
 			<p class="Section">
-				<br />
 				Footnotes
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn1" id="ftn1">1</a>A byte is eight bits. Two of these bits could be used to indicate which track: 00 for A, 01 for B, and 10 for C. Four bits could be used to represent the sector number as a standard binary number. Binary numbers are discussed in detail in Chapter 11.
+				<a href="#body_ftn1" id="ftn1">[1]</a> A byte is eight bits. Two of these bits could be used to indicate which track: 00 for A, 01 for B, and 10 for C. Four bits could be used to represent the sector number as a standard binary number. Binary numbers are discussed in detail in Chapter 11.
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn2" id="ftn2">2</a>Except, of course, for the very last sector of each file which will still contain an “end of file” indicator.
+				<a href="#body_ftn2" id="ftn2">[2]</a> Except, of course, for the very last sector of each file which will still contain an “end of file” indicator.
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn3" id="ftn3">3</a>Note that in reality the root directory is just one part of an overall file system, such as FAT32 or NTFS, that serves to organize the disk in order to enable file access and manage space that has not yet been allocated.
+				<a href="#body_ftn3" id="ftn3">[3]</a> Note that in reality the root directory is just one part of an overall file system, such as FAT32 or NTFS, that serves to organize the disk in order to enable file access and manage space that has not yet been allocated.
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn4" id="ftn4">4</a>Pronounced “pro -ject”, as in “projector”.
+				<a href="#body_ftn4" id="ftn4">[4]</a> Pronounced “pro -ject”, as in “projector”.
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn5" id="ftn5">5</a>Actually, Figure 3.11 does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer.
+				<a href="#body_ftn5" id="ftn5">[5]</a> Actually, Figure 3.11 does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer.
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn6" id="ftn6">6</a>If Dr. Carpenter had taught multiple sections of Math 241 during the Spring 2013 quarter, multiple tuples would be listed in this relation – one for each section. However, the wording of the original question makes it unlikely that she was teaching multiple sections of that class that quarter.
+				<a href="#body_ftn6" id="ftn6">[6]</a> If Dr. Carpenter had taught multiple sections of Math 241 during the Spring 2013 quarter, multiple tuples would be listed in this relation – one for each section. However, the wording of the original question makes it unlikely that she was teaching multiple sections of that class that quarter.
 			</p>
 
+			<!-- End main content -->
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
-			<!-- End Main content -->
 			<nav>
 				<p>
 					--
@@ -1847,7 +1713,6 @@
 			<div>
 
 			</div>
-
 		</div>
 	</body>
 </html>

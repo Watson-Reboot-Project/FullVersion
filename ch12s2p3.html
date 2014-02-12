@@ -22,10 +22,11 @@
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 	</head>
 
@@ -95,15 +96,25 @@
 			<p>
 				<span>We can be sure that the circuit and the expression are functionally equivalent by examining how the Boolean expression could be derived from the circuit. Since inputs A and B are fed into an</span> <span class="Ital">or</span> <span>gate in the circuit, the variables A and B are combined via the corresponding “+” operator in the Boolean expression. The output of the</span> <span class="Ital">or</span> <span>is fed into an</span> <span class="Ital">and</span> <span>gate (along with input C) in the circuit. Thus, the result of the expression “(A + B)” is combined with variable C using the “</span> <span>&#9679;</span> <span>” operator in the Boolean expression.</span>
 			</p>
-
+			
 			<div id="topDiv-andNTT" class="Centered"></div>
 			<div id="container-andNTT" class="Centered"></div>
+			<p class="Figure">
+				<span class="Bolded">Z &nbsp;= &nbsp;A &#9679; B</span>
+			</p>
+			
 			
 			<div id="topDiv-orNTT" class="Centered"></div>
 			<div id="container-orNTT" class="Centered"></div>
+			<p class="Figure">
+				<span class="Bolded">Z &nbsp;= &nbsp; A + B</span>
+			</p>
 			
 			<div id="topDiv-notNTT" class="Centered"></div>
 			<div id="container-notNTT" class="Centered"></div>
+			<p class="Figure">
+				<span class="Bolded">Z &nbsp;= &nbsp; &not; A</span>
+			</p>
 			<p class="Figure">
 				Figure 12.8: Boolean expressions for the three fundamental logic gates
 			</p>
@@ -129,7 +140,7 @@
 					<p>
 						Write the Boolean expression corresponding to the following circuit.
 						
-						<img src="Images/fig12s2p3-ex1.png" alt="" class="Image">
+						<img src="Images/fig12s2p3-ex1.png" alt="" class="ImageTall">
 					</p>
 				</li>
 				
@@ -137,11 +148,15 @@
 					<p>
 						Write the Boolean expression corresponding to the following circuit.
 						
-						<img src="Images/fig12s2p3-ex2.png" alt="" class="Image">
+						<img src="Images/fig12s2p3-ex2.png" alt="" class="ImageTall">
 					</p>
 				</li>
 				
 			</ol>
+			<!-- Sandbox -->
+			<!--
+			<p class="Section">Scratch Pad</p>
+			<div id="sandbox1" style='border: solid 1px;'></div>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -164,7 +179,8 @@
 			</div>
 
 		</div>
-		<script src="js/DigiLogic/Controller.js"></script>
+			<!-- Figure js -->
+			<script src="js/DigiLogic/Controller.js"></script>
 			<script src="js/DigiLogic/AndGate.js"></script>
 			<script src="js/DigiLogic/AndGate3.js"></script>
 			<script src="js/DigiLogic/AndGate4.js"></script>
@@ -184,12 +200,28 @@
 			<script src="js/DigiLogic/TruthTable.js"></script>
 			<script src="js/DigiLogic/Setup.js"></script>
 			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+			
+			<!-- Sandbox js -->
+			<script src="js/DigiLogic/SB_Controller.js"></script>
+			<script src="js/DigiLogic/SB_AndGate.js"></script>
+			<script src="js/DigiLogic/SB_OrGate.js"></script>
+			<script src="js/DigiLogic/SB_NotGate.js"></script>
+			<script src="js/DigiLogic/SB_Connector.js"></script>
+			<script src="js/DigiLogic/SB_InputNode.js"></script>
+			<script src="js/DigiLogic/SB_OutputNode.js"></script>
+			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
+			<script src="js/DigiLogic/SB_Exercises.js"></script>
+			<script src="js/DigiLogic/SB_TruthTable.js"></script>
+			<script src="js/DigiLogic/SB_Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
+			<script src="js/DigiLogic/Evaluate.js"></script>
 		
 		<script>
 			var figureandNTT = new DigitalLogicFigure("container-andNTT", "andNTT");
 			var figureorNTT = new DigitalLogicFigure("container-orNTT", "orNTT");
 			var figurenotNTT = new DigitalLogicFigure("container-notNTT", "notNTT");
-			var figurea = new DigitalLogicFigure("container-a", "a"); 
+			var figurea = new DigitalLogicFigure("container-a", "a");
+			var lab = new DigitalLogicsLab("sandbox1"); 
 		</script>
 	</body>
 </html>

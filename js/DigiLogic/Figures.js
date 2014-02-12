@@ -13,7 +13,7 @@ function Figures(setup, controller, truthTable) {
 			truthTable.showTruthTable(true);
 			truthTable.createTable(2, 1, header, false);
 			setup.setInitHeight(100);
-			setup.setInitWidth(217);
+			setup.setInitWidth(250);
 			
 			var inputA;
 			var inputB;
@@ -37,7 +37,7 @@ function Figures(setup, controller, truthTable) {
 		else if (figureNum == 'andNTT') {
 			truthTable.showTruthTable(false);
 			setup.setInitHeight(100);
-			setup.setInitWidth(217);
+			setup.setInitWidth(250);
 			
 			var inputA;
 			var inputB;
@@ -63,7 +63,7 @@ function Figures(setup, controller, truthTable) {
 			truthTable.showTruthTable(true);
 			truthTable.createTable(2, 1, header, false);
 			setup.setInitHeight(100);
-			setup.setInitWidth(217);
+			setup.setInitWidth(250);
 			
 			var inputA;
 			var inputB;
@@ -87,7 +87,7 @@ function Figures(setup, controller, truthTable) {
 		else if (figureNum == 'orNTT') {
 			truthTable.showTruthTable(false);
 			setup.setInitHeight(100);
-			setup.setInitWidth(217);
+			setup.setInitWidth(250);
 			
 			var inputA;
 			var inputB;
@@ -113,7 +113,7 @@ function Figures(setup, controller, truthTable) {
 			truthTable.showTruthTable(true);
 			truthTable.createTable(1, 1, header, false);
 			setup.setInitHeight(100);
-			setup.setInitWidth(217);
+			setup.setInitWidth(250);
 			
 			var inputA;
 			var inputB;
@@ -134,7 +134,7 @@ function Figures(setup, controller, truthTable) {
 		else if (figureNum == 'notNTT') {
 			truthTable.showTruthTable(false);
 			setup.setInitHeight(100);
-			setup.setInitWidth(230);
+			setup.setInitWidth(250);
 			
 			var inputA;
 			var inputB;
@@ -152,11 +152,33 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(inputA, not);
 			controller.connectComponents(not, output);
 		}
-		else if (figureNum == 'nor') {
-			/*var header = [ "A", "B", "Z" ];
+		else if (figureNum == 'nand0') {
+			var header = [ "A", "B", "Z" ];
 			truthTable.createTable(2, 1, header, false);
-			truthTable.showTruthTable(true);*/
-			truthTable.showTruthTable(false);
+			truthTable.showTruthTable(true);
+			setup.setInitHeight(100);
+			setup.setInitWidth(376);
+			setup.setInitScale(0.8);
+			
+			var inputA;
+			var inputB;
+			
+			inputA = controller.addInput(5, 12, "A", 0);
+			inputB = controller.addInput(5, 38, "B", 0);
+			
+			var and = controller.addAndGate(50, 25);
+			var not = controller.addNotGate(175, 25);
+			var output = controller.addOutput(350, 25, "Z");
+			
+			controller.connectComponents(inputA, and, [1]);
+			controller.connectComponents(inputB, and, [2]);
+			controller.connectComponents(and, not, [0]);
+			controller.connectComponents(not, output);
+		}
+		else if (figureNum == 'nor') {
+			var header = [ "A", "B", "Z" ];
+			truthTable.createTable(2, 1, header, false);
+			truthTable.showTruthTable(true);
 			setup.setInitHeight(100);
 			setup.setInitWidth(250);
 			
@@ -180,10 +202,9 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(nor, output);
 		}
 		else if (figureNum == 'nand') {
-			/*var header = [ "A", "B", "Z" ];
+			var header = [ "A", "B", "Z" ];
 			truthTable.showTruthTable(true);
-			truthTable.createTable(2, 1, header, false);*/
-			truthTable.showTruthTable(false);
+			truthTable.createTable(2, 1, header, false);
 			setup.setInitHeight(100);
 			setup.setInitWidth(230);
 			
@@ -205,28 +226,6 @@ function Figures(setup, controller, truthTable) {
 			controller.connectComponents(inputA, nand, [1]);
 			controller.connectComponents(inputB, nand, [2]);
 			controller.connectComponents(nand, output);
-		}
-		else if (figureNum == 'nand0') {
-			var header = [ "A", "B", "Z" ];
-			truthTable.createTable(2, 1, header, false);
-			truthTable.showTruthTable(true);
-			setup.setInitHeight(100);
-			setup.setInitWidth(376);
-			
-			var inputA;
-			var inputB;
-			
-			inputA = controller.addInput(5, 12, "A", 0);
-			inputB = controller.addInput(5, 38, "B", 0);
-			
-			var and = controller.addAndGate(50, 25);
-			var not = controller.addNotGate(175, 25);
-			var output = controller.addOutput(350, 25, "Z");
-			
-			controller.connectComponents(inputA, and, [1]);
-			controller.connectComponents(inputB, and, [2]);
-			controller.connectComponents(and, not, [0]);
-			controller.connectComponents(not, output);
 		}
 		else if (figureNum == 'and3') {
 			truthTable.showTruthTable(false);
@@ -466,7 +465,7 @@ function Figures(setup, controller, truthTable) {
 			var header = ["A", "B", "Z"];
 			truthTable.showTruthTable(true);
 			truthTable.createTable(2, 1, header, false);
-			setup.setInitWidth(600);
+			setup.setInitWidth(650);
 			setup.setInitHeight(175);
 			
 			var input1;

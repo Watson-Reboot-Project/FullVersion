@@ -46,6 +46,8 @@ function Controller(setup, truthTable) {
 	var gScale = setup.getGScale();
 	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
+	var lastDist = 0;
+	var startScale = 1;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FUNCTION DECLARATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -90,6 +92,41 @@ function Controller(setup, truthTable) {
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FUNCTION IMPLEMENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
+	var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	console.log(screenWidth);
+	
+	if (screenWidth < 500) {
+		mainLayer.setDraggable("draggable");
+		
+		stage.getContent().addEventListener('touchmove', function(evt) {
+			var touch1 = evt.touches[0];
+			var touch2 = evt.touches[1];
+
+			if(touch1 && touch2) {
+			  var dist = getDistance({
+				x: touch1.clientX,
+				y: touch1.clientY
+			  }, {
+				x: touch2.clientX,
+				y: touch2.clientY
+			  });
+
+			  if(!lastDist) {
+				lastDist = dist;
+			  }
+
+			  var scale = stage.getScale().x * dist / lastDist;
+
+			  stage.setScale(scale);
+			  stage.draw();
+			  lastDist = dist;
+			}
+		  }, false);
+
+		  stage.getContent().addEventListener('touchend', function() {
+			lastDist = 0;
+		  }, false);
+	}
 	/*
 	*	registerComponent()
 	*
@@ -127,6 +164,8 @@ function Controller(setup, truthTable) {
 			inputVals = [];
 			for (var i = 0; i < inputs.length; i++) inputVals.push("" + inputs[i].getValue());
 			truthTable.highlightRow(inputVals);
+			mainLayer.drawScene();
+			stage.drawScene();
 		}
 	}
 	
@@ -556,5 +595,9 @@ function Controller(setup, truthTable) {
 		inputNodeVals = [];
 		for (var i = 0; i < inputs.length; i++) inputNodeVals[i] = inputs[i].getValue();
 		return inputNodeVals;
+	}
+	
+	function getDistance(p1, p2) {
+        return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2));
 	}
 }

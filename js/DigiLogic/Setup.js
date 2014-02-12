@@ -49,7 +49,7 @@ function Setup(container, figureNo) {
 	mainLayer.add(bg);
 	
 	var gScale = 1;
-	
+	console.log("FigureNo is " + figureNo);
 	var truthTable = new TruthTable(container, figureNo);
 	var controller = new Controller(this, truthTable);
 
@@ -89,17 +89,16 @@ function Setup(container, figureNo) {
 	
 	function resizeTop() {
 		width = document.getElementById(container).offsetWidth;
-		//document.getElementById("tableDiv-" + figureNo).offsetWidth = document.getElementById(container).offsetWidth;
-		// width = window.innerWidth;
+		//width = window.innerWidth;
 		height = window.innerHeight;
-		
+		console.log("w: "+ width);
+		console.log("iw: " + initWidth);
 		var ratio = width / initWidth;
 		console.log("Ratio: " + ratio);
 		if (ratio <= initScale) {
 			stage.setScale(ratio);
 			stage.setSize(initWidth * ratio, initHeight * ratio);
 			truthTable.setTruthTableScale((ratio * 1.2) * 100, 3, 0);
-			//truthTable.setTableOffset((stage.getWidth() / 2) - (truthTable.getTableWidth() / 2));
 			truthTable.setTableOffset((width / 2) - (truthTable.getTableWidth() / 2));
 		}
 		else {
@@ -107,7 +106,7 @@ function Setup(container, figureNo) {
 			stage.setSize(initWidth * initScale, initHeight * initScale);
 			if (ratio * (1.5) >= 1) truthTable.setTruthTableScale(100, 6, 0);
 			else truthTable.setTruthTableScale((initScale * 1.5) * 100, 6, 0);
-			//truthTable.setTableOffset((stage.getWidth() / 2) - (truthTable.getTableWidth() / 2));
+			console.log("calc: " + ((width / 2) - (truthTable.getTableWidth() / 2)));
 			truthTable.setTableOffset((width / 2) - (truthTable.getTableWidth() / 2));
 		}
 		
