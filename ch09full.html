@@ -258,7 +258,7 @@
 			</p>
 
 			<p>
-				The most common way of informing Lisp that a list is to be treated as data is to “quote” the list.  <span class="Bolded">Quote</span> is a built-in procedure that accepts an atom or list as input and returns the input as the output.  For example, <span class="Subfigure">(quote </span><span class="T11">(this is a list)</span><span class="Subfigure">) </span>will return <span class="T11">(this is a list)</span>.  Likewise <span class="Subfigure">(quote </span><span class="T11">(a list (containing a list))</span><span class="Subfigure">) </span>evaluates to the list: <span class="T11">(a list (containing a list))</span>.  Finally, <span class="Subfigure">(quote </span><span class="T11">a</span><span class="Subfigure">)</span> will return the atom “<span class="T11">a</span>”.  In general, <span class="Subfigure">quote</span> will return the second element in its list, regardless of whether that element is a list or an atom.
+				The most common way of informing Lisp that a list is to be treated as data is to “quote” the list.  <span class="Bolded">Quote</span> is a built-in procedure that accepts an atom or list as input and returns the input as the output.  For example, <span class="Subfigure">(quote </span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) </span>will return <span class="Subfigure Lite">(this is a list)</span>.  Likewise <span class="Subfigure">(quote </span><span class="Subfigure Lite">(a list (containing a list))</span><span class="Subfigure">) </span>evaluates to the list: <span class="Subfigure Lite">(a list (containing a list))</span>.  Finally, <span class="Subfigure">(quote </span><span class="Subfigure Lite">a</span><span class="Subfigure">)</span> will return the atom “<span class="Subfigure Lite">a</span>”.  In general, <span class="Subfigure">quote</span> will return the second element in its list, regardless of whether that element is a list or an atom.
 			</p>
 			<p>
 				   
@@ -268,7 +268,7 @@
 			</p>
 
 			<p>
-				Since <span class="Subfigure">quote</span> is used frequently in Lisp programs, most versions of the language include one of more “shorthand notations” for expressing this important function.  One shorthand involves replacing the word <span class="Subfigure">quote</span> and the outer set of parentheses with the symbol  <span class="Subfigure">'</span>, thus the expressions   <span class="Subfigure">'</span><span class="T11">(a quoted list)</span><span class="Subfigure"> </span>and<span class="Subfigure"> (quote </span><span class="T11">(a quoted list)</span><span class="Subfigure">)</span> both evaluate to <span class="T11">(a quoted list)</span>.  Another common shorthand for <span class="Subfigure">quote</span> involves enclosing the atom or list to be quoted in double quote marks.  Thus, the expression   <span class="Subfigure">"</span><span class="T11">(a quoted list)</span><span class="Subfigure">"</span>  is equivalent to  <span class="Subfigure">(quote </span><span class="T11">(a quoted list)</span><span class="Subfigure">) </span> in many dialects of Lisp.
+				Since <span class="Subfigure">quote</span> is used frequently in Lisp programs, most versions of the language include one of more “shorthand notations” for expressing this important function.  One shorthand involves replacing the word <span class="Subfigure">quote</span> and the outer set of parentheses with the symbol  <span class="Subfigure">'</span>, thus the expressions   <span class="Subfigure">'</span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure"> </span>and<span class="Subfigure"> (quote </span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">)</span> both evaluate to <span class="Subfigure Lite">(a quoted list)</span>.  Another common shorthand for <span class="Subfigure">quote</span> involves enclosing the atom or list to be quoted in double quote marks.  Thus, the expression   <span class="Subfigure">"</span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">"</span>  is equivalent to  <span class="Subfigure">(quote </span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">) </span> in many dialects of Lisp.
 			</p>
 
 			<p>
@@ -280,14 +280,14 @@
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="T11">(this is a list)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) )</span>
 			</p>
 
 			<p>
-				returns the atom “<span class="T11">this</span>” which is the first element of the list.
+				returns the atom “<span class="Subfigure Lite">this</span>” which is the first element of the list.
 			</p>
 			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="T11">(this is a list)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) )</span>
 			</p>
 
 			<h1>INSERT MISSINGOBJECT HERE</h1>
@@ -313,19 +313,19 @@
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="T11">((a list) containing another list)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">((a list) containing another list)</span><span class="Subfigure">) )</span>
 			</p>
 
 			<p>
-				evaluates to the list <span class="T11">(a list)</span> since that is the first element in the data list.   Likewise,
+				evaluates to the list <span class="Subfigure Lite">(a list)</span> since that is the first element in the data list.   Likewise,
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="T11">(((a list) in a list) in another list)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(((a list) in a list) in another list)</span><span class="Subfigure">) )</span>
 			</p>
 
 			<p>
-				evaluates to <span class="T11">((a list) in a list)</span>.
+				evaluates to <span class="Subfigure Lite">((a list) in a list)</span>.
 			</p>
 
 			<p>
@@ -333,11 +333,11 @@
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(car (car (quote</span><span class="T11">(((a list) in a list) in another list)</span><span class="Subfigure">) ))</span>
+				<span class="Subfigure">(car (car (quote</span><span class="Subfigure Lite">(((a list) in a list) in another list)</span><span class="Subfigure">) ))</span>
 			</p>
 
 			<p>
-				produces <span class="T11">(a list)</span>. In order to help you clearly see why this is the case, Figure 6.4 illustrates the way this result is computed.  Since the result of this expression is itself a list, the <span class="Subfigure">car</span> operator could be applied to that result to produce the atom “<span class="T11">a</span>”.  The form of that expression would be
+				produces <span class="Subfigure Lite">(a list)</span>. In order to help you clearly see why this is the case, Figure 6.4 illustrates the way this result is computed.  Since the result of this expression is itself a list, the <span class="Subfigure">car</span> operator could be applied to that result to produce the atom “<span class="Subfigure Lite">a</span>”.  The form of that expression would be
 			</p>
 
 			<h1>INSERT MISSINGOBJECT HERE</h1>
@@ -358,11 +358,11 @@
 				The next list operator we will look at is “<span class="Subfigure">cdr</span>”, usually pronounced “cŭ dér”.  The <span class="Subfigure">cdr</span> procedure accepts a list as input and returns as output a list of everything in the original list except the first element.  In other words, <span class="Subfigure">cdr</span> returns everything in a list except its <span class="Subfigure">car</span>.  So,
 			</p>
 			<p class="Figure">
-				<span class="Subfigure">(cdr (quote</span><span class="T11">(this is a list)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(cdr (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) )</span>
 			</p>
 
 			<p>
-				returns the list “<span class="T11">(is a list)</span>”.  Unlike <span class="Subfigure">car</span>, <span class="Subfigure">cdr</span> always returns a list, never an atom.  
+				returns the list “<span class="Subfigure Lite">(is a list)</span>”.  Unlike <span class="Subfigure">car</span>, <span class="Subfigure">cdr</span> always returns a list, never an atom.  
 			</p>
 
 			<p>
@@ -380,13 +380,13 @@
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(cdr (quote</span><span class="T11">((a list) within a list)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(cdr (quote</span><span class="Subfigure Lite">((a list) within a list)</span><span class="Subfigure">) )</span>
 			</p>
 			<p class="Figure">
 				 
 			</p>
 			<p>
-				will return <span class="T11">(within a list)</span>– everything in the original list save the first element <span class="T11">(a list)</span>.
+				will return <span class="Subfigure Lite">(within a list)</span>– everything in the original list save the first element <span class="Subfigure Lite">(a list)</span>.
 			</p>
 			<p class="P4">
 				 
@@ -396,7 +396,7 @@
 			</p>
 
 			<p class="Blockcenter">
-				<span class="Subfigure">(cdr (quote </span><span class="T11">(list)</span><span class="Subfigure">))</span>
+				<span class="Subfigure">(cdr (quote </span><span class="Subfigure Lite">(list)</span><span class="Subfigure">))</span>
 			</p>
 			<p class="Blockcenter">
 				(cdr () )
@@ -410,7 +410,7 @@
 			</p>
 
 			<p>
-				An example of nested <span class="Subfigure">cdr</span> operations is presented in Figure 9.7.  This example uses the same data as Figure 9.5, so that the operation of nested <span class="Subfigure">cdr</span>s can be compared to the operation of nested <span class="Subfigure">car</span>s.  As you can see from the example, the first cdr generates a list with all of the items in the input list except the first one.  The second cdr generates a list with all of the items in the input list except the first two.  This pattern could be continued until no more items remained in the list.  For example, the list <span class="T11">(list)</span> would be returned by the expression
+				An example of nested <span class="Subfigure">cdr</span> operations is presented in Figure 9.7.  This example uses the same data as Figure 9.5, so that the operation of nested <span class="Subfigure">cdr</span>s can be compared to the operation of nested <span class="Subfigure">car</span>s.  As you can see from the example, the first cdr generates a list with all of the items in the input list except the first one.  The second cdr generates a list with all of the items in the input list except the first two.  This pattern could be continued until no more items remained in the list.  For example, the list <span class="Subfigure Lite">(list)</span> would be returned by the expression
 			</p>
 
 			<h1>INSERT MISSINGOBJECT HERE</h1>
@@ -428,7 +428,7 @@
 			</p>
 
 			<p>
-				It is possible, and in fact common, to create Lisp expressions that apply both <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations to different portions of an input list. By combining these two functions we can retrieve any desired element from any list.  For example, to retrieve the third element of an input list, we need to apply <span class="Subfigure">cdr</span> two times, followed by <span class="Subfigure">car</span> once. In other words, to get the third item, we discard the first two items in the list, and then select the first item from those remaining.  Because Lisp expressions are evaluated from the “inside out”, the third element of the list <span class="T11">(I will not eat them in the rain)</span>, “<span class="Subfigure">not</span>” could be retrieved in the following way:
+				It is possible, and in fact common, to create Lisp expressions that apply both <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations to different portions of an input list. By combining these two functions we can retrieve any desired element from any list.  For example, to retrieve the third element of an input list, we need to apply <span class="Subfigure">cdr</span> two times, followed by <span class="Subfigure">car</span> once. In other words, to get the third item, we discard the first two items in the list, and then select the first item from those remaining.  Because Lisp expressions are evaluated from the “inside out”, the third element of the list <span class="Subfigure Lite">(I will not eat them in the rain)</span>, “<span class="Subfigure">not</span>” could be retrieved in the following way:
 			</p>
 
 			<h1>INSERT MISSINGOBJECT HERE</h1>
@@ -442,7 +442,7 @@
 			</p>
 
 			<p>
-				Sometimes as we are processing a list, we end up in a situation were we have a one element list, where that element is itself a list, and we wish to delve into the underlying list.  In other words, a situation with a list like <span class="T11">((many sublists)) where it is first necessary to <span class="Subfigure">car</span> this list to get to the underlying list <span class="T11">(many sublists) before you can process that list.  I point this out, since it is quite easy to overlook this required step.
+				Sometimes as we are processing a list, we end up in a situation were we have a one element list, where that element is itself a list, and we wish to delve into the underlying list.  In other words, a situation with a list like <span class="Subfigure Lite">((many sublists)) where it is first necessary to <span class="Subfigure">car</span> this list to get to the underlying list <span class="Subfigure Lite">(many sublists) before you can process that list.  I point this out, since it is quite easy to overlook this required step.
 			</p>
 
 			<h1>INSERT MISSINGOBJECT HERE</h1>
@@ -456,13 +456,13 @@
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(cons (quote </span><span class="T11">this</span><span class="Subfigure">) (quote</span><span class="T11">(is a list)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(cons (quote </span><span class="Subfigure Lite">this</span><span class="Subfigure">) (quote</span><span class="Subfigure Lite">(is a list)</span><span class="Subfigure">) )</span>
 			</p>
 			<p class="Subfigure">
 				 
 			</p>
 			<p>
-				returns the list <span class="T11">(this is a list)</span>.  Note that the <span class="Subfigure">car</span> of <span class="T11">(this is a list)</span> is the atom <span class="T11">this</span>, which was the first input to <span class="Subfigure">cons</span>.  The <span class="Subfigure">cdr</span> of <span class="T11">(this is a list)</span> is the list <span class="T11">(is a list)</span>, which was the second input to <span class="Subfigure">cons</span>.  
+				returns the list <span class="Subfigure Lite">(this is a list)</span>.  Note that the <span class="Subfigure">car</span> of <span class="Subfigure Lite">(this is a list)</span> is the atom <span class="Subfigure Lite">this</span>, which was the first input to <span class="Subfigure">cons</span>.  The <span class="Subfigure">cdr</span> of <span class="Subfigure Lite">(this is a list)</span> is the list <span class="Subfigure Lite">(is a list)</span>, which was the second input to <span class="Subfigure">cons</span>.  
 			</p>
 
 			<p>
@@ -470,11 +470,11 @@
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(cons (quote</span><span class="T11">(this)</span><span class="Subfigure">) (quote</span><span class="T11">(list contains a sublist)</span><span class="Subfigure">) )</span>
+				<span class="Subfigure">(cons (quote</span><span class="Subfigure Lite">(this)</span><span class="Subfigure">) (quote</span><span class="Subfigure Lite">(list contains a sublist)</span><span class="Subfigure">) )</span>
 			</p>
 
 			<p>
-				produces the list <span class="T11">((this) list contains a sublist)</span>; a list in which the first element is a list containing a single atomic element.
+				produces the list <span class="Subfigure Lite">((this) list contains a sublist)</span>; a list in which the first element is a list containing a single atomic element.
 			</p>
 
 			<p>
@@ -492,7 +492,7 @@
 			</p>
 
 			<p>
-				You may be asking yourself which of the three list composition operators, <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, or <span class="Subfigure">append</span> you should use when you wish to build a list.  Well this all depends, of course, on what kind of list you are trying to build and what kinds of inputs you have, but here is a good way of keeping the functionality of each of these three operators straight.  Assume you want to build a list with no sublists – a simple list of atoms.  In order to do so, use <span class="Subfigure">cons</span> if you have an atom and a list of atoms and want to insert the new atom at the head of the existing list.  Use <span class="Subfigure">list</span> if you have a bunch of atoms and want to build a list out of them.  Finally, use <span class="Subfigure">append</span> if you already have two or more lists of atoms and want to join them together into a single list.  Figure 9.10 illustrates three methods of constructing the list <span class="T11">(a b c d)</span>, using <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, and <span class="Subfigure">append</span>.  Notice that each of these operators requires different inputs in order to construct identical output lists.
+				You may be asking yourself which of the three list composition operators, <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, or <span class="Subfigure">append</span> you should use when you wish to build a list.  Well this all depends, of course, on what kind of list you are trying to build and what kinds of inputs you have, but here is a good way of keeping the functionality of each of these three operators straight.  Assume you want to build a list with no sublists – a simple list of atoms.  In order to do so, use <span class="Subfigure">cons</span> if you have an atom and a list of atoms and want to insert the new atom at the head of the existing list.  Use <span class="Subfigure">list</span> if you have a bunch of atoms and want to build a list out of them.  Finally, use <span class="Subfigure">append</span> if you already have two or more lists of atoms and want to join them together into a single list.  Figure 9.10 illustrates three methods of constructing the list <span class="Subfigure Lite">(a b c d)</span>, using <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, and <span class="Subfigure">append</span>.  Notice that each of these operators requires different inputs in order to construct identical output lists.
 			</p>
 
 			<p>
@@ -867,11 +867,11 @@
 			</p>
 
 			<p class="Figure">
-				<span class="Subfigure">(head (quote</span><span class="T11">(this is a list)</span><span class="Subfigure">))</span>
+				<span class="Subfigure">(head (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">))</span>
 			</p>
 
 			<p>
-				we would expect it to return the atom <span class="T11">this</span>.  In exactly the same manner that the expression <span class="Subfigure">(car (quote</span><span class="T11">(this is a list)</span><span class="Subfigure">))</span> would have.
+				we would expect it to return the atom <span class="Subfigure Lite">this</span>.  In exactly the same manner that the expression <span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">))</span> would have.
 			</p>
 
 			<p>
@@ -1205,19 +1205,19 @@
 				<span class="Subblockcenter">  </span>(cond (( &lt; AGE 40)  
 			</p>
 			<p>
-				<span class="Subfigure">                (cond ((&gt;= INCOME 50000)(quote </span><span class="T11">(yuppie)</span><span class="Subfigure">))</span>
+				<span class="Subfigure">                (cond ((&gt;= INCOME 50000)(quote </span><span class="Subfigure Lite">(yuppie)</span><span class="Subfigure">))</span>
 			</p>
 			<p>
-				<span class="Subfigure">                         (        T        (quote </span><span class="T11">(too poor)</span><span class="Subfigure">))))</span>
+				<span class="Subfigure">                         (        T        (quote </span><span class="Subfigure Lite">(too poor)</span><span class="Subfigure">))))</span>
 			</p>
 			<p>
 				<span class="Subfigure">  </span><span>    (    T          </span>
 			</p>
 			<p>
-				<span class="Subfigure">                (cond ((&gt;= INCOME 50000)(quote </span><span class="T11">(too old)</span><span class="Subfigure">))</span>
+				<span class="Subfigure">                (cond ((&gt;= INCOME 50000)(quote </span><span class="Subfigure Lite">(too old)</span><span class="Subfigure">))</span>
 			</p>
 			<p>
-				<span class="Subfigure">                         (        T        (quote </span><span class="T11">(old and poor)</span><span class="Subfigure">))))</span>
+				<span class="Subfigure">                         (        T        (quote </span><span class="Subfigure Lite">(old and poor)</span><span class="Subfigure">))))</span>
 			</p>
 			<p>
 				)

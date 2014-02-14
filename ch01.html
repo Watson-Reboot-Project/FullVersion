@@ -9,90 +9,16 @@
 		<link href = "css/bootstrap.css" rel = "stylesheet">
 		<link href = "css/styles.css" rel = "stylesheet">
 		<link href = "css/generalmedia.css" rel = "stylesheet">
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-slider.js"></script>
 				
 
 	</head>
 
-	<body> <img class="navbar-fixed-top" id="clickme" src="Images/max.png" >
-			
-
-		<div class="navbar navbar-default navbar-fixed-top" id="navbar"> <!--navbar-static-top-->
-			<div class="container"> <!-- navbar container -->
-					<!--Logo -->
-						<a href = "index.html" class="navbar-brand"> <img src="Images/logo2.png">  </a> 
-					
-					<!--Header button-->
-						<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
-	  						<span class = "icon-bar"></span>
-	  						<span class = "icon-bar"></span>
-	  						<span class = "icon-bar"></span>
-	  					</button>
-
-				<div class = "collapse navbar-collapse navHeaderCollapse">
-					<ul class = "nav navbar-nav navbar-right">
-						<li class="dropdown"> <a href="#" class = "dropdown-toggle btn" data-toggle = "dropdown">
-							Chapters<b class = "caret"></b></a>
-									<ul class="dropdown-menu"> 
-								  		<li> <a href="ch01.html">Chapter 1</a></li>
-								  		<li> <a href="ch02.html">Chapter 2</a></li>
-								  		<li> <a href="ch03.html">Chapter 3</a></li>
-								  		<li> <a href="ch04.html">Chapter 4</a></li>
-								  		<li> <a href="ch05.html">Chapter 5</a></li>
-								  		<li> <a href="ch06.html">Chapter 6</a></li>
-								  		<li> <a href="ch07.html">Chapter 7</a></li>
-								  		<li> <a href="ch08.html">Chapter 8</a></li>
-								  		<li> <a href="ch09.html">Chapter 9</a></li>
-								  		<li> <a href="ch10.html">Chapter 10</a></li>
-								  		<li> <a href="ch11.html">Chapter 11</a></li>
-								  		<li> <a href="ch12.html">Chapter 12</a></li>
-								  		<li> <a href="ch13.html">Chapter 13</a></li>
-								  		<li> <a href="ch14.html">Chapter 14</a></li>
-								  	</ul>
-						</li>
-						<li><a class="btn" href = "#d">Documentation</a></li>
-						<li><a class="btn" href = "#t">Tutorials</a></li>
-						<li><a class="btn" href = "#a">About</a></li>
-							  
-							  <li><a href = "#p" id="min"><img src="Images/minus_bar.png"></a></li>
-
-
-					</ul>
-				</div> <!-- END collapse navbar -->	 		
-			</div>  <!-- END navbar container -->
-		</div> <!-- END navbar-static-top -->
-
-
-			<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-			<script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-  <script>
-			var toggle = 0;
-  $('#min').click(
-  function() {
-  $('#navbar').slideUp('slow'); $('#clickme').fadeIn();
-				toggle=1;
-  }
-  );
-  $('#clickme').click(
-  function() {
-  $('#navbar').slideDown('slow');
-				toggle=0;
-  }
-  );
-	var timer; /* disapearing navbar, plus sing */
-	$(document).mousemove(function() {
-		if (timer) {
-			clearTimeout(timer);
-			timer = 0;
-		}
-
-		if (toggle==0) {$('#navbar').fadeIn(); }
-		$('#clickme').fadeIn();
-		timer = setTimeout(function() {
-			$('#navbar').fadeOut(); $('#clickme').fadeOut();
-		}, 3000)
-	});
-  </script>
+	<body>
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
 		<!--Floating nav -->
 			<!-- Previous -->
@@ -103,7 +29,7 @@
 			</style>
 			<div class="floating-previous">
 				<a href="index.html">
-				<img style="border:0;" src="Images/left-arrow.png" alt="Previous page" width="40">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
 				</a>
 			</div>
 			<!-- Next -->
@@ -114,7 +40,7 @@
 			</style>
 			<div class="floating-next">
 				<a href="ch02.html">
-				<img style="border:0;" src="Images/right-arrow.png" alt="Next page" width="40">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
 				</a>
 			</div>
 		<!-- End floating nav -->

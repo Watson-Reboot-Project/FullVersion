@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		 <!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+	<body data-ng-controller="Controller">
+		<div class="page-wrapper" id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<!-- Navbar division -->
+
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+              <script>
+
+              (function($) {
+    var template = '\
+        <ul>\
+            <% _.each(context, function(parent, index) { %>\
+            <li>\
+                <span><input type="checkbox" \
+                <% var ps; %>\
+                <% if ( !_.isUndefined(ps = _.find(options.selected, function(elem) { return elem.key === this.key; }, parent)) ) { %>\
+                checked="checked"\
+                <% } %> value="<%= parent.key %>" /> <%= parent.key %><i class="icon-chevron-up icon-black"></i></span>\
+                <% if (options.startCollapsed) { %>\
+                <ul style="display: none;">\
+                <% } else { %>\
+                <ul>\
+                <% } %>\
+                    <% _.each(parent.values, function(child, index) { %>\
+                    <li>\
+                        <span><input type="checkbox" \
+                        <% if ( !_.isUndefined(this) && !_.isUndefined(_.find(this.values, function(elem) { return elem.key === this.key; }, child)) ) { %>\
+                        checked="checked"\
+                        <% } %> value="<%= child.key %>" /> <%= child.key %></span>\
+                    </li>\
+                    <% }, ps); %>\
+                </ul>\
+            </li>\
+            <% }); %>\
+        </ul>';
+    
+    /** Check all child checkboxes.
+     * @param jQElement The parent <li>.
+     */
+    function _selectAllChildren(jQElement) {
+        jQElement.find('ul > li > span > input[type="checkbox"]')
+            .each(function() {
+                $(this).prop('checked', true);
+            });
+    }
+    
+    /** Uncheck all child checkboxes.
+     * @param jQElement The parent <li>.
+     */
+    function _deselectAllChildren(jQElement) {
+        jQElement.find('ul > li > span > input[type="checkbox"]')
+            .each(function() {
+                $(this).prop('checked', false);
+            });
+    }
+    
+    /** Toggle all checkboxes.
+     * @param[in] jQElement The root <ul> of the list.
+     */
+    function _toggleAllChildren(jQElement) {
+        if (jQElement.children('span').children('input[type="checkbox"]').prop('checked')) {
+            _selectAllChildren(jQElement);
+        } else {
+            _deselectAllChildren(jQElement);
+        }
+    }
+    
+    /** Toggle the collapse icon based on the current state.
+     * @param[in] jQElement The <li> of the header to toggle.
+     */
+    function _toggleIcon(jQElement) {
+        // Change the icon.
+        if (jQElement.children('ul').is(':visible')) {
+            // The user wants to collapse the child list.
+            jQElement.children('span').children('i')
+                .removeClass('icon-chevron-down')
+                .addClass('icon-chevron-up');
+        } else {
+            // The user wants to expand the child list.
+            jQElement.children('span').children('i')
+                .removeClass('icon-chevron-up')
+                .addClass('icon-chevron-down');
+        }
+    }
+    
+    /** Make sure there isn't any bogus default selections.
+     * @param[in] selected The default selection object.
+     * @return The filtered selection object.
+     */
+    function _validateDefaultSelectionValues(selected) {
+        return _.filter(selected, function(elem) {
+            return ( !_.isEmpty(elem.values) && !_.isUndefined(elem.values) );
+        });
+    }
+    
+    /** If a parent has at least one child node selected, check the parent.
+     *  Conversely, if a parent has no child nodes selected, uncheck the parent.
+     * @param[in] jQElement The parent <li>.
+     */
+    function _handleChildParentRelationship(jQElement) {
+        // If the selected node is a child:
+        if ( _.isEmpty(_.toArray(jQElement.children('ul'))) ) {
+            var childrenStatuses = _.uniq(
+                _.map(jQElement.parent().find('input[type="checkbox"]'), function(elem) {
+                    return $(elem).prop('checked');
+                })
+            );
+            
+            // Check to see if any children are checked.
+            if (_.indexOf(childrenStatuses, true) !== -1) {
+                // Check the parent node.
+                jQElement.parent().parent().children('span').children('input[type="checkbox"]').prop('checked', true);
+            } else {
+                // Uncheck the parent node.
+                jQElement.parent().parent().children('span').children('input[type="checkbox"]').prop('checked', false);
+            }
+        }
+    }
+    
+    /** Updates the internal object of selected nodes.
+     */
+    function _updateSelectedObject() {
+        var data = $('.listTree').data('listTree');
+
+        // Filter the context to the selected parents.
+        var selected = _.filter($.extend(true, {}, data.context), function(parent) {
+            return $('.listTree > ul > li > span > input[value="' + parent.key + '"]').prop('checked')
+        });
+        
+        // For each parent in the working context...
+        _.each(selected, function(parent) {
+
+            // Filter the children to the selected children.
+            parent.values = _.filter(parent.values, function(child) {
+                return $('.listTree > ul > li > ul > li > span > input[value="' + child.key + '"]').prop('checked');
+            });
+        });
+
+        // Update the plugin's selected object.
+        $('.listTree').data('listTree', {
+            "target": data.target,
+            "context": data.context,
+            "options": data.options,
+            "selected": selected
+        });
+    }
+
+    var methods = {
+        init: function(context, options) {
+            // Default options
+            var defaults = {
+                "startCollapsed": false,
+                "selected": context
+            };
+            options = $.extend(defaults, options);
+            
+            // Validate the user entered default selections.
+            options.selected = _validateDefaultSelectionValues(options.selected);
+            
+            return this.each(function() {
+                var $this = $(this),
+                    data = $this.data('listTree');
+
+                // If the plugin hasn't been initialized yet...
+                if (!data) {
+
+                    $(this).data('listTree', {
+                        "target": $this,
+                        "context": context,
+                        "options": options,
+                        "selected": options.selected
+                    });
+                    
+                    // Register checkbox handlers.
+                    $(document).on('change', '.listTree input[type="checkbox"]', function(e) {
+                        var node = $(e.target).parent().parent();
+
+                        // Toggle all children.
+                        _toggleAllChildren(node);
+                        
+                        // Handle parent checkbox if all children are (un)checked.
+                        _handleChildParentRelationship(node);
+                        
+                        // Filter context to selection and store in data.selected.
+                        _updateSelectedObject(node);
+                    })
+                    
+                    // Register collapse handlers on parents.
+                    .on('click', '.listTree > ul > li > span', function(e) {
+                        var node = $(e.target).parent();
+                        
+                        // Change the icon.
+                        _toggleIcon(node);
+                        
+                        // Toggle the child list.
+                        node.children('ul').slideToggle('fast');
+                        
+                        e.stopImmediatePropagation();
+                    });
+                    
+                    // Generate the list tree.
+                    $this.html( _.template( template, { "context": context, "options": options } ) );
+                }
+            });
+        },
+        expandAll: function() {
+            // For each listTree...
+            return this.each(function() {
+                var node = $(this).children('ul').children('li');
+                
+                // Change the icon.
+                _toggleIcon(node);
+                
+                // Show the child list.
+                node.children('ul').slideDown('fast');
+            });
+        },
+        collapseAll: function() {
+            // For each listTree...
+            return this.each(function() {
+                var node = $(this).children('ul').children('li');
+                
+                // Change the icon.
+                _toggleIcon(node);
+                
+                // Hide the child list.
+                node.children('ul').slideUp('fast');
+            });
+        },
+        update: function(context, options) {
+            // Default options
+            var defaults = {
+                "startCollapsed": false,
+                "selected": context
+            };
+            options = $.extend(defaults, options);
+            
+            // Validate the user entered default selections.
+            options.selected = _validateDefaultSelectionValues(options.selected);
+            
+            return this.each(function() {
+                var $this = $(this),
+                    data = $this.data('listTree');
+
+                // Ensure the plugin has been initialized...
+                if (data) {
+                    // Update the context.
+                    $(this).data('listTree', {
+                        "target": $this,
+                        "context": context,
+                        "options": options,
+                        "selected": options.selected
+                    });
+                    
+                    // Generate the list tree.
+                    $this.html( _.template( template, { "context": context, "options": options } ) );
+                }
+            });
+        }
+    };
+
+    $.fn.listTree = function(method) {
+
+        if (methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error('Method ' + method + ' does not exist on jQuery.listTree');
+        }
+
+    };
+})(jQuery);
+
+/* Create our data objects.
+ * Formatted like d3.js's nest() function.
+ */
+var data = [
+    {
+        "key": "Chapter 1",
+        "values": [
+            { "key": "Parent 1 Child 1" },
+            { "key": "Parent 1 Child 2" },
+            { "key": "Parent 1 Child 3" },
+            { "key": "Parent 1 Child 4" },
+            { "key": "Parent 1 Child 5" }
+        ]
+    },
+    {
+        "key": "Chapter 2",
+        "values": [
+            { "key": "Parent 2 Child 1" },
+            { "key": "Parent 2 Child 2" },
+            { "key": "Parent 2 Child 3" }
+        ]
+    },
+    {
+        "key": "Chapter 3",
+        "values": [
+            { "key": "Parent 3 Child 1" },
+            { "key": "Parent 3 Child 2" },
+            { "key": "Parent 3 Child 3" }
+        ]
+    }
+];
+
+var dataDefaultSelected = [
+    {
+        "key": "Parent 1",
+        "values": [
+            { "key": "Parent 1 Child 1" },
+            { "key": "Parent 1 Child 2" }, // Skip a few...
+            { "key": "Parent 1 Child 5" }
+        ]
+    },
+    {
+        "key": "Parent 3",
+        "values": [] //Some bad data, you can't have a selected parent with no selected children!
+    }
+];
+
+
+$(document).on('click', '.btn-success', function(e) {
+    $('.listTree').listTree('selectAll');
+}).on('click', '.btn-danger', function(e) {
+    $('.listTree').listTree('deselectAll');
+}).on('click', '.btn-info', function(e) {
+    $('.listTree').listTree('expandAll');
+}).on('click', '.btn-warning', function(e) {
+    $('.listTree').listTree('collapseAll');
+}).on('click', '.btn-inverse', function(e) {
+    $('.listTree').listTree('update', otherData);
+}).on('click', '.btn-primary', function(e) {
+    $('#selectionJson').text(JSON.stringify($('.listTree').data('listTree').selected));
+});
+
+$('.listTree').listTree(data, { "startCollapsed": true, "selected": dataDefaultSelected }); </script>
+
+
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <!--
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="index.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch01.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+	    		<div id="main_header"> <!-- Container begin--> <h1> Sections </h1></div>
+	    		<div class="well">
+	    		<div id="content">
+				   <div class="listTree"></div>
+				    <ul>
+					<li> <a href="ch01.html">Chapter 1</a></li>
+			
+			  		<li> <a href="ch02.html">Chapter 2</a></li>
+			  		<li> <a href="ch03.html">Chapter 3</a></li>
+			  		<li> <a href="ch04.html">Chapter 4</a></li>
+			  		<li> <a href="ch05.html">Chapter 5</a></li>
+			  		<li> <a href="ch06.html">Chapter 6</a></li>
+			  		<li> <a href="ch07.html">Chapter 7</a></li>
+			  	</ul>
+				    <button class="btn btn-info">Expand All</button>
+				    <button class="btn btn-warning">Collapse All</button>
+
+				    <br /><br />
+				    
+				  </div>
+			  	</div> <!-- END well -->	
+				<!-- End main content -->
+				<hr />
+				<p class="Emphasized">
+					<a href="#tippytop">Return to top</a>
+				</p>
+				<nav>
+					<p>
+						--
+					</p>
+					<p>
+						<a href="index.html">Home</a>
+					</p>
+					<p>
+						<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+					</p>
+				</nav>
+
+				<div>
+
+				</div>
+				<!--
+				<footer>
+					<p>
+						&copy; Copyright  by Burt
+					</p>
+				</footer>
+				-->
+		</div>
+	</body>
+</html>

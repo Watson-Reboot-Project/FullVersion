@@ -1,0 +1,66 @@
+<?xml version='1.0'?>
+<table-of-contents>
+  <chapters>
+    <chapter>
+      <name>The Science of Computing</name>
+      <path>ch01.html</path>
+    </chapter>
+    <chapter>
+      <name>Computers as Communication and Problem Solving Tools</name>
+      <path>ch02.html</path>
+    </chapter>
+    <chapter>
+      <name>Information Storage and Retrieval</name>
+      <path>ch03.html</path>
+    </chapter>
+    <chapter>
+      <name>The Social, Legal, and Ethical Aspects of Computing </name>
+      <path>ch04.html</path>
+    </chapter>
+    <chapter>
+      <name>Algorithms -- The Key to Understanding Software</name>
+      <path>ch05.html</path>
+    </chapter>
+    <chapter>
+      <name>Developing Graphical Algorithms</name>
+      <path>ch06.html</path>
+    </chapter>
+    <chapter>
+      <name>Data Structures -- The Organization of Data at the Program Level</name>
+      <path>ch07.html</path>
+    </chapter>
+    <chapter>
+      <name>JavaScript Programming</name>
+      <path>ch08.html</path>
+    </chapter>
+    <chapter>
+      <name>Functional, Logical, and Object-Oriented Programming</name>
+      <path>ch09.html</path>
+    </chapter>
+    <chapter>
+      <name>Software Engineering</name>
+      <path>ch10.html</path>
+    </chapter>
+    <chapter>
+      <name>Assembly Language and Computer Architecture</name>
+      <path>ch11.html</path>
+    </chapter>
+    <chapter>
+      <name>Digital Circuit Design</name>
+      <path>ch12.html</path>
+    </chapter>
+    <chapter>
+      <name>Theoretical and Practical Limits of Computing</name>
+      <path>ch13.html</path>
+    </chapter>
+    <chapter>
+      <name>Computing and Intelligence</name>
+      <path>ch14.html</path>
+    </chapter>
+    <chapter>
+      <name>The Past, Present, and Future of Computing</name>
+      <path>ch15.html</path>
+    </chapter>
+  </chapters>
+</table-of-contents>
+<!-- vim: set sts=2 sw=2 : -->
