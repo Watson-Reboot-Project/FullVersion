@@ -43,16 +43,17 @@
 					</div>
 					<div class = "collapse navbar-collapse navHeaderCollapse"> <!-- collapse navbar -->
 						<ul class = "nav navbar-nav navbar-right">
-
-									<li> <br>
-            							<input type="text" class="span2" value="" data-slider-min="8" data-slider-max="30" data-slider-step="1" 
-										data-slider-value="12" id="fontSlider"  style="">
+							<li class="dropdown">
+          						<a data-toggle="dropdown" class="dropdown-toggle"><img src="Images/font-size.png"></a>
+          						<ul class="dropdown-menu">
+            						<li>
+            						 	<input type="text" class="span2 filter_slider" value="" data-slider-min="8" data-slider-max="30" data-slider-step="1"data-slider-value="12" id="fontSlider"  style="">
         							</li>
-
-       						</li>
+          						</ul>
+       						</li>					
 							<li> <a href="ch_toc.html"><i class="fa fa-book"></i>Chapters</a></li>
 							<li> <a href="section_toc.html"><i class="fa fa-list-ul"></i>Sections</a></li>
-							<li> <a id="min"><i class="fa fa-arrow-up"></i></a> <!-- Minus bar image -->
+							<li> <a id="min"><i class="fa fa-arrow-up"></i></a> <!-- Up arrow image -->
 						</ul>	
 					</div> <!-- END collapse navbar -->
 				</div>  <!-- END navbar container -->
@@ -85,19 +86,6 @@
 					}, 3000)
 				});
 				
-				
-			  $('.increaseFont').click(
-			  function() {
-			  	var curFontSize = $('.page-wrapper').css('font-size');
-				$('.page-wrapper').css('font-size', parseInt(curFontSize)+1);
-				}
-			  );
-			  $('.decreaseFont').click(
-			  function() {
-			  	var curFontSize = $('.page-wrapper').css('font-size');
-				$('.page-wrapper').css('font-size', parseInt(curFontSize)-1);
-				}
-			  );
 			  $('#fontSlider').slider();
 			var fontChange = function() {
 					  $('.page-wrapper').css('font-size', r.getValue())

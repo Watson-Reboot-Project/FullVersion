@@ -179,8 +179,8 @@
 				</li>
 			</ol>
 			<!-- Sandbox -->
-			<!--
-			<p class="Section">Scratch Pad</p>
+			
+			<p class="Section" id="Scratch"></p>
 			<div id="sandbox1" style='border: solid 1px;'></div>
 				
 			<!-- End main content -->
@@ -248,7 +248,26 @@
 			var figureor = new DigitalLogicFigure("container-or", "or");
 			var figurenot = new DigitalLogicFigure("container-not", "not");
 			var figurea = new DigitalLogicFigure("container-a", "a"); 
-			var lab = new DigitalLogicsLab("sandbox1");
+			if (detectMobile() == false) {
+				document.getElementById("Scratch").innerText="Scratch Pad";
+				var lab = new DigitalLogicsLab("sandbox1");
+			}
+
+			function detectMobile() { 
+				 if( navigator.userAgent.match(/Android/i)
+				 || navigator.userAgent.match(/webOS/i)
+				 || navigator.userAgent.match(/iPhone/i)
+				 || navigator.userAgent.match(/iPad/i)
+				 || navigator.userAgent.match(/iPod/i)
+				 || navigator.userAgent.match(/BlackBerry/i)
+				 || navigator.userAgent.match(/Windows Phone/i)
+				 ) {
+					return true;
+				 }
+				 else {
+					return false;
+				  }
+				}
 		</script>
 		</div>
 	</body>

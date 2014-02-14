@@ -19,6 +19,7 @@
 		</style>
 	    <link href = "css/bootstrap.css" rel = "stylesheet">
 	    <link rel='stylesheet' href='lib/css/bootstrap-3.css'>
+	    <link href = "lib/assembly.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
 	    
@@ -93,266 +94,7 @@
 			<img src="Images/AssemblyIMGS/fig11-3.png" alt="" class="Image">
 			-->
 			<!-- Begin interactive 11.3 -->
-			<div ng-app='assembly' ng-controller='assemblycontroller' class='container' style="width:100%;">
-	
-		<div class ='row'>
-			<div id='editor_button_group' class='col-lg-4 col-md-4 btn-group-horizontal' style="width:100%;">
-				<button type='button' class='btn btn-success' ng-click='run()'>Run</button>
-				<button type='button' class='btn btn-primary' ng-click='walk()'>Walk</button>
-				<button type='button' class='btn btn-danger' ng-click='reset()'>Reset</button>
-				<button type='button' class='btn btn-warning' ng-click='pause()'>Pause</button>
-				<button type='button' class='btn btn-default'>2/16</button>
-			</div>
-		</div>
-		<br>
-		<div class='row'>
-		
-		<div class='col-lg-8 col-md-8' id='table' style='overflow-y: scroll; border: 1px solid black; height: 200px; width:100%;' id='fig113'>
-			<table id='program'>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td>TOTAL</td>
-					<td>.Block</td>
-					<td>1</td>
-					<td></td>
-					<td></td>
-					<td>;</td>
-					<td>reserve a block of memory one word long for 'total'.</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td>ABC</td>
-					<td>.Word</td>
-					<td>2</td>
-					<td></td>
-					<td></td>
-					<td>;</td>
-					<td>reserve a word of memory for variable 'abc'.  Initialize to 2.</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td>XYZ</td>
-					<td>.Word</td>
-					<td>3</td>
-					<td></td>
-					<td></td>
-					<td>;</td>
-					<td>reserve a word of memory for variable 'xyz'.  Initialize to 3.</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td></td>
-					<td>Load</td>
-					<td>RegD</td>
-					<td>ABC</td>
-					<td></td>
-					<td>;</td>
-					<td>load the value of variable 'abc' into register D.</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td></td>
-					<td>Load</td>
-					<td>RegE</td>
-					<td>XYZ</td>
-					<td></td>
-					<td>;</td>
-					<td>load the value of variable 'xyz' into register E.</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td></td>
-					<td>Add</td>
-					<td>RegF</td>
-					<td>RegD</td>
-					<td>RegE</td>
-					<td>;</td>
-					<td>add the contents of registers D and E placing the result in F.</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td></td>
-					<td>Store</td>
-					<td>RegF</td>
-					<td>TOTAL</td>
-					<td></td>
-					<td>;</td>
-					<td>store the value held in register F into the variable 'total'.</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>*</td>
-					<td></td>
-					<td>Halt</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>;</td>
-					<td>halt execution of this assembly language program.</td>
-				</tr>
-			</table>
-		</div>
-		
-				<!-- begining of the tabs -->
-				<tabset class='col-lg-8 col-md-8' style="width:100%;">
-
-					<!-- demo tab - shows all of the information for the current lab -->
-					<tab heading='Figure'><br>
-						<div class='container'>
-							<div class='row'>								
-								<div class='col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1'>
-									<div id='table' style='width: 90px'>
-										<table id='variables' class='table table-bordered' ng-repeat='var in variables'>
-											<td>{{var.title}}</td><td>{{var.titletoo}}</td>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</tab>
-					
-					<!-- editor tab where you can make changes to the code -->
-					<tab heading='Editor' disabled='true'><br>
-						<div class='container'>
-							<div class='row'>
-								<div class='col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2'>
-								
-									<!-- table that shows the code -->
-									<div id='table' style='overflow:auto; border: 1px solid black; height: 200px; width: 350px;'>
-										<table id='commands'>
-										</table>
-									</div>
-								</div>
-								
-								<!-- button group for the table and code -->
-								<div class='col-lg-4 col-md-4'>
-									<div id='editor_button_group' class='col-lg-4 col-md-4 btn-group-vertical'>
-										<button type='button' class='btn btn-default' onclick='insertWord()'>Word</button>
-										<button type='button' class='btn btn-default' onclick='insertBlock()'>Block</button>
-										<button type='button' class='btn btn-default' onClick='insertLoad()'>Load</button>
-										<button type='button' class='btn btn-default' onclick='insertStore()'>Store</button>
-										<button type='button' class='btn btn-default' onclick='insertAdd()'>Add</button>
-										<button type='button' class='btn btn-default' onclick='insertBranch()'>Branch</button>
-									</div>
-									<div id='editor_button_group' class='col-lg-4 col-md-4 btn-group-vertical'>
-										<button type='button' class='btn btn-default' onclick='insertJump()'>Jump</button>
-										<button type='button' class='btn btn-default' onclick='insertLoadImm()'>Load Imm</button>
-										<button type='button' class='btn btn-default' onclick='insertAnd()'>And</button>
-										<button type='button' class='btn btn-default' onclick='insertLoadIn()'>Load In</button>
-										<button type='button' class='btn btn-default' onclick='insertStoreIn()'>Store In</button>
-										<button type='button' class='btn btn-default' onclick='insertSub()'>Subtract</button>
-									</div>
-									<div id='editor_button_group' class='col-lg-4 col-md-4 btn-group-vertical'>
-										<button type='button' class='btn btn-default' onclick='insertOr()'>Or</button>
-										<button type='button' class='btn btn-default' onclick='insertCompare()'>Compare</button>
-										<button type='button' class='btn btn-default' onclick='insertASL()'>ASL</button>
-										<button type='button' class='btn btn-default' onclick='insertASR()'>ASR</button>
-										<button type='button' class='btn btn-default' onclick='insertHalt()'>Halt</button>
-										<button type='button' class='btn btn-default' onclick='insertNot()'>Not</button>
-									</div>
-								</div>
-							</div>
-						</div>
-			
-					</tab>
-					
-					<!-- tab containing the memory, register, program counters, and flags -->
-					<tab heading='Architecture'><br>
-						<div class='container' style="width:100%;">
-							<div class='row'>
-								<div class='col-lg-4 col-md-4'>
-								
-									<!-- table containing the memory -->
-									<p class="Section">Memory</p>
-									<div id='table' style='overflow-y: scroll; border: 1px solid black; height: 300px; width: 170px; margin:0px;'>
-										
-									<table class='table table-bordered table-condensed' ng-repeat='mem in memory'>
-											<tr>
-											<td>{{mem.memno}}</td><td>{{mem.content}}</td>
-											</tr>
-									</table>
-									</div>
-								</div>
-								
-								<!-- table containing the register information -->
-								<p class="Section">&nbsp; &nbsp;Registers</p>
-								<div class='col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1' style="margin:0px;">
-									<div class='spanReg'>
-										
-										<table class='table table-bordered' ng-repeat='reg in register'>
-											<tbody>
-												<tr>
-													<td>{{reg.content}}</td>
-													<td>{{reg.value}}</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<!-- program counter and instruction register table -->
-								<div class='col-lg-2 col-md-2'>
-									<table class='table table-bordered' style='height: 100px; width: 170px; margin-left:25px;'>
-										<thead>
-											<tr>
-												<th class='text-center'>Program Counter</th>
-											</tr>
-											<tr>
-												<td class='text-center' ng-repeat='cnt in counter'>{{cnt.content}}</td>
-											</tr>
-											<tr>
-												<th class='text-center'>Instruction Register</th>
-											</tr>
-											<tr>
-												<td class='text-center'>0000-0000-0000-0000</td>
-											</tr>
-										</thead>
-									</table> 									
-									<!-- flag table -->
-									<div class='row'>
-										<div class='col-lg-2 col-md-2'>
-											<table class='table table-bordered' style='height: 212px; width: 170px; margin-left:25px;'>
-												<thead>
-													<tr>
-														<th colspan='2' class='text-center'>Flags</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td ng-repeat='carry in carryFlag'>{{carry.content}}</td>
-														<td>Carry Flag</td>
-														
-													</tr>
-													<tr>
-														<td ng-repeat='negative in negativeFlag'>{{negative.content}}</td>
-														<td>Negative Flag</td>
-													</tr>
-													<tr>
-														<td ng-repeat='zero in zeroFlag'>{{zero.content}}</td>
-														<td>Zero Flag</td>
-													</tr>
-													<tr>
-														<td ng-repeat='overflow in overflowFlag'>{{overflow.content}}</td>
-														<td>Overflow Flag</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</tab>
-				</tabset>
-				<hr />	
-		</div>
-	</div>
+			<div id='fig113Div'></div>
 			<!-- End interactive 11.3 -->			
 			<p class="Figure">
 				Figure 11.3:  Assembly language version of the statement:  <span class="Subfigure">total = abc + xyz;</span>
@@ -539,9 +281,10 @@
 			<p class="Subfigure">
 				LOADIMM        <span class="Ital">destination register</span>, <span class="Ital">value</span>
 			</p>
-			
+			<!--
 			<img src="Images/AssemblyIMGS/fig11-4.png" alt="" class="Image">
-						
+			-->
+			<div id='fig114Div'></div>			
 			<p class="Figure">
 				Figure 11.4: Assembly language version of the statement:  <span class="Subfigure">x = x - 1;</span>
 			</p>
@@ -614,7 +357,6 @@
 			</ol>
 			
 			<!-- End main content -->
-			<hr />
 			<!-- Footnotes -->
 			<p class="Section">
 				Footnotes
@@ -624,6 +366,7 @@
 			
 			<p class="Footnote"><span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn2" href="#body_ftn2">[2]</a></span> It should be noted that true JavaScript, as well as many other common programming languages, like Java and C++, do support the ability to declare and initialize variables in a single statement.</p>
 			<!-- Footnotes End -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -649,7 +392,15 @@
     	<script type='text/javascript' src='lib/js/ui-bootstrap-0.10.0.js'></script>
     	<script type='text/javascript' src='lib/js/tabs.js'></script>
     	<script type='text/javascript' src='lib/js/ui-bootstrap.js'></script>   	
-		<script type='text/javascript' src='js/assemblyui.js'></script>	
-    	<script type='text/javascript' src='js/inputs.js'></script>
+		<script type='text/javascript' src='js/Assembly/assemblyui.js'></script>	
+    	<script type='text/javascript' src='js/Assembly/inputs.js'></script>
+    	<script src='js/Assembly/figures.js'></script>
+    	
+    	<script>
+    			var fig113 = new Figure(113);
+    			var fig114 = new Figure(114);
+				angular.bootstrap(document.getElementById("fig113"), ['assembly113']);
+				angular.bootstrap(document.getElementById("fig114"), ['assembly114']);
+		</script>
 	</body>
 </html>

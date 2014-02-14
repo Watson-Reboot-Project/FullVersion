@@ -1,0 +1,18 @@
+this.register = [
+	                 ["Reg0", 0, false], // Reg0
+	                 ["Reg1", 0, false], // Reg1
+	                 ["Reg2", 0, false], // Reg2
+	                 ["Reg3", 0, false], // Reg3
+	                 ["Reg4", 0, false], // Reg4
+	                 ["Reg5", 0, false], // Reg5
+	                 ["Reg6", 0, false], // Reg6
+	                 ["Reg7", 0, false], // Reg7
+	                 ["Reg8", 0, false], // Reg8
+	                 ["Reg9", 0, false], // Reg9
+	                 ["RegA", 0, false], // RegA
+	                 ["RegB", 0, false], // RegB
+	                 ["RegC", 0, false], // RegC
+	                 ["RegD", 0, false], // RegD
+	                 ["RegE", 0, false], // RegE
+	                 ["RegF", 0, false]  // RegF
+	                 ];
