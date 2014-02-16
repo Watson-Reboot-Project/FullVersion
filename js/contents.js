@@ -157,6 +157,11 @@ function sectionsConstructor (xml_location, name) {
                 item.runningsum = count + item.numfigures;
                 item.number = i + 1;
 
+                var sub_xml = $xmlobj.find('subsections').text();
+                if (sub_xml !== '') {
+                    item.sections = sectionsConstructor(sub_xml, 'index');
+                }
+
                 items.push(item);
             }
             // END "ONLY PART THAT'S DIFFERENT"
