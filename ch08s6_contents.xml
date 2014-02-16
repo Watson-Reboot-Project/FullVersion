@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<table-of-contents>
+  <index>
+    <path>ch08.html</path>
+  </index>
+  <sections>
+    <section>
+      <name>Sequence</name>
+      <path>ch08s6p1.html</path>
+    </section>
+    <section>
+      <name>Selection</name>
+      <path>ch08s6p2.html</path>
+    </selection>
+    <section>
+      <name>Repetition</name>
+      <path>ch08s6p3.html</path>
+    </section>
+  </sections>
+</table-of-contents>
+<!-- vim: set sts=2 sw=2 : -->

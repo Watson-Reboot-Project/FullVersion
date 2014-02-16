@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<table-of-contents>
+  <index>
+    <path>ch08.html</path>
+  </index>
+  <sections>
+    <section>
+      <name>Introduction</name>
+      <path>ch08s1.html</path>
+      <numfigures>4</numfigures>
+    </section>
+    <section>
+      <name>Overview of Watson Javascript</name>
+      <path>ch08s2.html</path>
+      <numfigures>1</numfigures>
+    </section>
+    <section>
+      <name>Data Types, Constants, Variables</name>
+      <path>ch08s3.html</path>
+      <numfigures>3</numfigures>
+    </section>
+    <section>
+      <name>The Social, Legal, and Ethical Aspects of Computing </name>
+      <path>ch08s4.html</path>
+      <numfigures>5</numfigures>
+    </section>
+    <section>
+      <name>Expressions and Assignment</name>
+      <path>ch08s5.html</path>
+      <numfigures>8</numfigures>
+    </section>
+    <section>
+      <name>The Three Primary Control Constructs</name>
+      <path>ch08s6.html</path>
+      <numfigures>1</numfigures>
+      <subsections>ch08s6_contents.xml</subsections>
+    </section>
+    <section>
+      <name>Functions</name>
+      <path>ch08s7.html</path>
+      <numfigures>3</numfigures>
+    </section>
+    <section>
+      <name>Recursion</name>
+      <path>ch08s8.html</path>
+      <numfigures>5</numfigures>
+    </section>
+    <section>
+      <name>Arrays and High-level Data Structures</name>
+      <path>ch08s9.html</path>
+      <numfigures>2</numfigures>
+    </section>
+  </sections>
+</table-of-contents>
+<!-- vim: set sts=2 sw=2 : -->

@@ -13,22 +13,22 @@ var navbar_content ='<img class="navbar-fixed-top" id="clickme" src="Images/down
 					<div class = "collapse navbar-collapse navHeaderCollapse"> <!-- collapse navbar -->\
 						<ul class = "nav navbar-nav navbar-right">\
 							<li class="dropdown">\
-          						<a data-toggle="dropdown" class="dropdown-toggle"><img src="Images/font-size.png"></a>\
-          						<ul class="dropdown-menu">\
-            						<li>\
-            						 	<slider type="text" class="span2 filter_slider" value="" data-slider-min="8" data-slider-max="30" data-slider-step="1"data-slider-value="12" id="fontSlider"  style="">\
-        							</li>\
-          						</ul>\
-       						</li>\
+							<a data-toggle="dropdown" class="dropdown-toggle"><img src="Images/font-size.png"></a>\
+							<ul class="dropdown-menu">\
+							<li>\
+								<slider type="text" class="span2 filter_slider" value="" data-slider-min="8" data-slider-max="30" data-slider-step="1"data-slider-value="12" id="fontSlider"  style="">\
+								</li>\
+							</ul>\
+						</li>\
 							<li> <a href="ch_toc2.html"><i class="fa fa-book"></i>Chapters</a></li>\
-							<li> <a href="section_toc.html"><i class="fa fa-list-ul"></i>Sections</a></li>\
+							<li> <a href="section_toc2.html"><i class="fa fa-list-ul"></i>Sections</a></li>\
 							<li> <a id="min"><i class="fa fa-arrow-up"></i></a> <!-- Up arrow image -->\
 						</ul>\
 					</div> <!-- END collapse navbar -->\
 				</div>  <!-- END navbar container -->\
 			</div> <!-- END navbar-static-top -->\
-			<link href = "css/font-awesome.min.css" rel = "stylesheet"><!-- ont-awesome glyphicons -->\
-	    	<link href = "css/slider.css" rel = "stylesheet"><!-- Font slider css -->'
+			<link href = "css/font-awesome.min.css" rel = "stylesheet"><!-- font-awesome glyphicons -->\
+		<link href = "css/slider.css" rel = "stylesheet"><!-- Font slider css -->'
 
 $('#includedContent').append(navbar_content);
 		
@@ -62,19 +62,19 @@ $('#includedContent').append(navbar_content);
 			/*//font sizing
 			  $('.increaseFont').click(
 			  function() {
-			  	var curFontSize = $('.wrapper').css('font-size');
+				var curFontSize = $('.wrapper').css('font-size');
 				$('.wrapper').css('font-size', parseInt(curFontSize)+1);
 				}
 			  );
 			  $('.decreaseFont').click(
 			  function() {
-			  	var curFontSize = $('.wrapper').css('font-size');
+				var curFontSize = $('.wrapper').css('font-size');
 				$('.wrapper').css('font-size', parseInt(curFontSize)-1);
 				}
 			  );*/
 
-			  // font size increse/decrese using slider
-			  $('#fontSlider').slider(); 
+			// font size increse/decrese using slider
+			$('#fontSlider').slider(); 
 			var fontChange = function() {
 					  $('.page-wrapper').css('font-size', r.getValue())
 					};

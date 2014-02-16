@@ -7,10 +7,8 @@
 - __Multi-line editor?__
   - to work w/ the walkthrough
   - all the statements at once
-- _for join_: 
+- _for join_:
   - look at 'QueryJoin' in DatabaseServer.java in the watson src tree
-
-- - -
 
 ### For Mike:
 
@@ -36,3 +34,34 @@
 - infinite loop checker
 - query user and such
 
+## update
+#### 2014-02-16
+
+dude, how is it that my `notes` files end up in everybody else's projects?
+always makes me laugh. but yeah, currently working on the 'get ordering from
+xml' thing. working in chapter 8, hooking up the `previous` link, and i
+realize, it *ought* to go to the last section of chapter 7. because, you know,
+books. we need to change the way the `getPrev` and `getNext` functions work.
+and/or we need to talk to mikandrew about it.
+
+first we need to figure out how we want it to work on the outside, and then we
+can think about how it ought to work on the inside.
+
+first off, **what do we have?** we've got a root index (table of contents)
+that's got a list of each chapter. we've got a number of chapters. each chapter
+has either a single page with sections and figures embedded in it, or it has a
+number of section pages, with figures embedded in them. moving figures about
+within those pages is further than we want to go, but we do want to be able to
+move around the pages themselves, the sections.
+
+going from page to page should be like reading a book. back and forth should
+move linearly. from table of contents, to chapter one, to chapter one section
+one, to chapter two, to chapter three, on and on, to chapter 7, to chapter 8,
+to section 8.1, to section 8.2, to section 8.2.1, section 8.3, etc etc. the
+question is, how do we do such things? and where will such things be asked for?
+
+the information is stored on disk in a hierarchy. the root holds links to each
+branch. but in each chapter, we'll need to be able to reach other chapters.
+this is problematic. the API will be simple enough still: functions to get all
+chapters (availible where?), functions to get all sections within a chapter
+(availiable in sections, chapter root, and project root). 
