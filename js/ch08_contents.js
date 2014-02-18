@@ -9,3 +9,21 @@ $(document).ready(function () {
     title.innerHTML = 'Chapter ' + contents.getNumber() + ': Javascript Programming';
     prev_link.href = contents.getPrev().path;
     next_link.href = contents.getNext().path;
+
+    console.log(contents);
+    console.log(sections);
+
+    var items = sections.getItems();
+
+    for (var i = 0; i < items.length; i++) {
+        var link = document.createElement('a');
+        var listitem = document.createElement('li');
+        link.href = items[i].path;
+        link.innerHTML = items[i].name;
+
+        listitem.appendChild(link);
+        links.appendChild(listitem);
+    }
+
+    console.log('end of script');
+});

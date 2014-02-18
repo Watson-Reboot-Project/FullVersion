@@ -64,4 +64,7 @@ the information is stored on disk in a hierarchy. the root holds links to each
 branch. but in each chapter, we'll need to be able to reach other chapters.
 this is problematic. the API will be simple enough still: functions to get all
 chapters (availible where?), functions to get all sections within a chapter
-(availiable in sections, chapter root, and project root). 
+(availiable in sections, chapter root, and project root), functions to get the
+next and previous chapter (availiable anywhere in a chapter), functions to get
+the next and previous page (availiable anywhere?) the next and previous page
+will 

@@ -1,5 +1,9 @@
 <?xml version='1.0'?>
 <table-of-contents>
+  <index>
+    <name>Table of Contents</name>
+    <path>index.html</path>
+  </index>
   <chapters>
     <chapter>
       <name>The Science of Computing</name>
