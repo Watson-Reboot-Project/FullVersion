@@ -68,7 +68,6 @@ function contentsConstructor(xml_location, name) {
             // the current item is last: link them home
             return index;
         } else {
-            console.log(items[number + 1]);
             return items[number + 1];
         }
     };
@@ -84,7 +83,6 @@ function contentsConstructor(xml_location, name) {
             // the current item is the first: link them home
             return index;
         } else {
-            console.log(items[number - 1]);
             return items[number - 1];
         }
     };
@@ -181,7 +179,6 @@ function sectionsConstructor (xml_location, name) {
             // the current item is last: link them home
             return index;
         } else {
-            console.log(items[number + 1]);
             return items[number + 1];
         }
     };
@@ -197,7 +194,6 @@ function sectionsConstructor (xml_location, name) {
             // the current item is the first: link them home
             return index;
         } else {
-            console.log(items[number - 1]);
             return items[number - 1];
         }
     };
