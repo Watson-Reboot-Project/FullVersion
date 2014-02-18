@@ -17,6 +17,7 @@ $(document).ready(function () {
         link.href = items[i].path;
         link.innerHTML = contents.getNumber() + '.' + (i+1) + ' ' + items[i].name;
 
+
         listitem.appendChild(link);
         links.appendChild(listitem);
     }
