@@ -2,6 +2,10 @@
     background-color: #4870B6;
     border: none;
 }
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus /* nav bar slider icon after click */ 
+{
+  background-color: #333333;
+}
 
 ul.nav a:hover { color: #000; } /* hover in nav bar */
 @media screen and (max-width: 640px) {.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #FFF;}}
@@ -110,15 +114,20 @@ body { padding-top: 7%; }
     clear: both !important;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus
-{
-  background-color: #333333;
-}
-
 /* Don't mind me... */
 #content {
     margin: 20px;
 }
+
+#expand, #collapse { margin: 5%;}
+
+/* Styles for collapsing sections/section */
+#years, #months, #posts{ cursor:pointer;}
+.archive_year { cursor: pointer; list-style: none; }
+.archive_month { list-style-type: circle; cursor: pointer; }
+.archive_posts { list-style: square url('http://www.webbossuk.com/admin/images/reply-arrow.png'); cursor: pointer; }
+
+
 
 
 

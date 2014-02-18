@@ -36,7 +36,6 @@
     <chapter>
       <name>JavaScript Programming</name>
       <path>ch08.html</path>
-      <sections>contents_ch08.xml</sections>
     </chapter>
     <chapter>
       <name>Functional, Logical, and Object-Oriented Programming</name>

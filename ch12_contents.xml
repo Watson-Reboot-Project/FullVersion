@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<table-of-contents>
+  <index>
+    <path>ch12.html</path>
+  </index>
+  <sections>
+    <section>
+      <name>Introduction</name>
+      <path>ch12s1.html</path>
+      <numfigures>4</numfigures>
+    </section>
+    <section>
+      <name>Fundamentals of Digital Logic</name>
+      <path>ch12s2.html</path>
+      <numfigures>1</numfigures>
+    </section>
+    <section>
+      <name>Combinational Circuits</name>
+      <path>ch12s3.html</path>
+      <numfigures>3</numfigures>
+    </section>
+    <section>
+      <name>Sequential Circuits</name>
+      <path>ch12s4.html</path>
+      <numfigures>5</numfigures>
+    </section>
+    <section>
+      <name>Design of a Simple Mircrocomputer</name>
+      <path>ch12s5.html</path>
+      <numfigures>8</numfigures>
+    </section>
+  </sections>
+</table-of-contents>
+<!-- vim: set sts=2 sw=2 : -->

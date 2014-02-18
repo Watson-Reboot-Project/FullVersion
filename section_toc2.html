@@ -12,28 +12,20 @@
 		 <!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href ='http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css' rel="stylesheet" type'text/css'>
 	    <link href = "css/bootstrap.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-        <script data-main="js/main" src="lib/js/require.js" type="text/javascript"></script> <!-- XML navigation -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
-	<body data-ng-controller="Controller">
-		<div class="page-wrapper" id="wrapper">
-			<a id="tippytop"></a>
-			<!-- Header division -->
-
-			<!-- Navbar division -->
-
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
-    
-			<!--Floating nav -->
+	<body>
+		<!--Floating nav -->
 		      <!-- Previous -->
 		      <!--
 		      <style>
@@ -58,49 +50,115 @@
 		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
 		        </a>
 		      </div>
-		    <!-- End floating nav -->
-			<!-- End nav -->
+		<!-- End floating nav -->
+			
+		<div class="page-wrapper" id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<!-- Navbar division -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
 			<!-- Main content -->
     		<div id="main_header"><h1> Sections </h1></div> <!-- Container begin--> 
-    		  <div class="well">
-    		      <div id="content">
-                    <div data-ng-repeat="item in items">
-                        <a data-ng-bind="item.fullname" data-ng-href="{{item.path}}"></a>
-                    </div>
-			         <button class="btn btn-info">Expand All</button>
-			         <button class="btn btn-warning">Collapse All</button>
+    		<div class="well">
+				<ul class="archive_year">
+					<li id="years"><a href="ch01.html">Chapter 1: The Science of Computers</li>
+					<li id="years"><a href="ch02.html">Chapter 2: Computers as Communication and Problem Solving Tools</li>
+					<li id="years"><a href="ch03.html">Chapter 3: Information Storage and Retrieval</li>
+					<li id="years"><a href="ch04.html">Chapter 4: The Social, Legal, and Ethical Aspects of Computing</li>
+					<li id="years"><a href="ch05.html">Chapter 5: Algorithms -- The Key to Understanding Software</li>
+					<li id="years"><a href="ch06.html">Chapter 6: Developing Graphical Algorithms</li>
+					<ul class="archive_month">
+						<li id="months"><a href="ch06s1.html">6.1 Introduction</a></li>
+						<li id="months"><a href="ch06s1.html">6.2 What is Computer Graphics</a></li>
+						<li id="months"><a href="ch06s1.html">6.3 Fundamental Graphical Copncepts</a></li>
+						<li id="months"><a href="ch06s4.html">6.4 A Simple Graphics Lanuage</a></li>
+							<ul class="archive_posts">
+						        <li id="posts"><a href="ch06s4p1.html">6.4.1 Data Types, Constants, Varibles, and Expressions</a></li>
+						        <li id="posts"><a href="ch06s4p2.html">6.4.2 Instructions</a></li>
+							</ul>
+						<li id="months"><a href="ch06s5.html">6.5 Developing ALgorithms with WGL</a></li>
+						<ul class="archive_posts">
+						        <li id="posts"><a href="ch06s5p1.html">6.5.1 Creating Simple Static Images</a></li>
+						        <li id="posts"><a href="ch06s5p1.html">6.5.2 Creating Complex Images and Animations</a></li>
+						</ul>
+					</ul>	
+					<li id="years"><a href="ch07.html">Chapter 7: Data Structures -- The Organization of Data at the Program Level</a></li>
+					<li id="years"><a href="ch08.html">Chapter 8: JavaScript Programming</a></li>
+					<ul class="archive_month">
+						<li id="months"><a href="ch08s1.html">8.1 Introduction </a></li>
+						<li id="months"><a href="ch08s2.html">8.2 Overview of Watson Javascript</a></li>
+						<li id="months"><a href="ch08s3.html">8.3 Data Types, Constants, Variables</a></li>
+						<li id="months"><a href="ch08s4.html">8.4 Input and Output Statements</a></li>
+						<li id="months"><a href="ch08s5.html">8.5 Expressions and Assignment</a></li>
+						<li id="months"><a href="ch08s6.html">8.6 The Three Primary Control Constructs</a></li>
+							<ul class="archive_posts">
+						        <li id="posts"><a href="ch08s6p1.html">8.6.1 Sequence</a></li>
+						        <li id="posts"><a href="ch08s6p2.html">8.6.2 Selection</a></li>
+						        <li id="posts"><a href="ch08s6p3.html">8.6.3 Repetition</a></li>
+							</ul>
+						<li id="months"><a href="ch08s7.html">8.7 Fuctions</a></li>
+						<li id="months"><a href="ch08s8.html">8.8 Recursion</a></li>
+						<li id="months"><a href="ch08s9.html">8.9 Arrays and High-level Data Structures</a></li>	
+					</ul>
+					<li id="years"><a href="ch09.html">Chapter 9: Functional, Logical, and Object-Oriented Programming</a></li>
+					<li id="years"><a href="ch10.html">Chapter 10: Software Engineering</a></li>
+					<li id="years"><a href="ch11.html">Chapter 11: Assembly Language and Computer Architecture</a></li>
+					<li id="years"><a href="ch12.html">Chapter 12: Digital Circuit Design</a></li>
+					<li id="years"><a href="ch13.html">Chapter 13: Theoretical and Practical Limits of Computing</a></li>
+					<li id="years"><a href="ch14.html">Chapter 14: Computing and Intelligence</a></li>
+					<li id="years"><a href="ch15.html">Chapter 15: The Past, Present, and Future of Computing</a></li>
+				</ul>
+    		      	<br /><br />
+			         <button id="expand" class="btn btn-info">Expand All</button>
+			         <button id="collapse" class="btn btn-warning">Collapse All</button>
                     <br /><br />
-			 </div>
-		  	</div> <!-- END well -->
+			 </div> <!-- END well -->
+			 <script>
+			 	$('.years > archive_month').click(function() {
+			 		$(this).parent().find('li').slideDown();
+			 	});
+			 	$('.archive_month ul').hide();
+				$('#collapse').click(function() {
+				    $('.archive_year > li').parent().find('ul').slideUp();
+				});
+
+				$('#expand').click(function() {
+				    $('.archive_year > li').parent().find('ul').slideDown();
+				});
+			</script>
+
+			
 			<!-- End main content -->
 
-				<hr />
-				<p class="Emphasized">
-					<a href="#tippytop">Return to top</a>
+			<hr />
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
 				</p>
-				<nav>
-					<p>
-						--
-					</p>
-					<p>
-						<a href="index.html">Home</a>
-					</p>
-					<p>
-						<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-					</p>
-				</nav>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
 
-				<div>
+			<div>
 
-				</div>
-				<!--
-				<footer>
-					<p>
-						&copy; Copyright  by Burt
-					</p>
-				</footer>
-				-->
-		</div>
+			</div>
+			<!--
+			<footer>
+				<p>
+					&copy; Copyright  by Burt
+				</p>
+			</footer>
+			-->
+		</div> <!-- END page-wrapper -->
 	</body>
 </html>
