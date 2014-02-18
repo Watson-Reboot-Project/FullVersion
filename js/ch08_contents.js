@@ -10,11 +10,7 @@ $(document).ready(function () {
     prev_link.href = contents.getPrev().path;
     next_link.href = contents.getNext().path;
 
-    console.log(contents);
-    console.log(sections);
-
     var items = sections.getItems();
-
     for (var i = 0; i < items.length; i++) {
         var link = document.createElement('a');
         var listitem = document.createElement('li');
@@ -24,6 +20,4 @@ $(document).ready(function () {
         listitem.appendChild(link);
         links.appendChild(listitem);
     }
-
-    console.log('end of script');
 });
