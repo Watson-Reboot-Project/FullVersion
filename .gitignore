@@ -1,0 +1,11 @@
+# we ignore backup files
+*~
+# vim swap files
+*.swp
+# any unix-hiden files
+.*
+# ... java class files?
+*.class
+# ... and compiled python files. wat
+*.pyc
+*.pyo
