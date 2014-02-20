@@ -12,14 +12,12 @@
 		 <!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href ='http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css' rel="stylesheet" type'text/css'>
 	    <link href = "css/bootstrap.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -61,7 +59,8 @@
               <script type="text/javascript" src="js/nav.js"></script>
 
 			<!-- Main content -->
-    		<div id="main_header"><h1> Sections </h1></div> <!-- Container begin--> 
+    		<div id="main_header"><h1> Sections <button id="expand" class="btn btn-info pull-right">Expand All</button>
+			    <button id="collapse" class="btn btn-warning pull-right">Collapse All</button></h1></div> <!-- Container begin-->
     		<div class="well">
 				<ul class="archive_year">
 					<li id="years"><a href="ch01.html">Chapter 1: The Science of Computers</li>
@@ -104,17 +103,57 @@
 						<li id="months"><a href="ch08s9.html">8.9 Arrays and High-level Data Structures</a></li>	
 					</ul>
 					<li id="years"><a href="ch09.html">Chapter 9: Functional, Logical, and Object-Oriented Programming</a></li>
+					<ul class="archive_month">
+						<li id="months"><a href="ch09s1.html">9.1 Introduction </a></li>
+						<li id="months"><a href="ch09s2p1.html">9.2 Functional Programming</a></li>
+						<li id="months"><a href="ch09s2p2.html">9.2.2 User-defined Functions</a></li>
+					</ul>
 					<li id="years"><a href="ch10.html">Chapter 10: Software Engineering</a></li>
 					<li id="years"><a href="ch11.html">Chapter 11: Assembly Language and Computer Architecture</a></li>
+					<ul class="archive_month">
+						<li id="months"><a href="ch11s1.html">11.1 Introduction</a></li>
+						<li id="months"><a href="ch11s2.html">11.2 Register-based Machines</a></li>
+						<li id="months"><a href="ch11s3.html">11.3 Assembly language programming</a></li>
+						<ul class="archive_posts">
+						        <li id="posts"><a href="ch11s3p1.html">11.3.1 An overview of the Watson Assembly Language</a></li>
+						        <li id="posts"><a href="ch11s3p2.html">11.3.2 Variables, assignment, and sequence</a></li>
+						        <li id="posts"><a href="ch11s3p3.html">11.3.3 Implementing selection constructs in assembly language</a></li>
+						        <li id="posts"><a href="ch11s3p3.html">11.3.4 Implementing repetition constructs in assembly language</a></li>
+						        <li id="posts"><a href="ch11s3p3.html">11.3.5 Array processing in assembly language</a></li>
+							</ul>
+						<li id="months"><a href="ch11s4.html">11.4 Data representation at the machine level</a></li>
+						<ul class="archive_posts">
+						        <li id="posts"><a href="ch11s4p1.html">11.4.1 Representing numbers at the machine level</a></li>
+						        <ul class="archive_posts">
+							        <li id="posts"><a href="ch11s4p1a.html">11.4.1.1 Number systems</a></li>
+							        <li id="posts"><a href="ch11s4p1b.html">11.4.1.2 Numeric bases and base conversions</a></li>
+							        <li id="posts"><a href="ch11s4p1c.html">11.4.1.3 Binary arithmetic </a></li>
+							        <li id="posts"><a href="ch11s4p1d.html">11.4.1.4 Signed numbers</a></li>
+							        <li id="posts"><a href="ch11s4p1e.html">11.4.1.5 Floating point numbers</a></li>
+								</ul>
+								<li id="posts"><a href="ch11s4p2.html">11.4.2 Characters</a></li>
+								<li id="posts"><a href="ch11s4p3.html">11.4.3 Images</a></li>
+						</ul>
+						<li id="months"><a href="ch11s5.html">11.5 Machine language</a></li>
+						<ul class="archive_posts">
+							        <li id="posts"><a href="ch11s5p1.html">11.5.1 The Watson Virtual Machine instruction set</a></li>
+							        <li id="posts"><a href="ch11s5p2.html">11.4.1.2 Numeric bases and base conversions</a></li>
+							        <li id="posts"><a href="ch11s5p3.html">11.5.3 Program execution</a></li>
+						</ul>
+					</ul>
 					<li id="years"><a href="ch12.html">Chapter 12: Digital Circuit Design</a></li>
+					<li id="years"><a href="ch12.html">Chapter 12: Digital Circuit Design</a></li>
+					<ul class="archive_month">
+						<li id="months"><a href="ch12s1.html">12.1 Introduction</a></li>
+						<li id="months"><a href="ch12s2.html">12.2 Fundaementals of Digital Logic </a></li>
+						<li id="months"><a href="ch12s3.html">12.3 Combinational Circuits </a></li>
+						<li id="months"><a href="ch12s4.html">12.4 Sequential Circuits </a></li>
+						<li id="months"><a href="ch12s5.html">12.5 Design of a Simple Microcomputer </a></li>
+					</ul>
 					<li id="years"><a href="ch13.html">Chapter 13: Theoretical and Practical Limits of Computing</a></li>
 					<li id="years"><a href="ch14.html">Chapter 14: Computing and Intelligence</a></li>
 					<li id="years"><a href="ch15.html">Chapter 15: The Past, Present, and Future of Computing</a></li>
 				</ul>
-    		      	<br /><br />
-			         <button id="expand" class="btn btn-info">Expand All</button>
-			         <button id="collapse" class="btn btn-warning">Collapse All</button>
-                    <br /><br />
 			 </div> <!-- END well -->
 			 <script>
 			 	$('.years > archive_month').click(function() {

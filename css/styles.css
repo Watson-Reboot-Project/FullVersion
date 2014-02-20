@@ -1,4 +1,5 @@
-.navbar-default { /* navigation bar */
+/* navigation bar */
+.navbar-default {
     background-color: #4870B6;
     border: none;
 }
@@ -7,11 +8,12 @@
   background-color: #333333;
 }
 
-ul.nav a:hover { color: #000; } /* hover in nav bar */
+/* hover in nav bar, changes color when mobile screen is used */
+ul.nav a:hover { color: #000; }
 @media screen and (max-width: 640px) {.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #FFF;}}
 
-
-.navbar .nav > li > a { /* Navigation items */
+/* Navigation items */
+.navbar .nav > li > a { 
   float: none;
   padding: 20px 15px 15px;
   color: #FFF;
@@ -82,7 +84,8 @@ body { padding-top: 7%; }
     color: #FFFFFF;
 }
 
-.glyphicon {   /* Bootraps glyphicons */ 
+/* Bootraps glyphicons */ 
+.glyphicon {   
   position: relative;  
   top: 1px;
   padding-right: 5px;  
@@ -95,18 +98,21 @@ body { padding-top: 7%; }
 
 }
 
-.fa {  /* Font awesome icons */ 
+/* Font awesome icons */ 
+.fa {  
   padding-right: 5px; 
   position: relative; 
 }
 
-#clickme{ /* Plus sign, placement */
+/* Plus sign, placement */
+#clickme{ 
   /*background: url('Images/down-arrow.png');*/
   padding-left: 87%;
   padding-top: 0%;
 }
 
-.filter_slider { /* Slider for larger/smaller text */
+/* Slider for larger/smaller text */
+.filter_slider { 
     width: 100% !important;
     float: center !important;
     vertical-align: bottom !important;
@@ -119,10 +125,12 @@ body { padding-top: 7%; }
     margin: 20px;
 }
 
-#expand, #collapse { margin: 5%;}
+/* Collasping and expanding buttons on section_toc2.html*/
+#expand, #collapse { margin: 1%;}
 
 /* Styles for collapsing sections/section */
 #years, #months, #posts{ cursor:pointer;}
+#years, .bold-me {font-weight: bold;} #months {font-weight: medium;}
 .archive_year { cursor: pointer; list-style: none; }
 .archive_month { list-style-type: circle; cursor: pointer; }
 .archive_posts { list-style: square url('http://www.webbossuk.com/admin/images/reply-arrow.png'); cursor: pointer; }
