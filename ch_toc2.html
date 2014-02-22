@@ -56,11 +56,14 @@
   <div class="page-wrapper">
     <a id="tippytop"></a>
     <div id="main_header" class="container"> <!-- Container begin--> <h1> Table of Contents </h1></div>
-    <div class="well">
+    <div class="well bold-me">
         <div data-ng-repeat="item in items">
           <a data-ng-bind="item.fullname" data-ng-href="{{item.path}}"></a>
+          <!--<a data-ng-bind="item.chapterNum" data-ng-href="{{item.path}}"></a>-->
         </div>
     </div>
+
+    
       <hr />
         <p class="Emphasized">
           <a href="#tippytop">Return to top</a>

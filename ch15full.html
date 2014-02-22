@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+    <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		   div.floating-previous
+		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		   <a href="ch14.html">
+		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		   </a>
+		      </div>
+		
+		      <!-- Next -->
+			  <!--
+		      <style>
+		   div.floating-next
+		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		   <a href=".html">
+		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		   </a>
+		      </div>
+			  -->
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->			
+			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
+
+			<p class="Section">
+				15.1 Introduction
+			</p>
+
+			<p>
+				This chapter closes out our introduction to	computing by stepping back and taking a look at its history, seeing how we arrived at where we are today, and then looking forward to what the future may hold.
+			</p>
+			
+			<div class="Video">
+			<video id="vid" width="480" height="360" controls>
+				<source src="Video/video.mp4" type="video/mp4">
+				<object data="Video/video.mp4" width="480" height="360">
+				<embed width="480" height="360" src="video.swf">
+				</object>
+			</video>
+			</div>
+
+			<p>
+				Section 15.2 traces the evolving nature of human-computer interaction, from its early roots through present day interface technologies. Section 15.3 looks at the historical rate of progress in computing technology and considers possible future increases in computing capacity. In Section 15.4, we take a look at a number of promising technologies that could dramatically improve the capabilities of computing systems, beginning with improvements to today’s semi-conductor based technology, then moving on to consider more advanced	technologies, such as photonic computing, bio-computing, molecular-level computing, and quantum computing. Finally, Section 15.5 concludes this chapter, and thus the book, with a number of predictions based on the projected capabilities of future computing systems.
+			</p>
+
+			<p class="Section">
+				15.2 The evolving nature of human-computer interaction
+			</p>
+
+			<p>
+				When computers first began to gain wide spread acceptance in the late 1950’s and early 1960’s very few people interacted directly with them. Even the people who wrote computer programs did not always have physical access to the “machine room” where the computer was maintained by the technicians and operators (Shown in Fig. 15.1).
+			</p>
+
+			<video controls="controls" height="360" src="../Video/fn01%20Part%201%20-%20Training%20Video%20for%20Bell%20Labs%27%20Holmdel%20Computing%20Center%20-%20AT%26T%20Archives.mp4" style="align: center">
+				<div style="text-align: left;">
+					Training Video for Bell Labs' Holmdel Computing Center - AT&amp;T Archives
+				</div>
+			</video>
+
+			<p class="Figure">
+				Figure 15.1 Bell Labs Holmdel, New Jersey computer center from 1973 – a leading edge computing center at the time
+			</p>
+
+			<p>
+				Programmers typed their programs and data on machines called keypunch machines. <span class="Bolded">Keypunches</span> were like typewriters, except that they punched holes in paper cards. Each <span class="Bolded">punch card</span> could hold up to 80 characters and represented one line of a program or data file. A punch card containing the FORTRAN statement:
+			</p>
+
+			<p class="Subfigure">DO 211 &nbsp;&nbsp; I=1,30</p>
+
+			<p>
+				is illustrated in Figure 15.2.
+			</p>
+
+			<p>
+				Once a programmer had punched a program, he or she would give it to an operator. <span class="Bolded">Operators</span> were the people who actually worked directly with the machine. The operator would take the punched cards and place them in a card reader. The <span class="Bolded">card reader</span> would quickly process a deck of cards, sensing where the holes had been punched and thereby “reading” the characters that had been punched on them.
+			</p>
+
+			<img src="Images/fig15-1.png" alt="" class="Image">
+
+			<p class="Figure">
+				Figure 15.2: An 80 column punch card
+			</p>
+
+			<p>
+				After the program had been “read in,” the computer (or Operator in the early days) would schedule the program to run when the needed resources became available. Following execution of the program, a listing of the program code together with its results would generally be printed on a line printer. <span class="Bolded">Line printers</span> were so named because of their ability to print an entire line (rather than a character) at a time.
+			</p>
+
+			<p>
+				As early as the 1960’s a few visionaries imagined how computers might one day be used for personal information organization and communication. In 1968, Douglas Engelbart, the inventor of the mouse, gave a presentation to an audience of 1,000 computer professionals at the Fall Joint Computer Conference that illustrated a number of then revolutionary concepts that decades later would become commonplace. His demo included: word processing, video conferencing, hypertext links, and online collaboration tools enabling two people working remotely to share a desktop and mouse pointer. The entire presentation was displayed to the audience using an overhead projector. This demonstration was so far ahead of its time and so prescient in nature that it has come to be known as “The Mother of All Demos”.<span class="Footnote" title="Footnote: "><a href="#ftn1" id="body_ftn1">[1]</a></span> It would take decades for the kinds of applications Engelbart and his group envisioned to become practical as the cost of the hardware needed to support these apps was truly astronomical at the time.
+			</p>
+
+			<p>
+				As computers became more powerful they began to acquire the ability to handle the needs of multiple people, or <span class="Bolded">users</span>, at the same time. By the mid 1970’s, most computers were large <span class="Bolded">mainframes</span> that filled entire rooms and often cost millions of dollars. People interacted with these computers predominately through character-based terminals. <span class="Bolded">Terminals</span> combined a keyboard with a video display device and looked much like a personal computer does today. The difference was that the terminals of the mid 1970’s lacked the ability to do any “computing” on their own. They simply acted as input/output devices for the mainframe computer – allowing people to enter their programs and data on a keyboard, rather than a keypunch, and to see the results of their computations on a display screen, rather than printed on paper. The vast majority of these terminals were limited to displaying text. They were unable to display graphical images.
+			</p>
+
+			<p>
+				A mainframe of the mid to late 1970’s might have as many as 100 terminals attached to it. These terminals were often spread throughout an office, company, or college campus. Users communicated with the mainframe by issuing typed instructions called <span class="Bolded">commands</span>. Interfaces that supported the entry of typed commands were called <span class="Bolded">command line interfaces</span>. When first introduced, the command line interface was a major breakthrough. It allowed programmers to directly enter their programs and data into the computer, execute those programs, view the results, and make any needed corrections – all without the need for clunky keypunch machines, massive printers, and human operators. When personal computers began to emerge in the late 1970’s and early 1980’s, they too adopted the command line interface.
+			</p>
+
+			<p>
+				Despite its advantages, the command line was far from perfect. The names of the commands tended to be short and cryptic. For example, “<span class="Subfigure">ls</span>” and “<span class="Subfigure">dir</span>” are two common commands that request the computer to display the names of the user’s files – “<span class="Subfigure">ls</span>” stands for “list” and “<span class="Subfigure">dir</span>” stands for “directory.” To further complicate matters, most commands had a large number of options. These options were intended to increase the flexibility of the system. For example, the Unix command “<span class="Subfigure">ls -al</span>” requests the computer to list all files in the current directory, including “hidden files,” and to display the amount of disk space each file takes up, the last date it was modified, and which groups of users have access to it. Remembering the names of all of the commands and their options could be quite difficult, especially for users who did not interact with the system on a daily basis.
+			</p>
+
+			<p>
+				In addition to the commands themselves, the command line interface required users to remember the names of files and the directories in which they were stored. For example, a Unix command for copying a file called “<span class="Subfigure">exam.docx</span>” that is stored in the “<span class="Subfigure">fall13</span>” subdirectory of the “<span class="Subfigure">CSC100</span>” directory, to a file called “<span class="Subfigure">old_exam.docx</span>” in the “<span class="Subfigure">fall14</span>” subdirectory of “<span class="Subfigure">CSC100</span>”, would look like the following:
+			</p>
+			
+			<p class="Subfigure">
+				cp CSC100/fall13/exam.docx CSC100/fall14/old_exam.docx
+			</p>
+
+
+			<p>
+				Entering such lengthy and cryptic commands was tedious and exacting. A single mistyped character could result in the computer doing something unexpected or generating an error – which at the very least would require the user to re-enter the (corrected) command.
+			</p>
+
+			<p>
+				While most everyone agreed that the command line interface had lots of issues, computer scientists were unsure how better interfaces could be developed. One popular approach was to have the computer system present a menu of choices. The user would select a choice by entering a number associated with the item. While these menus worked well for systems that had only a small number of choices (say no more than eight), they became unwieldy for larger numbers of commands. The standard response to this was to group “similar” commands together in submenus. Systems with many commands often required multiple levels of menus.
+			</p>
+
+			<p>
+				Menu selection, by its very nature, was less flexible than the command line. Many people found this hierarchy of menus too restrictive in complex programs such as operating systems. Experienced users found menus to be slow. It often took much longer to walk through the menus, submenus, and sub-submenus to select a command, compared to just typing it in. This was especially true on early mainframes, which could take several seconds to respond to a user’s request – due to the fact that they were serving several dozen users simultaneously. To make up for this lack of speed, the chief advantage of menus was supposed to be their ease of use. However, in large systems, even experienced users frequently found it difficult to quickly find the proper submenu that contained the command they wanted to execute.
+			</p>
+
+			<p>
+				Another approach taken by some computer scientists in the early 1970’s was to try to make commands less cryptic. Their goal was to construct a natural language (such as English) interface. While most everyone agreed that understanding spoken English was out of reach of the technology of the day, many thought that computers might soon be able to handle some form of typed English. These systems never caught on for a number of reasons. First, they never really developed to the point where anything approaching a real human language could be entered. Second, the subset of English recognized often “devolved” into just another command line interface, albeit one with lengthy command names that required a lot of typing. Finally, these interface programs required a lot of resources which slowed down the response time of already slow computer systems.
+			</p>
+
+			<p>
+				The approach that eventually replaced the command line interface was developed at the Xerox <span class="Bolded">P</span>alo <span class="Bolded">A</span>lto <span class="Bolded">R</span>esearch <span class="Bolded">C</span>enter (PARC) in the 1970’s as part of the Alto computer project. The genius of the PARC approach, which built off the work of Douglas Engelbart and others, stemmed from the researchers’ recognition that in order for interfaces to become more useful they need to become simpler (from the user’s point of view) not more complex. PARC researchers also recognized that producing an intuitive interface might require a substantial fraction of a computer’s resources, but they were willing to pay this price in order for their Alto computers to be useful to non-computer specialists.
+			</p>
+
+			<p>
+				The researchers settled on the notion of representing the programs and data files that were stored in the computer as graphical images called icons. The computer screen was to be likened to a desktop on which these graphical icons could be placed. Programs could be run by selecting them with a pointing device, such as a mouse. Directories were to be represented by file folders that could be opened and closed by clicking on them. Files could be moved from one directory to another by “dragging” them from one open file folder to another.
+			</p>
+
+			<p>
+				In addition to the graphical user interface, the PARC researches also recognized that computers would be much more useful if networked together. Thus the Altos were connected together via an Ethernet, so that they could share documents and resources – including networked laser printers – and end-users could exchange email.
+			</p>
+
+			<p>
+				The interface paradigm developed by Xerox at PARC, which came to be known as the Graphical User Interface or GUI, eventually revolutionized computing, but it didn’t make any money for Xerox. Although Xerox did create a “commercial” version of the Alto in 1981, called the Star (shown in Figure 15.3), few were sold. People debate the reasons for this market failure, but certainly the high cost (approximately $20,000 per workstation), slow speed, and limited capabilities contributed to the lack of market acceptance. Regardless of the lack of market success, the Xerox Star is the first commercial computer that would look “familiar” to a present-day computer user.
+			</p>
+
+			<img src="Images/fig15-2.png" alt="" class="Image">
+			
+
+			<p class="Figure" >
+				Figure 15.3: the Xerox Star – circa 1981
+			</p>
+
+			<p>
+				A turning point in the computer industry occurred when Steve Jobs, co-founder of a small “personal computer” company called Apple, was shown what the PARC team had created. Jobs immediately recognized the promise of mouse-based graphical user interfaces and put his engineers to work building an affordable personal computer based on the ideas developed at PARC.
+			</p>
+
+			<p>
+				Apple’s first version of a computer based on PARC technology, Lisa, was a flop. However, Apple’s second attempt, the Macintosh, first released in 1984, was a major success. Because of their intuitive nature, GUI’s quickly became the human-computer interface of choice.
+			</p>
+
+			<p>
+				By the mid 1990’s every major operating system, such as Windows95, MacOS, OS/2, and the various flavors of Unix, included a graphical user interface. This method of interacting with a computer proved so popular that 20 years later it is still the dominant form of human-computer interface in desktop and laptop environments.
+			</p>
+
+			<p>
+				An early version of the public Internet began to become popular in the late 1990’s. During this period, end-users connected to the Internet and online services, such as AOL (America Online), using a modem and telephone. A modem was a device that allowed a computer to exchange digital information with another computer via audio tones transmitted over standard telephone lines. An end-user would dial the number of a computer system (or have the modem automatically do so). The computer being called would then ‘answer the phone’ and the two machines would exchange a series of tones to establish a connection. This process was called ‘hand shaking’ and was used to establish the speed with which data could be transferred between the two machines.
+			</p>
+
+			<p>
+				While access to the Internet was revolutionary for its time, the “Internet”, as it existed in the late 1990’s, would be barely recognizable compared to what we call the Internet today. There was no YouTube, Facebook, Google, Twitter, Netflix, Pandora, or Skype. In fact, many of these services couldn’t have existed before the turn of the century as the data transmission speeds supported by dial up modems were <span class="Ital">very</span> slow compared to today’s broadband connections. How slow you ask? Well, a top-of-the-line dial up connection ran at around 56 Kbps (56,000 bits per second or about 7 Kbytes / sec) in the late 1990’s. As of August 2013, <a href="http://www.netindex.com">www.netindex.com</a> estimated US average download speeds of 18.7 Mbps (2.3 Mbytes / sec) – over 300 times faster than in the late 1990’s. Because dial up connections were so slow, the web was mainly limited to text and lower resolution images. Streaming audio was of poor quality and considered ‘cutting edge’. Steaming video was simply not practical.
+			</p>
+
+			<p>
+				This situation began to change around the turn of the century as broadband Internet connections started to become widespread. In the early days of broadband (circa 2001) there was stiff competition between phone companies and cable companies for who would provide high speed Internet access. Eventually, cable companies with their cable modems prevailed over telephone companies with their DSL (Digital Subscriber Line) technology.
+			</p>
+
+			<p>
+				By the midpoint of the first decade of the 21<sup>st</sup> century, many households had multiple computers and computer-like devices, such as game machines, so it was only natural to want to allow these devices to communicate with each other and with the wider Internet. Additionally, the growing popularity of laptops over desktops meant that people didn’t want to have to plug their laptop into their cable/DSL modem in order to connect to the Internet. This situation led to the rapid adoption of wireless routers. Wireless routers establish LANs (Local Area Networks) which enable devices to connect to each other and the Internet using short range RF “radio frequency” transmitters and receivers.
+			</p>
+
+			<p>
+				Progressing in parallel with the rise of broadband Internet access and wireless Local Area Networks in the home, mobile communications were undergoing a sea change during the first decade of the 21<sup>st</sup> century. At the beginning of this period high-end professionals often carried around two separate devices: a PDA (Personal Digital Assistant) and a mobile phone. PDA’s were devices that served as digital appointment calendars and note taking devices, with a modest number of additional features like calculators and clocks. They were generally devoid of any type of wireless access to the Internet and supported only low resolution black and white LCD (Liquid Crystal Displays) displays. Most mobile phones (called “cell phones” in the US) generally supported voice calls and little else.
+			</p>
+
+			<p>
+				By the midpoint of the first decade of the 21<sup>st</sup> century mobile phones began supplanting PDA’s as the phones took on more and more of the features that had once been exclusive to PDA’s – appointment calendars, address books, calculator functions, etc. The screens on mobile phones still tended to be small, and relatively low resolution, though color was being introduced and resolutions were improving.
+			</p>
+
+			<p>
+				With the June 2007 introduction of the iPhone and October 2008 release of the first Android phones, people’s perceptions of mobile phones quickly morphed from primarily being devices for making telephone calls into “smart phones” – general purpose communication and computing devices that access the Internet over high speed mobile communication networks. Smart phones generally provide the functionality of: calendars, address books, clocks, calculators, portable music players, web browsers, digital cameras, video cameras, GPS navigation, email, photo albums, text messaging devices, and game machines. Oh, and they support making traditional phone calls too.
+			</p>
+
+			<p>
+				Apple’s iOS and Google’s Android smart phones also introduced the most substantial innovation in human computer interfaces since Xerox PARC developed the mouse driven graphical user interface in the 1970’s. These phones support the direct manipulation of onscreen objects using multi-touch gestures such as: swipe, tap, pinch, and reverse pinch. For example, in order to reduce the size of an image or zoom out on a map, simply “pinch” your thumb and forefinger together. To expand an image or zoom in on a map, do the opposite, “reverse pinch” by moving your thumb and forefinger apart. These gestures provide a much more intuitive and expressive interface between humans and computers than the point and click graphical user interface.
+			</p>
+
+			<p>
+				By midpoint of the second decade of the 21<sup>st</sup> century smart phones were ubiquitous and high speed Internet access was available throughout most of the US. Phone numbers became predominately associated with individuals rather than with locations. Fixed ‘land line’ phones continued to exist, but primarily in business settings as more and more households discontinued traditional land line service – many viewing such service as an overpriced relic of a bygone era. The coverage area of high speed mobile networks continued to improve, as did the bandwidth available to smart devices with the move from 3G to 4G and LTE. (Mobile broadband speeds tended to generally reside in the range of 2 Mbps to 10 Mbps as of mid 2013.)
+			</p>
+
+			<p>
+				With the release of Amazon’s Kindle in 2007 and Apple’s iPad in 2010 the popularity of E-book readers and tablets began to soar. In May of 2013 International Data Corporation (IDC) projected that by the end of 2013 worldwide shipments of tablets would overtake portable computers (e.g., laptops) and by 2015 overtake the entire PC market, desktops and portables combined.<span class="Footnote" title="Footnote: "><a href="#ftn2" id="body_ftn2">[2]</a></span>
+			</p>
+
+			<p>
+				As late 2013, it seemed the computer industry was poised for a number of rapid changes in the ways humans interact with computers. Google’s Glass prototype, which implements an augmented reality interface, was already available to developers and a wide-scale consumer launch was promised for 2014. Voice based interfaces, for search and simple tasks like scheduling meetings were rapidly gaining popularity. Apple was rumored to be working on an ‘iWatch” type device. And even virtual reality gaming, which has been promised for decades, appeared to finally be gaining traction with the Oculus Rift – which raised $2.4 million through a Kickstarter campaign and then secured an additional $16 million in venture capital in June 2013.
+			</p>
+
+			<p class="Section">
+				15.3 Moore’s Law and its implications
+			</p>
+
+			<p class="Section">
+				15.3.1 What is Moore’s Law?
+			</p>
+
+			<p >
+				In 1965, Gordon Moore, the co-founder of Intel, wrote a paper entitled “Cramming more components onto integrated circuits”.<span class="Footnote" title="Footnote: "><a href="#ftn3" id="body_ftn3">[3]</a></span> In this paper he attempted to predict the course of the microelectronics industry for the next ten years (through 1975). He noted that the number of components per integrated circuit had approximately doubled each year for the past five years and predicted that they would continue to do so for the next 10 years. In 1975, Moore noted that 9 doublings had taken place instead of the 10 he predicted and he modified his prediction of future progress to state that component densities would double every two years for the foreseeable future. According to Moore, a colleague, David House, noted that in addition to the number of transistors per integrated circuit doubling every two years the speed of those transistors was also improving – leading House to postulate that overall computing performance would double approximately every 18 months.<span class="Footnote" title="Footnote: "><a href="#ftn4" id="body_ftn4">[4]</a></span>
+			</p>
+
+			<p >
+				Thus was born <span class="Bolded">Moore’s Law</span> – the observation that computer performance for a fixed dollar cost roughly doubles every 18 months. Moore’s Law is an observation about past progress in microelectronics – a “law” that has held true for over half a century. Computer engineers and chip designers use Moore’s Law to extrapolate future increases in computer performance and to set research goals. In fact, it can be argued that this expectation of performance doubling every year and a half has, in a sense, become a self fulfilling prophesy – we expect computer performance to double every 18 months, so we work hard to ensure that such increases continue.
+			</p>
+
+			<p >
+				Moore’s Law describes an exponentially increasing function. When an exponential function is graphed using a linear scale, as in Figure 15.4, it takes on the appearance of a hockey stick.
+			</p>
+
+			<p >
+				When one ‘steps back’ and looks at an exponential graphed over time it appears that for a long time very little progress occurs followed by an ‘explosion’ of progress at the end. However, this is an optical illusion of sorts, since a true exponential always has the characteristic hockey stick shape no matter which part of the curve you examine. Thus if you ‘zoom in’ on the ‘relatively flat’ section at the beginning of the graph you might be surprised to see the same characteristic hockey stick shape, just at a different scale.
+			</p>
+
+			<img src="Images/fig15-3.png" alt="" class="Image">
+
+			<p class="Figure" >
+				Figure 15.4: An exponential curve plotted using a linear scale
+				<br />
+			</p>
+
+			<img src="Images/fig15-4.png" alt="" class="Image">
+
+			<p class="Figure" >
+				Figure 15.5: An exponential curve plotted using a logarithmic scale
+			</p>
+
+			<p >
+				In order to be able to see increases (or decreases) in the rate of progress more clearly, exponential processes are often graphed using a logarithmic scale. Instead of the vertical axis increasing in fixed sized steps, such as steps of 10,000,000 units in Figure 15.4, each vertical tick mark is X <span class="Ital">times</span> the previous tick mark, where X is generally a small constant such as 2 or 10.
+			</p>
+
+			<p >
+				Figure 15.5 plots the same curve as that in 15.4 except that a logarithmic scale is used. Each horizontal line in Figure 15.5 represents ten times the previous horizontal line. Note that exponential functions appear as straight lines when plotted on a logarithmic scale.
+			</p>
+
+			<p >
+				Figure 15.6 displays the historical performance of Moore’s Law from 1971 through 2011, graphed on a logarithmic scale with each vertical tick mark being 10 times the previous tick mark. The individual dots, or points, represent CPU’s. Their location on the graph reflects their date of introduction (position along horizontal axis) and number of transistors (position along the vertical axis). The straight line represents a true exponential function that doubles every two years.<span class="Footnote" title="Footnote: "><a href="#ftn5" id="body_ftn5">[5]</a></span>
+			</p>
+
+			<img src="Images/fig15-5.png" alt="" class="Image">
+
+			<p class="Figure">
+				Figure 15.6: Forty years of Moore’s Law – 1971 to 2011
+			</p>
+
+			<p >
+				As can be seen from Figure 15.6, transistor counts roughly doubled every two years from 1971 to 2011 in accordance with Moore’s Law. Over this forty year period 20 doublings took place which translates to a <span class="Ital">one million fold increase</span> in integrated circuit complexity.
+			</p>
+
+			<p >
+				Though Moore’s Law specifically focuses on the rate of increase in the number of transistors in integrated circuits, this general trend of exponential growth has been observed in many other aspects of computing and information technology. Examples include: the exponentially decreasing cost per byte stored on hard drives, exponentially increasing network capacity and exponentially decreasing cost per byte transmitted, and exponentially decreasing cost of DNA sequencing. This more general observation concerning the exponential growth of computing and information technologies is sometimes called “Kurzweil’s Law of Accelerating Returns” after Raymond “Ray” Kurzweil, the futurist who is the highest profile proponent of the school of thought that information and communication technologies are improving exponentially.
+			</p>
+
+			<p class="Section">
+				15.3.2 The exponential growth of supercomputer speed
+			</p>
+
+			<p >
+				Figure 15.7 presents a table of the world’s fastest supercomputers over the past 20 years together with their speed in gigaFLOPs (billions of floating point operations per second) and the approximate date at which each came online. As can be seen from the table the speed of the world’s fastest supercomputer increased more than 500,000 times over the period – from 60 gigaFLOPS (10<sup>9</sup>FLOPS, billons of FLOPS) to 33.86 petaFLOPS (10<sup>15</sup> FLOPS, a million billion FLOPS). This difference represents just over 9 doublings in the 20 year period from 1993 to 2013, or a little less than once every 2 years.
+			</p>
+
+			<!--
+			<center>
+				<table cellpadding="9" cellspacing="1" width="707">
+					<col width="146" />
+					<col width="214" />
+					<col width="287" />
+
+					<tr>
+						<td style="border-top: 2.25pt double #000001; border-bottom: 1.50pt double #00000a; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							<span style="text-transform: uppercase">Date</span>
+						</p></td>
+
+						<td style="border-top: 2.25pt double #000001; border-bottom: 1.50pt double #00000a; border-left: 0.75pt solid #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							<span style="text-transform: uppercase">Gflop/s (R_Max)</span>
+						</p></td>
+
+						<td style="border-top: 2.25pt double #000001; border-bottom: 1.50pt double #00000a; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							<span style="text-transform: uppercase">Computer</span>
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 1.50pt double #00000a; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 1993
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 1.50pt double #00000a; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							60
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 1.50pt double #00000a; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							TMC CM-5/1024
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November 1993
+						</p></td>
+
+						<td style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							124
+						</p></td>
+
+						<td style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Fujitsu Numerical Wind Tunnel
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 1994
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							143
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Intel XP / S140
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November 1994
+						</p></td>
+
+						<td style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							170
+						</p></td>
+
+						<td style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Fujitsu Numerical Wind Tunnel
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 1996
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							220
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Hitachi SR 2201 / 1024
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November 1996
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							368
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Hitachi CP-PACS / 2048
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 1997
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							2,379
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Intel ASCI Red
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November 2000
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							7,226
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							IBM ASCI White, SP Power 3
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 2002
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							35,860
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							NEC Earth Simulator
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November 2004
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							478,200
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							IBM BlueGene / L
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							August 2008
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							1,105,000
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							IBM Roadrunner
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November 2009
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							1,759,000
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Cray Jaguar – XT5-HE Opteron
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November, 2010
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							2,566,000
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							NUDT Tianhe 1A
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 2011
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							10,510,000
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Fujitsu K Computer, SPARC64
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 2012
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							16,324,751
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							IBM Sequoia BlueGen / Q
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							November 2012
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							17,600,000
+						</p></td>
+
+						<td bgcolor="#FFFFFF" style="border-top: 0.75pt solid #000001; border-bottom: 0.75pt solid #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							Cray Titan – XK7 Opteron
+						</p></td>
+					</tr>
+
+					<tr valign="top">
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 2.25pt double #000001; border-left: 2.25pt double #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="146">
+						<p align="center" >
+							June 2013
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 2.25pt double #000001; border-left: 0.75pt solid #000001; border-right: 0.75pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="214">
+						<p align="center" >
+							33,860,000
+						</p></td>
+
+						<td bgcolor="#7F7F7F" style="border-top: 0.75pt solid #000001; border-bottom: 2.25pt double #000001; border-left: 0.75pt solid #000001; border-right: 2.25pt double #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.09in; padding-right: 0.08in" width="287">
+						<p align="center" >
+							NUDT Tianhe 2
+						</p></td>
+					</tr>
+				</table>
+			</center>
+			-->
+			<img src="Images/fig15-9.png" alt="" class="Image">
+
+			<p class="Figure">
+				Figure 15.7: World’s Fastest Supercomputers 1993 - 2013
+			</p>
+
+			<img src="Images/fig15-6.png" alt="" class="Image">
+
+			<p class="Figure">
+				Figure 15.8: World’s Fastest Supercomputers 1993 - 2013
+			</p>
+
+			<p >
+				Figure 15.8 plots the data on the world’s fastest supercomputers from 1993 to 2013 which was presented in Figure 15.17. Figure 15.8 uses the logarithmic scale where exponential growth appears as a straight line. A trend line which projects historical growth through 2020 is included (shown as a yellow line in the figure). If the growth trend of the past 20 years continues to hold supercomputers should pass the one exaFLOPS (10<sup>18</sup>FLOPS, a billion billion FLOPS) benchmark by 2020.
+			</p>
+
+			<p >
+				What could one do with an <span class="Bolded">exascale</span> machine – a machine that supports a billion billion floating point operations per second? Well, for one thing, current estimates are that 1 – 10 exaFLOPS should be sufficient for real-time human brain simulation and teams of scientists and engineers in the US and Europe are working diligently to reach this goal.<span class="Footnote" title="Footnote: "><a href="#ftn6" id="body_ftn6">[6]</a></span>
+			</p>
+
+			<p class="Section">
+				15.3.3 But, surely this can’t continue indefinitely?
+			</p>
+
+			<p >
+				Common sense would seem to dictate that the exponentially doubling that information technology has been undergoing cannot continue indefinitely. When it comes to the original formulation of Moore’s Law for example there must be a limit to the size of individual transistors, yes? As of 2013, “leading edge” fabrication technologies produced integrated circuits with minimum feature sizes in the 10 – 40 nanometer range.
+			</p>
+
+			<p >
+				What this means is that some features, such as a wire, are no more than 40 nanometers wide. What is a nanometer? A <span class="Bolded">nanometer</span> is one billionth of a meter (10<sup>-9</sup> meters). A strand of the DNA molecule is about 3 or 4 nanometers wide. Thus the minimum feature size of components in our most advanced integrated circuits is somewhere in the range of 3 to 10 times wider than the DNA double helix.
+			</p>
+
+			<p >
+				Our devices are nearing (some might argue already are at) molecular level scales. Molecules are, of course, composed of individual atoms. The diameter of a carbon atom is 0.15 nanometers – which is only about 100 times smaller than minimum feature size in some of today’s (2013’s) most advanced integrated circuits. Since minimum feature size cannot shrink below one atom wide, it looks like the reign of Moore’s Law, at least in its ‘standard’ interpretation, is about over – a factor of 100 is less than 7 doublings (2<sup>7</sup>= 128) which would take 14 years to achieve if doublings took place at the historic rate of about once every 2 years.
+			</p>
+
+			<p >
+				This should not be surprising. Individual technologies tend to follow what are called “S” curves rather than true exponentials. An “s” curve, which is illustrated in Figure 15.9, is indistinguishable from an exponential in its early phases. Both begin by showing very little apparent progress over a long span of time, then suddenly progress appears to “take off”. In an “s” curve, after this spurt of rapid progress, things settle down into a state where only minor, incremental progress is made. In a true exponential, things never settle down, but continue to accelerate without end.
+			</p>
+
+			<img src="Images/fig15-7.png" alt="" class="Image">
+
+			<p class="Figure">
+				Figure 15.9: An “s” curve
+			</p>
+
+			<p >
+				Progress in aviation technology fits the “s” shape curve nicely. For thousands of years Man dreamed of being able to fly like a bird. For most of this time no real progress was made on the problem. The first manned hot air balloon flight didn’t occur until November 1783 (about 230 years ago). It took another 120 years, until December 1903 (about 110 years ago) for the first powered airplane flight to occur. Just over half a century later, in October 1958, transatlantic passenger jet service was born with the introduction of the British Overseas Airways Corporation Comet 4. In the half century or so since the introduction of the passenger jet, transatlantic flight has certainly become much more common and much less expensive, but flight times have remained relatively constant – in fact with increased airport security, overtaxed air traffic control systems, and the retirement of the Concorde supersonic passenger plane, transatlantic travel time has actually increased in recent years.
+			</p>
+
+			<p >
+				Will advances in computing follow a trend similar to aviation (and many other technologies)? Will the exponential growth in computing technologies soon come to an end?
+			</p>
+
+			<p >
+				As mentioned earlier some technologists, such as Ray Kurzweil, argue that the exponential growth in computing extends back much farther than the integrated circuit era of Moore’s Law and will continue far after the increasing transistor density of Moore’s Law comes to an end.
+			</p>
+
+			<p >
+				Figure 15.10 contains a graph produced by Ray Kurzweil, and posted to Wikipedia as part of the “Accelerating Change” article, that captures Kurzweil’s view that while individual computing technologies may follow “S” curves, overall progress in computing remains exponential by periodically switching to new underlying technologies.<span class="Footnote" title="Footnote: "><a href="#ftn7" id="body_ftn7">[7]</a></span> According to this view, the electro-mechanical era of computing essentially began with Herman Hollerith’s tabulating machine for the 1890 census, then moved on to relays in the 1930’s, then vacuum tubes in the 1940’s and 1950’s, then transistors in the 1960’s, and finally integrated circuits in the 1970’s through today. While each of these underlying technologies eventually become mature, reaching their limits of speed and reliability, by leaping from one technology to another, gains in computing capabilities have continued to accelerate at an exponential rate for well over a century.
+			</p>
+
+			<p >
+				Given the chip designs that are already “in the pipeline”, Moore’s Law seems assured of continuing in the near term – say the next three to five years. In the longer term there are many exciting technologies on the horizon. The next section of this chapter presents a number of these technologies that show promise for delivering vastly more powerful computers than exist today – technologies that could continue generating exponential gains in computing for many decades to come.
+			</p>
+
+			<img src="Images/fig15-8.png" alt="" class="Image">
+
+			<p class="Figure" >
+				Figure 15.10: Kurzweil’s Law of Accelerating Returns
+				<br/>
+				(from Wikipedia “Accelerating Change” <a href="http://en.wikipedia.org/wiki/File:PPTMooresLawai.jpg">http://en.wikipedia.org/wiki/File:PPTMooresLawai.jpg</a>)
+			</p>
+
+			<p class="Section">
+				15.4 Promising technologies for improving computing performance
+			</p>
+
+			<p>
+				In this section we examine a number of technologies that promise continued exponential increases in computing performance. We begin by looking at near-term improvements to existing semi-conductor based computing. We then turn our attention to four fundamentally different technologies that could revolutionize computing. These technologies are: optical computing (also known as photonic computing), bio-computing, molecular-scale nano-computing, and quantum computing.
+			</p>
+
+			<p>
+				Of course, there is no guarantee that all (or any) of these technologies will work out in practice. It could be that we will hit a roadblock when we need our next “technology fix” to continue exponential progress. On the other hand, when one considers the number of promising lines of research continued exponential growth, while far from guaranteed, does seem likely – at least to this author.
+			</p>
+
+			<p class="Section">
+				15.4.1 Semi-conductor based computing
+			</p>
+
+			<p>
+				When it comes to integrated circuits constructed from silicon-based semi-conductors, to paraphrase Monty Python: They’re "not dead yet.” (Fig. 15.11)&nbsp;Before we talk about the problems faced in continuing to improve integrated circuits, let’s take a few moments to briefly review why this technology has been so successful for so long.
+			</p>
+
+			<video controls="controls" src="../Video/fn09%20Monty%20Python%20-%20I%27m%20not%20dead%20yet.mp4">
+				Monty Python - I'm not dead yet
+			</video>
+
+			<p class="Figure">
+				Figure 15.11 Clip from “Monty Python and the Holy Grail”
+			</p>
+
+			<p>
+				One of the primary reasons that smart phones, computers, and tablets are so inexpensive today and that progress in the field is so rapid is that integrated circuits (i.e., computer chips) are “manufactured” by a form of photography called <span class="Bolded">photolithography</span>.
+			</p>
+
+			<p>
+				In photolithography, the design of the integrated circuit is expressed as a very large image, called a <span class="Bolded">mask</span>. The mask is similar to a projector slide, in that light can be shown through the mask to produce an image of the circuit. However, in the chip manufacturing process instead of projecting a large image, the light is focused to project a very small image. Specifically, very short wavelength light, typically ultraviolet (UV) light with a wavelength of 193 nanometers (circa 2013), is shone through the mask and focused on a wafer of silicon that has been prepared with a <span class="Bolded">photoresist</span> – a chemical that changes properties when exposed to light. In the most common process, the photoresist hardens where exposed to light. During the “development” phase of the process the soft portions are washed, or etched, away by special chemical solutions, leaving a copy of the original mask image (much reduced in size) on the silicon wafer.
+			</p>
+
+			<p>
+				In general, the shorter the wavelength of light used in the photolithography process the smaller the image that can be projected onto the wafer of silicon, and thus the smaller the size of the individual features on the resulting chip. As mentioned earlier, as of 2013 cutting edge chips sport minimum feature sizes in the range of 10 to 40 nanometers. In order to generate such small features with UV light, multiple exposures using different masks is necessary. Much effort is being expended to make extreme ultraviolet (EUV) light, at 13.5 nanometers, economically practical by 2015.<span class="Footnote" title="Footnote: "><a href="#ftn8" id="body_ftn8">[8]</a></span> EUV light will enable even smaller feature sizes and thus higher transistor density, resulting in faster processors.
+			</p>
+
+			<p>
+				As impressive as these numbers are, there are a variety of different technologies, such as electron beam lithography, X-ray lithography, and ion beam lithography, that can be used to create even smaller feature sizes and thus greater circuit densities. However, as feature sizes continue to shrink, we are beginning to approach fundamental barriers imposed by the laws of physics. For example, when wires are placed too close to one another, there can be unintended “crosstalk” between them, where a signal jumps from one wire to another.
+			</p>
+
+			<p>
+				Heat dissipation and power consumption are two fundamental problems chip manufactures must battle. Up through the end of the 20<sup>th</sup>century and the beginning of the 21<sup>st</sup>, manufactures were able to make chips run faster by increasing the number of ‘clock cycles’ per second. While this approach enabled chips to do more work, to execute more instructions in a fixed amount of time, the faster a chip runs the more power it consumes and the more heat it produces.
+			</p>
+
+			<p>
+				One way around power consumption and heat dissipation issues is for computer chips to include multiple “cores” or CPU’s. By having multiple CPU’s working together in parallel more total work done can be done in a fixed amount of time, even if the individual CPUs run at somewhat slower speeds. As of 2013, most computers and smart devices contained multiple cores – commonly either two or four cores.
+			</p>
+
+			<p>
+				Since photolithography is basically a ‘photographic’ technique, the results are essentially two dimensional in nature – like a photograph on paper is two dimensional. However, just as individual photographs can be stacked together; three dimensional integrated circuits can be constructed by, among other methods, stacking multiple silicon wafers on top of each other and connecting the layers together using a technology such as “through-silicon via”, or STV. Large scale manufacturing of 3D devices is projected for the 2014 / 2015 timeframe. One early benefit of this technology will most likely come in the form of improved DRAM (Dynamic Random Access Memory) devices. As of mid 2013, prototypes of the HMC (Hybrid Memory Cube) 3D design were claimed to be ten times faster than current high end (DDR3) memory chips.
+			</p>
+
+			<p>
+				Beyond multiple cores and three dimensional chip designs, another approach for extending the life of semi-conductor technology is to switch from silicon to other materials such as germanium or graphene or molybdenum disulfide. Materials scientists are studying these and many other materials as possible substitutes for silicon. Most conduct electricity better than silicon which could help with power consumption and heat dissipation problems, potentially allowing integrated circuits to run faster than today.
+			</p>
+
+			<p>
+				For many decades (at least since the 1980’s) people have been predicting the end of silicon-based integrated circuits manufactured using photolithography. And these individuals have been proven consistently wrong. Despite this fact fundamental physics imposes limitations and we are starting to get close to these. Thus, while there is still life left in semi-conductor based integrated circuit technology, most computer engineers agree that the road ahead promises to become more and more difficult.
+			</p>
+
+			<p class="Section">
+				15.4.2 Optical computing
+			</p>
+
+			<p>
+				<span class="Bolded">Optical computing</span>, also known as <span class="Bolded">photonic computing</span>, focuses on constructing computing systems that use light (i.e., photons) instead of electricity (i.e., electrons) to carry out data transport and logic operations.
+			</p>
+
+			<p>
+				Our present computing and communications infrastructure is a hybrid of electronic and photonic components. Most high-speed, long-distance data and voice traffic is conducted over fiber optic cables, which transmit their data as pulses of light. Many high-speed local area networks use fiber optics as well – for example to move data between buildings on a college campus. Data manipulation, as opposed to data transport however, happens in the electronic domain. Thus, data must be continuously translated between the optical and electronic domains as it is shuffled from network to network. Unfortunately, electronics operate at speeds that are orders of magnitude slower than optics.
+			</p>
+
+			<p>
+				An analogy of the state of today’s current data and communications networks that I find useful is to imagine the Interstate highway system which enables rapid and efficient vehicle transport between major cities – these Interstate highways are like the long distance fiber optic links in our networks. Now, imagine that instead of having freeway interchanges with their arching on and off ramps in major cities where Interstates meet, all our cities had only dirt paths for roads. If you were traveling across country by car travel time between cities wouldn’t be a big deal, but passing through intermediate cities on your way to your final destination would be excruciating slow and painful. These dirt paths inside the cities are like the routers and switches, electronic devices, used to move data from one fiber optic cable to another
+			</p>
+
+			<p>
+				There is a lot of work going on in academia and corporate research labs to construct the basic building blocks of optical computers, such as photonic transistors. Optical computing promises many advantages over electronic computing, such as much faster speeds, smaller devices, and less power consumption. However, the obstacles to fully realizing optical computing are formidable.
+			</p>
+
+			<p>
+				Though all optical computing is probably several decades away – if it ever proves practical at all – hybrid electronic / photonic devices are a near term likelihood. IBM and Intel (among others) are working on <span class="Bolded">silicon photonics</span>, a technology that integrates both electronic and optical components onto a single silicon chip which can be manufactured using existing semi-conductor fabrication techniques. The underlying concept is that the individual components of a computer system, (e.g., the CPU and main memory) could exchange data between themselves optically rather than electronically. While the ‘computing’ would still be conducted in the electronic domain, data transport functions within the computer would move to the optical domain. The result would be systems that operate much faster than conventional electronics while using less power. It is anticipated that these hybrid systems will initially be used for data transport between individual integrated circuit chips, migrating over time to moving data between different regions of the same chip. In December 2012, IBM announced the first commercially viable silicon photonic chip.<span class="Footnote" title="Footnote: "><a href="#ftn9" id="body_ftn9">[9]</a></span> Expect to see this technology roll out in the 2015 – 2020 timeframe, first in supercomputers and later in consumer devices.
+			</p>
+
+			<p class="Section">
+				15.4.3 Bio-computing
+			</p>
+
+			<p>
+				One of the most important building blocks of life is the DNA (de-oxy-ribo-nucleic acid) molecule. Each individual cell of every living organism contains DNA. DNA is critical to all life because it stores the genetic information that describes how an organism works.
+			</p>
+
+			<p>
+				Our DNA represents all of the instructions, all of the data, that describe how to create a human and keep him or her functioning. In other words, human DNA contains the “program” or blueprint for building and “running” a human being. Subtle variations in DNA determine the individual physical characteristics that differ from person to person, such as facial features, and eye, hair, and skin color. DNA also determines a person’s gender – either male or female.
+			</p>
+
+			<p>
+				<span class="Bolded">DNA</span> is a double helix shaped molecule composed of four subunits, or nucleotides, each consisting of about 25 atoms. The nucleotides are: adenine, thymine, guanine, and cytosine – which are usually abbreviated by their initials A, T, G, and C. Because of their chemical makeup, adenine always binds with thymine, and guanine with cytosine. For this reason A-T and G-C are referred to as the base pairs of DNA.
+			</p>
+
+			<p>
+				Human DNA consists of about 3.2 billion base pairs, each of which represents a single bit of data. A rather amazing consequence of this fact is that since 3.2 billion bits is only about 400 megabytes, a person’s entire genome could be stored on a single audio CD, and more than a hundred human genomes on a 50 gigabyte blu-ray disc. Think about that the next time you pop a disc into your Xbox or PlayStation. That game disc holds far more information than your own biological blueprint.
+			</p>
+
+			<p>
+				On the other hand, the DNA molecule is a far more efficient data storage device than a blu-ray disc. This is apparent when we note that each and every one of the microscopic cells in our body contains a complete copy of our entire genome. Since each DNA base pair is composed of two 25 atom nucleotides, DNA uses about 50 atoms per bit. DNA thus expresses the entire human genome using a total of about 160 billion atoms (3.2 billion bits <span class="Subfigure">x 50 atoms per bit</span>). While that may seem to be a large number of atoms, by the standards of our current computing and data storage technology, DNA is incredibly compact and efficient.
+			</p>
+
+			<p>
+				The field of <span class="Bolded">biological computing</span> (or <span class="Bolded">biocomputing</span>) attempts to harness the incredible information processing and storage capabilities of biology in order to construct computing systems. One of the most noteworthy early achievements in the field occurred in 1994 when Leonard Adleman showed how DNA could be used to solve an example of a very difficult optimization problem. In his experiment, Adleman used biological reactions to solve an instance of the Hamiltonian path problem.
+			</p>
+
+			<p>
+				The <span class="Bolded">Hamiltonian path</span> problem involves finding a path through a graph that visits every node in that graph exactly once. This problem can be envisioned by thinking of a map of towns connected by roadways. You want to find a route that visits each of the towns exactly once. You may start at any town and end at any other, but you must visit each town on the map exactly once. While you might think solving such a problem is easy, the requirements that you can’t skip any of the towns or visit any of them more than once make this problem quite tough.<span class="Footnote" title="Footnote: "><a href="#ftn10" id="body_ftn10">[10]</a></span>
+			</p>
+
+			<p>
+				Adleman’s approach exploited the massive parallelism found in conventional biochemistry. While biochemical reactions take place much more slowly than electronic computations, conventional biochemistry works on many billions of molecules at the same time. When each of these chemical reactions can be made to represent the search for a solution to a problem, the result is massive parallelism – searching many billions of options, all at the same time. Building on Adleman’s basic approach, researchers have shown that a range of computing problems can be mapped to DNA and solved using biological reactions. However, this approach required that the problems be set up by hand, mapped to the appropriate biochemical regime, the required chemical reactions carried out in a test tube, and then the results interpreted.
+			</p>
+
+			<p>
+				A more recent approach to biocomputing focuses on building general purpose biological computers. Such computers would be able to store, transmit, and manipulate data. The fundamental building blocks of general purpose biological computers would be DNA and RNA, and as such these systems are often referred to as <span class="Bolded">DNA computers</span>. DNA computers would be constructed using the techniques of <span class="Bolded">synthetic biology</span> which is defined as the design and construction of biological devices and systems for useful purposes.<span class="Footnote" title="Footnote: "><a href="#ftn11" id="body_ftn11">[11]</a></span>
+			</p>
+
+			<p>
+				On the data storage front, as of January 2013, a team of scientists from the European Bioinformatics Institute successfully encoded ¾ of a megabyte (750 kilobytes) of data in a strand of DNA – and later retrieved the data. The stored data included: a number of text files, a PDF, a JPEG color photograph, and an MP3 of a portion of Dr. Martin Luther King’s famous “I Have a Dream” speech.<span class="Footnote" title="Footnote: "><a href="#ftn12" id="body_ftn12">[12]</a></span> While significant cost and speed barriers remain, DNA possesses many positive characteristics for use as a long term storage medium, including the fact that it is highly compact and tends to be quite stable over time.
+			</p>
+
+			<p>
+				If the various obstacles to constructing DNA computers can be overcome, the practical benefits could be enormous. While DNA computers would be slow compared to today’s electronic computers, they would be incredibly small, energy efficient, and highly compatible with existing biological systems. In fact, DNA computers can, in a very real sense, be thought of as molecular level computers – since biological systems ultimately operate on molecules such as DNA and RNA.
+			</p>
+
+			<p>
+				Imagine a world where we could reprogram cellular biology. Such computers could potentially detect and then kill cancer cells, or be used to control insulin levels in diabetic patients. They have the potential to usher in a world of medicine at the cellular level.
+			</p>
+
+			<p>
+				Progress towards this dream is being made. In March 2013 a team of bioengineers at Stanford led by Drew Endy announced the creation of the first “biological transistor” from DNA and RNA called a <span class="Bolded">transcriptor</span> (Fig 15.12).&nbsp;Endy’s team illustrated how transcriptors could be used to implement <span class="Ital">and</span>, <span class="Ital">or</span>, <span class="Ital">nand,</span> <span class="Ital">nor</span> and other basic logic gates using a system they call Boolean Integrase Logic gates, or BIL gates.<span class="Footnote" title="Footnote: "><a href="#ftn13" id="body_ftn13">[13]</a></span> Such transcriptor logic based BIL gates could be used to activate / deactivate the expression of particular genes under program control. While in its early days, this exciting field is well worth watching as its impact could be truly enormous.
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn15%20Transcriptors%20%26%20Boolean%20Integrase%20Logic%20%28BIL%29%20gates%2C%20explained.mp4">
+				Transcriptors &amp; Boolean Integrase Logic (BIL) gates, explained
+			</video>
+
+			<p class="Figure">
+				Figure 15.12 Video describing transcriptor logic
+			</p>
+
+			<p class="Section">
+				15.4.4 Molecular-level computing.
+			</p>
+
+			<p>
+				In the previous section we looked at molecular level computing derived from biological systems. While biocomputing offers one path towards molecular level computing, in this section we explore another approach – that of directly engineering computing systems at the atomic level from the ground up without reference to biology.
+			</p>
+
+			<p>
+				The concept of atomic level computing traces its roots back to a speech given by Richard Feynman in 1959 to the American Physical Society at Cal Tech entitled “There’s Plenty of Room at the Bottom”<span class="Footnote" title="Footnote: "><a href="#ftn14" id="body_ftn14">[14]</a></span>. In his talk, Feynman anticipated the field of microelectronics and outlined some of the approaches, such as photolithography, that were later adopted for the production of integrated circuits. This was an amazing insight, given that computers filled entire rooms in his day and most people were talking about making them larger, not smaller. But Feynman didn’t stop there; he went on to describe some of the advantages of, and approaches for, manipulating matter at the atomic scale. In other words, Feynman’s speech anticipated the field of <span class="Bolded">nanotechnology</span>, which is concerned with the engineering of systems at the level of individual atoms.
+			</p>
+
+			<p>
+				Devices such as scanning tunneling microscopes (STMs) and atomic force microscopes (AFMs) can be used to image and even manipulate individual atoms. By 1990, this technology had developed to the point where researchers were able to spell out the letters “IBM” by positioning 35 xenon atoms on a nickel surface, and then create a picture of what they had done. We can easily imagine a memory system in which these xenon atoms are laid out in a 2-D grid arrangement of rows and columns on the nickel surface. A “1” would be represented by the presence of a xenon atom at a particular row and column position, and a “0” by the absence of a xenon atom at row, column position. Both reading and writing of data could be accomplished by use of the STM or AFM.
+			</p>
+
+			<p>
+				Though the information density of such a system would be almost unimaginably high, such systems are impractical because the data read and write times would be very, very slow. Regardless of its impracticality, this example does make the point that atomic-scale memory densities are possible.
+			</p>
+
+			<p>
+				In addition to being able to store data, a computer system must also be able to manipulate that data under program control.
+			</p>
+
+			<p>
+				In the 1990’s there was a lot of excitement surrounding the possibility of constructing molecular-level nanomechanical computer systems. These <span class="Bolded">nanomechanical computers</span>, first described in detail by K. Eric Drexler, would be mechanical computers built of rods and springs – but at the nanometer scale. Such nanotechnology promises far smaller and more energy efficient computers than exist today.
+			</p>
+
+			<p>
+				While the idea of directly engineering systems from the bottom up ‘atom by atom’ is intriguing, there has been little measurable progress towards the development of nanomechanical computers over the last few decades – and interest in this approach has waned. Some argue that Drexler’s designs are simply impractical – that various laws of physics preclude the construction of reliable nanomechanical computers. On the other hand, the existence of naturally occurring biological (bio-molecular) systems that encode proteins and transcribe DNA prove that robust molecular-level computing systems can, and indeed already do, exist. The fact that we currently lack the ability to engineer nano-scale computers from the ground up does not mean that breakthroughs are not “just around the corner”.
+			</p>
+
+			<p class="Section">
+				15.4.5 Quantum computing
+			</p>
+
+			<p>
+				The previous two sections looked at molecular-level computing and atomic-level information storage. The present section addresses the question of whether we can do even better. Are memory devices with storage densities greater than one bit per atom even fundamentally possible, let alone actually feasible? And what about computing power? Do the nanomechanical computers and/or DNA computers described in the previous sections represent the fundamental limits of computing density?
+			</p>
+
+			<p>
+				<span class="Bolded">Quantum computers</span> employ the laws of quantum physics (which reign in the subatomic world) to implement a form of massive parallelism. The computers we use today are based on classical physics – the physics of the “large” world around us. The fundamental unit of information in such systems is the bit, which, as we have learned, can be either “1” or “0”, “on” or “off” – but never both. In quantum computing the fundamental unit of information is the quantum bit or <span class="Bolded">qubit</span>. A qubit may be “1”, it may be “0”, or it may simultaneously be both “1” and “0”. This ability for quantum systems to be in multiple states at the same time is called “superposition of states” – and though it may seem very odd to us, in physics this principle is well established and has been experimentally verified numerous times and in many different ways.
+			</p>
+
+			<p>
+				Quantum computing, if it proves to be practical, will be in many ways quite different from ordinary classical computing. Entirely new approaches to algorithm development must be devised to take advantage of the unique capabilities of quantum computers. An early achievement occurred in 1994 when Peter Shor developed an algorithm for quickly factoring large numbers on a quantum computer. Since the security of modern data encryption systems depend heavily on the difficulty of solving such problems, the existence of a working quantum computer running Shor’s algorithm could have significant implications for cryptography.
+			</p>
+
+			<p>
+				While it is generally believed that quantum computers would be able to solve some problems far faster than they can be solved on traditional computers which employ classical physics, the exact range of problems that will prove amenable to a quantum approach and the speed increases that could be achieved are still open problems.
+			</p>
+
+			<p>
+				To date, no <span class="Ital">general purpose</span> quantum computer has been constructed, but progress is being made.
+			</p>
+
+			<p>
+				The most visible, and arguably the most controversial, quantum computing project is the work being done by D-Wave Systems. In May 2011, D-Wave Systems announced the D-Wave One, a 128 qubit computer, which it followed up in 2012 with the D-Wave Two, a 512 qubit computer. These computers are not general purpose; instead they are built to perform a process known as “quantum annealing” which can be used to solve certain kinds of optimization problems.
+			</p>
+
+			<p>
+				When first announced there was significant skepticism in the scientific community as to whether the D-Wave computers were, in fact, employing quantum effects. More recently the tide has turned and most scientists working in the field accept that the D-Wave systems are quantum in nature. There is still controversy over whether, or how quickly, D-Wave’s special purpose quantum computers will present a cost effective, practical alternative to classical computing for those problems that are suitable for solution using the quantum annealing approach.
+			</p>
+
+
+			<p class="Section">
+				15.5 Predictions
+			</p>
+
+			<p>
+				This chapter, and thus the text, concludes with some predictions as to what the future of computing holds. These predictions are organized into two categories: near term predictions, which the author thinks are likely to occur within the next 10 to 15 years – say by 2030, and longer term predictions which the author expects to take place by the midpoint of the 21<sup>st</sup>century (2050). Before diving into these predictions, we will first take a look at some past predictions that attempted to divine what life would be like in the first and second decades of the 21<sup>st</sup> century to see what past prognosticators got right and what they got wrong about our present.
+			</p>
+
+			<p class="Section">
+				15.5.1 Visions of future past
+			</p>
+
+			<p class="Blockcenter">
+				“<span class="Ital">It’s tough to make predictions, especially about the future.” – Yogi Berra<span class="Footnote" title="Footnote: "><a href="#ftn15" id="body_ftn15">[15]</a></span></span>
+			</p>
+
+			<p>
+				Predicting the future is both difficult and in many ways thankless. In general, one often doesn’t get much credit for successful predictions since they frequently appear ‘obvious’ in hindsight. A really accurate prediction sometimes isn’t even recognized as a prediction – as can happen in television, movies, and commercials when you aren’t really sure when the video was produced. If the prediction of present day technology is ‘spot on’ you just assume the movie was made at a later date than it actually was.
+			</p>
+
+			<p>
+				On the other hand one tends to get banged really hard for the predictions that do not come to pass. Incorrect predictions often appear so ‘obviously’ wrong in hindsight that our natural tendency is to laugh.
+			</p>
+
+			<p>
+				Despite these limitations, people tend to spend a considerable amount of time envisioning the future – be it something mundane like what they are planning to eat for dinner tonight or something more bold like designing a humans-to-Mars exploration strategy or a HyperLoop passenger transport system. Even when our predictions turn out to be wrong, I believe the act of prediction itself is valuable – envisioning the future often provides us with goals to work towards and the inspiration to carry on in the face of failures and disappointments.
+			</p>
+
+			<p>
+				In the chapter on artificial intelligence we talked extensively about the movie “2001: A Space Odyssey” which attempted to realistically depict advances in space travel and computing. Though most of the predictions depicted in the movie proved wildly optimistic, “2001” served as a catalyst for numerous individuals, such as this author, to pursue careers in science and technology. Many of these individuals went on to actually advance the state of the art in computing and robotics.
+			</p>
+
+			<p>
+				<a name="_GoBack"></a>In 1967 (nearly 50 years ago) the Philco-Ford Company produced a short film entitled “1999 A.D.” that attempted to predict what life would be like for the typical family at the turn of the century. One of the most interesting sequences in the film describes what computing will be like (Fig. 15.13).&nbsp;While the hairstyles, clothing, and background music, along with the somewhat offensive depiction of the roles of men and women, clearly date this video as being from the 1960’s, if one looks beyond these shortcomings the video is really quite insightful. It predicts home computers and printers, Internet connections, email, online shopping, online banking, flat screen monitors, and web cams. The accuracy of these predictions is amazing when one considers that in 1967 computers of the day filled large rooms, took a small army of people to manage, and cost hundreds of thousands to millions of dollars - and there was, of course, no Internet, nor email, nor online banking and shopping. One interesting feature of the video that turned out to be wrong was the idea that home computer systems would need automated backup components that would kick in if a primary unit failed. While this idea seems antiquated today, back in the 1960s electronic components were unreliable and failed rather frequently, so this idea probably seemed quite reasonable at the time.
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn19%20The%20Internet%20in%201969.mp4">
+				The Internet in 1969
+			</video>
+
+			<p class="Figure">
+				Figure 15.13 A portion of the film “1999 A.D.” that depicts computing at the turn of the century as envisioned in 1967
+			</p>
+
+			<p>
+				Twenty years later, in 1988 – just four years after the original version of the Mac was introduced – Apple produced a short film called “Knowledge Navigator” that aimed to show what computing would be like at the start of the second decade of the 21<sup>st</sup>century (Fig. 15.14).
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn20%20Knowledge%20Navigator%20%281987%29%20--%20minor%20background%20sounds.mp4">
+				Knowledge Navigator (1987) -- minor background sounds
+			</video>
+
+			<p class="Figure">
+				Figure 15.14 Apple’s “Knowledge Navigator” video from 1988
+			</p>
+
+			<p>
+				The video got a surprising number of things right, including: the emergence of flat screen, high resolution, color displays; a portable, tablet-like form factor computer (though one that opened up like a thin book); support for touch and gesture-based input; wireless networking; built-in video camera, microphone, and speakers; video conferencing; a kind of Internet (though one seemingly focused on research and scholarly pursuits); and small high capacity external storage devices (similar to today’s USB drives, though shown in the video as something more like the size and shape of a business card). This litany of successes is rather amazing – especially since some of the innovations, such as gesture-based interfaces have only become commonly available in the last 5 years or so.
+			</p>
+
+			<p>
+				The Knowledge Navigator video is, in fact, so accurate on so many fronts that it suffers from the “not enough credit” phenomenon mentioned above. It’s too easy to forget – or be unaware of – how truly primitive by today’s standards computers were when this video was made. We take flat screen, high resolution, color displays and wireless networks for granted now, but these things were essentially science fiction when Apple produced this video.
+			</p>
+
+			<br />
+
+			<p>
+				Despite its successes, the Knowledge Navigator video suffered from one major misstep. Apple envisioned that artificial intelligence would have progressed by now to the point where one would be able to converse with computers using human language and that operating systems would support an avatar-based interface – the Knowledge Navigator, a kind of ‘butler in a box’. While it is true that Siri and Google Now enable people to have limited ‘conversations’ with their smart phones, the level of artificial intelligence needed to construct a Knowledge Navigator simply doesn’t exist – at least not yet.
+			</p>
+
+			<p>
+				In 1993 AT&amp;T produced a series of advertisements that attempted to envision life 15 to 20 years in the future (Fig. 15.15).&nbsp;These ads were known as the “You will” ads as they opened with a question of the form: “Have you ever …. ” followed by some seemingly futuristic action, such as “crossed the country without stopping for directions”, and then ended with the tag line “You will. And the company that will bring it to you: AT&amp;T.”
+			</p>
+
+			<p>
+				While there are some misses in these ads, there are some surprising hits, including: in car GPS navigation with real time traffic updates and spoken directions, online education, books available online in electronic form, automated toll booths, online purchases of things like concert tickets, Skype-like video calls and video conferencing, NetFlix-like movies on demand (shown on large, rectangular, flat screen displays), wireless mobile computing, electronic medical records (which are just now becoming common). Misses include the idea that public phone booths would still exist, the expectation that voice recognition would be a common way of unlocking doors, and that AT&amp;T would be a driving force in bringing many of the depicted innovations to market.
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn21%20AT%26T%20You%20Will%20Ads%20From%201993%20-%20Amazingly%20accurate%20predictions.mp4">
+				AT&amp;T You Will Ads From 1993 - Amazingly accurate predictions
+			</video>
+
+			<p class="Figure">
+				Figure 15.15 AT&amp;T’s “You Will” ad campaign which originally broadcast in 1993 and 1994
+			</p>
+
+			<p>
+				The author of this text has himself dabbled in making predictions concerning the future for quite some time. The text you are reading has existed in various forms and editions since it was first drafted in the late 1990’s, and each edition has included predictions that were expected to come to true within 15 to 20 years. Thus, the earliest editions of the text included predictions that should have come to pass by now. So, before I make new predictions about the future, it is fair to ask how my past prognostications for today turned out.
+			</p>
+
+			<p>
+				One interesting prediction I made was the rise of e-books and “book readers” that sound a lot like today’s tablets and smart phones. Here is the quote from the May 1997 edition of the text:
+			</p>
+			<ul  class="Blockcenter"></li>
+			<p>
+				&nbsp;&nbsp;… <span class="Ital">computers also have many advantages over paper. Within a decade these advantages, such as multimedia, hypertext, and ease of information retrieval, will begin to overtake paper. … These books will be viewed with a relatively inexpensive and portable “book reader.” These “book readers” will really be more like a combination TV, telephone, and Web browser. Many publications, especially periodicals, will not be distributed in any physical form. Instead, your reader will be able to automatically download Time (or just the articles you are likely to find of interest) directly off the Net.</span>
+			</p></ul></li>
+
+			<p>
+				Five years later, in the 2002 edition of the book I gave a more complete description of a smart phone. Here are some selected quotes from that edition:
+			</p>
+			<ul  class="Blockcenter"></li>
+			<p>
+				<span class="Ital">&nbsp;&nbsp;With mobile devices, a mouse can be replaced with a touch sensitive display screen… The line between cell phones and PDAs is already starting to blur and this trend will accelerate…. In addition to calendar, address book, and scheduling applications, most phones will include web access capabilities over relatively high bandwidth data links…. Phones will also begin to include GPS (Global Positioning System) receivers. Incorporating GPS into a PDA Phone will allow the phone to always know where it is. That knowledge, combined with access to the Net, will enable all sorts of applications. Such a phone could give you turn-by-turn directions to the nearest In’N’Out Burger, determine when you have missed a turn and modify its instructions on how to get there based on this new information.</span>
+			</ul></li>
+			</p>
+
+			<p>
+				It is important to remember that I wrote these words five years before the first iPhone was announced (2007) and six years before the Android (2008).
+			</p>
+
+			<p>
+				Another prediction, probably the one I’m most proud of because it deals with a social implication of then-future technology, was my suggestion that access to (what we now call) the Internet would forever change the nature of human conversation so that long drawn out arguments over a trivial questions of fact would come to an end. Here is the quote from the May 1997 edition when the Internet was in its infancy and people connected to it by low speed dial up modem:
+			</p>
+			<ul  class="Blockcenter"></li>
+			<p>
+				&nbsp;&nbsp;… <span class="Ital">this technology will affect most aspects of our daily lives in ways both profound and mundane. Most questions of fact should be answerable anywhere and anytime by affordable access to the GII (Global Information Infrastructure). If nothing else this will be great for settling friendly disagreements quickly. Arguments of the type: “Star Trek originally premiered in September of 1967.” “No, it premiered in September of 1968!” will be settled quickly and effortlessly by accessing the GII.</span>
+			</p></ul></li>
+
+			<p>
+				Note that in 2013 simply asking Siri “When did the original Star Trek series premier?” brings up a results page that tells me it premiered on Thursday, September 8, 1966.
+			</p>
+
+			<p>
+				Of course, I’m picking and choosing quotes to highlight those predictions I got right. But it should be clear from the various examples presented in this section that by carefully observing existing and emerging trends it is sometimes possible to predict, at least in ‘outline’ form, certain future technological innovations.
+			</p>
+
+			<p class="Section">
+				15.5.2 Near-term predictions (next 10 to 15 years – before 2030)
+			</p>
+
+			<p>
+				In this section a number of technologies the author expects to become commonplace within the next 10 to 15 years – say by the year 2030 – are discussed. Before wowing you with the innovations we can expect to see, I’d like to take a moment to mention a few common sci-fi concepts that I don’t believe will become reality by 2030.
+			</p>
+
+			<p>
+				First and foremost, while Santa may bring you more sophisticated, special purpose, Roomba-like robots over the next decade and a half, don’t expect a general purpose household robot by 2030. By general purpose I mean a robot capable of doing typical household chores – cooking meals, doing the laundry, or loading the dishwasher and putting the dishes away afterward. While we are making progress in robotics, the problems are just far too deep for household robots to be anything more than expensive toys within the next 15 years. Sorry.
+			</p>
+
+			<p>
+				Next up, put away those notions of fully immersive virtual reality (VR) games that you ‘plug in to’ – PlayStation 5 and 6 won’t come with that option. The kind of brain / computer interface necessary for that type of VR is simply too far away.
+			</p>
+
+			<p>
+				Finally, don’t expect to be having meaningful unscripted conversations with NPC’s (Non Player Characters) in your video games over the next 15 years. Artificial Intelligence systems capable of human-level dialog won’t exist on your smart devices and game machines in this time period. As with robotics and VR the challenges are just too great to expect that degree of progress in only 15 years. That is not to say that NPC’s won’t become more sophisticated in their actions. I expect games will adopt advanced versions of systems like Skyrim’s “Radiant AI” in order to enable NPC’s to be somewhat more independent and lifelike in their actions.
+			</p>
+
+			<p class="Section">
+				15.5.2.1 Exponential doubling of computing speeds will continue through 2030
+			</p>
+
+			<p>
+				The age of Moore’s Law – exponentially increasing transistor density in integrated circuits achieved by reductions in transistor size – will soon come to an end due to the underlying physics. However, based on the technologies described in Section 15.4, such as 3-D chip stacking and hybrid photonic/electronic components, I think it is a safe bet that exponential doubling of computing speeds and memory capacity for a fixed dollar will continue roughly at the rate of once every two years through at least 2030.
+			</p>
+
+			<p>
+				Thus, in 2030 your smart phone – or whatever smart device(s) are popular at the time – should be 100 to 200 times more powerful than the phone you carry in your pocket today. Some of the ways we will used this increased computing capacity are explored below.
+			</p>
+
+			<p class="Section">
+				15.5.2.2 Ubiquitous computing and personal networks will become common
+			</p>
+
+			<p>
+				<span class="Bolded">Ubiquitous computing</span> refers to the situation where highly-networked computing devices are embedded throughout our environment – in our homes, cars, classrooms, offices, and even our clothes. The trend towards ubiquitous computing, which has been going on for some time, will continue over the next 10 to 15 years.
+			</p>
+
+			<p>
+				Basic computer chips are already embedded throughout our environment – in our cars and household appliances (e.g., washing machines, dishwashers, and thermostats). These devices are beginning to incorporate wireless connectivity so that they can report their condition and be programmed remotely. More advanced systems reside in our consumer electronics (e.g., cable and satellite TV boxes, game machines, and televisions); and Internet connectivity is already standard in many of these devices.
+			</p>
+
+			<p>
+				Already most of us carry a smart phone wherever we go and are connected to the Internet 24-7. As of late 2013 we appear to be on the cusp of wearable technology taking off – Google Glass is in beta with an initial general release scheduled for 2014. There are strong rumors that Apple is looking at an iWatch concept. To be useful, these devices will need network access, but in the near term the power requirements for wi-fi will be out of reach. Thus, within the next three to five years smart phones will take on another important role – they will become the hub and Internet gateway for your personal network of devices. The devices themselves will communicate with your smart phone (over BlueTooth or something similar) and the smart phone will, in turn, provide the desired Internet access.
+			</p>
+
+			<p class="Section">
+				15.5.2.3 Voice-based interfaces will continue to gain acceptance
+			</p>
+
+			<p>
+				As personal networks, wearable smart devices, and computing systems embedded throughout our environment become commonplace; voice-based interfaces will become the predominant way of interacting with these technologies within 5 to 10 years. The reasoning behind this prediction is simple; a wristwatch size device only has enough surface space for a few buttons or small touch surface. In order to issue any kind of complex instruction – such as a search query or request to schedule a meeting – the flexibility of verbal interaction would seem to be required.
+			</p>
+
+			<p>
+				Those of us who grew up before voice interfaces were common will feel somewhat awkward at first talking to our wristwatches and other smart devices – but people can adapt quickly if they see an obvious benefit. Walk down any street or across any college campus these days and you will see that most people seem to be talking to themselves – not too many years ago that would have been a sign of mental instability, now days we recognize they are just talking on their phone. The same thing is happening with voice-based web searches and Siri-like commands. It takes some people a while to catch on, but once you try it, some things, like telling your phone to “wake me up in an hour” just seem quicker, easier, and more natural than manually setting an alarm.
+			</p>
+
+			<p>
+				Currently, as of 2013, we have to launch an app and/or press a button in order to for our smart devices to accept voice commands. This is beginning to change. First, our devices will listen just for keywords, like “Ok, Glass”, “Ok, Google”, or “Xbox…”, and when the keyword is detected the system will “wake up” and accept a verbal command. As people become more comfortable with verbally interacting with computer systems, we will begin to allow our systems to ‘listen in” continuously on our conversations. This will enable the systems to automatically provide helpful comments without being specifically asked to do so. For example, if you are in the middle of a conversation with a friend and the system hears you say something like “I think Nick’s birthday is on Tuesday. We really need to figure out what we are going to do to help him celebrate.” Depending on the circumstances, and your personal preferences, your intelligent assistant might offer the following: “Sorry to interrupt Mike, but Nick’s birthday is next Monday not Tuesday.”
+			</p>
+
+			<p class="Section">
+				15.5.2.4 Continuous health monitoring and personalized medicine will become routine
+			</p>
+
+			<p>
+				One benefit of wearable smart devices and computer systems embedded throughout our environment will be near continuous monitoring of our basic vital signs. The Kinect sensor on the Xbox One can detect a person’s heart rate by observing the slight flushing our faces undergo with each heart beat – a change so subtle that humans are unable to detect it. If one is facing the sensor, Kinect can also detect whether a person’s eyes are open or closed and by looking at their facial expressions get some idea of their mood. Even with this limited data, it might be possible for Xbox One to tell if someone is having a heart attack or in acute pain and, using its Internet connection, contact emergency personnel. While Microsoft has no announced plans for fielding such an emergency medical application, it’s clear that Xbox One has most of the needed hardware and software in place to perform such basic emergency medical monitoring and notification.
+			</p>
+
+			<p>
+				Wearable smart watches should be able to detect not only heart rate, but also skin temperature and (potentially) blood pressure. Being that the watch will most likely be worn 24-7 monitoring of these vital signs could be near continuous. Inexpensive disposable devices for performing more detailed medical tests – to monitor glucose levels for signs of diabetes, to check liver and kidney function, and screen for early warning signs of certain types of cancers – are all on the horizon. Early detection of potentially serious medical conditions could save untold lives and improve quality of life, while dramatically decreasing treatment costs.
+			</p>
+
+			<p>
+				Once a person is diagnosed with a condition that requires treatment, that treatment may be personalized to the individual. Such personalized medicine will require access to the patient’s genome.
+			</p>
+
+			<p>
+				The cost of human genome sequencing is decreasing rapidly, from $100 million in 2001 to less than $10,000 per genome in 2013.<span class="Footnote" title="Footnote: "><a href="#ftn16" id="body_ftn16">[16]</a></span> Within 10 to 15 years, sequencing will become standard medical practice. When costs drop below $1,000 per genome, infants will be sequenced immediately following birth (if they were not already sequenced prior to birth) and the rest of us will probably be sequenced at some point as part of a routine medial checkup. Having your complete genome on file in your medical records will enable doctors to warn you of conditions you are at risk of developing so that you can take preventive measures to avoid becoming ill. If you do become ill your genome will help doctors tailor any treatment program specifically to your body’s particular needs.
+			</p>
+
+			<p>
+				The result of continuous health monitoring and personalized medicine is expected to be more effective and less costly medical care. By 2030 people should be living longer and healthier lives.
+			</p>
+
+			<p class="Section">
+				15.5.2.5 A limited form of virtual reality gaming will become popular
+			</p>
+
+			<p>
+				<span class="Bolded">Virtual reality</span>, or VR, is a human-computer interface technology in which a person is completely immersed in a simulated environment. While completely immersive virtual reality ala “The Matrix” won’t happen by 2030, gamers shouldn’t despair. Inexpensive head mounted displays capable of producing high resolution, high frame rate, stereoscopic color imagery, while accurately tracking head movement, will become a popular accessory to game machines over the next five to ten years. An early leader in this area is Oculus VR, makers of the Oculus Rift, which raised nearly $18.5 Million in 2013 – $2.4 million through a Kickstarter campaign and $16 million in venture capital.
+			</p>
+
+			<p>
+				Head mounted displays may be paired up with omnidirectional treadmills, low friction concave surfaces (such as the Virtuix Omni), or some other device that allows one to ‘walk in place’ in any direction. Such a combined system would allow for far more immersive experiences than we have today. Just imagine the fun of exploring a Skyrim-like environment by walking through it.
+			</p>
+
+			<p>
+				Unfortunately, as good as these systems may become, the experience they provide will still be a far cry from Star Trek’s holodeck.
+			</p>
+
+			<p class="Section">
+				15.5.2.6 Augmented reality will become commonplace
+			</p>
+
+			<p>
+				As we have seen, the aim of virtual reality is complete immersion in a virtual world. In <span class="Bolded">Augmented Reality</span>, or AR, the user can see the real world, but in addition computer technology is used to enhance or “augment” what the user sees. The most commonly discussed form of AR employs a mobile heads-up display together with position and orientation sensors capable of detecting where the user is and where he or she is looking. Given this interface, a computer will be able to superimpose computer generated virtual objects on top of the real-world scene.
+			</p>
+
+			<p>
+				The best known example of AR technology to date is Google Glass. As I write this chapter in late 2013, Google Glass is still in beta but is already generating lots of interest as well as lots of controversy. Some people think the technology looks geeky, and at this point they are right. But with improving technology, the sensors, display device, and computer hardware should soon fit into truly lightweight glasses. I believe that while there may be some initial resistance, within 10 to 15 years most people, including you, will probably wear some form of AR gear.<span class="Footnote" title="Footnote: "><a href="#ftn17" id="body_ftn17">[17]</a></span>
+			</p>
+
+			<p>
+				Such technology has great potential for enhancing the world around us. For example, consider what happens when you have to make a connecting flight in a large and unfamiliar airport. Right now, we look up our flight number or destination city on airport monitors to find what gate our flight leaves from, then we check a map of the airport terminal, and finally make our way to the gate. With a properly programmed AR system, all you would have to do is follow the big green arrow that appears to be floating in mid air and it will lead you to your gate. Of course, only you would be able to see this arrow. Other travelers would see their own arrows leading them to their flights.
+			</p>
+
+			<p>
+				For another example, consider a chemistry class in which everyone is wearing AR gear. When the professor discusses sulfuric acid, the entire class would be able to see the H<a class="Subscript">2</a>SO<a class="Subscript">4</a> <img align="bottom" alt="" src="../Images/The%20Past%2C%20Present%2C%20and%20Future%20of%20Computing_html_m393ccfee.gif" /> molecule floating in mid air. Everyone could watch as simulations of chemical reactions took place all around them. The 3-D geometry of molecules and the role of reaction catalysts would be obvious.
+			</p>
+
+			<p>
+				Despite the obvious benefits of AR technology, there is concern about its social implications – especially since Glass has a forward facing camera that can take pictures and record video. In fact, due to the potential for abuse, Google has announced that it will not develop face recognition applications for Glass.<span class="Footnote" title="Footnote: "><a href="#ftn18" id="body_ftn18">[18]</a></span>
+			</p>
+
+			<p class="Section">
+				15.5.2.7 Intelligent assistants will become more intelligent
+			</p>
+
+			<p>
+				Over the next decade, most people in developed countries will begin interacting with intelligent assistants multiple times a day. These assistants will do more than simply manage your schedule and act as an interface to search engines – though those will still be important functions.
+			</p>
+
+			<p>
+				Deep Question Answering systems, of which IBM’s Watson is a present-day example, will be integrated into these assistants. Classical ‘search’ will be replaced by ‘conversation’ where you ask a question, are given an answer, and can ask follow-up questions – just as you would do with a knowledgeable human. Note that these systems will be far more sophisticated than key word searches that return page after page of web links that may or may not contain the information you are looking for.
+			</p>
+
+			<p>
+				Currently, if you want an intelligent assistant to do something for you, you have to explicitly ask it to do so. I expect within the next few years our assistants will grow to the point where they will be able to offer up advice, suggestions, and answers to questions of interest without having to be asked. They will begin anticipating our needs, just as an excellent human assistant is able to do. In order for your assistant to offer this level of help, it will need to learn about you – your likes, dislikes, schedules, and routines. This is clearly the direction that Google is clearly headed with their Google Now product.
+			</p>
+
+			<p>
+				For example, when leaving on a recent trip I was surprised to find that Google Now knew my flight and hotel booking information, though I had not told it these things. Google Now apparently learned the details of my trip by scanning my email. Some people will find this creepy, and to be honest my first reaction was a kind of nervous shock – but once I started getting flight delay and gate change updates, and weather conditions for my destination city, I quickly got over those feelings and began to appreciate how Google Now could make travel a little less weary.
+			</p>
+
+			<p>
+				Google Now also does things like look at your movement patterns, figures out where you live and where you work and then feeds you route and travel time estimates – .updated with current traffic conditions.
+			</p>
+
+			<p>
+				The general idea is that the more these systems know about you the more helpful they can be – and not so coincidentally the more targeted the ads they can feed to you. Barring an extreme backlash over privacy concerns, expect this trend of your intelligent assistant knowing more and more about you to continue over the next decade.
+			</p>
+
+			<p class="Section">
+				15.5.2.8 Self driving cars will start to appear on our roadways
+			</p>
+
+			<p>
+				Even though self driving cars have been ‘just around the corner’ since at least the 1950’s (Fig. 15.16), I’m reasonably confident that over the next 10 to 15 years auto-driving options will become available on higher end personal vehicles.&nbsp;We probably won’t call these vehicles “self-driving cars” because they will continue to support manual driving as the default option. Instead we will probably say something like “intelligent cruise control” is available on this model. In addition to self driving cars, self-driving taxis, 18-wheelers, and other service vehicles will be common by 2030.
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn25%20Futurama%201939%20New%20York%20World%27s%20Fair%20To%20New%20Horizons%201940%20General%20Motors%2023min.mp4">
+				Futurama 1939 New York World's Fair To New Horizons 1940 General Motors 23min
+			</video>
+
+			<p class="Figure">
+				Figure 15.16&nbsp;In fact as far back as the 1939 World’s Fair, General Motors claimed in their Futurama exhibit that on the motorways of 1960 “safe distance between cars is maintained by automatic radio control’ at 14:30-14:50
+			</p>
+
+			<p>
+				The introduction of “intelligent cruise control” will be gradual and is, in fact, already happening. Systems that prevent you from following too closely to a vehicle in front of you – applying the brakes if necessary – are standard on some higher end models today. Systems to assist with steering in emergency situations are appearing. Some cars can now parallel park themselves. Systems that can handle driving on Interstates and freeways – including dealing with stop and go traffic – will probably be the next part of the driving experience to be automated. Systems capable of handling construction zones, understanding the hand signals of traffic cops, and coping with various kinds of inclement weather, such as ice and snow, will probably prove the most complex to develop.
+			</p>
+
+			<p class="Section">
+				15.5.2.9 Photorealistic virtual actors will start to appear.
+			</p>
+
+			<p>
+				Over the next 10 years or so I believe we will begin to see the use of computer generated, photo-realistic vactors (virtual actors) that are indistinguishable from real actors in movies and TV shows.<span class="Footnote" title="Footnote: "><a href="#ftn19" id="body_ftn19">[19]</a></span> More specifically, I predict that within the next 15 years there will be a film featuring 1950’s sex symbols Marilyn Monroe and James Dean – even though these two actors never worked together during their lives. Similarly, I wouldn’t be surprised to see new episodes of the original Star Trek series, staring Shatner (Kirk), Nimoy (Spock), and Kelly (McCoy) in their mid-1960’s prime. These characters will look, act, and sound (perhaps through motion capture and voice actors) very close, if not identical to the originals. If Hollywood chooses not to go in this direction, I believe fans of the original series will take it upon themselves to do so (Fig. 15.17).
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn27%20Starship%20Exeter_%20The%20Tressaurian%20Intersection%20%28Intro_Teaser%29.mp4">
+				Starship Exeter_ The Tressaurian Intersection (Intro_Teaser)
+			</video>
+
+			<p class="Figure">
+				Figure 15.17 An example of the level of quality of some fan generated Star Trek inspired productions
+			</p>
+
+			<p>
+				Progress toward constructing vactors is ongoing. Hollywood is already very good at generating believable aliens (such as the Na’vi from Avatar) and human-like creatures (such as Gollum from The Hobbit and Dobby in the Harry Potter movies). Computer graphics have also been used quite effectively to generate much older versions of actors (such as Brad Pitt’s character in “The Curious Case of Benjamin Button”) and far less successfully to generate younger versions of actors (Patrick Stewart’s Professor X and Ian McKellen’s Magneto in the opening flashback scene of 2006’s “X-Men: The Last Stand”; and the younger version of Jeff Bridges’ character in Tron 2). Despite this progress, as of 2013, I am aware of no computer generated character that fits the definition of a completely photorealistic virtual actor (Fig. 15.18).
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn28%20Kara%20-%20Heavy%20Rain%27s%20Dev%20Trailer.mp4">
+				Kara - Heavy Rain's Dev Trailer
+			</video>
+
+			<p class="Figure">
+				Figure 15.18 While no one would mistake the computer generated Kara for a human actress, the realism is rather amazing, especially when one considers this video was generated in real time on a PS3.
+				<br />
+			</p>
+
+			<p class="Section">
+				15.5.2.10 Artificial general intelligence will be achieved in supercomputers
+			</p>
+
+			<p>
+				I began this section on predictions for the next 15 years by stating a few things that would <span class="Ital">not</span> happen. Among other things, I said: “Artificial Intelligence systems capable of human-level dialog won’t exist on your smart devices and game machines in this time period.” While I believe that statement to be true, I also believe that by 2030 we will have finally achieved artificial general intelligence through human brain simulation on supercomputers. In other words, an AI capable of passing the Turing Test will exist, but it will take the full resources of one of the world’s fastest machines of the day to carry out the human brain simulation underlying that intelligence.
+			</p>
+
+			<p>
+				For nearly two decades prominent futurist Ray Kurzweil<span class="Footnote" title="Footnote: "><a href="#ftn20" id="body_ftn20">[20]</a></span>has been predicting the emergence of exascale supercomputers capable of one billion billion computations per second (one exaflop) by 2020 running real time human brain simulations to enable full scale human AI by 2029. These predictions, which were once considered by most to be somewhere between fringe science and science fiction have now, at least in part, become mainstream science backed by government initiatives in the US and Europe with billions of research dollars promised over the next decade. Given this commitment, together with the progress being made understanding and simulating regions of the brain, and the long-term stability of Moore’s Law that I have personally witnessed over my lifetime, I am willing to go on record saying that I believe Kurzweil is correct in his prediction that artificial general intelligence through human brain simulation will succeed by 2030.
+			</p>
+
+			<p>
+				The human brain contains about 100 billon (1 X 10<sup>11</sup>) <span class="Bolded">neurons</span> or individual brain cells. Individual neurons can directly communicate with anywhere from hundreds to thousands other neurons by sending electro-chemical signals across the tiny gaps between neurons called synaptic gaps or <span class="Bolded">synapses</span>. Thus, the total number of synapses in the human brain is generally estimated to be somewhere between 100 trillion (1 X 10<sup>14</sup>) to 1 quadrillion (1 X 10<sup>15</sup>). These numbers together with results from early brain research projects, such as The Blue Brain Project which successfully simulated a small part of the rat brain, have led researchers to estimate that real time neural simulation of the entire human brain will require about 1 to 10 ExaFLOPS of computing power – in other words between 1 billion billion (1 X 10<sup>18</sup>) and 10 billion billion (1 X 10<sup>19</sup>) computations per second. (<span class="Bolded">FLOPS</span> stands for FLoating-point Operations Per Second and is a standard measure of computer speed based on the number of mathematical operations that can be processed each second.)
+			</p>
+
+			<p>
+				As mentioned in section 15.3.2, the fastest supercomputer in the world (as of June 2013) runs at 33.83 petaFLOPS, and the speed of such systems has historically doubled approximately every two years. Given the emphasis on supercomputing and the worldwide competition for ‘bragging rights’ to the country that has the fastest machine, supercomputing experts expect a computer capable of 1 or more exaFLOPS by 2020.
+			</p>
+
+			<p>
+				In addition to the progress being made in constructing the necessary hardware to support human brain simulation, work on understanding the brain itself is proceeding apace.<span class="Footnote" title="Footnote: "><a href="#ftn21" id="body_ftn21">[21]</a></span>In Europe, Dr. Henry Markram’s Human Brain Project, the successor to his highly successful Blue Brain Project, was funded by the European Union in January 2013 for up to $1.3 billion over a ten year period. In the United States, President Obama announced the BRAIN initiative in April 2013 with a projected budget of $3 billion over a ten year period. These two decade long projects focus on understanding the brain and ultimately building real time human brain simulations.
+			</p>
+
+			<p>
+				Thus, it looks increasingly likely that within 10 to 15 years we will have both the supercomputer hardware and the brain simulation software to implement a real time neural simulation of the human brain. Such a simulation should “appear” intelligent and be capable of passing the Turing Test – though it may take several years to do so as the simulation will probably need to be taught to use language in the same way that human children must be taught to speak.
+			</p>
+
+			<p>
+				When humans achieve the goal of building an artificial general intelligence we will have accomplished an amazing feat, at least as significant in human history as Man’s first steps on the Moon. Even so, the first exascale computer running a human brain simulation will fill a large room and is projected to consume on the order of 20 to 30 megawatts of power. This compares to your brain which fits in your skull and consumes the equivalent of about 20 watts of power. In other words, even if these projects succeed our brains should still be about a million times more power efficient than a simulated brain running on a supercomputer.
+			</p>
+
+			<p>
+				I will close this section by noting that human brain simulation is only one possible path to achieving artificial general intelligence and in some ways the least interesting. What I mean by this is that successfully copying a system that already produces intelligent behavior (the human brain) does not mean we will necessarily understand how that system produces intelligent behavior. It would be far more satisfying to ‘engineer’ intelligence directly. This is, in fact, the direction that AI research has been pursuing for well over half a century now.
+			</p>
+
+			<p>
+				Even though progress in AI has not been anywhere near as fast as researchers had originally hoped and expected, when one considers that today’s fastest supercomputer is no more than 3% as powerful as the human brain, and our servers and mobile smart devices are just a tiny fraction of 1% as powerful as the human brain, the fact that we have made any measurable progress at all in artificial intelligence up to now is rather amazing. It seems only reasonable that problems, which are today totally intractable to engineered solutions, such as fluency in human languages and common sense reasoning, will surely fall when sufficient computational resources can be brought to bear.
+			</p>
+
+			<p class="Section">
+				15.5.3 Long-term predictions (2030 - 2050)
+			</p>
+
+			<p>
+				In this final section of the book, I’ll go way out on a limb and make a few predictions beyond the 15 year horizon of the previous section – focusing on expectations for the 2030 to 2050 timeframe. Obviously, the further out one looks the more speculative the predictions become. Thus if you took the predictions of the previous section with a grain of salt, which you certainly should have, you should take these with at least three.
+			</p>
+
+			<p class="Section">
+				15.5.3.1 Human level artificial general intelligence will be common.
+			</p>
+
+			<p>
+				Assuming that computing power continues the exponential doubling it has historically enjoyed, we can expect the capacity of a 2030 supercomputer to be available “on the desktop” (or whatever the appropriate metaphor will be) by 2050. Under this assumption, I think it reasonable to conclude that software entities that appear to have human level intelligence will be commonplace by the midpoint of this century.
+			</p>
+
+			<p>
+				I believe that the “strong AI” verses “weak AI” debate, touched on in Chapter 14, will be a significant social issue by 2050. As you may recall, the difference between strong and weak AI is not based on behavior but on whether humans choose to view an AI as “really” intelligent or just “a good fake”. If we believe our machines to be truly intelligent, then the issue of AI rights becomes very important. However, because the question of whether an AI can ever really be aware, in the same sense that humans are aware, has no objective answer, the issue will probably be approached on moral and religious grounds. Depending on whether the AIs derive from human brain simulations or whether they are engineered from first principles may tilt the debate one way or the other. Regardless, it seems clear that conflict is almost certain to arise.
+			</p>
+
+			<p class="Section">
+				15.5.3.2 Fully immersive virtual reality will appear.
+			</p>
+
+			<p>
+				Fully immersive virtual reality, indistinguishable from ‘real’ reality, will happen, but beyond the 2030 timeframe.
+			</p>
+
+			<p>
+				To date, military and civilian aircraft simulators used to train pilots are the closest we’ve come to implementing a true VR environment. These systems succeed because the pilot is sitting in a physical cockpit that is identical to the one in the actual aircraft. The computer system only has to simulate the view visible through the airplane’s windows. Because the windows in the plane provide a relatively small viewing angle and the viewable objects are far away, the simulation can appear to be reasonably realistic. Advanced simulators are placed on gimbals that can change the orientation of the simulator under computer control to provide the physical sensation of nose up and nose down, or shake the simulator to mimic turbulence. Doing so further adds to the sense of immersion.
+			</p>
+
+			<p>
+				In section 15.5.2.5 we covered existing and near-term VR systems consisting of head mounted stereoscopic display devices and some kind of device to allow a person to ‘walk in place’. These systems may be augmented with a data glove that provides haptic (tactile / touch) feedback. Regardless, these approaches to VR simply are not adequate to produce truly immersive experiences.
+			</p>
+
+			<p>
+				How does one reproduce the sensation of strolling about a forest? Say the user decides to reach down, pick up a stick, and throw it. What kind of I/O device could provide the realistic tactile feedback required for such an action? Surely, a data glove falls far short. What if the user decides to take a dip in the river that flows through the forest? Ultimately all of these questions reduce to “how does one build a Star Trek-type holodeck using real technology?”
+			</p>
+
+			<p>
+				I believe that truly immersive VR will require a brain computer interface of some sort. Specifically what I have in mind are five small devices – two attached to (or cutting across) the optic nerves, one for each ear, and one implanted at the base of the skull that attaches to (or cuts across) the spinal cord. Normally these devices would act in a passive manner, simply relaying signals from our eyes, ears, and limbs to our brain – for all intents and purposes if would be as if the devices weren’t even there. In active mode however, these devices would take inputs from a simulated world and pass those inputs to the brain. They would also transmit the outputs from the brain to the simulation.
+			</p>
+
+			<p>
+				From the point of view of the outside world, the user would be immobile while in a simulation – probably lying safely in bed. From the user’s point of view he or she would be completely immersed in a virtual world – it would look, sound, and feel completely real. You’d be able to run, jump, swim, etc. The only limitations would be that smell and taste would be missing and you wouldn’t have sensation (from the simulated world) in your face, since those nerve signals don’t pass through the optic nerves or spinal cord. These issues could be addressed with somewhat more invasive implants.
+			</p>
+
+			<p>
+				It is fun to speculate how this technology would be used. Personally, I think it will prove especially popular with the 80 year old plus crowd. Even as their physical bodies fail them, they could still be enjoying ski vacations in Aspen and scuba diving along the Great Barrier Reef. And what 80 year old wouldn’t want to look, as well as feel, 30 again?
+			</p>
+
+			<p>
+				Various psychological conditions may arise where individuals become convinced that the “real” world is ‘just another level’ in some simulation. I can even foresee some rather unique legal defenses – perhaps where a man accused of violently murdering his boss pleads for manslaughter rather than first degree murder because he became confused as to reality verses simulation and he always murders his boss on the weekends in virtual reality as a harmless way of letting off steam – which is what he thought he was doing when he committed the actual murder.
+			</p>
+
+			<p>
+				While the technical and physical issues to implementing truly immersive VR are formidable, there is another set of problems that people have barely begun to even recognize, much less actually solve. A great deal of attention has been devoted to the concept of “playing” in VR environments, but much less has been paid to how people will “work” in such environments.
+			</p>
+
+			<p>
+				As a thought experiment, I can imagine writing a future version of this text using advanced VR to simulate a grand Victorian library where I sit at a massive oak desk in an oversized stuffed leather chair, typing away on a realistically rendered manual typewriter using paper that feels real to the touch, where mistakes must be erased by hand using an accurately simulated rubber eraser. While such a setting would be cool, obviously I’d be far less productive in such an environment than I am typing away on my laptop. What we’d like however is for VR to make us <span class="Ital">more</span> productive, not less.
+			</p>
+
+			<p>
+				In order to work effectively, we will need to figure out how abstract concepts can be most effectively represented in virtual worlds. How will people retrieve, modify, and store information in a VR system? How will they solve problems? How will they conduct business transactions? In other words, what kind of simulation will provide an appropriate interface to a world of abstract concepts? Presently, no one knows. But this topic is sure to be fertile ground for research for years to come.
+			</p>
+
+			<p class="Section">
+				15.5.3.3 Ray Kurzweil’s singularity will <span class="Ital">not</span> take place by 2050, or even by 2100
+			</p>
+
+			<p>
+				As discussed above, scientists are beginning to converge on an estimate of 1 to 10 exaFLOPS as the amount of raw processing power needed to simulate a human brain in real time. Some, such as Ray Kurzweil, believe that human level cognition could eventually be accomplished on less powerful machines. Kurzweil estimates that 10 petaFLOPS, 1/100 of an exaFLOPS, should be sufficient.<span class="Footnote" title="Footnote: "><a href="#ftn22" id="body_ftn22">[22]</a></span> Amazingly, since our fastest supercomputers now run at over 33 petaFLOPS (as of 2013), according to Kurzweil we should already possess the necessary supercomputer hardware to support an artificial general intelligence. If Kurzweil’s estimate is correct, why haven’t we already constructed an AI? The answer is simple, we haven’t yet figured out how to generate the appropriate software.
+			</p>
+
+			<p>
+				For many years, Kurzweil has used the year 2029 as his target for when we will achieve human level intelligence in a machine – a machine capable of passing the Turing Test. When he first came out with these predictions, most ‘reputable’ scientists gently shook their heads and smiled. But that is changing rapidly.
+			</p>
+
+			<p>
+				Regardless of whether 10 petaFLOPS, or 10 exaFLOPS, or something in between turns out to be the magic number necessary to support human level artificial intelligence, we appear to be quite close to achieving the necessary hardware. Additionally, given recent progress in artificial vision (Kinect), speech recognition and generation (Siri, Google Now), deep question answering (IBM’s Watson), and ongoing initiatives in the US and Europe to understand how the human brain works, the software component finally seems to be falling into place. Thus, Kurzweil’s estimate for achieving AGI (artificial general intelligence) by 2029 now seems reasonable to many knowledgeable individuals.
+			</p>
+
+			<p>
+				Achieving artificial general intelligence, however, is not Kurzweil’s most famous, nor most controversial, prediction. Essentially Kurzweil believes that the exponentially doubling trend in computer power will continue indefinitely – and this leads him to make an astonishing prediction: By 2045 he predicts a “technological singularity” will occur.
+			</p>
+
+			<p>
+				The <span class="Bolded">singularity</span> is a point in time at which the rate of technological change will become so rapid that unenhanced humans will no longer be able to comprehend what is happening. Kurzweil believes that humans (or at least a significant portion of the human population) will choose to merge with super intelligent AIs leading to a post-singularity world of near immortal, near God-like beings (Fig. 15.19, 15.20).
+			</p>
+
+			<br />
+
+			<video controls="controls" src="../Video/fn32%20Transcendent%20Man%20Film%20Trailer.mp4">
+				Transcendent Man Film Trailer
+			</video>
+
+			<p class="Figure">
+				Figure 15.19 Trailer for the film “Transcendent Man” an excellent documentary about the life of Ray Kurzweil and his ideas concerning the Singularity
+			</p>
+
+			<div>
+				<br />
+
+				<br />
+
+				<video controls="controls" src="../Video/fn33%20THE%20SIX%20EPOCHS%20OF%20EVOLUTION%20by%20%40JasonSilva.mp4">
+					THE SIX EPOCHS OF EVOLUTION by @JasonSilva
+				</video>
+				<br />
+				
+			</div>
+
+			<p class="Figure">Figure 15.20 Very brief summary of Kurzweil’s “Six Epochs of Evolution” by Jason Silva</p>
+				
+			<p>
+				Obviously, this is a controversial idea that many dismiss as a form of religion – “rapture of the nerds” is a phrase that is sometimes heard.
+			</p>
+
+			<p>
+				But, let’s look at this prediction in a bit more detail, taking for the sake of argument that we will have achieve one human AI equivalent in a supercomputer by 2030 – something that many now view as reasonable. <span class="Bolded">IF</span> the exponential increase in computing speeds continues at the rate of one doubling approximately every 2 years, in 20 years computing should have increased 1,000 fold. Thus, by 2050 a “laptop equivalent” (which runs about 1,000 times slower than a supercomputer) should possess one human level equivalent and a supercomputer should possess 1,000 human level equivalents. In another 20 years, by 2070, the laptop will support 1,000 human level equivalents and the supercomputer one million human level equivalents. By 2090, one million human level equivalents in the average laptop and a billion human level equivalents in the supercomputer.
+			</p>
+
+			<p>
+				Under such circumstances how long do <span class="Bolded">you</span> think humans would remain the dominant intellectual force on the planet? How long would we remain in control? Wouldn’t the only option be to “join” them?
+			</p>
+
+			<p>
+				While I do think many of the predictions that Kurzweil makes are reasonable and will come to pass over the course of the next 50 years – such as artificial general intelligence, greatly expanded human lifespans, and nanotech assemblers able to construct most physical goods (including food, clothing, and shelter) directly from raw materials at almost zero cost – I do <span class="Bolded">not</span> believe the singularity will occur during the 21<sup>st</sup> century.
+			</p>
+
+			<p>
+				My reason for this view is simple. Humans are not ready to ‘step aside’ as the premier species on the planet. Moore’s Law (and any successor that continues the exponential doubling of computing power) is not a physical “law”. This progress happens only because we humans work hard to make it happen. In my opinion no sane human would want his laptop to be a thousand times smarter than he is. So, we won’t build such things. We will begin to limit the advance of future computer systems – either their intelligence or their ‘desire for independence’ so that we humans remain firmly in control for the foreseeable future.
+			</p>
+
+			<p>
+				Eventually, at some point in the distant future, humans may decide that merging with intelligence systems to create super powerful merged human / AI hybrids is a desirable thing. These hybrids would presumably blend the creativity and insight of human beings with the exponentially increasing power of computing hardware to become a fundamentally different type of “post-human”. Thus, I’m not saying the singularity will <span class="Ital">never</span> happen, just that it is not something that will occur any time “soon”.
+			</p>
+
+			<!-- End main content -->
+			<hr />
+			<!-- Footnotes -->
+			<p class="Section">
+				Footnotes
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn1" id="ftn1">[1]</a>&nbsp;The complete demo – which runs 90 minutes in length is available online at:<a href="http://sloan.stanford.edu/MouseSite/1968Demo.html"> http://sloan.stanford.edu/MouseSite/1968Demo.html </a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn2" id="ftn2">[2]</a>&nbsp;<a href="http://www.idc.com/getdoc.jsp?containerId=prUS24129713">http://www.idc.com/getdoc.jsp?containerId=prUS24129713</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn3" id="ftn3">[3]</a>&nbsp; Electronics, Volume 38, Number 8, April 19, 1965. An archived copy is available online at <a href="http://download.intel.com/museum/Moores_Law/Articles-Press_Releases/Gordon_Moore_1965_Article.pdf">http://download.intel.com/museum/Moores_Law/Articles-Press_Releases/Gordon_Moore_1965_Article.pdf</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn4" id="ftn4">[4]</a>&nbsp; “Excerpts from a conversation with Gordon Moore: Moore’s Law”, Intel, 2005. An archived copy is available online at <a href="ftp://download.intel.com/museum/Moores_Law/Video-Transcripts/Excepts_A_Conversation_with_Gordon_Moore.pdf">ftp://download.intel.com/museum/Moores_Law/Video-Transcripts/Excepts_A_Conversation_with_Gordon_Moore.pdf</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn5" id="ftn5">[5]</a>&nbsp; This figure comes from the Wikipedia article on Moore’s Law. <a href="http://en.wikipedia.org/wiki/Moore's_law">http://en.wikipedia.org/wiki/Moore's_law</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn6" id="ftn6">[6]</a>&nbsp; “Why we need Exascale and why we won’t get there by 2020”, Horst Simon, Optical Interconnects Conference, May 6, 2013, page 49. Available at: <a href="http://www.slideshare.net/ultrafilter/exaflops">http://www.slideshare.net/ultrafilter/exaflops</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn7" id="ftn7">[7]</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Accelerating_change">http://en.wikipedia.org/wiki/Accelerating_change</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn8" id="ftn8">[8]</a>&nbsp;<a href="http://arstechnica.com/information-technology/2013/08/moores-law-could-stay-on-track-with-extreme-uv-progress/">http://arstechnica.com/information-technology/2013/08/moores-law-could-stay-on-track-with-extreme-uv-progress/</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn9" id="ftn9">[9]</a>&nbsp;<a href="http://www-03.ibm.com/press/us/en/pressrelease/39641.wss">http://www-03.ibm.com/press/us/en/pressrelease/39641.wss</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn10" id="ftn10">[10]</a>&nbsp; Hamiltonian path, first posed by William Hamilton, is an example of an NP-Complete problem – a problem for which all known algorithms require exponential time to find a solution, but which once solved the solution can be verified correct quite rapidly (in polynomial time).
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn11" id="ftn11">[11]</a>&nbsp; “<a href="http://www2.latech.edu/~mike/Resources/Adventures%20in%20Synthetic%20Biology.vol1.pdf">Adventures in Synthetic Biology</a>” by Drew Endy, Isadora Deese, and Chuck Wadey provides an accessible introduction to synthetic biology in the form of a web comic.
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn12" id="ftn12">[12]</a>&nbsp;&nbsp;<a href="http://www.sciencenews.org/view/generic/id/347702/description/DNA_stores_poems_a_photo_and_a_speech">http://www.sciencenews.org/view/generic/id/347702/description/DNA_stores_poems_a_photo_and_a_speech</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn13" id="ftn13">[13]</a>&nbsp; Yes, this is a bad pun on Bill Gates name. Become a respected scientist and one day you too might be able to name your fundamental breakthrough something silly. &#x263a;
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn14" id="ftn14">[14]</a>&nbsp; A published copy of this talk – well worth a read over half a century after it was given – can be found on the web at <a href="http://www.zyvex.com/nanotech/feynman.html">http://www.zyvex.com/nanotech/feynman.html</a>. I encourage you to check it out.
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn15" id="ftn15">[15]</a>&nbsp; While this quote is generally attributed to Berra, a similar quote “Prediction is very difficult, especially if it’s about the future.” is attributed to physicist Niels Bohr. Some have suggested the joke first originated with Mark Twain (Samuel Clemens).
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn16" id="ftn16">[16]</a>&nbsp; The Human Genome Project itself, the project to first sequence the human genome, cost on the order of $3 billon.
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn17" id="ftn17">[17]</a>&nbsp;&nbsp;And don’t worry about looking like a geek. AR glasses will come in designer styles and be thought of as very cool.
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn18" id="ftn18">[18]</a>&nbsp; This author hopes Google will change its stance on facial recognition as people become more familiar with the technology, since he is one of those individuals who can’t remember people’s names and would welcome a technology that would simply superimpose names directly beneath people’s faces.
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn19" id="ftn19">[19]</a>&nbsp; In the interest of full disclosure, I originally made this prediction in 2002 and am somewhat surprised it hasn’t already come to pass. Of course, given the 2008 movie “The Curious Case of Benjamin Button” in which the face and head of the very old version of the character played by Brad Pitt is computer generated, some might argue the prediction has already become reality.
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn20" id="ftn20">[20]</a>&nbsp;<span>And why should we listen to this guy? Ray Kurweil is considered the “father” of modern optical character recognition software (giving computers the ability to “read” printed text), text-to-speech synthesis technology (giving computers the ability to convert text into spoken words), and automated speech recognition technology (giving computers the ability to understand spoken languages).</span>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn21" id="ftn21">[21]</a>&nbsp;According to Horst Simon, the Deputy Director of the Lawrence Berkeley National Laboratory’s National Energy Research Scientific Computing Center (NERSC) speaking in May 2013, our best brain simulations are at 4.5% of human scale, running at 1/83 real time speed. <a href="http://www.extremetech.com/computing/155941-supercomputing-director-bets-2000-that-we-wont-have-exascale-computing-by-2020">http://www.extremetech.com/computing/155941-supercomputing-director-bets-2000-that-we-wont-have-exascale-computing-by-2020</a>
+			</p>
+
+			<p class="Footnote">
+				<a href="#body_ftn22" id="ftn22">[22]</a>&nbsp; The basic idea underlying this lower estimate is that your brain has lots of redundancy that we should be able to eventually eliminate. Once we figure out how various evolved systems function, we should be able to redesign them to function more efficiently.
+			</p>
+
+			<!-- Footnotes End -->
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div>
+	</body>
+</html>
