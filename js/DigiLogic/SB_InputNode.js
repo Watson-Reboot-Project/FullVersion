@@ -50,6 +50,11 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 	this.toggleDeleteIcon = toggleDeleteIcon;
 	this.toggleOutputValue = toggleOutputValue;
 	this.getOutputValue = getOutputValue;
+	this.deleteSelf = deleteSelf;
+	this.getInputBoxCoords = getInputBoxCoords;
+	this.getOutputBoxCoords = getOutputBoxCoords;
+	this.loopCheckBackward = loopCheckBackward;
+	this.loopCheckForward = loopCheckForward;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -132,6 +137,18 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 		drawBoxes();
 	}
 	
+	function getInputBoxCoords() {
+		// return null, no input box
+		return null;
+	}
+	
+	function getOutputBoxCoords() {
+		var pos = outputBox.getAbsolutePosition();
+		var corners = [];
+		
+		return { x1: pos.x, x2: pos.x + outputBox.getWidth(), y1: pos.y, y2: pos.y + outputBox.getHeight() };
+	}
+	
 	function drawBoxes() {
 		var plug;
 		if (outputBox) {
@@ -157,6 +174,12 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 	function getOutputBox() {
 		return outputBox;
 	}
+	
+	function deleteSelf() {
+		group.remove();
+		outputBox.remove();
+	}
+	
 	
 	function toggleDeleteIcon() {
 		
@@ -184,7 +207,9 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 		return line;
 	}
 	
-	function setValue(val) { value = val; }
+	function setValue(val) { 
+		value = val;
+	}
 	
 	function getValue() { return value; }
 	
@@ -201,7 +226,7 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 		else evaluate();
 	}
 	
-	function toggleOutputValue() {
+	function toggleOutputValue(bool) {
 		var color = "blue";
 		if (value == 0) {
 			value = 1;
@@ -215,7 +240,9 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 			plugoutWire.setStroke(color);
 			plugoutComp.setPluginColor(thisObj, color);
 		}
-		evaluate();
+		if (!bool) {
+			evaluate();
+		}
 	}
 	
 	function evaluate() {
@@ -254,5 +281,13 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 	
 	function getOutputValue() {
 		return value;
+	}
+	
+	function loopCheckForward() {
+		return false;
+	}
+	
+	function loopCheckBackward() {
+		return false;
 	}
 }

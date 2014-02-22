@@ -12,17 +12,22 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <style type='text/css'>
+			table td {
+			border:none;
+			}
+		</style>
 	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link rel='stylesheet' href='lib/css/bootstrap-3.css'>
+	    <link href = "lib/assembly.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	</head>
 
@@ -79,8 +84,7 @@
 				The assembly language program that implements this high-level code segment introduces two new instructions: <span class="Subfigure">COMPARE</span> and <span class="Subfigure">BRANCH</span>.   These two statements can be used together to implement the semantics of high-level “if” constructs.  The program also illustrates that any statement in an assembly language program may have a label associated with it, not just <span class="Subfigure">.BLOCK</span> and .<span class="Subfigure">WORD</span> statements.
 			</p>
 			
-			<!-- Start of figure 11-5
-			<p>
+			<p class="Centered">
 				High-level Watson JavaScript code:
 			</p>
 			
@@ -93,10 +97,12 @@
 				</ul>
 				<li><span class="Subfigure">}</span></li>
 			</ul>
-			-->
+			<br />
+			<p class="Centered">
+				Equivalent Assembly Language code:
+			</p>
+			<br />
 			
-			<img src="Images/AssemblyIMGS/fig11-5.png" alt="" class="Image">
-
 			<!--
 			<p><span class="Subfigure">AGE        .WORD     2                        </span>;  declare and initialize “age” to 2.  Our subject is 2 years old.</p>
 			
@@ -122,6 +128,7 @@
 			
 			<p><span class="Subfigure">ENDIF        HALT                                </span>;  halt execution of this assembly language program.</p>
 			-->
+			<div id='fig115Div'></div>
 			<p class="Figure">
 				Figure 11.5: High-level and assembly code to determine whether a person is a minor.
 			</p>
@@ -280,7 +287,7 @@
 			<p>
 				This statement will always execute when the program is run, regardless of whether the condition was true or false.
 			</p>
-
+			<!-- Image Figure
 			<img src="Images/AssemblyIMGS/fig11-6.png" alt="" class="Image">
 			<!-- Text Figure
 			<h4 class="Blockcenter">
@@ -342,7 +349,7 @@
 			
 			<p><span class="Subfigure">ENDIF &nbsp;&nbsp; HALT                          </span>;  halt execution of this assembly language program.</p>
 			-->
-			
+			<div id='fig116Div'></div>
 			<p class="Figure">
 				Figure 11.6: High-level and assembly code to increment minor and adult counters.
 			</p>
@@ -476,5 +483,21 @@
 
 			</div>
 		</div>
+		<script type='text/javascript' src='lib/js/angular.js'></script>
+    	<script type='text/javascript' src='lib/js/jQuery.js'></script>
+    	<script type='text/javascript' src='lib/js/less.js'></script>
+    	<script type='text/javascript' src='lib/js/ui-bootstrap-0.10.0.js'></script>
+    	<script type='text/javascript' src='lib/js/tabs.js'></script>
+    	<script type='text/javascript' src='lib/js/ui-bootstrap.js'></script>   	
+		<script type='text/javascript' src='js/Assembly/assemblyui.js'></script>	
+    	<script type='text/javascript' src='js/Assembly/inputs.js'></script>
+    	<script src='js/Assembly/figures.js'></script>
+    	
+    	<script>
+    			var fig115 = new Figure(115);
+    			var fig116 = new Figure(116);
+				angular.bootstrap(document.getElementById("fig115"), ['assembly115']);
+				angular.bootstrap(document.getElementById("fig116"), ['assembly116']);
+		</script>
 	</body>
 </html>

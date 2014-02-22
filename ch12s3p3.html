@@ -17,6 +17,7 @@
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script src="js/DigiLogic/jquery-ui-1.10.4.custom.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -165,7 +166,8 @@
 			</ol>
 			<!-- Sandbox -->
 			<p class="Section" id="Scratch"></p>
-			<div id="sandbox1" style='border: solid 1px;'></div>
+			<div id="sandbox1"></div>
+			<div id="truthTableDiv1" class="ui-widget-content" style="position: relative; visibility: hidden"></div>
 
 			<!-- End main content -->
 			<hr />
@@ -230,7 +232,7 @@
 			var figure13 = new DigitalLogicFigure("container-13", "13"); 
 			if (detectMobile() == false) {
 				document.getElementById("Scratch").innerText="Scratch Pad";
-				var lab = new DigitalLogicsLab("sandbox1");
+				var lab = new DigitalLogicsLab(1);
 			}
 
 			function detectMobile() { 

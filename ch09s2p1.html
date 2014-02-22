@@ -101,7 +101,7 @@
 			</p>
 
 			<div class="Standard">
-				In this section we will concentrate on Lisp, the best known and most commonly used functional language.  <span class="Bolded">Lisp</span> is a LISt Processing language.  First developed in 1958 by John McCarthy, Lisp is the second oldest programming language still in widespread use.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: The oldest high-level language still in widespread use today is FORTRAN, though like LISP modern dialects of FORTRAN contain many features absent from earlier versions."><a href="#ftn1" id="body_ftn1">1</a></span></span>  Though the language has changed somewhat over the years, our presentation concentrates on some of the core features of Lisp that have remain unchanged for many years.
+				In this section we will concentrate on Lisp, the best known and most commonly used functional language.  <span class="Bolded">Lisp</span> is a LISt Processing language.  First developed in 1958 by John McCarthy, Lisp is the second oldest programming language still in widespread use.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: The oldest high-level language still in widespread use today is FORTRAN, though like LISP modern dialects of FORTRAN contain many features absent from earlier versions."><a href="#ftn1" id="body_ftn1">[1]</a></span></span>  Though the language has changed somewhat over the years, our presentation concentrates on some of the core features of Lisp that have remain unchanged for many years.
 			</div>
 
 			<p>
@@ -256,9 +256,6 @@
 			<p>
 				returns the atom “<span class="Subfigure Lite">this</span>” which is the first element of the list.
 			</p>
-			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) )</span>
-			</p>
 
 			<h1>INSERT MISSINGOBJECT HERE</h1>
 
@@ -358,19 +355,15 @@
 			<p>
 				will return <span class="Subfigure Lite">(within a list)</span>– everything in the original list save the first element <span class="Subfigure Lite">(a list)</span>.
 			</p>
-			<p class="P4">
-				 
-			</p>
+			
 			<p>
 				Since <span class="Subfigure">cdr</span> operations always return a list, it is always possible to perform a <span class="Subfigure">cdr</span> on the results of another <span class="Subfigure">cdr</span> operation.  In other words, <span class="Subfigure">cdr</span> operations may be nested.  If the input list to <span class="Subfigure">cdr</span> is either an empty list or a list that contains only a single item, <span class="Subfigure">cdr</span> returns the empty list, nil, as its result.  Thus,
 			</p>
 			<ul class="Blockcenter">
 				<li><span class="Subfigure">(cdr (quote </span><span class="Subfigure Lite">(list)</span><span class="Subfigure">))</span></li>
-				<ul class="Subblockcenter">
-					<li><span class="Subfigure">(cdr () )</span></li>
-				</ul>
-			<li><span class="Subfigure">(cdr nil)</span></li>
-			
+				<li><span class="Subfigure">(cdr () )</span></li>
+				<li><span class="Subfigure">(cdr nil)</span></li>
+			</ul>
 
 			<p>
 				each return nil, which is the same as the empty list <span class="Subfigure">()</span>.
@@ -409,7 +402,7 @@
 			</p>
 
 			<p>
-				Sometimes as we are processing a list, we end up in a situation were we have a one element list, where that element is itself a list, and we wish to delve into the underlying list.  In other words, a situation with a list like <span class="Subfigure Lite">((many sublists)) where it is first necessary to <span class="Subfigure">car</span> this list to get to the underlying list <span class="Subfigure Lite">(many sublists) before you can process that list.  I point this out, since it is quite easy to overlook this required step.
+				Sometimes as we are processing a list, we end up in a situation were we have a one element list, where that element is itself a list, and we wish to delve into the underlying list.  In other words, a situation with a list like <span class="Subfigure Lite">((many sublists))</span> where it is first necessary to <span class="Subfigure">car</span> this list to get to the underlying list <span class="Subfigure Lite">(many sublists)</span> before you can process that list.  I point this out, since it is quite easy to overlook this required step.
 			</p>
 
 			<h1>INSERT MISSINGOBJECT HERE</h1>
@@ -425,9 +418,7 @@
 			<p class="Figure">
 				<span class="Subfigure">(cons (quote </span><span class="Subfigure Lite">this</span><span class="Subfigure">) (quote</span><span class="Subfigure Lite">(is a list)</span><span class="Subfigure">) )</span>
 			</p>
-			<p class="Subfigure">
-				 
-			</p>
+			
 			<p>
 				returns the list <span class="Subfigure Lite">(this is a list)</span>.  Note that the <span class="Subfigure">car</span> of <span class="Subfigure Lite">(this is a list)</span> is the atom <span class="Subfigure Lite">this</span>, which was the first input to <span class="Subfigure">cons</span>.  The <span class="Subfigure">cdr</span> of <span class="Subfigure Lite">(this is a list)</span> is the list <span class="Subfigure Lite">(is a list)</span>, which was the second input to <span class="Subfigure">cons</span>.  
 			</p>
@@ -483,7 +474,7 @@
 			</p>
 
 			<div class="Standard">
-				First, Eval checks to see if it has been given an atom.  If so, it then checks to see whether that atom is a number.  If the input is a numeric atom, Eval simply returns the number and exits.  If the input was an atom, but was not numeric, the value (if any) bound to that variable is returned.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into ways of doing this in the next section."><a href="#ftn2" id="body_ftn2">2</a></span></span>  Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into this matter in the next section.
+				First, Eval checks to see if it has been given an atom.  If so, it then checks to see whether that atom is a number.  If the input is a numeric atom, Eval simply returns the number and exits.  If the input was an atom, but was not numeric, the value (if any) bound to that variable is returned.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into ways of doing this in the next section."><a href="#ftn2" id="body_ftn2">[2]</a></span></span>  Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into this matter in the next section.
 			</div>
 
 			<p>
@@ -542,26 +533,13 @@
 					</p>
 				</li>
 			</ol>
-			<p class="P4">
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				2.1  <span class="Subfigure">(please state the nature of the medical emergency)</span>
-			</p>
-			<p>
-				2.2  <span class="Subfigure">((please state)the nature(of the medical)emergency)</span>
-			</p>
-			<p>
-				2.3<span class="Subfigure"> (please(state the nature of the(medical)emergency))</span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
+			
+			<ul class="Blockcenter">
+				<li>2.1  <span class="Subfigure">(please state the nature of the medical emergency)</span></li>
+				<li>2.2  <span class="Subfigure">((please state)the nature(of the medical)emergency)</span></li>
+				<li>2.3  <span class="Subfigure"> (please(state the nature of the(medical)emergency))</span></li>
+			</ul>
+			
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">
@@ -569,26 +547,14 @@
 					</p>
 				</li>
 			</ol>
-			<p>
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				<span> 3.1   <span class="Subfigure">(+ 2 (* 5 3))</span></span>
-			</p>
-			<p>
-				<span> 3.2   <span class="Subfigure">(/ (- 5 3) (+ 1 1))</span></span>
-			</p>
-			<p>
-				<span> 3.2   <span class="Subfigure">(5 + 3)</span></span>
-			</p>
-			<p>
-				<span> 3.4   <span class="Subfigure">( * + 3 5 2)</span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
+			
+			<ul class="Blockcenter">
+				<li>3.1   <span class="Subfigure">(+ 2 (* 5 3))</span></li>
+				<li>3.2   <span class="Subfigure">(/ (- 5 3) (+ 1 1))</span></li>
+				<li>3.2   <span class="Subfigure">(5 + 3)</span></li>
+				<li>3.4   <span class="Subfigure">( * + 3 5 2)</span></li>
+			</ul>
+
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">
@@ -596,24 +562,13 @@
 					</p>
 				</li>
 			</ol>
-			<p>
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				<span> 4.1   <span class="Subfigure">(quote (brave))</span></span>
-			</p>
-			<p>
-				<span> 4.2   <span class="Subfigure">(quote (new world))</span></span>
-			</p>
-			<p>
-				<span> 4.3   <span class="Subfigure">(quote Huxley)</span></span>
-			</p>
-			</span>
-			<p/>
-			<p>
-				 
-			</p>
+			
+			<ul class="Blockcenter">
+				<li>4.1   <span class="Subfigure">(quote (brave))</span></li>
+				<li>4.2   <span class="Subfigure">(quote (new world))</span></li>
+				<li>4.3   <span class="Subfigure">(quote Huxley)</span></li>
+			</ul>
+
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">
@@ -621,32 +576,15 @@
 					</p>
 				</li>
 			</ol>
-			<p>
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				<span> 5.1  <span class="Subfigure">(car(quote(a hobbits tale)))</span></span>
-			</p>
-			<p>
-				<span> 5.2  <span class="Subfigure">(car(car(quote((a hobbits tale) by Bilbo Baggins))))</span></span>
-			</p>
-			<p>
-				<span> 5.3  <span class="Subfigure">(car(quote(the shire)))</span></span>
-			</p>
-			<p>
-				<span> 5.4  <span class="Subfigure">(car(the shire))</span></span>
-			</p>
-			<p>
-				<span> 5.5  <span class="Subfigure">(car(car(car(quote(((the)shire))))))</span></span>
-			</p>
-			<p>
-				<span> 5.6  <span class="Subfigure">(car(quote Frodo))</span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
+			
+			<ul class="Blockcenter">
+				<li>5.1  <span class="Subfigure">(car(quote(a hobbits tale)))</span></li>
+				<li>5.2  <span class="Subfigure">(car(car(quote((a hobbits tale) by Bilbo Baggins))))</span></li>
+				<li>5.3  <span class="Subfigure">(car(quote(the shire)))</span></li>
+				<li>5.4  <span class="Subfigure">(car(the shire))</span></li>
+				<li>5.5  <span class="Subfigure">(car(car(car(quote(((the)shire))))))</span></li>
+				<li>5.6  <span class="Subfigure">(car(quote Frodo))</span></li>
+			</ul>
 
 			<ol>
 				<li>
@@ -670,20 +608,14 @@
 					</p>
 				</li>
 			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 7.1  <span class="Subfigure">(cdr (quote (Doctor Morbius)))</span></span>
-			</p>
-			<p>
-				<span> 7.2  <span class="Subfigure">(cdr (cdr (cdr (quote (Welcome to Altair 4)))))</span></span>
-			</p>
-			<p>
-				<span> 7.3  <span class="Subfigure">(cdr (quote Robbie))</span></span>
-			</p>
-			<p>
-				<span> 7.4  <span class="Subfigure">(cdr (cdr (quote (monsters (from the) Id))))</span></span>
-			</p>
-			</span>
+
+			<ul class="Blockcenter">
+				<li>7.1  <span class="Subfigure">(cdr (quote (Doctor Morbius)))</span></li>
+				<li>7.2  <span class="Subfigure">(cdr (cdr (cdr (quote (Welcome to Altair 4)))))</span></li>
+				<li>7.3  <span class="Subfigure">(cdr (quote Robbie))</span></li>
+				<li>7.4  <span class="Subfigure">(cdr (cdr (quote (monsters (from the) Id))))</span></li>
+			</ul>
+
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">
@@ -691,26 +623,16 @@
 					</p>
 				</li>
 			</ol>
-			<span class="Blockcenter">
-			<p>
-				8.1  <span class="Subfigure">(car (cdr (quote (I am a doctor not a))))</span>
-			</p>
-			<p>
-				8.2  <span class="Subfigure">(car (cdr (cdr (quote (I am a doctor not a)))))</span>
-			</p>
-			<p>
-				8.3  <span class="Subfigure">(car (cdr (cdr (cdr (quote(I am a doctor not a))))))</span>
-			</p>
-			<p>
-				8.4  <span class="Subfigure">(car (cdr (car (quote((most illogical)captain)))))</span>
-			</p>
-			<p>
-				8.5  <span class="Subfigure">(cdr (car (quote ((hailing frequencies open)))))</span>
-			</p>
-			<p>
-				8.6  <span class="Subfigure">(cdr (car (quote (hailing frequencies open))))</span>
-			</p>
-			</span>
+
+			<ul class="Blockcenter">
+				<li>8.1  <span class="Subfigure">(car (cdr (quote (I am a doctor not a))))</span></li>
+				<li>8.2  <span class="Subfigure">(car (cdr (cdr (quote (I am a doctor not a)))))</span></li>
+				<li>8.3  <span class="Subfigure">(car (cdr (cdr (cdr (quote(I am a doctor not a))))))</span></li>
+				<li>8.4  <span class="Subfigure">(car (cdr (car (quote((most illogical)captain)))))</span></li>
+				<li>8.5  <span class="Subfigure">(cdr (car (quote ((hailing frequencies open)))))</span></li>
+				<li>8.6  <span class="Subfigure">(cdr (car (quote (hailing frequencies open))))</span></li>
+			</ul>
+			
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">
@@ -718,23 +640,13 @@
 					</p>
 				</li>
 			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 9.1  <span class="Subfigure">(cons (quote open) (quote (the pod bay doors Hal)))</span></span>
-			</p>
-			<p>
-				<span> 9.2  <span class="Subfigure">(cons (quote(open)) (quote(the pod bay doors Hal)))</span></span>
-			</p>
-			<p>
-				<span> 9.3  <span class="Subfigure">(cons (quote(open the pod))(quote((bay doors) Hal)))</span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
+	
+			<ul class="Blockcenter">
+				<li>  <span class="Subfigure">9.1 (cons (quote open) (quote (the pod bay doors Hal)))</span></li>
+				<li>  <span class="Subfigure">9.2 (cons (quote(open)) (quote(the pod bay doors Hal)))</span></li>
+				<li>  <span class="Subfigure">9.3 (cons (quote(open the pod))(quote((bay doors) Hal)))</span></li>
+			</ul>
+			
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">
@@ -742,23 +654,13 @@
 					</p>
 				</li>
 			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 10.1  <span class="Subfigure">(list (quote just) (quote a) (quote moment))</span></span>
-			</p>
-			<p>
-				<span> 10.2  <span class="Subfigure">(list (quote(just a)) (quote(moment)))</span></span>
-			</p>
-			<p>
-				<span> 10.3  <span class="Subfigure">(list (quote(just a)) (quote moment)) </span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
+			
+			<ul class="Blockcenter">
+				<li>  <span class="Subfigure">10.1 (list (quote just) (quote a) (quote moment))</span></li>
+				<li>  <span class="Subfigure">10.2 (list (quote(just a)) (quote(moment)))</span></li>
+				<li>  <span class="Subfigure">10.3 (list (quote(just a)) (quote moment)) </span></li>
+			</ul>
+			
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">
@@ -766,23 +668,13 @@
 					</p>
 				</li>
 			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 11.1  <span class="Subfigure">(append (quote just) (quote a) (quote moment))</span></span>
-			</p>
-			<p>
-				<span> 11.2  <span class="Subfigure">(append (quote (just a)) (quote (moment)))</span></span>
-			</p>
-			<p>
-				<span> 11.3  <span class="Subfigure">(append (quote (just a)) (quote moment)) </span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
+			
+			<ul class="Blockcenter">
+				<li>  <span class="Subfigure">11.1 (append (quote just) (quote a) (quote moment))</span></li>
+				<li>  <span class="Subfigure">11.2 (append (quote (just a)) (quote (moment)))</span></li>
+				<li>  <span class="Subfigure">11.3 (append (quote (just a)) (quote moment)) </span></li>
+			</ul>
+			
 			<ol>
 				<li>
 					<p class="P16" style="margin-left:0cm;">

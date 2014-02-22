@@ -39,10 +39,12 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 	var input2Box;
 	var outputBox;
 	
-	//var transFg;					// a transparent foreground for the AND gate
+	var transFg;					// a transparent foreground for the AND gate
 	
-	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
+	var mainLayer = setup.getMainLayer();
+	var iconLayer = new Kinetic.Layer();
+	stage.add(iconLayer);
 	var thisObj = this;
 	var mouseOver = 'pointer';
 	var deleteImg;
@@ -81,6 +83,11 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 	this.setPluginColor = setPluginColor;
 	this.deleteSelf = deleteSelf;
 	this.getOutputValue = getOutputValue;
+	this.getInputBoxCoords = getInputBoxCoords;
+	this.getOutputBoxCoords = getOutputBoxCoords;
+	this.setDeleteIcon = setDeleteIcon;
+	this.loopCheckForward = loopCheckForward;
+	this.loopCheckBackward = loopCheckBackward;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -132,10 +139,10 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 
 	// create the transparent rectangle that makes it easy to click the AND gate		
 	transFg = new Kinetic.Rect({
-		x:  scale * 23,
-		y:  0,
-		width: scale * plugout.getPoints()[1].x - scale * plugin1.getPoints()[0].x,
-		height: scale * plugin2.getPoints()[0].y +  scale * 10
+		x:  scale * 50,
+		y:  -3,
+		width: 50 - plugin1.getPoints()[0].x,
+		height: scale * plugin2.getPoints()[0].y + scale * 26
 	});
 
 	// create the group for the components that make up the AND gate; place it at the x,y coords passed to the object
@@ -145,21 +152,6 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 			rotationDeg : 0,
 			draggable : true
 		});
-
-	deleteImg = new Image();
-	deleteImg.onload = function() {
-		var deleteIco = new Kinetic.Image({
-			x: scale * 87,
-			y: scale * -5,
-			image: deleteImg,
-			scale: 0.3
-		});
-
-		// add the shape to the layer
-		group.add(deleteIco);
-		mainLayer.draw();
-	};
-	deleteImg.src = "";
 	
 	// add cursor styling when the user mouseovers the group
 	group.on('mouseover', function () {
@@ -167,6 +159,15 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 	});
 	group.on('mouseout', function () {
 		if (mouseOver !== "crosshair") document.body.style.cursor = 'default';
+	});
+	
+	setDeleteIcon("empty.bmp");
+	
+	iconLayer.on('mouseover', function() { document.body.style.cursor = 'pointer'; });
+	iconLayer.on('mouseout', function() { document.body.style.cursor = 'default'; });
+	
+	iconLayer.on('click tap', function() {
+		setup.deleteComponent(thisObj);
 	});
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FUNCTION IMPLEMENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -184,11 +185,46 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 		drawBoxes();
 	}
 	
+	function setDeleteIcon (image){
+         var imageObj = new Image();
+         imageObj.onload = function (){
+         var deleteImg = new Kinetic.Image({
+			  x: group.getX() + scale * 90,
+			  y: group.getY() + scale * -15,
+			  image: imageObj,
+			  scaleX: 0.4,
+			  scaleY: 0.4
+		 });
+
+         iconLayer.destroyChildren();
+         iconLayer.add(deleteImg);
+         iconLayer.draw();
+		};
+		imageObj.src = image;
+    }
+	
 	function deleteSelf() {
 		group.remove();
 		input1Box.remove();
 		input2Box.remove();
 		outputBox.remove();
+		iconLayer.remove();
+	}
+	
+	function getInputBoxCoords(num) {
+		var pos;
+		var box;
+		if (num == 1) { pos = input1Box.getAbsolutePosition(); box = input1Box; }
+		else { pos = input2Box.getAbsolutePosition(); box = input2Box; }
+		
+		return { x1: pos.x, x2: pos.x + box.getWidth(), y1: pos.y, y2: pos.y + box.getHeight() };
+	}
+	
+	function getOutputBoxCoords() {
+		var pos = outputBox.getAbsolutePosition();
+		var corners = [];
+		
+		return { x1: pos.x, x2: pos.x + outputBox.getWidth(), y1: pos.y, y2: pos.y + outputBox.getHeight() };
 	}
 	
 	function drawBoxes() {
@@ -240,10 +276,8 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 	function setMouseOver(str) { mouseOver = str; console.log("Mouse over: " + str); }
 	
 	function toggleDeleteIcon(bool) {
-		if (bool) deleteImg.src = "delete.ico";
-		else deleteImg.src = "";
-				
-		mainLayer.draw();
+		if (bool) setDeleteIcon("delete.ico");
+		else setDeleteIcon("empty.bmp");
 	}
 	
 	function getInputBox(num) {
@@ -256,7 +290,7 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 	}
 	
 	// accessor for the gate type
-	function getType() { return "or"; }
+	function getType() { return "and"; }
 	
 	function getID() { return ID; }
 	
@@ -456,5 +490,26 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 		plugoutWire.disableStroke();
 		plugoutComp = null;
 		plugoutWire = null;
+	}
+	
+	function loopCheckForward(comp) {
+		var result = false;
+		
+		if (plugoutComp !== null && plugoutComp == comp) return true;
+		if (plugoutComp !== null) result = plugoutComp.loopCheckForward(comp);
+		
+		return result;
+	}
+	
+	function loopCheckBackward(comp) {
+		var result1, result2;
+		if (plugin1Comp !== null && plugin1Comp == comp) return true;
+		if (plugin2Comp !== null && plugin2Comp == comp) return true;
+		
+		if (plugin1Comp !== null) result1 = plugin1Comp.loopCheckBackward(comp);
+		if (plugin2Comp !== null) result2 = plugin2Comp.loopCheckBackward(comp);
+		
+		if (result1 || result2) return true;
+		else return false;
 	}
 }

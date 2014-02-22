@@ -20,5 +20,5 @@ require(['angular', 'bootstrap', 'contents'], function() {
     angular.element(document).ready(function() {
         angular.resumeBootstrap(['ContentsModule']);
     });
-});
+}); 
 

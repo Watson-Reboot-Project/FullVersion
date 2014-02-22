@@ -42,8 +42,9 @@ function SB_Connector(initX, initY, setName, id, setup) {
 	var output2Box;
 	var output3Box;
 	
-	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
+	var mainLayer = setup.getMainLayer();
+	var iconLayer = new Kinetic.Layer(); stage.add(iconLayer);
 	var thisObj = this;
 	var mouseOver = 'pointer';
 	var deleteImg;
@@ -83,6 +84,11 @@ function SB_Connector(initX, initY, setName, id, setup) {
 	this.setPluginColor = setPluginColor;
 	this.deleteSelf = deleteSelf;
 	this.getOutputValue = getOutputValue;
+	this.setDeleteIcon = setDeleteIcon;
+	this.getInputBoxCoords = getInputBoxCoords;
+	this.getOutputBoxCoords = getOutputBoxCoords;
+	this.loopCheckForward = loopCheckForward;
+	this.loopCheckBackward = loopCheckBackward;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -147,27 +153,23 @@ function SB_Connector(initX, initY, setName, id, setup) {
 			rotationDeg : 0,
 			draggable : true
 		});
-		
-	deleteImg = new Image();
-	deleteImg.onload = function() {
-		var deleteIco = new Kinetic.Image({
-			x: 32,
-			y: -5,
-			image: deleteImg,
-			scale: 0.3
-		});
 
-		// add the shape to the layer
-		group.add(deleteIco);
-		mainLayer.draw();
-	};
-	deleteImg.src = "";
 	// add cursor styling when the user mouseovers the group
 	group.on('mouseover', function () {
 		document.body.style.cursor = mouseOver;
 	});
 	group.on('mouseout', function () {
 		if (mouseOver !== "crosshair") document.body.style.cursor = 'default';
+	});
+	
+	setDeleteIcon("empty.bmp");
+	
+	iconLayer.on('mouseover', function() { document.body.style.cursor = 'pointer'; });
+	iconLayer.on('mouseout', function() { document.body.style.cursor = 'default'; });
+	
+	iconLayer.on('click tap', function() {
+		console.log("Here.");
+		setup.deleteComponent(thisObj);
 	});
 
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FUNCTION IMPLEMENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -186,12 +188,51 @@ function SB_Connector(initX, initY, setName, id, setup) {
 		drawBoxes();
 	}
 	
+	function setDeleteIcon (image){
+         var imageObj = new Image();
+         imageObj.onload = function (){
+         var deleteImg = new Kinetic.Image({
+			  x: group.getX() + 35,
+			  y: group.getY() + -10,
+			  image: imageObj,
+			  scaleX: 0.4,
+			  scaleY: 0.4
+		 });
+
+         iconLayer.destroyChildren();
+         iconLayer.add(deleteImg);
+         iconLayer.draw();
+		};
+		imageObj.src = image;
+    }
+	
 	function deleteSelf() {
 		group.remove();
 		inputBox.remove();
 		output1Box.remove();
 		output2Box.remove();
 		output3Box.remove();
+		iconLayer.remove();
+	}
+	
+
+	function getInputBoxCoords() {
+		var pos;
+		var box;
+		pos = inputBox.getAbsolutePosition();
+		box = inputBox;
+		
+		return { x1: pos.x, x2: pos.x + box.getWidth(), y1: pos.y, y2: pos.y + box.getHeight() };
+	}
+	
+	function getOutputBoxCoords(num) {
+		var pos;
+		var box;
+		if (num == 1) { pos = output1Box.getAbsolutePosition(); box = output1Box; }
+		else if (num == 2) { pos = output2Box.getAbsolutePosition(); box = output2Box; }
+		else if (num == 3) { pos = output3Box.getAbsolutePosition(); box = output3Box; }
+		
+		return { x1: pos.x, x2: pos.x + box.getWidth(), y1: pos.y, y2: pos.y + box.getHeight() };
 	}
 	
 	function drawBoxes() {
@@ -264,10 +305,8 @@ function SB_Connector(initX, initY, setName, id, setup) {
 	function setMouseOver(str) { mouseOver = str; }
 	
 	function toggleDeleteIcon(bool) {
-		if (bool) deleteImg.src = "delete.ico";
-		else deleteImg.src = "";
-		
-		mainLayer.draw();
+		if (bool) setDeleteIcon("delete.ico");
+		else setDeleteIcon("empty.bmp");
 	}
 	
 	// accessor for this gate's type
@@ -499,8 +538,8 @@ function SB_Connector(initX, initY, setName, id, setup) {
 		else if (plugoutNum == 2) { plugoutComp = plugout2Comp; plugout2Comp = null; plugout2Wire.disableStroke(); plugout2Wire = null }
 		else if (plugoutNum == 3) { plugoutComp = plugout3Comp; plugout3Comp = null; plugout3Wire.disableStroke(); plugout3Wire = null }
 		
-		if (plugoutComp.getType() == "not" || plugoutComp.getType() == "output" || plugoutComp.getType == "connector") {
-			if (plugoutComp.getType() != "output") plugoutComp.setConnectorPlugin(-1);
+		if (plugoutComp.getType() == "not" || plugoutComp.getType() == "output" || plugoutComp.getType() == "connector") {
+			if (plugoutComp.getType() != "connector") plugoutComp.setConnectorPlugin(-1);
 			plugoutComp.setPluginCompNull();
 		}
 		else {
@@ -515,5 +554,34 @@ function SB_Connector(initX, initY, setName, id, setup) {
 	
 	function getOutputValue() {
 		return pluginVal;
+	}
+	
+	function loopCheckForward(comp) {
+		var result = false;
+		
+		if (plugout1Comp !== null && plugout1Comp == comp) return true;
+		if (plugout2Comp !== null && plugout2Comp == comp) return true;
+		if (plugout3Comp !== null && plugout3Comp == comp) return true;
+		
+		if (plugout1Comp !== null) result = plugout1Comp.loopCheckForward(comp);
+		if (result) return true;
+		
+		if (plugout2Comp !== null) result = plugout2Comp.loopCheckForward(comp);
+		if (result) return true;
+		
+		if (plugout3Comp !== null) result = plugout3Comp.loopCheckForward(comp);
+		if (result) return true;
+		
+		return false;
+	}
+	
+	function loopCheckBackward(comp) {
+		var result = false;
+		
+		if (pluginComp !== null && pluginComp == comp) return true;
+		
+		if (pluginComp !== null) result = pluginComp.loopCheckBackward(comp);
+		
+		return result;
 	}
 }

@@ -21,7 +21,7 @@ var navbar_content ='<img class="navbar-fixed-top" id="clickme" src="Images/down
           						</ul>\
        						</li>\
 							<li> <a href="ch_toc2.html"><i class="fa fa-book"></i>Chapters</a></li>\
-							<li> <a href="section_toc.html"><i class="fa fa-list-ul"></i>Sections</a></li>\
+							<li> <a href="section_toc2.html"><i class="fa fa-list-ul"></i>Sections</a></li>\
 							<li> <a id="min"><i class="fa fa-arrow-up"></i></a> <!-- Up arrow image -->\
 						</ul>\
 					</div> <!-- END collapse navbar -->\
@@ -73,8 +73,8 @@ $('#includedContent').append(navbar_content);
 				}
 			  );*/
 
-			  // font size increse/decrese using slider
-			  $('#fontSlider').slider(); 
+			// font size increse/decrese using slider
+			$('#fontSlider').slider(); 
 			var fontChange = function() {
 					  $('.page-wrapper').css('font-size', r.getValue())
 					};

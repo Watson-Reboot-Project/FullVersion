@@ -34,8 +34,9 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	var outputBox;
 	var transFg;					// a transparent foreground that makes the NOT gate easier to click
 	
-	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
+	var mainLayer = setup.getMainLayer();
+	var iconLayer = new Kinetic.Layer(); stage.add(iconLayer);
 	var thisObj = this;
 	var mouseOver = 'pointer';
 	var deleteImg;
@@ -72,6 +73,11 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	this.setPluginColor = setPluginColor;
 	this.deleteSelf = deleteSelf;
 	this.getOutputValue = getOutputValue;
+	this.setDeleteIcon = setDeleteIcon;
+	this.getInputBoxCoords = getInputBoxCoords;
+	this.getOutputBoxCoords = getOutputBoxCoords;
+	this.loopCheckForward = loopCheckBackward;
+	this.loopCheckBackward = loopCheckBackward;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	// make a custom shape for the triangle; just three lines
@@ -121,10 +127,10 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 
 	// the transparent rectangle
 	transFg = new Kinetic.Rect({
-		x:  23,
-		y:  0,
-		width: plugout.getPoints()[1].x - plugin.getPoints()[0].x,
-		height:  50
+		x:  scale * 50,
+		y:  -5,
+		width: 57 - plugin.getPoints()[0].x,
+		height:  scale * 50
 	});
 
 	// create the group at the x,y coords passed to this object
@@ -134,21 +140,6 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 			rotationDeg : 0,
 			draggable : true
 		});
-		
-	deleteImg = new Image();
-	deleteImg.onload = function() {
-		var deleteIco = new Kinetic.Image({
-			x: scale * 75,
-			y: scale * -5,
-			image: deleteImg,
-			scale: 0.3
-		});
-
-		// add the shape to the layer
-		group.add(deleteIco);
-		mainLayer.draw();
-	};
-	deleteImg.src = "";
 	
 	// add cursor styling when the user mouseovers the group
 	group.on('mouseover', function () {
@@ -156,6 +147,15 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	});
 	group.on('mouseout', function () {
 		if (mouseOver !== "crosshair") document.body.style.cursor = 'default';
+	});
+	
+	setDeleteIcon("empty.bmp");
+	
+	iconLayer.on('mouseover', function() { document.body.style.cursor = 'pointer'; });
+	iconLayer.on('mouseout', function() { document.body.style.cursor = 'default'; });
+	
+	iconLayer.on('click tap', function() {
+		setup.deleteComponent(thisObj);
 	});
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FUNCTION IMPLEMENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -168,16 +168,50 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 		group.add(gateShapeCircle);		// ... the circle
 		group.add(plugin);				// ... the plugin line
 		group.add(plugout);				// ... the plugout line
-		//group.add(transFg);				// and finally the transparent foreground
+		group.add(transFg);				// and finally the transparent foreground
 		mainLayer.add(group);			// add this group to the main layer
 		stage.draw();					// call draw on the stage to redraw its components
 		drawBoxes();
 	}
+
+	function setDeleteIcon (image){
+         var imageObj = new Image();
+         imageObj.onload = function (){
+         var deleteImg = new Kinetic.Image({
+			  x: group.getX() + scale * 90,
+			  y: group.getY() + scale * -15,
+			  image: imageObj,
+			  scaleX: 0.4,
+			  scaleY: 0.4
+		 });
+
+         iconLayer.destroyChildren();
+         iconLayer.add(deleteImg);
+         iconLayer.draw();
+		};
+		imageObj.src = image;
+    }
 	
 	function deleteSelf() {
 		group.remove();
 		inputBox.remove();
 		outputBox.remove();
+		iconLayer.remove();
+	}
+	
+	function getInputBoxCoords(num) {
+		var pos;
+		var box;
+		pos = inputBox.getAbsolutePosition(); box = inputBox;
+		
+		return { x1: pos.x, x2: pos.x + box.getWidth(), y1: pos.y, y2: pos.y + box.getHeight() };
+	}
+	
+	function getOutputBoxCoords() {
+		var pos = outputBox.getAbsolutePosition();
+		var corners = [];
+		
+		return { x1: pos.x, x2: pos.x + outputBox.getWidth(), y1: pos.y, y2: pos.y + outputBox.getHeight() };
 	}
 	
 	function drawBoxes() {
@@ -217,10 +251,8 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	function setMouseOver(str) { mouseOver = str; }
 	
 	function toggleDeleteIcon(bool) {
-		if (bool) deleteImg.src = "delete.ico";
-		else deleteImg.src = "";
-		
-		mainLayer.draw();
+		if (bool) setDeleteIcon("delete.ico");
+		else setDeleteIcon("empty.bmp");
 	}
 	
 	function getInputBox() {
@@ -378,5 +410,24 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 		if (pluginVal == -1) return -1;
 		else if (pluginVal == 0) return 1;
 		else return 0;
+	}
+	
+	function loopCheckForward(comp) {
+		var result = false;
+		
+		if (plugoutComp !== null && plugoutComp == comp) return true;
+		if (plugoutComp !== null) result = plugoutComp.loopCheckForward(comp);
+		
+		return result;
+	}
+	
+	function loopCheckBackward(comp) {
+		var result = false;
+		
+		if (pluginComp !== null && pluginComp == comp) return true;
+		
+		if (pluginComp !== null) result = pluginComp.loopCheckBackward(comp);
+	
+		return result;
 	}
 }

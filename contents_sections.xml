@@ -1,66 +1,51 @@
 <?xml version='1.0'?>
 <table-of-contents>
-  <chapters>
-    <chapter>
-      <name>The Science of Computing</name>
-      <path>ch01.html</path>
-    </chapter>
-    <chapter>
-      <name>Computers as Communication and Problem Solving Tools</name>
-      <path>ch03.html</path>
-    </chapter>
-    <chapter>
-      <name>Information Storage and Retrieval</name>
-      <path>ch02.html</path>
-    </chapter>
-    <chapter>
+  <sections>
+    <section>
+      <name>Introduction</name>
+      <path>ch08s1.html</path>
+      <numfigures> 4 </numfigures>
+    </section>
+    <section>
+      <name>Overview of Watson Javascript</name>
+      <path>ch08s2.html</path>
+      <numfigures> 1 </numfigures>
+    </section>
+    <section>
+      <name>Data Types, Constants, Variables</name>
+      <path>ch08s3.html</path>
+      <numfigures> 3 </numfigures>
+    </section>
+    <section>
       <name>The Social, Legal, and Ethical Aspects of Computing </name>
-      <path>ch04.html</path>
-    </chapter>
-    <chapter>
-      <name>Algorithms -- The Key to Understanding Software</name>
-      <path>ch05.html</path>
-    </chapter>
-    <chapter>
-      <name>Developing Graphical Algorithms</name>
-      <path>ch06.html</path>
-    </chapter>
-    <chapter>
-      <name>Data Structures -- The Organization of Data at the Program Level</name>
-      <path>ch07.html</path>
-    </chapter>
-    <chapter>
-      <name>JavaScript Programming</name>
-      <path>ch08.html</path>
-    </chapter>
-    <chapter>
-      <name>Functional, Logical, and Object-Oriented Programming</name>
-      <path>ch09.html</path>
-    </chapter>
-    <chapter>
-      <name>Software Engineering</name>
-      <path>ch10.html</path>
-    </chapter>
-    <chapter>
-      <name>Assembly Language and Computer Architecture</name>
-      <path>ch11.html</path>
-    </chapter>
-    <chapter>
-      <name>Digital Circuit Design</name>
-      <path>ch12.html</path>
-    </chapter>
-    <chapter>
-      <name>Theoretical and Practical Limits of Computing</name>
-      <path>ch13.html</path>
-    </chapter>
-    <chapter>
-      <name>Computing and Intelligence</name>
-      <path>ch14.html</path>
-    </chapter>
-    <chapter>
-      <name>The Past, Present, and Future of Computing</name>
-      <path>ch15.html</path>
-    </chapter>
-  </chapters>
+      <path>ch08s4.html</path>
+      <numfigures> 5 </numfigures>
+    </section>
+    <section>
+      <name>Expressions and Assignment</name>
+      <path>ch08s5.html</path>
+      <numfigures> 8 </numfigures>
+    </section>
+    <section>
+      <name>The Three Primary Control Constructs</name>
+      <path>ch08s6.html</path>
+      <numfigures> 1 </numfigures>
+    </section>
+    <section>
+      <name>Functions</name>
+      <path>ch08s7.html</path>
+      <numfigures> 3 </numfigures>
+    </section>
+    <section>
+      <name>Recursion</name>
+      <path>ch08s8.html</path>
+      <numfigures> 5 </numfigures>
+    </section>
+    <section>
+      <name>Arrays and High-level Data Structures</name>
+      <path>ch08s9.html</path>
+      <numfigures> 2 </numfigures>
+    </section>
+  </sections>
 </table-of-contents>
 <!-- vim: set sts=2 sw=2 : -->

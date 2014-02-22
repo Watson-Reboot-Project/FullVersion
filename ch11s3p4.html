@@ -12,17 +12,22 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <style type='text/css'>
+			table td {
+			border:none;
+			}
+		</style>
 	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link rel='stylesheet' href='lib/css/bootstrap-3.css'>
+	    <link href = "lib/assembly.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	</head>
 
@@ -148,6 +153,7 @@
 			<p>
 				You may have noticed that Watson Assembly Language does not include a multiply instruction.  How then can multiplication be performed at the assembly level?  One way that multiplication can be implemented is by repeatedly adding the value of the first operand to an initially zero product for some number of times equal to the second operand.<span class="Footnote" title="Footnote: There are other, more efficient, ways of solving this problem that will become apparent during the discussion of data representation and manipulation in Section 11.4.1.3."><a href="#ftn3" id="body_ftn3">[3]</a></span>  In the specific example given above, the first operand, “x”, is added to an initially zero product, “z”, “y” times. This “multiplication via repeated addition” algorithm can be expressed in high-level Watson JavaScript code using either a “for” loop, such as: 
 			</p>
+			<!--
 			
 			<ul class="Blockcenter">
 				<li><span class="Subfigure">z = 0;</span></li>
@@ -174,7 +180,7 @@
 				</ul>
 				<li><span class="Subfigure">}</span></li>
 			</ul>
-
+			<!-- Image fig
 			<img src="Images/AssemblyIMGS/fig11-9pt1.png" alt="" class="Image">
 			<img src="Images/AssemblyIMGS/fig11-9pt2.png" alt="" class="Image">
 			<!--Figure 11.9 Text (not formatted)
@@ -250,7 +256,7 @@
 			
 			<p><span class="Subfigure">ENDLP        HALT                                   </span>; </p>
 			-->
-			
+			<div id='fig119Div'></div>
 			<p class="Figure">
 				Figure 11.9:  Assembly language version of the statement:   <span class="Subfigure">z = x * y;</span>
 			</p>
@@ -266,7 +272,7 @@
 			<p>
 				Figure 11.10 presents an optimized version of the program of Figure 11.9.  While an inspection of the two programs should reveal that they compute identical results, the program of Figure 11.10 involves fewer steps (17 verses 22) and therefore should run somewhat faster.  The approach taken in the optimized version of the program is to keep temporary results in CPU registers rather than writing them back to main memory after each operation.  This approach works by loading the initial values of the variables into registers at the beginning of the program, using those registers in place of the underlying variables during processing, and then copying results back to main memory at the end of the program.  Frequently, compilers, the programs that translate high-level language programs into low-level code, use strategies such as this to produce code that is more efficient than would be produced by a literal, statement-by-statement translation of the high-level program.
 			</p>
-
+			<!-- Figure 11.10 Image
 			<img src="Images/AssemblyIMGS/fig11-10.png" alt="" class="Image">
 			<!--Figure 11.10 text (not formatted)
 			<p><span class="Subfigure">X        .WORD     5                        </span>       ;  declare and initialize “x” to 5    /* first operand */</p>
@@ -303,7 +309,7 @@
 			
 			<p class="P127"><span class="Subfigure">HALT                                   </span>;   halt execution of this assembly language program.</p>
 			-->
-			
+			<div id='fig1110Div'></div>
 			<p class="Figure">
 				Figure 11.10:  Optimized assembly version of:   <span class="Subfigure">z = x * y;</span>
 			</p>
@@ -356,5 +362,21 @@
 
 			</div>
 		</div>
+		<script type='text/javascript' src='lib/js/angular.js'></script>
+    	<script type='text/javascript' src='lib/js/jQuery.js'></script>
+    	<script type='text/javascript' src='lib/js/less.js'></script>
+    	<script type='text/javascript' src='lib/js/ui-bootstrap-0.10.0.js'></script>
+    	<script type='text/javascript' src='lib/js/tabs.js'></script>
+    	<script type='text/javascript' src='lib/js/ui-bootstrap.js'></script>   	
+		<script type='text/javascript' src='js/Assembly/assemblyui.js'></script>	
+    	<script type='text/javascript' src='js/Assembly/inputs.js'></script>
+    	<script src='js/Assembly/figures.js'></script>
+    	
+    	<script>
+    			var fig115 = new Figure(119);
+    			var fig116 = new Figure(1110);
+				angular.bootstrap(document.getElementById("fig119"), ['assembly119']);
+				angular.bootstrap(document.getElementById("fig1110"), ['assembly1110']);
+		</script>
 	</body>
 </html>
