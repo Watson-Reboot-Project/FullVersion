@@ -153,7 +153,6 @@
 			<p>
 				You may have noticed that Watson Assembly Language does not include a multiply instruction.  How then can multiplication be performed at the assembly level?  One way that multiplication can be implemented is by repeatedly adding the value of the first operand to an initially zero product for some number of times equal to the second operand.<span class="Footnote" title="Footnote: There are other, more efficient, ways of solving this problem that will become apparent during the discussion of data representation and manipulation in Section 11.4.1.3."><a href="#ftn3" id="body_ftn3">[3]</a></span>  In the specific example given above, the first operand, “x”, is added to an initially zero product, “z”, “y” times. This “multiplication via repeated addition” algorithm can be expressed in high-level Watson JavaScript code using either a “for” loop, such as: 
 			</p>
-			<!--
 			
 			<ul class="Blockcenter">
 				<li><span class="Subfigure">z = 0;</span></li>
@@ -183,7 +182,9 @@
 			<!-- Image fig
 			<img src="Images/AssemblyIMGS/fig11-9pt1.png" alt="" class="Image">
 			<img src="Images/AssemblyIMGS/fig11-9pt2.png" alt="" class="Image">
-			<!--Figure 11.9 Text (not formatted)
+			
+			Figure 11.9 Text (not formatted)
+			-->
 			<p>
 				High-level Language Statement:
 			</p>
@@ -193,7 +194,9 @@
 			</p>
 			
 			<p>Implementing multiplication of positive integers via repeated additions:</p>
-			
+			<img src="Images/AssemblyIMGS/fig11-9p1.png" alt="" class="Image">
+			<br />
+			<!--
 			<p class="P94"><span class="T12">  </span>z = 0;</p>
 			
 			<p class="P71"><span class="T12">   </span>z = 0;<span>   i = 1;</span></p>
@@ -209,6 +212,7 @@
 			<p class="P78"><span>   }</span></p>
 			
 			<h2 class="Heading_20_2"><a id="a__Multiplication_using_“For”_Multiplication_using_“While”"></a>Multiplication using “For”                          Multiplication using “While”</h2>
+			
 			
 			<p>Equivalent assembly language code:</p>
 			
