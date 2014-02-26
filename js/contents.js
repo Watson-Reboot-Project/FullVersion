@@ -18,7 +18,7 @@ function contentsConstructor(xml_location, name) {
         }
 
         throw new Error('[-] Element not found: ' + name);
-    }
+    };
 
     // do all of this when making the object (private)
     var init = function () {
@@ -45,9 +45,9 @@ function contentsConstructor(xml_location, name) {
                 item.path = $xmlobj.find('path').text();
                 item.number = i + 1;
 
-                var sub_xml = $xmlobj.find('sections').text();
+                var sub_xml = $xmlobj.find('section-path').text();
                 if (sub_xml !== '') {
-                    item.sections = sectionsConstructor(sub_xml, 'index');
+                    item.sections = new sectionsConstructor(sub_xml, 'index');
                 }
 
                 items.push(item);
@@ -61,7 +61,7 @@ function contentsConstructor(xml_location, name) {
     // (used for setting up links)
     self.getNext = function () {
         if (number === null) {
-            throw new Error('[-] Asking for next, but we\'re in index!');
+            throw new Error('[-] Asking for next, but we"re in index!');
         }
 
         if (items.length == number + 1) {
@@ -76,7 +76,7 @@ function contentsConstructor(xml_location, name) {
     // (used for setting up links)
     self.getPrev = function () {
         if (number === null) {
-            throw new Error('[-] Asking for previous, but we\'re in index!');
+            throw new Error('[-] Asking for previous, but we"re in index!');
         }
 
         if (0 === number) {
@@ -89,19 +89,19 @@ function contentsConstructor(xml_location, name) {
 
     self.getItems = function () {
         return JSON.parse(JSON.stringify(items));
-    }
+    };
 
     self.getNumber = function () {
         if (number === null) {
-            throw new Error('[-] Asking for number, but we\'re in index!');
+            throw new Error('[-] Asking for number, but we"re in index!');
         }
 
         return number + 1;
-    }
+    };
 
     self.getIndex = function () {
         return JSON.parse(JSON.stringify(index));
-    }
+    };
 
     // call our loadup function
     init();
@@ -123,16 +123,17 @@ function sectionsConstructor (xml_location, name) {
         }
 
         throw new Error('[-] Element not found: ' + name);
-    }
+    };
 
     // do all of this when making the object (private)
     var init = function () {
         items = [];
+        count = 0;
 
         // synchronously pull in xml and parse it into index and
         // items
-        $.ajax({ url: xml_location, async: false, success: function (xml) {
-
+        var i = 0;
+        var someval = $.ajax({ url: xml_location, async: false, success: function (xml) {
             var $xmlobj = $($('index', xml)[0]);
             index = {};
 
@@ -141,13 +142,9 @@ function sectionsConstructor (xml_location, name) {
             index.path = $xmlobj.find('path').text();
 
             // set up our list of items
-            // FUN FACT: THIS IS THE ONLY PART THAT'S DIFFERENT.
-            // IT SURE WOULD BE NICE IF WE KNEW HOW TO DO INHERITANCE IN THIS
-            // GOD-FORSAKEN LANGUAGE
-            $sections = $('section', xml);
-            for (var i = 0; i < $sections.length; i++) {
+           $('section', xml).each(function(i, sect) {
                 var item = {};
-                $xmlobj = $($sections[i]);
+                $xmlobj = $(sect);
 
                 item.name = $xmlobj.find('name').text();
                 item.path = $xmlobj.find('path').text();
@@ -155,14 +152,13 @@ function sectionsConstructor (xml_location, name) {
                 item.runningsum = count + item.numfigures;
                 item.number = i + 1;
 
-                var sub_xml = $xmlobj.find('subsections').text();
+                var sub_xml = $xmlobj.find('subsection-path').text();
                 if (sub_xml !== '') {
-                    item.sections = sectionsConstructor(sub_xml, 'index');
+                    item.sections = new sectionsConstructor(sub_xml, 'index');
                 }
 
                 items.push(item);
-            }
-            // END "ONLY PART THAT'S DIFFERENT"
+            });
         }});
 
         number = locate(name);
@@ -172,7 +168,7 @@ function sectionsConstructor (xml_location, name) {
     // (used for setting up links)
     self.getNext = function () {
         if (number === null) {
-            throw new Error('[-] Asking for next, but we\'re in index!');
+            throw new Error('[-] Asking for next, but we"re in index!');
         }
 
         if (items.length == number + 1) {
@@ -187,7 +183,7 @@ function sectionsConstructor (xml_location, name) {
     // (used for setting up links)
     self.getPrev = function () {
         if (number === null) {
-            throw new Error('[-] Asking for previous, but we\'re in index!');
+            throw new Error('[-] Asking for previous, but we"re in index!');
         }
 
         if (0 === number) {
@@ -199,20 +195,20 @@ function sectionsConstructor (xml_location, name) {
     };
 
     self.getItems = function () {
-        return JSON.parse(JSON.stringify(items));
-    }
+        return items;
+    };
 
     self.getNumber = function () {
         if (number === null) {
-            throw new Error('[-] Asking for number, but we\'re in index!');
+            throw new Error('[-] Asking for number, but we"re in index!');
         }
 
         return number + 1;
-    }
+    };
 
     self.getIndex = function () {
         return JSON.parse(JSON.stringify(index));
-    }
+    };
 
     // call our loadup function
     init();

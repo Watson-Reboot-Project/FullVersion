@@ -4,6 +4,7 @@ $(document).ready(function () {
     // grab the html element we're going to stuff our links in
     var links = $('#contents')[0];
 
+
     var items = contents.getItems();
     for (var i = 0; i < items.length; i++) {
         var item = items[i];

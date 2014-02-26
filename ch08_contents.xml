@@ -1,4 +1,5 @@
-<?xml version='1.0'?>
+<?xml version='1.0' ?>
+<!DOCTYPE table-of-contents SYSTEM "contents.dtd">
 <table-of-contents>
   <index>
     <path>ch08.html</path>
@@ -33,7 +34,7 @@
       <name>The Three Primary Control Constructs</name>
       <path>ch08s6.html</path>
       <numfigures>1</numfigures>
-      <subsections>ch08s6_contents.xml</subsections>
+      <subsection-path>ch08s6_contents.xml</subsection-path>
     </section>
     <section>
       <name>Functions</name>
