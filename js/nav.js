@@ -30,34 +30,58 @@ var navbar_content ='<img class="navbar-fixed-top" id="clickme" src="Images/down
 			<link href = "css/font-awesome.min.css" rel = "stylesheet"><!-- font-awesome glyphicons -->\
 		<link href = "css/slider.css" rel = "stylesheet"><!-- Font slider css -->'
 
-$('#includedContent').append(navbar_content);
+		$('#includedContent').append(navbar_content);
 		
 		var toggle = 0;
-		  $('#min').click(
-		  function() {
-		  $('#navbar').slideUp('slow');
-						toggle=1;
-		  }
+		  $('#min').click(function() 
+			  {
+			  	$('#navbar').slideUp('slow');
+			  	$('#rarrow').hide();
+			  	$('#larrow').hide();
+				toggle=1;
+			  }
 		  );
-		  $('#clickme').click(
-		  function() {
-		  $('#navbar').slideDown('slow');
-						toggle=0;
-		  }
+
+		  $('#clickme').click(function() 
+			  {
+			  	$('#navbar').slideDown('slow');
+			  	$('#rarrow').show();
+			  	$('#larrow').show();
+				toggle=0;
+			  }
 		  );
 			var timer; /* disapearing navbar, disapearing up/down arrow, next and prev. arrows */
-			$(document).mousemove(function() {
-				if (timer) {
+			$(document).mousemove(function() 
+			{
+				if (timer) 
+				{
 					clearTimeout(timer);
 					timer = 0;
 				}
 
-				if (toggle==0) {$('#navbar').fadeIn(); $('#rarrow').fadeIn(); $('#larrow').fadeIn(); }
-				else {$('#clickme').fadeIn(); $('#rarrow').fadeIn(); $('#larrow').fadeIn();}
-				timer = setTimeout(function() {
-					$('#navbar').fadeOut(); $('#clickme').fadeOut(); $('#rarrow').fadeOut(); $('#larrow').fadeOut();
+				if (toggle==0) 
+					{ 	$('#navbar').fadeIn(); 
+						$('#rarrow').fadeIn(); 
+						$('#larrow').fadeIn(); 
+					}
+				else 
+					{ 
+						$('#clickme').fadeIn(); 
+					}
+				
+				timer = setTimeout(function() 
+				{
+					$('#navbar').fadeOut(); 
+					$('#clickme').fadeOut(); 
+					$('#rarrow').fadeOut(); 
+					$('#larrow').fadeOut();
 				}, 3000)
 			});
+
+			// font size increse/decrese using slider
+			$('#fontSlider').slider(); 
+			var fontChange = function() { $('.page-wrapper').css('font-size', r.getValue()) };
+			var r = $('#fontSlider').slider().on('slide', fontChange).data('slider');
 
 			/*//font sizing
 			  $('.increaseFont').click(
@@ -73,15 +97,7 @@ $('#includedContent').append(navbar_content);
 				}
 			  );*/
 
-			// font size increse/decrese using slider
-			$('#fontSlider').slider(); 
-			var fontChange = function() {
-					  $('.page-wrapper').css('font-size', r.getValue())
-					};
 
-					var r = $('#fontSlider').slider()
-							.on('slide', fontChange)
-							.data('slider');
 
 
 
