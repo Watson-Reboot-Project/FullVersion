@@ -14,11 +14,11 @@ $(document).ready(function () {
     next_link.href = contents.getNext().path;
 
 
-    var linkify = function (item) {
+    var linkify = function (prefix, item) {
         var link = document.createElement('a');
         var listItem = document.createElement('li');
         link.href = item.path;
-        link.innerHTML = item.name;
+        link.innerHTML = prefix + ': ' + item.name;
 
         listItem.appendChild(link);
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
             var subitems = item.sections.getItems();
             var list = document.createElement('ul');
             for (var i = 0; i < subitems.length; i++) {
-                list.appendChild(linkify(subitems[i]));
+                list.appendChild(linkify(prefix + '.' + (i + 1), subitems[i]));
             }
 
             listItem.appendChild(list);
@@ -38,6 +38,6 @@ $(document).ready(function () {
     var items = sections.getItems();
 
     for (var i = 0; i < items.length; i++) {
-        links.appendChild(linkify(items[i]));
+        links.appendChild(linkify( 's.' + contents.getNumber() + '.' + (i + 1), items[i]));
     }
 });
