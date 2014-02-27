@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="../ch11/ch11s5p1.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="../ch11/ch11s5p3.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+			
+			<p class="Section">
+				11.5.2  Assembly language to machine language translation
+			</p>
+			
+			<p>
+				Now that we are familiar with the Watson Virtual Machine language instruction set, we can examine the process of translating programs from the assembly level to the machine level.
+			</p>
+			
+			<p>
+				There are eighteen commands in the Watson assembly language.  There are sixteen commands in the Watson Virtual Machine language.  Referring back Figure 11.2 for an overview of the assembly language and Figure 11.25 for an overview of the machine language, we can see that with the exception of the <span class="Subfigure">.WORD</span> and <span class="Subfigure">.BLOCK</span> commands, every assembly language instruction maps to exactly one machine language instruction.  Thus the process of translation between these two levels is straightforward and can be automated.
+			</p>
+			
+			<p>
+				The programs that automatically translate assembly language programs to machine language are called “assemblers”.  Essentially, assemblers construct or “assemble” each of the machine language instructions of a program from the corresponding instruction in the assembly language version of the program.  Figure 11.28 illustrates the relationship between assembly language and machine language with an example program first shown in Figure 11.3.
+			</p>
+			
+			<img src="Images/AssemblyIMGS/fig11-28.png" alt="" class="Image">
+
+			<p class="Figure">
+				Figure 11.28: Machine and assembly language versions of the same program
+			</p>
+			
+			<p>
+				The translation process from assembly language to machine language is described below for the Watson Virtual Machine.  While the process is simplified somewhat from what goes on in “real” systems, it should be sufficient to give you a feel for what happens when an assembly language program is translated to machine code and loaded into memory for execution.
+			</p>
+			
+			<p>
+				Beginning at some starting address (address zero in the Watson VM), reserve memory as specified by the <span class="Subfigure">.BLOCK</span> and <span class="Subfigure">.WORD</span> commands.  Perform the initializations required by the <span class="Subfigure">.WORD</span> commands.  Also note labels associated with each word, block, and command as they are encountered.  For example, <span class="Subfigure">TOTAL</span>, <span class="Subfigure">ABC</span>, and <span class="Subfigure">XYZ</span> are labels in the program of Figure 11.28.  After processing each of the <span class="Subfigure">.WORD</span> and <span class="Subfigure">.BLOCK</span> commands the “data segment” of your machine language program will be complete.
+			</p>
+			
+			<p>
+				The executable instructions of a machine language program will immediately follow its data segment.  For each assembly language instruction, use the table of Figure 11.25 to produce a machine language equivalent.  Instruction names at the assembly level are mapped to op-codes at the machine level.  References to registers at the assembly level are mapped to 4-bit unsigned register numbers.  Labels at the assembly level are replaced with the address associated with that label at the machine level. And so forth.
+			</p>
+			
+			<p>
+				At the conclusion of this process, the machine language equivalent of the assembly language program will be held in the main memory of the Watson Virtual Machine.  In order to begin program execution, the program counter is loaded with the address of the first executable machine language instruction – the first instruction following the data segment.
+			</p>
+			
+			<!-- End main content -->
+			<hr />
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+
+		<title> Watson </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href = "css/bootstrap.css" rel = "stylesheet">
+		<link href = "css/styles.css" rel = "stylesheet">
+		<link href = "css/generalmedia.css" rel = "stylesheet">
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-slider.js"></script>
+				
+
+	</head>
+
+	<body>
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+
+		<!--Floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="index.html">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div>
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="../ch02/ch02.html">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+				</a>
+			</div>
+		<!-- End floating nav -->
+		<!-- page-wrapper is Design's wrapper for fiddling-->
+		<div class="page-wrapper">
+		<!--<div id="wrapper"> This is the one used in other pages-->
+		<div id="main_header" class="container"> <!-- Container begin--></div>
+
+		   <!------------------------------ Main content [BODY] ---------------------------->			
+			
+			<p> 
+				&nbsp; 
+			</p>
+	
+			<p class="Section">
+				1.1 Introduction
+			</p>
+	
+			<p>
+				This chapter provides an introduction to, and overview of, the science of computing.  Section 1.2 sets the stage by defining the term “computing.”  Section 1.3 discusses the four central questions addressed by this text. 
+			</p>
+	
+			<ul>
+				<li>How are computers used?</li>
+		
+				<li>How does computer software work?</li>
+		
+				<li>How does computer hardware work?</li>
+		
+				<li>What are the limitations and potential of computing?</li>
+			</ul>
+	
+			<p>
+				Later chapters of this text will explore each of these subjects in more detail.  As you read this chapter, try not to become overly concerned about fully understanding every detail of every topic that is mentioned.  Instead, take this chapter for what it is – a foretaste of the topics we will cover, a light snack to whet your appetite for what is to come. 
+			</p>
+	
+			<p>
+				&nbsp;
+			</p>
+			
+			<p class="Section">
+				1.2 What is computer science?
+			</p>
+	
+			<p>
+				If you stopped someone on the street and asked him “What do computer scientists do?” you would probably get a response along the lines of “They work with computers” – that is, of course, assuming they didn’t tell you to “get lost”<span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Or something even less polite."><a href="#ftn1" id="body_ftn1">[1]</a></span></span>.  
+			</p>
+	
+			<p>
+				Most people know that computer scientists work with computers.  Many are less clear when it comes to knowing exactly what computer scientists do with those computers.  Some people believe that computing involves learning to use spreadsheets, word processors, and databases.  The truth is that computer scientists are really no more likely to be proficient with word processors or spreadsheets than any other professionals.  Some people think computer scientists build or repair computers.  While computer scientists do study the physical organization of computers and do help to design them, they are not the people to call when your disk drive won’t work.
+			</p>
+	
+			<p>
+				Many people know that computing has something to do with writing computer programs.  In fact, it is a commonly held notion that the study of computer science mainly involves learning to write computer programs.  While it is true that computer scientists must be proficient programmers, the field is much broader than just programming.  
+			</p>
+	
+			<p>
+				Programming is probably best thought of as a skill that computer scientists must master, just as a carpenter must master the use of a hammer.  In the same way that carpentry is about building things and not about simply pounding nails, computer science is not about programming.  Rather, it is about solving problems through the design and implementation of computing systems.  Programming is only one small, rather mechanical, step in this process.
+			</p>
+	
+			<p>
+				This book is about the science of computing, which is also known as computer science or, more simply, computing.  Computing is a broad topic that combines aspects of mathematics and engineering with ideas from fields as diverse as linguistics, art, management, and cognitive psychology.  The people who work in this field are known as <span class="Bolded">computer scientists</span>.  At the heart of the field is the concept of an <span class="Bolded">algorithm</span>, which is a detailed sequence of steps that describes how to solve a problem or accomplish some task.
+			</p>
+	
+			<p>
+				Computer scientists are essentially problem solvers.  Although they are capable of writing the programs that perform various applications, such as word processing or data storage and retrieval, that is not their primary function.  Instead, they study problems in order to discover faster, more efficient algorithms with which to solve them.  Computer scientists also study and design the physical machines, called <span class="Bolded">computers</span>, that carry out the steps specified by algorithms.  In addition, they design the programming languages people use to communicate algorithms to computers.  In a very real sense, <span class="Bolded">computing</span> is the study of algorithms and the data structures upon which they operate.  
+			</p>
+	
+			<p>
+				Students who study computer science in college usually go on to take jobs that require the ability to program.  Some people go into high technology application areas, such as communications or aerospace.  Others end up designing computer hardware or low-level “systems” software.  Still others end up working in computer graphics – helping to develop software for medical imaging, Hollywood special effects, or game consoles.  The possibilities are almost endless.
+			</p>
+			
+			<p>
+				&nbsp;
+			</p>
+			
+			<p class="Section">
+				1.3  Four important questions
+			</p>
+	
+			<p>
+				Our study of computer science will be guided by four questions, which, taken together, give a good overview of computing.  These questions are:
+			</p>
+	
+			<ol>
+				<li>How are computers used?</li>
+	
+				<li>How does computer software work?</li>
+	
+				<li>How does computer hardware work?</li>
+	
+				<li>What are the limitations and potential of computing?</li>
+			</ol>
+	
+			<p>
+				Each of these questions is briefly addressed below, and more thoroughly explored throughout the remainder of the text.  These questions, and their answers, will take us through computing in what is called a “top-down, breadth-first” manner.  The phrase “breadth-first” applies to this text since it spans the breadth of computing, touching on each of the major areas that make up the field.  “Top-down” means that the presentation begins at the level of computer applications, such as spreadsheets and databases, and then works its way through a study of the algorithms and software used to implement and support those applications – starting with the highest, most abstract, levels of software and proceeding through more detailed, lower-level, software, until the actual computer hardware is reached.  A description of computer hardware in terms of the major components of a computer and how those components can be constructed from simple logic gates is then presented.  The final area addressed by the book focuses on discovering the practical limitations and ultimate potential of computers.
+			</p>
+	
+			<p>
+				&nbsp;
+			</p>
+			
+			<p class="Section">
+				1.3.1  How are computers used?  
+			</p>
+	
+			<p>
+				Computers are integral to the fabric of modern life. Without computers there would be no cell phones, no ATMs, and no game consoles.  There would be no widely accepted credit cards.  Air travel would be much less common, much less safe, and far more expensive.  In fact, without computers many aspects of modern life would be missing, and those that remained would be much, much more expensive. 
+			</p>
+	
+			<p>
+				Computers were originally conceived of as machines for automating the process of mathematical calculation.  Given this fact, it is more than a little surprising that many of today’s most popular computer applications focus on communication rather than computation.  Chapter 2 examines five of the most common communication oriented applications: email, instant messengers, web browsers, word processors, and presentation software such as Microsoft’s PowerPoint.
+			</p>
+	
+			<p>
+				Aside from applications designed to help people communicate with one another more effectively, entertainment is probably the second most popular use of computing technology.  Entertainment includes applications such as the production of Hollywood special effects and computer/console games.  
+			</p>
+	
+			<p>
+				First person shooters like “Halo” and “Resident Evil”, classic RPG-based games like “Final Fantasy X”, massive multiplayer games like “EverQuest”, racing games, sports games, strategy games, and traditional adventure games – in 2003 computer and console games (dominated by the likes of Sony’s PlayStation II, Nintendo’s GameCube, and Microsoft’s Xbox) represented a $20 billion dollar industry.  For many people, gaming is their first, and most intimate, interaction with computing technology.
+			</p>
+	
+			<p>
+				Gaming is tremendously important to computing.  The desire for greater and greater levels of realism pushes forward 3-D computer graphics hardware, modeling software, artificial intelligence applications and many other aspects of the field.  Gaming also brings many new people to computing.  It is not uncommon for freshman computer science students to have chosen to major in the field due to a desire to create new and better games.
+			</p>
+	
+			<p>
+				Another extremely useful, but somewhat more mundane, computing application is the spreadsheet. Before the use of spreadsheets became commonplace in the mid-1980’s, using a computer to solve almost any task, such as averaging grades or balancing a check book, required the development of a unique computer program for that task.  This led to great expense, since creating a computer program can be a difficult and time consuming task that requires the services of skilled professional programmers.  With the advent of spreadsheets many simple applications no longer required that custom computer programs be written.
+			</p>
+
+			<p>
+				A <span class="Bolded">spreadsheet</span>, such as Microsoft’s Excel, is a program that allows a person to quickly model a collection of quantitative relationships without writing a computer program.  Spreadsheets are common in the business world.  They are used to tabulate data, perform long series of calculations, and to answer “what if” type questions that require mathematical modeling.  If this sounds overly complex, don’t be put off.  While spreadsheets are one of the most powerful and flexible applications of computers, they are also one of the most intuitive.  
+			</p>
+
+			<p>
+				Chapter 2 includes a detailed discussion of spreadsheets.  Additionally, the Watson spreadsheet laboratory, which is included with this text, will give you a chance to construct a number of spreadsheets for yourself, in order to see how they can be used to solve real-world problems.
+			</p>
+
+			<p>
+				Information storage and retrieval is another important application of computing that has existed since the earliest days of the field.  After the federal government, large businesses were one of the first groups to adopt computers.  They did so in the late 1950’s in order to improve the efficiency of their accounting and billing operations.  Without computers it would be impossible to conduct business in the way we do today.  Just imagine the number of employees your bank would need if it had to process all checks by hand.  The costs involved would make modern banking an unaffordable luxury for the vast majority of people.  Computers were able to streamline financial operations because people quickly recognized that computers could store and rapidly retrieve vast amounts of data.  In fact, the popular press of the 1950’s often referred to computers as “electronic brains” because of their highly publicized speed and accuracy.
+			</p>
+
+			<p>
+				Chapter 3 examines the way data is physically stored by computers and looks at some of the techniques used to organize data so that it can be rapidly retrieved.  The chapter discusses the various kinds of files that can be stored along with the advantages and disadvantages of each.  Some techniques are appropriate for storing data that must be directly addressable based on a key.  For example, a university usually wants to access its student records by student ID number.  Other techniques are more appropriate for data that is sequential in nature.  In addition to individual files of information, database management systems are useful for organizing large collections of related information.  A <span class="Bolded">database management system</span> is a program that can be used to organize data in ways that make it easy for people to pose questions.  For example, a well-organized database would make it easy for the university registrar to find answers to questions such as “How many female engineering students have a GPA of 3.5 or above?” or “Which classes did Dr. O’Neal teach in the fall of 2003?”  A Watson database laboratory is included with this text.  It will give you a feel for the types of problems that can be solved using a modern relational database package.
+			</p>
+
+			<p>
+				The last chapter in the section on computer applications, Chapter 4, focuses on the impact of computers on society.  A number of issues of interest to the general public are addressed, including: security and privacy, freedom of expression, intellectual property rights, and computer crime.  In addition, issues of particular interest to the computing professional, such as accountability, liability, and professional licensing are discussed.  
+			</p>
+	
+			<p>
+				<span class="Bolded">Security</span> generally refers to how well information is protected from unauthorized access while <span class="Bolded">privacy</span> is concerned with what information should be protected and from whom.  Unauthorized access to your bank account is a security issue.  Whether the government has a right to monitor electronic communications is a privacy issue.
+			</p>
+
+			<p>
+				Because computers are able to rapidly process, store, and retrieve vast quantities of information they have always posed a serious potential threat to individual privacy.  Before computers were commonplace, personal information such as an individual’s name address, phone number, income level, and spending habits could be collected, but the expense involved in doing so by hand was generally prohibitive.  Computers make the compilation of detailed personal profiles, from what kind of toothpaste you use, to your political orientation, both practical and inexpensive.
+			</p>
+	
+			<p>
+				As computers become more and more interwoven into the fabric of society, issues of security and privacy take on greater urgency.  Do governments have the right to monitor private electronic communications?  What constitutes a “private” communication?  Do employers have the right to monitor their employees’ email?  Do faculty and administrators have the right to monitor email sent by students?  Does the answer to the last question depend in any way on whether the email is sent over a network of computers owned and operated by the university?
+			</p>
+
+			<p>
+				Another area of concern involves intellectual property rights.  While the modern concept of copyright has roots going back at least as far as England’s 1710 Statute of Ann, the advent of computing and high-speed networking technologies pose many new challenges and questions.  These challenges range from software piracy, to ripping CDs and swapping MP3 music files, to trading AVI and VCD video files.  The ease with which copyrighted material can (and is) illegally distributed has led to a storm of questions and controversy concerning existing copyright law.
+			</p>
+
+			<p>
+				Accountability and liability are issues of increasing concern to computing professionals.  Accountability focuses on determining who is responsible for an action being taken or an event occurring.  Liability, on the other hand, tends to be a legal question.  Both concern responsibility.  
+			</p>
+	
+			<p>
+				Consider modern “fly-by-wire” aircraft, such as those in the Boeing 777 series. In these aircraft, computers actually manipulate the plane’s control surfaces.  This is different from traditional aircraft where the movements of the pilot, usually magnified by hydraulic systems, directly position the flaps, ailerons, and other control surfaces.  In a fly-by-wire aircraft when the pilot pulls back on the stick, a computer senses the movement of the stick and adjusts the control surfaces accordingly.
+			</p>
+	
+			<p>
+				Who is responsible if a fly-by-wire aircraft crashes, killing hundreds of people, and the fault can be traced to a bug, or error, in the control software?  The airline for buying the aircraft?  The aircraft manufacturer?  The members of the programming team who wrote the flawed piece of software?  More important than assigning blame in such situations is determining how such accidents can be prevented in the first place.  Such concerns are more than academic since, as we will learn, it is fundamentally impossible to prove that computer programs are error free.  Any complex piece of software written by a team of humans will contain errors.
+			</p>
+
+			<p>
+				Computer scientists and other computing professionals have responded to the above issues in recent years by forming organizations such as Computer Professionals for Social Responsibility and by the publication of a Code of Ethics by the Association for Computing Machinery.  However, unlike engineers, computing professionals are not licensed to practice their vocation.  There is no organization responsible for defining and enforcing a uniform set of professional standards and ethical guidelines – or for imposing sanctions on individuals who engage in irresponsible or unethical professional behavior.
+			</p>
+
+			<p>
+				&nbsp;
+			</p>
+			
+			<p class="Section">
+				1.3.2  How does computer software work?  
+			</p>
+	
+			<p>
+				Now that we have talked about some of the many things computers are used for, the question that naturally arises is “How are computers able to accomplish all of these different tasks?”  The first thing to understand is that computer systems are composed of two major components: hardware and software.  <span class="Bolded">Hardware</span> consists of the actual electronic components that make up a computer.  
+			</p>
+	
+			<p>
+				Unlike hardware, computer software is completely abstract.  It has no physical existence.  You cannot see, hear, touch, smell, or taste software.  Although it has no physical existence, software is real – as real as the color red, or the number five, or the concept of beauty.  One way to think of software is as “codified thought.”  
+			</p>
+	
+			<p>
+				More formally, <span class="Bolded">software</span> consists of computer programs and the data on which they act.  <span class="Bolded">Computer programs</span> are algorithms expressed in a form that is executable by computers.  As mentioned earlier, an <span class="Bolded">algorithm</span> is a detailed sequence of steps that specifies how to solve a problem or accomplish some task.  So, computer programs are just sequences of instructions that a computer can follow to solve a problem or accomplish a task.  
+			</p>
+	
+			<p>
+				It is important to note that the terms “program” and “algorithm” are not synonymous.  A description of how to sort a list of numbers is an algorithm.  For example, here is the selection sort algorithm:
+			</p>
+	
+			<ul>
+				<p>
+					Step 1:  Remove the smallest item from the input list.
+				</p>
+	
+				<p>
+					Step 2:  Append this smallest item to the end of an output list.
+				</p>
+	
+				<ul>
+					<p>
+						(This output list will be empty when you first begin.)
+					</p>
+				</ul>
+	
+				<p>
+					Step 3:  Repeat the above two steps until the input list is empty.
+				</p>
+			</ul>
+
+			<p>
+				This sorting procedure is not a computer program, since it is written in English, rather than being expressed in a form that can be recognized by a computer.  
+			</p>
+
+			<p>
+				Algorithms, including procedures for searching and sorting, are discussed in Chapter 5.  Chapter 6 continues our exploration of algorithms by introducing a language for drawing simple graphical images.  A Watson lab is included so that you can write programs in this language in order to create drawings and animation sequences.
+			</p>
+
+			<p>
+				Computer programs must be written in programming languages, such as Java, C++, JavaScript, or Visual BASIC.  <span class="Bolded">Programming languages</span> are formal systems for precisely specifying algorithms and their associated data structures in a form that can be recognized by a computer.  By “formal” we mean these languages are based on sets of rules that dictate how instructions must be formed and interpreted.  Programming languages are designed in such a way as to eliminate the ambiguity for which natural languages, such as English, are notorious.
+			</p>
+
+			<p>
+				Computer programs operate on data.  <span class="Bolded">Data</span> are the symbols, usually characters, or groups of characters, used to represent information that has meaning to people.  The words and pictures making up this book are data.  The meaning they convey to you as you read them is information.  One of the fascinating aspects of computers is that they have the ability to manipulate symbols without needing to understand the meaning of those symbols.  My word processing program allows me to edit this text, even though it cannot read English and has no notion of the meaning of these words.  
+			</p>
+	
+			<p>
+				Computer programs read input data, manipulate that data in some way, and produce output.  A program of any complexity will need ways of organizing, or structuring, that data.  Hence, an understanding of data structures is critical to understanding computer software.  A <span class="Bolded">data structure</span> is a collection of data together with a group of operations that manipulate that data in certain predefined ways.  For example, the <span class="Bolded">queue</span> is a standard data structure that models a waiting line.  It supports two basic operations enqueue and dequeue.  “Enqueue” adds an item to the end of the waiting line.  “Dequeue” removes an item from the front of the waiting line.  Chapter 7 examines a variety of data structures, including stacks, queues, lists, and trees.  The Watson lab associated with that chapter will allow you to directly experiment with the behavior of a number of these data structures. 
+			</p>
+
+			<p>
+				Chapters 8 and 9 continue the study of software by examining the major types, or paradigms, of programming languages.  A <span class="Bolded">paradigm</span> is a way of thinking about a problem or modeling a problem solution.  There are at least three identifiable programming paradigms: the imperative paradigm, the functional paradigm, and the logical paradigm.  Some computer scientists view object-oriented programming as a fourth paradigm.  Others prefer to view objects as an extension to the imperative, functional, and logical paradigms.  Regardless, all four of these approaches are covered in the text – the imperative approach in Chapter 8, the functional, logical, and object-oriented approaches in Chapter 9.  A Watson lab has been constructed for the imperative paradigm.  This lab will help you gain additional insight into writing computer programs.
+			</p>
+
+			<p>
+				The vast majority of programs are written in imperative languages.  C++, Java, JavaScript, Perl, BASIC, Fortran, C, Pascal, Ada, Modula-2, and COBOL are all imperative languages.  The <span class="Bolded">imperative paradigm</span> derives its name from the fact that statements in imperative languages take the form of commands.  In English, imperative sentences, such as “eat your vegetables” or “take out the trash” are commands where the subject is understood to be “you” – “You take out the trash.”  Imperative programming languages are similar in that each statement is a command instructing the computer to perform some action.  An example of a statement written in the Watson Imperative Language is:
+			</p>
+	
+			<p class="Subfigure">
+				write( “What’s up Doc?”);
+			</p>
+	
+			<p>
+				which instructs the computer to write the phrase “What’s up Doc?” on the display screen.
+			</p>
+
+			<p>
+				The <span class="Bolded">functional paradigm</span> is patterned after the mathematical concept of a function.  A <span class="Bolded">function</span> defines a mapping from inputs (i.e., the domain) to outputs (i.e., the range) in which a particular input sequence always maps to the same output.  Addition is an example of a function.  Simple addition takes a sequence of two numbers as input and produces a single number as output (e.g., 5 + 4 equals 9).  Notice that since addition is a function, the same input sequence always produces the same output.  This means, for example, that 5 + 4 must always equal 9 and never anything else.  While a particular input sequence must always generate the same output, it is often true that a function will map many different input sequences to the same output.  So, while 5 + 4 must always equal 9, so can 6 + 3 and 7 + 2 and 993 + -984.  Another key characteristic of functions is that they always return one, and only one, result.
+			</p>
+
+			<p>
+				In the functional paradigm, statements are functions to be evaluated.  This is different from the imperative paradigm in which statements are commands to be executed.  As a result, functional programs tend to take on the form of nested expressions, rather than sequences of commands.  Another difference between imperative and functional programs is that imperative languages generally store the results of computations in declared variables.  Functional languages avoid the use of declared variables.  Instead, values are computed as needed.  An example will help to illuminate these differences.
+			</p>
+
+			<!-- Format -->
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">read (tempc);</span></li>
+				<li><span class="Subfigure">tempf = (1.8 * tempc) + 32;</span></li>
+				<li><span class="Subfigure">write(tempf);</span></li>
+			</ul>
+			<p class="Figure">(a) A code fragment written in the imperative style </p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(write(add (multiply 1.8 (read)) 32))</span></li>
+			</ul>
+			<p class="Figure">(b) A code fragment written in the functional style</p>
+	
+			<p class="Figure">
+				Figure 1.1:  Examples of the functional and imperative paradigms
+			</p>
+
+			<p>
+				Figure 1.1 illustrates two implementations of an algorithm for converting temperature readings from Celsius to Fahrenheit.  Part (a) contains an imperative version of the algorithm while part (b) contains a functional version of the same algorithm.  Both code fragments do the same thing: read a temperature; multiply that temperature by 1.8; add 32 to the result; and then display the final answer.  
+			</p>
+	
+			<p>
+				Don’t worry if some of the details of this example elude you.  Chapters 8 and 9 discuss imperative and functional programming much more thoroughly.  At this point all you need to recognize is that the various paradigms can produce quite different programs, even if those programs are based on the same underlying algorithm.
+			</p>
+
+			<p>
+				Lisp is an example of a programming language that belongs to the functional paradigm.  Surprisingly, even though Lisp is functional, its major use is not to perform mathematical computations.  Instead, Lisp is mainly used for what is called symbolic processing.  That is to say, Lisp is good for manipulating symbols, such as words, that represent concepts and ideas.  For this reason, Lisp is often used in the study of artificial intelligence, which attempts to build computer programs capable of displaying “human-like” intelligence.  
+			</p>
+
+			<p>
+				The logical paradigm, exemplified by the language Prolog, is another alternative to the standard imperative paradigm.  The <span class="Bolded">logical paradigm</span> is a style of programming based on predicate logic.  Programs written in this paradigm strive not to be simple encodings of algorithms, but instead to be precise statements of the problem to be solved.  <span class="Bolded">Predicate logic</span> is a formal system for deriving logically valid conclusions from a consistent set of facts and rules.  Since the system is formal, the process of reasoning can be automated using techniques such as resolution theorem proving.  Like Lisp, Prolog is often used in the study of artificial intelligence.
+			</p>
+
+			<p>
+				In essence, the programmer’s task in logic programming is to provide the computer with the pertinent facts and rules that describe the important aspects of a problem.  It is then the responsibility of an automated system, called the program interpreter or inference engine, to determine how the problem is to be solved.  This focus on describing <span class="Ital">what</span> the problem is, is in sharp contrast to the imperative approach in which the program directly encodes <span class="Ital">how</span> the problem is to be solved.  Because statements in logic-based languages represent declarations that are assumed to be true, rather than commands to be performed, this approach is sometimes referred to as the declarative paradigm.  Logic programming is further explored in Chapter 9.  
+			</p>
+
+			<p>
+				The <span class="Bolded">object-oriented approach</span> adds the concepts of objects and messages to the above paradigms.  Essentially, programs and the data on which they act are viewed as objects.  In order to perform a task an object must receive a message indicating that work needs to be done.  The object-oriented approach is well suited for implementing modern “point and click” program interfaces.  These interfaces consist of a number of graphical symbols, called <span class="Bolded">icons,</span> that are displayed on the screen.  Whenever a user clicks the mouse pointer on one of these icons, such as a button or scrollbar, a message is sent to the corresponding program object, causing it to execute.  Other distinguishing characteristics of object-oriented programs, including inheritance, polymorphism, and data encapsulation; are discussed in Chapter 9.
+			</p>
+
+			<p>
+				So far in this discussion of software, we have talked about algorithms, data structures, and programming paradigms.  Chapter 10 focuses on a topic critical to the development of large computer programs – the topic of software engineering.  <span class="Bolded">Software engineering</span> is the study of the design, construction, and maintenance of large software systems.  
+			</p>
+	
+			<p>
+				As the hardware capabilities of computers have increased, so have the expectations for the performance of software.  We expect programs to be friendly, easy to use, reliable, well documented, and attractive. Meeting these expectations often increases the size and complexity of a program.  Thus, over time, the average size of programs has tended to increase.
+			</p>
+	
+			<p>
+				Many software systems represent a significant number of person-years of effort and are written by large teams of programmers.  These systems are so vast that they are beyond the comprehension of any single individual.  As computer systems become more and more intertwined into the fabric of modern life, the need for reliable software steadily increases.  As an example take the long distance telephone network.  This system consists of millions of lines of code written by thousands of people over decades – yet, it is expected to perform with complete reliability 24 hours a day, 7 days a week.  
+			<p>
+
+			<p>
+				Unfortunately, whereas the scaling up of hardware has been a straightforward engineering exercise, software production cannot be so easily increased to meet escalating demand.  This is because software consists of algorithms that are essentially written by hand, one line at a time.  As the demands of increasing reliability and usability have led to software systems that can not be understood by a single person, questions concerning the organization of teams of programmers have become critical.
+			</p>
+	
+			<p>
+				These managerial issues are complicated by the unique nature of software production.  Programming is a challenging task in its own right, but its complexity is increased many fold by the need to divide a problem among a large group of workers.  How are such projects planned and completion dates specified?  How can large projects be organized so that individual software designers and programmers can come and go without endangering the stability of the project?  These are just some of the questions addressed by software engineering.
+			</p>
+
+			<p>
+				One of the cornerstones of software engineering is the <span class="Bolded">software lifecycle</span>: a model of how software is developed, used, maintained over time, and eventually discarded.  This model is helpful in predicting costs and allocating programming resources, but it suffers from inflexibility.  This inflexibility has led to the adoption of alternative software development models in recent years, such as rapid prototyping.  Newer models tend to focus on improving user satisfaction with the software (e.g., making programs more usable and user-friendly).
+			</p>
+
+			<p>
+				In addition to managing the development of individual software projects, software engineers also design tools for automating portions of the software development process.  For example, tools to assist with the creation of program documentation and testing are now common.  Such tools are often referred to as CASE tools, where CASE stands for Computer Aided Software Engineering.  
+			</p>
+
+			<p>
+				&nbsp;
+			</p>
+			
+			<p class="Section">
+				1.3.3  How does computer hardware work?  
+			</p>
+
+			<p>
+				So far, this chapter has looked at a number of common applications of computing and described how such applications can be constructed from algorithms and data structures expressed in the form of computer programs.  The next logical question is: “How does computer hardware execute these programs?”.  This section introduces some of the main concepts of computing hardware.  These concepts will be amplified and extended in Chapters 11 and 12.
+			</p>
+
+			<p>
+				All general-purpose computers, at a minimum, consist of the following hardware components: a central processing unit, main memory, secondary storage, various input/output devices, and a data bus.  A diagram showing the major hardware components is presented in Figure 1.2.  
+			</p>
+
+			<p>
+				The <span class="Bolded">central processing unit</span>, or CPU, is the device that is responsible for actually executing the instructions that make up a program.  (For this reason, it has sometimes been referred to as the “brain” of the computer.)  Before examining the function of the CPU, a number of other components of the computer need to be introduced.  
+			</p>
+
+			<p>
+				<span class="Bolded">Main memory</span> is where the programs and data that are currently being used are located.  Main memory is often referred to as <span class="Bolded">RAM</span>, which stands for Random Access Memory.  This acronym is derived from the fact that the CPU may access the contents of main memory in any order – there is no fixed or predefined sequence.  In 2003, a new personal computer typically had between 512 megabytes to one gigabyte of main memory, meaning they could store somewhere between one half to one billion characters.  
+			</p>
+	
+			<img src="Images/fig1-2.png" alt="A block diagram of a computer" class="Image">
+	
+			<p class="Figure">
+				Figure 1.2:  A block diagram of a computer
+			</p>
+
+			<p>
+				<span class="Bolded">Secondary storage</span> is used to hold programs and data that are likely to be needed sometime in the near future.  Disk drives are the most common secondary storage devices.  The capacity of secondary storage devices purchased in 2003 ranged from about 40 to 120 gigabytes, meaning they could store somewhere between 40 to 120 billion characters.
+			</p>
+	
+			<p>
+				The storage capacity of memory devices, both main memory and secondary storage, tend to increase rapidly over time.  Historically, they have doubled approximately once every 18 months.  This observation, known as <span class="Bolded">Moore’s law</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Named after Intel co-founder Gordon Moore."><a href="#ftn2" id="body_ftn2">[2]</a></span></span>, has remained true since the introduction of computers more than half a century ago. 
+			</p>
+	
+			<p>
+				Moore’s law also appears to apply to the speed at which CPU’s process instructions.  Personal computers purchased in 2003 operated at speeds of approximately 3 billion cycles per second (3.0 Gigahertz) – meaning they could execute almost 3 billion individual instructions per second.  It is this blinding speed that allows computers to accomplish the amazing feats they are capable of.
+			</p>
+	
+			<p>
+				While the actual sizes of main memory and secondary storage continue to rapidly increase, their relative characteristics have remained fixed for at least a quarter century.  Historically, secondary storage devices have tended to hold about 100 times as much information as main memory.  In general, main memory is fast, expensive, and of limited size when compared to secondary storage.  Conversely, secondary storage is slow, cheap, and large compared to main memory.  The primary reason for these differences is that main memory consists of electronic components that have no moving parts.  Secondary storage generally involves electromechanical devices, such as a spinning disk, on which information may be read or retrieved using magnetic or optical (laser) technology.  Because these devices contain moving parts, they tend to be many times slower than main memory.  
+			</p>
+	
+			<p>
+				Another difference between main memory and secondary storage is that secondary storage is persistent, in the sense that it does not require continuous electrical power to maintain its data.  The main memory of most computers is, on the other hand, volatile.  It is erased whenever power is shut off.
+			</p>
+
+			<p>
+				The <span class="Bolded">data bus</span> is the component of a computer that connects the other components of the computer together so that they may communicate and share data.  For example, the instructions that make up a computer program are usually stored in main memory while the program is running.  However, the actual computations take place in the CPU.  Before an instruction can be executed, it must first be copied from the main memory into the CPU.  This copying operation takes place over the data bus.
+			</p>
+	
+			<p>
+				Now that the major components of a computer have been introduced, the operation of the CPU can be examined.  The operation of the CPU is governed by the instruction cycle.  The <span class="Bolded">instruction cycle</span> is a procedure that consists of three phases: instruction fetch, instruction decode, and instruction execution.  The CPU’s task is to perform the instruction cycle over and over until explicitly instructed to halt.  The <span class="Bolded">fetch</span> part of the instruction cycle consists of retrieving an instruction from memory.  The <span class="Bolded">decode</span> phase concerns determining what actions the instruction is requesting the CPU to perform.  Instruction <span class="Bolded">execution</span> involves performing the operation requested by the instruction.
+			</p>
+	
+			<p>
+				In order for a computer to do any kind of useful work, it must have ways of communicating with the outside world.  <span class="Bolded">Input/output devices</span> allow computers to interact with people and other machines.  I/O devices range from the mundane (e.g., keyboard, mouse, and display) to the exotic (e.g., virtual reality glasses and data gloves).  Some devices, such as keyboards, are strictly for input only.  Other devices, such as display screens, are output only.  Still other devices, such as modems, can handle both input and output.  
+			</p>
+	
+			<p>
+				The general trend in I/O devices is towards higher throughput rates.  Newer I/O devices can transmit and/or receive greater quantities of data in shorter periods of time.  This trend is related to the desire to incorporate very high-resolution graphics, sound, music, and video into modern software products – all of which require large amounts of memory and rapid I/O.
+			</p>
+	
+			<p>
+				Although modern computer hardware is quite impressive, it is easy to overestimate the capabilities of these machines.  Computers can directly perform only a small number of very primitive operations and, in general, their CPUs are sequential devices – able to perform only one instruction at a time.  These limitations are not apparent to the average computer user because computer scientists have built up a number of layers of software to insulate the user from the physical machine.  Software can be used to make computers appear much more capable and friendly than they actually are because of the tremendous speeds at which they operate.  (Remember, a modern PC can execute about 3 billion instructions each second.)
+			</p>
+	
+			<p>
+				In order to help you gain a familiarity with the capabilities and limitations of computing hardware, a Watson Instruction Set Architecture (ISA) lab is presented in Chapter 11.  This lab simulates the workings of a very simple computer so that you can study the various hardware components, such as the CPU.  The machine is fully programmable with its own internal machine language.  A <span class="Bolded">Machine language</span> is the set of instructions, expressed as a series of 1’s and 0’s, that are directly executable by the machine.  Different types of machines, such as PC’s and Mac’s, have their own unique machine languages.
+			</p>
+	
+			<p>
+				In section 1.3.2 the various kinds of programming languages: imperative, functional, logical, and object-oriented, were introduced.  These programming languages are known as <span class="Bolded">high-level languages</span> because they hide many of the details inherent in machine languages.  Programs written in high-level languages are not <span class="Ital">directly</span> executable by a machine.  How then are programs that are written in these languages ever run?  One common approach is to translate programs written high-level languages into the machine language of a particular type of computer.  The programs that translate other programs from high-level languages to machine languages are called <span class="Bolded">compilers</span>.  After translation, these functionally equivalent machine language programs can be executed to perform the tasks specified by the original high-level programs.  
+			</p>
+	
+			<p>
+				This system of translation balances the needs of hardware designers against those of software designers, and has been in use for over forty years.  It allows people to write programs in languages that are closer to the way humans communicate with one another.  This approach also allows hardware designers to concentrate on building faster computers without having to become overly concerned with their ease of use.  Another important advantage of this system is that it allows computer hardware to advance rapidly without maintaining compatibility with previous systems.  When a new chip, such as Intel’s 64-bit Itanium processor, is introduced the only programs that must be written from scratch are the compilers that translate high-level programs into the new chip’s machine language.  The vast majority of existing programs, which are written in high-level languages, need only be “recompiled” using the new compliers in order to run on the new chip. 
+			</p>
+	
+			<p>
+				As mentioned above, computers really only understand machine language.  These machine languages consist entirely of 1’s and 0’s.  This fact brings two questions to mind.  First, if computers only process 1’s and 0’s, how can they do word processing involving character data or math involving numbers greater than one?  Second, how can an electronic device store and process the symbols “1” and “0” anyway?  The first question is addressed in Chapter 11 and the second in Chapter 12.  Here, I only attempt to give you an intuitive feel for some of the material that will be covered in these chapters.
+			</p>
+	
+			<p>
+				Human languages tend to be very large, with tens of thousands of individual words, and many, many more potentially valid sentences.  Most languages have a written form.  It is possible to use a unique symbol for each word, and, in fact, early forms of writing were based on this idea.  Extending the idea even further, it would be possible to use a unique symbol for every possible sentence that could be spoken in the language.  While this idea would lead to much shorter books, it is probably not a good idea due to the vast number of potential sentences, and therefore symbols, that would be required.  Modern languages have tended, in fact, to go the other way, towards fewer unique symbols.  This is possible, due to the fact that higher-level symbols, such as words, can be constructed from sequences of lower-level symbols, namely, characters.
+			</p>
+	
+			<p>
+				The situation with computers, which process only 1’s and 0’s, is analogous to having a two-letter alphabet.  It is important to realize that anything that can be written with an alphabet of 26 letters can be written using an alphabet of only two letters.  You just need a way of translating back and forth from the 26-letter alphabet to the two-letter alphabet.  Of course we use far more than 26 symbols in written English communication.  We have both upper and lower case letters, punctuation marks, such as “. , ; : ”, special symbols like “$ # @ &amp;” and so forth.  <span class="Bolded">ASCII </span>(pronounced “as ski”), the American Standard Code for Information Interchange, specifies how 128 common symbols are to be represented using 1’s and 0’s.  Each ASCII character requires exactly 7 bits, where a <span class="Bolded">bit</span> is just a “1” or a “0”.  For example, the symbol “A” has an ASCII representation of “1000001”.  It is important to understand that there is nothing magic about using this particular pattern of 1’s and 0’s to represent “A”.  The people who designed the ASCII standard could just as easily have chosen some other pattern for this character.  What is important is that ASCII is an agreed upon standard that the vast majority of computers use to represent data.  Because of this “universal” standard, it is relatively easy to share data between different kinds of machines.
+			</p>
+	
+			<p>
+				While the digits “0” through “9” are characters that have ASCII representations, computers generally store numbers in a form different from text.  The representations used for numbers are chosen in such a way as to make it easier for computers to do math.  Here is a binary representation of the number twelve: “1100”.  The number twelve is not the same as the character string “12” (read “one two”), which is the symbol for “1” followed by the symbol for “2”, in ASCII “0110001 0110010”. 
+			</p>
+	
+			<p>
+				At this point you should be convinced that anything that can be written down could be encoded using only two symbols.  But, how can computers store those two symbols?  The answer is that computer hardware contains many electrical circuits that can be either on or off.  The two symbols, “1” and “0”, are associated with the two states, on and off.  So, for example, a given circuit can be said to hold the symbol “1” when it is on and the symbol “0” when it is off.  Collections of these circuits can hold ASCII data and numbers.
+			</p>
+	
+			<p>
+				In addition to storing symbols, computers must be able to manipulate them.  As strange as this may sound, <span class="Ital">all</span> of the operations that a computer can perform, from math and logic to playing sound and graphics, can be expressed in terms of only three basic operations: “and”, “or”, and “not”.  <span class="Bolded">And</span> takes two inputs, if they are both “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Or</span> also takes two inputs, if either or both inputs are “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Not</span> takes a single input, if the input is “1” the output is “0”, and vice versa.  Electrical circuits for each of these three logic operations can easily be built, and these basic circuits can be combined to produce circuits capable of more complex behavior.  Chapter 12 explores this subject in more detail and introduces the Watson Digital Lab which can be used to design and test simple digital circuits.
+			</p>
+	
+			<p>
+				&nbsp;
+			</p>
+			
+			<p class="Section">
+				1.3.4  What are the limitations and potential of computers?  
+			</p>
+	
+			<p>
+				The final section of this text addresses three broad questions concerning the potential of computers.  Chapter 13 centers on a discussion of the fundamental theoretical and practical limits of computing.  In essence, it asks (and to some degree answers) what computers are fundamentally capable of.  Surprisingly, there are some things that no computer, ever, will be able to do.  Chapter 14 looks into computing and intelligence.  The chapter discusses some of the techniques, promises, and failures of the branch of computer science known as artificial intelligence or AI.  AI is concerned with making computers more human-like.  Chapter 15 reviews some of the history that has brought computing to where it is today, and then extrapolates current trends in an attempt to size up where the field is headed over the next three decades.
+			</p>
+	
+			<p>
+				When trying to determine the limits of computing, two separate but related questions are generally of interest: “What problems can be solved in practice?” and “What problems, by their very nature, can never be solved?”  The answer to the first question changes over time as computers become more powerful.  The answer to the second question does not change.
+			</p>
+	
+			<p>
+				Generally, the amount of time a program takes to run, together with the amount of space it requires to perform its computations, are the characteristics that are most important in determining whether the program is “practical.”  If a program requires 48 hours to forecast tomorrow’s weather, it is not very practical.  Likewise, a program will be of little use if it requires more memory than is available on the computer for which it was designed.  
+			</p>
+	
+			<p>
+				There are often many different ways to solve a specific problem.  When there are multiple algorithms for solving a problem, and they all produce identical results, people generally prefer the algorithm that runs in the least time (or, sometimes, that uses the least space).  Determining the “best” algorithm for solving a problem can, however, be a difficult issue, since the time and space requirements of different algorithms increase at different rates as the size of the problems they are solving increase.  In other words, given two algorithms A and B, algorithm A may be faster than B on problems of size 10, but B may be faster than A on problems of size 100 or larger.  
+			</p>
+	
+			<p>
+				Computer scientists have developed methods for characterizing the efficiency of computer programs in terms of their time and space requirements, expressed as a function of the size of the problem being solved.  What is most important about an algorithm is usually not how much time it takes solving a specific instance of a problem (e.g., sorting a particular list of names), but instead the manner in which compute time and memory requirements increase with increasing problem size (i.e., how quickly do the algorithm’s resource needs increase when presented with larger and larger input lists).  The reason for this focus on <span class="Ital">rates of increase</span> rather than absolute numbers is that computer programs are generally not used to solve the same exact instance of a problem over and over, but instead to solve many different instances of the same problem.  
+			</p>
+	
+			<p>
+				In other words, a program for sorting lists would probably not be used to sort the exact same list over and over, but would instead be used to sort a different list each time the program was run.  Furthermore, the sizes of these lists will not all be identical.  Some input lists will be shorter and others longer.  Hence, in order to be able to compare different methods (algorithms) for sorting lists, we need to know how rapidly the time they take to sort a list increases as the input list becomes larger.
+			</p>
+	
+			<p>
+				In addition to comparing existing algorithms, computer scientists are sometimes able to analyze a problem in such a way as to establish the minimum amount of effort that always must be expended to solve the problem.  This minimum amount of effort, or “lower bound”, guarantees that no solution to the problem will take fewer than <span class="Ital">X</span> steps for an input size of <span class="Ital">N</span>.  For example, no method of sorting 100 numbers can take fewer than 100 steps since, at the very least, each of the 100 numbers must be inspected to assure that it is in the proper order.  In this particular example both <span class="Ital">N</span> (the size of the input) and <span class="Ital">X</span> (the number of steps) equal 100, but the actual problem size is irrelevant.  We could have chosen to sort 10 numbers or 1,000 numbers.  The important point is that the minimum number of steps to perform a sort is equal to the size of the input list, or in mathematical notation:  <span class="Ital">X = N</span>.  Knowing the minimum number of steps required to solve a problem can be quite useful when trying to determine whether current methods of solving the problem are close to optimal, or whether better approaches probably exist, but have yet to be discovered.
+			</p>
+	
+			<p>
+				To address the question of “What problems can never be solved?”, computer scientists design and study abstract models of computers.  No thought is given to designing practical machines; the models are purposefully kept as simple as possible.  This is done in order to ease the process of analyzing what problems these models can and cannot solve.  There are three common computing models: finite state automata, push-down automata, and Turing machines.  These models are only introduced here.  More detailed descriptions are provided in Chapter 13. 
+			</p>
+	
+			<p>
+				<span class="Bolded">Finite state automata</span> consist of a collection of states (usually drawn as circles) and transitions between states (usually drawn as labeled arrows).  Finite state automata are simple machines, with a limited amount of memory, that can process strings of input data one character at a time.  As each character is read, the automaton traverses the transition labeled with the input character.  After all input characters have been read, the input is accepted if the automaton is in a special “accepting” state.  Otherwise the input is rejected.  Figure 1.3 shows a finite state automaton that accepts all strings of zeros and ones that begin with a one.  Even though finite automata are quite limited in what they can do, they are still quite useful.  For example, programs based on finite automata are used to create efficient pattern matchers.
+			</p>
+	
+			<img src="Images/fig1-3.png" alt="A finite automaton that accepts all strings of zeros and ones that begin with a one" class="Image">
+		
+			<p class="Figure">
+				Figure 1.3:  A finite automaton that accepts all strings of zeros and ones that begin with a one
+			</p>
+		
+			<p>
+				<span class="Bolded">Push-down automata</span> are just finite automata with the addition of a “stack” of unlimited depth.  A <span class="Bolded">stack</span> is a last-in, first-out data structure.  It is similar to a stack of objects in real life – like a stack of cafeteria trays.  Only the top item may be removed and additional items can only be placed on the “top” of the stack.  Programs based on push-down automata are useful for translating other programs, written in high-level languages like C++, into low-level machine languages.
+			</p>
+		
+			<p>
+				The final model of computing, the <span class="Bolded">Turing machine</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: “Turing” is always capitalized, since Turing machines are named after their inventor, the mathematician and computer scientist Alan Turing."><a href="#ftn3" id="body_ftn3">[3]</a></span></span>, is essentially a finite automaton with unlimited memory.  Turing machines can solve the same class of problems as general-purpose computers.  However, it can be proven that certain, apparently straightforward, problems cannot be solved by Turing machines.  This means that there are some problems that have no computable solution – no computer program can be written to solve these problems, <span class="Ital">ever</span>. 
+			</p>
+		
+			<p>
+				For example, no computer program will ever exist that can take as input another program and its data; and reliably produce as output a message telling whether that program will “crash” on the given data.  While this problem can be solved for special cases, such as programs without loops, it cannot be solved in general.  This is unfortunate, since such a program would be quite useful for testing other computer programs to make sure they work properly, vastly simplifying the task of software engineering.
+			</p>
+		
+			<p>
+				Even though computer scientists have identified some problems that they know cannot be solved by computers, in general they are not sure what the practical limits of computing are.  Currently, there are many tasks at which computers far surpass humans and there are others at which humans excel.  The problems humans find difficult (such as performing a long series of calculations) tend to have straightforward computational solutions, while problems which humans find trivial (such as using language and comprehending visual information) are currently all but impossible for computers.  
+			</p>
+		
+			<p>
+				Will computers ever be able to do the kinds of things humans find simple, or will these tasks always be beyond their capabilities?  <span class="Bolded">Artificial intelligence</span>, or AI, is a branch of computer science that seeks to make computers more human-like, and thus better at doing these “simple” things.
+			</p>
+		
+			<p>
+				Computer scientists have been working on the problems of artificial intelligence since the 1950’s with only limited success.  In the early years of the field many significant advances were made, such as a program that could play checkers, learn from its mistakes, and eventually grow better at the game than its creator.  Other programs that could solve difficult mathematical and logic problems were written.  These early successes led to bold predictions that computers would soon match and then surpass the abilities of humans.
+			</p>
+		
+			<p>
+				By the mid 1970’s it was clear that the problems of artificial intelligence were much harder than had been originally thought.  While impressive results could be obtained solving very limited problems, the techniques used could not be scaled up to work on more challenging problems.  For example, a program known as SHRDLU written in the early 1970’s by Terry Winograd, displayed a remarkable ability to understand typed English sentences and to reason about its world in a very “human-like” way.  The only catch was that SHRDLU’s world consisted of a collection of colored blocks and pyramids.
+			</p>
+		
+			<p>
+				One response to this problem of being able to effectively handle only very small worlds, or domains, was to look for limited domains that contained useful problems.  Surprisingly, much of what humans consider “expert” knowledge, such as legal or medical advice, turned out to be quite limited in scope, and therefore solvable using existing AI techniques.  
+			</p>
+		
+			<p>
+				A trend that emerged in the late 1970’s and early 1980’s was a move away from systems that tried to achieve “general intelligence” and towards systems that displayed “expert behavior” in narrow fields, such as infection diagnosis.  This research led to a number of commercially successful expert systems by the late 1980’s.  XCON is an example of an expert system that was an early success.  It understood how the components of a Digital Equipment Corporation VAX computer needed to be interconnected in order to form a working system, and was able to reduce the time and cost associated with configuring such systems.
+			</p>
+		
+			<p>
+				Another trend that was occurring in parallel with the development of expert systems was based on the realization that “intelligent” behavior depends on a vast quantity of “common sense” knowledge.  Researchers, such as Marvin Minsky and Roger Schank, looked for ways of representing knowledge about objects and events.  Their work led to the development of frames for representing knowledge about objects, and scripts for representing knowledge about events.  
+			</p>
+		
+			<p>
+				In 1984, Doug Lenat launched the Cyc project with the aim of constructing a vast encyclopedia of common sense knowledge.  One goal of Cyc is to give computers the ability to understand natural languages, such as English, by laying the foundation of knowledge that is necessary to make sense of the world.  Two decades later, the development of Cyc continues.<span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: In fact, an open source version of Cyc is now publicly available at http://www.opencyc.org. "><a href="#ftn4" id="body_ftn4">[4]</a></span></span>  While Cyc’s progress to date in natural language understanding and common sense reasoning has been painfully slow, Lenat believes Cyc will one day be able to learn by reading, much as a human does.  
+			</p>
+		
+			<p>
+				The 1990’s saw the rise of a completely different approach to artificial intelligence.  This approach was based on constructing learning machines that contain little or no pre-coded knowledge.  Such machines are called neural networks, since they are loosely modeled after the neurons that make up our human brains.  Neural nets tend to be good at certain pattern recognition problems, such as identifying objects pictured in photographs – even when those photos are taken from different angles and distances.
+			</p>
+		
+			<p>
+				Neural nets are not programmed in the traditional style, but are instead “trained.”  Training generally consists of presenting the network with a collection of inputs and allowing it to “guess” an answer.  Feedback generated by incorrect responses is used to modify the connections between the “neurons” that make up the net.  Eventually, after many training exercises, the network becomes good at correctly classifying its inputs.  One impressive example of what neural networks can do is an automated driving system developed at Carnegie Mellon University.  This system has been trained to drive a vehicle on standard highways at normal driving speeds.
+			</p>
+		
+			<p>
+				While neural nets appear good at solving a limited class of AI problems that have eluded more traditional techniques, they do have drawbacks.  No one has been able to build networks of more than a few hundred neurons.  The complication that arises is that training time increases rapidly as the size of the network increases and quickly becomes unmanageable for larger networks.  This means neural nets, like traditional AI techniques, are currently applicable only to problems of limited size.
+			</p>
+		
+			<p>
+				The final chapter of this book deals with the future of computing.  Obviously, no one knows what the future holds, but using history as a guide, educated guesses can be made.  In thinking about the future of computing, we look at the near term, say within the next decade, and then further out, about three decades from now.  
+			</p>
+		
+			<p>
+				For the near term one can be relatively certain that computing speed and memory density will continue to increase.  Confidence in this prediction comes from current laboratory work and the past track record of the computing industry at translating research results into mainstream computing products.  It is also likely that networks will continue to increase in bandwidth, for the same reasons.  
+			</p>
+		
+			<p>
+				To get some sense of where computing may be in thirty years, we again turn to Moore’s law, which was introduced in Section 1.3.3.  <span class="Bolded">Moore’s law</span> states that computing power and memory density double roughly every eighteen months.  This “law” is just a future projection based on past performance – but as they say in investment circles “historical performance is no guarantee of future advancements”. 
+			</p>
+		
+			<p>
+				Some computer scientists do not believe that the rate of progress predicted by Moore’s law can be maintained much longer.  They point to the fundamental limits of silicon-based technology and the ever-increasing costs of developing the next generation of computer chips.  
+			</p>
+		
+			<p>
+				Others are more optimistic.  They point to ongoing research projects that seek to develop fundamentally different approaches to computing. These approaches, which have the potential to increase computing speeds by many orders of magnitude, include <span class="Bolded">optical computing</span>, which seeks to build computers that use photons (light) instead of electrons (electrical current); <span class="Bolded">biocomputing</span> in which strands of DNA are used to encode problems, and biological and chemical processes used to solve them; <span class="Bolded">nanocomputing</span> which aims to build molecular-level computing systems; and <span class="Bolded">quantum computing</span> which seeks to exploit the characteristics of quantum physics to perform computations.
+			</p>
+		
+			<p>
+				Assuming the optimists are right and the trend embodied in Moore’s law continues to hold, what will computers be like in thirty years?  The numbers suggest that the average desktop computer will have the processing capacity of the human brain together with a memory capacity many times that of a human being.  The result could be human-level intelligence on your desktop within your working lifetime.
+			</p>
+		
+			<p>
+				Take a moment to contemplate this.  If you are a “traditional” college freshman, taking this course in your late teens or early twenties, in thirty years you will probably just be reaching the height of your professional career, and you may be dealing, on a daily basis, with computers that rival humans in computational power.  The implications are truly awe inspiring – and somewhat frightening.  
+			</p>
+		
+			<p>
+				How will society deal with such machines?  Should they be afforded the same rights as individuals?  Or will they be considered as mere possessions?  Is it moral to construct such machines simply to do our bidding?  Or will the practice of owning machines that can “think” be thought of as barbaric as the concept of slavery?  Though these questions may seem far-fetched now, some people think there is a good chance that we will have to come to grips with these issues during our lifetime.
+			</p>
+		
+			<p>
+				Of course, even if Moore’s law does continue to hold and machines with the processing capacity of humans are developed, that does not mean computer scientists will have necessarily figured out how to effectively use these resources to solve the problems of AI.  In other words, although we may create machines that can do the same amount of raw computational work as the human brain, we may never figure out how to program them to be “intelligent.”
+			</p>
+		
+			<br/>
+			<!-- Footnotes -->
+			<hr/>
+			<p class="Section">
+				Footnotes
+			</p>
+		
+			<p class="Footnote">
+				<a class="Footnote_20_Symbol" id="ftn1" href="#body_ftn1">[1] </a></span>Or something even less polite.
+			</p>
+		
+			<p class="Footnote">
+				<a class="Footnote_20_Symbol" id="ftn2" href="#body_ftn2">[2] </a></span> Named after Intel co-founder Gordon Moore.
+			</p>
+		
+			<p class="Footnote">
+				<a class="Footnote_20_Symbol" id="ftn3" href="#body_ftn3">[3] </a></span>“Turing” is always capitalized, since Turing machines are named after their inventor, the mathematician and computer scientist Alan Turing.
+			</p>
+		
+			<p class="Footnote">
+				<a class="Footnote_20_Symbol" id="ftn4" href="#body_ftn4">[4] </a></span> In fact, an open source version of Cyc is now publicly available at <a href="http://www.opencyc.org/">http://www.opencyc.org</a>. 
+			</p>
+
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+								
+  <!------------------------------ [END] Main content [BODY] ---------------------------->
+
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div> <!-- End page wrapper -->
+
+	</body>
+</html>
+		

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="../ch12/ch12s2p2.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="../ch12/ch12s2p4.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
+			<!-- End nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+			<p class="Section">
+				12.2.3 Boolean algebra&nbsp;
+			</p>
+
+			<p>
+				<span>The arithmetic that is used to reason about two-state systems was first developed by George Boole in 1854. </span> <span class="Bolded">Boolean algebra</span> <span>is a mathematics based on three fundamental operators:</span> <span class="Ital">and</span> <span>,</span> <span class="Ital">or</span> <span>, and</span> <span class="Ital">not</span> <span>; and the variables on which they operate. Boolean variables are binary, having only two valid states “1” (representing “true”) and “0” (representing “false”). </span>
+			</p>
+
+			<p>
+				<span>The operator</span> <span class="Ital">and</span> <span>is written as a dot “</span> <span>&#9679;</span> <span>”,</span> <span class="Ital">or</span> <span>is written as a plus “+”, and</span> <span class="Ital">not</span> <span>is written as a horizontal bar drawn over the expression being negated. The behavior of these three Boolean operators is identical to the behavior of the corresponding logic gates. Thus, the expression “A</span> <span>&#9679;</span> <span>B”, meaning “A and B”, will be “1” (true) when the variables A and B are both “1” (true). The expression “A + B”, meaning “A or B”, will be true when either or both variables are true. Not A, written “ A ”, will be “0” when A is “1” and “1” when A is “0”.</span>
+			</p>
+
+			<p>
+				The relationship between the Boolean operators and the fundamental logic gates is illustrated in Figure 12.8. In the illustration, the Boolean variables A and B correspond to the inputs to the circuit and the variable Z corresponds to the output.
+			</p>
+
+			<p>
+				Consider the following circuit and its corresponding Boolean expression.
+			</p>
+			<div id="topDiv-a" class="Centered"></div>
+			<div id="container-a" class="Centered">
+			</div>
+			<p class="Figure">
+				<span class="Bolded">Z &nbsp;= &nbsp;( A + B ) &#9679; C</span>
+			</p>
+
+			<p>
+				<span>We can be sure that the circuit and the expression are functionally equivalent by examining how the Boolean expression could be derived from the circuit. Since inputs A and B are fed into an</span> <span class="Ital">or</span> <span>gate in the circuit, the variables A and B are combined via the corresponding “+” operator in the Boolean expression. The output of the</span> <span class="Ital">or</span> <span>is fed into an</span> <span class="Ital">and</span> <span>gate (along with input C) in the circuit. Thus, the result of the expression “(A + B)” is combined with variable C using the “</span> <span>&#9679;</span> <span>” operator in the Boolean expression.</span>
+			</p>
+
+			<div id="topDiv-andNTT" class="Centered"></div>
+			<div id="container-andNTT" class="Centered"></div>
+			
+			<div id="topDiv-orNTT" class="Centered"></div>
+			<div id="container-orNTT" class="Centered"></div>
+			
+			<div id="topDiv-notNTT" class="Centered"></div>
+			<div id="container-notNTT" class="Centered"></div>
+			<p class="Figure">
+				Figure 12.8: Boolean expressions for the three fundamental logic gates
+			</p>
+
+			<p>
+				<span>As in ordinary algebra, Boolean algebra uses parentheses to indicate which operands go with which operators. The Boolean expression “A + (B</span> <span>&#9679;</span> <span>C)” represents a completely different circuit from “(A + B)</span> <span>&#9679;</span> <span>C”. In the first, B and C are fed into an</span> <span class="Ital">and</span> <span>gate, with the result being sent (along with A) into an</span> <span class="Ital">or</span> <span>gate. In the second, A and B are fed into an</span> <span class="Ital">or</span> <span>gate, with the result being combined with C via an</span> <span class="Ital">and</span> <span>gate.</span>
+			</p>
+
+			<p>
+				As you may be beginning to suspect, there is a direct correspondence between Boolean expressions and logic circuits. Every logic circuit that can ever be constructed will have a corresponding Boolean expression, and every valid Boolean expression that can ever be written maps to an equivalent logic circuit. The process of converting between the two representations is quite mechanical – simply use the substitutions of Figure 12.8, being sure to parenthesize Boolean expressions in a manner that preserves which operators go with which operands.
+			</p>
+
+			<p>
+				Boolean algebra provides computer scientists and engineers with a powerful tool for concisely representing circuits and reasoning about their behavior. While the details are beyond the scope of this book, Boolean algebra allows us to do things like prove that two different circuits compute the same function or find simpler (and thus less expensive) ways of implementing the functionality of a circuit.
+			</p>
+
+			<p class="Section">
+				Exercises for Section 12.2.3
+			</p>
+
+			<ol>
+				<li>
+					<p>
+						Write the Boolean expression corresponding to the following circuit.
+						
+						<img src="Images/fig12s2p3-ex1.png" alt="" class="ImageTall">
+					</p>
+				</li>
+				
+				<li>
+					<p>
+						Write the Boolean expression corresponding to the following circuit.
+						
+						<img src="Images/fig12s2p3-ex2.png" alt="" class="ImageTall">
+					</p>
+				</li>
+				
+			</ol>
+			<p class="Section">Scratch Pad</p>
+			<div id="sandbox1" style='border: solid 1px;'></div>
+			<!-- End main content -->
+			<hr />
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+
+		</div>
+			<!-- Figure js -->
+			<script src="js/DigiLogic/Controller.js"></script>
+			<script src="js/DigiLogic/AndGate.js"></script>
+			<script src="js/DigiLogic/AndGate3.js"></script>
+			<script src="js/DigiLogic/AndGate4.js"></script>
+			<script src="js/DigiLogic/NandGate.js"></script>
+			
+			<script src="js/DigiLogic/OrGate.js"></script>
+			<script src="js/DigiLogic/OrGate3.js"></script>
+			<script src="js/DigiLogic/OrGate4.js"></script>
+			<script src="js/DigiLogic/NorGate.js"></script>
+			
+			<script src="js/DigiLogic/NotGate.js"></script>
+			<script src="js/DigiLogic/Connector.js"></script>
+			<script src="js/DigiLogic/InputNode.js"></script>
+			<script src="js/DigiLogic/OutputNode.js"></script>
+			<script src="js/DigiLogic/PopupMenu.js"></script>
+			<script src="js/DigiLogic/Figures.js"></script>
+			<script src="js/DigiLogic/TruthTable.js"></script>
+			<script src="js/DigiLogic/Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
+			
+			<!-- Sandbox js -->
+			<script src="js/DigiLogic/SB_Controller.js"></script>
+			<script src="js/DigiLogic/SB_AndGate.js"></script>
+			<script src="js/DigiLogic/SB_OrGate.js"></script>
+			<script src="js/DigiLogic/SB_NotGate.js"></script>
+			<script src="js/DigiLogic/SB_Connector.js"></script>
+			<script src="js/DigiLogic/SB_InputNode.js"></script>
+			<script src="js/DigiLogic/SB_OutputNode.js"></script>
+			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
+			<script src="js/DigiLogic/SB_Exercises.js"></script>
+			<script src="js/DigiLogic/SB_TruthTable.js"></script>
+			<script src="js/DigiLogic/SB_Setup.js"></script>
+			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
+			<script src="js/DigiLogic/Evaluate.js"></script>
+		
+		<script>
+			var figureandNTT = new DigitalLogicFigure("container-andNTT", "andNTT");
+			var figureorNTT = new DigitalLogicFigure("container-orNTT", "orNTT");
+			var figurenotNTT = new DigitalLogicFigure("container-notNTT", "notNTT");
+			var figurea = new DigitalLogicFigure("container-a", "a");
+			var lab = new DigitalLogicsLab("sandbox1"); 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="../ch12/ch12s2.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="../ch12/ch12s2p2.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
+			<!-- End nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+			<p class="Section">
+				12.2.1 Switches&nbsp;
+			</p>
+			
+			<p>
+				Our first model uses mechanical switches that can be either open or closed. These switches are similar to the electrical switches in your home. We will assume that these switches are connected to a source of power that can supply current. Light bulbs will be used to indicate the presence or absence of current. Figure 12.1 illustrates both the switches and light bulbs.
+			</p>
+
+			<p>
+				The simplest circuit that can be built contains a power supply, a single switch, and a light bulb. If the switch is open, the light is off; if the switch is closed, the light is on. Figure 12.2 shows these two situations and records this information in tabular form.
+			</p>
+			
+			<img src="Images/fig12-2.png" alt="" class="Image">
+			
+			<p class="Figure">
+				Figure 12.2: Open and closed switches
+			</p>
+
+			<img src="Images/fig12-3.png" alt="" class="Image">
+			
+			<p class="Figure">
+				Figure 12.3: Two switches in series – power flows only when both A and B are closed
+			</p>
+
+			<p>
+				<span>We can increase the complexity of our circuit somewhat by adding a second switch between the first switch and the light bulb. Figure 12.3 illustrates the four possible configurations of this circuit: (1) both switches open, (2) the first switch open and the second closed, (3) the first switch closed and the second open, or (4) both switches closed. The circuits of Figure 12.3 are called</span> <span class="Ital">series</span> <span class="Ital">circuits</span> <span>since the two switches occur on the same “path” from the power source back to itself. In series circuits, when either or both of the switches, are open, power will not flow and the light bulb will be off. Only when both switches are closed, does power flow and the light bulb illuminates.  Said another way, if both switch A</span> <span class="Ital">and</span> <span>switch B are closed, then the light will turn on. The relationship between the states of the two switches (open or closed) and the state of the light bulb (on or off) is summarized in tabular form in Figure 12.3.</span>
+			</p>
+
+			<p>
+				<span>Another type of circuit can be designed using two switches. This second type of circuit arranges the switches in parallel rather than in series. In a two-switch</span> <span class="Ital">parallel circuit</span> <span>, each of the switches is placed on a separate path between the power source and the light bulb.</span>
+			</p>
+
+			<img src="Images/fig12-4.png" alt="" class="Image">
+			
+			<p class="Figure">
+				Figure 12.4: Two switches in parallel – power flows when either A or B is closed
+			</p>
+
+			<p>
+				<span>Figure 12.4 illustrates the four possible configurations of a two-switch parallel circuit. As was the case with the series circuit, there are four possible configurations of the circuit: (1) both switches open, (2) the first switch open and the second closed, (3) the first switch closed and the second open, or (4) both switches closed. When both switches are open power does not flow and the light bulb is off. However, whenever either or both of the switches are closed, power flows and the light will turn on. Said another way, if switch A</span> <span class="Ital">or</span> <span>switch B is closed, then the light will turn on.</span>
+			</p>
+
+			<p>
+				More complex circuits with three or more switches are possible. In the exercises below you will develop some circuits with three switches.
+			</p>
+
+			<p class="Section">
+				Exercises for Section 12.2.1
+			</p>
+
+			<ol>
+				<li>
+					<p>
+						Draw a circuit with three switches, called A, B, and C, in <span class="Ital">series</span> <span>connected to a power supply and a light bulb. Summarize in tabular form the relationship between the states of the three switches (open or closed), and the state of the light bulb (on or off). Your table should resemble the one given in Figure 12.3, but contain eight, instead of four, rows.</span> &nbsp;
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Draw a circuit with three switches, called A, B, and C, in <span class="Ital">parallel</span> <span>connected to a power supply and a light bulb. Summarize in tabular form the relationship between the states of the three switches (open or closed), and the state of the light bulb (on or off). Your table should resemble the one given in Figure 12.4, but contain eight, instead of four, rows.</span> &nbsp;
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Given the circuit below, summarize in tabular form the relationship between the states of the three switches (open or closed), and the state of the light bulb (on or off). &nbsp;
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Suppose that a circuit contains <span class="Ital">n</span> switches. How many different combinations of values are possible for these <span class="Ital">n</span> switches? &nbsp;In other words, how many rows would a table summarizing the relationship between the switches and light bulb require?&nbsp;
+					</p>
+				</li>
+			</ol>
+			<!-- End main content -->
+			<hr />
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+
+		</div>
+	</body>
+</html>
+
