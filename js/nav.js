@@ -1,5 +1,8 @@
 //writes the html from the navbar
-var navbar_content ='<img class="navbar-fixed-top" id="clickme" src="Images/down-arrow.png" > <!-- down arrow img -->\
+var navbar_content ='<link href = "css/font-awesome.min.css" rel = "stylesheet"><!-- font-awesome glyphicons -->\
+			<link href = "css/slider.css" rel = "stylesheet">\
+			<script type="text/javascript" src="js/bootstrap-slider.js"></script><!-- Font slider css -->\
+			<img class="navbar-fixed-top" id="clickme" src="Images/down-arrow.png" > <!-- down arrow img -->\
 		<div class="navbar navbar-default navbar-fixed-top" id="navbar"> <!--navbar-static-top-->\
 			<div class="container"> <!-- navbar container -->\
 					<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse"> <!--Header button-->\
@@ -26,9 +29,7 @@ var navbar_content ='<img class="navbar-fixed-top" id="clickme" src="Images/down
 						</ul>\
 					</div> <!-- END collapse navbar -->\
 				</div>  <!-- END navbar container -->\
-			</div> <!-- END navbar-static-top -->\
-			<link href = "css/font-awesome.min.css" rel = "stylesheet"><!-- font-awesome glyphicons -->\
-		<link href = "css/slider.css" rel = "stylesheet"><!-- Font slider css -->'
+			</div> <!-- END navbar-static-top -->'
 
 		$('#includedContent').append(navbar_content);
 		
@@ -80,8 +81,13 @@ var navbar_content ='<img class="navbar-fixed-top" id="clickme" src="Images/down
 
 			// font size increse/decrese using slider
 			$('#fontSlider').slider(); 
-			var fontChange = function() { $('.page-wrapper').css('font-size', r.getValue()) };
-			var r = $('#fontSlider').slider().on('slide', fontChange).data('slider');
+			var fontChange = function() {
+					  $('.page-wrapper').css('font-size', r.getValue())
+					};
+
+					var r = $('#fontSlider').slider()
+							.on('slide', fontChange)
+							.data('slider');
 
 			/*//font sizing
 			  $('.increaseFont').click(
