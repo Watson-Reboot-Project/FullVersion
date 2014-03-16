@@ -1,7 +1,7 @@
-<?xml version='1.0'?>
+<?xml version='1.0' ?>
+<!DOCTYPE table-of-contents SYSTEM "contents.dtd">
 <table-of-contents>
   <index>
-    <name>Table of Contents</name>
     <path>index.html</path>
   </index>
   <chapters>
@@ -30,12 +30,9 @@
       <path>ch06.html</path>
     </chapter>
     <chapter>
-      <name>Data Structures -- The Organization of Data at the Program Level</name>
-      <path>ch07.html</path>
-    </chapter>
-    <chapter>
       <name>JavaScript Programming</name>
       <path>ch08.html</path>
+      <section-path>ch08_contents.xml</section-path>
     </chapter>
     <chapter>
       <name>Functional, Logical, and Object-Oriented Programming</name>

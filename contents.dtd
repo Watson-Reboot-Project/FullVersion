@@ -1,0 +1,11 @@
+<!ELEMENT table-of-contents (index,(chapters|sections))>
+<!ELEMENT index (name?,path)>
+<!ELEMENT chapters (chapter*)>
+<!ELEMENT chapter (name,path,section-path?)>
+<!ELEMENT sections (section*)>
+<!ELEMENT section (name,path,numfigures,subsection-path?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT section-path (#PCDATA)>
+<!ELEMENT numfigures (#PCDATA)>
+<!ELEMENT subsection-path (#PCDATA)>

@@ -67,4 +67,11 @@ chapters (availible where?), functions to get all sections within a chapter
 (availiable in sections, chapter root, and project root), functions to get the
 next and previous chapter (availiable anywhere in a chapter), functions to get
 the next and previous page (availiable anywhere?) the next and previous page
-will 
+will --
+
+## working on contents/xml project
+#### 2014-02-26
+
+update: found/fixed an issue in `ch08s6_contents.xml`. one of the closing tags
+was 'selection' instead of 'section'. so yeah, it's working now. Also: added a
+`contents.dtd` file to validate \*.contents.xml files

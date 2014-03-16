@@ -1,4 +1,5 @@
-<?xml version='1.0'?>
+<?xml version='1.0' ?>
+<!DOCTYPE table-of-contents SYSTEM "contents.dtd">
 <table-of-contents>
   <index>
     <path>ch08.html</path>
@@ -7,14 +8,17 @@
     <section>
       <name>Sequence</name>
       <path>ch08s6p1.html</path>
+      <numfigures>0</numfigures>
     </section>
     <section>
       <name>Selection</name>
       <path>ch08s6p2.html</path>
-    </selection>
+      <numfigures>0</numfigures>
+    </section>
     <section>
       <name>Repetition</name>
       <path>ch08s6p3.html</path>
+      <numfigures>0</numfigures>
     </section>
   </sections>
 </table-of-contents>
