@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+    <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		   div.floating-previous
+		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		   <a href="ch03s5p2.html">
+		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		   </a>
+		      </div>
+		
+		      <!-- Next -->
+			  
+		      <style>
+		   div.floating-next
+		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		   <a href="ch03s5p2b.html">
+		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		   </a>
+		      </div>
+			  
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+			
+			<p class="Section">
+				3.5.2.1 Relations, attributes, and tuples
+			</p>
+
+			<p>
+				All modern database programs are based on the</span> <span class="Bolded">relational database model</span>, which organizes logically related data into tables. These tables, which are known as</span> <span class="Bolded">relations</span>, are subdivided into rows and columns. Each column, or</span> <span class="Bolded">attribute</span>, of a relation keeps up with a particular kind of data. Each row, or</span> <span class="Bolded">tuple</span>, of a relation holds all of the data about a particular entity or event.
+			</p>
+
+			<p>
+				Figure 3.14 contains the “Faculty” relation from a hypothetical university database. This relation (table) has six attributes (columns): “Fname” which stands for the faculty member’s name, “Dept” the department in which the faculty member serves, “Office” the building code and room number where the faculty member’s office is located, “Phone” the faculty member’s phone number, “SSN” the faculty member’s social security number, and “Salary” the faculty member’s nine-month academic-year salary. In addition to these six attributes, the “Faculty” relation contains seven tuples (rows).
+			</p>
+
+			<p>
+				Each attribute of Figure 3.14 holds a particular type of information, like phone numbers or salaries. Each tuple contains all of the different kinds of information known about a particular individual.
+			</p>
+
+			<p>
+				Figure 3.15 presents another relation from our university database. This relation is the “Students” relation, which keeps up with all of the various kinds of information maintained about students. The “Students” relation consists of eight attributes: “Sname”, “Age”, “Major”, “ID”, “Sex”, “Address”, “City”, and “State”; and twenty tuples, one for each student attending this (quite small) university.
+			</p>
+
+			<img src="Images/InfoStorageRetrIMGS/fig3-15.png" alt="the “Students” relation – part of a university database" class="Image">
+
+			<p class="Figure">
+				Figure 3.15: the “Students” relation – part of a university database
+			</p>
+
+			<p>
+				By now you may have noticed the similarities between files with their records and fields, and relations with their tuples and attributes. In fact, the tuples of a relation are quite similar to the records of a file, and attributes are analogous fields. However, you should not assume that every relation in a database will actually be stored as a separate file on a disk drive. In fact, you don’t even need to worry about files and records when using a relational database, since the application will handle all of those details for you. Instead, try to think in terms of tables (relations) with their rows (tuples) and columns (attributes).
+			</p>
+
+			<p>
+				Now that we have some idea of how data is organized in the relational model, the obvious question is: “How can relational databases be used to answer questions about the data contained in the relations?”.
+			</p>
+
+			<p>
+				The relational model provides three query operators:
+			</p>
+
+			<ul>
+				<li>
+					<p>
+						Select
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Project
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Join
+					</p>
+				</li>
+			</ul>
+
+			<p>
+				A</span> <span class="Bolded">query</span> may be thought of as a question posed to the database. Query operators act on existing relations and always produce new relations as output.
+			</p>
+			
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div>
+	</body>
+</html>

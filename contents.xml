@@ -3,7 +3,7 @@
   <chapters>
     <chapter>
       <name>The Science of Computing</name>
-      <path>ch01.html</path>
+      <path>scienceofcomp.html</path>
       <sections>contents_section.xml</sections>
     </chapter>
     <chapter>

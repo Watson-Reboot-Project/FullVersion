@@ -23,14 +23,6 @@ ul.nav a:hover { color: #000; }
   text-shadow: none;
 }
 
-.dropdown-menu > li > a { 
-  color: #4870B6;
-  font-family: "Eurostile", "Exo 2", sans-serif;
-  font-size: 16px;
-  text-shadow: none;
-
-}
-
 .dropdown-menu > li > a:hover{ background-color: #4870B6; }
 
 #main_header > h1{
@@ -52,19 +44,21 @@ ul.nav a:hover { color: #000; }
 }
 
 body { padding-top: 7%; }
-@media screen and (max-width: 640px) { body { padding-top: 15%;}}
+@media screen and (max-width: 600px) { body { padding-top: 15%;}}
+@media screen and (max-width: 400px) { body { padding-top: 35%;}}
 
 .navbar .navbar-collapse {
   text-align: center;
 }
 
-.navbar-brand {
-    float: relative;
-    padding: 1%;
-    text-align: center; 
-    height: 100%;
+#logo{
+  padding-left: 10%;
 }
 
+.navbar-right{
+  padding-right: 3%;
+} 
+@media screen and (max-width: 640px) { .navbar-right { padding-right: 0%;}}
 
 .small-img{ width: 10%; }
 .medium-img{ width: 50%; }
@@ -132,8 +126,8 @@ body { padding-top: 7%; }
 #years, #months, #posts{ cursor:pointer;}
 #years, .bold-me {font-weight: bold;} #months {font-weight: medium;}
 .archive_year { cursor: pointer; list-style: none; }
-.archive_month { list-style-type: circle; cursor: pointer; }
-.archive_posts { list-style: square url('http://www.webbossuk.com/admin/images/reply-arrow.png'); cursor: pointer; }
+.archive_month { list-style-type: disc; cursor: pointer; }
+.archive_posts { list-style-type: circle;}/*square url('http://www.webbossuk.com/admin/images/reply-arrow.png'); cursor: pointer; }*/
 
 
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+    <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		   div.floating-previous
+		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		   <a href="ch05s3p2.html">
+		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		   </a>
+		      </div>
+		
+		      <!-- Next -->
+			  
+		      <style>
+		   div.floating-next
+		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		   <a href="ch05s4p1.html">
+		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		   </a>
+		      </div>
+			  
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+			
+			<p class="Section">
+				5.4  Sorting
+			</p>
+
+			<p>
+				Humans seem to have a basic desire to structure and organize the world around them.  One of the most basic ways of organizing a collection of objects is to arrange them according to some common characteristic, such as size, weight, cost, or age.
+			</p>
+
+			<p>
+				A group of objects is <span class="Bolded">sorted</span> when the objects are arranged according to some rule that involves the use of “orderable keys.”  While the term “orderable” will not be rigorously defined, intuitively it means keys on which the concepts of “less than” “greater than”, and “equal to” make sense, or on which “precedes” and “follows” have meaning.  Orderable keys include numbers, such as: weight, height, age, income, and social security number.  Character strings, such as words, names, and addresses, are also orderable.  Numeric keys are generally arranged from smallest to largest, or, occasionally, largest to smallest.  Character based keys are generally arranged in dictionary, or lexicographic, order.
+			</p>
+
+			<p>
+				Sorting is a very important problem.  If information is not organized in some fashion, retrieval can be quite time consuming.  To find a particular item in an unsorted list, we are forced to use sequential search, rather than the more efficient binary search.  While the sequential search approach may be acceptable for small numbers of items, it becomes unwieldy when dealing with large numbers of objects.  For this reason, computer scientists have focused a great deal of attention on the sorting problem and have devised a number of sorting algorithms.  Over the years, these algorithms have been closely studied and the efficiency of each carefully analyzed.
+			</p>
+
+			<p>
+				This section presents three common approaches to the sorting problem: selection sort, insertion sort, and merge sort.  As was the case with sequential and binary searches, each of the three sorts will be compared to determine their efficiency.  In order to develop estimates of the runtimes of the three sort algorithms, we will use a “computer” capable of executing one million comparisons per second.  While this value is somewhat more realistic than the “antique computer” (capable of executing 1,000 comparisons per second) used in the previous section, today’s computers are still many times more powerful.  
+			</p>
+
+			<p>
+				Modern computers are capable of performing billions of basic low-level instructions per second.  The number of higher-level operations they can perform each second depends on many factors other than CPU speed.  In the case of sorting, the number of comparisons per second depends on factors such as whether the list being sorted is in main memory or on disk, and whether the computer is running other programs besides the sort procedure.
+			</p>
+
+			<p>
+				The take home message is don’t place too much emphasis on the numbers we will generate for “predicted runtimes” – since these are highly dependent on the assumptions made concerning computing hardware.  Instead, what is important is the <span class="Ital">relative</span> performance of the algorithms, which is not affected by underlying hardware assumptions.
+			</p>
+			
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div>
+	</body>
+</html>

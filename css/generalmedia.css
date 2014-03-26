@@ -54,6 +54,9 @@ a:active {
 }
 
 #vid {
+	width:70%;
+	background-color:lightblue;
+	opacity:0.5;
 	margin: 0 auto;
 	display: block;
 }
@@ -106,6 +109,9 @@ a:active {
 	width:40%;
 }
 .Video { /* Centers video */
+	background-color:lightgrey;
+	opacity:0.5;
+	width:70%;
 	margin: 0 auto;
 	display: block;
 }

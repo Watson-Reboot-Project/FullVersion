@@ -15,6 +15,7 @@
 	    <link href = "css/bootstrap.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
+		<link href = "css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -84,24 +85,16 @@
 			</p>
 			<!-- Figure 8.1 -->
 			<ul class="Blockcenter">
-			<li>
-				<span class="Subfigure">&lt;html&gt;</span>
-			</li>
-
-			<li>
-				<span class="Subfigure">&lt;body&gt;</span>
-			</li>
-
-			<li>
-				<span class="Subfigure">&lt;pre&gt;</span>
-			</li>
-
-			<br />
-
-			<li>
-				<span class="Subfigure">&lt;script type="text/javascript"&gt;</span>
-			</li>
-
+				<li style="color:grey;"><span class="Subfigure">&lt;html&gt;</span></li>
+				
+				<li style="color:grey;"><span class="Subfigure">&lt;body&gt;</span></li>
+				
+				<li style="color:grey;"><span class="Subfigure">&lt;pre&gt;</span></li>
+				
+				<br/>
+				
+				<li style="color:grey;"><span class="Subfigure">&lt;script type="text/javascript"&gt;</span></li>
+				
 			<ul style="list-style:none">
 				<li>
 					<span class="Ital">declarations</span>
@@ -111,29 +104,16 @@
 					<span class="Ital">statements</span>
 				</li>
 			</ul>
-			<li>
-				<span class="Subfigure">&lt;/script&gt;</span>
-			</li>
+				<li style="color:grey;"><span class="Subfigure">&lt;/script&gt;</span></li>
+				
+				<br/>
+				
+				<li style="color:grey;"><span class="Subfigure">&lt;/pre&gt;</span></li>
+				
+				<li style="color:grey;"><span class="Subfigure">&lt;/body&gt;</span></li>
+				
+				<li style="color:grey;"><span class="Subfigure">&lt;/html&gt;</span></li>
 
-			<li>
-				<span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp;</span>
-			</li>
-
-			<li>
-				<span class="Subfigure">&lt;/pre&gt;</span>
-			</li>
-
-			<li>
-				<span class="Subfigure">&nbsp;</span>
-			</li>
-
-			<li>
-				<span class="Subfigure">&lt;/body&gt;</span>
-			</li>
-
-			<li>
-				<span class="Subfigure">&lt;/html&gt;</span>
-			</li>
 			</ul>
 			<!-- End figure 8.1 -->
 			<p class="Figure">
@@ -236,10 +216,15 @@
 			<p class="Bolded">
 				Input Statements:
 			</p>
-
-			<p>
-				&nbsp;
-			</p>
+			
+			<div class="section group">
+				<div class="col span_1_of_2">
+					
+				</div>
+				<div class="col span_1_of_2">
+					
+				</div>
+			</div>
 
 			<p>
 				<span>&nbsp;  &nbsp;  &nbsp; </span>Text <span>input:</span><span>&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; </span><span class="Italicized">variable</span><span class="Subfigure"> = prompt(</span><span class="Italicized">message</span><span class="Subfigure">,</span><span class="Italicized">defaultValue</span><span class="Subfigure">);</span>
@@ -249,24 +234,47 @@
 				<span>&nbsp;  &nbsp;  &nbsp; </span><span>Numeric </span><span>input:</span><span>&nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; </span><span class="Italicized">variable</span><span class="Subfigure"> = </span><span class="Subfigure">parseFloat(</span><span class="Subfigure">prompt(</span><span class="T43">message</span><span class="Subfigure">,</span><span class="T43">defaultValue</span><span class="Subfigure">)</span><span class="Subfigure">)</span><span class="Subfigure">;</span>
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
-			<p>
-				&nbsp;
-			</p>
-
 			<p class="Bolded">
 				Assignment Statement:
 			</p>
 
-			<ul class="Subblockcenter"><li><span class="Italicized">variable </span><span class="Subfigure">= </span><span class="Italicized">expression</span><span class="Subfigure">;</span></li></ul>
+			<ul class="Subblockcenter">
+				<li><span class="Italicized">variable </span><span class="Subfigure">= </span><span class="Italicized">expression</span><span class="Subfigure">;</span></li>
+			</ul>
 	
 			<p class="Bolded">
 				Selection Statements:
 			</p>
-
+			
+			<div class="section group">
+				<div class="col span_1_of_2">
+					<ul class="Subblockcenter">
+						<li><span class="Subfigure">if (</span><span class="Italicized">expression</span><span class="Italicized"> relationalOperator expression</span><span class="Subfigure">)</span></li>
+						<li><span class="Subfigure">{</span></li>
+						<ul class="Subblockcenter">
+							<li><span class="Italicized">statements to be executed if expression is true</span></li>
+						</ul>
+						<li><span class="Subfigure">}</span></li>
+						<li><span class="Subfigure">else</span></li>
+						<li><span class="Subfigure">{</span></li>
+						<ul class="Subblockcenter">
+							<li><span class="Italicized">statements to be executed if expression is false</span></li>
+						</ul>
+						<li><span class="Subfigure">}</span></li>
+					</ul>
+				</div>
+				<div class="col span_1_of_2">
+					<ul class="Subblockcenter">
+						<li><span class="Subfigure">if (</span><span class="Italicized">expression</span><span class="Italicized"> relationalOperator expression</span><span class="Subfigure">)</span></li>
+						<li><span class="Subfigure">{</span></li>
+						<ul class="Subblockcenter">
+							<li><span class="Italicized">statements to be executed if expression is true</span></li>
+						</ul>
+						<li><span class="Subfigure">}</span></li>
+					</ul>
+				</div>
+			</div>
+			<!--
 			<ul class="Subblockcenter">
 				<li><span class="Subfigure">if (</span><span class="Italicized">expression</span><span class="Italicized"> relationalOperator expression</span><span class="Subfigure">)</span></li>
 				<li><span class="Subfigure">{</span></li>
@@ -281,8 +289,18 @@
 				</ul>
 				<li><span class="Subfigure">}</span></li>
 			</ul>
-
 			
+			<br/><br/>
+			
+			<ul class="Subblockcenter">
+				<li><span class="Subfigure">if (</span><span class="Italicized">expression</span><span class="Italicized"> relationalOperator expression</span><span class="Subfigure">)</span></li>
+				<li><span class="Subfigure">{</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Italicized">statements to be executed if expression is true</span></li>
+				</ul>
+				<li><span class="Subfigure">}</span></li>
+			</ul>
+			-->
 
 			<p class="Bolded">
 				Iteration Statements:
@@ -304,7 +322,7 @@
 				<li><span class="Subfigure">}</span></li>
 			</ul>
 
-
+			<!-- Fail columns
 			<p>
 				<span class="Bolded">Function Invocation: &nbsp;  &nbsp;  &nbsp;  &nbsp; </span> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; <span class="Bolded">Function Return:</span>
 			</p>
@@ -312,9 +330,19 @@
 			<ul class="Subblockcenter">
 				<li><span class="Italicized">functionName</span><span class="Subfigure">(</span><span class="Italicized">inputs</span><span class="Subfigure">);</span>&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; <span class="Subfigure">return(</span><span class="Italicized">expression</span><span class="Subfigure">);</span></li>
 			</ul>
-			<p>
-				&nbsp;
-			</p>
+			-->
+			
+			<div class="section group">
+				<div class="col span_1_of_2">
+					<p><span class="Bolded">Function Invocation:</span></p>
+					<p><span class="Italicized">functionName</span><span class="Subfigure">(</span><span class="Italicized">inputs</span><span class="Subfigure">);</span></p>
+				</div>
+				<div class="col span_1_of_2">
+					<p><span class="Bolded">Function Return:</span></p>
+					<p><span class="Subfigure">return(</span><span class="Italicized">expression</span><span class="Subfigure">);</span></p>
+				</div>
+			</div>
+			
 			<!-- End figure 8.3 -->
 			
 			<p class="Figure">

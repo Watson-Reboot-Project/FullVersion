@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+    <script type="text/javascript" src="js/nav.js"></script>
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		   div.floating-previous
+		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		   <a href="ch05s2.html">
+		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		   </a>
+		      </div>
+		
+		      <!-- Next -->
+			  
+		      <style>
+		   div.floating-next
+		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		   <a href="ch05s3p1.html">
+		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		   </a>
+		      </div>
+			  
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+			
+			<p class="Section">
+				5.3  Searching
+			</p>
+
+			<p>
+				Search is one of the most common tasks performed by computers.  When you check out at the supermarket and the cashier runs your items over the scanner, what actually happens is that a unique number (the UPC or Universal Product Code) is read by the scanner.  The store’s computer system then searches its records to determine what item matches that code number.  The item’s price and description is retrieved and the scanner beeps to let the cashier know the item was recognized.  If no item with that UPC number is found, the cashier either rescans the item or keys in a price by hand.  When you go to your university’s registrar’s office for a copy of your transcript, a clerk will key your student number into the computer system.  That system will then search for the student record matching that number and then return that record if found.  Every time you use a credit card a similar search operation must take place to retrieve your account record.  In fact, searching is an integral part of most any business or information transaction.  Few such transactions would be possible without efficient search algorithms.
+			</p>
+
+			<p>
+				At its most basic we can describe the <span class="Bolded">search</span> problem in the following way:  Given a list of items together with a target item to be searched for, return “yes” if the item occurs in the list and “no” otherwise.  Of course, as illustrated in the above examples, we frequently extend this definition to include searching for a record based on some key.  A <span class="Bolded">record</span> is a collection of related information.  For example, a student record would be all of the information that pertains to a particular student, such as the student’s name, address, student number, and transcript.  A <span class="Bolded">key</span> is a unique identifier that can be used to identify a record.  A student number is an example of a key that is commonly used for identifying student records.  In the extended version of search, the inputs are a target key and list of records.  If a record containing the target key exists in the list, then extended search returns that entire record, rather than just a “yes” message indicating that such a record exists.  If no such record can be found, a “no” message will be returned.
+			</p>
+
+			<p>
+				Regardless of whether we are considering the extended search or the basic search, the main problem is to determine whether a given value is present in a list of values.  There are two primary approaches to this problem.  One is called sequential search and the other is called binary search.  As will become apparent shortly, sequential search is the simpler, but less efficient, of the two.
+			</p>
+			
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div>
+	</body>
+</html>
