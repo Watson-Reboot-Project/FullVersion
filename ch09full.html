@@ -9,7 +9,21 @@
 
 		<title>Watson</title>
 
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	    <link href = "css/ch08.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+		<link href = "css/grid.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<link rel='stylesheet' href='css/generalmedia.css'>
+		<script src="js/jquery-ui.js"></script>
+		
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -18,83 +32,42 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div class="page-wrapper" id="wrapper">
+			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="header">
-				<a href="index.html"><h3 style="margin:0; color: white;">CHAPTER 9:FUNCTIONAL, LOGICAL, AND OBJECT-ORIENTED PROGRAMMING</h3></a>
-			</div>
-			<!-- End header -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
-			<!-- Navbar division -->
-
-			<div id="nav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 25%"><a href="labs.html">LABS</a></td>
-
-						<td style="width: 25%"><a href="documentation.html">DOCUMENTATION</a></td>
-
-						<td style="width: 25%"><a href="tutorials.html">TUTORIALS</a></td>
-
-						<td style="width: 25%"><a href="about.html">ABOUT</a></td>
-
-					</tr>
-
-				</table>
-
-			</div><!-- End nav -->
-
-			<div id="nav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 15%"><a href="chapters.html">CHAPTERS</a></td>
-
-						<td style="width: 5%"><a href="ch01.html">01</a></td>
-
-						<td style="width: 5%"><a href="ch02.html">02</a></td>
-
-						<td style="width: 5%"><a href="ch03.html">03</a></td>
-
-						<td style="width: 5%"><a href="ch04.html">04</a></td>
-
-						<td style="width: 5%"><a href="ch05.html">05</a></td>
-
-						<td style="width: 5%"><a href="ch06.html">06</a></td>
-
-						<td style="width: 5%"><a href="ch07.html">07</a></td>
-
-						<td style="width: 5%"><a href="ch08.html">08</a></td>
-
-						<td style="width: 5%"><a href="ch09.html">09</a></td>
-
-						<td style="width: 5%"><a href="ch10.html">10</a></td>
-
-						<td style="width: 5%"><a href="ch11.html">11</a></td>
-
-						<td style="width: 5%"><a href="ch12.html">12</a></td>
-
-						<td style="width: 5%"><a href="ch13.html">13</a></td>
-
-						<td style="width: 5%"><a href="ch14.html">14</a></td>
-
-						<td style="width: 5%"><a href="ch15.html">15</a></td>
-
-					</tr>
-
-				</table>
-
-			</div>
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch08s8.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch09.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">
-				Chapter 9  Functional, Logical, and Object-Oriented Programming
-			</p>
+			<!-- Chapter 9  Functional, Logical, and Object-Oriented Programming -->
 
 			<p class="Section">
 				9.1  Introduction
@@ -120,9 +93,9 @@
 				Whereas the imperative programming paradigm views a program as a list of commands to be executed, the <span class="Bolded">functional programming </span>paradigm views a program as a sequence of function calls that transform one or more inputs into the desired output.  
 			</p>
 
-			<div class="Standard">
-				In this section we will concentrate on Lisp, the best known and most commonly used functional language.  <span class="Bolded">Lisp</span> is a LISt Processing language.  First developed in 1958 by John McCarthy, Lisp is the second oldest programming language still in widespread use.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: The oldest high-level language still in widespread use today is FORTRAN, though like LISP modern dialects of FORTRAN contain many features absent from earlier versions."><a href="#ftn1" id="body_ftn1">1</a></span></span>  Though the language has changed somewhat over the years, our presentation concentrates on some of the core features of Lisp that have remain unchanged for many years.
-			</div>
+			<p>
+				In this section we will concentrate on Lisp, the best known and most commonly used functional language.  <span class="Bolded">Lisp</span> is a LISt Processing language.  First developed in 1958 by John McCarthy, Lisp is the second oldest programming language still in widespread use.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: The oldest high-level language still in widespread use today is FORTRAN, though like LISP modern dialects of FORTRAN contain many features absent from earlier versions."><a href="#ftn1" id="body_ftn1">[1]</a></span></span>  Though the language has changed somewhat over the years, our presentation concentrates on some of the core features of Lisp that have remain unchanged for many years.
+			</p>
 
 			<p>
 				Lisp is a functional recursive language.  This means that programs are collections of functions, where the individual functions tend to use recursion, rather than iteration, to implement repetition.  Another difference between Lisp and the traditional imperative languages is that Lisp makes no distinction between programs structures and data structures – both are lists.  
@@ -143,6 +116,7 @@
 			<p>
 				The following:
 			</p>
+			
 			<p class="Subfigure">
 				(this is a list of 7 atoms)
 			</p>
@@ -154,27 +128,17 @@
 			<p>
 				The following are not valid Lisp lists:
 			</p>
-			<p class="Subfigure">
-				 
-			</p>
-			<p class="Subfigure">
-				I
-			</p>
-			<p class="Subfigure">
-				do not like green eggs and ham
-			</p>
-			<p class="Subfigure">
-				I will not eat them in the rain
-			</p>
-			<p class="Subfigure">
-				( I will not eat them on a train
-			</p>
-			<p class="Subfigure">
-				I do not like them Sam I am.)
-			</p>
-			<p class="Subfigure">
-				 
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">I</span></li>
+				<li><span class="Subfigure">do not like green eggs and ham</span></li>
+				<li><span class="Subfigure">I will not eat them in the rain</span></li>
+				<li><span class="Subfigure">( I will not eat them on a train</span></li>
+				<li><span class="Subfigure">I do not like them Sam I am.)</span></li>
+			</ul>
+			
+			<br/>
+			
 			<p>
 				The first example, “<span class="Subfigure">I</span>”, is an atom, not a list.  The remaining four examples are neither atoms nor lists.  The second, third, and fourth examples are missing either or both of the required parentheses.  The fifth example contains the punctuation mark “.” which is neither a valid symbol, nor a valid number.
 			</p>
@@ -184,7 +148,7 @@
 			</p>
 
 			<p class="Subfigure">
-				<span class="Emphasized"> </span>(((a list) within a list) within another list)
+				(((a list) within a list) within another list)
 			</p>
 
 			<p>
@@ -196,16 +160,16 @@
 			</p>
 
 			<p>
-				As can be seen in Figure 9.1, Lisp lists are represented internally using a tree-like structure of nodes.  Each node has two pointers, a left pointer and a right pointer.  The left pointer points to a list element (which can be either an atom or another list) and the right pointer points to the remainder of the list.  The right pointer of the very last node of every list contains a special value, known as nil.  <span class="Bolded">Nil</span>, sometimes indicated by the Greek letter <span class="Subfigure">λ</span>, is used to indicate both the end of a list and also an “empty list”.  In addition to the Greek letter lambda and the word “nil”, the empty list can also be written as an open parenthesis followed immediately by a close parenthesis,“<span class="Subfigure">()</span>”.  Nil is the only construct in Lisp that is considered to be both a list and an atom.<span class="Subfigure"> </span>
+				As can be seen in Figure 9.1, Lisp lists are represented internally using a tree-like structure of nodes.  Each node has two pointers, a left pointer and a right pointer.  The left pointer points to a list element (which can be either an atom or another list) and the right pointer points to the remainder of the list.  The right pointer of the very last node of every list contains a special value, known as nil.  <span class="Bolded">Nil</span>, sometimes indicated by the Greek letter <span class="Subfigure">λ</span>, is used to indicate both the end of a list and also an “empty list”.  In addition to the Greek letter lambda and the word “nil”, the empty list can also be written as an open parenthesis followed immediately by a close parenthesis,“<span class="Subfigure">()</span>”.  Nil is the only construct in Lisp that is considered to be both a list and an atom.
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-1.png" alt="Internal representation of the list (this is a list)" class="Image">
 				
 			<p class="Figure">
 				Figure 9.1 :  Internal representation of the list <span class="Subfigure">(this is a list)</span>
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-2.png" alt="Internal representation of ((this is a list) within a list)" class="Image">
 
 			<p class="Figure">
 				Figure 9.2 :  Internal representation of <span class="Subfigure">((this is a list) within a list)</span>
@@ -227,7 +191,7 @@
 				A <span class="Bolded">Lisp procedure</span> is a list that specifies a function to be computed.  The first element of every procedure list is an atom that specifies the name of the function to be executed.  This function can be either a built-in function, like addition, in the above example; or a programmer-defined function.  The other elements of the procedure list specify the arguments, or inputs, to the procedure.    In the above example, these inputs are the numeric atoms (i.e., numbers) “<span class="Subfigure">5</span>” and “<span class="Subfigure">3</span>”.  In general, the arguments to a procedure may be either lists or atoms.  Because the name of the function is always the first thing in the procedure list, Lisp procedures are said to be expressed in <span class="Bolded">prefix notation</span>, rather than in the more standard infix notation, where the operator appears between the operands (e.g., <span class="Subfigure">5 + 3</span>).
 			</p>
 			
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-3.png" alt="Internal representation of (* (+ 1 2) (- 7 3))" class="Image">
 
 			<p class="Figure">
 				Figure 9.3 :  Internal representation of <span class="Subfigure">(* (+ 1 2) (- 7 3))</span>
@@ -260,15 +224,13 @@
 			<p>
 				The most common way of informing Lisp that a list is to be treated as data is to “quote” the list.  <span class="Bolded">Quote</span> is a built-in procedure that accepts an atom or list as input and returns the input as the output.  For example, <span class="Subfigure">(quote </span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) </span>will return <span class="Subfigure Lite">(this is a list)</span>.  Likewise <span class="Subfigure">(quote </span><span class="Subfigure Lite">(a list (containing a list))</span><span class="Subfigure">) </span>evaluates to the list: <span class="Subfigure Lite">(a list (containing a list))</span>.  Finally, <span class="Subfigure">(quote </span><span class="Subfigure Lite">a</span><span class="Subfigure">)</span> will return the atom “<span class="Subfigure Lite">a</span>”.  In general, <span class="Subfigure">quote</span> will return the second element in its list, regardless of whether that element is a list or an atom.
 			</p>
-			<p>
-				   
-			</p>
+
 			<p>
 				If the <span class="Subfigure">quote</span> procedure seems a bit silly, remember that its primary function is to demark where executable code ends and data begins.  Without <span class="Subfigure">quote</span>, Lisp would attempt to evaluate lists such as <span class="Subfigure">(this is a list)</span> by applying the “<span class="Subfigure">this</span>” procedure to the values associated with the atoms “<span class="Subfigure">is</span>”, “<span class="Subfigure">a</span>”, and “<span class="Subfigure">list</span>” – even if no such procedure had been defined.
 			</p>
 
 			<p>
-				Since <span class="Subfigure">quote</span> is used frequently in Lisp programs, most versions of the language include one of more “shorthand notations” for expressing this important function.  One shorthand involves replacing the word <span class="Subfigure">quote</span> and the outer set of parentheses with the symbol  <span class="Subfigure">'</span>, thus the expressions   <span class="Subfigure">'</span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure"> </span>and<span class="Subfigure"> (quote </span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">)</span> both evaluate to <span class="Subfigure Lite">(a quoted list)</span>.  Another common shorthand for <span class="Subfigure">quote</span> involves enclosing the atom or list to be quoted in double quote marks.  Thus, the expression   <span class="Subfigure">"</span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">"</span>  is equivalent to  <span class="Subfigure">(quote </span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">) </span> in many dialects of Lisp.
+				Since <span class="Subfigure">quote</span> is used frequently in Lisp programs, most versions of the language include one of more “shorthand notations” for expressing this important function.  One shorthand involves replacing the word <span class="Subfigure">quote</span> and the outer set of parentheses with the symbol  <span class="Subfigure">'</span>, thus the expressions   <span class="Subfigure">'</span><span class="Subfigure Lite">(a quoted list)</span>and<span class="Subfigure"> (quote </span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">)</span> both evaluate to <span class="Subfigure Lite">(a quoted list)</span>.  Another common shorthand for <span class="Subfigure">quote</span> involves enclosing the atom or list to be quoted in double quote marks.  Thus, the expression   <span class="Subfigure">"</span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">"</span>  is equivalent to  <span class="Subfigure">(quote </span><span class="Subfigure Lite">(a quoted list)</span><span class="Subfigure">) </span> in many dialects of Lisp.
 			</p>
 
 			<p>
@@ -279,18 +241,15 @@
 				One of the most basic Lisp operators is “<span class="Subfigure">car</span>”.  The <span class="Subfigure">car</span> procedure accepts a list as input and returns the first element of that list as output.  So, for example:
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) )</span>
+			<p class="Subfigure">
+				(car (quote<span class="Subfigure Lite">(this is a list)</span>) )
 			</p>
 
 			<p>
 				returns the atom “<span class="Subfigure Lite">this</span>” which is the first element of the list.
 			</p>
-			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) )</span>
-			</p>
-
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			
+			<img src="Images/fig9-4.png" alt="An illustration of the car operator" class="Image">
 
 			<p class="Figure">
 				Figure 9.4:   An illustration of the <span class="Subfigure">car</span> operator
@@ -312,16 +271,16 @@
 				The <span class="Subfigure">car</span> operator can be applied to lists of arbitrary complexity, but it must always be given a list, never an atom.  If the first element of a list is itself a list, <span class="Subfigure">car</span> will return that list.  For example:
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">((a list) containing another list)</span><span class="Subfigure">) )</span>
+			<p class="Subfigure">
+				(car (quote<span class="Subfigure Lite">((a list) containing another list)</span>) )
 			</p>
 
 			<p>
 				evaluates to the list <span class="Subfigure Lite">(a list)</span> since that is the first element in the data list.   Likewise,
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(car (quote</span><span class="Subfigure Lite">(((a list) in a list) in another list)</span><span class="Subfigure">) )</span>
+			<p class="Subfigure">
+				(car (quote<span class="Subfigure Lite">(((a list) in a list) in another list)</span>) )
 			</p>
 
 			<p>
@@ -332,15 +291,15 @@
 				Thus, the <span class="Subfigure">car</span> of a list can be either an atom or a list.   If the result of a <span class="Subfigure">car</span> is a list, then the <span class="Subfigure">car</span> of that list may also be computed.  So,
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(car (car (quote</span><span class="Subfigure Lite">(((a list) in a list) in another list)</span><span class="Subfigure">) ))</span>
+			<p class="Subfigure">
+				(car (car (quote<span class="Subfigure Lite">(((a list) in a list) in another list)</span>) ))
 			</p>
 
 			<p>
 				produces <span class="Subfigure Lite">(a list)</span>. In order to help you clearly see why this is the case, Figure 6.4 illustrates the way this result is computed.  Since the result of this expression is itself a list, the <span class="Subfigure">car</span> operator could be applied to that result to produce the atom “<span class="Subfigure Lite">a</span>”.  The form of that expression would be
 			</p>
-
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			
+			<img src="Images/fig9-5.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 9.5:  An illustration of nested <span class="Subfigure">car</span> operations
@@ -357,6 +316,7 @@
 			<p>
 				The next list operator we will look at is “<span class="Subfigure">cdr</span>”, usually pronounced “cŭ dér”.  The <span class="Subfigure">cdr</span> procedure accepts a list as input and returns as output a list of everything in the original list except the first element.  In other words, <span class="Subfigure">cdr</span> returns everything in a list except its <span class="Subfigure">car</span>.  So,
 			</p>
+			
 			<p class="Figure">
 				<span class="Subfigure">(cdr (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">) )</span>
 			</p>
@@ -369,7 +329,7 @@
 				The basic operation of <span class="Subfigure">cdr</span> is illustrated in Figure 9.6.  In order to make it easy to compare <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span>, this example employs the same data as was used for the illustration of <span class="Subfigure">car</span> in Figure 9.4.
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-6.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 9.6:   An illustration of the <span class="Subfigure">cdr</span> operator
@@ -379,31 +339,25 @@
 				The <span class="Subfigure">cdr</span> operation may be applied to lists of arbitrary complexity, but it must always be given a list, never an atom.  The first element of the data list is always omitted from the output of <span class="Subfigure">cdr</span>, even if that first element is a list.  Thus, the expression
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(cdr (quote</span><span class="Subfigure Lite">((a list) within a list)</span><span class="Subfigure">) )</span>
+			<p class="Subfigure">
+				(cdr (quote<span class="Subfigure Lite">((a list) within a list)</span>) )
 			</p>
-			<p class="Figure">
-				 
-			</p>
+
 			<p>
 				will return <span class="Subfigure Lite">(within a list)</span>– everything in the original list save the first element <span class="Subfigure Lite">(a list)</span>.
 			</p>
-			<p class="P4">
-				 
-			</p>
+
 			<p>
 				Since <span class="Subfigure">cdr</span> operations always return a list, it is always possible to perform a <span class="Subfigure">cdr</span> on the results of another <span class="Subfigure">cdr</span> operation.  In other words, <span class="Subfigure">cdr</span> operations may be nested.  If the input list to <span class="Subfigure">cdr</span> is either an empty list or a list that contains only a single item, <span class="Subfigure">cdr</span> returns the empty list, nil, as its result.  Thus,
 			</p>
-
-			<p class="Blockcenter">
-				<span class="Subfigure">(cdr (quote </span><span class="Subfigure Lite">(list)</span><span class="Subfigure">))</span>
-			</p>
-			<p class="Blockcenter">
-				(cdr () )
-			</p>
-			<p class="Blockcenter">
-				(cdr nil)
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(cdr (quote <span class="Subfigure Lite">(list)</span>))</span></li>
+				<li><span class="Subfigure">(cdr () )</span></li>
+				<li><span class="Subfigure">(cdr nil)</span></li>
+			</ul>
+			
+			<br/>
 
 			<p>
 				each return nil, which is the same as the empty list <span class="Subfigure">()</span>.
@@ -413,7 +367,7 @@
 				An example of nested <span class="Subfigure">cdr</span> operations is presented in Figure 9.7.  This example uses the same data as Figure 9.5, so that the operation of nested <span class="Subfigure">cdr</span>s can be compared to the operation of nested <span class="Subfigure">car</span>s.  As you can see from the example, the first cdr generates a list with all of the items in the input list except the first one.  The second cdr generates a list with all of the items in the input list except the first two.  This pattern could be continued until no more items remained in the list.  For example, the list <span class="Subfigure Lite">(list)</span> would be returned by the expression
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-7.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 9.7:  An illustration of nested <span class="Subfigure">cdr</span> operations
@@ -431,7 +385,11 @@
 				It is possible, and in fact common, to create Lisp expressions that apply both <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations to different portions of an input list. By combining these two functions we can retrieve any desired element from any list.  For example, to retrieve the third element of an input list, we need to apply <span class="Subfigure">cdr</span> two times, followed by <span class="Subfigure">car</span> once. In other words, to get the third item, we discard the first two items in the list, and then select the first item from those remaining.  Because Lisp expressions are evaluated from the “inside out”, the third element of the list <span class="Subfigure Lite">(I will not eat them in the rain)</span>, “<span class="Subfigure">not</span>” could be retrieved in the following way:
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-8.png" alt="" class="Image">
+			
+			<p class="Subfigure">
+				(car (cdr (car (cdr (cdr (car (quote <span class="Subfigure Lite">(((this list) has (many sublists)) and parentheses)</span>) ))) )))
+			</p>
 
 			<p class="Figure">
 				Figure 9.8:  An illustration of nested <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations
@@ -442,10 +400,10 @@
 			</p>
 
 			<p>
-				Sometimes as we are processing a list, we end up in a situation were we have a one element list, where that element is itself a list, and we wish to delve into the underlying list.  In other words, a situation with a list like <span class="Subfigure Lite">((many sublists)) where it is first necessary to <span class="Subfigure">car</span> this list to get to the underlying list <span class="Subfigure Lite">(many sublists) before you can process that list.  I point this out, since it is quite easy to overlook this required step.
+				Sometimes as we are processing a list, we end up in a situation were we have a one element list, where that element is itself a list, and we wish to delve into the underlying list.  In other words, a situation with a list like <span class="Subfigure Lite">((many sublists))</span> where it is first necessary to <span class="Subfigure">car</span> this list to get to the underlying list <span class="Subfigure Lite">(many sublists)</span> before you can process that list.  I point this out, since it is quite easy to overlook this required step.
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-9.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 9.9:  An illustration of the relationship between <span class="Subfigure">car</span>, <span class="Subfigure">cdr</span>, and <span class="Subfigure">cons</span>
@@ -455,11 +413,8 @@
 				A third list operator is “<span class="Subfigure">cons</span>”.  Whereas, <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> are used to decompose lists, <span class="Subfigure">cons</span> is Lisp’s primary list constructor that is used to build up lists.  The <span class="Subfigure">cons</span> operator accepts two inputs, the first can be either an atom or list, but the second must be a list.  <span class="Subfigure">Cons</span> returns a new list, the <span class="Subfigure">car</span> of which is its first argument, the <span class="Subfigure">cdr</span> of which is its second argument.   For example,
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(cons (quote </span><span class="Subfigure Lite">this</span><span class="Subfigure">) (quote</span><span class="Subfigure Lite">(is a list)</span><span class="Subfigure">) )</span>
-			</p>
 			<p class="Subfigure">
-				 
+				(cons (quote <span class="Subfigure Lite">this</span>) (quote<span class="Subfigure Lite">(is a list)</span>) )
 			</p>
 			<p>
 				returns the list <span class="Subfigure Lite">(this is a list)</span>.  Note that the <span class="Subfigure">car</span> of <span class="Subfigure Lite">(this is a list)</span> is the atom <span class="Subfigure Lite">this</span>, which was the first input to <span class="Subfigure">cons</span>.  The <span class="Subfigure">cdr</span> of <span class="Subfigure Lite">(this is a list)</span> is the list <span class="Subfigure Lite">(is a list)</span>, which was the second input to <span class="Subfigure">cons</span>.  
@@ -469,8 +424,8 @@
 				As mentioned above, while the second input to <span class="Subfigure">cons </span>must be a list, the first input can be either a list or an atom.  If the first input is a list, then that list will become the first element of the returned list.  So, the expression
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(cons (quote</span><span class="Subfigure Lite">(this)</span><span class="Subfigure">) (quote</span><span class="Subfigure Lite">(list contains a sublist)</span><span class="Subfigure">) )</span>
+			<p class="Subfigure">
+				(cons (quote<span class="Subfigure Lite">(this)</span>) (quote<span class="Subfigure Lite">(list contains a sublist)</span>) )
 			</p>
 
 			<p>
@@ -481,7 +436,11 @@
 				It is interesting to note that if you take the <span class="Subfigure">cons</span> of the <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> of the same list, you will end up with a copy of the original list.  This relationship between <span class="Subfigure">cons</span>, <span class="Subfigure">car</span>, and <span class="Subfigure">cdr</span> is illustrated in Figure 9.9.
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-10a.png" alt="" class="Image">
+			<br/>
+			<img src="Images/fig9-10b.png" alt="" class="Image">
+			<br/>
+			<img src="Images/fig9-10c.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 9.10: The Lisp list composition operators: <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, and <span class="Subfigure">append</span>
@@ -515,15 +474,15 @@
 				Eval works in the following way.  
 			</p>
 
-			<div class="Standard">
-				First, Eval checks to see if it has been given an atom.  If so, it then checks to see whether that atom is a number.  If the input is a numeric atom, Eval simply returns the number and exits.  If the input was an atom, but was not numeric, the value (if any) bound to that variable is returned.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into ways of doing this in the next section."><a href="#ftn2" id="body_ftn2">2</a></span></span>  Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into this matter in the next section.
-			</div>
+			<p>
+				First, Eval checks to see if it has been given an atom.  If so, it then checks to see whether that atom is a number.  If the input is a numeric atom, Eval simply returns the number and exits.  If the input was an atom, but was not numeric, the value (if any) bound to that variable is returned.<span class="Footnote"><span class="Footnote_20_anchor" title="Footnote: Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into ways of doing this in the next section."><a href="#ftn2" id="body_ftn2">[2]</a></span></span>  Although I have not yet shown you how to bind a value to a symbol, know that it is possible. We will look into this matter in the next section.
+			</p>
 
 			<p>
 				If the input given to Eval was not an atom, then it must be a list.  Eval next determines whether the first element of its input list is <span class="Subfigure">quote</span>.  If so, Eval returns the second element of its input list and exits.
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-11.png" alt="" class="Image">
 
 			<p class="Figure">
 				Figure 9.11:  The Lisp interpreter -- Eval
@@ -549,286 +508,154 @@
 				And that’s it.  That is all the basic Lisp engine does.  Figure 9.11 summarizes the contents of the preceding paragraphs in program “flowchart” form.
 			</p>
 
-			<h1 class="Heading_20_1"><a id="a__Exercises_9_2_1"><span/></a>Exercises 9.2.1</h1>
-
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">1.</span>Identify each of the following as an atom, list, or neither an atom nor list:<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-
-			<p class="Subfigure">
-				R2D2<span> </span> <span> (attack of the clones)</span> <span> </span> <span> (C3PO)</span> <span> </span> <span> 1138</span> 					<span> </span> <span> ((((()()))))</span>
-			</p>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">2.</span>Using Figures 9.1, 9.2, and 9.3 as a guide, show the internal representation of the following lists:<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<p class="P4">
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				2.1  <span class="Subfigure">(please state the nature of the medical emergency)</span>
-			</p>
-			<p>
-				2.2  <span class="Subfigure">((please state)the nature(of the medical)emergency)</span>
-			</p>
-			<p>
-				2.3<span class="Subfigure"> (please(state the nature of the(medical)emergency))</span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">3.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<p>
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				<span> 3.1   <span class="Subfigure">(+ 2 (* 5 3))</span></span>
-			</p>
-			<p>
-				<span> 3.2   <span class="Subfigure">(/ (- 5 3) (+ 1 1))</span></span>
-			</p>
-			<p>
-				<span> 3.2   <span class="Subfigure">(5 + 3)</span></span>
-			</p>
-			<p>
-				<span> 3.4   <span class="Subfigure">( * + 3 5 2)</span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">4.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<p>
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				<span> 4.1   <span class="Subfigure">(quote (brave))</span></span>
-			</p>
-			<p>
-				<span> 4.2   <span class="Subfigure">(quote (new world))</span></span>
-			</p>
-			<p>
-				<span> 4.3   <span class="Subfigure">(quote Huxley)</span></span>
-			</p>
-			</span>
-			<p/>
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">5.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<p>
-				 
-			</p>
-			<span class="Blockcenter">
-			<p>
-				<span> 5.1  <span class="Subfigure">(car(quote(a hobbits tale)))</span></span>
-			</p>
-			<p>
-				<span> 5.2  <span class="Subfigure">(car(car(quote((a hobbits tale) by Bilbo Baggins))))</span></span>
-			</p>
-			<p>
-				<span> 5.3  <span class="Subfigure">(car(quote(the shire)))</span></span>
-			</p>
-			<p>
-				<span> 5.4  <span class="Subfigure">(car(the shire))</span></span>
-			</p>
-			<p>
-				<span> 5.5  <span class="Subfigure">(car(car(car(quote(((the)shire))))))</span></span>
-			</p>
-			<p>
-				<span> 5.6  <span class="Subfigure">(car(quote Frodo))</span></span>
-			</p>
-			</span>
-			<p>
-				 
+			<p class="Section">
+				Exercises 9.2.1
 			</p>
 
 			<ol>
 				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">6.</span>Evaluate the following Lisp expression.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
+					Identify each of the following as an atom, list, or neither an atom nor list:
+					
+					<ul class="Subblockcenter">
+						<div class="section group">
+							<div class="col span_1_of_2">
+								<span class="Subfigure">R2D2</span>
+							</div>
+							<div class="col span_1_of_2">
+								<span class="Subfigure">(attack of the clones)</span>
+							</div>
+						</div>
+						<div class="section group">
+							<div class="col span_1_of_2">
+								<span class="Subfigure">(C3PO)</span>
+							</div>
+							<div class="col span_1_of_2">
+								<span class="Subfigure"> 1138</span>
+							</div>
+						</div>
+						<div class="section group">
+							<div class="col span_1_of_2">
+								<span class="Subfigure">((((()()))))</span>
+							</div>
+						</div>
+					</ul>
+				</li>
+
+				<li>
+					<p>Using Figures 9.1, 9.2, and 9.3 as a guide, show the internal representation of the following lists:</p>
+					
+					<ul class="Subblockcenter">
+						<p>2.1  <span class="Subfigure">(please state the nature of the medical emergency)</span></p>
+						<p>2.2  <span class="Subfigure">((please state)the nature(of the medical)emergency)</span></p>
+						<p>2.3<span class="Subfigure"> (please(state the nature of the(medical)emergency))</span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>3.1   <span class="Subfigure">(+ 2 (* 5 3))</span></p>
+						<p>3.2   <span class="Subfigure">(/ (- 5 3) (+ 1 1))</span></p>
+						<p>3.3   <span class="Subfigure">(5 + 3)</span></p>
+						<p>3.4   <span class="Subfigure">( * + 3 5 2)</span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>4.1   <span class="Subfigure">(quote (brave))</span></p>
+						<p>4.2   <span class="Subfigure">(quote (new world))</span></p>
+						<p>4.3   <span class="Subfigure">(quote Huxley)</span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>5.1  <span class="Subfigure">(car(quote(a hobbits tale)))</span></p>
+						<p>5.2  <span class="Subfigure">(car(car(quote((a hobbits tale) by Bilbo Baggins))))</span></p>
+						<p>5.3  <span class="Subfigure">(car(quote(the shire)))</span></p>
+						<p>5.4  <span class="Subfigure">(car(the shire))</span></p>
+						<p>5.5  <span class="Subfigure">(car(car(car(quote(((the)shire))))))</span></p>
+						<p>5.6  <span class="Subfigure">(car(quote Frodo))</span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expression.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">(car (quote (car (quote (((a list) in a list) in another list)))))</ul>
+					
+					<br/>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>7.1  <span class="Subfigure">(cdr (quote (Doctor Morbius)))</span></p>
+						<p>7.2  <span class="Subfigure">(cdr (cdr (cdr (quote (Welcome to Altair 4)))))</span></p>
+						<p>7.3  <span class="Subfigure">(cdr (quote Robbie))</span></p>
+						<p>7.4  <span class="Subfigure">(cdr (cdr (quote (monsters (from the) Id))))</span></p>
+					</ul>
+				</li>
+				
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>8.1  <span class="Subfigure">(car (cdr (quote (I am a doctor not a))))</span></p>
+						<p>8.2  <span class="Subfigure">(car (cdr (cdr (quote (I am a doctor not a)))))</span></p>
+						<p>8.3  <span class="Subfigure">(car (cdr (cdr (cdr (quote(I am a doctor not a))))))</span></p>
+						<p>8.4  <span class="Subfigure">(car (cdr (car (quote((most illogical)captain)))))</span></p>
+						<p>8.5  <span class="Subfigure">(cdr (car (quote ((hailing frequencies open)))))</span></p>
+						<p>8.6  <span class="Subfigure">(cdr (car (quote (hailing frequencies open))))</span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>9.1  <span class="Subfigure">(cons (quote open) (quote (the pod bay doors Hal)))</span></p>
+						<p>9.2  <span class="Subfigure">(cons (quote(open)) (quote(the pod bay doors Hal)))</span></p>
+						<p>9.3  <span class="Subfigure">(cons (quote(open the pod))(quote((bay doors) Hal)))</span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>10.1  <span class="Subfigure">(list (quote just) (quote a) (quote moment))</span></p>
+						<p>10.2  <span class="Subfigure">(list (quote(just a)) (quote(moment)))</span></p>
+						<p>10.3  <span class="Subfigure">(list (quote(just a)) (quote moment)) </span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Evaluate the following Lisp expressions.  Indicate any potential errors.</p>
+					
+					<ul class="Subblockcenter">
+						<p>11.1  <span class="Subfigure">(append (quote just) (quote a) (quote moment))</span></p>
+						<p>11.2  <span class="Subfigure">(append (quote (just a)) (quote (moment)))</span></p>
+						<p>11.3  <span class="Subfigure">(append (quote (just a)) (quote moment)) </span></p>
+					</ul>
+				</li>
+
+				<li>
+					<p>Using the illustration of Figure 9.10, trace through the actions of the Lisp interpreter when evaluating the expression:</p>
+					
+					<ul class="Subblockcenter">(+ 3 (- 12 10))</ul>
+					
 				</li>
 			</ol>
 
-			<p class="Subfigure">
-				(car (quote (car (quote (((a list) in a list) in another list)))))
-			</p>
-
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">7.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 7.1  <span class="Subfigure">(cdr (quote (Doctor Morbius)))</span></span>
-			</p>
-			<p>
-				<span> 7.2  <span class="Subfigure">(cdr (cdr (cdr (quote (Welcome to Altair 4)))))</span></span>
-			</p>
-			<p>
-				<span> 7.3  <span class="Subfigure">(cdr (quote Robbie))</span></span>
-			</p>
-			<p>
-				<span> 7.4  <span class="Subfigure">(cdr (cdr (quote (monsters (from the) Id))))</span></span>
-			</p>
-			</span>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">8.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<span class="Blockcenter">
-			<p>
-				8.1  <span class="Subfigure">(car (cdr (quote (I am a doctor not a))))</span>
-			</p>
-			<p>
-				8.2  <span class="Subfigure">(car (cdr (cdr (quote (I am a doctor not a)))))</span>
-			</p>
-			<p>
-				8.3  <span class="Subfigure">(car (cdr (cdr (cdr (quote(I am a doctor not a))))))</span>
-			</p>
-			<p>
-				8.4  <span class="Subfigure">(car (cdr (car (quote((most illogical)captain)))))</span>
-			</p>
-			<p>
-				8.5  <span class="Subfigure">(cdr (car (quote ((hailing frequencies open)))))</span>
-			</p>
-			<p>
-				8.6  <span class="Subfigure">(cdr (car (quote (hailing frequencies open))))</span>
-			</p>
-			</span>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">9.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 9.1  <span class="Subfigure">(cons (quote open) (quote (the pod bay doors Hal)))</span></span>
-			</p>
-			<p>
-				<span> 9.2  <span class="Subfigure">(cons (quote(open)) (quote(the pod bay doors Hal)))</span></span>
-			</p>
-			<p>
-				<span> 9.3  <span class="Subfigure">(cons (quote(open the pod))(quote((bay doors) Hal)))</span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">10.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 10.1  <span class="Subfigure">(list (quote just) (quote a) (quote moment))</span></span>
-			</p>
-			<p>
-				<span> 10.2  <span class="Subfigure">(list (quote(just a)) (quote(moment)))</span></span>
-			</p>
-			<p>
-				<span> 10.3  <span class="Subfigure">(list (quote(just a)) (quote moment)) </span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">11.</span>Evaluate the following Lisp expressions.  Indicate any potential errors.<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-			<span class="Blockcenter">
-			<p>
-				<span> 11.1  <span class="Subfigure">(append (quote just) (quote a) (quote moment))</span></span>
-			</p>
-			<p>
-				<span> 11.2  <span class="Subfigure">(append (quote (just a)) (quote (moment)))</span></span>
-			</p>
-			<p>
-				<span> 11.3  <span class="Subfigure">(append (quote (just a)) (quote moment)) </span></span>
-			</p>
-			</span>
-			<p>
-				 
-			</p>
-			<p>
-				 
-			</p>
-			<ol>
-				<li>
-					<p class="P16" style="margin-left:0cm;">
-						<span class="WW8Num1zfalse" style="display:block;float:left;min-width:0.635cm;">12.</span>Using the illustration of Figure 9.10, trace through the actions of the Lisp interpreter when evaluating the expression:<span class="odfLiEnd"/> 
-					</p>
-				</li>
-			</ol>
-
-			<p class="Subfigure">
-				(+ 3 (- 12 10))
-			</p>
-
-			<p class="Bolded">
+			<p class="Section">
 				9.2.2  User-defined functions
 			</p>
 
@@ -843,16 +670,16 @@
 			<p>
 				The <span class="Subfigure">defun</span> procedure is used to define functions; in fact, its name stands for <span class="Bolded">de</span>fine <span class="Bolded">fun</span>ction.  The format of the <span class="Subfigure">defun</span> procedure is:
 			</p>
-
-			<p>
-				<span class="Subfigure">  </span><span class="Subfigure">( defun</span><span class="Italicized">function_name</span><span class="Subfigure">(</span><span class="Italicized">argument</span><span class="Subscript">1</span><span class="Subfigure"> </span><span class="Italicized">argument</span><span class="Subscript">2</span><span class="Subfigure"> </span><span class="Italicized">argument</span><span class="Subscript">3</span><span class="Subfigure"> </span>…<span class="Subfigure"> </span><span class="Italicized">argument</span><span class="Subscript">n</span><span class="Subfigure">)</span>
-			</p>
-			<p>
-				               <span class="Italicized">function_body</span>
-			</p>
-			<p class="P4">
-				<span class="T9">  </span>)
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">( defun <span class="Italicized">function_name</span>(<span class="Italicized">argument</span><span class="Subscript">1</span><span class="Italicized">argument</span><span class="Subscript">2</span><span class="Italicized">argument</span><span class="Subscript">3</span>…<span class="Italicized">argument</span><span class="Subscript">n</span>)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure"><span class="Italicized">function_body</span></span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
 
 			<p>
 				where <span class="Italicized">function_name</span> is a symbolic atom that specifies the name of the function being defined; each of the <span class="Italicized">arguments</span> are symbolic atoms that will be bound to input values; and <span class="Italicized">function_body</span>  is a list that specifies the operations to be carried out on the arguments.  Note that the <span class="Italicized">function_body</span> list can be a simple list of atoms or quite complex with many nested sublists.  
@@ -866,8 +693,8 @@
 				Now, let’s write a function.  We will start with something very simple; a function called <span class="Subfigure">head</span> that returns the first element of a list.  This function will do exactly the same thing as the built-in function <span class="Subfigure">car</span>, but will have a more meaningful name.  So, if the <span class="Subfigure">head</span> function were called in the following manner:
 			</p>
 
-			<p class="Figure">
-				<span class="Subfigure">(head (quote</span><span class="Subfigure Lite">(this is a list)</span><span class="Subfigure">))</span>
+			<p class="Subfigure">
+				(head (quote<span class="Subfigure Lite">(this is a list)</span>))
 			</p>
 
 			<p>
@@ -877,20 +704,17 @@
 			<p>
 				Here is the definition of the function <span class="Subfigure">head</span>:
 			</p>
-			<span class="Blockcenter">
-			<p>
-				(defun head (L)
-			</p>
 			
-			<p class="Subblockcenter">
-				<span> </span>(car L)
-			</p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun head (L)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">(car L)</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
 			
-			<p>
-				)
-			</p>
-			</span>
-
+			<br/>
+			
 			<p>
 				The definition is a list.  The first element of that list is the keyword <span class="Subfigure">defun</span>, an atom.  The second element of the list is the name of the function we are defining, <span class="Subfigure">head</span>.  The third element of every <span class="Subfigure">defun</span> list is always itself a list.  This list contains symbolic atoms that will act as placeholders for the function’s inputs.  
 			</p>
@@ -918,37 +742,36 @@
 			<p>
 				It is important to note that <span class="Subfigure">(car (L))</span> could not be used in the definition of this function.  Why?  The reason is that Eval would attempt to interpret the list <span class="Subfigure">(L)</span>.  Since Eval treats all lists as function calls – unless they are quoted – it would look for a function named <span class="Subfigure">L</span>, and since there is no such function, an error would be produced.
 			</p>
-
-			<p>
-				<span class="Subfigure">( defun</span><span class="Italicized">function_name</span><span class="Subfigure">(</span><span class="Italicized">argument</span><span class="Subscript">1</span><span class="Subfigure"> </span><span class="Italicized">argument</span><span class="Subscript">2</span><span class="Subfigure"> </span><span class="Italicized">argument</span><span class="Subscript">3</span><span class="Subfigure"> </span>…<span class="Subfigure"> </span><span class="Italicized">argument</span><span class="Subscript">n</span><span class="Subfigure">)</span>
-			</p>
-			<p>
-				<span> <span class="Italicized">function_body</span></span>
-			</p>
-			<p class="P4">
-				<span class="T9"> </span>)
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">( defun<span class="Italicized">function_name</span>(<span class="Italicized">argument</span><span class="Subscript">1</span><span class="Italicized">argument</span><span class="Subscript">2</span><span class="Italicized">argument</span><span class="Subscript">3</span>…<span class="Italicized">argument</span><span class="Subscript">n</span></span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure"><span class="Italicized">function_body</span></span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
+			
 			<p class="Figure">
 				(a) The general format of the <span class="Subfigure">defun</span> procedure
 			</p>
-			<span class="Blockcenter">
-			<p>
-				(defun head (L)
-			</p>
 			
-			<p class="Subblockcenter">
-				<span> </span>(car L)
-			</p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun head (L)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">(car L)</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
 			
-			<p>
-				)
-			</p>
-			</span>
+			<br/>
+			
 			<p class="Figure">
 				(b) Definition of a function that returns the first element (head) of a list
 			</p>
 
-			<h1>INSERT MISSINGOBJECT HERE</h1>
+			<img src="Images/fig9-12c.png" alt="" class="Image">
 
 			<p class="Figure">
 				(c) Invocation and return of user-defined function <span class="Subfigure">head</span>
@@ -973,48 +796,44 @@
 			<p>
 				Let’s look at some additional function definitions.  First up, we could do for <span class="Subfigure">cdr</span> what we did for <span class="Subfigure">car</span> – create a new function with the same functionality but a better name.  Here is a definition for a new version of <span class="Subfigure">cdr</span> called <span class="Subfigure">tail</span>.
 			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun tail (L)</span></li>
+				<ul class="Subblockenter">
+					<li><span class="Subfigure">(cdr L)</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
 
-			<span class="Blockcenter">			
-			<p>
-				(defun tail (L)
-			</p>
-			<p class="Subblockcenter">
-				<span>  </span>(cdr L)
-			</p>
-			<p>
-				)
-			</p>
-			</span>
 			<p>
 				It also might be useful if we defined a group of functions that retrieved the second, third, and fourth elements of a list, since those are tasks that are performed quite frequently.   One way of defining <span class="Subfigure">second</span>, using only built-in functions, would be
 			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun second (L)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">(car (cdr L))</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
 
-			<span class="Blockcenter">
-			<p>
-				(defun second (L)
-			</p>
-			<p class="Subblockcenter">
-				<span>  </span>(car (cdr L))
-			</p>
-			<p>
-				)
-			</p>
-			</span>
 			<p>
 				We could also define <span class="Subfigure">second</span> using <span class="Subfigure">head</span> and <span class="Subfigure">tail</span>.
 			</p>
-
-			<span class="Blockcenter">
-			<p>
-				(defun second (L)
-			</p>
-			<p class="Subblockcenter">
-				<span>  </span>(head (tail L))
-			</p>
-			<p>
-				)
-			</p>
-			</span>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun second (L)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">(head (tail L))</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
 
 			<p>
 				Definitions of <span class="Subfigure">third</span> and <span class="Subfigure">fourth</span> are left as exercises.  Most versions of Lisp include <span class="Subfigure">second</span>, <span class="Subfigure">third</span>, and <span class="Subfigure">fourth</span> as built-in functions, but they are called by the more cryptic names <span class="Subfigure">cadr</span>, <span class="Subfigure">caddr</span>, and <span class="Subfigure">cadddr</span>, due to their underlying definitions – i.e., <span class="Subfigure">cadr</span> is implemented as<span class="Subfigure">(car(cdr L))</span>, <span class="Subfigure">caddr</span> as <span class="Subfigure">(car(cdr(cdr L)))</span>, and so forth.
@@ -1023,54 +842,45 @@
 			<p>
 				In addition to list manipulation based functions, mathematical functions can also be written in Lisp.  For example,
 			</p>
-			<ul class="Blockcenter"><li>
-			<span class="Subfigure">
-			<p>
-				(defun second (NUM)
-			</p>
-			<ul  class="Subblockcenter"><li>
-			<p>
-				( * NUM NUM)
-			</p>
-			</ul></li>
-			<p>
-				)
-			</p>
-			</ul></li></span>
-
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun second (NUM)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">( * NUM NUM)</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
+			
 			<p>
 				Defines a function that takes a numeric atom, a number, and returns its <span class="Subfigure">square</span> – i.e., multiplies the number by itself.  A slightly more complex mathematical oriented example would be a function that converts a temperature reading from degrees Fahrenheit to degrees Celsius.  The conversion formula is <span class="Subfigure">C = (F – 32)/1.8</span>.  Here is the function definition in Lisp using the name <span class="Subfigure">f-to-c</span>:
 			</p>
-			<ul class="Blockcenter"><li>
-			<span class="Subfigure">
-			<p>
-				(defun f-to-c (TEMP)
-			</p>
-			<ul class="Subblockcenter"><li>
-			<p>
-				( / ( - TEMP 32) 1.8)
-			</p>
-			</ul></li>
-			<p class="Subfigure">
-				)
-			</p>
-			</ul></li>
-			</span>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun f-to-c (TEMP)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">( / ( - TEMP 32) 1.8)</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
+			
 			<p>
 				Calling <span class="Subfigure">(f-to-c 32)</span> returns <span class="Subfigure">0.0</span>, <span class="Subfigure">while</span><span class="Subfigure">(f-to-c 212)</span> returns <span class="Subfigure">100.0</span>.
 			</p>
-			<p class="Blockcenter">
-				<span class="Subfigure">(cond (</span><span class="Italicized">condition</span><span class="Subscript">1</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">1</span><span class="Subfigure">)</span>
-			</p>
-			<p class="Subfigure">
-				<span class="Subfigure">(</span><span class="Italicized">condition</span><span class="Subscript">2</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">2</span><span class="Subfigure">)</span>
-			</p>
-			<p class="Subfigure">
-			 :             :
-			</p>
-			<p class="Subfigure">
-				<span class="Subfigure">(</span><span class="Italicized">condition</span><span class="Subscript">n</span><span class="Subfigure"> </span><span class="Italicized">result</span><span class="Subscript">n</span><span class="Subfigure">))</span>
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(cond (<span class="Italicized">condition</span><span class="Subscript">1</span><span class="Italicized">result</span><span class="Subscript">1</span>)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">(<span class="Italicized">condition</span><span class="Subscript">2</span><span class="Italicized">result</span><span class="Subscript">2</span>)</span></li>
+					<li><span class="Subfigure">&nbsp;&nbsp;:             :</span></li>
+					<li><span class="Subfigure">(<span class="Italicized">condition</span><span class="Subscript">n</span><span class="Italicized">result</span><span class="Subscript">n</span>))</span></li>
+				</ul>
+			</ul>
+			
+			<br/>
 
 			<p class="Figure">
 				Figure 9.13:  The format of the <span class="Subfigure">cond</span> function
@@ -1088,46 +898,37 @@
 				The format of the <span class="Subfigure">cond</span> function is shown in Figure 9.12.  This function takes the form of a list, where the first element of the list is the atom <span class="Subfigure">cond</span>.  Following the function name are one or more condition/result lists. Each of these lists contains two elements.  The first element is a condition, or predicate, that will return either true or false.  If the condition is true, the associated result list will be evaluated and its result returned as the result of the <span class="Subfigure">cond</span> function.  If none of the conditions are true, <span class="Subfigure">cond</span> will return nil.  If multiple conditions are true, <span class="Subfigure">cond</span> will return the result associated with the <span class="Italicized">first</span> true condition.
 			</p>
 			
-			<ul class="Blockcenter"><li>
-			<span class="Subfigure">			
-			<p>
-				(defun legal (AGE)
-			</p>
-			<ul class="Subblockcenter"><li>
-			<p>
-				<span> (cond ((&gt;= AGE 21)  T )</span>
-			</p>
-			<ul class="Subblockcenter"><li>
-			<p>
-				<span>  (    T       nil) )</span>
-			</p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun legal (AGE)</span></li>
+				<ul class="Blockcenter">
+					<li><span class="Subfigure">(cond ((&gt;= AGE 21)  T )</span></li>
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">(    T       nil) )</span></li>
+					</ul>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
 			
-			<p>
-				)
-			</p>
-			</ul></li></ul></li></span>
+			<br/>
+			
 			<p class="Figure">
 				(a) Definition of function <span class="Subfigure">legal</span>
 			</p>
-			<ul class="Blockcenter"><li>
-			<p>
-				(legal 18)  nil
-			</p>
-			<p>
-				(legal 21)  T
-			</p>
-			<p>
-				(legal 42)  T
-			</p>
-			</ul></li>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(legal 18) &rArr; nil</span></li>
+				<li><span class="Subfigure">(legal 21) &rArr; T</span></li>
+				<li><span class="Subfigure">(legal 42) &rArr; T</span></li>
+			</ul>
+
+			<br/>
+			
 			<p class="Figure">
 				(b) Input/Output behavior of <span class="Subfigure">legal</span>
 			</p>
+
 			<p class="Figure">
-				 
-			</p>
-			<p class="Figure">
-				Figure 9.13:  A program that illustrates selection via the <span class="Subfigure">cond</span> function
+				Figure 9.14:  A program that illustrates selection via the <span class="Subfigure">cond</span> function
 			</p>
 			<p class="Figure">
 				 
@@ -1156,28 +957,20 @@
 			<p>
 				Here is the definition of another function that uses the <span class="Subfigure">cond</span> operator
 			</p>
-			<ul class="Blockcenter"><li>
-			<span class="Subfigure">
-			<p>
-				(defun absolute_value (NUM)
-			</p>
-			<ul class="Subblockcenter"><li>
-			<p>
-				(cond ((&gt;= NUM 0)   NUM    )
-			</p>
-			<ul class="Subblockcenter"><li>
-			<p>
-				(    T     (- 0 NUM) ) )
-			</p>
-			</ul></li></ul></li>	
-			<ul class="Blockcenter"><li>
-			<p>
-				)
-			</p>
-			</ul></li>
 			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun absolute_value (NUM)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">(cond ((&gt;= NUM 0)   NUM    )</span></li>
+					<ul class="Subblockcenter">
+						<li><span class="Subfigure">(    T     (- 0 NUM) ) )</span></li>
+					</ul>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
 			
-			</span>
+			<br/>
+			
 			<p>
 				This function returns the absolute value of a number.  If the number is greater than or equal to zero, that number is returned unchanged.  Otherwise (that is if the number is less than zero) the original number is subtracted from zero (giving a positive result) and that result is returned as the value of the function.
 			</p>
@@ -1197,46 +990,49 @@
 			<p>
 				Basic text-based input is achieved in Lisp by use of the <span class="Subfigure">read</span> function.  The read function returns one element, either an atom or a list, entered by the user while the program is running.
 			</p>
-
-			<p class="Blockcenter">
-				(defun yuppie (AGE INCOME)
-			</p>
-			<p>
-				<span class="Subblockcenter">  </span>(cond (( &lt; AGE 40)  
-			</p>
-			<p>
-				<span class="Subfigure">                (cond ((&gt;= INCOME 50000)(quote </span><span class="Subfigure Lite">(yuppie)</span><span class="Subfigure">))</span>
-			</p>
-			<p>
-				<span class="Subfigure">                         (        T        (quote </span><span class="Subfigure Lite">(too poor)</span><span class="Subfigure">))))</span>
-			</p>
-			<p>
-				<span class="Subfigure">  </span><span>    (    T          </span>
-			</p>
-			<p>
-				<span class="Subfigure">                (cond ((&gt;= INCOME 50000)(quote </span><span class="Subfigure Lite">(too old)</span><span class="Subfigure">))</span>
-			</p>
-			<p>
-				<span class="Subfigure">                         (        T        (quote </span><span class="Subfigure Lite">(old and poor)</span><span class="Subfigure">))))</span>
-			</p>
-			<p>
-				)
-			</p>
-			<p>
-				)
-			</p>
+			
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">(defun yuppie (AGE INCOME)</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure">(cond (( &lt; AGE 40)  </span></li>
+					<ul class="Subblockcenter">
+						<li><span class="Subfigure">(cond ((&gt;= INCOME 50000)(quote </span><span class="Subfigure Lite">(yuppie)</span>) )</span></li>
+						<ul class="Subblockcenter">
+							<li><span class="Subfigure">(        T        (quote <span class="Subfigure Lite">(too poor)</span>))))</span></li>
+						</ul>
+						<li><span class="Subfigure">(cond ((&gt;= INCOME 50000)(quote <span class="Subfigure Lite">(too old)</span>))</span></li>
+						<ul class="Subblockcenter">
+							<li><span class="Subfigure">(        T        (quote <span class="Subfigure Lite">(old and poor)</span>))))</span></li>
+						</ul>
+					</ul>
+					<li><span class="Subfigure">)</span></li>
+				</ul>
+				<li><span class="Subfigure">)</span></li>
+			</ul>
+			
+			<br/>
 
 			<p class="Figure">
-				Figure 9.14:  A Lisp program that illustrates nested conditions
+				Figure 9.15:  A Lisp program that illustrates nested conditions
+			</p>
+			
+			<!-- Footnotes -->
+			<hr/>
+			<p class="Section">
+				Footnotes
 			</p>
 
 			<p class="Footnote">
-				<span class="footnodeNumber"><a class="Footnote" id="ftn1" href="#body_ftn1">1</a></span> The oldest high-level language still in widespread use today is FORTRAN, though like LISP modern dialects of FORTRAN contain many features absent from earlier versions.
+				<span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn1" href="#body_ftn1">[1]</a></span> The oldest high-level language still in widespread use today is FORTRAN, though like LISP modern dialects of FORTRAN contain many features absent from earlier versions.
 			</p>
 			<p class="Footnote">
-				<span class="footnodeNumber"><a class="Footnote" id="ftn2" href="#body_ftn2">2</a></span> Although I have not yet shown you how to bind a value to a symbol, know that it is possible.  We will look into ways of doing this in the next section.
+				<span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn2" href="#body_ftn2">[2]</a></span> Although I have not yet shown you how to bind a value to a symbol, know that it is possible.  We will look into ways of doing this in the next section.
 			</p>
-			<!-- End Main content -->
+			
+			<!-- End main content -->
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
 			<nav>
 				<p>
 					--
@@ -1252,7 +1048,6 @@
 			<div>
 
 			</div>
-
 		</div>
 	</body>
 </html>

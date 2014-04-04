@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -36,28 +36,29 @@
 
 
 			<!--Floating nav -->
-				<!-- Previous -->
-				<style>
-				div.floating-previous
-				{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-				div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-previous">
-				<a href="ch06s2.html">
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
 				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
 				</a>
-				</div>
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch06s4.html">
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
 				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
 				</a>
-				</div>
+			</div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
@@ -109,7 +110,7 @@
 			</p>
 			
 			<p>
-				Image resolution on game consoles is generally limited to 640 by 480 – that is, 640 pixels per line, with 480 lines per image.  This resolution is the maximum that can be handled by most of the television sets to which game consoles are attached.  Thus, image resolution on console games is unlikely to improve until high-definition television sets become more popular.<span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Do not take this statement to mean that the look of game consoles will not improve beyond the current generation of X-box, Playstation II, and Game Cube machines. The level of visual realism supported by a machine depends on many factors other than raw image resolution, such as polygons rendered per second, complexity of supported shading and lighting models, and frames per second. Such topics are discussed in most upper division computer graphics courses."><a href="#ftn1" id="body_ftn1">[1]</a></span></span>  PC monitors, on the other hand, are capable of displaying higher resolution images.  Common graphics modes include 800 by 600, 1024 by 768, and 1280 by 1024.
+				Image resolution on game consoles is generally limited to 640 by 480 – that is, 640 pixels per line, with 480 lines per image.  This resolution is the maximum that can be handled by most of the television sets to which game consoles are attached.  Thus, image resolution on console games is unlikely to improve until high-definition television sets become more popular.<span class="Footnote" title="Footnote: Do not take this statement to mean that the look of game consoles will not improve beyond the current generation of X-box, Playstation II, and Game Cube machines. The level of visual realism supported by a machine depends on many factors other than raw image resolution, such as polygons rendered per second, complexity of supported shading and lighting models, and frames per second. Such topics are discussed in most upper division computer graphics courses."><a href="#ftn1" id="body_ftn1">[1]</a></span>  PC monitors, on the other hand, are capable of displaying higher resolution images.  Common graphics modes include 800 by 600, 1024 by 768, and 1280 by 1024.
 			</p>
 			
 			<p>
@@ -138,7 +139,7 @@
 			</p>
 			
 			<p>
-				We usually define at least two separate Cartesian coordinate systems in computer graphics: the screen coordinate system and the world coordinate system.  The <span class="Bolded">screen coordinate system</span> is used by the graphics hardware to actually produce the image.  Screen coordinates are, therefore, physically dependent on the underlying graphics hardware, and cannot be changed by the programmer.<span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Actually, most PC graphics cards support multiple screen resolution modes, such as 800 by 600 and 1024 by 768. These modes can be selected under software control – but once a screen resolution mode is selected it affects all programs running on that machine."><a href="#ftn2" id="body_ftn2">[2]</a></span></span>  In screen coordinates, both X any Y coordinates are specified using positive integer values.  The lengths of the two axes depend on the image resolution supported by the underlying graphics hardware.  In an 800 by 600 system, legal X values would range from 0 to 799 and legal Y values from 0 to 599.
+				We usually define at least two separate Cartesian coordinate systems in computer graphics: the screen coordinate system and the world coordinate system.  The <span class="Bolded">screen coordinate system</span> is used by the graphics hardware to actually produce the image.  Screen coordinates are, therefore, physically dependent on the underlying graphics hardware, and cannot be changed by the programmer.<span class="Footnote" title="Footnote: Actually, most PC graphics cards support multiple screen resolution modes, such as 800 by 600 and 1024 by 768. These modes can be selected under software control – but once a screen resolution mode is selected it affects all programs running on that machine."><a href="#ftn2" id="body_ftn2">[2]</a></span>  In screen coordinates, both X any Y coordinates are specified using positive integer values.  The lengths of the two axes depend on the image resolution supported by the underlying graphics hardware.  In an 800 by 600 system, legal X values would range from 0 to 799 and legal Y values from 0 to 599.
 			</p>
 			
 			<p>
@@ -199,7 +200,10 @@
 				Figure 6.8:  Two views of the same circle
 			</p>
 			
+			<hr/>
+			
 			<p class="Section">Footnotes</p>
+			
 			<p class="Footnote">
 				<span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn1" href="#body_ftn1">[1]</a></span> Do not take this statement to mean that the look of game consoles will not improve beyond the current generation of X-box, Playstation II, and Game Cube machines.   The level of visual realism supported by a machine depends on many factors other than raw image resolution, such as polygons rendered per second, complexity of supported shading and lighting models, and frames per second.  Such topics are discussed in most upper division computer graphics courses.
 			</p>
@@ -209,7 +213,6 @@
 			</p>
 			
 			<!-- End main content -->
-			<hr/>
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -224,6 +227,19 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("graphics", spans);
+					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					pageObj = getArrowPathsByPage("graphicsFundamentals");
+
+				});	
+			</script>
 
 			<div>
 

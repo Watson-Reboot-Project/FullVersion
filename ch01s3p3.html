@@ -28,7 +28,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -36,32 +36,30 @@
     <script type="text/javascript" src="js/nav.js"></script>
 
 			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch01s3p2.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-			  
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch01s3p4.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-			  
-		    <!-- End floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+				</a>
+			</div>
+			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -168,7 +166,6 @@
 				In addition to storing symbols, computers must be able to manipulate them.  As strange as this may sound, <span class="Ital">all</span> of the operations that a computer can perform, from math and logic to playing sound and graphics, can be expressed in terms of only three basic operations: “and”, “or”, and “not”.  <span class="Bolded">And</span> takes two inputs, if they are both “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Or</span> also takes two inputs, if either or both inputs are “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Not</span> takes a single input, if the input is “1” the output is “0”, and vice versa.  Electrical circuits for each of these three logic operations can easily be built, and these basic circuits can be combined to produce circuits capable of more complex behavior.  Chapter 12 explores this subject in more detail and introduces the Watson Digital Lab which can be used to design and test simple digital circuits.
 			</p>
 			
-			<br/>
 			<!-- Footnotes -->
 			<hr/>
 			<p class="Section">
@@ -179,6 +176,7 @@
 				<a class="Footnote_20_Symbol" id="ftn2" href="#body_ftn2">[2] </a></span> Named after Intel co-founder Gordon Moore.
 			</p>
 			
+			<!-- End main content -->
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -197,6 +195,20 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("science", spans);
+					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					pageObj = getArrowPathsByPage("scienceFour3");
+
+				});	
+			</script>
+
 		</div>
 	</body>
 </html>

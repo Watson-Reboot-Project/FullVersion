@@ -28,7 +28,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -36,32 +36,30 @@
     <script type="text/javascript" src="js/nav.js"></script>
 
 			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch03s3p2.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-			  
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch03s4.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-			  
-		    <!-- End floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+				</a>
+			</div>
+			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -109,9 +107,11 @@
 			</p>
 
 			<p>
-				To summarize, contiguous storage is the simplest and fastest technique for reading an entire file in sequential order due to the fact that all of the records of the files are stored in physically adjacent sectors minimizing the seek and rotational latencies. This advantage is offset by the need to perform costly defragmentation operations in order to keep free sectors grouped together. Both linked and indexed storage allow all of the sectors of a drive to be used for storing files since they do not require that the data blocks making up a file be physically located in adjacent sectors. Linked storage is somewhat more space efficient than indexed, since indexed requires one additional data block per file to hold the file’s index table. The primary advantage of indexed storage over linked and contiguous is that it enables access to</span> <span class="Ital">individual</span> records in a file using only two read operations. To improve retrieval times when reading linked and indexed files sequentially defragmentation can be performed.
+				To summarize, contiguous storage is the simplest and fastest technique for reading an entire file in sequential order due to the fact that all of the records of the files are stored in physically adjacent sectors minimizing the seek and rotational latencies. This advantage is offset by the need to perform costly defragmentation operations in order to keep free sectors grouped together. Both linked and indexed storage allow all of the sectors of a drive to be used for storing files since they do not require that the data blocks making up a file be physically located in adjacent sectors. Linked storage is somewhat more space efficient than indexed, since indexed requires one additional data block per file to hold the file’s index table. The primary advantage of indexed storage over linked and contiguous is that it enables access to <span class="Ital">individual</span> records in a file using only two read operations. To improve retrieval times when reading linked and indexed files sequentially defragmentation can be performed.
 			</p>
 			
+			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -130,6 +130,19 @@
 			<div>
 
 			</div>
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("information");
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("information", spans);
+					// once the document has loaded, set figure numbers and arrow paths
+					pageObj = getArrowPathsByPage("informationOrganization3");
+
+				});	
+			</script>
+
 		</div>
 	</body>
 </html>

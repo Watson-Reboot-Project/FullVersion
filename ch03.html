@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -36,21 +36,32 @@
 
 			<!-- End nav -->
 			<!--Floating nav -->
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch03s1.html">
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
 				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
 				</a>
-				</div>
-			<!-- End floating nav -->
+			</div>
 			<!-- Main content -->
 			
-			<ul>
+			<!--<ul>
 				<a href="ch03s1.html"><li>3.1 Introduction</li></a>
 				<a href="ch03s2.html"><li>3.2 The hardware level</li></a>
 				<a href="ch03s3.html"><li>3.3 The file organization level</li></a>
@@ -78,7 +89,27 @@
 						<a href="ch03s5p2f.html"><li>3.5.2.6 Queries involving “select”, “project”, and “join”</li></a>
 					</ul>
 				</ul>
-			</ul>
+			</ul>-->
+
+			<div id="ContentAreaSections" class="well bold-me"></div>
+   		<!-- End Chapter Index listing -->
+
+			<!-- Previous and Next Chapter buttons -->
+			<br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-sm-6 col-xs-12">	
+						<a href="#" onclick="prevArrowPage(chapObj)">
+							<button class="btn btn-sm btn-blue" type="button"><i class="fa fa-step-backward"></i> Previous Chapter</button>
+						</a>
+					</div>
+					<div class="col-md-5 col-sm-6 col-xs-12 pull-right">
+						<a href="#" onclick="nextArrowPage(chapObj)">	
+							<button class="btn btn-sm btn-blue" type="button">Next Chapter <i class="fa fa-step-forward"></i></button>
+						</a>	
+					</div>					
+				</div> 
+			</div>
 			
 			<!-- End main content -->
 			<hr />
@@ -100,6 +131,21 @@
 			<div>
 
 			</div>
+			<script>
+				var pageObj;
+				var chapObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("information");
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("information", spans);
+					// once the document has loaded, set figure numbers and arrow paths
+					pageObj = getArrowPathsByPage("information");
+					chapObj = getArrowPathsByChapter("information");
+
+				});	
+			</script>
+			
 		</div>
 	</body>
 </html>

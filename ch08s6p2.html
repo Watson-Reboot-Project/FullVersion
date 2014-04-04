@@ -17,6 +17,7 @@
 	    <link href = "css/ch08.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
+		<link href = "css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -31,7 +32,7 @@
 	</head>
 
 	<body>
-		<div class="page-wrapper" id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -68,7 +69,7 @@
 			<!-- Main content -->
 			<p class="Section">8.6.2 Selection</p>
 			<p>
-				Selection statements give imperative languages the ability to make choices based on the results of certain condition tests. These condition tests take the form of <span class="Bolded">Boolean expressions</span>, which are expressions that evaluate to either <span class="Italicized">true</span> or <span class="Italicized">false</span>.<span class="Footnote"><span class="Footnote" title="Footnote: Boolean expressions are named for the mathematician George Boole. Hence, the word “Boolean” should always be capitalized."><a href="#ftn5" id="body_ftn5">5</a></span></span> &nbsp; There are various types of Boolean expressions, but the types supported in Watson JavaScript are based on relational operators. <span class="Bolded">Relational operators</span> compare two expressions of like type to determine whether their values satisfy some criterion. The general form of all Boolean expressions supported in Watson JavaScript is:
+				Selection statements give imperative languages the ability to make choices based on the results of certain condition tests. These condition tests take the form of <span class="Bolded">Boolean expressions</span>, which are expressions that evaluate to either <span class="Italicized">true</span> or <span class="Italicized">false</span>.<span class="Footnote"><span class="Footnote" title="Footnote: Boolean expressions are named for the mathematician George Boole. Hence, the word “Boolean” should always be capitalized."><a href="#ftn5" id="body_ftn5">[5]</a></span></span> &nbsp; There are various types of Boolean expressions, but the types supported in Watson JavaScript are based on relational operators. <span class="Bolded">Relational operators</span> compare two expressions of like type to determine whether their values satisfy some criterion. The general form of all Boolean expressions supported in Watson JavaScript is:
 			</p>
 
 			<p class="Subfigure">
@@ -79,6 +80,34 @@
 				Watson JavaScript includes six relational operators for comparing numeric-valued expressions. They are:
 			</p>
 			
+			<ul class="Subblockcenter">
+				<div class="section group">
+					<div class="col span_1_of_2">
+						<p>&gt; &nbsp; meaning “greater than”</p>
+					</div>
+					<div class="col span_1_of_2">
+						<p>&lt; &nbsp; meaning “less than”</p>
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_1_of_2">
+						<p>>= &nbsp; meaning “greater than or equal to”</p>
+					</div>
+					<div class="col span_1_of_2">
+						<p><= &nbsp; meaning “less than or equal to”</p>
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_1_of_2">
+						<p>== &nbsp; meaning “equal to”</p>
+					</div>
+					<div class="col span_1_of_2">
+						<p>!= &nbsp; meaning “not equal to”</p>
+					</div>
+				</div>
+			</ul>
+			
+			<!--
 			<table border="0" cellpadding="10" class="Blockcenter">
 				<tr>
 					<td>
@@ -105,6 +134,7 @@
 					</td>
 				</tr>
 			</table>
+			-->
 
 			<p>
 				So, for example, when <span class="Subfigure">x</span> is 15 and <span class="Subfigure">y</span> is 25 the expression &nbsp; <span class="Subfigure">x &gt; y</span> evaluates to <span class="Italicized">false</span>, since 15 is not greater than 25.
@@ -118,6 +148,54 @@
 				Here are some additional examples of Boolean expressions that use the numeric-based relational operators. These examples assume that the variable <span class="Subfigure">x</span> holds 15 and <span class="Subfigure">y</span> holds 25.
 			</p>
 			
+			<ul class="Subblockcenter">
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">x != y - 10</span>
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">false</span>
+					</div>
+					<div class="col span_5_of_8">
+						Substituting for <span class="Subfigure">x</span> &amp; <span class="Subfigure">y</span> gives &nbsp; 15 != 25-10 &nbsp; which is false.
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">x &gt; y - 20</span>
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">true</span>
+					</div>
+					<div class="col span_5_of_8">
+						Substituting for <span class="Subfigure">x</span> &amp; <span class="Subfigure">y</span> gives &nbsp; 15 &gt; 25-20 &nbsp; which is true.
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">x + 10 == y</span>
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">true</span>
+					</div>
+					<div class="col span_5_of_8">
+						Substituting for <span class="Subfigure">x</span> &amp; <span class="Subfigure">y</span> gives &nbsp; 15+10 <span class="Subfigure">==</span> 25 &nbsp; which is true.
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">x == x + 1</span>
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">false</span>
+					</div>
+					<div class="col span_5_of_8">
+						Substituting for <span class="Subfigure">x</span> gives &nbsp; 15 <span class="Subfigure">==</span> 15+1 &nbsp; which is false.
+					</div>
+				</div>
+			</ul>
+			
+			<!--
 			<ul class="Blockcenter">
 				<li>
 					<span class="Subfigure">x != y - 10 &nbsp; </span><span class="Italicized">false</span> &nbsp;  &nbsp; Substituting for <span class="Subfigure">x</span> &amp; <span class="Subfigure">y</span> gives &nbsp; 15 != 25-10 &nbsp; which is false.
@@ -132,6 +210,9 @@
 					<span class="Subfigure">x == x + 1 &nbsp; </span><span class="Italicized">false</span> &nbsp;  &nbsp; Substituting for <span class="Subfigure">x</span> gives &nbsp; 15 <span class="Subfigure">==</span> 15+1 &nbsp; which is false.
 				</li>
 			</ul>
+			
+			<br/>
+			-->
 
 			<p>
 				Notice that the last expression always evaluates to <span class="Italicized">false</span>, regardless of the value of <span class="Subfigure">x</span>. This is because there is no possible value for <span class="Subfigure">x</span> that will be equal to that value plus one. Another point illustrated by these examples is that relational operators have a lower precedence than mathematical operators. During expression evaluation, all multiplication, division, addition, and subtraction operations are performed before any relational operations.
@@ -140,32 +221,28 @@
 			<p>
 				In addition to the six relational operators for mathematical expressions, there are four relational operators defined on string expressions. These operators are:
 			</p>
-
-			<table border="0" cellpadding="10" class="Blockcenter">
-				<tr>
-					<td>
+			
+			<ul class="Subblockcenter">
+				<div class="section group">
+					<div class="col span_1_of_2">
 						== &nbsp; meaning “is identical to”
-					</td>
-					<td>
+					</div>
+					<div class="col span_1_of_2">
 						!= &nbsp; meaning “is not identical to”
-					</td>
-				</tr>
-				<tr>
-					<td>
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_1_of_2">
 						&lt; &nbsp; meaning “precedes”
-					</td>
-					<td>
+					</div>
+					<div class="col span_1_of_2">
 						&gt; &nbsp; meaning “follows”
-					</td>
-				</tr>
-			</table>
+					</div>
+				</div>
+			</ul>
 
 			<p>
 				The relational expression:
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="Subfigure">
@@ -191,7 +268,55 @@
 			<p>
 				Here are some additional examples of Boolean expressions that use the string-based relational operators. These examples assume that the variable <span class="Subfigure">A</span> holds “UFO” and <span class="Subfigure">B</span> holds “FBI”.
 			</p>
+			
+			<ul class="Subblockcenter">
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">A &lt; B</span>
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">false</span>.
+					</div>
+					<div class="col span_5_of_8">
+						The value of <span class="Subfigure">A</span>, “UFO”, does not precede the value of <span class="Subfigure">B</span>, “FBI”.
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">"A" &lt; "B"</span>   
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">true</span>.
+					</div>
+					<div class="col span_5_of_8">
+						The string “A” does precede the string “B” in dictionary order.
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">A != “FBI”</span>  
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">true</span>.
+					</div>
+					<div class="col span_5_of_8">
+						The value of <span class="Subfigure">A</span>, “UFO”, is not identical to the string “FBI”.
+					</div>
+				</div>
+				<div class="section group">
+					<div class="col span_2_of_8">
+						<span class="Subfigure">B == “FBI”</span>  
+					</div>
+					<div class="col span_1_of_8">
+						<span class="Italicized">true</span>.
+					</div>
+					<div class="col span_5_of_8">
+						The value of B, “FBI”, is identical to the string “FBI”.
+					</div>
+				</div>
+			</ul>
 
+			<!--
 			<ul class="Blockcenter">
 				<li>
 					<span class="Subfigure">A &lt; B</span> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <span class="Italicized">false</span>. The value of <span class="Subfigure">A</span>, “UFO”, does not precede the value of <span class="Subfigure">B</span>, “FBI”.
@@ -206,15 +331,12 @@
 					<span class="Subfigure">B == “FBI”</span> &nbsp; <span class="Italicized">true</span>.  The value of B, “FBI”, is identical to the string “FBI”.
 				</li>
 			</ul>
+			-->
 			
 			<p>
 				Selection statements use the results of Boolean expressions to choose which sequence of actions to perform next. Watson JavaScript supports two different selection statements: If-Else and If. Each is described below.
 			</p>
-			
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-			
+						
 			<img src="Images/fig8-11.png" alt="An illustration of the behavior of the If-Else selection construct" class="Image">
 
 			<p class="Figure">
@@ -224,61 +346,31 @@
 			<p>
 				An If-Else statement allows a program to make a two-way choice based on the result of a Boolean expression. The general form of If-Else statements is:
 			</p>
-			<!--
-			<p class="Subfigure">
-				&nbsp;
-			</p>
 
-			<p class="P87">
-				<span class="Subfigure">if (</span><span class="Italicized">Boolean expression</span><span class="Subfigure">)</span>
-			</p>
-
-			<p>
-				{
-			</p>
-
-			<p class="P101">
-				<span class="T15">&nbsp; </span><span class="Subfigure">&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; </span><span class="Italicized">statements to be executed if expression is true</span>
-			</p>
-
-			<p>
-				}
-			</p>
-
-			<p>
-				Else
-			</p>
-
-			<p>
-				{
-			</p>
-
-			<p>
-				<span class="T15">&nbsp; </span><span class="Subfigure">&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; </span><span class="Italicized">statements to be executed if expression is false</span>
-			</p>
-
-			<p>
-				}
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
+			<ul class="Blockcenter">
+				<li><span class="Subfigure">if (<span class="Italicized">Boolean expression</span>)</span></li>
+				<li><span class="Subfigure">{</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure"><span class="Italicized">statements to be executed if expression is true</span></span></li>
+				</ul>
+				<li><span class="Subfigure">}</span></li>
+				<li><span class="Subfigure">Else</span></li>
+				<li><span class="Subfigure">{</span></li>
+				<ul class="Subblockcenter">
+					<li><span class="Subfigure"><span class="Italicized">statements to be executed if expression is false</span></span></li>
+				</ul>
+				<li><span class="Subfigure">}</span></li>
+			</ul>
+			
+			<br/>
 
 			<p>
 				If-Else statements specify a Boolean expression and two separate blocks of code: one that is to be executed if the expression is true, the other to be executed if the expression is false. The behavior of the If-Else statement is illustrated graphically in Figure 8.11
 			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
+			
+			<!--			
 			<p class="Subfigure">
 				&nbsp; var age; // Numeric
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="Subfigure">
@@ -316,17 +408,13 @@
 			<p class="Subfigure">
 				&nbsp; }
 			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
 			-->
 			<div id="fig12Div" class="divness"></div>
 			<p class="Figure">
 				Figure 8.12: &nbsp; A program that illustrates selection via If-Else
 			</p>
 
-			<p class="Figure">
+			<p>
 				Figure 8.12 presents a program that uses an If-Else statement to determine whether a person is of legal drinking age (in the US). The program prompts a user to enter his or her age and then stores whatever the user inputs into a variable called <span class="Subfigure">age</span>. This variable is then tested against the constant 21. If <span class="Subfigure">age</span> is less than 21, the text string “No beer for you.” is displayed. Otherwise, if <span class="Subfigure">age</span> is greater than or equal to 21, the text string “Here, have a cold one!” is displayed.
 			</p>
 
@@ -338,7 +426,7 @@
 				While only one statement occurs in the “then” and “else” blocks of the program of Figure 8.12, If-Else structures in general allow multiple statements per block. The program of Figure 8.13 illustrates multi-statement “then” and “else” blocks. The purpose of the program is to compute the absolute value of an input number. The program begins by requesting input from the user and storing that input in the variable <span class="Subfigure">num</span>. The phrase “The absolute value of the ” is then displayed on the screen. Next, <span class="Subfigure">num</span> is tested to determine whether its value is less than zero. If it is, the sequence of “write” statements in the “then” block generates a message of the form:
 			</p>
 
-			<p class="Centered">
+			<p class="Subfigure">
 				negative number, <span class="Subfigure">&lt;num&gt;</span>, is <span class="Subfigure">&lt;abs&gt;</span>
 			</p>
 
@@ -346,7 +434,7 @@
 				where <span class="Subfigure">&lt;num&gt;</span> is replaced with the value of the input number and <span class="Subfigure">&lt;abs&gt;</span> is replaced with a positive version of the input number. Otherwise, the “else” block generates a message of the form:
 			</p>
 
-			<p class="Centered">
+			<p class="Subfigure">
 				non-negative number, <span class="Subfigure">&lt;num&gt;</span>, is <span class="Subfigure">&lt;num&gt;</span>
 			</p>
 
@@ -360,10 +448,6 @@
 
 			<p class="Subfigure">
 				&nbsp;  var num; // Numeric
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="Subfigure">
@@ -441,10 +525,6 @@
 				&nbsp;  &nbsp;  &nbsp; Program input/output behavior:
 			</p>
 
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
 			<p class="P4">
 				&nbsp;  &nbsp;  Enter an integer number.
 			</p>
@@ -484,19 +564,11 @@
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;
-			</p>
-
-			<p class="Subfigure">
 				&nbsp;  age = parseFloat(prompt("Enter your age.",0));
 			</p>
 
 			<p class="Subfigure">
 				&nbsp;  income = parseFloat(prompt("Now, enter your income.",0));
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="Subfigure">
@@ -598,7 +670,7 @@
 			</p>
 			
 			<p>
-				Returning to the outer If-Else, if the user is 25 or older, he or she cannot be a baller.<span class="Footnote"><span class="Footnote" title="Footnote: Note: Our definition is equal opportunity – both men and women can be ballers."><a href="#ftn6" id="body_ftn6">6</a></span></span> &nbsp; Rather than just telling the user that he or she is too old, the program goes ahead and tests the income level anyway. If the user makes $50K or more per year, then he or she would be a baller if only they were younger. Hence the message displayed in this case is “You’re too old to be a baller.” &nbsp; However, if the income level is below $50K then the user is both too old and too poor. These deficiencies are pointed out in the final message.
+				Returning to the outer If-Else, if the user is 25 or older, he or she cannot be a baller.<span class="Footnote"><span class="Footnote" title="Footnote: Note: Our definition is equal opportunity – both men and women can be ballers."><a href="#ftn6" id="body_ftn6">[6]</a></span></span> &nbsp; Rather than just telling the user that he or she is too old, the program goes ahead and tests the income level anyway. If the user makes $50K or more per year, then he or she would be a baller if only they were younger. Hence the message displayed in this case is “You’re too old to be a baller.” &nbsp; However, if the income level is below $50K then the user is both too old and too poor. These deficiencies are pointed out in the final message.
 			</p
 
 			<p>
@@ -611,10 +683,6 @@
 
 			<p>
 				The If statement is similar to If-Else statement except it does not include an “else” block. The general form of the If statement is:
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<ul class="Blockcenter">
@@ -638,15 +706,7 @@
 			</ul>
 
 			<p>
-				&nbsp;
-			</p>
-
-			<p>
 				As you probably suspect, if the Boolean expression is true, the statements in the code block enclosed in braces are executed. Otherwise, they are skipped. Program control returns to a single path at the end of the block, so the statement following the “}” will always be executed regardless of the results of the Boolean Expression. The behavior of the If construct is graphically illustrated in Figure 8.15.
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 			
 			<img src="Images/fig8-15.png" alt="An illustration of the behavior of the If selection construct" class="ImageTall">
@@ -690,10 +750,6 @@
 			<p class="P94">
 				document.writeln("a minor.");
 			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
 			-->
 			<div id="fig16Div" class="divness"></div>
 			<p class="Figure">
@@ -701,15 +757,7 @@
 			</p>
 
 			<p>
-				&nbsp;
-			</p>
-
-			<p>
 				If statements are generally used by programmers to allow their programs to detect and handle conditions that require “special” or “additional” processing. This is in contrast to If-Else statements, which can be viewed as selecting between two “equal” choices.
-			</p>
-
-			<p>
-				&nbsp;
 			</p>
 
 			<p>
@@ -736,9 +784,7 @@
 							 var a; // Numeric
 						</span></li>
 
-						<li>
-							&nbsp;
-						</li>
+						<br/>
 						
 						<li><span class="Subfigure">
 							a = parseFloat(prompt("Enter a number.",0));
@@ -752,7 +798,7 @@
 							{
 						</span></li>
 						
-							<ul class="Blockcenter">
+							<ul class="Subblockcenter">
 								<li><span class="Subfigure">
 									document.write("Goodbye ");
 								</span></li>
@@ -773,7 +819,7 @@
 						<li><span class="Subfigure">
 							{
 						</span></li>
-							<ul class="Blockcenter">
+							<ul class="Subblockcenter">
 								<li><span class="Subfigure">
 									document.write("Hello ");
 								</span></li>
@@ -831,7 +877,7 @@
 						<li><span class="Subfigure">
 							{
 						</span></li>
-						<ul class="Blockcenter">
+						<ul class="Subblockcenter">
 							<li><span class="Subfigure">
 								b = b - a;
 							</span></li>
@@ -844,7 +890,7 @@
 								{
 							</span></li>
 							
-							<ul class="Blockcenter">
+							<ul class="Subblockcenter">
 								<li><span class="Subfigure">
 									document.writeln("Kenny");
 								</span></li>
@@ -862,8 +908,8 @@
 								{
 							</span></li>
 							
-							<ul class="Blockcenter">
-								<li class="P117">
+							<ul class="Subblockcenter">
+								<li class="Subfigure">
 									document.writeln("Cartman");
 								</span></li>
 							</ul>
@@ -889,7 +935,7 @@
 							{
 						</span></li>
 
-						<ul class="Blockcenter">
+						<ul class="Subblockcenter">
 							<li><span class="Subfigure">
 								document.writeln("Kyle");
 							</span></li>
@@ -909,22 +955,21 @@
 				</ul>
 			</ol>
 			
-			<br/>
-			
+			<!-- Footnotes -->
+			<hr/>
 			<p class="Section">
 				Footnotes
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn5" id="ftn5">5</a>&nbsp; Boolean expressions are named for the mathematician George Boole. Hence, the word “Boolean” should always be capitalized.
+				<a href="#body_ftn5" id="ftn5">[5]</a>&nbsp; Boolean expressions are named for the mathematician George Boole. Hence, the word “Boolean” should always be capitalized.
 			</p>
 
 			<p class="Footnote">
-				<a href="#body_ftn6" id="ftn6">6</a>&nbsp; Note: &nbsp; Our definition is equal opportunity – both men and women can be ballers.
+				<a href="#body_ftn6" id="ftn6">[6]</a>&nbsp; Note: &nbsp; Our definition is equal opportunity – both men and women can be ballers.
 			</p>
 			
 			<!-- End main content -->
-			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>

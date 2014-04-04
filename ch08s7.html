@@ -31,7 +31,7 @@
 	</head>
 
 	<body>
-		<div class="page-wrapper" id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -66,13 +66,16 @@
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">8.7 Functions</p>
+			<p class="Section">
+				8.7 Functions
+			</p>
+			
 			<p>
-				This section is concerned with creating and using function subprograms. A</span> <span class="Bolded">subprogram</span> is a program within a program. Very few “real” programs are written as one long piece of code. Instead, traditional imperative programs generally consist of large numbers of relatively simple subprograms that work together to accomplish some complex task. While it is theoretically possible to write large programs without the use of subprograms, as a practical matter any significant program must be decomposed into manageable pieces if humans are to write and maintain it.
+				This section is concerned with creating and using function subprograms. A <span class="Bolded">subprogram</span> is a program within a program. Very few “real” programs are written as one long piece of code. Instead, traditional imperative programs generally consist of large numbers of relatively simple subprograms that work together to accomplish some complex task. While it is theoretically possible to write large programs without the use of subprograms, as a practical matter any significant program must be decomposed into manageable pieces if humans are to write and maintain it.
 			</p>
 
 			<p>
-				Subprograms make the construction of “software libraries” possible. A</span> <span class="Bolded">software library</span> is a collection of subprograms, or “routines” as they are sometimes called, for solving common problems that have been written, tested, and debugged. Most programming languages come with extensive libraries for performing mathematical and text string operations and for building graphical user interfaces. These languages allow programmers to “include” library routines into their code. Using subprograms from the library speeds up the software development process and results in a more reliable finished product.
+				Subprograms make the construction of “software libraries” possible. A <span class="Bolded">software library</span> is a collection of subprograms, or “routines” as they are sometimes called, for solving common problems that have been written, tested, and debugged. Most programming languages come with extensive libraries for performing mathematical and text string operations and for building graphical user interfaces. These languages allow programmers to “include” library routines into their code. Using subprograms from the library speeds up the software development process and results in a more reliable finished product.
 			</p>
 
 			<p>
@@ -91,10 +94,6 @@
 				When Z completes, control will return to subprogram Y. Subprogram Y will continue execution from the point at which it was suspended. At the completion of Y, control will return to subprogram X, again, at the point where it was suspended. Finally, when X completes, control will return to the main program, which can now run to completion.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<img src="Images/fig8-25.png" alt="Subprogram invocation and return" class="Image">
 			
 			<p class="Figure">
@@ -102,7 +101,7 @@
 			</p>
 
 			<p>
-				In addition to the mechanisms for subprogram call and return, programs and their subprograms must have ways of passing data between one another. For example, a subprogram designed to compute</span> <span class="Italicized">x</span><span class="T53">y</span> &nbsp; (</span><span class="Italicized">x</span> raised to the</span> <span class="Italicized">y</span> power) must have a way to receive the values of</span> <span class="Italicized">x</span> and</span> <span class="Italicized">y</span> from the calling program and also must be able to return the computed result to the caller. In general, a subprogram may be passed any number of input values (zero or more) from its calling program during the subprogram invocation process. A subprogram can pass values back to its calling program during the subprogram return process.
+				In addition to the mechanisms for subprogram call and return, programs and their subprograms must have ways of passing data between one another. For example, a subprogram designed to compute <span class="Italicized">x</span><span class="Superscript">y</span> &nbsp; (<span class="Italicized">x</span> raised to the</span> <span class="Italicized">y</span> power) must have a way to receive the values of</span> <span class="Italicized">x</span> and</span> <span class="Italicized">y</span> from the calling program and also must be able to return the computed result to the caller. In general, a subprogram may be passed any number of input values (zero or more) from its calling program during the subprogram invocation process. A subprogram can pass values back to its calling program during the subprogram return process.
 			</p>
 
 			<p>
@@ -110,7 +109,7 @@
 			</p>
 			
 			<ul class="Blockcenter">
-				<li><span class="Subfigure">function</span><span class="Italicized">name</span><span class="Subfigure">(</span><span class="Italicized">input variables <span class="Subfigure">) // returns</span> <span class="Italicized">type</li>
+				<li><span class="Subfigure">function</span> <span class="Italicized">name</span><span class="Subfigure">(</span><span class="Italicized">input variables <span class="Subfigure">) // returns</span> <span class="Italicized">type</li>
 				<li><span class="Subfigure">{</span></li>
 				<ul class="Subblockcenter">
 					<li><span class="Italicized">declarations</span></li>
@@ -118,6 +117,8 @@
 				</ul>
 				<li><span class="Subfigure">}</span></li>
 			</ul>
+			
+			<br/>
 
 			<p>
 				Function definitions begin with the key word “function” followed by the name of the function that is being defined. A comma separated list of input variables and their types, text or numeric, appear after the function name, enclosed in parentheses. These variables allow the function to receive input from the calling program.
@@ -143,6 +144,7 @@
 						<li><span class="Subfigure">document.writeln(“ ”);</span></li>
 					</ul>
 					<li><span class="Subfigure">}</span></li>
+					<br/>
 					<li><span class="Subfigure">banner(“Hello World!”);</span></li>
 				</ul>
 				<li style="color:grey;"><span class="Subfigure">&lt;/script&gt;</span></li>
@@ -153,10 +155,6 @@
 
 			<p class="Figure">
 				Figure 8.26: &nbsp; A program containing a programmer-defined function
-			</p>
-
-			<p class="Figure">
-				&nbsp;
 			</p>
 
 			<p>
@@ -197,10 +195,6 @@
 
 			<p>
 				Now that we have discussed the definition of the <span class="Subfigure">banner</span> procedure, let’s turn our attention back to the main program. The statements that define the actions to be taken by the main program occur immediate after the function declaration. These actions consist of a single statement that calls the <span class="Subfigure">banner</span> function and passes it the string “Hello World!”.
-			</p>
-
-			<p>
-				&nbsp;
 			</p>
 
 			<p>
@@ -311,12 +305,12 @@
 
 
 			<p>
-				Figure 8.27 contains a program for raising a number to the third power. The program declares three things: an integer variable named “</span><span class="Subfigure">a</span>”, an integer variable named “</span><span class="Subfigure">b</span>”, and a function named <span class="Subfigure">power</span>. The <span class="Subfigure">power</span> function is a general purpose subprogram for raising</span> <span class="Italicized">x</span> to the</span> <span class="Italicized">y</span> power (</span><span class="Italicized">x</span><span class="T53">y</span> ) given values for both</span> <span class="Italicized">x</span> and</span> <span class="Italicized">y</span>. Unlike the <span class="Subfigure">banner</span> function, which did not need to return a value to the calling program, this subprogram must have the ability to report its results back to whomever called it.
+				Figure 8.27 contains a program for raising a number to the third power. The program declares three things: an integer variable named “</span><span class="Subfigure">a</span>”, an integer variable named “</span><span class="Subfigure">b</span>”, and a function named <span class="Subfigure">power</span>. The <span class="Subfigure">power</span> function is a general purpose subprogram for raising</span> <span class="Italicized">x</span> to the</span> <span class="Italicized">y</span> power (</span><span class="Italicized">x</span><span class="Superscript">y</span> ) given values for both</span> <span class="Italicized">x</span> and</span> <span class="Italicized">y</span>. Unlike the <span class="Subfigure">banner</span> function, which did not need to return a value to the calling program, this subprogram must have the ability to report its results back to whomever called it.
 			</p>
 
 
 			<p>
-				The main program of Figure 8.27 begins by prompting the user to enter a value. The user’s input is then read into the numeric variable “</span><span class="Subfigure">a</span>”. The next statement:
+				The main program of Figure 8.27 begins by prompting the user to enter a value. The user’s input is then read into the numeric variable “<span class="Subfigure">a</span>”. The next statement:
 			</p>
 
 			<p class="Subfigure">
@@ -324,7 +318,7 @@
 			</p>
 
 			<p>
-				will raise “</span><span class="Subfigure">a</span>” to the third power and store the result in “</span><span class="Subfigure">b</span>”. It does so by embedding a call to the <span class="Subfigure">power</span> function in the right hand side expression of an assignment statement. The last three statements of the main program report this result to the user.
+				<span class="Subfigure">a</span>” to the third power and store the result in “<span class="Subfigure">b</span>”. It does so by embedding a call to the <span class="Subfigure">power</span> function in the right hand side expression of an assignment statement. The last three statements of the main program report this result to the user.
 			</p>
 
 			<p>
@@ -332,7 +326,7 @@
 			</p>
 
 			<p>
-				The input variable list associated with a subprogram is often called its “parameter list”, with the individual variables called “parameters”. When called, the first argument in the argument list of the function call statement, “</span><span class="Subfigure">a</span>” in this case, is mapped to the first parameter in the function’s parameter list, “</span><span class="Subfigure">x</span>” in this case. The next argument, 3 in this case, is mapped to the next parameter in the parameter list, “</span><span class="Subfigure">y</span>” in this case. As mentioned earlier, the number of arguments, and their types, must exactly match the number and types of the variables in the function’s parameter list.
+				The input variable list associated with a subprogram is often called its “parameter list”, with the individual variables called “parameters”. When called, the first argument in the argument list of the function call statement, “</span><span class="Subfigure">a</span>” in this case, is mapped to the first parameter in the function’s parameter list, “<span class="Subfigure">x</span>” in this case. The next argument, 3 in this case, is mapped to the next parameter in the parameter list, “<span class="Subfigure">y</span>” in this case. As mentioned earlier, the number of arguments, and their types, must exactly match the number and types of the variables in the function’s parameter list.
 			</p>
 
 			<p>
@@ -352,11 +346,11 @@
 			</p>
 
 			<p>
-				Returning our attention to the definition of the <span class="Subfigure">power</span> function, we note that the algorithm it uses to compute</span> <span class="Italicized">z = x</span><span class="T53">y</span> works by first setting <span class="Subfigure">z</span> to 1 and then repeatedly multiplying the value of <span class="Subfigure">x</span> times the current value of <span class="Subfigure">z</span> over and over, a total of <span class="Subfigure">y</span> times. This makes sense because</span> <span class="Italicized">x</span><span class="T53">y</span> is simply &nbsp; </span><span class="Italicized">x</span><span class="T59"></span><span class="Italicized">x</span><span class="T59"></span><span class="Italicized">x</span> . . . <span class="T59"></span><span class="Italicized">x</span> &nbsp; where there are</span> <span class="Italicized">y</span> total</span> <span class="Italicized">x</span>’s.
+				Returning our attention to the definition of the <span class="Subfigure">power</span> function, we note that the algorithm it uses to compute <span class="Italicized">z = x</span><span class="Superscript">y</span> works by first setting <span class="Subfigure">z</span> to 1 and then repeatedly multiplying the value of <span class="Subfigure">x</span> times the current value of <span class="Subfigure">z</span> over and over, a total of <span class="Subfigure">y</span> times. This makes sense because <span class="Italicized">x</span><span class="Superscript">y</span> is simply <span class="Italicized">x</span> &times; <span class="Italicized">x</span> &times; <span class="Italicized">x</span> . . .  &times; <span class="Italicized">x</span> &nbsp; where there are</span> <span class="Italicized">y</span> total</span> <span class="Italicized">x</span>’s.
 			</p>
 
 			<p>
-				This algorithm is implemented in the following way. The first executable statement of <span class="Subfigure">power</span> sets <span class="Subfigure">z</span> to 1. The next line begins a “for” loop that executes a total of <span class="Ital">y</span> times as the variable <span class="Subfigure">i</span> counts from one to <span class="Subfigure">y</span>. Within the loop is a single statement that multiplies <span class="Subfigure">z</span> by <span class="Subfigure">x</span>. When the loop begins <span class="Subfigure">z</span> equals 1. After the first pass through the loop <span class="Subfigure">z</span> equals <span class="Subfigure">x</span> (or <span class="Ital">x</span><span class="T51">1</span> ), after the second pass through the loop <span class="Subfigure">z</span> equals <span class="Subfigure">x</span> times <span class="Subfigure">x</span> (or <span class="Ital">x</span><span class="T51">2</span> ), after the third pass <span class="Subfigure">x</span> times <span class="Subfigure">x</span> times <span class="Subfigure">x</span> (or <span class="Ital">x</span><span class="T51">3</span> ). Finally, after the <span class="Ital">y</span><span class="T51">th</span> pass <span class="Subfigure">z</span> will equal <span class="Ital">x</span><span class="T54">y</span>.
+				This algorithm is implemented in the following way. The first executable statement of <span class="Subfigure">power</span> sets <span class="Subfigure">z</span> to 1. The next line begins a “for” loop that executes a total of <span class="Ital">y</span> times as the variable <span class="Subfigure">i</span> counts from one to <span class="Subfigure">y</span>. Within the loop is a single statement that multiplies <span class="Subfigure">z</span> by <span class="Subfigure">x</span>. When the loop begins <span class="Subfigure">z</span> equals 1. After the first pass through the loop <span class="Subfigure">z</span> equals <span class="Subfigure">x</span> (or <span class="Ital">x</span><span class="Superscript">1</span> ), after the second pass through the loop <span class="Subfigure">z</span> equals <span class="Subfigure">x</span> times <span class="Subfigure">x</span> (or <span class="Ital">x</span><span class="Superscript">2</span> ), after the third pass <span class="Subfigure">x</span> times <span class="Subfigure">x</span> times <span class="Subfigure">x</span> (or <span class="Ital">x</span><span class="Superscript">3</span> ). Finally, after the <span class="Ital">y</span><span class="Superscript">th</span> pass <span class="Subfigure">z</span> will equal <span class="Ital">x</span><span class="T54">y</span>.
 			</p>
 
 			<p>
@@ -384,11 +378,11 @@
 			</p>
 
 			<p>
-				When the “return” is executed, three things happen: the function ceases execution, the return value is passed back to the calling program, and the calling program “wakes up” at the point at which the function was called. Thus, when the “return” statement of Figure 8.27 is executed, control returns to the main program and the value of <span class="Subfigure">a</span><span class="T55">3</span> is assigned to “<span class="Subfigure">b</span>”.
+				When the “return” is executed, three things happen: the function ceases execution, the return value is passed back to the calling program, and the calling program “wakes up” at the point at which the function was called. Thus, when the “return” statement of Figure 8.27 is executed, control returns to the main program and the value of <span class="Subfigure">a</span><span class="Superscript">3</span> is assigned to “<span class="Subfigure">b</span>”.
 			</p>
 
 			<p>
-				Figure 8.28 presents another example of a program that incorporates the <span class="Subfigure">power</span> function of Figure 8.27. The main program of Figure 8.28 computes the value of the third degree polynomial:</span> <span class="Italicized">A X</span><span class="T52">3</span><span class="Italicized">+ B X</span><span class="T52">2</span><span class="Italicized">+ C X + D</span> &nbsp; where</span> <span class="Italicized">A</span>,</span> <span class="Italicized">B</span>,</span> <span class="Italicized">C</span>,</span> <span class="Italicized">D</span>, and</span> <span class="Italicized">X</span> are numeric values entered by the user.
+				Figure 8.28 presents another example of a program that incorporates the <span class="Subfigure">power</span> function of Figure 8.27. The main program of Figure 8.28 computes the value of the third degree polynomial:</span> <span class="Italicized">A X</span><span class="Superscript">3</span><span class="Italicized">+ B X</span><span class="Superscript">2</span><span class="Italicized">+ C X + D</span> &nbsp; where</span> <span class="Italicized">A</span>,</span> <span class="Italicized">B</span>,</span> <span class="Italicized">C</span>,</span> <span class="Italicized">D</span>, and</span> <span class="Italicized">X</span> are numeric values entered by the user.
 			</p>
 
 			<p>
@@ -523,11 +517,11 @@
 			<div id="fig28Div" class="divness"></div>
 
 			<p class="Figure">
-				Figure 8.28: &nbsp; A program to compute the value of &nbsp; <span class="Subfigure">A X</span><span class="T51">3</span><span class="Subfigure">+ B X</span><span class="T51">2</span><span class="Subfigure">+ C X + D</span>
+				Figure 8.28: &nbsp; A program to compute the value of &nbsp; <span class="Subfigure">A X</span><span class="Superscript">3</span><span class="Subfigure">+ B X</span><span class="Superscript">2</span><span class="Subfigure">+ C X + D</span>
 			</p>
 
 			<p>
-				This assignment statement incorporates two separate calls to the <span class="Subfigure">power</span> function. The first call to <span class="Subfigure">power</span> computes</span> <span class="Subfigure">x</span><span class="T55">3</span>, while the second call computes</span> <span class="Subfigure">x</span><span class="T55">2</span>. The manner in which <span class="Subfigure">power</span> is called illustrates an important point. Multiple function calls can be embedded within a single statement. The reason for this is that function calls are</span> <span class="Italicized">expressions</span>, rather than complete statements. As such, they can be embedded within mathematical (and text) expressions, and can thus appear wherever an expression is allowed – such as on the right hand side of assignment statements, and in “write” and “writeln” statements.
+				This assignment statement incorporates two separate calls to the <span class="Subfigure">power</span> function. The first call to <span class="Subfigure">power</span> computes</span> <span class="Subfigure">x</span><span class="Superscript">3</span>, while the second call computes</span> <span class="Subfigure">x</span><span class="Superscript">2</span>. The manner in which <span class="Subfigure">power</span> is called illustrates an important point. Multiple function calls can be embedded within a single statement. The reason for this is that function calls are</span> <span class="Italicized">expressions</span>, rather than complete statements. As such, they can be embedded within mathematical (and text) expressions, and can thus appear wherever an expression is allowed – such as on the right hand side of assignment statements, and in “write” and “writeln” statements.
 			</p>
 
 			<p>
@@ -682,13 +676,13 @@
 					</ul>
 					<li><span class="Subfigure">}</span></li>
 				</ul>
+				
+				<br/>
 
 				<li>
 					Rewrite the program of Figure 8.29 so that the function returns a string. The new <span class="Subfigure">singsong</span> function should test <span class="Subfigure">beers</span> to see if it is greater than zero. If so, it should print the lyrics and then return the text string “Later…”. If not, it should return the text string “Sorry…”. Have your main program print out this return value. Hence, if a user enters zero or a negative number in answer to the question “How many bottles?” the response presented will be “Sorry…”. If the user enters a positive number greater than zero, the lyrics of the song will be printed followed by “Later…”.
 				</li>
 			</ol>
-
-			<br/>
 			
 			<!-- End main content -->
 			<hr />

@@ -28,7 +28,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -94,6 +94,8 @@
 				All of these applications aim to enhance human communication. This is an amazing fact when one considers that computers were originally conceived of as “number crunchers” whose only function would be to perform complex calculations as rapidly as possible.  
 			</p>
 			
+			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -112,6 +114,19 @@
 			<div>
 
 			</div>
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("tools");
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("tools", spans);
+					// once the document has loaded, set figure numbers and arrow paths
+					pageObj = getArrowPathsByPage("toolsCommunication");
+
+				});	
+			</script>
+
 		</div>
 	</body>
 </html>

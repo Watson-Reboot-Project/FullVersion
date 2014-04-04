@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -35,28 +35,29 @@
               <script type="text/javascript" src="js/nav.js"></script>
 
 			<!--Floating nav -->
-				<!-- Previous -->
-				<style>
-				div.floating-previous
-				{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%; opacity:0.3;}
-				div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-previous">
-				<a href="ch06s5.html">
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
 				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
 				</a>
-				</div>
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; left: auto; right:1px; top:45%; opacity:0.3}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch06s5p2.html">
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
 				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
 				</a>
-				</div>
+			</div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
@@ -129,7 +130,7 @@
 			</p>
 			
 			<p>
-				A circle is generally specified by a center point and radius, as discussed in Sections 6.3 and 6.4.  Since Watson’s drawing window coordinate system is defined from 0 to 299 in both the X and Y directions, the “center” of the drawing window is located at (150,150).<span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Actually, the exact center of this drawing area would be at (149.5, 149.5) which falls between pixels. Rounding up to the nearest pixel gives (150, 150)."><a href="#ftn3" id="body_ftn3">[3]</a></span></span>  Hence, (150,150) should be the center point of the circle.  Next, we must decide how big we want the circle to be.  Let’s say we want the circle to be 100 units across (i.e., have a diameter of 100 units).  Since radius is always ½ diameter, the radius value will be 50.  This will produce a medium-sized circle in the 300 by 300 drawing window.  For the moment, let’s say that we don’t really care what color “ink” will be used to draw this circle.
+				A circle is generally specified by a center point and radius, as discussed in Sections 6.3 and 6.4.  Since Watson’s drawing window coordinate system is defined from 0 to 299 in both the X and Y directions, the “center” of the drawing window is located at (150,150).<span class="Footnote" title="Footnote: Actually, the exact center of this drawing area would be at (149.5, 149.5) which falls between pixels. Rounding up to the nearest pixel gives (150, 150)."><a href="#ftn3" id="body_ftn3">[3]</a></span>  Hence, (150,150) should be the center point of the circle.  Next, we must decide how big we want the circle to be.  Let’s say we want the circle to be 100 units across (i.e., have a diameter of 100 units).  Since radius is always ½ diameter, the radius value will be 50.  This will produce a medium-sized circle in the 300 by 300 drawing window.  For the moment, let’s say that we don’t really care what color “ink” will be used to draw this circle.
 			</p>
 			
 			<p>
@@ -147,10 +148,12 @@
 				Watson has now created a variable called <span class="Ital">c1</span> of type circle.  Nothing is yet drawn in the drawing window.  Why?  Well, one reason is that we have not yet described the size and location of the circle.  In order to do this, we need to assign values to the circle variable with the assignment statement.  Pressing the Assign button will cause the following generic assignment statement to appear in the program code window.
 			</p>
 			
+			<p>
 			<p class="Centered">
 				<span class="Ital">VARIABLE = EXPRESSION</span>
 			</p>
-			
+			</p>
+
 			<p>
 				Note that the words “variable” and “expression” are in upper case.  Upper case is used by the Watson Graphics Lab to indicate a placeholder of a particular type.  Clicking on “variable” will cause a popup box to appear which lists all of the currently valid choices for “variable”.  In this example there is only one valid choice: <span class="Ital">c1</span>.  Selecting <span class="Ital">c1</span> and then clicking the “OK” button will cause “variable” to be replaced by <span class="Ital">c1</span>.  In addition, the form of the assignment statement will change so that it now looks like this:
 			</p>
@@ -207,6 +210,7 @@
 				To continue with our example, let’s say that having seen the output of this program we decide that the circle should be somewhat larger.  Specifically, let’s change the diameter of the circle from 100 to 150 units.  Hence, the radius should be increased from 50 to 75 units.  This is very simple to do in the Watson Graphics Lab.  Click the mouse on the value of 50 in the assignment statement.  A popup box will appear which will allow you to enter another constant, in this case 75.  After entering 75 press the “OK” button.  The program now has the following form:
 			</p>
 			
+			
 			<ul class="Blockcenter">
 				<li><span class="Subfigure">Variable Declarations</span></li>
 				
@@ -222,7 +226,8 @@
 					<li><span class="Subfigure">draw(c1)</span></li>
 				</ul>
 			</ul>
-			
+			<br/>			
+
 			<p>
 				If you press the “Run” button, the drawing window will be cleared and the new, larger circle will be displayed.
 			</p>
@@ -254,7 +259,7 @@
 				
 				<p>
 					|o  color(
-					<span class="Ital">COLOR_NAME</span>
+					<span class="Bolded"><span class="Ital">COLOR_NAME</span></span>
 					)
 				</p>
 				
@@ -382,6 +387,7 @@
 				Now that we have addressed the “what” question by decomposing the image into manageable parts, we need to address “how” we will actually go about drawing the image.  One way to begin is to look at the end points of the lines and corners of the box, since these are the most important points – the ones we will use to define our polygon and lines.  These points are labeled <span class="Ital">p1</span>, <span class="Ital">p2</span>, <span class="Ital">p3</span>, and <span class="Ital">p4</span> in Figure 6.11.  The point <span class="Ital">p1</span> is located at (100,100), <span class="Ital">p2</span> is at (200,100), <span class="Ital">p3</span> is at (200,200), and <span class="Ital">p4</span> is at (100,200).  This information can be expressed in WGL as follows:
 			</p>
 			
+			
 			<ul class="Blockcenter">
 				<li> 
 					<span class="Subfigure">Program Declarations</span>
@@ -415,14 +421,16 @@
 					</li>
 				</ul>
 			</ul>
-			
+			<br/>			
+
 			<p>
-				However, this is probably not the best way to proceed.  Entering constants in WGL can be somewhat tedious since you must enter each digit on a “graphical keypad”.<span class="Footnote_20_Symbol"><span class="Footnote_20_anchor" title="Footnote: Having designed this lab, I obviously think that the keypad is a good idea. It prevents you from entering the wrong kind of data, such as letters when a number is needed. But, I acknowledge that using the keypad is slower than typing."><a href="#ftn4" id="body_ftn4">[4]</a></span></span>  Another reason to avoid over reliance on constants is that programs written with a large number of constants are not very flexible.  Making even small changes can result in a lot of work.  For example, say we decided that our box and line need to be moved to another location on the screen.  To implement such a change would involve modifying all eight of the distance constants shown above; a somewhat lengthy and error prone task.
+				However, this is probably not the best way to proceed.  Entering constants in WGL can be somewhat tedious since you must enter each digit on a “graphical keypad”.<span class="Footnote" title="Footnote: Having designed this lab, I obviously think that the keypad is a good idea. It prevents you from entering the wrong kind of data, such as letters when a number is needed. But, I acknowledge that using the keypad is slower than typing."><a href="#ftn4" id="body_ftn4">[4]</a></span>  Another reason to avoid over reliance on constants is that programs written with a large number of constants are not very flexible.  Making even small changes can result in a lot of work.  For example, say we decided that our box and line need to be moved to another location on the screen.  To implement such a change would involve modifying all eight of the distance constants shown above; a somewhat lengthy and error prone task.
 			</p>
 			
 			<p>
 				A better way of implementing the points presents itself when you realize that the program actually uses only two distinct distance values: 100 and 200.  Explicitly defining two distance variables and then using them to define the points leads to a much more flexible program, as well as one that can actually be entered more quickly, despite the fact that it appears longer.  Incorporating this modification leads to the following program fragment.  (It’s only a fragment, since the program is not yet finished.)
 			</p>
+			
 			
 			<ul class="Blockcenter">
 				<li><span class="Subfigure">Program Declarations</span></li>
@@ -449,6 +457,7 @@
 					<li> <span class="Subfigure">p4 = (d1,d2)</span></li>
 				</ul>
 			</ul>
+			<br/>			
 			
 			<p>
 				Now that the underlying points have been defined, the lines and polygon which are based on them can be specified.  An inspection of Figure 6.11 indicates the location of the endpoints of the lines but it does not specify which ones should be the starting points and which should be the ending points.  Arbitrarily, line <span class="Ital">l1</span> will be defined as starting at point <span class="Ital">p1</span> and ending at point <span class="Ital">p3</span>.  Similarly, line <span class="Ital">l2</span> will be defined as starting at point <span class="Ital">p2</span> and ending at point <span class="Ital">p4</span>.  These lines can be coded in WGL as follows:
@@ -520,6 +529,7 @@
 				</ul>
 			</ul>
 			-->
+			
 			<div id="container2" style="height:390px;width:530px; margin:auto auto;">
 				<div id="drawing_window2" style="width:300px;height:350px;float:right;">
 					
@@ -543,6 +553,8 @@
 				</div>
 				
 			</div>
+			<br/>
+
 			<p class="Figure">
 				Figure 6.12:  A complete program that generates the image of Figure 6.11
 			</p>
@@ -568,16 +580,18 @@
 			<p>
 				The second concept relates to flexibility.  This program is quite flexible due to the fact that complex objects are defined in terms of simpler objects which are, in turn, defined using only two distance constants, 100 and 200.  The location and/or the size of the image can be modified by changing the values stored in <span class="Ital">d1</span> and <span class="Ital">d2</span>.  For example, you can move the image from the center of the drawing area towards the upper right hand corner by changing <span class="Ital">d1</span> from 100 to 150 and <span class="Ital">d2</span> from 200 to 250.  Similarly, you can make the image larger by changing <span class="Ital">d1</span> from 100 to 50 and <span class="Ital">d2</span> from 200 to 250.  These tasks would be <span class="Underlined">much</span> more difficult if the points had been directly defined in terms of distance constants.
 			</p>
+			
+			<hr/>
 			<p class="Section">Footnotes</p>
+			
 			<p class="Footnote">
-				<span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn3" href="#body_ftn3">[3]</a></span> Actually, the exact center of this drawing area would be at (149.5, 149.5) which falls between pixels.  Rounding up to the nearest pixel gives (150, 150).
+				<span class="footnodeNumber"><a class="Footnote" id="ftn3" href="#body_ftn3">[3]</a></span> Actually, the exact center of this drawing area would be at (149.5, 149.5) which falls between pixels.  Rounding up to the nearest pixel gives (150, 150).
 			</p>
 			
 			<p class="Footnote">
-				<span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn4" href="#body_ftn4">[4]</a></span> Having designed this lab, I obviously think that the keypad is a good idea.  It prevents you from entering the wrong kind of data, such as letters when a number is needed.  But, I acknowledge that using the keypad is slower than typing.
+				<span class="footnodeNumber"><a class="Footnote" id="ftn4" href="#body_ftn4">[4]</a></span> Having designed this lab, I obviously think that the keypad is a good idea.  It prevents you from entering the wrong kind of data, such as letters when a number is needed.  But, I acknowledge that using the keypad is slower than typing.
 			</p>
 			<!-- End main content -->
-			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -592,6 +606,19 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("graphics", spans);
+					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					pageObj = getArrowPathsByPage("graphicsAlgorithms1");
+
+				});	
+			</script>
 
 			<div>
 
@@ -602,5 +629,6 @@
 		var figure1 = new setup("container", "drawing_window", "drawingCanvas", "run_walk", "run", "walk", "variable_window", "var_win", "program_window", "program_code", 1);
 		var figure2 = new setup("container2", "drawing_window2", "drawingCanvas2", "run_walk2", "run2", "walk2", "variable_window2", "var_win2", "program_window2", "program_code2", 2);
 		</script>
+		
 	</body>
 </html>

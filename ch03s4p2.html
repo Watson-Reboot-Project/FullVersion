@@ -28,7 +28,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -36,32 +36,30 @@
     <script type="text/javascript" src="js/nav.js"></script>
 
 			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch03s4p1.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-			  
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch03s4p3.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-			  
-		    <!-- End floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+				</a>
+			</div>
+			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -127,6 +125,8 @@
 				Before the widespread adoption of relational databases, computer programs, such as the one above, had to be written and debugged in order to answer almost any question about the data maintained by an organization. While this was often more expedient than trying to answer the question by going through the data by hand, it was, nevertheless, far from an optimal solution. Section 3.5.2 examines relational databases, the end-user application that has overcome many of the problems associated with the storage and retrieval of large quantities of data.
 			</p>
 			
+			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -145,6 +145,19 @@
 			<div>
 
 			</div>
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("information");
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("information", spans);
+					// once the document has loaded, set figure numbers and arrow paths
+					pageObj = getArrowPathsByPage("informationProgrammer2");
+
+				});	
+			</script>
+
 		</div>
 	</body>
 </html>

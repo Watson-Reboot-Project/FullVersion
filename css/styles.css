@@ -26,14 +26,20 @@ ul.nav a:hover { color: #000; }
 .dropdown-menu > li > a:hover{ background-color: #4870B6; }
 
 #main_header > h1{
-
   text-align: left;
   color: #4870B6;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-#main_header_img {
+#main_header {
+  text-align: left;
+  font-size: 24pt;
+  color: #4870B6;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin-bottom: 3%;
+}
 
+#main_header_img {
   float: center;
   max-width: 30%;
 }
@@ -44,7 +50,8 @@ ul.nav a:hover { color: #000; }
 }
 
 body { padding-top: 7%; }
-@media screen and (max-width: 600px) { body { padding-top: 15%;}}
+@media screen and (max-width: 800px) { body { padding-top: 15%;}}
+@media screen and (max-width: 600px) { body { padding-top: 25%;}}
 @media screen and (max-width: 400px) { body { padding-top: 35%;}}
 
 .navbar .navbar-collapse {
@@ -93,25 +100,24 @@ body { padding-top: 7%; }
 }
 
 /* Font awesome icons */ 
-.fa {  
+.fa-book, .fa-list-ul {  
   padding-right: 5px; 
   position: relative; 
 }
 
-/* Plus sign, placement */
-#clickme{ 
-  /*background: url('Images/down-arrow.png');*/
-  padding-left: 87%;
-  padding-top: 0%;
+.fa-plus { margin-right: -300%; }
+.fa-minus{ margin-left: -300%; }
+ @media screen and (max-width: 800px) { .fa-plus, .fa-minus { margin: 0;}} 
+
+#fontAs{
+  max-width: 50%; 
+  padding: 0;
 }
 
-/* Slider for larger/smaller text */
-.filter_slider { 
-    width: 100% !important;
-    float: center !important;
-    vertical-align: bottom !important;
-    display: inline;
-    clear: both !important;
+/* Banner down arrow, placement */
+#clickme{ 
+  padding-right: 90% !important;
+  padding-top: 0%;
 }
 
 /* Don't mind me... */
@@ -119,17 +125,32 @@ body { padding-top: 7%; }
     margin: 20px;
 }
 
-/* Collasping and expanding buttons on section_toc2.html*/
-#expand, #collapse { margin: 1%;}
+/* Collasping and expanding buttons on section_toc.html */
+#expand, #collapse { margin-bottom: 3%; }
 
 /* Styles for collapsing sections/section */
 #years, #months, #posts{ cursor:pointer;}
 #years, .bold-me {font-weight: bold;} #months {font-weight: medium;}
 .archive_year { cursor: pointer; list-style: none; }
 .archive_month { list-style-type: disc; cursor: pointer; }
-.archive_posts { list-style-type: circle;}/*square url('http://www.webbossuk.com/admin/images/reply-arrow.png'); cursor: pointer; }*/
+.archive_posts { list-style-type: circle;}
 
+.btn-blue {
+  color: #fff;
+  background-color: #4870B6;
+  border-color: #5482D4;
+  vertical-align: middle;
+}
 
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active,
+.open .dropdown-toggle.btn-blue {
+  color: #fff;
+  background-color: #3C5D96;
+  border-color: #5482D4;
+}
 
 
 

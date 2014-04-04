@@ -31,7 +31,7 @@
 	</head>
 
 	<body>
-		<div class="page-wrapper" id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -52,14 +52,13 @@
 		      </div>
 		
 		      <!-- Next -->
-		      <!--
 		      <style>
 		        div.floating-next
 		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
 		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
 		      </style>
 		      <div class="floating-next">
-		        <a href="ch08s5.html">
+		        <a href="ch09.html">
 		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
 		        </a>
 		      </div>
@@ -67,13 +66,16 @@
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">8.9 Arrays and High-level Data Structures</p>
+			<p class="Section">
+				8.9 Arrays and High-level Data Structures
+			</p>
+			
 			<p>
 				We now come to the final section of this chapter on imperative programming using Watson JavaScript. This section introduces the array data structure and illustrates how it can be used to implement higher-level data structures, such as stacks, which were described in Chapter 7.
 			</p>
 
 			<p>
-				Data in Watson JavaScript can be represented using two “structures”: variables and arrays. By now, you should be well acquainted with variables. But arrays are something new. An</span> <span class="Bolded">array</span> is a collection of data values, all of the same type, which are stored in contiguous memory locations and accessed via an array name and subscript. A</span> <span class="Bolded">subscript</span> is an integer constant or variable that is used to indicate the relative position of an individual item in the array.
+				Data in Watson JavaScript can be represented using two “structures”: variables and arrays. By now, you should be well acquainted with variables. But arrays are something new. An <span class="Bolded">array</span> is a collection of data values, all of the same type, which are stored in contiguous memory locations and accessed via an array name and subscript. A <span class="Bolded">subscript</span> is an integer constant or variable that is used to indicate the relative position of an individual item in the array.
 			</p>
 
 			<p>
@@ -91,11 +93,11 @@
 			</p>
 
 			<p class="Subfigure">
-				var <span class="Italicized">name = new Array(<span class="Italicized">size</span>); //<span class="Italicized">type
+				var <span class="Italicized">name</span> = new Array(<span class="Italicized">size</span>); //<span class="Italicized">type</span>
 			</p>
 
 			<p>
-				where</span> <span class="Italicized">name</span> is the name of the array,</span> <span class="Italicized">size</span> is the number of individual elements that can be stored in the array, and</span> <span class="Italicized">type</span> is the type of those elements, either numeric or text. Hence, the ten-element integer array named <span class="Subfigure">A</span> illustrated in Figure 8.35 would be declared in Watson JavaScript as:
+				where <span class="Italicized">name</span> is the name of the array,</span> <span class="Italicized">size</span> is the number of individual elements that can be stored in the array, and <span class="Italicized">type</span> is the type of those elements, either numeric or text. Hence, the ten-element integer array named <span class="Subfigure">A</span> illustrated in Figure 8.35 would be declared in Watson JavaScript as:
 			</p>
 
 			<p class="Subfigure">
@@ -120,6 +122,8 @@
 					
 					<span class="Subfigure">A[7] = 37;</span><br />
 			</ul>
+			
+			<br/>
 
 			<p>
 				would initialize the first, fifth, and eighth elements of <span class="Subfigure">A</span> to the values shown in Figure 8.35. The other elements could be initialized in a similar manner. The value of the eighth element of <span class="Subfigure">A</span>, which is located at <span class="Subfigure">A[7]</span>, could be copied to a variable named <span class="Subfigure">X</span> with a statement such as:
@@ -154,6 +158,8 @@
 				
 				<span class="Subfigure">A[J] = 42;</span><br />
 			</ul>
+			
+			<br/>
 
 			<p>
 				can be used to place the value 42 into <span class="Subfigure">A[6]</span>, the seventh element of <span class="Subfigure">A</span>. This is so because the semantics of the assignment statement dictate that the value of the expression on the right hand side of the assignment operator is copied into the location specified by the variable or array element on the left hand side. Similarly, the following statements will retrieve a copy of the value stored at <span class="Subfigure">A[1]</span>, the value 999 according to Figure 8.35, and place it into <span class="Subfigure">X</span>.
@@ -164,6 +170,8 @@
 
 				<span class="Subfigure">X = A[I];</span><br />
 			</ul>
+			
+			<br/>
 
 			<p>
 				Most students have little trouble with the idea of array access as long as constants are used for the subscripts. Many become confused, however, when variables are used. It is easy for you to avoid confusion by</span> <span class="Italicized">immediately</span> looking up the</span> <span class="Italicized">current</span> value of any subscript variables</span> <span class="Italicized">before</span> you try to figure out the behavior of a statement that contains array references.
@@ -181,6 +189,8 @@
 				
 				<span class="Subfigure">A[I] = A[J] – 2;</span><br />
 			</ul>
+			
+			<br/>
 
 			<p>
 				We see that the first statement places a 5 in <span class="Subfigure">J</span>. The second statement adds the current value of <span class="Subfigure">J</span> to 3 and stores the result in <span class="Subfigure">I</span>. Since <span class="Subfigure">J</span> is 5, the result of the addition is 8, which is placed into <span class="Subfigure">I</span>. Thus, when the third statement is reached, <span class="Subfigure">I = 8</span> and <span class="Subfigure">J = 5</span>, so the statement would be, at that moment in time, equivalent to
@@ -280,7 +290,7 @@
 
 				<span class="Subfigure">var i; &nbsp; // Numeric</span><br/>
 
-				<span class="Subfigure">for (i = 0; i &le; 9; i++)</span><br/>
+				<span class="Subfigure">for (i = 0; i <= 9; i++)</span><br/>
 
 				<span class="Subfigure">{</span><br/>
 				
@@ -292,6 +302,8 @@
 
 				<span class="Subfigure">&nbsp;  . . .</span>
 			</ul>
+			
+			<br/>
 
 			<p class="Figure">
 				Figure 8.36: &nbsp; A partial program that declares a ten-element array and initializes each of its elements to zero
@@ -354,7 +366,7 @@
 			
 
 			<p class="Subfigure">
-				for (i = 0; i &le; 99; i++)
+				for (i = 0; i <= 99; i++)
 			</p>
 
 			
@@ -410,6 +422,8 @@
 				
 				<span class="Subfigure">}</span>
 			</ul>
+			
+			<br/>
 
 			<p class="Figure">
 				Figure 8.37: &nbsp; A function subprogram for searching a numeric array
@@ -451,10 +465,6 @@
 
 			<p>
 				You should note that this program illustrates two new features of Watson JavaScript. First, it shows that arrays, as well as variables, can be listed as input parameters to functions. The second feature debuting in the program is the use of multiple return statements. The function can “exit” at two different points: one corresponding to the case where the target item is found, the other to the case where the target is not found.
-			</p>
-
-			<p class="P142">
-				&nbsp;
 			</p>
 
 			<p>
@@ -663,10 +673,6 @@
 
 			<p>
 				The purpose of the <span class="Subfigure">pop</span> function is to remove the top item from the stack and return it to the calling program. <span class="Subfigure">Pop</span> has no input parameters, since the calling program doesn’t need to pass any values to <span class="Subfigure">pop</span> for it to carry out its task. The function begins by declaring <span class="Subfigure">item</span> to be a local numeric variable. Note that the <span class="Subfigure">item</span> declared in <span class="Subfigure">pop</span> is completely separate from the <span class="Subfigure">item</span> parameter used in <span class="Subfigure">push</span>.  Next, <span class="Subfigure">Pop</span> compares <span class="Subfigure">TOP</span> to zero.
-			</p>
-
-			<p class="P133">
-				&nbsp;
 			</p>
 
 			

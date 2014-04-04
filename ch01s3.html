@@ -28,40 +28,39 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
 			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+    		<script type="text/javascript" src="js/nav.js"></script>
+    		<!-- End dynamic navbar -->
 
 			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch01s2.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-			  
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch01s3p1.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-			  
-		    <!-- End floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+				</a>
+			</div>
+			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -88,6 +87,8 @@
 				Each of these questions is briefly addressed below, and more thoroughly explored throughout the remainder of the text.  These questions, and their answers, will take us through computing in what is called a “top-down, breadth-first” manner.  The phrase “breadth-first” applies to this text since it spans the breadth of computing, touching on each of the major areas that make up the field.  “Top-down” means that the presentation begins at the level of computer applications, such as spreadsheets and databases, and then works its way through a study of the algorithms and software used to implement and support those applications – starting with the highest, most abstract, levels of software and proceeding through more detailed, lower-level, software, until the actual computer hardware is reached.  A description of computer hardware in terms of the major components of a computer and how those components can be constructed from simple logic gates is then presented.  The final area addressed by the book focuses on discovering the practical limitations and ultimate potential of computers.
 			</p>
 			
+			<!-- End main content -->
+			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -106,6 +107,20 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("science", spans);
+					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					pageObj = getArrowPathsByPage("scienceFour");
+
+				});	
+			</script>
+
 		</div>
 	</body>
 </html>

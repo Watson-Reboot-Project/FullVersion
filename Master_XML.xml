@@ -1,0 +1,939 @@
+<?xml version='1.0'?>
+<!--This is the opening tag for the Table of Contents-->
+<table-of-contents>
+<!--This is the opening tag for the Chapters-->
+	<chapters>
+	<!--This is the opening tag for Chapter One-->
+		 <chapter>
+		 	<cname>The Science of Computing</cname>
+		 	<cpath>ch01.html</cpath>
+				<!--This is the opening tag for the sections in Chapter One -->
+				<sections>
+					<!--Individuals Sections for Chapter 1-->
+					<section>
+						<sname>Introduction</sname>
+						<spath>ch01s1.html</spath>
+					</section>
+					<section>
+						<sname>What is Computer Science?</sname>
+						<spath>ch01s2.html</spath>
+					</section>
+					<section>
+						<sname>Four Important Questions</sname>
+						<spath>ch01s3.html</spath>
+							<!--This is where the sub-sections of Chapter 1 Section 3-->
+							<sub-section>
+								<sbname>How are computers used?</sbname>
+								<sbpath>ch01s3p1.html</sbpath>
+							</sub-section>
+							<sub-section>
+								<sbname>How does computer software work?</sbname>
+								<sbpath>ch01s3p2.html</sbpath>
+							</sub-section>
+							<sub-section>
+								<sbname>How does computer hardware work?</sbname>
+								<sbpath>ch01s3p3.html</sbpath>
+							</sub-section>
+							<sub-section>
+								<sbname>What are the limitations and potential</sbname>
+								<sbpath>ch01s3p4.html</sbpath>
+							</sub-section>
+				    </section>
+				</sections>
+		</chapter> <!-- End of Chapter One-->
+
+	 <!--This is the opening tag for Chapter Two-->
+	 	<chapter>
+	  		<cname>Computers as Communication and Problem Solving Tools</cname>
+	  		<cpath>ch02.html</cpath>
+			<!--This is the opening tag for the sections in Chapter Two-->
+			<sections>
+				<!--Individual Sections for Chapter 2-->
+				<section>
+					<sname>Introduction</sname>
+					<spath>ch02s1.html</spath>
+				</section>
+				<section>
+					<sname>The Changing Role of Computers?</sname>
+					<spath>ch02s2.html</spath>
+				</section>
+				<section>
+					<sname>Communication-Oriented Applications</sname>
+					<spath>ch02s3.html</spath>
+						<!--This is where the sub-sections of Chapter 2 Section 3-->
+						<sub-section>
+							<sbname>Email</sbname>
+							<sbpath>ch02s3p1.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Instant Messaging Applications</sbname>
+							<sbpath>ch02s3p2.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Web Browsers</sbname>
+							<sbpath>ch02s3p3.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Word Processors</sbname>
+							<sbpath>ch02s3p4.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Presentation Software</sbname>
+							<sbpath>ch02s3p5.html</sbpath>
+						</sub-section>
+				</section>
+				<section>
+					<sname>Spreadsheets</sname>
+					<spath>ch02s4.html</spath>
+						<!--This is where the sub-sections of Chapter 2 Section 4-->
+						<sub-section>
+							<sbname>Basic Features of a Spreadsheets</sbname>
+							<sbpath>ch02s4p1.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Formula Evaluation: A Closer Look</sbname>
+							<sbpath>ch02s4p2.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Relative and Absolute All References</sbname>
+							<sbpath>ch02s4p3.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Miscellaneous Features: "Replicate" and Built-In Functions</sbname>
+							<sbpath>ch02s4p4.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Solving Problems with Spreadsheets</sbname>
+							<sbpath>ch02s4p5.html</sbpath>
+						</sub-section>
+				</section>
+			</sections>
+	</chapter> <!-- End of Chapter Two-->
+
+	<!--This is the opening tag for Chapter Three-->
+	<chapter>
+		<cname>Information Storage and Retrieval</cname>
+	 	<cpath>ch03.html</cpath>
+	 		<!--This is the opening tag for the sections in Chapter Three -->
+			<sections>
+				<!--Individual Sections for Chapter 3-->
+				<section>
+					<sname>Introduction</sname>
+					<spath>ch03s1.html</spath>
+				</section>
+				<section>
+					<sname>The Hardware Level</sname>
+					<spath>ch03s2.html</spath>
+				</section>
+				<section>
+					<sname>The File Organization Level</sname>
+					<spath>ch03s3.html</spath>
+						<!--This is where the sub-sections of Chapter 3 Section 3-->
+						<sub-section>
+							<sbname>Contiguous Storage</sbname>
+							<sbpath>ch03s3p1.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Linked Storage</sbname>
+							<sbpath>ch03s3p2.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Indexed Storage</sbname>
+							<sbpath>ch03s3p2.html</sbpath>
+						</sub-section>
+				</section>
+				<section>
+					<sname>The Programmer Level</sname>
+					<spath>ch03s4.html</spath>
+						<!--Ths is where the sub-sub-sections of Chapter 3 Section 4-->
+						<sub-section>
+							<sbname>File Access Commands</sbname>
+							<sbpath>ch03s4p1.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>A Simple Example</sbname>
+							<sbpath>ch03s4p2.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Buffering and Direct Access</sbname>
+							<sbpath>ch03s4p3.html</sbpath>
+						</sub-section>
+				</section>
+				<section>
+					<sname>The End-User Level</sname>
+					<spath>ch03s5.html</spath>
+						<!--This is where the sub-sections of Chapter 3 Section 5-->
+						<sub-section>
+							<sbname>The Operating System Interface</sbname>
+							<sbpath>ch03s5p1.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Relational Database Systems</sbname>
+							<sbpath>ch03s5p2.html</sbpath>
+									<!--This is where the sub-sub-sections of Chapter 3 Section 5 Part 2-->
+									<sub-sub-section>
+										<sbbname>Relations, Attributes, and Tuples</sbbname>
+										<sbbpath>ch03s5p2a.html<sbbpath>
+									</sub-sub-section>
+									<sub-sub-section>
+										<sbbname>The "Select"Operator</sbbname>
+										<sbbpath>ch03s5p2b.html</sbbpath>
+									</sub-sub-section>
+									<sub-sub-section>
+										<sbbname>The "Project" Operator</sbbname>
+										<sbbpath>ch03s5p2c.html</sbbpath>
+									</sub-sub-section>
+									<sub-sub-section>
+										<sbbname>Queries Involving Both "Select" and "Project"</sbbname>
+										<sbbpath>ch03s5p2d.html</sbbpath>
+									</sub-sub-section>
+									<sub-sub-section>
+										<sbbname>The "Join" Operator</sbbname>
+										<sbbpath>ch03s5p2e.html</sbbpath>
+									</sub-sub-section>
+									<sub-sub-section>
+										<sbbname>Queries Involving "Select," "Project," and "Join"</sbbname>
+										<sbbpath>ch03s5p2f.html</sbbpath>
+									</sub-sub-section>
+						 	</sub-section>
+					</section>
+			</sections>
+	 </chapter><!--End of Chapter Three->
+	 
+	 <!--This is the opening tag for Chapter Four-->
+	 <chapter>
+      	<cname>The Social, Legal, and Ethical Aspects of Computing </cname>
+      	<cpath>ch04.html</cpath>
+      		<!--This is the opening tag for the Sections in Chapter Four-->
+      		<sections>
+      			<!--Individual Sections for Chapter 4-->
+      			<section>
+      				<sname>Introduction</sname>
+      				<spath>ch04s1.html</spath>
+      			</section>		
+      			<section>
+      				<sname>Issues if Interest to the General Public</sname>
+      				<spath>ch04s2.html</spath>
+      					<!--This is where the sub-sections for Chapter 4 Section 2 begin-->
+      					<sub-section>
+							<sbname>Security and Privacy</sbname>
+							<sbpath>ch04s2p1.html</sbpath>
+								<!--This is where the sub-sub-sections for Chapter 4 Section 2 Part 1 begin-->
+								<sub-sub-section>
+									<sbbname>Protecting Online Accounts from Unauthorized Access</sbbname>
+									<sbbpath>ch04s2p1a.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>The Encryption Debate</sbbname>
+									<sbbpath>ch04s2p1b.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>Online Accounts, Email, and Privacy</sbbname>
+									<sbbpath>ch04s2p1c.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>The Marketing of Consumer Profiles</sbbname>
+									<sbbpath>ch04s2p1d.html</sbbpath>
+								</sub-sub-section>
+						</sub-section>
+						<sub-section>
+							<sbname>Freedom of Expression</sbname>
+							<sbpath>ch04s2p2.html</sbpath>
+								<!--This is where the sub-sub-sections for Chapter 4 Section 2 Part 2 begin-->
+								<sub-sub-section>
+									<sbbname>Traditional media and the Internet</sbbname>
+									<sbbpath>ch04s2p2a.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>Legal protections and constraints</sbbname>
+									<sbbpath>ch04s2p2b.html</sbbpath>
+								</sub-sub-section>
+						</sub-section>
+						<sub-section>
+							<sbname>Intellectual Property</sbname>
+							<sbpath>ch04s2p3.html</sbpath>
+								<!--This is where the sub-sub-sections for Chapter 4 Section 2 Part 3 begin-->
+								<sub-sub-section>
+									<sbbname>The history of U.S. copyright law</sbbname>
+									<sbbpath>ch04s2p3a.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>The doctrine of "fair use"</sbbname>
+									<sbbpath>ch04s2p3b.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>The Digital Millenium Copyright Act</sbbname>
+									<sbbpath>ch04s2p3c.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>Whatever happened to the online library</sbbname>
+									<sbbpath>ch04s2p3d.html</sbbpath>
+								</sub-sub-section>
+						</sub-section>
+						<sub-section>
+							<sbname>Criminal Behavior</sbname>
+							<sbpath>ch04s2p4.html</sbpath>
+								<!--This is where the sub-sub-sections for Chapter 4 Section 2 Part 4 begin-->
+								<sub-sub-section>
+									<sbbname>Hacking, Trojan Horses, and viruses</sbbname>
+									<sbbpath>ch04s2p4a.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>Software Privacy</sbbname>
+									<sbbpath>ch04s2p4b.html</sbbpath>
+								</sub-sub-section>
+								<sub-sub-section>
+									<sbbname>Music and video piracy</sbbname>
+									<sbbpath>ch04s2p4c.html</sbbpath>
+								</sub-sub-section>
+						</sub-section>
+						<sub-section>
+							<sbname>A global perspective</sbname>
+							<sbpath>ch04s2p5.html</sbpath>
+						</sub-section>
+      			</section>			
+      			<section>
+      				<sname>Issues of interest to computing professionals</sname>
+      				<spath>ch04s3.html</spath>
+      					<sub-section>
+      						<sbname>Accountability, liability, and professional licensing</sbname>
+      						<sbpath>ch04s3p1.html</sbpath>
+      					</sub-section>
+      					<sub-section>
+      						<sbname>ACM Code of Conduct</sbname>
+      						<sbpath>ch04s3p2.html</sbpath>
+      					</sub-section>
+      			</section>
+      		</sections>
+    </chapter><!--End of Chapter Four-->
+    
+    <!--This is the opening tag for Chapter Five-->
+    <chapter>
+      <cname>Algorithms -- The Key to Understanding Software</cname>
+      <cpath>ch05.html</cpath>
+      	<!--This is where the sections for Chapter Five begin-->
+      	<sections>
+      		<!--Individual Sections for Chapter 5-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch05s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>Algorithms and efficiency</sname>
+      			<spath>ch05s2.html</spath>
+      		</section>
+      		<section>
+      			<sname>Searching</sname>
+      			<spath>ch05s3.html</spath>
+      				<!--This is where the sub-sections for Chapter 5 Section 3 begin-->
+      				<sub-section>
+      					<sbname>Sequential search</sbname>
+      					<sbpath>ch05s3p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Binary search</sbname>
+      					<sbpath>ch05s3p2.html</sbpath>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Sorting</sname>
+      			<spath>ch05s4.html</spath>
+      				<!--This is where the sub-sections for Chapter 5 Section 4 begin-->
+      				<sub-section>
+      					<sbname>Selection sort</sbname>
+      					<sbpath>ch05s4p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Insertion sort</sbname>
+      					<sbpath>ch05s4p2.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Merge sort</sbname>
+      					<sbpath>ch05s4p3.html</sbpath>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Summary</sname>
+      			<spath>ch04s5</spath>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chapter Five-->
+    
+    <!--This is the opening tag for Chapter Six-->
+    <chapter>
+      <cname>Developing Graphical Algorithms</cname>
+      <cpath>ch06.html</cpath>
+     	<!--This is the opening tag for the sections in Chapter Six-->
+      	<sections>
+      		<!--Individual Sections for Chapter 6-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch06s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>What is Computer Graphics?</sname>
+      			<spath>ch06s2.html</spath>
+      		</section>
+      		<section>
+      			<sname>Fundamental Graphical Concepts</sname>
+      			<spath>ch06s3.html</spath>
+      		</section>
+      		<section>
+      			<sname>A Simple Graphical Language</sname>
+      			<spath>ch06s4.html</spath>
+      				<!--This is where the sub-sections for Chapter 6 Section 4 begin-->
+      				<sub-section>
+						<sbname>Data Types, Constants, Variables, and Expressions</sbname>
+						<sbpath>ch06s4p1.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Instructions</sbname>
+						<sbpath>ch06s4p2.html</sbpath>
+					</sub-section>
+      		</section>
+      		<section>
+      			<sname>Developing Algorithms with WGL</sname>
+      			<spath>ch06s5.html</spath>
+      			<!--This is where the sub-sections for Chapter 6 Section 5 begin-->
+      				<sub-section>
+						<sbname>Creating Simple Static Images</sbname>
+						<sbpath>ch06s5p1.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Creating Complex Images and Animation</sbname>
+						<sbpath>ch06s5p2.html</sbpath>
+					</sub-section>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chapter Six-->
+    
+    <!--This is the opening tag for Chapter Seven-->
+    <chapter>
+    	<cname> Data Structures -- The Organization of Data at the Program Level </cname>
+    	<cpath> ch07.html </cpath>
+    		<!--This is where the sections for Chapter Seven begin-->
+    		<sections>
+    			<--Individual Sections for Chapter 7-->
+    			<section>
+      				<sname>Introduction</sname>
+      				<spath>ch07s1.html</spath>
+      			</section>
+      			<section>
+      				<sname>Higher-level data structures</sname>
+      				<spath>ch07s2.html</spath>
+      					<!--This is where the sub-sections for Chapter 7 Section 2 begin-->
+      					<sub-section>
+							<sbname>Stacks</sbname>
+							<sbpath>ch07s7p1.html</sbpath>
+						</sub-section>
+						<sub-section>
+							<sbname>Queues</sbname>
+							<sbpath>ch07s2p2.html</sbpath>
+						</sub-section>
+      			</section>
+    		</sections>
+    </chapter><!--End of Chapter Seven-->
+    
+     <!--This is the opening tag for Chapter Eight-->
+    <chapter>
+      <cname>JavaScript Programming</cname>
+      <cpath>ch08.html</cpath>
+      	<!--This is where the sections for Chapter Eight begin-->
+      	<sections>
+      	<!--Individual Sections for Chapter 8-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch08s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>Overview of Watson Javascript</sname>
+      			<spath>ch08s2.html</spath>
+      		</section>
+      		<section>
+      			<sname>Data Types, Constants, Variables</sname>
+      			<spath>ch08s3.html</spath>
+      		</section>
+      		<section>
+      			<sname>Input and Output Statements</sname>
+      			<spath>ch08s4.html</spath>
+      		</section>
+      		<section>
+      			<sname>Expressions and Assignment</sname>
+      			<spath>ch08s5.html</spath>
+      		</section>
+      		<section>
+      			<sname>The Three Primary Control Constructs</sname>
+      			<spath>ch08s6.html</spath>
+      				<!--This is where the sub-sections for Chapter 8 Section 6 begin-->
+      				<sub-section>
+						<sbname>Sequence</sbname>
+						<sbpath>ch08s6p1.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Selection</sbname>
+						<sbpath>ch08s6p2.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Repetition</sbname>
+						<sbpath>ch08s6p3.html</sbpath>
+					</sub-section>
+      		</section>
+      		<section>
+      			<sname>Functions</sname>
+      			<spath>ch08s7.html</spath>
+      		</section>
+      		<section>
+      			<sname>Recursion</sname>
+      			<spath>ch08s8.html</spath>
+      		</section>
+      		<section>
+      			<sname>Arrays and High-level Data Structures</sname>
+      			<spath>ch08s9.html</spath>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chapter Eight-->
+    
+    <!--This is the opening tag for Chapter Nine--> 
+    <chapter>
+      <cname>Functional, Logical, and Object-Oriented Programming</cname>
+      <cpath>ch09.html</cpath>
+      	<!--This is where the sections for Chapter Nine begin-->
+      	<sections>
+      		<--Individual Sections for Chapter 9-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch09s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>Functional Programming</sname>
+      			<spath>ch09s2.html</spath>
+      				<!--This is where the sub-sections for Chapter 9 Section 2-->
+      				<!--THESE PAGES STILL NEED TO BE SEPARATED INTO HTML PAGES-->
+      				<sub-section>
+      					<sbname></sbname>	
+      					<sbpath>ch09s2p1.html</sbpath>
+  					</sub-section>
+  					<sub-section>
+      					<sbname></sbname>	
+      					<sbpath>ch09s2p2.html</sbpath>
+  					</sub-section>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chapter Nine-->
+    
+    <!--THIS CHAPTER HAS NOT BEEN WRITTEN YET-->
+    <chapter>
+      <cname>Software Engineering</cname>
+      <cpath>ch10.html</cpath>
+    </chapter><!--END OF CHAPTER TEN-->
+    
+    <!--This is where the sections for Chapter Eleven begin-->
+    <chapter>
+      <cname>Assembly Language and Computer Architecture</cname>
+      <cpath>ch11.html</cpath>
+      	<!--This is where the sections for Chapter Eleven begin-->
+      	<sections>
+      		<Individual Sections for Chapter 11-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch11s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>Register-based Machines</sname>
+      			<spath>ch11s2.html</spath>
+      		</section>
+      		<section>
+      			<sname>Assembly language programming</sname>
+      			<spath>ch11s3.html</spath>
+      				<!--This is where the sub-sections for Chapter 11 Section 3 begin-->
+      				<sub-section>
+						<sbname>An overview of the Watson Assembly Language</sbname>
+						<sbpath>ch011s3p1.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Variables, assignment, and sequence</sbname>
+						<sbpath>ch011s3p2.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Implementing selection constructs in assembly language</sbname>
+						<sbpath>ch011s3p3.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Implementing repetition constructs in assembly language</sbname>
+						<sbpath>ch011s3p4.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Array processing in assembly language</sbname>
+						<sbpath>ch011s3p5.html</sbpath>
+					</sub-section>
+      		</section>
+      		<section>
+      			<sname>Data representation at the machine level</sname>
+      			<spath>ch11s4.html</spath>
+      				<!--This is where the sub-sections for Chapter 11 Section 4 begin-->
+      				<sub-section>
+						<sbname>Array processing in assembly language</sbname>
+						<sbpath>ch011s4p1.html</sbpath>
+							<!--This is where the sub-sub-sections for Chapter 11 Section 4 Part 1 begin-->
+							<sub-sub-section>
+								<sbbname>Number systems</sbbname>
+								<sbbpath>ch11s4p1a.html</sbbpath>
+							</sub-sub-section>
+							<sub-sub-section>
+								<sbbname>Numeric bases and base conversions</sbbname>
+								<sbbpath>ch11s4p1b.html</sbbpath>
+							</sub-sub-section>
+							<sub-sub-section>
+								<sbbname>Binary arithmetic</sbbname>
+								<sbbpath>ch11s4p1c.html</sbbpath>
+							</sub-sub-section>
+							<sub-sub-section>
+								<sbbname>Signed numbers</sbbname>
+								<sbbpath>ch11s4p1d.html</sbbpath>
+							</sub-sub-section>
+							<sub-sub-section>
+								<sbbname>Floating point numbers</sbbname>
+								<sbbpath>ch11s4p1e.html</sbbpath>
+							</sub-sub-section>
+					</sub-section>
+					<sub-section>
+						<sbname>Characters</sbname>
+						<sbpath>ch11s4p2.html</sbpath>
+					</sub-section>
+					<sub-section>
+						<sbname>Images</sbname>
+						<sbpath>ch11s4p3.html</sbpath>
+					</sub-section>
+      		</section>
+      		<section>
+      			<sname>Machine language</sname>
+      			<spath>ch11s5.html</spath>
+      				<!--This is where the sub-sections for Chapter 11 Section 5 begin-->
+      				<sub-section>
+      					<sbname>The Watson Virtual Machine instruction set</sbname>
+      					<sbpath>ch11s5p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Assembly language to machine language translation</sbname>
+      					<sbpath>ch11s5p2.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Program execution</sbname>
+      					<sbpath>ch11s5p3.html</sbpath>
+      				</sub-section>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chapter 11-->
+    
+    <!--This is where the sections for Chapter Twelve begin-->
+    <chapter>
+      <cname>Digital Circuit Design</cname>
+      <cpath>ch12.html</cpath>
+      	<!--This is where the sections for Chapter Twelve begin-->
+      	<sections>
+      		<!--Individual Sections for Chapter 12-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch12s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>Fundamentals of Digital Logic</sname>
+      			<spath>ch12s2.html</spath>
+      				<!--This is where the sub-sections for Chapter 12 Section 2 begin-->
+      				<sub-section>
+      					<sbname>Switches</sbname>
+      					<sbpath>ch12s2p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Gates</sbname>
+      					<sbpath>ch12s2p2.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Boolean Algebra</sbname>
+      					<sbpath>ch12s2p3.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Other Gates</sbname>
+      					<sbpath>ch12s2p4.html</sbpath>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Combinatorial Circuits</sname>
+      			<spath>ch12s3.html</spath>
+      				<!--This is where the sub-sections for Chapter 12 Section 3 begin-->
+      				<sub-section>
+      					<sbname>The "Exclusive Or" Circuit</sbname>
+      					<sbpath>ch12s3p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Comparators</sbname>
+      					<sbpath>ch12s3p2.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Adders</sbname>
+      					<sbpath>ch12s3p3.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Decoders and Encoders</sbname>
+      					<sbpath>ch12s3p4.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Multiplexers and Demultiplexers</sbname>
+      					<sbpath>ch12s3p5.html</sbpath>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Sequential Circuits</sname>
+      			<spath>ch12s4.html</spath>
+      				<!--This is where the sub-sections for Chapter 12 Section 4 begin-->
+      				<sub-section>
+      					<sbname>The R-S Flip-Flop</sbname>
+      					<sbpath>ch12s4p1.html<sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>The Clocked R-S Flip-flop</sbname>
+      					<sbpath>ch12s4p2.html<sbpath>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Design of a Simple Microcomputer</sname>
+      			<spath>ch12s5.html</spath>
+      				<!--This is where the sub-sections for Chapter 12 Section 5 begin-->
+      				<sub-section>
+      					<sbname>The Watson Virtual Machine Revisited</sbname>
+      					<sbpath>ch12s5p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>The Arithmetic/Logic Unit</sbname>
+      					<sbpath>ch12s5p2.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Random Access Memory (RAM)</sbname>
+      					<sbpath>ch12s5p3.html</sbpath>
+      				</sub-section>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chapter Twelve-->
+    
+    <!--THIS CHAPTER HAS NOT BEEN WRITTEN YET-->
+    <chapter>
+      <cname>Theoretical and Practical Limits of Computing</cname>
+      <cpath>ch13.html</cpath>
+    </chapter><!--END OF CHAPTER THIRTEEN-->
+    
+    <!--This is the opening tag for chapter Fourteen-->
+    <chapter>
+      <cname>Computing and Intelligence</cname>
+      <cpath>ch14.html</cpath>
+      		<!--This is where the sections begin for Chapter Fourteen-->
+      		<sections>
+      		<!--Individual Sections for Chapter 14-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch14s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>An Overview of Artificial Intelligence</sname>
+      			<spath>ch14s2.html</spath>
+      				<This where the sub-sections begin for Chapter 14 Section 2-->
+      				<sub-section>
+      					<sbname>HAL: the prototypical inteligent computer</sbname>
+      					<sbpath>ch14s2p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Can intelligent machines be constructed?</sbname>
+      					<sbpath>ch14s2p2.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Measuring progress: the Turing test</sbname>
+      					<sbpath>ch14s2p3.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>A brief history of artificial intelligence</sbname>
+      					<sbpath>ch14s2p4.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Half a century and counting</sbname>
+      					<sbpath>ch14s2p5.html</sbpath>
+      						<!--This is where sub-sub-sections begin for Chapter 14 Section 2 Part 5-->
+      						<sub-sub-section>
+      							<sbbname>Big data, statistical machine learning techniques, and machine translation</sbbname>
+      							<sbbpath>ch14s2p5a.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Using language intelligently</sbbname>
+      							<sbbpath>ch14s2p5b.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Computer Vision</sbbname>
+      							<sbbpath>ch14s2p5c.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Autonomous Vehicle</sbbname>
+      							<sbbpath>ch14s2p5d.html</sbbpath>
+      						</sub-sub-section>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Techniques and approaches for achieving intelligent behavior</sname>
+      			<spath>ch14s3.html</spath>
+      				<!--This is where the sub-sections for Chapter 14 Section 3 begin-->
+      				<sub-section>
+      					<sbname>Game playing and search</sbname>
+      					<sbpath>ch14s3p1.html</sbpath>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Automated reasoning</sbname>
+      					<sbpath>ch14s3p2.html</sbpath>
+      						<!--This is where the sub-sub-sections for Chapter 14 Section 3 Part 2-->
+      						<sub-sub-section>
+      							<sbbname>Propositional logic</sbbname>
+      							<sbbpath>ch14s3p2a.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Resolution refutation proofs</sbbname>
+      							<sbbpath>ch14s3p2b.html</sbbpath>
+      						</sub-sub-section>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Neural networks and machine learning</sbname>
+      					<sbpath>ch14s3p3.html</sbpath>
+      				</sub-section>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chapter Fourteen-->
+    
+    <!--This is the opening chapter for Chapter Fifteen-->
+    <chapter>
+      <cname>The Past, Present, and Future of Computing</cname>
+      <cpath>ch15.html</cpath>
+      	<!--This is where the sections for Chapter Fifteen begin-->
+      	<sections>
+      		<!--Start of Sections for Chapter 15-->
+      		<section>
+      			<sname>Introduction</sname>
+      			<spath>ch15s1.html</spath>
+      		</section>
+      		<section>
+      			<sname>The evolving nature of human-computer interaction</sname>
+      			<spath>ch15s2.html</spath>
+      		</section>
+      		<section>
+      			<sname>Moore's Law and its implications</sname>
+      			<spath>ch15s3.html</spath>
+      				<!--This is where the sub-sections for Chapter 15 Section 3 begin-->
+      				<sub-section>
+      					<sbname>What is Moore's Law</sbname>
+      					<sbname>ch15s3p1.html</sbname>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>The exponential growth of supercomputer speed</sbname>
+      					<sbname>ch15s3p2.html</sbname>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>But, surely this can't continue indefinitely?</sbname>
+      					<sbname>ch15s3p3.html</sbname>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Promising technologies for improving computing performance</sname>
+      			<spath>ch15s4.html</spath>
+      				<!--This is where the sub-sections for Chapter 15 Section 4 begin-->
+      				<sub-section>
+      					<sbname>Semi-conductor based computing</sbname>
+      					<sbname>ch15s4p1.html</sbname>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Optical computing</sbname>
+      					<sbname>ch15s4p2.html</sbname>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Bio-computing</sbname>
+      					<sbname>ch15s4p3.html</sbname>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Molecular-level computing</sbname>
+      					<sbname>ch15s4p4.html</sbname>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Quantum computing</sbname>
+      					<sbname>ch15s4p5.html</sbname>
+      				</sub-section>
+      		</section>
+      		<section>
+      			<sname>Predictions</sname>
+      			<spath>ch15s5.html</spath>
+      				<!--This is where the sub-sections for Chapter 15 Section 5-->
+      				<sub-section>
+      					<sbname>Visions of future past</sbname>
+      					<sbname>ch15s5p1.html</sbname>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Near-term predictions (next 10 to 15 years - before 2030)</sbname>
+      					<sbname>ch15s5p2.html</sbname>
+      						<!--This is where the sub-sub-sections for Chapter 15 Sections 5 Part 2-->
+      						<sub-sub-section>
+      							<sbbname>Exponential doubling of computing speeds will continue through 2030</sbbname>
+      							<sbbpath>ch15s5p2a.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Ubiquitous computing and personal networks will become common</sbbname>
+      							<sbbpath>ch15s5p2b.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Voice-based interfaces will continue to gain acceptance</sbbname>
+      							<sbbpath>ch15s5p2c.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Continuous health monitoring and personalized medicine will become routine</sbbname>
+      							<sbbpath>ch15s5p2d.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>A limited form of vitural reality gamin will become popular</sbbname>
+      							<sbbpath>ch15s5p2e.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Augmented reality will become commonplace</sbbname>
+      							<sbbpath>ch15s5p2f.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Intelligent assistants will become more intelligent</sbbname>
+      							<sbbpath>ch15s5p2g.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Self driving cars will start to appears on our roadways</sbbname>
+      							<sbbpath>ch15s5p2h.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Photorealistic virtual actors will start to appear</sbbname>
+      							<sbbpath>ch15s5p2i.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Artificial general intelligence will be achieved in supercomputers</sbbname>
+      							<sbbpath>ch15s5p2j.html</sbbpath>
+      						</sub-sub-section>
+      				</sub-section>
+      				<sub-section>
+      					<sbname>Long-term predictions (2030 - 2050)</sbname>
+      					<sbpath>ch15s5p3.html</sbpath>
+      						<!--This is where the sub-sub-sections for Chapter 15 Sections 5 Part 3 begin-->
+      						<sub-sub-section>
+      							<sbbname>Human level artificial general intelligence will be common</sbbname>
+      							<sbbpath>ch15s5p3a.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Fully immersive virtual reality will appear</sbbname>
+      							<sbbpath>ch15s5p3b.html</sbbpath>
+      						</sub-sub-section>
+      						<sub-sub-section>
+      							<sbbname>Ray Kurzweil's sigularity will not take by 2050, or even by 2100</sbbname>
+      							<sbbpath>ch15s5p3c.html</sbbpath>
+      						</sub-sub-section>
+      				</sub-section>
+      		</section>
+      	</sections>
+    </chapter><!--End of Chpater Fifteen-->
+ </chapters><!--End of Chapters for book-->
+ 
+</table-of-contents>
+<!-- vim: set sts=2 sw=2 : -->

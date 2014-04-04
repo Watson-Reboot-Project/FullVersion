@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -342,7 +342,7 @@
 				<li><span class="Subfigure">JUMP          1110</span></li>
 				<li><span class="Subfigure">HALT          1111</span></li>
 			</ul>
-			
+			<br/>
 			<p>
 				The <span class="Subfigure">HALT</span> command has no operands.  It consists solely of the op-code “1111” in bits 13-16.  The other 12 bits of the instruction are ignored – but usually set to zero for clarity.  When executed, <span class="Subfigure">HALT</span> causes the program to terminate.
 			</p>
@@ -384,7 +384,7 @@
 			</p>
 			
 			<p>
-				There are ten different condition codes that are recognized by the <span class="Subfigure">BRANCH</span> statement.  These are presented in Figure 11.27.  The first six conditions (<span class="Subfigure">EQ</span>, <span class="Subfigure">NE</span>, <span class="Subfigure">LT</span>, <span class="Subfigure">LE</span>, <span class="Subfigure">GT</span>, <span class="Subfigure">GE</span>) were discussed in Section 11.3.  The final four conditions (<span class="Subfigure">CARY</span>, <span class="Subfigure">NEG</span>, <span class="Subfigure">ZERO</span>, <span class="Subfigure">OVER</span>) were not discussed because they are not used as frequently and an understanding of their function requires some knowledge of data representation at the machine level.  Even though these four conditions were not mentioned in the assembly-level discussion of the <span class="Subfigure">BRANCH</span> instruction, statements such as:
+				There are ten different condition codes that are recognized by the <span class="Subfigure">BRANCH</span> statement. These are presented in Figure 11.27.  The first six conditions (<span class="Subfigure">EQ</span>, <span class="Subfigure">NE</span>, <span class="Subfigure">LT</span>, <span class="Subfigure">LE</span>, <span class="Subfigure">GT</span>, <span class="Subfigure">GE</span>) were discussed in Section 11.3.  The final four conditions (<span class="Subfigure">CARY</span>, <span class="Subfigure">NEG</span>, <span class="Subfigure">ZERO</span>, <span class="Subfigure">OVER</span>) were not discussed because they are not used as frequently and an understanding of their function requires some knowledge of data representation at the machine level.  Even though these four conditions were not mentioned in the assembly-level discussion of the <span class="Subfigure">BRANCH</span> instruction, statements such as:
 			</p>
 			
 			<p class="Subfigure">

@@ -28,7 +28,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -36,32 +36,30 @@
     <script type="text/javascript" src="js/nav.js"></script>
 
 			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch03s3p1.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-			  
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch03s3p3.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-			  
-		    <!-- End floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+				</a>
+			</div>
+			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -134,7 +132,6 @@
 				As an interesting side note, you may have heard that sometimes files can be recovered even after they have been “deleted” from a disk. The reason for this is that when an operating system erases a file, it deletes the file’s entry from the root directory and marks as “free” the sectors that had been devoted to storing the file. This is done in order to save time. It is much easier (and hence faster) to simply change one entry in a table, rather than overwriting the contents of every block of a file with “blanks”, or some other character. Data recovery programs scan through the entire disk a sector at a time retrieving the data stored in sectors that have been marked “free”. In order to truly delete sensitive data, a disk drive should be reformatted and overwritten with new data.
 			</p>
 			
-			<br/>
 			<!-- Footnotes -->
 			<hr/>
 			<p class="Section">
@@ -171,6 +168,19 @@
 			<div>
 
 			</div>
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("information");
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("information", spans);
+					// once the document has loaded, set figure numbers and arrow paths
+					pageObj = getArrowPathsByPage("informationOrganization2");
+
+				});	
+			</script>
+
 		</div>
 	</body>
 </html>

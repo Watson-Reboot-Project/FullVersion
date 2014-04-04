@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -35,28 +35,29 @@
               <script type="text/javascript" src="js/nav.js"></script>
 
 			<!--Floating nav -->
-				<!-- Previous -->
-				<style>
-				div.floating-previous
-				{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-				div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-previous">
-				<a href="ch06s4p1.html">
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
 				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
 				</a>
-				</div>
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch06s5.html">
+			</div>
+
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
 				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
 				</a>
-				</div>
+			</div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
@@ -74,33 +75,34 @@
 			</p>
 			
 			<p>
-				The <span class="Bolded">assignment</span> statement is used to place a <span class="Underlined">value</span> of a particular type into a <span class="Underlined">variable</span> of the same type.  Assignment statements in WGL are often used to specify the size, shape, location, or orientation of an object.  The format of an assignment statement in WGL is: <span class="Ital">VARIABLE = EXPRESSION</span>  where <span class="Ital">VARIABLE</span> is replaced by a variable of some particular type and <span class="Ital">EXPRESSION</span> is replaced by an expression of the <span class="Underlined">same</span> type.  For example: <span class="T13">p1=(100,100)</span> is a valid assignment statement, assuming <span class="Ital">p1</span> is a variable of type point.  This statement defines the location of <span class="Ital">p1</span> to be (100, 100).  It does not actually draw anything in the drawing area – the statement simply places the constant (100, 100) into <span class="Ital">p1</span>.  To actually see the point, <span class="Ital">p1</span>, it would be necessary to render it using the draw command discussed below.
+				The <span class="Bolded">assignment</span> statement is used to place a <span class="Underlined">value</span> of a particular type into a <span class="Underlined">variable</span> of the same type.  Assignment statements in WGL are often used to specify the size, shape, location, or orientation of an object.  The format of an assignment statement in WGL is: <span class="Ital">VARIABLE = EXPRESSION</span>  where <span class="Ital">VARIABLE</span> is replaced by a variable of some particular type and <span class="Ital">EXPRESSION</span> is replaced by an expression of the <span class="Underlined">same</span> type.  For example: <span class="Subfigure">p1=(100,100)</span> is a valid assignment statement, assuming <span class="Ital">p1</span> is a variable of type point.  This statement defines the location of <span class="Ital">p1</span> to be (100, 100).  It does not actually draw anything in the drawing area – the statement simply places the constant (100, 100) into <span class="Ital">p1</span>.  To actually see the point, <span class="Ital">p1</span>, it would be necessary to render it using the draw command discussed below.
 			</p>
 			
 			<p>
-				The <span class="Bolded">color</span> statement is used to select a drawing color.  This statement does not actually place anything on the screen.  It is analogous to picking up a pen of a particular color.  All subsequent draw commands will use the specified color until it is changed by issuing another color command.  The format of the color statement is <span class="Ital">color(COLOR_NAME)</span> where <span class="Ital">COLOR_NAME</span> is a constant of type color.  For example, <span class="T13">color(blue)</span> would set the drawing color to blue.  The default drawing color is red.
+				The <span class="Bolded">color</span> statement is used to select a drawing color.  This statement does not actually place anything on the screen.  It is analogous to picking up a pen of a particular color.  All subsequent draw commands will use the specified color until it is changed by issuing another color command.  The format of the color statement is <span class="Ital">color(COLOR_NAME)</span> where <span class="Ital">COLOR_NAME</span> is a constant of type color.  For example, <span class="Subfigure">color(blue)</span> would set the drawing color to blue.  The default drawing color is red.
 			</p>
 			
 			<p>
-				The <span class="Bolded">draw</span> statement is used to display an object of type point, line, circle, or polygon, in the drawing area.  An object must be completely defined before it can be drawn.  The format of the draw statement is <span class="Ital">draw(OBJECT) </span>where <span class="Ital">OBJECT</span> is a <span class="Underlined">variable</span> of type point, line, circle, or polygon.  Constants cannot be directly drawn; neither can distances, colors, and counters.  For example, <span class="T13">draw(l2)</span> would be a valid draw statement as long as <span class="Ital">l2</span> had been declared as a line variable and an appropriate value had been assigned to it.
+				The <span class="Bolded">draw</span> statement is used to display an object of type point, line, circle, or polygon, in the drawing area.  An object must be completely defined before it can be drawn.  The format of the draw statement is <span class="Ital">draw(OBJECT) </span>where <span class="Ital">OBJECT</span> is a <span class="Underlined">variable</span> of type point, line, circle, or polygon.  Constants cannot be directly drawn; neither can distances, colors, and counters.  For example, <span class="Subfigure">draw(l2)</span> would be a valid draw statement as long as <span class="Ital">l2</span> had been declared as a line variable and an appropriate value had been assigned to it.
 			</p>
 			
 			<p>
-				The <span class="Bolded">erase</span> statement is used to erase or “undraw” an object.  Essentially, erase is just a draw statement where the object is drawn in white.  Since white is the background color of the drawing area used in the Watson Graphics Lab, an object that has been previously drawn appears to be “erased” by this statement.  Normally, an object is drawn before being erased, although technically in WGL it is not an error to erase an object before it has been drawn.  All that is required is that the object be completely defined.  The format of the erase statement is <span class="Ital">erase(OBJECT)</span> where <span class="Ital">OBJECT</span> is a variable of type point, line, circle, or polygon.  For example, <span class="T13">erase(l2)</span> would be a valid erase statement as long as <span class="Ital">l2</span> had been declared as a line variable and an appropriate value had been assigned to it.  Distances, colors, and counters cannot be erased, since they cannot be drawn.
+				The <span class="Bolded">erase</span> statement is used to erase or “undraw” an object.  Essentially, erase is just a draw statement where the object is drawn in white.  Since white is the background color of the drawing area used in the Watson Graphics Lab, an object that has been previously drawn appears to be “erased” by this statement.  Normally, an object is drawn before being erased, although technically in WGL it is not an error to erase an object before it has been drawn.  All that is required is that the object be completely defined.  The format of the erase statement is <span class="Ital">erase(OBJECT)</span> where <span class="Ital">OBJECT</span> is a variable of type point, line, circle, or polygon.  For example, <span class="Subfigure">erase(l2)</span> would be a valid erase statement as long as <span class="Ital">l2</span> had been declared as a line variable and an appropriate value had been assigned to it.  Distances, colors, and counters cannot be erased, since they cannot be drawn.
 			</p>
 			
 			<p>
-				The <span class="Bolded">increment</span> statement is a special type of assignment statement that increases the value held in a distance variable by some constant amount.  The format of the increment statement is <span class="Ital">DISTANCEVARIABLE = DISTANCEVARIABLE + AMOUNT</span> where <span class="Ital">DISTANCEVARIABLE</span> is replaced by a distance variable and <span class="Ital">AMOUNT</span> is replaced by a distance constant.  For example, <span class="T13">d1 = d1 + 5</span> increases the value stored in <span class="Ital">d1</span> by 5 (e.g., if <span class="Ital">d1</span> had a value of 25 before this statement was executed, it would have a value of 30 afterwards since 25 + 5 equals 30).  Note that only distance variables can be incremented.  Points, lines, circles, polygons, counters, and colors cannot be incremented.
+				The <span class="Bolded">increment</span> statement is a special type of assignment statement that increases the value held in a distance variable by some constant amount.  The format of the increment statement is <span class="Ital">DISTANCEVARIABLE = DISTANCEVARIABLE + AMOUNT</span> where <span class="Ital">DISTANCEVARIABLE</span> is replaced by a distance variable and <span class="Ital">AMOUNT</span> is replaced by a distance constant.  For example, <span class="Subfigure">d1 = d1 + 5</span> increases the value stored in <span class="Ital">d1</span> by 5 (e.g., if <span class="Ital">d1</span> had a value of 25 before this statement was executed, it would have a value of 30 afterwards since 25 + 5 equals 30).  Note that only distance variables can be incremented.  Points, lines, circles, polygons, counters, and colors cannot be incremented.
 			</p>
 			
 			<p>
-				The <span class="Bolded">decrement</span> statement is also a special type of assignment statement similar to the increment statement, except that instead of increasing the value held in a distance variable, it decreases that value by some constant amount.  The format of the decrement statement is <span class="Ital">DISTANCEVARIABLE = DISTANCEVARIABLE – AMOUNT</span> where <span class="Ital">DISTANCEVARIABLE</span> is replaced by a distance variable and <span class="Ital">AMOUNT</span> is replaced by a distance constant.  For example, <span class="T13">d1 = d1 - 5</span> decreases the value stored in <span class="Ital">d1</span> by 5 (e.g., if <span class="Ital">d1</span> had a value of 25 before this statement was executed, it would have a value of 20 afterwards since 25 – 5 equals 20).  As with increment, only distance variables may be decremented.  Points, lines, circles, polygons, counters, and colors cannot be decremented.
+				The <span class="Bolded">decrement</span> statement is also a special type of assignment statement similar to the increment statement, except that instead of increasing the value held in a distance variable, it decreases that value by some constant amount.  The format of the decrement statement is <span class="Ital">DISTANCEVARIABLE = DISTANCEVARIABLE – AMOUNT</span> where <span class="Ital">DISTANCEVARIABLE</span> is replaced by a distance variable and <span class="Ital">AMOUNT</span> is replaced by a distance constant.  For example, <span class="Subfigure">d1 = d1 - 5</span> decreases the value stored in <span class="Ital">d1</span> by 5 (e.g., if <span class="Ital">d1</span> had a value of 25 before this statement was executed, it would have a value of 20 afterwards since 25 – 5 equals 20).  As with increment, only distance variables may be decremented.  Points, lines, circles, polygons, counters, and colors cannot be decremented.
 			</p>
 			
 			<p>
 				The <span class="Bolded">loop</span> statement is used to repeat a group of statements a fixed number of times.  Loops are useful for drawing a series of similar objects and for creating simple animation sequences.  The format of the loop statement is:
 			</p>
 			
+						
 			<ul class="Blockcenter">
 				<span class="Ital"> repeat </span>COUNTER<span class="Ital"> times</span><br />
 			
@@ -110,10 +112,12 @@
 			
 				<span class="Ital"> endloop</span><br />
 			</ul>
-			
+			<br/>
+
 			<p>
 				where <span class="Ital">COUNTER</span> is replaced by a positive integer constant in the range 1 to 99 and <span class="Ital">&lt;one or more statements&gt;</span> is replaced by some number of WGL statements.  The loop statement works by repeating the group of statements between <span class="Ital">loop</span> and <span class="Ital">endloop</span><span class="Ital">COUNTER</span> number of times.  For example, given the following loop:
 			</p>
+			
 			
 			<ul class="Blockcenter">
 				<span class="Subfigure">repeat 5 times</span><br/>
@@ -130,7 +134,8 @@
 				
 				<span class="Subfigure">endloop</span>
 			</ul>
-			
+			<br/>
+
 			<p>
 				the three statements: assignment, draw, and increment; will be repeated 5 times.  The effect of this loop is to draw a series of five concentric circles centered at <span class="Ital">(100, 100)</span>.
 			</p>
@@ -150,6 +155,19 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;
+				
+				$(document).ready(function() {
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("graphics", spans);
+					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					pageObj = getArrowPathsByPage("graphicsLanguage2");
+
+				});	
+			</script>
 
 			<div>
 

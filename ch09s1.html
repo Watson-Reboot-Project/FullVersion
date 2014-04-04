@@ -9,7 +9,16 @@
 
 		<title>Watson</title>
 
-		<link rel='stylesheet' href='css/generalmedia.css'>
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -18,102 +27,63 @@
 	</head>
 
 	<body>
-		<div id="wrapper">
+		<div id="wrapper" class="page-wrapper">
+			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="header">
-				<a href="index.html"><h3 style="margin:0; color: white;">CHAPTER 9:FUNCTIONAL, LOGICAL, AND OBJECT-ORIENTED PROGRAMMING</h3></a>
-			</div>
-			<!-- End header -->
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
 
-			<!-- Navbar division -->
-
-			<div id="nav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 25%"><a href="labs.html">LABS</a></td>
-
-						<td style="width: 25%"><a href="documentation.html">DOCUMENTATION</a></td>
-
-						<td style="width: 25%"><a href="tutorials.html">TUTORIALS</a></td>
-
-						<td style="width: 25%"><a href="about.html">ABOUT</a></td>
-
-					</tr>
-
-				</table>
-
-			</div><!-- End nav -->
-
-			<div id="nav">
-				<table style="width: 100%" cellspacing="2" cellpadding="2">
-
-					<tr style="background-color: #E31B23;">
-
-						<td style="width: 15%"><a href="chapters.html">CHAPTERS</a></td>
-
-						<td style="width: 5%"><a href="ch01.html">01</a></td>
-
-						<td style="width: 5%"><a href="ch02.html">02</a></td>
-
-						<td style="width: 5%"><a href="ch03.html">03</a></td>
-
-						<td style="width: 5%"><a href="ch04.html">04</a></td>
-
-						<td style="width: 5%"><a href="ch05.html">05</a></td>
-
-						<td style="width: 5%"><a href="ch06.html">06</a></td>
-
-						<td style="width: 5%"><a href="ch07.html">07</a></td>
-
-						<td style="width: 5%"><a href="ch08.html">08</a></td>
-
-						<td style="width: 5%"><a href="ch09.html">09</a></td>
-
-						<td style="width: 5%"><a href="ch10.html">10</a></td>
-
-						<td style="width: 5%"><a href="ch11.html">11</a></td>
-
-						<td style="width: 5%"><a href="ch12.html">12</a></td>
-
-						<td style="width: 5%"><a href="ch13.html">13</a></td>
-
-						<td style="width: 5%"><a href="ch14.html">14</a></td>
-
-						<td style="width: 5%"><a href="ch15.html">15</a></td>
-
-					</tr>
-
-				</table>
-
-			</div>
+			<!--Floating nav -->
+		      <!-- Previous -->
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href="ch09.html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+		
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch09s2.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">
-				Chapter 9  Functional, Logical, and Object-Oriented Programming
-			</p>
-
+			
 			<p class="Section">
 				9.1  Introduction
 			</p>
 
 			<p>
-				This chapter continues our study of programming by introducing three different approaches to the problem solving process.  Section 9.2 discusses functional programming, in which computer programs are viewed as “functions” to be computed, rather than as sequences of commands to be executed. Section 9.3 introduces declarative programming, which views programs as a collection of declarations – true statements of two types: facts and rules. Section 9.4 discusses object-oriented programming, in which programs are viewed as a collection of objects.  Coordinated action is carried out by the exchange of messages between objects.
+				This chapter continues our study of programming by introducing three different approaches to the problem solving process.  Section 9.2 discusses functional programming, in which computer programs are viewed as “functions” to be computed, rather than as sequences of commands to be executed.  Section 9.3 introduces declarative programming, which views programs as a collection of declarations – true statements of two types: facts and rules.  Section 9.4 discusses object-oriented programming, in which programs are viewed as a collection of objects.  Coordinated action is carried out by the exchange of messages between objects.
 			</p>
 
 			<p>
-				Imperative programming (discussed in the previous chapter), functional programming, and declarative programming are each considered to be distinct programming paradigms. Object-oriented constructs and behaviors are often viewed as higher-level organizational attributes that can be incorporated into each of the three basic paradigms, rather than as a separate programming paradigm unto itself.
+				Imperative programming (discussed in the previous chapter), functional programming, and declarative programming are each considered to be distinct programming paradigms.  Object-oriented constructs and behaviors are often viewed as higher-level organizational attributes that can be incorporated into each of the three basic paradigms, rather than as a separate programming paradigm unto itself.
 			</p>
 
 			<p>
-				Over the past decade, object-oriented concepts have revolutionized programming languages. In fact, the vast majority of widely used programming languages are now object-oriented, including C++, Java, and Visual Basic. While functional and logical programming have not made nearly as deep a mark on mainstream programming as object-oriented programming, these two paradigms are used in various sub-disciplines of computer science, such as artificial intelligence. Despite their rather limited use at the present time, study of functional and logical programming will help you to see that the imperative paradigm is but one approach to writing computer programs.
+				Over the past decade, object-oriented concepts have revolutionized programming languages.  In fact, the vast majority of widely used programming languages are now object-oriented, including C++, Java, and Visual Basic.   While functional and logical programming have not made nearly as deep a mark on mainstream programming as object-oriented programming, these two paradigms are used in various sub-disciplines of computer science, such as artificial intelligence.  Despite their rather limited use at the present time, study of functional and logical programming will help you to see that the imperative paradigm is but one approach to writing computer programs.
 			</p>
-
 			
-			<!-- End Main content -->
+			<!-- End main content -->
+			<hr/>
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
 			<nav>
 				<p>
 					--
@@ -125,11 +95,6 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
-
-			<div>
-
-			</div>
-
 		</div>
 	</body>
 </html>

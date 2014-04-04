@@ -31,7 +31,7 @@
 	</head>
 
 	<body>
-		<div class="page-wrapper" id="wrapper">
+		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
@@ -78,6 +78,8 @@
 				<li><span class="Subfigure">Endloop</span></li>
 			</ul>
 			
+			<br/>
+			
 			<p>
 				In these WGL “repeat” loops, <span class="Italicized">counter</span> is a positive integer constant in the range 1 to 99 that specifies the number of times the <span class="Italicized">statements</span> are to be executed. Recall that using this simple looping construct we created drawings and animations, and explored the idea of solving problems by decomposing them into repeatable “generic” steps.
 			</p>
@@ -103,6 +105,7 @@
 				<li><span class="Subfigure">}</span></li>
 			</ul>
 
+			<br/>
 
 			<p>
 				“While” loops work by first evaluating their <span class="Italicized">Boolean_expression</span>. If the value of the expression is false, program control immediately moves to the first statement following the closing bracket: &nbsp; “}”. In this case the <span class="Italicized">statements</span> in the loop body are skipped entirely. If, on the other hand, the expression evaluates to true, then the sequence of <span class="Italicized">statements</span> in the loop body is executed once. After performing the <span class="Italicized">statements</span>, control returns to the top of the loop where the <span class="Italicized">Boolean_expression</span> is once again evaluated. If the expression is still true, the <span class="Italicized">statements</span> of the loop are executed a second time. Otherwise, execution of the loop terminates and control passes to the statement following “}”. This process repeats itself until the <span class="Italicized">Boolean_expression</span> eventually becomes false and the loop exits.
@@ -130,10 +133,6 @@
 				At this point the program encounters the “while” loop, and the value that was entered by the user is compared to 0. If this value is greater than or equal to 0 the statements that form the body of the loop will be executed, if the value is less than 0 the loop will exit. Given 100 as the value of <span class="Subfigure">newValue</span>, the loop statements are executed.
 			</p>
 			<!-- Manual fig 8.18
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
 
 			<p class="P10">
 				Program definition:
@@ -164,7 +163,7 @@
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span> while (newValue &ge; 0)
+				&nbsp; </span> while (newValue >= 0)
 			</p>
 
 			<p class="Subfigure">
@@ -249,11 +248,11 @@
 			</p>
 
 			<p>
-				In the run of the program shown in Figure 8.18 the user enters a –1 at this point. The user’s input is stored into <span class="Subfigure">newValue</span> and control again returns to the top of the loop. Since the Boolean expression, “<span class="Subfigure">newValue &ge; 0</span>”, would now evaluate to false, execution of the loop terminates and control moves to the “write” and “writeln” statements following the loop. These statements report the final total of 150, and program execution halts.
+				In the run of the program shown in Figure 8.18 the user enters a –1 at this point. The user’s input is stored into <span class="Subfigure">newValue</span> and control again returns to the top of the loop. Since the Boolean expression, “<span class="Subfigure">newValue >= 0</span>”, would now evaluate to false, execution of the loop terminates and control moves to the “write” and “writeln” statements following the loop. These statements report the final total of 150, and program execution halts.
 			</p>
 
 			<p>
-				It is interesting to note that although the program instructs users to enter “–1 to quit”, the condition that controls the loop is actually “<span class="Subfigure">newValue &ge; 0</span>” which will be false for any negative number. Thus, the loop will actually terminate whenever the user enters any number less than zero, such as –5.
+				It is interesting to note that although the program instructs users to enter “–1 to quit”, the condition that controls the loop is actually “<span class="Subfigure">newValue >= 0</span>” which will be false for any negative number. Thus, the loop will actually terminate whenever the user enters any number less than zero, such as –5.
 			</p>
 
 			<p>
@@ -264,10 +263,6 @@
 
 			<p class="Bolded">
 				Program definition:
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="P48">
@@ -303,7 +298,7 @@
 			</p>
 
 			<p class="P48">
-				&nbsp; </span>while (counter &le; n)
+				&nbsp; </span>while (counter <= n)
 			</p>
 
 			<p class="P48">
@@ -390,10 +385,6 @@
 			</p>
 
 			<p>
-				&nbsp;
-			</p>
-
-			<p>
 				One way around this issue, is to modify the program of Figure 8.18 so that it first asks the user how many numbers are to be added together, and then uses that number to control how many times the main loop is to repeated. Such a program, which computes the sum of N numbers (positive, negative, or zero) using a “while” loop is given in Figure 8.19.
 			</p>
 
@@ -437,10 +428,6 @@
 				The general format of the “for” loop is:
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
-
 			<ul class="Blockcenter">
 				<li>
 					<span class="Subfigure">for (</span><span class="Italicized">variable</span><span class="Subfigure"> = </span><span class="Italicized">initialValue</span><span class="Subfigure">; &nbsp; </span><span class="Italicized">variable</span><span class="Italicized">&nbsp; relationalOperator</span><span class="Italicized">finalValue</span><span class="Subfigure">; &nbsp; </span><span class="Italicized">&nbsp; variable</span><span class="Subfigure">++</span><span class="Subfigure">)</span>
@@ -461,10 +448,8 @@
 				</li>
 			</ul>
 			
-			<p>
-				&nbsp;
-			</p>
-				
+			<br/>
+							
 			<p>
 				“For” loops work in the following way. First a numeric “loop variable”, indicated above by <span class="Italicized">variable</span>, is initialized to the value of <span class="Italicized">initialValue</span>. The value of the loop variable is then compared to the value of <span class="Italicized">finalValue</span> using the <span class="Italicized">relationalOperator</span>. If the expression <span class="Italicized">variable relationalOperator finalValue</span> is true, the <span class="Italicized">statements</span> of the loop are executed. However, if the result of the expression is false, program control immediately moves to the first statement following the loop’s closing bracket, “}”skipping over the <span class="Italicized">statements</span> in this case. Assuming the expression is true, after executing the <span class="Italicized">statements</span>, the loop variable will be automatically incremented by one and control will return to the top of the loop where the value of the loop variable will once again be compared to the value of <span class="Italicized">finalValue</span>.
 			</p>
@@ -474,7 +459,7 @@
 			</p>
 
 			<p>
-				The behavior of the “for” loop is illustrated in Figure 8.20. While certainly not always the case, the <span class="Italicized">initialValue</span> is often set at 1 and the <span class="Italicized">relationalOperator</span> is set to “&le;”. Under these circumstances, <span class="Italicized">finalValue</span> would specify the number of times the loop would be executed, while <span class="Italicized">variable</span> counts off each iteration of the loop: 1, 2, 3, … <span class="Italicized">finalValue</span>. Thus, during loop execution, <span class="Italicized">variable</span> will always indicate which iteration is currently being processed.
+				The behavior of the “for” loop is illustrated in Figure 8.20. While certainly not always the case, the <span class="Italicized">initialValue</span> is often set at 1 and the <span class="Italicized">relationalOperator</span> is set to “<=”. Under these circumstances, <span class="Italicized">finalValue</span> would specify the number of times the loop would be executed, while <span class="Italicized">variable</span> counts off each iteration of the loop: 1, 2, 3, … <span class="Italicized">finalValue</span>. Thus, during loop execution, <span class="Italicized">variable</span> will always indicate which iteration is currently being processed.
 			</p>
 
 			<img src="Images/fig8-20.png" alt="An illustration of the behavior of the while loop iteration construct" class="ImageTall">
@@ -483,34 +468,10 @@
 				Figure 8.20: An illustration of the behavior of the “For” loop iteration construct
 			</p>
 
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
-			<p class="Figure">
+			<p>
 				Figure 8.21 illustrates a “for” loop in action. The program of Figure 8.21 is simply the program of Figure 8.19 rewritten to use a “for” instead of a “while”. Notice that each of the statements marked with arrows in Figure 8.19 have been “collapsed” into the “for” construct in Figure 8.21. Namely, it is no longer necessary to initialize <span class="Subfigure">counter</span> to 1 in a separate statement prior to entering the loop, nor is it necessary to increment <span class="Subfigure">counter</span> by 1 at the bottom of the loop. These actions are now performed automatically by the “for” loop.
 			</p>
 			<!-- Manual fig 8.21
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
 
 			<p class="P48">
 				&nbsp; </span> var n; // Numeric
@@ -541,7 +502,7 @@
 			</p>
 
 			<p class="P48">
-				&nbsp; </span> for (counter = 1; counter &le; n; counter++)
+				&nbsp; </span> for (counter = 1; counter <= n; counter++)
 			</p>
 
 			<p class="P48">
@@ -575,10 +536,6 @@
 			<p class="P48">
 				&nbsp; </span> document.writeln(total);
 			</p>
-
-			<p>
-				&nbsp;
-			</p>
 			-->
 			<div id="fig21Div" class="divness"></div>
 			<p class="Figure">
@@ -590,15 +547,7 @@
 			</p>
 
 			<p>
-				&nbsp;
-			</p>
-
-			<p>
-				“For” loops eliminate a common source of errors. When implementing a count-based loop using a “while” construct, as in the program of Figure 8.19, the programmer must be careful to ensure that the last action in the body of the loop is an increment of the loop variable. If the programmer accidentally omits this increment statement, the condition controlling the loop will <span class="Ital">never</span> become false and thus the loop will never terminate. In the program of Figure 8.19, <span class="Subfigure">counter</span> would always be 1, so if the test <span class="Subfigure">counter &le; n</span> &nbsp;  &nbsp; was true when the loop was first entered, it will always be true – and the loop will never exit.
-			</p>
-
-			<p>
-				&nbsp;
+				“For” loops eliminate a common source of errors. When implementing a count-based loop using a “while” construct, as in the program of Figure 8.19, the programmer must be careful to ensure that the last action in the body of the loop is an increment of the loop variable. If the programmer accidentally omits this increment statement, the condition controlling the loop will <span class="Ital">never</span> become false and thus the loop will never terminate. In the program of Figure 8.19, <span class="Subfigure">counter</span> would always be 1, so if the test <span class="Subfigure">counter <= n</span> &nbsp;  &nbsp; was true when the loop was first entered, it will always be true – and the loop will never exit.
 			</p>
 
 			<p>
@@ -612,10 +561,6 @@
 
 			<p class="P10">
 				Program definition:
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="Subfigure">
@@ -638,10 +583,6 @@
 				&nbsp; </span> var average; // Numeric
 			</p>
 
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
 			<p>
 				<span class="T31">&nbsp; </span><span class="Subfigure">numberOfGrades = parseFloat(prompt( “</span><span class="T25">Enter the number of grades.</span><span class="Subfigure">”, 0));
 			</p>
@@ -651,7 +592,7 @@
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span> for (i = 1; i &le; numberOfGrades; i++)
+				&nbsp; </span> for (i = 1; i <= numberOfGrades; i++)
 			</p>
 
 			<p class="Subfigure">
@@ -724,14 +665,6 @@
 
 			<p class="Subfigure">
 				&nbsp; </span> }
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="Bolded">
@@ -971,10 +904,6 @@
 			</p>
 
 			<p>
-				&nbsp;
-			</p>
-
-			<p>
 				Because “for” loops can always be replaced with “while” loops, but not all “while” loops can be replaced with “for” loops, we say that the “while” loop is “more general” than the “for”.
 			</p>
 
@@ -996,10 +925,6 @@
 
 			<p>
 				One final point worth making about the program of Figure 8.22 is that it will work correctly even if the user accidentally enters a negative value for <span class="Subfigure">numberOfGrades</span>. In this case, the statements in the body of the loop will be skipped and the “If” condition will be false, so the message “The average of the grades is undefined.” will be generated.
-			</p>
-
-			<p>
-				&nbsp;
 			</p>
 
 			<p>
@@ -1031,7 +956,7 @@
 			</p>
 
 			<p>
-				where <span class="Subfigure">i</span> &nbsp; and <span class="Subfigure">j</span> represent the values of the respective variables and <span class="Italicized">x</span> is their product. Notice from the partial listing of the output in Figure 8.23 that <span class="Subfigure">j</span> runs through its entire range, from 1 to 12, before <span class="Subfigure">i</span> is incremented by 1. This behavior is easy to understand when you think about the structure of the program.
+				where <span class="Subfigure">i</span> and <span class="Subfigure">j</span> represent the values of the respective variables and <span class="Italicized">x</span> is their product. Notice from the partial listing of the output in Figure 8.23 that <span class="Subfigure">j</span> runs through its entire range, from 1 to 12, before <span class="Subfigure">i</span> is incremented by 1. This behavior is easy to understand when you think about the structure of the program.
 			</p>
 
 			<p>
@@ -1060,7 +985,7 @@
 			</p>
 
 			<p class="P123">
-				&nbsp;  &nbsp; </span>for (i = 1; i &le; 12; i++)
+				&nbsp;  &nbsp; </span>for (i = 1; i <= 12; i++)
 			</p>
 
 			<p class="P123">
@@ -1072,7 +997,7 @@
 			</p>
 
 			<p class="P123">
-				&nbsp;  for (j = 1; j &le; 12; j++)
+				&nbsp;  for (j = 1; j <= 12; j++)
 			</p>
 
 			<h6 class="Heading_20_8">&nbsp;  &nbsp;  &nbsp;  &nbsp;  {</h6>
@@ -1219,16 +1144,8 @@
 				Figure 8.23: &nbsp; A program that prints the multiplication table using nested “For” loops.
 			</p>
 
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
 			<p>
 				The inner loop begins by initializing <span class="Subfigure">j</span> to 1. Since 1 is not greater than 12, the first pass through the inner loop begins. The first statement of this loop computes the <span class="Subfigure">product</span> of <span class="Subfigure">i</span> and <span class="Subfigure">j</span>. Since they are both 1, their product is 1. Next, the following four items are printed on a single line: the current value of <span class="Subfigure">i</span>, the string “ times ”, the current value of <span class="Subfigure">j</span>, and the string “ equals ”. These are followed by the current value of <span class="Subfigure">product</span> and a new line character. Thus the string “1 times 1 equals 1” is generated. The first pass of the inner loop ends with <span class="Subfigure">j</span> being incremented from 1 to 2 and control returning to the top of that loop.
-			</p>
-
-			<p>
-				&nbsp;
 			</p>
 
 			<p>
@@ -1243,12 +1160,8 @@
 				The current value of <span class="Subfigure">i</span>, 2, is not greater than 12, so the second pass through the outer loop begins. The first statement generates a blank line, as it did during the first pass through the loop. Next, the inner loop is encountered and its execution starts afresh. <span class="Subfigure">j</span> is initialized to 1. Since that value is less than 12 the statements of the loop are executed and the string “2 times 1 equals 2” is printed. Subsequent passes through the inner loop produce “2 times 2 equals 4”, “2 times 3 equals 6”, etc. Eventually, of course, the inner loop will again complete and the third pass of the outer loop can begin.
 			</p>
 
-			<p class="Subfigure">
-				&nbsp;
-			</p>
-
 			<p>
-				This process repeats itself until all 144 entries in the multiplication table, from 1 <span class="T59"></span> 1 to 12 <span class="T59"></span> 12, are computed and printed.
+				This process repeats itself until all 144 entries in the multiplication table, from 1 &times; 1 to 12 &times; 12, are computed and printed.
 			</p>
 
 			<p>
@@ -1294,10 +1207,6 @@
 
 			<p class="Subfigure">
 				var count; // Numeric
-			</p>
-
-			<p class="Subfigure">
-				&nbsp;
 			</p>
 
 			<p class="Subfigure">
@@ -1386,7 +1295,7 @@
 					<li><span class="Subfigure">{</span></li>
 					<ul class="Subblockcenter">
 						<li><span class="Subfigure">x = 5 - i;</span></li>
-						<li><span class="Subfigure">for (j = 1; j &le; x; j++)</span></li>
+						<li><span class="Subfigure">for (j = 1; j <= x; j++)</span></li>
 						<li><span class="Subfigure">{</span></li>
 						<ul class="Subblockcenter">
 							<li><span class="Subfigure">document.write(“really ”);</span></li>
@@ -1400,7 +1309,7 @@
 					<ul class="Subblockcenter">
 						<li><span class="Subfigure">document.write(“is ”);</span></li>
 						<li><span class="Subfigure"> x = i - 5;</span></li>
-						<li><span class="Subfigure">for (j = 1; j &le; x; j++)</span></li>
+						<li><span class="Subfigure">for (j = 1; j <= x; j++)</span></li>
 						<li><span class="Subfigure">{</span></li>
 						<ul class="Subblockcenter">
 							<li><span class="Subfigure">document.write(“way ”);</span></li>
@@ -1441,7 +1350,7 @@
 				<br/>
 				<li><span class="Subfigure">i = 1;</span></li>
 				<li><span class="Subfigure">n = 0;</span></li>
-				<li><span class="Subfigure">while (i &le; 5)</span></li>
+				<li><span class="Subfigure">while (i <= 5)</span></li>
 				<li><span class="Subfigure">{</span></li>
 				<ul class="Subblockcenter">
 					<li><span class="Subfigure">n = n + i;</span></li>
