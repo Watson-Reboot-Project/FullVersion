@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+		<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <!-- Java Script files -->
+	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/master.js"></script>
+		<script type="text/javascript" src="js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="js/Numbering.js"></script>
+		<script type="text/javascript" src="js/Miscellaneous.js"></script>
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper" class="page-wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+
+			<!-- Chapter Index listing -->
+   			<div id="ContentAreaSections" class="well bold-me"></div>
+   			<!-- End Chapter Index listing -->
+
+			<!--Floating nav -->
+		      <!-- Previous -->
+			  <!--
+		      <style>
+		        div.floating-previous
+		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-previous">
+		        <a href=".html">
+		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+		        </a>
+		      </div>
+			-->
+		      <!-- Next -->
+		      <style>
+		        div.floating-next
+		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+		      </style>
+		      <div class="floating-next">
+		        <a href="ch11s1.html">
+		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+		        </a>
+		      </div>
+		    <!-- End floating nav -->
+			<!-- End nav -->
+
+			<!-- Main content -->
+
+			
+	
+			<script>
+				var pageObj;
+				var chapObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("assembly");
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("assembly", spans);
+					// once the document has loaded, set figure numbers and arrow paths
+					pageObj = getArrowPathsByPage("assembly");
+					chapObj = getArrowPathsByChapter("assembly");
+
+				});	
+			</script>
+
+			
+
+			
+
+
+			<!-- <a href="ch11.html"><p class="Section">Chapter 11: Assembly Language and Computer Architecture</p></a>
+			<ul>
+				<a href="ch11s1.html"><li>11.1 Introduction</li></a>
+				<a href="ch11s2.html"><li>11.2 Register-based Machines</li></a>
+				<a href="ch11s3.html"><li>11.3 Assembly language programming</li></a>
+					<ul>
+						<a href="ch11s3p1.html"><li>11.3.1 An overview of the Watson Assembly Language</li></a>
+						<a href="ch11s3p2.html"><li>11.3.2 Variables, assignment, and sequence</li></a>
+						<a href="ch11s3p3.html"><li>11.3.3 Implementing selection constructs in assembly language</li></a>
+						<a href="ch11s3p4.html"><li>11.3.4 Implementing repetition constructs in assembly language</li></a> 
+						<a href="ch11s3p5.html"><li>11.3.5 Array processing in assembly language</li></a> 
+					</ul>
+				<a href="ch11s4.html"><li>11.4 Data representation at the machine level</li></a> 
+					<ul>
+						<a href="ch11s4p1.html"><li>11.4.1 Representing numbers at the machine level</li></a>
+						<ul>
+							<a href="ch11s4p1a.html"><li>11.4.1.1 Number systems</li></a>
+							<a href="ch11s4p1b.html"><li>11.4.1.2 Numeric bases and base conversions</li></a>
+							<a href="ch11s4p1c.html"><li>11.4.1.3 Binary arithmetic </li></a>
+							<a href="ch11s4p1d.html"><li>11.4.1.4 Signed numbers</li></a>
+							<a href="ch11s4p1e.html"><li>11.4.1.5 Floating point numbers</li></a>
+						</ul>
+						<a href="ch11s4p2.html"><li>11.4.2 Characters</li></a>
+						<a href="ch11s4p3.html"><li>11.4.3 Images</li></a>
+					</ul>
+				<a href="ch11s5.html"><li>11.5 Machine language</li></a>
+					<ul>
+						<a href="ch11s5p1.html"><li>11.5.1 The Watson Virtual Machine instruction set</li></a>
+						<a href="ch11s5p2.html"><li>11.5.2 Assembly language to machine language translation</li></a>
+						<a href="ch11s5p3.html"><li>11.5.3 Program execution</li></a>
+					</ul>
+			</ul> -->
+			
+			<!-- End main content -->	
+			<hr />
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Watson</title>
+
+			<!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
+	    <link href = "css/bootstrap.css" rel = "stylesheet">
+	    <link href = "css/styles.css" rel = "stylesheet">
+	    <link href = "css/generalmedia.css" rel = "stylesheet">
+    <!-- Java Script files -->
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="js/Numbering.js"></script>
+		<script type="text/javascript" src="js/Miscellaneous.js"></script> 
+		<script type="text/javascript" src="js/master.js"></script> 
+	    
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div id="wrapper" class="page-wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
+
+			<div id="includedContent"></div>
+              <script type="text/javascript" src="js/nav.js"></script>
+			<!-- End nav -->
+			
+			<div id="ContentAreaSections" class="well bold-me"></div>
+			<!-- End Chapter Index listing -->
+			
+			<!--Floating nav -->
+			<!-- Previous -->
+			<style>
+			div.floating-previous
+			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
+			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-previous">
+				<a href="#" onclick="prevArrowPage(pageObj)">
+				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
+				</a>
+			</div> 
+				
+			<!-- Next -->
+			<style>
+			div.floating-next
+			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
+			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+			</style>
+			<div class="floating-next">
+				<a href="#" onclick="nextArrowPage(pageObj)">
+				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
+				</a>
+			</div>
+			<!-- End floating nav -->
+			<!-- Main content -->
+			<!--
+			<ul>
+				<a href="ch04s1.html"><li>4.1 Introduction</li></a>
+				<a href="ch04s2.html"><li>4.2 Issues of interest to the general public</li></a>
+				<ul>
+					<a href="ch04s2p1.html"><li>4.2.1 Security and privacy</li></a>
+					<ul>
+						<a href="ch04s2p1a.html"><li>4.2.1.1 Protecting online accounts from unauthorized access</li></a>
+						<a href="ch04s2p1b.html"><li>4.2.1.2 The encryption debate</li></a>
+						<a href="ch04s2p1c.html"><li>4.2.1.3 Online accounts, email, and privacy</li></a>
+						<a href="ch04s2p1d.html"><li>4.2.1.4 The marketing of consumer profiles</li></a>
+					</ul>
+					<a href="ch04s2p2.html"><li>4.2.2 Freedom of expression</li></a>
+					<ul>
+						<a href="ch04s2p2a.html"><li>4.2.2.1 Traditional media and the Internet</li></a>
+						<a href="ch04s2p2b.html"><li>4.2.2.2 Legal protections and constraints</li></a>
+					</ul>
+					<a href="ch04s2p3.html"><li>4.2.3 Intellectual property</li></a>
+					<ul>
+						<a href="ch04s2p3a.html"><li>4.2.3.1 The history of U.S. copyright law</li></a>
+						<a href="ch04s2p3b.html"><li>4.2.3.2 The doctrine of “fair use"</li></a>
+						<a href="ch04s2p3c.html"><li>4.2.3.3 The Digital Millennium Copyright Act</li></a>
+						<a href="ch04s2p3d.html"><li>4.2.3.4 Whatever happened to the online library?</li></a>
+					</ul>
+					<a href="ch04s2p4.html"><li>4.2.4 Criminal behavior</li></a>
+					<ul>
+						<a href="ch04s2p4a.html"><li>4.2.4.1 Hacking, Trojan Horses, and viruses</li></a>
+						<a href="ch04s2p4b.html"><li>4.2.4.2 Software Piracy</li></a>
+						<a href="ch04s2p4c.html"><li>4.2.4.3 Music and video piracy</li></a>
+					</ul>
+					<a href="ch04s2p5.html"><li>4.2.5 A global perspective</li></a>
+				</ul>
+				<a href="ch04s3.html"><li>4.3 Issues of interest to computing professionals	</li></a>
+				<ul>
+					<a href="ch04s3p1.html"><li>4.3.1 Accountability, liability, and professional licensing</li></a>
+					<a href="ch04s3p2.html"><li>4.3.2 ACM Code of Conduct</li></a>
+				</ul>
+			</ul>
+			-->
+			
+			<!-- Previous and Next Chapter buttons -->
+			<br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-sm-6 col-xs-12">	
+						<a href="#" onclick="prevArrowPage(chapObj)">
+							<button class="btn btn-sm btn-blue" type="button"><i class="fa fa-step-backward"></i> Previous Chapter</button>
+						</a>
+					</div>
+					<div class="col-md-5 col-sm-6 col-xs-12 pull-right">
+						<a href="#" onclick="nextArrowPage(chapObj)">	
+							<button class="btn btn-sm btn-blue" type="button">Next Chapter <i class="fa fa-step-forward"></i></button>
+						</a>	
+					</div>					
+				</div> 
+			</div>
+
+			<script>
+				var pageObj;
+				var chapObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("ethical");
+					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
+					populateFigureDictionary("ethical", spans);
+					// once the document has loaded, set figure numbers and arrow paths
+					pageObj = getArrowPathsByPage("ethical");
+					chapObj = getArrowPathsByChapter("ethical");
+
+				});	
+			</script>
+			
+			<!-- End main content -->
+			<hr />
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
+			<nav>
+				<p>
+					--
+				</p>
+				<p>
+					<a href="index.html">Home</a>
+				</p>
+				<p>
+					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,41 +1,94 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Digital Logic Play</title>
-  <style>
-	#tableDiv { position: absolute; top: 5px; right: 0px; margin-right: 50px; }
-	td { padding-left: 10px; padding-right: 10px }
-  </style>
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-	<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-</head>
-	<body oncontextmenu="return false;">
-		
-		<script src="js/SB_Controller.js"></script>
-		<script src="js/SB_AndGate.js"></script>
-		<script src="js/SB_OrGate.js"></script>
-		<script src="js/SB_NotGate.js"></script>
-		<script src="js/SB_Connector.js"></script>
-		<script src="js/SB_InputNode.js"></script>
-		<script src="js/SB_OutputNode.js"></script>
-		<script src="js/SB_PopupMenu.js"></script>
-		<script src="js/SB_Exercises.js"></script>
-		<script src="js/SB_TruthTable.js"></script>
-		<script src="js/SB_Setup.js"></script>
-		<script src="js/DigitalLogicsLab.js"></script>
-		
-		<!-- <div id="tableDiv"> -->
-		<div id="container1">
+<!DOCTYPE html>
+<!-- vim: set sts=2 sw=2 tw=0 : -->
 
-		</div>
-		<script>
-			var lab = new DigitalLogicsLab("container1");
-			
-			
-			
-		</script>
-	</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Watson</title>
+
+      <!-- Java Script files -->
+      <script type="text/javascript" src="lib/js/jquery-1.10.2.min.js"></script>      
+      <script type="text/javascript" src="lib/js/nav.js"></script>
+      <script type="text/javascript" src="lib/js/master.js"></script>
+      <script type="text/javascript" src="lib/js/TOCGenerator.js"></script>
+      <script type="text/javascript" src="lib/js/Numbering.js"></script>
+      <script type="text/javascript" src="lib/js/Miscellaneous.js"></script>
+
+
+      <meta name="viewport" content="width=device-width; initial-scale=1.0">
+      <!-- Google fonts -->
+      <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+      <!-- CSS files -->
+      <link href="lib/css/bootstrap.css" rel="stylesheet">
+      <link href="lib/css/styles.css" rel="stylesheet">
+      <link href="lib/css/generalmedia.css" rel="stylesheet">
+
+      <!-- arrow navigation -->
+      <style type="text/css">
+      div.floating-previous { position:fixed; z-index:200; left:1px; right: auto; width:20px; top:45%; }
+      div.floating-previous a, div.floating-menu h3 { display:block; margin:0 0.5em; }
+      div.floating-next { position:fixed; z-index:200; left: auto; right:1px; top:45%; }
+      div.floating-next a, div.floating-menu h3 { display:block; margin:0 0.5em; }
+      </style>
+  </head>
+
+  <body>
+
+    <!-- Dynamic Navbar -->
+    <div id="includedContent"></div>
+
+    <script>
+    $(document).ready(function() {
+      loadChaptersTableOfContents(); // loads the Chapter table of contents
+      populateNav();                    // populate nav content
+      populateSpans();                  // populate figure/content spans
+    }); 
+    </script>
+
+
+
+    <!--Floating nav -->
+    <!-- Previous -->
+    <div class="floating-previous">
+      <a href="index.html">
+        <img id="larrow" style="border:0;" src="lib/images/left-arrow-blue.png" alt="Previous page" width= "40">
+      </a>
+    </div>
+
+    <!-- Next -->
+    <div class="floating-next">
+      <a href="science.html">
+        <img id="rarrow" style="border:0;" src="lib/images/right-arrow-blue.png" alt="Next page" width="40">
+      </a>
+    </div>
+
+    <!-- End floating nav -->
+    <!-- End nav -->
+    <div class="page-wrapper" id="wrapper">
+      <a id="tippytop"></a>
+
+      <div id="main_header" class="container">
+        <!-- Container begin-->
+        <span id="main_header"> Chapters</span>
+      </div>
+
+      <div id="ContentAreaChapters" class="well bold-me"></div>
+      <hr>
+
+      <p class="Emphasized"><a href="#tippytop">Return to top</a></p>
+
+      <div>
+        <p>--</p>
+
+        <p><a href="index.html">Home</a></p>
+
+        <p><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact</a></p>
+      </div>
+    </div><!-- End page-wrapper -->
+</body>
 </html>

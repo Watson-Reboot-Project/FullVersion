@@ -1,0 +1,164 @@
+/* navigation bar */
+.navbar-default {
+    background-color: #4870B6;
+    border: none;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus /* nav bar slider icon after click */ 
+{
+  background-color: #333333;
+}
+
+/* hover in nav bar, changes color when mobile screen is used */
+ul.nav a:hover { color: #000; }
+@media screen and (max-width: 640px) {.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #FFF;}}
+
+/* Navigation items */
+.navbar .nav > li > a { 
+  float: none;
+  padding: 20px 15px 15px;
+  color: #FFF;
+  font-family: "Eurostile", "Exo 2", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+
+.dropdown-menu > li > a:hover{ background-color: #4870B6; }
+
+#main_header > h1{
+  text-align: left;
+  color: #4870B6;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#main_header {
+  text-align: left;
+  font-size: 24pt;
+  color: #4870B6;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin-bottom: 3%;
+}
+
+#main_header_img {
+  float: center;
+  max-width: 30%;
+}
+
+.page-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+body { padding-top: 7%; }
+@media screen and (max-width: 800px) { body { padding-top: 15%;}}
+@media screen and (max-width: 600px) { body { padding-top: 25%;}}
+@media screen and (max-width: 400px) { body { padding-top: 35%;}}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+#logo{
+  padding-left: 10%;
+}
+
+.navbar-right{
+  padding-right: 3%;
+} 
+@media screen and (max-width: 640px) { .navbar-right { padding-right: 0%;}}
+
+.small-img{ width: 10%; }
+.medium-img{ width: 50%; }
+.large-img{ width: 90%; }
+.pagination-centered{ text-align: center; }
+
+.thumbnail { border: 2px solid #4870B6; }
+
+.btn-launch:hover {
+    background-color: #5CB85C;
+    border-color: #99B7D3;
+    color: #FFF;
+}
+.btn-launch {
+    background-color: #C6D8E9;
+    border-color: #99B7D3;
+    color: #FFFFFF;
+}
+
+/* Bootraps glyphicons */ 
+.glyphicon {   
+  position: relative;  
+  top: 1px;
+  padding-right: 5px;  
+  display: inline-block;  
+  font-family: 'Glyphicons Halflings';  
+  -webkit-font-smoothing: antialiased;  
+  font-style: normal;  
+  font-weight: normal;  
+  line-height: 0;  
+
+}
+
+/* Font awesome icons */ 
+.fa-book, .fa-list-ul {  
+  padding-right: 5px; 
+  position: relative; 
+}
+
+.fa-plus { margin-right: -300%; }
+.fa-minus{ margin-left: -300%; }
+ @media screen and (max-width: 800px) { .fa-plus, .fa-minus { margin: 0;}} 
+
+#fontAs{
+  max-width: 50%; 
+  padding: 0;
+}
+
+/* Banner down arrow, placement */
+#clickme{ 
+  padding-right: 90% !important;
+  padding-top: 0%;
+}
+
+/* Don't mind me... */
+#content {
+    margin: 20px;
+}
+
+/* Collasping and expanding buttons on section_toc.html */
+#expand, #collapse { margin-bottom: 3%; }
+
+/* Styles for collapsing sections/section */
+#years, #months, #posts{ cursor:pointer;}
+#years, .bold-me {font-weight: bold;} #months {font-weight: medium;}
+.archive_year { cursor: pointer; list-style: none; }
+.archive_month { list-style-type: disc; cursor: pointer; }
+.archive_posts { list-style-type: circle;}
+
+.btn-blue {
+  color: #fff;
+  background-color: #4870B6;
+  border-color: #5482D4;
+  vertical-align: middle;
+}
+
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active,
+.open .dropdown-toggle.btn-blue {
+  color: #fff;
+  background-color: #3C5D96;
+  border-color: #5482D4;
+}
+
+.navbar {
+    position: fixed !important;
+    top: 0px;
+    width: 100%;
+}
+
+
+
+
+

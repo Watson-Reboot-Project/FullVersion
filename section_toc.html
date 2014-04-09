@@ -8,9 +8,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 		<title>Watson</title>
+
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="js/master.js"></script>
+	  	<script type="text/javascript" src="js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="js/Numbering.js"></script>
+			<script type="text/javascript" src="js/Miscellaneous.js"></script>
+			<!--<meta name="viewport" content="width=device-width; initial-scale=1.0">-->
 
 		 	<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
@@ -18,14 +24,8 @@
 	    <link href = "css/bootstrap.css" rel = "stylesheet">
 	    <link href = "css/styles.css" rel = "stylesheet">
 	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    
-	    <!-- Java Script files 
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    <script type="text/javascript" src="js/index_sections.js"></script>
-			<script type="text/javascript" src="js/Numbering.js"></script>
-			<script tippytope="text/javascript" src="js/Miscellaneous.js"></script>
-		<!--<meta name="viewport" content="width=device-width; initial-scale=1.0">-->
+	   
+
 
 	</head>
 	<body>
@@ -78,27 +78,36 @@
 
 			<!-- Navbar division -->
 			<div id="includedContent"></div>
-        <script type="text/javascript" src="js/nav.js"></script>  
+			<script type="text/javascript" src="js/nav.js"></script> <!-- Dynamic Navbar --> 
 
    		<div id="ContentAreaSections" class="well bold-me"></div>
 
-			
+   		<!-- The following scripts produces the dynamic section table of contnets, 
+   							from the master.js JSON file -->
+
+
+   		<!-- Functionality for the collapsing and expanding buttons -->
 			 <script>
 				$(document).ready(function() {
-					loadGlobalTableOfContents(); // loads the Section Table of Contents
-					$('.years > archive_month').click(function() {
-						$(this).parent().find('li').slideDown();
+
+						loadGlobalTableOfContents(); // loads the Section Table of Contents
+
+						$('.years > archive_month').click(function() {
+							$(this).parent().find('li').slideDown();
+						});
+
+						$('#collapse').click(function() {
+							$('.archive_year > li').parent().find('ul').slideUp();
+						});
+
+						$('#expand').click(function() {
+							$('.archive_year > li').parent().find('ul').slideDown();
+							});
 					});
 
-					$('#collapse').click(function() {
-						$('.archive_year > li').parent().find('ul').slideUp();
-					});
-
-					$('#expand').click(function() {
-						$('.archive_year > li').parent().find('ul').slideDown();
-					});
-				});
 			</script>
+
+
 
 			
 			<!-- End main content -->
