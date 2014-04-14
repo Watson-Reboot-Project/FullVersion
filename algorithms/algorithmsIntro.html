@@ -10,63 +10,43 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
 	<body>
-		<div id="wrapper" class="page-wrapper">
+    <div class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
-			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
-			<!-- Main content -->
-			
+			<div class="floating-previous"></div><!-- produces the previous arrow -->
+			<!-- End floating nav -->
+
+			<!-- Main content -->			
 			<p class="Section">
-				5.1  Introduction
+				<span class="contentNum algorithmsIntro"></span>
 			</p>
+	
 
 			<p>
 				One of the most important concepts in computing is the concept of an algorithm.  An <span class="Bolded">algorithm</span> is a detailed sequence of steps that describes how to solve a problem or accomplish some task.  In order to fully understand this definition, it is important to distinguish between a problem, an algorithm for solving that problem, and the process used to design the algorithm.
@@ -103,6 +83,8 @@
 				<a class="Footnote_20_Symbol" id="ftn1" href="#body_ftn1">[1]</a>&nbsp;Of course, what separates an exceptional musician from one who is simply adequate is the ability to go beyond a purely mechanical reproduction of the notes on the page.
 			</p>
 			
+			<div class="floating-next"></div>
+
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
@@ -118,17 +100,17 @@
 				</p>
 			</nav>
 			
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("algorithms", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("algorithmsIntro");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithmsIntro");		// get arrow paths
 				});	
+
 			</script>
 
 			<div>

@@ -11,17 +11,18 @@
 
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.3 The file organization level
+				<span class="contentNum informationOrganization"></span>  
 			</p>
 
 			<p>
@@ -76,10 +60,10 @@
 				Computer scientists and engineers have solved this problem by constructing levels of software that reside between the end-user and the disk drive controller. These levels of software hide the low-level details of where information is physically located on the disk enabling data to be organized and accessed in more meaningful ways.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-3.png" alt="The fields of a student record" class="Image">
+			<img src="images/studentfields.png" alt="The fields of a student record" class="Image">
 
 			<p class="Figure">
-				Figure 3.3: The fields of a student record
+				<span class="figNum studentfields"></span> The fields of a student record
 			</p>
 
 			<p>
@@ -90,10 +74,10 @@
 				Being able to refer to data using these logical groupings is much more convenient than being forced to think in terms of tracks and sectors, but how are these concepts actually implemented? Typically, all of the fields that make up a record are placed in a fixed order and stored in physically adjacent locations. In other words, all of the parts of a record, (e.g., name, age, major, etc.) are stored next to one another. Figure 3.3 illustrates one possibility for organizing student records. These records consist of eight fields that occur in the order: name, age, major, ID, sex, address, city, and state. The number of characters (bytes) required to represent each field is given in the figure. The total length of a student record corresponding to this organization will be 83 bytes. An actual record that follows this organization is shown in Figure 3.4. The title of each field, and its position in the 83-character-long record, is indicated. Since “spaces” are real characters that must be stored in the record, they are represented in Figure 3.4 using the</span> <span class="Bolded">•</span> symbol.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-4.png" alt="An example of a student record" class="Image">
+			<img src="images/studentrecord.png" alt="An example of a student record" class="Image">
 			
 			<p class="Figure">
-				Figure 3.4: An example of a student record
+				<span class="figNum studentrecord"></span> An example of a student record
 			</p>
 
 			<p>
@@ -140,18 +124,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationOrganization");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationOrganization");		// get arrow paths
+			});	
+
+		</script>
 
 
 		</div>

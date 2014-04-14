@@ -12,22 +12,21 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script src="js/DigiLogic/jquery-ui-1.10.4.custom.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -36,40 +35,19 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch12s2p3.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch12s3.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			
 			<p class="Section">
-				12.2.4: Other Gates
+				<span class="contentNum circuitsFundamentals4"></span>
 			</p>
+
 
 			<p>
 				Any device, whose operation can be defined in terms of a truth table or Boolean expression, can be implemented using only the fundamental logic gates: <span class="Ital">and</span>, <span class="Ital">or</span>, and <span class="Ital">not</span>. However, a number of additional gates are usually defined, as they prove useful for practical purposes. For example, it is frequently the case that a <span class="Ital">not</span> will immediately follow an <span class="Ital">and</span> gate, like so:
@@ -83,11 +61,11 @@
 			</p>
 
 			<p>
-				<span>Figure 12.9 illustrates both the</span> <span class="Ital">nand</span> <span>and</span> <span class="Ital">nor</span> <span>gates. Their behavior, in terms of Boolean expressions, is provided in the figure as well. It is important to remember that these gates are simply a convenience, a kind of “shorthand”, in that they allow a circuit to be constructed from fewer underlying components.</span>
+				<span><span class="figNum nandnor"></span> illustrates both the</span> <span class="Ital">nand</span> <span>and</span> <span class="Ital">nor</span> <span>gates. Their behavior, in terms of Boolean expressions, is provided in the figure as well. It is important to remember that these gates are simply a convenience, a kind of “shorthand”, in that they allow a circuit to be constructed from fewer underlying components.</span>
 			</p>
 
 			<p>
-				<span>As another example, the basic</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates support only two inputs, but a circuit designer will frequently need to</span> <span class="Ital">and</span> <span>or</span> <span class="Ital">or</span> <span>more than two inputs. For this reason multi-input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates exist. Figure 12.10 presents the three and four input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates along with their Boolean expressions. </span>
+				<span>As another example, the basic</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates support only two inputs, but a circuit designer will frequently need to</span> <span class="Ital">and</span> <span>or</span> <span class="Ital">or</span> <span>more than two inputs. For this reason multi-input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates exist. <span class="figNum threefourandor"></span> presents the three and four input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates along with their Boolean expressions. </span>
 			</p>
 			<p class="Centered">Nand Gate</p>
 			<div id="topDiv-nand" class="Centered"></div>
@@ -97,7 +75,7 @@
 			<div id="container-nor" class="Centered"></div>
 			
 			<p class="Figure">
-				Figure 12.9: <span class="Ital">Nand</span> and <span class="Ital">nor</span> gates
+				<span class="figNum nandnor"></span> <span class="Ital">Nand</span> and <span class="Ital">nor</span> gates
 			</p>
 
 			<div id="topDiv-and3" class="Centered"></div>
@@ -114,7 +92,7 @@
 			<div id="container-or4" class="Centered"></div>
 			
 			<p class="Figure">
-				<span>Figure 12.10: Three and four input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates</span>
+				<span><span class="figNum threefourandor"></span> Three and four input</span> <span class="Ital">and</span> <span>and</span> <span class="Ital">or</span> <span>gates</span>
 			</p>
 
 			<p>
@@ -129,15 +107,15 @@
 			</p>
 
 			<p>
-				In addition to multi-input <span class="Ital">and</span> and <span class="Ital">or</span> gates, multi-input <span class="Ital">nand</span> and <span class="Ital">nor</span> gates can be constructed. The symbols for these gates are identical to the symbols for the multi-input <span class="Ital">and</span> and <span class="Ital">or</span> gates with the exception of a <span class="Ital">not</span> bubble attached to the output pin of each gate symbol. Their Boolean expressions are also identical to those of Figure 12.10, except that a <span class="Ital">not</span> bar appears above the right-hand side of the expression.
+				In addition to multi-input <span class="Ital">and</span> and <span class="Ital">or</span> gates, multi-input <span class="Ital">nand</span> and <span class="Ital">nor</span> gates can be constructed. The symbols for these gates are identical to the symbols for the multi-input <span class="Ital">and</span> and <span class="Ital">or</span> gates with the exception of a <span class="Ital">not</span> bubble attached to the output pin of each gate symbol. Their Boolean expressions are also identical to those of <span class="figNum threefourandor"></span>, except that a <span class="Ital">not</span> bar appears above the right-hand side of the expression.
 			</p>
 
 			<p class="Section">
 				&nbsp;
 			</p>
 
-			<p class="Section">
-				Exercises for Section 12.2.4
+			<p class="Exercise">
+				Exercises for <span class="contentNum circuitsFundamentals4"></span>
 			</p>
 
 			<ol>
@@ -267,6 +245,22 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("circuitsFundamentals4");		// get arrow paths
+					chapObj = getCurrChapter("circuits");
+
+				});	
+				
+			</script>
 
 		</div>
 			<!-- Figure js -->

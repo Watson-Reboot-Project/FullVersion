@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.3.3 Indexed storage
+				<span class="contentNum informationOrganization3"></span>  
 			</p>
 
 			<p>
@@ -84,10 +68,10 @@
 				Most information retrieval transactions require that a particular record be retrieved (e.g., an employee record, or a student record) given that record’s key (e.g., an employee name or student ID number). With either contiguous or linked storage the only way to get a particular record, such as the record with key 55555519, is to walk through the file one sector at a time until the block with that record is encountered. If the file were long, say a 10,000 record student file, this process could be very time consuming.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-10.png" alt="An illustration of the indexed file storage technique" class="Image">
+			<img src="images/indexedfiles.png" alt="An illustration of the indexed file storage technique" class="Image">
 			
 			<p class="Figure">
-				Figure 3.10: An illustration of the indexed file storage technique
+				<span class="figNum indexedfiles"></span> An illustration of the indexed file storage technique
 			</p>
 
 			<p>
@@ -95,7 +79,7 @@
 			</p>
 
 			<p>
-				The index table of a student file composed of 20 records, sorted by student ID number, and stored four records per block is illustrated in figure 3.10. Once the Root Directory has been loaded into memory, only two read operations are required to retrieve any particular record from the students file: one read to retrieve the file’s index table, and a second read to retrieve the file block containing the record of interest.
+				The index table of a student file composed of 20 records, sorted by student ID number, and stored four records per block is illustrated in <span class="figNum indexedfiles"></span>. Once the Root Directory has been loaded into memory, only two read operations are required to retrieve any particular record from the students file: one read to retrieve the file’s index table, and a second read to retrieve the file block containing the record of interest.
 			</p>
 
 			<p>
@@ -130,18 +114,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationOrganization3");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationOrganization3");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

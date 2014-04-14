@@ -9,18 +9,25 @@
 
 		<title>Watson</title>
 
-		 <!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+				<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
 	</head>
 
 	<body>
@@ -28,68 +35,48 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<!-- Navbar division -->
+			<div id="includedContentChapterTOC"></div>
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<!-- End navbar -->
 
+			<!-- Chapter Index listing -->
+   		<div id="ContentAreaSections" class="well bold-me"></div>
+   		<!-- End Chapter Index listing -->
+
+			
 			<!--Floating nav -->
-		      <!-- Previous -->
-		      <!--
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="index.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch14s1.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
-			<!-- End nav -->
+			<!-- Previous -->
+			<div class="floating-previous"></div>
+			<!-- Next -->
+			<div class="floating-next"></div>
+			<!-- End floating nav -->
 
-			<!-- Main content -->
-			<a href="ch14.html"><p class="Section">Chapter 14: Computing and Intelligence</p></a>
-			<ul>
-				<a href="ch14s1.html"><li>14.1 Introduction</li></a>
-				<a href="ch14s1.html"><li>14.2 An Overview of Artificial Intelligence</li></a>
-					<ul>
-						<a href="ch14s2p1.html"><li>14.2.1 HAL: the prototypical intelligent computer</li></a>
-						<a href="ch14s2p2.html"><li>14.2.2 Can intelligent machines be constructed?</li></a>
-						<a href="ch14s2p3.html"><li>14.2.3 Measuring progress: the Turing test</li></a>
-						<a href="ch14s2p4.html"><li>14.2.4 A brief history of artificial intelligence</li></a>
-						<a href="ch14s2p5.html"><li>14.2.5 Half a century and counting</li></a>
-							<ul>
-								<a href="ch14s2p5a.html"><li>14.2.5.1 Big data, statistical machine learning techniques, and machine translation</li></a>
-								<a href="ch14s2p5b.html"><li>14.2.5.2 Using language intelligently</li></a>
-								<a href="ch14s2p5c.html"><li>14.2.5.3 Computer Vision</li></a>
-								<a href="ch14s2p5d.html"><li>14.2.5.4 Autonomous Vehicles</li></a>
-							</ul>
-					</ul>
-				<a href="ch14s3.html"><li>14.3 Techniques and approaches for achieving intelligent behavior</li></a>
-					<ul>
-						<a href="ch14s3p1.html"><li>14.3.1 Game playing and search</li></a>
-						<a href="ch14s3p2.html"><li>14.3.2 Automated reasoning</li></a>
-							<ul>
-								<a href="ch14s3p2a.html"><li>14.3.2.1 Propositional logic</li></a>
-								<a href="ch14s3p2b.html"><li>14.3.2.2 Resolution refutation proofs</li></a>
-							</ul>
-						<a href="ch14s3p3.html"><li>14.3.3 Neural networks and machine learning</li></a>
-					</ul>					
-			</ul>
+			<!-- Previous and Next Chapter buttons -->
+			<br>
+			<div class="container">
+				<div class="row">
+					<!--Floating nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->
+				</div> 
+			</div>
+
+			<script>
+				var pageObj;
+				var chapObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("intelligence");
+					populateNav();
+					populateChapterButtons();
+					
+					pageObj = getArrowPathsByPage("intelligence");
+					chapObj = getArrowPathsByChapter("intelligence");
+				});	
+			</script>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">

@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.5.1 The operating system interface
+				<span class="contentNum informationUser1"></span>
 			</p>
 
 			<p>
@@ -73,13 +57,13 @@
 			</p>
 
 			<p>
-				An example directory structure is outlined in Figure 3.12. Files are indicated by “document” icons, and directories by “file folder” icons. The data is organized into a single main directory “letters”. Letters is subdivided into two subdirectories: “personal” letters and “business” letters. Personal letters includes letters to “Mom” and to “Pat,” your significant other, plus one letter to your Cousin It. Note that “CousinIt” is a file, or document, containing a single letter, while “Pat” is a directory containing multiple letters. If you were planning to write more than one letter to Cousin It, you would probably make a separate directory to hold these letters, as was done for Mom.
+				An example directory structure is outlined in <span class="figNum filesystem"></span>. Files are indicated by “document” icons, and directories by “file folder” icons. The data is organized into a single main directory “letters”. Letters is subdivided into two subdirectories: “personal” letters and “business” letters. Personal letters includes letters to “Mom” and to “Pat,” your significant other, plus one letter to your Cousin It. Note that “CousinIt” is a file, or document, containing a single letter, while “Pat” is a directory containing multiple letters. If you were planning to write more than one letter to Cousin It, you would probably make a separate directory to hold these letters, as was done for Mom.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-12.png" alt="Overview of a file system" class="Image">
+			<img src="images/filesystem.png" alt="Overview of a file system" class="Image">
 			
 			<p class="Figure">
-				Figure 3.12: Overview of a file system
+				<span class="figNum filesystem"></span> Overview of a file system
 			</p>
 
 			<p>
@@ -95,13 +79,13 @@
 			</p>
 
 			<p>
-				For example, if a file contains an image in JPEG format, then that file must be opened by a program capable of viewing JPEG images. A file containing a text-based document, such as a memo or report, must be opened by a different kind of program, a word processor. Associating particular application programs with the file types they recognize, enables the operating system to launch an appropriate program when a file’s icon is double-clicked. Figure 3.13 shows what my computer’s desktop looks like after double-clicking the icon for “component_view.pdf” which is a Portable Document Format file associated with Adobe’s Acrobat Reader program. Windows launches Acrobat Reader and then automatically loads the data file “component_view.pdf”.
+				For example, if a file contains an image in JPEG format, then that file must be opened by a program capable of viewing JPEG images. A file containing a text-based document, such as a memo or report, must be opened by a different kind of program, a word processor. Associating particular application programs with the file types they recognize, enables the operating system to launch an appropriate program when a file’s icon is double-clicked. <span class="figNum pdfview"></span> shows what my computer’s desktop looks like after double-clicking the icon for “component_view.pdf” which is a Portable Document Format file associated with Adobe’s Acrobat Reader program. Windows launches Acrobat Reader and then automatically loads the data file “component_view.pdf”.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-13.png" alt="A PDF file viewed with Adobe’s Acrobat Reader" class="Image">
+			<img src="images/pdfview.png" alt="A PDF file viewed with Adobe’s Acrobat Reader" class="Image">
 
 			<p class="Figure">
-				Figure 3.13: A PDF file viewed with Adobe’s Acrobat Reader
+				<span class="figNum pdfview"></span> A PDF file viewed with Adobe’s Acrobat Reader
 			</p>
 
 			<p>
@@ -238,18 +222,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationUser1");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationUser1");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

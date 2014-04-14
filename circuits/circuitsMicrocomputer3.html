@@ -12,15 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,54 +35,31 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch12s5p2.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <!--
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch08s2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
-			
+
 			<!-- Main content -->
+			
 			<p class="Section">
-				12.5.3 &nbsp;Random Access Memory (RAM)
+				<span class="contentNum circuitsMicrocomputer3"></span>
 			</p>
 
 			<p>
-				In Section 12.4 we talked about how a sequential device as simple as an R-S flip-flop could be used to remember one bit of data. We now develop a complete memory cell, called a binary cell, based on the flip-flop. When such a cell is selected and in “read” mode, the current value of its underlying flip-flop will be transferred to the cell’s output line. When the cell is selected and in “write” mode, an input data signal will determine the value remembered by the flip-flop. A complete circuit is shown in Figure 12.34.
+				In <span class="contentNum circuitsSequential"></span> we talked about how a sequential device as simple as an R-S flip-flop could be used to remember one bit of data. We now develop a complete memory cell, called a binary cell, based on the flip-flop. When such a cell is selected and in “read” mode, the current value of its underlying flip-flop will be transferred to the cell’s output line. When the cell is selected and in “write” mode, an input data signal will determine the value remembered by the flip-flop. A complete circuit is shown in <span class="figNum watsonvmdetail"></span>.
 			</p>
 
 			<p>
-				The fundamental design of this binary cell is based on the R-S flip-flop of Figure12.23 though there are some significant differences. To begin with, the cell has three inputs and a single output. The inputs are labeled “Select”, “Read/write”, and “Input”. The output line is labeled “Output”.
+				The fundamental design of this binary cell is based on the R-S flip-flop of <span class="figNum channeltwo"></span> though there are some significant differences. To begin with, the cell has three inputs and a single output. The inputs are labeled “Select”, “Read/write”, and “Input”. The output line is labeled “Output”.
 			</p>
 
 			<img src="Images/fig12-34.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 12.34: A Binary cell (BC) for RAM memory
+				<span class="figNum watsonvmdetail"></span> A Binary cell (BC) for RAM memory
 			</p>
 
 			<p>
@@ -86,7 +67,7 @@
 			</p>
 
 			<p>
-				The next input we’ll examine is “Read/write”. A system clock will drive this input. As was the case with the clocked R-S flip-flop of Figure 12.31, a low, “0”, will signify “read” while a high, “1”, will signify “write”. During the read phase it will not be possible to write to the cell. Likewise, during the write phase it will not be possible to read the contents of the cell.
+				The next input we’ll examine is “Read/write”. A system clock will drive this input. As was the case with the clocked R-S flip-flop of <span class="figNum rsflipflopinvalid"></span>, a low, “0”, will signify “read” while a high, “1”, will signify “write”. During the read phase it will not be possible to write to the cell. Likewise, during the write phase it will not be possible to read the contents of the cell.
 			</p>
 
 			<p>
@@ -102,13 +83,13 @@
 			</p>
 
 			<p>
-				<span>The reason for this is that the</span> <span class="Ital">and</span> <span>gates that guard the R and S inputs of the flip-flop will both have two of their inputs set high: the “select” and “Read/write” inputs. Thus, if “Input” is high, S (set) will receive a high and the flip-flop will store a “1”. If, on the other hand, “Input” is low, then R (reset) which receives a negated version of “Input” will go high and the flip-flop will reset to “0”. Note that having a negated version of the input line run into R is a clever idea, since it prevents the R-S flip-flop from ever entering into its invalid state. (Recall from our discussion of R-S flip-flops in Section 12.4 that if R and S are ever set to “1” at the same time the flip-flop enters a stable, but invalid state.)</span>
+				<span>The reason for this is that the</span> <span class="Ital">and</span> <span>gates that guard the R and S inputs of the flip-flop will both have two of their inputs set high: the “select” and “Read/write” inputs. Thus, if “Input” is high, S (set) will receive a high and the flip-flop will store a “1”. If, on the other hand, “Input” is low, then R (reset) which receives a negated version of “Input” will go high and the flip-flop will reset to “0”. Note that having a negated version of the input line run into R is a clever idea, since it prevents the R-S flip-flop from ever entering into its invalid state. (Recall from our discussion of R-S flip-flops in <span class="contentNum circuitsSequential"></span> that if R and S are ever set to “1” at the same time the flip-flop enters a stable, but invalid state.)</span>
 			</p>
 			
 			<img src="Images/fig12-35.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 12.35: A Binary Cell – encapsulated view
+				<span class="figNum addandalu"></span> A Binary Cell – encapsulated view
 			</p>
 
 			<p>
@@ -116,7 +97,7 @@
 			</p>
 
 			<p>
-				<span>Figure 12.35 contains an encapsulated view of a single binary cell. An entire random access memory (RAM) can be constructed from a large collection of binary cells, together with some address decoding circuitry. The Watson Virtual Machine includes a memory of 256 words, each 16 bits wide – much too large to be conveniently illustrated.</span> <span class="Footnote"><a href="#ftn4" id="body_ftn4">[4]</a></span> <span>&nbsp;In order to have a manageable circuit diagram, Figure 12.36 presents an implementation of a 4 x 2 RAM. Such a RAM module has four separate “words” of memory, each two bits wide.</span>
+				<span><span class="figNum addandalu"></span> contains an encapsulated view of a single binary cell. An entire random access memory (RAM) can be constructed from a large collection of binary cells, together with some address decoding circuitry. The Watson Virtual Machine includes a memory of 256 words, each 16 bits wide – much too large to be conveniently illustrated.</span> <span class="Footnote"><a href="#ftn4" id="body_ftn4">[4]</a></span> <span>&nbsp;In order to have a manageable circuit diagram, <span class="figNum binaryram"></span> presents an implementation of a 4 x 2 RAM. Such a RAM module has four separate “words” of memory, each two bits wide.</span>
 			</p>
 
 			<p>
@@ -134,7 +115,7 @@
 			<img src="Images/fig12-36.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 12.36: A 4 x 2 RAM memory
+				<span class="figNum binaryram"></span> A 4 x 2 RAM memory
 			</p>
 
 			<p>
@@ -149,26 +130,26 @@
 				We now come to the close of our discussion concerning the implementation of main memory, and thus to the end of this book’s material on computer “hardware”. As I am sure you can appreciate, we have just scratched the surface of this fascinating field. However, my hope is that this brief introduction to digital logic has convinced you that computers can be completely understood in terms of large networks of very simple logic gates that are interconnected in complex patterns.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 12.5
+			<p class="Exercise">
+				Exercises for <span class="contentNum circuitsMicrocomputer3"></span>
 			</p>
 
 			<ol>
 				<li>
 					<p>
-						Draw the decoder circuit required in Figure 12.36. All output lines should be low, “0”, when the “enable” line is low. When “enable” is high this decoder functions like the normal 2-to-4 decoders discussed in Section 12.3.&nbsp;
+						Draw the decoder circuit required in <span class="figNum binaryram"></span>. All output lines should be low, “0”, when the “enable” line is low. When “enable” is high this decoder functions like the normal 2-to-4 decoders discussed in <span class="contentNum circuitsCombinatorial"></span>.&nbsp;
 					</p>
 				</li>
 
 				<li>
 					<p>
-						Assume that the circuit in Figure 12.36 is built using only two-input<span class="Ital">and</span>gates, two-input<span class="Ital">or</span>gates, and single-input <span class="Ital">not</span> <span>gates. In other words, each four-input</span> <span class="Ital">or</span> <span>gate shown at the bottom would require 3 two-input</span> <span class="Ital">or</span> <span>gates to implement. Calculate the number of gates of each type required to fully implement this 4 x 2 RAM.</span>&nbsp;
+						Assume that the circuit in <span class="figNum binaryram"></span> is built using only two-input<span class="Ital">and</span>gates, two-input<span class="Ital">or</span>gates, and single-input <span class="Ital">not</span> <span>gates. In other words, each four-input</span> <span class="Ital">or</span> <span>gate shown at the bottom would require 3 two-input</span> <span class="Ital">or</span> <span>gates to implement. Calculate the number of gates of each type required to fully implement this 4 x 2 RAM.</span>&nbsp;
 					</p>
 				</li>
 
 				<li>
 					<p>
-						Figure 12.36 is a simplified circuit that uses only eight binary cells (BCs). How many BCs will be required to construct the RAM of the Watson Virtual Machine, which has 256 words of memory each 16 bits wide?&nbsp;
+						<span class="figNum binaryram"></span> is a simplified circuit that uses only eight binary cells (BCs). How many BCs will be required to construct the RAM of the Watson Virtual Machine, which has 256 words of memory each 16 bits wide?&nbsp;
 					</p>
 				</li>
 			</ol>
@@ -193,6 +174,21 @@
 
 			</div>
 
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("circuitsMicrocomputer3");		// get arrow paths
+					chapObj = getCurrChapter("circuits");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

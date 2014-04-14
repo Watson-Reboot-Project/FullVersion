@@ -11,17 +11,18 @@
 
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,53 +33,36 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.2 The hardware level
+				<span class="contentNum informationHardware"></span>  
 			</p>
 
 			<p>
 				A <span class="Bolded">disk drive</span> is an electromechanical device for storing and retrieving data. Disk drives contain one or more <span class="Bolded">disks</span>, which are platters that rotate inside the drive unit. These platters are coated with a special magnetic material that allows information to be recorded on the disk by manipulating the orientation of the magnetic fields on the surface of the platter. Data stored on a disk is said to be in a <span class="Bolded">non-volatile</span> form, meaning it will not be lost when power to the drive is turned off.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-1pt1.png" alt="Four views of information storage and retrieval" class="Image">
-			<img src="Images/InfoStorageRetrIMGS/fig3-1pt2.png" alt="Four views of information storage and retrieval" class="Image">
-			<img src="Images/InfoStorageRetrIMGS/fig3-1pt3.png" alt="Four views of information storage and retrieval" class="Image">
-			<img src="Images/InfoStorageRetrIMGS/fig3-1pt4.png" alt="Four views of information storage and retrieval" class="Image">
+			<img src="images/infostoragept1.png" alt="Four views of information storage and retrieval" class="Image">
+			<img src="images/infostoragept2.png" alt="Four views of information storage and retrieval" class="Image">
+			<img src="images/infostoragept3.png" alt="Four views of information storage and retrieval" class="Image">
+			<img src="images/infostoragept4.png" alt="Four views of information storage and retrieval" class="Image">
 
 			<p class="Figure">
-				Figure 3.1: Four views of information storage and retrieval
+				<span class="figNum infostorage"></span> Four views of information storage and retrieval
 			</p>
 
 			<p>
@@ -93,14 +77,14 @@
 				Regardless of whether a disk is hard or floppy, it will be divided into tracks and sectors. <span class="Bolded">Tracks</span> are concentric circles, kind of like the rings of a tree, onto which data may be written. Each track is divided into a number of equal sized regions known as <span class="Bolded">sectors</span>. Sectors are the smallest addressable unit on a disk drive. Data is both written to and read from disk drives an entire sector at a time.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-2.png" alt="The organization of a disk drive" class="Image">
+			<img src="images/diskdrive.png" alt="The organization of a disk drive" class="Image">
 			
 			<p class="Figure">
-				Figure 3.2: The organization of a disk drive
+				<span class="figNum diskdrive"></span> The organization of a disk drive
 			</p>
 
 			<p>
-				Figure 3.2 contains an illustration of the organization of a disk drive. This particular disk spins in a counter-clockwise direction and has three tracks; the outermost track is labeled A, the middle track is labeled B, and the innermost track is labeled C. Each track contains eight sectors, labeled 1 through 8. Hence, this disk contains a total of 24 sectors.
+				<span class="figNum diskdrive"></span> contains an illustration of the organization of a disk drive. This particular disk spins in a counter-clockwise direction and has three tracks; the outermost track is labeled A, the middle track is labeled B, and the innermost track is labeled C. Each track contains eight sectors, labeled 1 through 8. Hence, this disk contains a total of 24 sectors.
 			</p>
 
 			<p>
@@ -108,7 +92,7 @@
 			</p>
 
 			<p>
-				Real disk drives contain many more tracks per disk platter and many more sectors per track than illustrated in Figure 3.2, but this diagram illustrates the basic organization of a drive. Note that while all of the sectors on a particular track are of the same size, the size of a sector varies from track to track, with the size of the sectors on the innermost track being substantially smaller than the sectors on the outermost track. Regardless of this fact, each sector of a disk holds the same amount of data – to accomplish this feat; data is written more densely on the smaller, inner tracks than on the larger, outer tracks.
+				Real disk drives contain many more tracks per disk platter and many more sectors per track than illustrated in <span class="figNum diskdrive"></span>, but this diagram illustrates the basic organization of a drive. Note that while all of the sectors on a particular track are of the same size, the size of a sector varies from track to track, with the size of the sectors on the innermost track being substantially smaller than the sectors on the outermost track. Regardless of this fact, each sector of a disk holds the same amount of data – to accomplish this feat; data is written more densely on the smaller, inner tracks than on the larger, outer tracks.
 			</p>
 
 			<p>
@@ -172,17 +156,15 @@
 
 			</div>
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationHardware");
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationHardware");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

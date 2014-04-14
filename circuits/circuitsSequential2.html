@@ -12,15 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,47 +35,26 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch12s4p1.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch12s5.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			
 			<p class="Section">
-				12.4.2 &nbsp;The clocked R-S flip-flop
+				<span class="contentNum circuitsSequential2"></span>
 			</p>
+
 
 			<p>
 				<span>A</span> <span class="Bolded">clock</span> <span>is a device that generates a signal that periodically cycles between a high state, “1”, and a low state, “0”. Clocks ensure that the operations performed by a computer proceed in an orderly manner. They do so by enabling certain operations to occur only at specific points in time.</span>
 			</p>
 
 			<p>
-				<span>Clocks divide time into “cycles” that consist of two phases, a high phase and a low phase. Specifically, a</span> <span class="Bolded">clock cycle</span> <span>is defined as the interval of time beginning when the clock goes to a high state, lasting through the return to a low state, and ending with the start of the transition back to the high state again. Figure 12.30 illustrates four complete cycles of a clock. </span>
+				<span>Clocks divide time into “cycles” that consist of two phases, a high phase and a low phase. Specifically, a</span> <span class="Bolded">clock cycle</span> <span>is defined as the interval of time beginning when the clock goes to a high state, lasting through the return to a low state, and ending with the start of the transition back to the high state again. <span class="figNum rsflipflopholdone"></span> illustrates four complete cycles of a clock. </span>
 			</p>
 
 			<p>
@@ -89,21 +72,21 @@
 			<img src="Images/fig12-30.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 12.30: Four cycles of a clock
+				<span class="figNum rsflipflopholdone"></span> Four cycles of a clock
 			</p>
 			
 			<img src="Images/fig12-31.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 12.31: A clocked R-S flip-flop
+				<span class="figNum rsflipflopinvalid"></span> A clocked R-S flip-flop
 			</p>
 
 			<p>
-				Figure 12.31 presents the circuit diagram of a clocked R-S flip-flop. In addition to the R (reset) and S (set) inputs, these circuits also receive the clock signal. In the clocked R-S flip-flop the Q output will be unaffected by any change in R or S as long as the clock (C) is “0” (low). That is, during the “read” phase of the clock cycle the contents of memory cannot be changed. When the clock input goes to “1” (high), designating the “write” phase of the clock cycle, the Q output will change depending upon the values of R and S.
+				<span class="figNum rsflipflopinvalid"></span> presents the circuit diagram of a clocked R-S flip-flop. In addition to the R (reset) and S (set) inputs, these circuits also receive the clock signal. In the clocked R-S flip-flop the Q output will be unaffected by any change in R or S as long as the clock (C) is “0” (low). That is, during the “read” phase of the clock cycle the contents of memory cannot be changed. When the clock input goes to “1” (high), designating the “write” phase of the clock cycle, the Q output will change depending upon the values of R and S.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 12.4.2
+			<p class="Exercise">
+				Exercises for <span class="contentNum circuitsSequential2"></span>
 			</p>
 
 			<ol>
@@ -134,6 +117,21 @@
 
 			</div>
 
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("circuitsSequential2");		// get arrow paths
+					chapObj = getCurrChapter("circuits");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

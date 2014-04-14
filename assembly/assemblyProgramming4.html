@@ -12,22 +12,21 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <style type='text/css'>
-			table td {
-			border:none;
-			}
-		</style>
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link rel='stylesheet' href='lib/css/bootstrap-3.css'>
-	    <link href = "lib/assembly.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -36,44 +35,21 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s3p3.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s3p5.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.3.4  Implementing repetition constructs in assembly language
+				<span class="contentNum assemblyProgramming4"></span>
 			</p>
 			
 			<p>
-				In addition to implementing selection structures, <span class="Subfigure">COMPARE</span>, <span class="Subfigure">BRANCH</span>, and <span class="Subfigure">JUMP</span> can be used (along with statement labels) to implement high-level repetition constructs such as “while” and “for” loops.    A template for writing the assembly language version of the high-level “while” construct is presented in Figure 11.8.
+				In addition to implementing selection structures, <span class="Subfigure">COMPARE</span>, <span class="Subfigure">BRANCH</span>, and <span class="Subfigure">JUMP</span> can be used (along with statement labels) to implement high-level repetition constructs such as “while” and “for” loops.    A template for writing the assembly language version of the high-level “while” construct is presented in <span class="figNum assemblywhile"></span>.
 			</p>
 			
 			<p>
@@ -131,7 +107,7 @@
 			</p>
 			
 			<p class="Figure">
-				Figure 11.8:  General template for implementing the “While” construct in assembly
+				<span class="figNum assemblywhile"></span>  General template for implementing the “While” construct in assembly
 			</p>
 			
 			<p>
@@ -143,7 +119,7 @@
 			</p>
 			
 			<p>
-				Figure 11.9 presents an assembly language program that includes a “while” loop.  The purpose of the program is to implement the high-level multiplication statement:
+				<span class="figNum assemblytimes"></span> presents an assembly language program that includes a “while” loop.  The purpose of the program is to implement the high-level multiplication statement:
 			</p>
 			
 			<p class="Subfigure">
@@ -262,7 +238,7 @@
 			-->
 			<div id='fig119Div'></div>
 			<p class="Figure">
-				Figure 11.9:  Assembly language version of the statement:   <span class="Subfigure">z = x * y;</span>
+				<span class="figNum assemblytimes"></span> Assembly language version of the statement:   <span class="Subfigure">z = x * y;</span>
 			</p>
 			
 			<p>
@@ -270,11 +246,11 @@
 			</p>
 			
 			<p>
-				The assembly language program presented in Figure 11.9 implements its “while” loop directly from the template of Figure 11.8.  Assignment statements are implemented in a manner similar to that presented in Figure 11.3.  In this example, the assembly language implementation of each high-level instruction begins by copying the values of all operand variables from memory into registers.  The contents of the registers are then manipulated in accordance with the meaning of the high-level instruction, and results are immediately copied from the registers back to the underlying main memory variables. As such, the resulting assembly language program, while correct, is not very efficient.
+				The assembly language program presented in <span class="figNum assemblytimes"></span> implements its “while” loop directly from the template of <span class="figNum assemblywhile"></span>.  Assignment statements are implemented in a manner similar to that presented in <span class="figNum assemblytotal"></span>.  In this example, the assembly language implementation of each high-level instruction begins by copying the values of all operand variables from memory into registers.  The contents of the registers are then manipulated in accordance with the meaning of the high-level instruction, and results are immediately copied from the registers back to the underlying main memory variables. As such, the resulting assembly language program, while correct, is not very efficient.
 			</p>
 			
 			<p>
-				Figure 11.10 presents an optimized version of the program of Figure 11.9.  While an inspection of the two programs should reveal that they compute identical results, the program of Figure 11.10 involves fewer steps (17 verses 22) and therefore should run somewhat faster.  The approach taken in the optimized version of the program is to keep temporary results in CPU registers rather than writing them back to main memory after each operation.  This approach works by loading the initial values of the variables into registers at the beginning of the program, using those registers in place of the underlying variables during processing, and then copying results back to main memory at the end of the program.  Frequently, compilers, the programs that translate high-level language programs into low-level code, use strategies such as this to produce code that is more efficient than would be produced by a literal, statement-by-statement translation of the high-level program.
+				<span class="figNum optimizedtimes"></span> presents an optimized version of the program of <span class="figNum assemblytimes"></span>.  While an inspection of the two programs should reveal that they compute identical results, the program of <span class="figNum optimizedtimes"></span> involves fewer steps (17 verses 22) and therefore should run somewhat faster.  The approach taken in the optimized version of the program is to keep temporary results in CPU registers rather than writing them back to main memory after each operation.  This approach works by loading the initial values of the variables into registers at the beginning of the program, using those registers in place of the underlying variables during processing, and then copying results back to main memory at the end of the program.  Frequently, compilers, the programs that translate high-level language programs into low-level code, use strategies such as this to produce code that is more efficient than would be produced by a literal, statement-by-statement translation of the high-level program.
 			</p>
 			<!-- Figure 11.10 Image
 			<img src="Images/AssemblyIMGS/fig11-10.png" alt="" class="Image">
@@ -315,11 +291,11 @@
 			-->
 			<div id='fig1110Div'></div>
 			<p class="Figure">
-				Figure 11.10:  Optimized assembly version of:   <span class="Subfigure">z = x * y;</span>
+				<span class="figNum optimizedtimes"></span>  Optimized assembly version of:   <span class="Subfigure">z = x * y;</span>
 			</p>
 			
-			<p class="Section">
-				Exercises for Section 11.3.4
+			<p class="Exercise">
+				Exercises for <span class="contentNum assemblyProgramming4"></span>
 			</p>
 			
 			<ol>
@@ -343,7 +319,7 @@
 				Footnotes
 			</p>
 			
-			<p class="Footnote"><span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn3" href="#body_ftn3">[3]</a></span> There are other, more efficient, ways of solving this problem that will become apparent during the discussion of data representation and manipulation in Section 11.4.1.3.</p>
+			<p class="Footnote"><span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn3" href="#body_ftn3">[3]</a></span> There are other, more efficient, ways of solving this problem that will become apparent during the discussion of data representation and manipulation in <span class="contentNum assemblyData1b4"></span>.</p>
 			
 			<!-- Footnotes End -->
 
@@ -365,6 +341,22 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyProgramming4");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
 		</div>
 		<script type='text/javascript' src='lib/js/angular.js'></script>
     	<script type='text/javascript' src='lib/js/jQuery.js'></script>

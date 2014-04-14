@@ -12,20 +12,21 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script src="js/DigiLogic/jquery-ui-1.10.4.custom.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -34,40 +35,19 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch12s3p1.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch12s3p3.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			
 			<p class="Section">
-				12.3.2 Comparators&nbsp;
+				<span class="contentNum circuitsCombinatorial2"></span>
 			</p>
+
 
 			<p>
 				The purpose of a comparator is to examine two input values to determine whether a particular condition is satisfied. If the inputs satisfy the condition, the comparator generates a “1” (true). If the inputs do not satisfy the condition, the comparator generates a “0” (false).
@@ -102,11 +82,11 @@
 			<div id="topDiv-12" class="Centered"></div>
 			<div id="container-12" class="Centered"></div>
 			<p class="Figure">
-				Figure 12.12: An implementation of the one-bit comparator for equality
+				<span class="figNum onebitequality"></span> An implementation of the one-bit comparator for equality
 			</p>
 
 			<p>
-				<span>Combining the two sub-circuits via an</span> <span class="Ital">or</span> <span>gate gives a complete implementation of the one-bit comparator for equality. The circuit is illustrated in Figure 12.12</span>
+				<span>Combining the two sub-circuits via an</span> <span class="Ital">or</span> <span>gate gives a complete implementation of the one-bit comparator for equality. The circuit is illustrated in <span class="figNum onebitequality"></span></span>
 			</p>
 
 			<p>
@@ -148,7 +128,7 @@
 			<img src="Images/fig12-onebitcomp.png" alt="" class="Image">
 
 			<p>
-				The circuit is based on the idea that two-bit numbers are equal if both their low-order and high-order bits are identical. An actual implementation of the circuit would require that the boxes marked “one-bit comparator” be replaced with comparator circuitry along the lines of that shown in Figure 12.12. You are asked to do precisely this in one of the exercises at the end of this section.
+				The circuit is based on the idea that two-bit numbers are equal if both their low-order and high-order bits are identical. An actual implementation of the circuit would require that the boxes marked “one-bit comparator” be replaced with comparator circuitry along the lines of that shown in <span class="figNum onebitequality"></span>. You are asked to do precisely this in one of the exercises at the end of this section.
 			</p>
 
 			<p>
@@ -158,7 +138,7 @@
 			<img src="Images/fig12-onebitcomptable.png" alt="" class="ImageTall">
 
 			<p class="Section">
-				Exercises for Section 12.3.2
+				Exercises for <span class="contentNum circuitsCombinatorial2"></span>
 			</p>
 
 			<ol>
@@ -241,6 +221,22 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("circuitsCombinatorial2");		// get arrow paths
+					chapObj = getCurrChapter("circuits");
+
+				});	
+				
+			</script>
 		</div>
 		
 			<!-- Figure js -->

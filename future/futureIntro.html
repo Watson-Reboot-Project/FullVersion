@@ -12,13 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -29,42 +34,16 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch15.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch15s2.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-			 
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
+			
 			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
 
 			<p class="Section">
-				15.1 Introduction
+				<span class="contentNum futureIntro"></span>
 			</p>
 
 			<p>
@@ -72,7 +51,7 @@
 			</p>
 
 			<p>
-				Section 15.2 traces the evolving nature of human-computer interaction, from its early roots through present day interface technologies. Section 15.3 looks at the historical rate of progress in computing technology and considers possible future increases in computing capacity. In Section 15.4, we take a look at a number of promising technologies that could dramatically improve the capabilities of computing systems, beginning with improvements to today’s semi-conductor based technology, then moving on to consider more advanced	technologies, such as photonic computing, bio-computing, molecular-level computing, and quantum computing. Finally, Section 15.5 concludes this chapter, and thus the book, with a number of predictions based on the projected capabilities of future computing systems.
+				<span class="contentNum futureEvolving"></span> traces the evolving nature of human-computer interaction, from its early roots through present day interface technologies. <span class="contentNum futureMoores"></span> looks at the historical rate of progress in computing technology and considers possible future increases in computing capacity. In <span class="contentNum futureImproving"></span>, we take a look at a number of promising technologies that could dramatically improve the capabilities of computing systems, beginning with improvements to today’s semi-conductor based technology, then moving on to consider more advanced	technologies, such as photonic computing, bio-computing, molecular-level computing, and quantum computing. Finally, <span class="contentNum futurePredictions"></span> concludes this chapter, and thus the book, with a number of predictions based on the projected capabilities of future computing systems.
 			</p>
 
 			
@@ -91,6 +70,20 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<div class="floating-next"></div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("futureIntro");		// get arrow paths
+				});	
+
+			</script>
 
 			<div>
 

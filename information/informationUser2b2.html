@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    	<script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.5.2.2 The “select” operator
+				<span class="contentNum informationUser2b2"></span>
 			</p>
 
 			<p>
@@ -77,7 +61,7 @@
 			</p>
 
 			<p>
-				The relation resulting from this query is presented in Figure 3.16. Notice that this new relation contains the same attributes as its parent relation, “Students”. However, only the tuples that satisfied the condition Major = “CS” are reproduced.
+				The relation resulting from this query is presented in <span class="figNum selectcsmajors"></span>. Notice that this new relation contains the same attributes as its parent relation, “Students”. However, only the tuples that satisfied the condition Major = “CS” are reproduced.
 			</p>
 
 			<p>
@@ -108,10 +92,10 @@
 				The last three fields of the select command (attribute operator value) form a condition test. This test will be either unambiguously true or false for each tuple of the relation being queried. Those tuples for which the condition is true are copied to the resulting answer relation. Tuples for which the condition is false are not copied.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-16.png" alt="Results of Select from Students where Major = “CS”" class="Image">
+			<img src="images/selectcsmajors.png" alt="Results of Select from Students where Major = “CS”" class="Image">
 
 			<p class="Figure">
-				Figure 3.16: Results of Select from Students where Major = “CS”
+				<span class="figNum selectcsmajors"></span> Results of Select from Students where Major = “CS”
 			</p>
 
 			<p>
@@ -158,36 +142,36 @@
 				In summary, the “select” operator creates a new relation that consists of selected rows, or tuples, of an existing relation. The rows are selected based on the outcome of a condition test. Remember to use the “select” operator when you are interested in retrieving “complete records” about a subset of the entries stored in a relation.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 3.5.2.2
+			<p class="Exercise">
+				Exercises for <span class="contentNum informationUser2b2"></span>
 			</p>
 
 			<p>
-				Using the relations presented in Figures 3.14 and 3.15, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
+				Using the relations presented in <span class="figNum facultyrelation"></span> and <span class="figNum studentrelation"></span>, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
 			</p>
 
 			<ol>
 				<li>
 					<p>
-						Generate a relation, based on the Students relation of Figure 3.15, that contains entries for all students under age 21.
+						Generate a relation, based on the Students relation of <span class="figNum studentrelation"></span>, that contains entries for all students under age 21.
 					</p>
 				</li>
 
 				<li>
 					<p>
-						Generate a relation, based on the Faculty relation of Figure 3.14, that contains entries for all faculty members in the Math department.
+						Generate a relation, based on the Faculty relation of <span class="figNum facultyrelation"></span>, that contains entries for all faculty members in the Math department.
 					</p>
 				</li>
 
 				<li>
 					<p>
-						Generate a relation, based on the Students relation of Figure 3.15, that contains entries for all female CS students.
+						Generate a relation, based on the Students relation of <span class="figNum studentrelation"></span>, that contains entries for all female CS students.
 					</p>
 				</li>
 
 				<li>
 					<p>
-						Generate a relation, based on the Students relation of Figure 3.15, that contains entries for all male CS math majors who are between the ages of 19 and 23, inclusive.
+						Generate a relation, based on the Students relation of <span class="figNum studentrelation"></span>, that contains entries for all male CS math majors who are between the ages of 19 and 23, inclusive.
 					</p>
 				</li>
 			</ol>
@@ -212,18 +196,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationUser2b2");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationUser2b2");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

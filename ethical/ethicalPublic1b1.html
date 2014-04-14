@@ -12,12 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+
+	   <!-- Java Script files -->
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
@@ -31,40 +38,21 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
+			<div class="floating-next"></div>
+			<!-- End floating nav -->
 			<!-- End nav -->
+
 
 			<!-- Main content -->
 			
 			<p class = "Section">
-				4.2.1.1 Protecting online accounts from unauthorized access 			
+				<span class="contentNum ethicalPublic1b1"></span>			
 			</p>
 			
 			<p>
@@ -94,15 +82,15 @@
 			<img src="Images/fig4-1.png" alt="The password verification process" class="Image">
 			
 			<p class = "Figure">
-				Figure 4.1:  The password verification process		
+				<span class="figNum passverify"></span>  The password verification process		
 			</p>
 			
 			<p>
-				Figure 4.1 illustrates password verification as a four-step process.  First, a user enters his or her account name and password.  In the example, the account name is assumed to be “mike” and the password “acat”.<span class="Footnote" title="Footnote: "><a href="#ftn1" id="body_ftn1">[1]</a></span>  In the second step the password, but not the account name, is encrypted.  In Figure 4.1, “acat” is converted to “qrtz” by the encryption function.  Next, the password file is searched to determine the encrypted password that is on record as matching account “mike”.  According to Figure 4.1 that password is “qrtz”.  In the final step the two encrypted passwords are compared.  If they match, access to the account is granted.  If they do not match, access to the account is denied.  In our example, the password file entry for “mike”, “qrtz”, does match the encrypted version of the entered password, so access to the account is granted.			
+				<span class="figNum passverify true"></span> illustrates password verification as a four-step process.  First, a user enters his or her account name and password.  In the example, the account name is assumed to be “mike” and the password “acat”.<span class="Footnote" title="Footnote: "><a href="#ftn1" id="body_ftn1">[1]</a></span>  In the second step the password, but not the account name, is encrypted.  In <span class="figNum passverify true"></span>, “acat” is converted to “qrtz” by the encryption function.  Next, the password file is searched to determine the encrypted password that is on record as matching account “mike”.  According to <span class="figNum passverify true"></span> that password is “qrtz”.  In the final step the two encrypted passwords are compared.  If they match, access to the account is granted.  If they do not match, access to the account is denied.  In our example, the password file entry for “mike”, “qrtz”, does match the encrypted version of the entered password, so access to the account is granted.			
 			</p>
 			
 			<p>
-				What would-be hackers intent on stealing a system’s password file soon discover is that having a copy of the password file does not in and of itself give them access to the end-user accounts.  The password file contains encrypted passwords but the computer system requires that an <span class="Ital">unencrypted</span> password be entered to gain access to an account.  If someone were to steal the password file of Figure 4.1, they would learn that my encrypted password is “qrtz”.  Let’s say they tried to use this information to hack my account by typing in my account name “mike” and the password “qrtz”.  The system will treat “qrtz” just like any other password and thus encrypt it – producing a different stream of characters, perhaps “xpyq”.  When the system compares the (doubly) encrypted password, “xpyq”, to the encrypted password stored in the password file, “qrtz”, they will not match and access to the account will be denied.  Since there is no way to force the system to skip the password encryption phase of the log in process, knowing the encrypted version of the password does not crack the account.			
+				What would-be hackers intent on stealing a system’s password file soon discover is that having a copy of the password file does not in and of itself give them access to the end-user accounts.  The password file contains encrypted passwords but the computer system requires that an <span class="Ital">unencrypted</span> password be entered to gain access to an account.  If someone were to steal the password file of <span class="figNum passverify true"></span>, they would learn that my encrypted password is “qrtz”.  Let’s say they tried to use this information to hack my account by typing in my account name “mike” and the password “qrtz”.  The system will treat “qrtz” just like any other password and thus encrypt it – producing a different stream of characters, perhaps “xpyq”.  When the system compares the (doubly) encrypted password, “xpyq”, to the encrypted password stored in the password file, “qrtz”, they will not match and access to the account will be denied.  Since there is no way to force the system to skip the password encryption phase of the log in process, knowing the encrypted version of the password does not crack the account.			
 			</p>
 			
 			<ul class="Blockcenter">
@@ -130,7 +118,7 @@
 			
 			
 			<p class = "Figure">
-				Figure 4.2:  The “Classic” Dictionary Hack	
+				<span class="figNum classicdictionary"></span>  The “Classic” Dictionary Hack	
 			</p>
 			
 			<p>
@@ -146,7 +134,7 @@
 			</p>
 			
 			<p>
-				The “dictionary hack” procedure is summarized in Figure 4.2.  These details are not presented to encourage hacking, but are instead included in this text so that the naïve user can gain insight into the methods used by hackers and thereby better protect themselves from attack.			
+				The “dictionary hack” procedure is summarized in <span class="figNum classicdictionary true"></span>.  These details are not presented to encourage hacking, but are instead included in this text so that the naïve user can gain insight into the methods used by hackers and thereby better protect themselves from attack.			
 			</p>
 			
 			<p>
@@ -190,15 +178,14 @@
 			
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("ethical", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("ethicalPublic1b1");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("ethicalPublic1b1");		// get arrow paths
 				});	
+
 			</script>
 
 			<div>

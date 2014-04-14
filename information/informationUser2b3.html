@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.5.2.3 The “project” operator
+				<span class="contentNum informationUser2b3"></span>
 			</p>
 
 			<p>
@@ -81,7 +65,7 @@
 			</p>
 
 			<p>
-				would produce the relation shown in Figure 3.17. This newly generated relation contains an entry for each row, or tuple, in its parent relation, “Faculty”. However, only the specified attributes, namely “Fname” and “Phone”, are included.
+				would produce the relation shown in <span class="figNum projectfaculty"></span>. This newly generated relation contains an entry for each row, or tuple, in its parent relation, “Faculty”. However, only the specified attributes, namely “Fname” and “Phone”, are included.
 			</p>
 
 			<p>
@@ -97,19 +81,19 @@
 			</p>
 
 			<p>
-				Figure 3.18 presents another relation from our university database. This relation, the “Courses” relation, contains information about the university’s course offerings. The relation would contain an entry for every section of every course ever offered. Each row, or tuple, of this relation includes the name of the faculty member who taught the course, the sequence number of the particular section, the name of the course, the quarter and year offered, and the number of credit hours the course is worth.
+				<span class="figNum coursesrelation"></span> presents another relation from our university database. This relation, the “Courses” relation, contains information about the university’s course offerings. The relation would contain an entry for every section of every course ever offered. Each row, or tuple, of this relation includes the name of the faculty member who taught the course, the sequence number of the particular section, the name of the course, the quarter and year offered, and the number of credit hours the course is worth.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-17.png" alt="Results of Project Fname, Phone from Faculty" class="Image">
+			<img src="images/projectfaculty.png" alt="Results of Project Fname, Phone from Faculty" class="Image">
 
 			<p class="Figure">
-				Figure 3.17: Results of Project Fname, Phone from Faculty
+				<span class="figNum projectfaculty"></span> Results of Project Fname, Phone from Faculty
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-18.png" alt="The “Courses” relation – part of a university database" class="Image">
+			<img src="images/coursesrelation.png" alt="The “Courses” relation – part of a university database" class="Image">
 
 			<p class="Figure">
-				Figure 3.18: The “Courses” relation – part of a university database
+				<span class="figNum coursesrelation"></span> The “Courses” relation – part of a university database
 			</p>
 
 			<p>
@@ -121,17 +105,17 @@
 			</p>
 
 			<p>
-				The results of this query are presented in Figure 3.19.
+				The results of this query are presented in <span class="figNum projectcourses"></span>.
 			</p>
 
 			<p>
-				Note that the relation of Figure 3.19 contains only eight tuples, whereas there are eleven tuples in its parent relation, “Courses”. The reason for this discrepancy is that duplicate entries have been eliminated. Relations are generally considered to “sets” of tuples, and as such, duplicate entries are not allowed. “Project” operations often generate tables that contain some duplicate rows, but most relational database packages will delete these duplicates automatically.
+				Note that the relation of <span class="figNum projectcourses"></span> contains only eight tuples, whereas there are eleven tuples in its parent relation, “Courses”. The reason for this discrepancy is that duplicate entries have been eliminated. Relations are generally considered to “sets” of tuples, and as such, duplicate entries are not allowed. “Project” operations often generate tables that contain some duplicate rows, but most relational database packages will delete these duplicates automatically.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-19.png" alt="Results of Project Course, Credits from Courses" class="Image">
+			<img src="images/projectcourses.png" alt="Results of Project Course, Credits from Courses" class="Image">
 
 			<p class="Figure">
-				Figure 3.19: Results of Project Course, Credits from Courses
+				<span class="figNum projectcourses"></span> Results of Project Course, Credits from Courses
 			</p>
 
 			<p>
@@ -150,13 +134,13 @@
 				In summary, the “project” operator creates a new relation that consists of a subset of the columns, or attributes, of an existing relation. Every tuple of the parent relation will contribute to the projected relation, but duplicate rows will be deleted. Unlike “select”, there is no condition test associated with “project”. Remember to use the “project” operator when you are interested in retrieving particular fields of a relation.
 			</p>
 
-			<p class="Section">
+			<p class="Exercise">
 				<br />
-				Exercises for Section 3.5.2.3
+				Exercises for <span class="contentNum informationUser2b3"></span>
 			</p>
 
 			<p>
-				Using the relations presented in Figures 3.14, 3.15, and 3.18, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
+				Using the relations presented in <span class="figNum facultyrelation"></span>, <span class="figNum studentrelation"></span>, and <span class="figNum coursesrelation"></span>, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
 			</p>
 
 			<ol>
@@ -207,18 +191,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationUser2b3");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationUser2b3");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

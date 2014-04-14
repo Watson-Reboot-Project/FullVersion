@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-			<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.3.1 Contiguous storage
+				<span class="contentNum informationOrganization1"></span>  
 			</p>
 
 			<p>
@@ -73,14 +57,14 @@
 			</p>
 
 			<p>
-				Figure 3.5 presents a collection of files stored using the contiguous approach, and illustrates their track and sector locations on a diagram of a three track, 24-sector disk.
+				<span class="figNum filecollection"></span> presents a collection of files stored using the contiguous approach, and illustrates their track and sector locations on a diagram of a three track, 24-sector disk.
 			</p>
 			
-			<img src="Images/InfoStorageRetrIMGS/fig3-5pt1.png" alt="A collection of contiguous files stored on a disk" class="Image">
-			<img src="Images/InfoStorageRetrIMGS/fig3-5pt2.png" alt="A collection of contiguous files stored on a disk" class="Image">
+			<img src="images/filecollectionpt1.png" alt="A collection of contiguous files stored on a disk" class="Image">
+			<img src="images/filecollectionpt2.png" alt="A collection of contiguous files stored on a disk" class="Image">
 			
 			<p class="Figure">
-				Figure 3.5: A collection of contiguous files stored on a disk
+				<span class="figNum filecollection"></span> A collection of contiguous files stored on a disk
 			</p>
 
 			<p>
@@ -92,18 +76,18 @@
 			</p>
 
 			<p>
-				In Figure 3.5, ten out of 24 total sectors are unused, yet a three-sector file cannot be stored due to the fact that the necessary number of contiguous sectors is not available. To most people this situation would be unacceptable. How would you feel if you had a disk that was only 58% full, yet refused to store a file that was less than one third the size of “available” space? Rather miffed, I would think.
+				In <span class="figNum defraggedfiles"></span>, ten out of 24 total sectors are unused, yet a three-sector file cannot be stored due to the fact that the necessary number of contiguous sectors is not available. To most people this situation would be unacceptable. How would you feel if you had a disk that was only 58% full, yet refused to store a file that was less than one third the size of “available” space? Rather miffed, I would think.
 			</p>
 			
-			<img src="Images/InfoStorageRetrIMGS/fig3-6pt1.png" alt="A collection of contiguous files after defragging" class="Image">
-			<img src="Images/InfoStorageRetrIMGS/fig3-6pt2.png" alt="A collection of contiguous files after defragging" class="Image">
+			<img src="images/defraggedfilespt1.png" alt="A collection of contiguous files after defragging" class="Image">
+			<img src="images/defraggedfilespt2.png" alt="A collection of contiguous files after defragging" class="Image">
 			
 			<p class="Figure">
-				Figure 3.6: A collection of contiguous files after defragging
+				<span class="figNum defraggedfiles"></span>  A collection of contiguous files after defragging
 			</p>
 
 			<p>
-				A disk is said to be</span> <span class="Bolded">fragmented</span> when files are spread throughout the disk, leaving the free space in small scattered “clumps”. One way this fragmentation problem can be overcome is to occasionally</span> <span class="Bolded">defragment</span>, or “</span><span class="Bolded">defrag</span>”, the disk by moving the location of files so that all of the free sectors can be placed together. Performing a defragmentation operation can be time consuming. Essentially, every file on the disk must be examined and the contents of many files copied to new sectors. Figure 3.6 shows how the disk of Figure 3.5 might look after being defragged. Because the process of defragging a disk can literally take many hours to complete, contiguous storage is generally avoided.
+				A disk is said to be</span> <span class="Bolded">fragmented</span> when files are spread throughout the disk, leaving the free space in small scattered “clumps”. One way this fragmentation problem can be overcome is to occasionally</span> <span class="Bolded">defragment</span>, or “</span><span class="Bolded">defrag</span>”, the disk by moving the location of files so that all of the free sectors can be placed together. Performing a defragmentation operation can be time consuming. Essentially, every file on the disk must be examined and the contents of many files copied to new sectors. <span class="figNum defraggedfiles"></span> shows how the disk of <span class="figNum filecollection"></span> might look after being defragged. Because the process of defragging a disk can literally take many hours to complete, contiguous storage is generally avoided.
 			</p>
 			
 			<!-- End main content -->
@@ -126,18 +110,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationOrganization1");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationOrganization1");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

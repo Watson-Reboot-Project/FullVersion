@@ -9,60 +9,39 @@
 
 		<title>Watson</title>
 
-		 <!-- Google fonts -->
+		  	<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
+		<!-- Java Script files -->
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
+			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
 	</head>
 
 	<body>
-		<div id="wrapper" class="page-wrapper">
+		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<!-- Navbar division -->
-
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch14s1.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch14s2p2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
+			<div class="floating-previous"></div><!-- produces the previous arrow -->
+			<!-- End floating nav -->
+
 			<!-- Main content -->
+
 			<p class="Section">
-				14.2.1 HAL: the prototypical intelligent computer
+				<span class="contentNum intelligenceOverview1"></span>
 			</p>
 
 			<p>
@@ -126,8 +105,8 @@
 			
 			<div class="video">
 			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/BBCinterviewwithHAL2001.mp4" type="video/mp4">
-				<object data="video/ai/BBCinterviewwithHAL2001.mp4" width="480" height="360">
+				<source src="./video/ai/BBCinterviewwithHAL2001.mp4" type="video/mp4">
+				<object data="./video/ai/BBCinterviewwithHAL2001.mp4" width="480" height="360">
 				<embed width="480" height="360" src="BBCinterviewwithHAL2001.swf">
 				</object>
 			</video>
@@ -199,6 +178,23 @@
 			<div>
 
 			</div>
+			<div class="floating-next"></div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("intelligenceOverview1");		// get arrow paths
+					chapObj = getCurrChapter("intelligence");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

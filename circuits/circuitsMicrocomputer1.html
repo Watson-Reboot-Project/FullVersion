@@ -12,12 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -28,59 +35,37 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>			
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch12s5.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch12s5p2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			
 			<p class="Section">
-				12.5.1 The Watson Virtual Machine revisited&nbsp;
+				<span class="contentNum circuitsMicrocomputer1"></span>
 			</p>
 
 			<p>
-				Chapter 11 introduced the Watson Virtual Machine. This machine, illustrated in Figure 11.1, consists of a main memory, CPU and data bus. A somewhat more detailed view of the machine is given in Figure 12.32.
+				<span class="contentNum assembly"></span> introduced the Watson Virtual Machine. This machine, illustrated in <span class="figNum watsonvm"></span>, consists of a main memory, CPU and data bus. A somewhat more detailed view of the machine is given in <span class="figNum fourclockcycles"></span>.
 			</p>
 
 			<p>
-				<span>The main memory of the Watson VM is composed of 256 words, each 16 bits wide. While not discussed in Chapter 11, Figure 12.32 shows that the interface to main memory (RAM) consists of two registers, the memory address register (MAD) and the memory data register (MDR). During both “read” and “write” operations, the MAR is used to hold the address of the memory location to be accessed. Since there are 256 words of memory in the Watson VM, numbered 0 – 255, the MAR is eight bits wide, enabling it to hold addresses in the range 0000 0000</span><span class="Subscript">two</span> <span>to 1111 1111</span><span class="Subscript">two</span> <span>(0 – 255). During “write” operations, the 16-bit value to be written into memory will be placed in the MDR. During “read” operations the value of the memory location to be read will be output to the MDR. Thus, the memory data register can function both in an input role (for “write” operations) and in an output role (for “read” operations). The memory address register, on the other hand, always functions in an input role – specifying the location to be accessed.</span>
+				<span>The main memory of the Watson VM is composed of 256 words, each 16 bits wide. While not discussed in <span class="contentNum assembly"></span>, <span class="figNum fourclockcycles"></span> shows that the interface to main memory (RAM) consists of two registers, the memory address register (MAD) and the memory data register (MDR). During both “read” and “write” operations, the MAR is used to hold the address of the memory location to be accessed. Since there are 256 words of memory in the Watson VM, numbered 0 – 255, the MAR is eight bits wide, enabling it to hold addresses in the range 0000 0000</span><span class="Subscript">two</span> <span>to 1111 1111</span><span class="Subscript">two</span> <span>(0 – 255). During “write” operations, the 16-bit value to be written into memory will be placed in the MDR. During “read” operations the value of the memory location to be read will be output to the MDR. Thus, the memory data register can function both in an input role (for “write” operations) and in an output role (for “read” operations). The memory address register, on the other hand, always functions in an input role – specifying the location to be accessed.</span>
 			</p>
 
 			<p>
-				The majority of Figure 12.32 concerns itself with the details of the Watson Virtual Machine CPU. Special emphasis is given to illustrating the major control and data lines interconnecting the various components.
+				The majority of <span class="figNum fourclockcycles"></span> concerns itself with the details of the Watson Virtual Machine CPU. Special emphasis is given to illustrating the major control and data lines interconnecting the various components.
 			</p>
 
 			<p>
-				In Figure 11.1 the CPU is shown as consisting of four components: a program counter, an instruction register, a collection of sixteen general-purpose registers, and four status bits. An examination of Figure 12.32 reveals that in addition to these components, there are four additional components labeled “control logic”, “ALU”, “MUX”, and “decoder”.
+				In <span class="figNum watsonvm"></span> the CPU is shown as consisting of four components: a program counter, an instruction register, a collection of sixteen general-purpose registers, and four status bits. An examination of <span class="figNum fourclockcycles"></span> reveals that in addition to these components, there are four additional components labeled “control logic”, “ALU”, “MUX”, and “decoder”.
 			</p>
 
 			<p>
-				As discussed in Chapter 11, the behavior of a computer at the machine level can be understood in terms of the five-stage instruction cycle:
+				As discussed in <span class="contentNum assembly"></span>, the behavior of a computer at the machine level can be understood in terms of the five-stage instruction cycle:
 			</p>
 
 			<ol>
@@ -118,7 +103,7 @@
 			<img src="Images/fig12-32.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 12.32: The Watson Virtual Machine &nbsp;(detailed view)
+				<span class="figNum fourclockcycles"></span> The Watson Virtual Machine &nbsp;(detailed view)
 			</p>
 
 			<p>
@@ -138,7 +123,7 @@
 			</p>
 
 			<p>
-				Building this multiplexer is a straightforward exercise – we simply arrange sixteen of the four-input multiplexers of Figure 12.19 in parallel. The reason for using four-input multiplexers, even though we only have three input sources, is that multiplexers only come in powers of two – two input, four input, eight input, etc. Thus one of the inputs on each of the sixteen standard four-input multiplexers will be unused. While this is may seem a tad wasteful, it won’t cause any operational difficulties.
+				Building this multiplexer is a straightforward exercise – we simply arrange sixteen of the four-input multiplexers of <span class="figNum fourmultiplex"></span> in parallel. The reason for using four-input multiplexers, even though we only have three input sources, is that multiplexers only come in powers of two – two input, four input, eight input, etc. Thus one of the inputs on each of the sixteen standard four-input multiplexers will be unused. While this is may seem a tad wasteful, it won’t cause any operational difficulties.
 			</p>
 
 			<p>
@@ -146,11 +131,11 @@
 			</p>
 
 			<p>
-				The final component of the CPU we’ll look at is the four-input decoder, located between the control unit and the bank of general-purpose registers. The task of this decoder is to select one of the sixteen registers for access – either for receiving a value from the MUX, or for sending a register value to either main memory or the ALU. This decoder would be similar to the three-to-eight decoder of Figure 12.16, but extended to handle four input lines and sixteen output lines.
+				The final component of the CPU we’ll look at is the four-input decoder, located between the control unit and the bank of general-purpose registers. The task of this decoder is to select one of the sixteen registers for access – either for receiving a value from the MUX, or for sending a register value to either main memory or the ALU. This decoder would be similar to the three-to-eight decoder of <span class="figNum threetoeightdec"></span>, but extended to handle four input lines and sixteen output lines.
 			</p>
 
 			<p>
-				In addition to the memory and CPU, the Watson VM also contains a data bus. This bus was illustrated in Figure 11.1 simply as a path connecting the CPU and memory. In Figure 12.32 the representation of the data bus is much more detailed. It is presented as a number of separate data and address lines that connect components of the CPU to the RAM. In the figure, there are two sets of 8-bit address lines, both leading into the memory address register (MAR). There are also two sets of 16-bit data lines connected to the memory data register (MAD), one set for input and one set for output.
+				In addition to the memory and CPU, the Watson VM also contains a data bus. This bus was illustrated in <span class="figNum watsonvm"></span> simply as a path connecting the CPU and memory. In <span class="figNum fourclockcycles"></span> the representation of the data bus is much more detailed. It is presented as a number of separate data and address lines that connect components of the CPU to the RAM. In the figure, there are two sets of 8-bit address lines, both leading into the memory address register (MAR). There are also two sets of 16-bit data lines connected to the memory data register (MAD), one set for input and one set for output.
 			</p>
 
 			<p>
@@ -166,7 +151,7 @@
 			</p>
 
 			<p>
-				The remainder of this section presents circuit-level designs for a simple ALU and memory. Even though the Watson VM is a very simple microcomputer by today’s standards, it is still much too complex for us to go through a full design of its components. Instead, the components we will look at will be even simpler. Their development, however, should convince you that computers can be constructed from the combinational and sequential circuits of section 12.3 and 12.4.
+				The remainder of this section presents circuit-level designs for a simple ALU and memory. Even though the Watson VM is a very simple microcomputer by today’s standards, it is still much too complex for us to go through a full design of its components. Instead, the components we will look at will be even simpler. Their development, however, should convince you that computers can be constructed from the combinational and sequential circuits of <span class="contentNum circuitsCombinatorial"></span> and <span class="contentNum circuitsSequential"></span>.
 			</p>
 			<!-- End main content -->
 			<hr />
@@ -189,6 +174,21 @@
 
 			</div>
 
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("circuitsMicrocomputer1");		// get arrow paths
+					chapObj = getCurrChapter("circuits");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

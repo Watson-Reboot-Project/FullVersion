@@ -12,22 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script src="js/DigiLogic/jquery-ui-1.10.4.custom.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -36,39 +34,17 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch12s3.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch12s3p2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			
 			<p class="Section">
-				12.3.1 &nbsp;The “exclusive or” circuit
+				<span class="contentNum circuitsCombinatorial1"></span>
 			</p>
 
 			<p>
@@ -119,13 +95,13 @@
 			</p>
 
 			<p>
-				<span>Figure 12.11 illustrates a complete</span> <span class="Ital">xor</span> <span>circuit, which contains the two sub-circuits joined together by an</span> <span class="Ital">or</span> <span>gate. This is reasonable, since the</span> <span class="Ital">xor</span> <span>can be true either by way of the first sub-circuit or the second. Note that due to the manner in which the two sub-circuits were constructed, it is impossible for both of them to be true at the same time.</span>
+				<span><span class="figNum implementxor"></span> illustrates a complete</span> <span class="Ital">xor</span> <span>circuit, which contains the two sub-circuits joined together by an</span> <span class="Ital">or</span> <span>gate. This is reasonable, since the</span> <span class="Ital">xor</span> <span>can be true either by way of the first sub-circuit or the second. Note that due to the manner in which the two sub-circuits were constructed, it is impossible for both of them to be true at the same time.</span>
 			</p>
 
 			<div id="topDiv-11" class="Centered"></div>
 			<div id="container-11" class="Centered"></div>
 			<p class="Figure">
-				Figure 12.11: An implementation of <span class="Ital">xor</span>
+				<span class="figNum implementxor"></span> An implementation of <span class="Ital">xor</span>
 			</p>
 
 			<p>
@@ -141,15 +117,15 @@
 			</p>
 			<!-- Connect point image -->
 			<p>
-				<span>You should convince yourself that the circuit of Figure 12.11 does indeed implement the truth table for</span> <span class="Ital">xor</span> <span>. However, you should not come away from this discussion thinking that the circuit of Figure 12.11 is the only way (or even the most efficient way) to implement the</span> <span class="Ital">xor</span> <span>behavior. The approach to circuit design of identifying the lines of the truth table that generate a “1”, implementing sub-circuits to generate a “1” only under those circumstances, and then connecting all of the sub-circuits together via an</span> <span class="Ital">or</span> <span>, works. But, it frequently results in circuits that are more complex than really necessary. </span>
+				<span>You should convince yourself that the circuit of <span class="figNum implementxor"></span> does indeed implement the truth table for</span> <span class="Ital">xor</span> <span>. However, you should not come away from this discussion thinking that the circuit of <span class="figNum implementxor"></span> is the only way (or even the most efficient way) to implement the</span> <span class="Ital">xor</span> <span>behavior. The approach to circuit design of identifying the lines of the truth table that generate a “1”, implementing sub-circuits to generate a “1” only under those circumstances, and then connecting all of the sub-circuits together via an</span> <span class="Ital">or</span> <span>, works. But, it frequently results in circuits that are more complex than really necessary. </span>
 			</p>
 
 			<p>
 				For example, our implementation of <span class="Ital">xor</span> requires five gates (not counting connectors). An implementation that requires only four gates can be developed from the Boolean expression Z = (A + B) &#9679; <span style="text-decoration: overline">(A &#9679; B)</span>.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 12.3.1
+			<p class="Exercise">
+				Exercises for <span class="contentNum circuitsCombinatorial1"></span>
 			</p>
 
 			<ol>
@@ -188,6 +164,22 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("circuitsCombinatorial1");		// get arrow paths
+					chapObj = getCurrChapter("circuits");
+
+				});	
+				
+			</script>
 
 		</div>
 			<!-- Figure js -->

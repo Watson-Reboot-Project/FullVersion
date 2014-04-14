@@ -12,16 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,41 +34,16 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch15s3p2.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch15s4.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
+			
 			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
 
 			<p class="Section">
-				15.3.3 But, surely this can’t continue indefinitely?
+				<span class="contentNum futureMoores3"></span>
 			</p>
 
 			<p >
@@ -74,21 +51,21 @@
 			</p>
 
 			<p >
-				What this means is that some features, such as a wire, are no more than 40 nanometers wide. What is a nanometer? A <span class="Bolded">nanometer</span> is one billionth of a meter (10<sup>-9</sup> meters). A strand of the DNA molecule is about 3 or 4 nanometers wide. Thus the minimum feature size of components in our most advanced integrated circuits is somewhere in the range of 3 to 10 times wider than the DNA double helix.
+				What this means is that some features, such as a wire, are no more than 40 nanometers wide. What is a nanometer? A <span class="Bolded">nanometer</span> is one billionth of a meter (10<span class="Superscript">-9</span> meters). A strand of the DNA molecule is about 3 or 4 nanometers wide. Thus the minimum feature size of components in our most advanced integrated circuits is somewhere in the range of 3 to 10 times wider than the DNA double helix.
 			</p>
 
 			<p >
-				Our devices are nearing (some might argue already are at) molecular level scales. Molecules are, of course, composed of individual atoms. The diameter of a carbon atom is 0.15 nanometers – which is only about 100 times smaller than minimum feature size in some of today’s (2013’s) most advanced integrated circuits. Since minimum feature size cannot shrink below one atom wide, it looks like the reign of Moore’s Law, at least in its ‘standard’ interpretation, is about over – a factor of 100 is less than 7 doublings (2<sup>7</sup>= 128) which would take 14 years to achieve if doublings took place at the historic rate of about once every 2 years.
+				Our devices are nearing (some might argue already are at) molecular level scales. Molecules are, of course, composed of individual atoms. The diameter of a carbon atom is 0.15 nanometers – which is only about 100 times smaller than minimum feature size in some of today’s (2013’s) most advanced integrated circuits. Since minimum feature size cannot shrink below one atom wide, it looks like the reign of Moore’s Law, at least in its ‘standard’ interpretation, is about over – a factor of 100 is less than 7 doublings (2<span class="Superscript">7</span>= 128) which would take 14 years to achieve if doublings took place at the historic rate of about once every 2 years.
 			</p>
 
 			<p >
-				This should not be surprising. Individual technologies tend to follow what are called “S” curves rather than true exponentials. An “s” curve, which is illustrated in Figure 15.9, is indistinguishable from an exponential in its early phases. Both begin by showing very little apparent progress over a long span of time, then suddenly progress appears to “take off”. In an “s” curve, after this spurt of rapid progress, things settle down into a state where only minor, incremental progress is made. In a true exponential, things never settle down, but continue to accelerate without end.
+				This should not be surprising. Individual technologies tend to follow what are called “S” curves rather than true exponentials. An “s” curve, which is illustrated in <span class="figNum scurvegraphl"></span>, is indistinguishable from an exponential in its early phases. Both begin by showing very little apparent progress over a long span of time, then suddenly progress appears to “take off”. In an “s” curve, after this spurt of rapid progress, things settle down into a state where only minor, incremental progress is made. In a true exponential, things never settle down, but continue to accelerate without end.
 			</p>
 
-			<img src="Images/fig15-7.png" alt="" class="Image">
+			<img src="images/scurvegraph1.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 15.9: An “s” curve
+				<span class="figNum scurvegraphl"></span> An “s” curve
 			</p>
 
 			<p >
@@ -104,17 +81,17 @@
 			</p>
 
 			<p >
-				Figure 15.10 contains a graph produced by Ray Kurzweil, and posted to Wikipedia as part of the “Accelerating Change” article, that captures Kurzweil’s view that while individual computing technologies may follow “S” curves, overall progress in computing remains exponential by periodically switching to new underlying technologies.<span class="Footnote" title="Footnote: "><a href="#ftn7" id="body_ftn7">[7]</a></span> According to this view, the electro-mechanical era of computing essentially began with Herman Hollerith’s tabulating machine for the 1890 census, then moved on to relays in the 1930’s, then vacuum tubes in the 1940’s and 1950’s, then transistors in the 1960’s, and finally integrated circuits in the 1970’s through today. While each of these underlying technologies eventually become mature, reaching their limits of speed and reliability, by leaping from one technology to another, gains in computing capabilities have continued to accelerate at an exponential rate for well over a century.
+				<span class="figNum kurzweilreturns"></span> contains a graph produced by Ray Kurzweil, and posted to Wikipedia as part of the “Accelerating Change” article, that captures Kurzweil’s view that while individual computing technologies may follow “S” curves, overall progress in computing remains exponential by periodically switching to new underlying technologies.<span class="Footnote" title="Footnote: "><a href="#ftn7" id="body_ftn7">[7]</a></span> According to this view, the electro-mechanical era of computing essentially began with Herman Hollerith’s tabulating machine for the 1890 census, then moved on to relays in the 1930’s, then vacuum tubes in the 1940’s and 1950’s, then transistors in the 1960’s, and finally integrated circuits in the 1970’s through today. While each of these underlying technologies eventually become mature, reaching their limits of speed and reliability, by leaping from one technology to another, gains in computing capabilities have continued to accelerate at an exponential rate for well over a century.
 			</p>
 
 			<p >
 				Given the chip designs that are already “in the pipeline”, Moore’s Law seems assured of continuing in the near term – say the next three to five years. In the longer term there are many exciting technologies on the horizon. The next section of this chapter presents a number of these technologies that show promise for delivering vastly more powerful computers than exist today – technologies that could continue generating exponential gains in computing for many decades to come.
 			</p>
 
-			<img src="Images/fig15-8.png" alt="" class="Image">
+			<img src="images/kurzweilreturns.png" alt="" class="Image">
 
 			<p class="Figure" >
-				Figure 15.10: Kurzweil’s Law of Accelerating Returns
+				<span class="figNum kurzweilreturns"></span> Kurzweil’s Law of Accelerating Returns
 				<br/>
 				(from Wikipedia “Accelerating Change” <a href="http://en.wikipedia.org/wiki/File:PPTMooresLawai.jpg">http://en.wikipedia.org/wiki/File:PPTMooresLawai.jpg</a>)
 			</p>
@@ -144,6 +121,20 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<div class="floating-next"></div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("futureMoores3");		// get arrow paths
+				});	
+
+			</script>
 
 			<div>
 

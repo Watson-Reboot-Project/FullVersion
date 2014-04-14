@@ -12,14 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+
+		<!-- Java Script files -->
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -28,45 +34,27 @@
 	</head>
 
 	<body>
-		<div id="wrapper" class="page-wrapper">
+		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
+			<div class="floating-next"></div>
+			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				5.2  Algorithms and efficiency
+				<span class="contentNum algorithmsEfficiency"></span>
 			</p>
+	
 
 			<p>
 				Let’s say you are shown two different algorithms for solving the same problem.  One algorithm is short (1/2 page) and easy to understand.  The other algorithm is longer (several pages) and more difficult to understand.  You are asked to choose the best algorithm for solving the problem.  Under these circumstances, it would seem that the choice is obvious – you should use the first algorithm.  In reality, however, the decision may not be nearly so clear cut.  In fact, depending on other factors such as those discussed below, the longer, more complex looking, algorithm might actually be the best choice.
@@ -81,7 +69,7 @@
 			</p>
 
 			<p>
-				The brute-force solution to this problem would be to actually cover the floor with the tiles you have been given, laying them in neat rows and keeping a careful count of how many tiles you used.  This algorithm, which will be referred to as Algorithm A, is presented in Figure 5.1.  Note that this algorithm is so simple that any child could understand it – once he or she had learned to count.
+				The brute-force solution to this problem would be to actually cover the floor with the tiles you have been given, laying them in neat rows and keeping a careful count of how many tiles you used.  This algorithm, which will be referred to as Algorithm A, is presented in <span class="contentNum algorithmsIntro"></span>.  Note that this algorithm is so simple that any child could understand it – once he or she had learned to count.
 
 
 			<ul class="Blockcenter">
@@ -105,11 +93,11 @@
 			</ul>
 			<br/>
 			<p class="Figure">
-				Figure 5.1:  Algorithm A – the brute force solution to the tile problem
+				<span class="figNum bruteforce"></span>  Algorithm A – the brute force solution to the tile problem
 			</p>
 
 			<p>
-				Another algorithm for solving the same problem would involve laying a single row of tiles along one of the walls of the room.  Since the problem states that the room is square, all that needs to be done at this point is to multiply the number of tiles in this row by itself.  If, for example, the row contained 10 tiles, then that wall would be 10 feet in length, so the entire square room would have to be 10 feet by 10 feet or 100 square feet.  Hence 100 tiles would be required to cover the entire floor.  This algorithm, referred to as Algorithm B, is presented in Figure 5.2.
+				Another algorithm for solving the same problem would involve laying a single row of tiles along one of the walls of the room.  Since the problem states that the room is square, all that needs to be done at this point is to multiply the number of tiles in this row by itself.  If, for example, the row contained 10 tiles, then that wall would be 10 feet in length, so the entire square room would have to be 10 feet by 10 feet or 100 square feet.  Hence 100 tiles would be required to cover the entire floor.  This algorithm, referred to as Algorithm B, is presented in <span class="figNum better"></span>.
 			</p>
 
 			<p>
@@ -132,7 +120,7 @@
 			</ul>
 			<br/>			
 			<p class="Figure">
-				Figure 5.2:  Algorithm B – a better solution to the tile problem
+				<span class="figNum better"></span>  Algorithm B – a better solution to the tile problem
 			</p>
 			
 			<p>
@@ -144,13 +132,13 @@
 			</p>
 
 			<p>
-				Figure 5.3 contains a graph of the runtimes of these two algorithms.  The horizontal dimension represents the length of one wall of the room, in feet.  The vertical axis represents the amount of time (in seconds) required to solve the problem.  The figure shows that for problem sizes less than 3 by 3, Algorithm A is faster.  In the case where the problem size is exactly 3 by 3 both algorithms require the same amount of time.  For problem sizes greater than 3 by 3, Algorithm B is faster.
+				<span class="figNum runtimes"></span> contains a graph of the runtimes of these two algorithms.  The horizontal dimension represents the length of one wall of the room, in feet.  The vertical axis represents the amount of time (in seconds) required to solve the problem.  The figure shows that for problem sizes less than 3 by 3, Algorithm A is faster.  In the case where the problem size is exactly 3 by 3 both algorithms require the same amount of time.  For problem sizes greater than 3 by 3, Algorithm B is faster.
 			</p>
 			
 			<img src="Images/AlgorithmsIMGS/fig5-3.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.3:  A comparison of the run-times of algorithms A and B
+				<span class="figNum runtimes"></span>  A comparison of the run-times of algorithms A and B
 			</p>
 
 			<p>
@@ -174,8 +162,8 @@
 			</p>
 
 
-			<p class="Section">
-				Exercises for Section 5.2
+			<p class="Exercise">
+				Exercises for <span class="contentNum algorithmsEfficiency"></span>
 			</p>
 
 			<ol>
@@ -192,7 +180,7 @@
 				</li>
 				<br/>
 				<li>
-					Assuming 5 seconds to lay a tile and 10 seconds to perform a multiplication operation, compare the runtimes of the two algorithms, A and B, by constructing a graph similar to the one presented in Figure 5.3.
+					Assuming 5 seconds to lay a tile and 10 seconds to perform a multiplication operation, compare the runtimes of the two algorithms, A and B, by constructing a graph similar to the one presented in <span class="figNum better"></span>.
 				</li>
 				<br/>
 				<li>
@@ -216,18 +204,17 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
-			
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("algorithms", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("algorithmsEfficiency");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithmsEfficiency");		// get arrow paths
 				});	
+
 			</script>
 
 			<div>

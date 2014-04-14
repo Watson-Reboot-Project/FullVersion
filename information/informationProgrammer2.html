@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,44 +33,27 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.4.2 A simple example
+				<span class="contentNum informationProgrammer2"></span>
 			</p>
 
 			<p>
-				In order to illustrate how the six file access commands presented above can be used to solve a simple information retrieval problem, a small program is developed in this section. This program determines the names of all students majoring in computer science by accessing a file of student records organized in the manner presented in Figure 3.3
+				In order to illustrate how the six file access commands presented above can be used to solve a simple information retrieval problem, a small program is developed in this section. This program determines the names of all students majoring in computer science by accessing a file of student records organized in the manner presented in <span class="figNum studentfields"></span>
 			</p>
 
 			<p>
@@ -97,7 +81,7 @@
 			</p>
 
 			<p>
-				Figure 3.11 contains the actual program command sequence. Note that the program opens the input file in read_only mode since the original “Students” file will not be modified in any way. The output file is created in read_write mode, since the program will modify it. The</span> While</span> loop and</span> If</span> statements are discussed in Part III of this text, but their intent should be clear from the above English and pseudo code descriptions.
+				<span class="figNum csmajorlist"></span> contains the actual program command sequence. Note that the program opens the input file in read_only mode since the original “Students” file will not be modified in any way. The output file is created in read_write mode, since the program will modify it. The</span> While</span> loop and</span> If</span> statements are discussed in Part III of this text, but their intent should be clear from the above English and pseudo code descriptions.
 			</p>
 			
 			<ul class="Blockcenter">
@@ -118,11 +102,11 @@
 			</ul>
 
 			<p class="Figure">
-				Figure 3.11: A portion of a program to generate a list of the names of all CS majors
+				<span class="figNum csmajorlist"></span> A portion of a program to generate a list of the names of all CS majors
 			</p>
 
 			<p>
-				Before the widespread adoption of relational databases, computer programs, such as the one above, had to be written and debugged in order to answer almost any question about the data maintained by an organization. While this was often more expedient than trying to answer the question by going through the data by hand, it was, nevertheless, far from an optimal solution. Section 3.5.2 examines relational databases, the end-user application that has overcome many of the problems associated with the storage and retrieval of large quantities of data.
+				Before the widespread adoption of relational databases, computer programs, such as the one above, had to be written and debugged in order to answer almost any question about the data maintained by an organization. While this was often more expedient than trying to answer the question by going through the data by hand, it was, nevertheless, far from an optimal solution. <span class="contentNum informationUser2"></span> examines relational databases, the end-user application that has overcome many of the problems associated with the storage and retrieval of large quantities of data.
 			</p>
 			
 			<!-- End main content -->
@@ -145,18 +129,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationProgrammer2");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationProgrammer2");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

@@ -12,13 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -31,41 +38,21 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
 
-			<!--Floating nav -->
+            <!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">
-				6.5.1 CREATING SIMPLE STATIC IMAGES
-			</p>
 			
+			<p class="Section">
+				<span class="contentNum graphicsAlgorithms1"></span>
+			</p>			
 			<p>
 				The first image we will draw with the Watson Graphics Lab is a circle located in the center of the drawing window.  In order to draw this circle using the lab’s interactive mode perform the following sequence of steps:
 			</p>
@@ -85,7 +72,7 @@
 			</ol>
 			
 			<p>
-				The circle should now appear in the drawing window.  You may also notice that as you created the drawing, some text appeared in the Variable Declarations and Program Code windows.  This text is, in fact, a WGL program to create the same image you just drew interactively.  To see that this is true, you could run the program by pressing the Run button.  Run will clear the drawing window then execute the program code.  An example program that draws a circle in the center of the drawing window is presented in Figure 6.10.  The program created by the environment from your interactively produced drawing should be similar.  It may not be identical, however, because the actual location and size of the circle you defined may be somewhat different from the one defined here.
+				The circle should now appear in the drawing window.  You may also notice that as you created the drawing, some text appeared in the Variable Declarations and Program Code windows.  This text is, in fact, a WGL program to create the same image you just drew interactively.  To see that this is true, you could run the program by pressing the Run button.  Run will clear the drawing window then execute the program code.  An example program that draws a circle in the center of the drawing window is presented in <span class="figNum centercircle"></span>.  The program created by the environment from your interactively produced drawing should be similar.  It may not be identical, however, because the actual location and size of the circle you defined may be somewhat different from the one defined here.
 			</p>
 			
 			<p>
@@ -122,7 +109,7 @@
 			</div>
 			<!-- Figure ends -->
 			<p class="Figure">
-				Figure 6.10:  A program that draws a circle in the center of the drawing window
+				<span class="figNum centercircle"></span>  A program that draws a circle in the center of the drawing window
 			</p>
 			
 			<p>
@@ -130,7 +117,7 @@
 			</p>
 			
 			<p>
-				A circle is generally specified by a center point and radius, as discussed in Sections 6.3 and 6.4.  Since Watson’s drawing window coordinate system is defined from 0 to 299 in both the X and Y directions, the “center” of the drawing window is located at (150,150).<span class="Footnote" title="Footnote: Actually, the exact center of this drawing area would be at (149.5, 149.5) which falls between pixels. Rounding up to the nearest pixel gives (150, 150)."><a href="#ftn3" id="body_ftn3">[3]</a></span>  Hence, (150,150) should be the center point of the circle.  Next, we must decide how big we want the circle to be.  Let’s say we want the circle to be 100 units across (i.e., have a diameter of 100 units).  Since radius is always ½ diameter, the radius value will be 50.  This will produce a medium-sized circle in the 300 by 300 drawing window.  For the moment, let’s say that we don’t really care what color “ink” will be used to draw this circle.
+				A circle is generally specified by a center point and radius, as discussed in <span class="contentNum graphicsFundamentals"></span> and <span class="contentNum graphicsLanguage"></span>.  Since Watson’s drawing window coordinate system is defined from 0 to 299 in both the X and Y directions, the “center” of the drawing window is located at (150,150).<span class="Footnote" title="Footnote: Actually, the exact center of this drawing area would be at (149.5, 149.5) which falls between pixels. Rounding up to the nearest pixel gives (150, 150)."><a href="#ftn3" id="body_ftn3">[3]</a></span>  Hence, (150,150) should be the center point of the circle.  Next, we must decide how big we want the circle to be.  Let’s say we want the circle to be 100 units across (i.e., have a diameter of 100 units).  Since radius is always ½ diameter, the radius value will be 50.  This will produce a medium-sized circle in the 300 by 300 drawing window.  For the moment, let’s say that we don’t really care what color “ink” will be used to draw this circle.
 			</p>
 			
 			<p>
@@ -199,7 +186,7 @@
 			</p>
 			
 			<p>
-				Our program is now identical to the one given in Figure 6.10, which was created interactively.  Clicking the “Run” button will cause a medium-sized circle to be drawn in the center of the drawing window.
+				Our program is now identical to the one given in <span class="figNum centercircle"></span>, which was created interactively.  Clicking the “Run” button will cause a medium-sized circle to be drawn in the center of the drawing window.
 			</p>
 			
 			<p>
@@ -362,17 +349,17 @@
 			</ol>
 				
 			<p>
-				Next, I present a somewhat more complex static image and develop a program to draw that image.  One feature of this program will be the creation of complex objects from simpler objects.  The program will introduce the data types: point, line, and polygon.  Distance will also be further explored.  An annotated version of the image the program is to produce is presented in Figure 6.11.  The numbers and text will not be in the final image, they are included here only for reference.  
+				Next, I present a somewhat more complex static image and develop a program to draw that image.  One feature of this program will be the creation of complex objects from simpler objects.  The program will introduce the data types: point, line, and polygon.  Distance will also be further explored.  An annotated version of the image the program is to produce is presented in <span class="figNum boxpolygon"></span>.  The numbers and text will not be in the final image, they are included here only for reference.  
 			</p>
 			
 			<p>
-				In order to construct a program to draw this image, we should first concentrate on the question of <span class="Ital">what</span> we want to draw, then address the issues of <span class="Ital">how</span> we will proceed.  The “what” question is not as straight forward as it first appears, since there are many ways of describing the image of Figure 6.11.  One could view the example image as simply a 
+				In order to construct a program to draw this image, we should first concentrate on the question of <span class="Ital">what</span> we want to draw, then address the issues of <span class="Ital">how</span> we will proceed.  The “what” question is not as straight forward as it first appears, since there are many ways of describing the image of <span class="figNum boxpolygon"></span>.  One could view the example image as simply a 
 			</p>
 			
 			<img src="Images/fig6-11.png" class="Image">
 			
 			<p class="Figure">
-				Figure 6.11:  Box shaped polygon with two intersecting lines
+				<span class="figNum boxpolygon"></span>  Box shaped polygon with two intersecting lines
 			</p>
 			
 			<p>
@@ -384,7 +371,7 @@
 			</p>
 			
 			<p>
-				Now that we have addressed the “what” question by decomposing the image into manageable parts, we need to address “how” we will actually go about drawing the image.  One way to begin is to look at the end points of the lines and corners of the box, since these are the most important points – the ones we will use to define our polygon and lines.  These points are labeled <span class="Ital">p1</span>, <span class="Ital">p2</span>, <span class="Ital">p3</span>, and <span class="Ital">p4</span> in Figure 6.11.  The point <span class="Ital">p1</span> is located at (100,100), <span class="Ital">p2</span> is at (200,100), <span class="Ital">p3</span> is at (200,200), and <span class="Ital">p4</span> is at (100,200).  This information can be expressed in WGL as follows:
+				Now that we have addressed the “what” question by decomposing the image into manageable parts, we need to address “how” we will actually go about drawing the image.  One way to begin is to look at the end points of the lines and corners of the box, since these are the most important points – the ones we will use to define our polygon and lines.  These points are labeled <span class="Ital">p1</span>, <span class="Ital">p2</span>, <span class="Ital">p3</span>, and <span class="Ital">p4</span> in <span class="figNum boxpolygon"></span>.  The point <span class="Ital">p1</span> is located at (100,100), <span class="Ital">p2</span> is at (200,100), <span class="Ital">p3</span> is at (200,200), and <span class="Ital">p4</span> is at (100,200).  This information can be expressed in WGL as follows:
 			</p>
 			
 			
@@ -460,7 +447,7 @@
 			<br/>			
 			
 			<p>
-				Now that the underlying points have been defined, the lines and polygon which are based on them can be specified.  An inspection of Figure 6.11 indicates the location of the endpoints of the lines but it does not specify which ones should be the starting points and which should be the ending points.  Arbitrarily, line <span class="Ital">l1</span> will be defined as starting at point <span class="Ital">p1</span> and ending at point <span class="Ital">p3</span>.  Similarly, line <span class="Ital">l2</span> will be defined as starting at point <span class="Ital">p2</span> and ending at point <span class="Ital">p4</span>.  These lines can be coded in WGL as follows:
+				Now that the underlying points have been defined, the lines and polygon which are based on them can be specified.  An inspection of <span class="figNum boxpolygon"></span> indicates the location of the endpoints of the lines but it does not specify which ones should be the starting points and which should be the ending points.  Arbitrarily, line <span class="Ital">l1</span> will be defined as starting at point <span class="Ital">p1</span> and ending at point <span class="Ital">p3</span>.  Similarly, line <span class="Ital">l2</span> will be defined as starting at point <span class="Ital">p2</span> and ending at point <span class="Ital">p4</span>.  These lines can be coded in WGL as follows:
 			</p>
 			
 			<p class="Subfigure">
@@ -556,7 +543,7 @@
 			<br/>
 
 			<p class="Figure">
-				Figure 6.12:  A complete program that generates the image of Figure 6.11
+				<span class="figNum boxprogram"></span>  A complete program that generates the image of <span class="figNum boxpolygon true"></span>
 			</p>
 			
 			<p>
@@ -570,7 +557,7 @@
 			<p class="Subfigure"> draw(g1)</p>
 			
 			<p>
-				The order of these draw statements will not affect the look of the final image.  A complete program for generating the image of Figure 6.11 appears in Figure 6.12.  
+				The order of these draw statements will not affect the look of the final image.  A complete program for generating the image of <span class="figNum boxpolygon"></span> appears in <span class="figNum boxprogram"></span>.  
 			</p>
 			
 			<p>
@@ -606,19 +593,24 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
-			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("graphics", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("graphicsAlgorithms1");
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("graphicsAlgorithms1");		// get arrow paths
+					chapObj = getCurrChapter("graphics");
 
 				});	
+				
 			</script>
+
 
 			<div>
 

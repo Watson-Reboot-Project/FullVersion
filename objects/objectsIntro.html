@@ -12,15 +12,16 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,44 +32,19 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch09.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch09s2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				9.1  Introduction
+				<span class="contentNum objectsIntro"></span>
 			</p>
 
 			<p>
-				This chapter continues our study of programming by introducing three different approaches to the problem solving process.  Section 9.2 discusses functional programming, in which computer programs are viewed as “functions” to be computed, rather than as sequences of commands to be executed.  Section 9.3 introduces declarative programming, which views programs as a collection of declarations – true statements of two types: facts and rules.  Section 9.4 discusses object-oriented programming, in which programs are viewed as a collection of objects.  Coordinated action is carried out by the exchange of messages between objects.
+				This chapter continues our study of programming by introducing three different approaches to the problem solving process.  <span class="contentNum objectsFunctional"></span> discusses functional programming, in which computer programs are viewed as “functions” to be computed, rather than as sequences of commands to be executed.  <span class="contentNum objectsDeclarative"></span> introduces declarative programming, which views programs as a collection of declarations – true statements of two types: facts and rules.  <span class="contentNum objectsOriented"></span> discusses object-oriented programming, in which programs are viewed as a collection of objects.  Coordinated action is carried out by the exchange of messages between objects.
 			</p>
 
 			<p>
@@ -96,17 +72,18 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("objects", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("objectsIntro");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("objectsIntro");		// get arrow paths
 				});	
+
 			</script>
 
 			<div>

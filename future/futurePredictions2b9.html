@@ -12,16 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,45 +34,20 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch15s5p2h.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch15s5p2j.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
+			
 			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
 
 			<p class="Section">
-				15.5.2.9 Photorealistic virtual actors will start to appear.
+				<span class="contentNum futurePredictions2b9"></span>
 			</p>
 
 			<p>
-				Over the next 10 years or so I believe we will begin to see the use of computer generated, photo-realistic vactors (virtual actors) that are indistinguishable from real actors in movies and TV shows.<span class="Footnote" title="Footnote: "><a href="#ftn19" id="body_ftn19">[19]</a></span> More specifically, I predict that within the next 15 years there will be a film featuring 1950’s sex symbols Marilyn Monroe and James Dean – even though these two actors never worked together during their lives. Similarly, I wouldn’t be surprised to see new episodes of the original Star Trek series, staring Shatner (Kirk), Nimoy (Spock), and Kelly (McCoy) in their mid-1960’s prime. These characters will look, act, and sound (perhaps through motion capture and voice actors) very close, if not identical to the originals. If Hollywood chooses not to go in this direction, I believe fans of the original series will take it upon themselves to do so (Fig. 15.17).
+				Over the next 10 years or so I believe we will begin to see the use of computer generated, photo-realistic vactors (virtual actors) that are indistinguishable from real actors in movies and TV shows.<span class="Footnote" title="Footnote: "><a href="#ftn19" id="body_ftn19">[19]</a></span> More specifically, I predict that within the next 15 years there will be a film featuring 1950’s sex symbols Marilyn Monroe and James Dean – even though these two actors never worked together during their lives. Similarly, I wouldn’t be surprised to see new episodes of the original Star Trek series, staring Shatner (Kirk), Nimoy (Spock), and Kelly (McCoy) in their mid-1960’s prime. These characters will look, act, and sound (perhaps through motion capture and voice actors) very close, if not identical to the originals. If Hollywood chooses not to go in this direction, I believe fans of the original series will take it upon themselves to do so (<span class="figNum trekquality"></span>).
 			</p>
 			<!--
 			<video controls="controls" src="../Video/fn27%20Starship%20Exeter_%20The%20Tressaurian%20Intersection%20%28Intro_Teaser%29.mp4">
@@ -88,7 +65,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 15.17 An example of the level of quality of some fan generated Star Trek inspired productions
+				<span class="figNum trekquality"></span> An example of the level of quality of some fan generated Star Trek inspired productions
 			</p>
 
 			<p>
@@ -110,7 +87,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 15.18 While no one would mistake the computer generated Kara for a human actress, the realism is rather amazing, especially when one considers this video was generated in real time on a PS3.
+				<span class="figNum karacg"></span> While no one would mistake the computer generated Kara for a human actress, the realism is rather amazing, especially when one considers this video was generated in real time on a PS3.
 			</p>
 			
 			<!-- End main content -->
@@ -138,6 +115,20 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<div class="floating-next"></div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("futurePredictions2b9");		// get arrow paths
+				});	
+
+			</script>
 
 			<div>
 

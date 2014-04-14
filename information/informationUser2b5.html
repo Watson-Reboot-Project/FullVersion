@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,44 +33,27 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.5.2.5 The “join” operator
+				<span class="contentNum informationUser2b5"></span>
 			</p>
 
 			<p>
-				The final relational query operator is “join”. The</span> <span class="Bolded">join</span> operator is used to combine information from multiple tables together into a single table, based on some attribute that the tables share in common. The number of columns (attributes) in the resulting table will always be the sum of the number of attributes in both tables minus one. The reason for this is that all attributes in the two source tables will be included in the resulting table, but since one of the attributes is shared, it will only be listed once.
+				The final relational query operator is “join”. The<span> <span class="Bolded">join</span> operator is used to combine information from multiple tables together into a single table, based on some attribute that the tables share in common. The number of columns (attributes) in the resulting table will always be the sum of the number of attributes in both tables minus one. The reason for this is that all attributes in the two source tables will be included in the resulting table, but since one of the attributes is shared, it will only be listed once.
 			</p>
 
 			<p>
@@ -77,13 +61,13 @@
 			</p>
 
 			<p>
-				An example will make this clear. Consider the two tables, Alpha and Beta, shown in Figure 3.20. These two tables share attribute “Z” in common and so may be joined. Since Alpha has three columns and Beta also has three columns, the resulting table will have five columns (3 + 3 – 1). Every tuple of Alpha will be compared to every tuple of Beta. Assuming we are performing an equijoin, those tuples in which Alpha.Z equals Beta.Z will be joined together to form a tuple in the resulting relation. So, for example, since the “Z” in row one of Alpha matches the “Z” in row one of Beta, they will form a tuple in the combined relation. Row one of Alpha with row two of Beta also forms a tuple. As does row three of Alpha with row four of Beta. Since no other tuples satisfy the specified condition, the relation resulting from this join contains only these three tuples.
+				An example will make this clear. Consider the two tables, Alpha and Beta, shown in <span class="figNum joinalphabeta"></span>. These two tables share attribute “Z” in common and so may be joined. Since Alpha has three columns and Beta also has three columns, the resulting table will have five columns (3 + 3 – 1). Every tuple of Alpha will be compared to every tuple of Beta. Assuming we are performing an equijoin, those tuples in which Alpha.Z equals Beta.Z will be joined together to form a tuple in the resulting relation. So, for example, since the “Z” in row one of Alpha matches the “Z” in row one of Beta, they will form a tuple in the combined relation. Row one of Alpha with row two of Beta also forms a tuple. As does row three of Alpha with row four of Beta. Since no other tuples satisfy the specified condition, the relation resulting from this join contains only these three tuples.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-20.png" alt="A join of relations Alpha and Beta over attribute “Z”" class="Image">
+			<img src="images/joinalphabeta.png" alt="A join of relations Alpha and Beta over attribute “Z”" class="Image">
 
 			<p class="Figure">
-				Figure 3.20: A join of relations Alpha and Beta over attribute “Z”
+				<span class="figNum joinalphabeta"></span> A join of relations Alpha and Beta over attribute “Z”
 			</p>
 
 			<p>
@@ -134,19 +118,16 @@
 			<div>
 
 			</div>
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-						<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationUser2b5");
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationUser2b5");		// get arrow paths
+			});	
 
-				});	
-			</script>
+		</script>
 		</div>
 	</body>
 </html>

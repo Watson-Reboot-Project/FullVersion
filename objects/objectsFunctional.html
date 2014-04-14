@@ -12,15 +12,16 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,40 +32,14 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch09s1.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch09s2p2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				9.2 Functional programming
+				<span class="contentNum objectsFunctional"></span>
 			</p>
 
 			<p>
@@ -138,23 +113,23 @@
 			</p>
 
 			<p>
-				As can be seen in Figure 9.1, Lisp lists are represented internally using a tree-like structure of nodes.  Each node has two pointers, a left pointer and a right pointer.  The left pointer points to a list element (which can be either an atom or another list) and the right pointer points to the remainder of the list.  The right pointer of the very last node of every list contains a special value, known as nil.  <span class="Bolded">Nil</span>, sometimes indicated by the Greek letter <span class="Subfigure">λ</span>, is used to indicate both the end of a list and also an “empty list”.  In addition to the Greek letter lambda and the word “nil”, the empty list can also be written as an open parenthesis followed immediately by a close parenthesis,“<span class="Subfigure">()</span>”.  Nil is the only construct in Lisp that is considered to be both a list and an atom.
+				As can be seen in <span class="figNum internallist"></span>, Lisp lists are represented internally using a tree-like structure of nodes.  Each node has two pointers, a left pointer and a right pointer.  The left pointer points to a list element (which can be either an atom or another list) and the right pointer points to the remainder of the list.  The right pointer of the very last node of every list contains a special value, known as nil.  <span class="Bolded">Nil</span>, sometimes indicated by the Greek letter <span class="Subfigure">λ</span>, is used to indicate both the end of a list and also an “empty list”.  In addition to the Greek letter lambda and the word “nil”, the empty list can also be written as an open parenthesis followed immediately by a close parenthesis,“<span class="Subfigure">()</span>”.  Nil is the only construct in Lisp that is considered to be both a list and an atom.
 			</p>
 
-			<img src="Images/fig9-1.png" alt="Internal representation of the list (this is a list)" class="Image">
+			<img src="images/internallist.png" alt="Internal representation of the list (this is a list)" class="Image">
 				
 			<p class="Figure">
-				Figure 9.1 :  Internal representation of the list <span class="Subfigure">(this is a list)</span>
+				<span class="figNum internallist"></span>  Internal representation of the list <span class="Subfigure">(this is a list)</span>
 			</p>
 
-			<img src="Images/fig9-2.png" alt="Internal representation of ((this is a list) within a list)" class="Image">
+			<img src="images/dualinternallist.png" alt="Internal representation of ((this is a list) within a list)" class="Image">
 
 			<p class="Figure">
-				Figure 9.2 :  Internal representation of <span class="Subfigure">((this is a list) within a list)</span>
+				<span class="figNum dualinternallist"></span>  Internal representation of <span class="Subfigure">((this is a list) within a list)</span>
 			</p>
 
 			<p>
-				Figure 9.2 illustrates the internal representation of another list.  This list includes a sublist as its first element.  Lisp lists may contain an arbitrary number of sublists arranged in any order and “nested” to an arbitrary depth.  The only rule is that for every open parenthesis there must be a matching close parenthesis. This ability of lists to contain arbitrary numbers of sublists is one of the features of Lisp that give the language such flexibility.
+				<span class="figNum dualinternallist"></span> illustrates the internal representation of another list.  This list includes a sublist as its first element.  Lisp lists may contain an arbitrary number of sublists arranged in any order and “nested” to an arbitrary depth.  The only rule is that for every open parenthesis there must be a matching close parenthesis. This ability of lists to contain arbitrary numbers of sublists is one of the features of Lisp that give the language such flexibility.
 			</p>
 
 			<p>
@@ -169,10 +144,10 @@
 				A <span class="Bolded">Lisp procedure</span> is a list that specifies a function to be computed.  The first element of every procedure list is an atom that specifies the name of the function to be executed.  This function can be either a built-in function, like addition, in the above example; or a programmer-defined function.  The other elements of the procedure list specify the arguments, or inputs, to the procedure.    In the above example, these inputs are the numeric atoms (i.e., numbers) “<span class="Subfigure">5</span>” and “<span class="Subfigure">3</span>”.  In general, the arguments to a procedure may be either lists or atoms.  Because the name of the function is always the first thing in the procedure list, Lisp procedures are said to be expressed in <span class="Bolded">prefix notation</span>, rather than in the more standard infix notation, where the operator appears between the operands (e.g., <span class="Subfigure">5 + 3</span>).
 			</p>
 			
-			<img src="Images/fig9-3.png" alt="Internal representation of (* (+ 1 2) (- 7 3))" class="Image">
+			<img src="images/internalmath.png" alt="Internal representation of (* (+ 1 2) (- 7 3))" class="Image">
 
 			<p class="Figure">
-				Figure 9.3 :  Internal representation of <span class="Subfigure">(* (+ 1 2) (- 7 3))</span>
+				<span class="figNum internalmath"></span>  Internal representation of <span class="Subfigure">(* (+ 1 2) (- 7 3))</span>
 			</p>
 
 			<p>
@@ -184,7 +159,7 @@
 			</p>
 
 			<p>
-				In order to emphasize the fact that this procedure is a valid Lisp list, its internal representation is illustrated in Figure 9.3.
+				In order to emphasize the fact that this procedure is a valid Lisp list, its internal representation is illustrated in <span class="figNum internalmath"></span>.
 			</p>
 
 			<p>
@@ -227,14 +202,14 @@
 				returns the atom “<span class="Subfigure Lite">this</span>” which is the first element of the list.
 			</p>
 			
-			<img src="Images/fig9-4.png" alt="An illustration of the car operator" class="Image">
+			<img src="images/caroperator.png" alt="An illustration of the car operator" class="Image">
 
 			<p class="Figure">
-				Figure 9.4:   An illustration of the <span class="Subfigure">car</span> operator
+				<span class="figNum caroperator"></span>   An illustration of the <span class="Subfigure">car</span> operator
 			</p>
 
 			<p>
-				Figure 9.4 illustrates the action of the <span class="Subfigure">car</span> operator on a simple list of atoms.  Notice that this example uses the <span class="Subfigure">quote</span> operator to tell Lisp where the data for <span class="Subfigure">car</span> begins.  If we had failed to quote the data and instead written an expression such as:
+				<span class="figNum caroperator"></span> illustrates the action of the <span class="Subfigure">car</span> operator on a simple list of atoms.  Notice that this example uses the <span class="Subfigure">quote</span> operator to tell Lisp where the data for <span class="Subfigure">car</span> begins.  If we had failed to quote the data and instead written an expression such as:
 			</p>
 
 			<p class="Subfigure">
@@ -274,17 +249,17 @@
 			</p>
 
 			<p>
-				produces <span class="Subfigure Lite">(a list)</span>. In order to help you clearly see why this is the case, Figure 6.4 illustrates the way this result is computed.  Since the result of this expression is itself a list, the <span class="Subfigure">car</span> operator could be applied to that result to produce the atom “<span class="Subfigure Lite">a</span>”.  The form of that expression would be
+				produces <span class="Subfigure Lite">(a list)</span>. In order to help you clearly see why this is the case, <span class="figNum housegraphic"></span> illustrates the way this result is computed.  Since the result of this expression is itself a list, the <span class="Subfigure">car</span> operator could be applied to that result to produce the atom “<span class="Subfigure Lite">a</span>”.  The form of that expression would be
 			</p>
 			
 			<p class="Subfigure">
 				(car (car (car (quote<span class="Subfigure Lite">(((a list) in a list) in another list)</span>) )))
 			</p>
 			
-			<img src="Images/fig9-5.png" alt="" class="Image">
+			<img src="images/nestedcar.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 9.5:  An illustration of nested <span class="Subfigure">car</span> operations
+				<span class="figNum nestedcar"></span>  An illustration of nested <span class="Subfigure">car</span> operations
 			</p>
 
 			<p>
@@ -308,13 +283,13 @@
 			</p>
 
 			<p>
-				The basic operation of <span class="Subfigure">cdr</span> is illustrated in Figure 9.6.  In order to make it easy to compare <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span>, this example employs the same data as was used for the illustration of <span class="Subfigure">car</span> in Figure 9.4.
+				The basic operation of <span class="Subfigure">cdr</span> is illustrated in <span class="figNum cdroperator"></span>.  In order to make it easy to compare <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span>, this example employs the same data as was used for the illustration of <span class="Subfigure">car</span> in <span class="figNum caroperator"></span>.
 			</p>
 
-			<img src="Images/fig9-6.png" alt="" class="Image">
+			<img src="images/cdroperator.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 9.6:   An illustration of the <span class="Subfigure">cdr</span> operator
+				<span class="figNum cdroperator"></span>   An illustration of the <span class="Subfigure">cdr</span> operator
 			</p>
 
 			<p>
@@ -346,17 +321,17 @@
 			</p>
 
 			<p>
-				An example of nested <span class="Subfigure">cdr</span> operations is presented in Figure 9.7.  This example uses the same data as Figure 9.5, so that the operation of nested <span class="Subfigure">cdr</span>s can be compared to the operation of nested <span class="Subfigure">car</span>s.  As you can see from the example, the first cdr generates a list with all of the items in the input list except the first one.  The second cdr generates a list with all of the items in the input list except the first two.  This pattern could be continued until no more items remained in the list.  For example, the list <span class="Subfigure Lite">(list)</span> would be returned by the expression
+				An example of nested <span class="Subfigure">cdr</span> operations is presented in <span class="figNum nestedcdr"></span>.  This example uses the same data as <span class="figNum nestedcar"></span>, so that the operation of nested <span class="Subfigure">cdr</span>s can be compared to the operation of nested <span class="Subfigure">car</span>s.  As you can see from the example, the first cdr generates a list with all of the items in the input list except the first one.  The second cdr generates a list with all of the items in the input list except the first two.  This pattern could be continued until no more items remained in the list.  For example, the list <span class="Subfigure Lite">(list)</span> would be returned by the expression
 			</p>
 			
 			<p class="Subfigure">
 				(cdr (cdr (cdr (quote<span class="Subfigure Lite">(((a list) in a list) in another list)</span>) ))
 			</p>
 
-			<img src="Images/fig9-7.png" alt="" class="Image">
+			<img src="images/nestedcdr.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 9.7:  An illustration of nested <span class="Subfigure">cdr</span> operations
+				<span class="figNum nestedcdr"></span>  An illustration of nested <span class="Subfigure">cdr</span> operations
 			</p>
 
 			<p>
@@ -364,7 +339,7 @@
 			</p>
 
 			<p>
-				Both <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> are very efficient operations in Lisp.  If we compare Figures 6.1, 6.4, and 6.6, we can see that the action of <span class="Subfigure">car</span> can be implemented by returning the value pointed to by the left pointer of the first node of a list’s internal data structure.  Similarly, <span class="Subfigure">cdr</span> can be implemented by returning the node list pointed to by the right pointer of the first node in a list’s internal data structure.  If that pointer is empty (contains nil) then nil is returned.
+				Both <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> are very efficient operations in Lisp.  If we compare <span class="figNum gui"></span>, <span class="figNum housegraphic"></span>, and <span class="figNum linesegment"></span>, we can see that the action of <span class="Subfigure">car</span> can be implemented by returning the value pointed to by the left pointer of the first node of a list’s internal data structure.  Similarly, <span class="Subfigure">cdr</span> can be implemented by returning the node list pointed to by the right pointer of the first node in a list’s internal data structure.  If that pointer is empty (contains nil) then nil is returned.
 			</p>
 
 			<p>
@@ -375,28 +350,28 @@
 				(car (cdr (cdr (quote<span class="Subfigure Lite">(I will not eat them in the rain)</span>) )))
 			</p>
 
-			<img src="Images/fig9-8.png" alt="" class="Image">
+			<img src="images/carcdrnest.png" alt="" class="Image">
 			
 			<p class="Figure">
 				(car (cdr (car (cdr (cdr (car (quote <span class="Subfigure Lite">(((this list) has (many sublists)) and parentheses)</span>) ))) )))
 			</p>
 
 			<p class="Figure">
-				Figure 9.8:  An illustration of nested <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations
+				<span class="figNum carcdrnest"></span>  An illustration of nested <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations
 			</p>
 
 			<p>
-				It is also possible to use <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations to “reach down” and pull an element from any sublist of a list.  Figure 9.7 illustrates retrieving the last atom, of the last sublist, of the first element, of a list.   You should study this example carefully.  Once you fully understand it, you will have mastered using <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span>.  As you work your way through this example, notice how we use <span class="Subfigure">cdr</span> to move through a list an element at a time, and <span class="Subfigure">car</span> to move down into a sublist.
+				It is also possible to use <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> operations to “reach down” and pull an element from any sublist of a list.  <span class="figNum nestedcdr"></span> illustrates retrieving the last atom, of the last sublist, of the first element, of a list.   You should study this example carefully.  Once you fully understand it, you will have mastered using <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span>.  As you work your way through this example, notice how we use <span class="Subfigure">cdr</span> to move through a list an element at a time, and <span class="Subfigure">car</span> to move down into a sublist.
 			</p>
 
 			<p>
 				Sometimes as we are processing a list, we end up in a situation were we have a one element list, where that element is itself a list, and we wish to delve into the underlying list.  In other words, a situation with a list like <span class="Subfigure Lite">((many sublists))</span> where it is first necessary to <span class="Subfigure">car</span> this list to get to the underlying list <span class="Subfigure Lite">(many sublists)</span> before you can process that list.  I point this out, since it is quite easy to overlook this required step.
 			</p>
 
-			<img src="Images/fig9-9.png" alt="" class="Image">
+			<img src="images/carcdrcons.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 9.9:  An illustration of the relationship between <span class="Subfigure">car</span>, <span class="Subfigure">cdr</span>, and <span class="Subfigure">cons</span>
+				<span class="figNum carcdrcons"></span>  An illustration of the relationship between <span class="Subfigure">car</span>, <span class="Subfigure">cdr</span>, and <span class="Subfigure">cons</span>
 			</p>
 
 			<p>
@@ -423,17 +398,13 @@
 			</p>
 
 			<p>
-				It is interesting to note that if you take the <span class="Subfigure">cons</span> of the <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> of the same list, you will end up with a copy of the original list.  This relationship between <span class="Subfigure">cons</span>, <span class="Subfigure">car</span>, and <span class="Subfigure">cdr</span> is illustrated in Figure 9.9.
+				It is interesting to note that if you take the <span class="Subfigure">cons</span> of the <span class="Subfigure">car</span> and <span class="Subfigure">cdr</span> of the same list, you will end up with a copy of the original list.  This relationship between <span class="Subfigure">cons</span>, <span class="Subfigure">car</span>, and <span class="Subfigure">cdr</span> is illustrated in <span class="figNum carcdrcons"></span>.
 			</p>
 
-			<img src="Images/fig9-10a.png" alt="" class="Image">
-			<br/>
-			<img src="Images/fig9-10b.png" alt="" class="Image">
-			<br/>
-			<img src="Images/fig9-10c.png" alt="" class="Image">
+			<img src="images/lispoperators.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 9.10: The Lisp list composition operators: <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, and <span class="Subfigure">append</span>
+				<span class="figNum lispoperators"></span> The Lisp list composition operators: <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, and <span class="Subfigure">append</span>
 			</p>
 
 			<p>
@@ -441,11 +412,11 @@
 			</p>
 
 			<p>
-				You may be asking yourself which of the three list composition operators, <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, or <span class="Subfigure">append</span> you should use when you wish to build a list.  Well this all depends, of course, on what kind of list you are trying to build and what kinds of inputs you have, but here is a good way of keeping the functionality of each of these three operators straight.  Assume you want to build a list with no sublists – a simple list of atoms.  In order to do so, use <span class="Subfigure">cons</span> if you have an atom and a list of atoms and want to insert the new atom at the head of the existing list.  Use <span class="Subfigure">list</span> if you have a bunch of atoms and want to build a list out of them.  Finally, use <span class="Subfigure">append</span> if you already have two or more lists of atoms and want to join them together into a single list.  Figure 9.10 illustrates three methods of constructing the list <span class="Subfigure Lite">(a b c d)</span>, using <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, and <span class="Subfigure">append</span>.  Notice that each of these operators requires different inputs in order to construct identical output lists.
+				You may be asking yourself which of the three list composition operators, <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, or <span class="Subfigure">append</span> you should use when you wish to build a list.  Well this all depends, of course, on what kind of list you are trying to build and what kinds of inputs you have, but here is a good way of keeping the functionality of each of these three operators straight.  Assume you want to build a list with no sublists – a simple list of atoms.  In order to do so, use <span class="Subfigure">cons</span> if you have an atom and a list of atoms and want to insert the new atom at the head of the existing list.  Use <span class="Subfigure">list</span> if you have a bunch of atoms and want to build a list out of them.  Finally, use <span class="Subfigure">append</span> if you already have two or more lists of atoms and want to join them together into a single list.  <span class="figNum lispoperators"></span> illustrates three methods of constructing the list <span class="Subfigure Lite">(a b c d)</span>, using <span class="Subfigure">cons</span>, <span class="Subfigure">list</span>, and <span class="Subfigure">append</span>.  Notice that each of these operators requires different inputs in order to construct identical output lists.
 			</p>
 
 			<p>
-				At the beginning of this section I made the claim that Lisp was a simple, albeit powerful, little language.  In fact, the core of the Lisp “engine” can be diagramed in less than a page.  It appears in Figure 9.11.
+				At the beginning of this section I made the claim that Lisp was a simple, albeit powerful, little language.  In fact, the core of the Lisp “engine” can be diagramed in less than a page.  It appears in <span class="figNum lispinterpreter"></span>.
 			</p>
 
 			<p>
@@ -472,10 +443,10 @@
 				If the input given to Eval was not an atom, then it must be a list.  Eval next determines whether the first element of its input list is <span class="Subfigure">quote</span>.  If so, Eval returns the second element of its input list and exits.
 			</p>
 
-			<img src="Images/fig9-11.png" alt="" class="Image">
+			<img src="images/lispinterpreter.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 9.11:  The Lisp interpreter -- Eval
+				<span class="figNum lispinterpreter"></span>  The Lisp interpreter -- Eval
 			</p>
 
 			<p>
@@ -495,11 +466,11 @@
 			</p>
 
 			<p>
-				And that’s it.  That is all the basic Lisp engine does.  Figure 9.11 summarizes the contents of the preceding paragraphs in program “flowchart” form.
+				And that’s it.  That is all the basic Lisp engine does.  <span class="figNum lispinterpreter"></span> summarizes the contents of the preceding paragraphs in program “flowchart” form.
 			</p>
 
-			<p class="Section">
-				Exercises 9.2.1
+			<p class="Exercise">
+				Exercises <span class="contentNum objectsFunctional"></span>
 			</p>
 
 			<ol>
@@ -638,7 +609,7 @@
 				</li>
 
 				<li>
-					<p>Using the illustration of Figure 9.10, trace through the actions of the Lisp interpreter when evaluating the expression:</p>
+					<p>Using the illustration of <span class="figNum lispoperators"></span>, trace through the actions of the Lisp interpreter when evaluating the expression:</p>
 					
 					<ul class="Subblockcenter">(+ 3 (- 12 10))</ul>
 					
@@ -674,17 +645,18 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("objects", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("objectsFunctional");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("objectsFunctional");		// get arrow paths
 				});	
+
 			</script>
 
 			<div>

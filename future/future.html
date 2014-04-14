@@ -12,12 +12,17 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -28,24 +33,36 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentChapterTOC"></div>
 
-			<!-- End nav -->
+			<!-- Chapter Index listing -->
+   		<div id="ContentAreaSections" class="well bold-me"></div>
+   		<!-- End Chapter Index listing -->
+
+			
 			<!--Floating nav -->
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch15s1.html">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-				</div>
+			<!-- Previous -->
+			<div class="floating-previous"></div>
+			<!-- Next -->
+			<div class="floating-next"></div>
+			<!-- End floating nav -->
+
+			<!-- Previous and Next Chapter buttons -->
+			<br>
+			<div class="container">
+				<div class="row">
+					<!--Floating nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->
+				</div> 
+			</div>
 			<!-- End floating nav -->
 			<!-- Main content -->
+			
+			<!--
 			<a href="ch15.html"><p class="Section">Chapter 15: The Past, Present, and Future of Computing</p></a>
 			<ul>
 				<a href="ch15s1.html"><li>15.1 Introduction</li></a>
@@ -88,6 +105,7 @@
 					</ul>
 				</ul>
 			</ul>
+			-->
 			
 			<!-- End main content -->
 			<hr />
@@ -105,6 +123,20 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<script>
+				var pageObj;
+				var chapObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("future");
+					populateNav();
+					populateChapterButtons();
+					
+					pageObj = getArrowPathsByPage("future");
+					chapObj = getArrowPathsByChapter("future");
+				});	
+			</script>
 
 			<div>
 

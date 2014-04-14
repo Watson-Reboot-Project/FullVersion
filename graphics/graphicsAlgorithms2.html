@@ -12,13 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -31,39 +38,20 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
 
-			<!--Floating nav -->
+            <!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			
 			<p class="Section">
-				6.5.2  CREATING COMPLEX IMAGES AND ANIMATION
+				<span class="contentNum graphicsAlgorithms2"></span>
 			</p>
 			
 			<p>
@@ -71,13 +59,13 @@
 			</p>
 			
 			<p>
-				Let’s say we want to draw the image shown in Figure 6.13.  This image consists of 10 concentric circles, drawn in blue, all of which share the same center point, (150,150).  The smallest circle has a diameter of 100 units (radius of 50).  The next circle a diameter of 120 units (radius of 60), and so forth.  The largest circle has a diameter of 280 units (radius of 140).
+				Let’s say we want to draw the image shown in <span class="contentNum concentric10"></span>.  This image consists of 10 concentric circles, drawn in blue, all of which share the same center point, (150,150).  The smallest circle has a diameter of 100 units (radius of 50).  The next circle a diameter of 120 units (radius of 60), and so forth.  The largest circle has a diameter of 280 units (radius of 140).
 			</p>
 			
 			
 			<img src="Images/fig6-13.png" class="Image">
 			<p class="Figure">
-				Figure 6.13:  A series of 10 concentric circles
+				<span class="figNum concentric10"></span>  A series of 10 concentric circles
 			</p>
 			
 			<p>
@@ -150,11 +138,11 @@
 				
 			</div>
 			<p class="Figure">
-				Figure 6.14:  A program to draw a series of 10 concentric circles
+				<span class="figNum concentricprogram"></span>  A program to draw a series of 10 concentric circles
 			</p>
 			
 			<p>
-				Applying these concepts to the problem at hand, gives us the program of Figure 6.14.  This program works by defining a circle centered at (150,150) with some variable radius, which is initially set to 50.  The circle is drawn and the distance variable that held the radius increased by 10 units to prepare for drawing the next circle.  This process is repeated 10 times to create the pattern of concentric circles shown in Figure 6.13. 
+				Applying these concepts to the problem at hand, gives us the program of <span class="figNum concentricprogram"></span>.  This program works by defining a circle centered at (150,150) with some variable radius, which is initially set to 50.  The circle is drawn and the distance variable that held the radius increased by 10 units to prepare for drawing the next circle.  This process is repeated 10 times to create the pattern of concentric circles shown in <span class="figNum concentric10"></span>. 
 			</p>
 			
 			<p>
@@ -279,11 +267,11 @@
 			</p>
 			
 			<p>
-				The development of the program in Figure 6.14, which draws 10 concentric circles, is now complete.  
+				The development of the program in <span class="figNum concentricprogram"></span>, which draws 10 concentric circles, is now complete.  
 			</p>
 				
 			<p>
-				Before moving on to our next example, I would like to discuss one final aspect of the current one.  The program of Figure 6.14 contains three variables: <span class="Ital">d1</span>, <span class="Ital">p1</span>, and <span class="Ital">c1</span>.  Are three variables absolutely required to draw the 10 circles, or would it be possible to get by with fewer?  The answer is that the program could be written using only two variables. 
+				Before moving on to our next example, I would like to discuss one final aspect of the current one.  The program of <span class="figNum concentricprogram"></span> contains three variables: <span class="Ital">d1</span>, <span class="Ital">p1</span>, and <span class="Ital">c1</span>.  Are three variables absolutely required to draw the 10 circles, or would it be possible to get by with fewer?  The answer is that the program could be written using only two variables. 
 			</p>
 			
 			<p>
@@ -315,19 +303,19 @@
 			</div>
 			<!--Figure ends -->
 			<p class="Figure">
-				Figure 6.15:  A variation of the program of Figure 6.14 that eliminates <span class="Ital">p1</span>.
+				<span class="figNum concentricnop1"></span>  A variation of the program of <span class="figNum concentricprogram"></span> that eliminates <span class="Ital">p1</span>.
 			</p>
 			
 			<p>
-				Hence, in the current problem, a variable must be used for the circle – so that it can be drawn.  Also, a variable must be used for the circle’s radius distance, since that will vary over time.  But, a constant could have been used in place of the variable <span class="Ital">p1</span> to represent the circle’s center point, since it does not vary with time.  Figure 6.15 contains a variation of the program of Figure 6.14 that eliminates <span class="Ital">p1</span>.
+				Hence, in the current problem, a variable must be used for the circle – so that it can be drawn.  Also, a variable must be used for the circle’s radius distance, since that will vary over time.  But, a constant could have been used in place of the variable <span class="Ital">p1</span> to represent the circle’s center point, since it does not vary with time.  <span class="figNum concentricnop1"></span> contains a variation of the program of <span class="figNum concentricprogram"></span> that eliminates <span class="Ital">p1</span>.
 			</p>
 			
 			<p>
-				Next, we look at two simple modifications to the program of Figure 6.14 that have a rather large effect on its output.  The first change is rather trivial, the modified program will still draw a sequence of 10 circles of increasing size, but now they will be red rather than blue.  A more dramatic change will occur as a result of the program erasing the current circle before drawing the next one.  The combined visual effect of these two changes will be of a single red circle that grows larger over time.
+				Next, we look at two simple modifications to the program of <span class="figNum concentricprogram"></span> that have a rather large effect on its output.  The first change is rather trivial, the modified program will still draw a sequence of 10 circles of increasing size, but now they will be red rather than blue.  A more dramatic change will occur as a result of the program erasing the current circle before drawing the next one.  The combined visual effect of these two changes will be of a single red circle that grows larger over time.
 			</p>
 			
 			<p>
-				Animation works by rapidly displaying a sequence of related images.  If the images are properly related and are displayed quickly enough, the human eye will perceive movement.  We can harness this effect in our program simply by erasing the current circle immediately prior to defining and drawing the next one.  The only modification to the program of Figure 6.14 that is required to create this animation is to insert an “erase” statement as the final task inside the loop. 
+				Animation works by rapidly displaying a sequence of related images.  If the images are properly related and are displayed quickly enough, the human eye will perceive movement.  We can harness this effect in our program simply by erasing the current circle immediately prior to defining and drawing the next one.  The only modification to the program of <span class="figNum concentricprogram"></span> that is required to create this animation is to insert an “erase” statement as the final task inside the loop. 
 			</p>
 			
 			<p>An erase statement takes the form of:</p>
@@ -402,7 +390,7 @@
 				
 			</div>
 			<p class="Figure">
-				Figure 6.16:  A program to animate a circle growing larger (10 frames)
+				<span class="figNum growingcircle"></span>  A program to animate a circle growing larger (10 frames)
 			</p>
 			
 			<p>
@@ -410,11 +398,11 @@
 			</p>
 			
 			<p>
-				The complete program incorporating these modifications is presented in Figure 6.16.  This program is also included in the Watson Graphics Lab as “Example Two”.  I encourage you to experiment with this program by changing its drawing color, its loop counter, and its distance constants.  As you do so, try to predict what the effect of your changes will be before running the program.  When the program’s behavior is different than you expected, try to determine why that is so.
+				The complete program incorporating these modifications is presented in <span class="figNum fallingline"></span>.  This program is also included in the Watson Graphics Lab as “Example Two”.  I encourage you to experiment with this program by changing its drawing color, its loop counter, and its distance constants.  As you do so, try to predict what the effect of your changes will be before running the program.  When the program’s behavior is different than you expected, try to determine why that is so.
 			</p>
 			
 			<p>
-				A final WGL program is presented in Figure 6.17.  This program draws a sequence of blue lines, all of the same length, but of decreasing height.  Since the program erases the previous line before drawing the next one, the visual effect is of a blue line falling towards the bottom of the screen.
+				A final WGL program is presented in <span class="figNum fallingline"></span>.  This program draws a sequence of blue lines, all of the same length, but of decreasing height.  Since the program erases the previous line before drawing the next one, the visual effect is of a blue line falling towards the bottom of the screen.
 			</p>
 			<!-- manual figure
 			
@@ -473,15 +461,15 @@
 				
 			</div>
 			<p class="Figure">
-				Figure 6.17:  A program to animate a falling blue line (21 frames)
+				<span class="figNum fallingline"></span>  A program to animate a falling blue line (21 frames)
 			</p>
 			
 			<p>
 				You should carefully trace through this program examining each statement closely until you thoroughly understand its behavior.  In order to help you do this, an explanation of each statement is included.  As with the previous example, it would be instructive for you to experiment with the program – to change the values of the various constants and try to predict the behavior of the resulting program.  To help you do so, this program is included in the Watson Graphics Lab as “Example Three”.
 			</p>
 			
-			<p class="Section">
-				Exercises for Section 6.5
+			<p class="Exercise">
+				Exercises for <span class="contentNum graphicsAlgorithms2"></span>
 			</p>
 			
 			<ol>
@@ -521,7 +509,7 @@
 				
 				<li>
 					<p>
-						Write a program (using the Commands and Program Code editor) that will draw a circle and cause it to appear to move horizontally across the Drawing Window.  In reality, this program will draw and erase a series of circles.  It will use a loop in a manner similar to the programs of Figures 6.15 and 6.17.  You might want to look back at those programs for ideas on how to proceed.
+						Write a program (using the Commands and Program Code editor) that will draw a circle and cause it to appear to move horizontally across the Drawing Window.  In reality, this program will draw and erase a series of circles.  It will use a loop in a manner similar to the programs of <span class="figNum growingcircle"></span> and <span class="figNum fallingline"></span>.  You might want to look back at those programs for ideas on how to proceed.
 					</p>
 			
 					<p>
@@ -567,18 +555,20 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("graphics", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("graphicsAlgorithms2");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("graphicsAlgorithms2");		// get arrow paths
 				});	
+
 			</script>
+
 
 			<div>
 

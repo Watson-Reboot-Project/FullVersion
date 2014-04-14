@@ -12,13 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -31,39 +38,20 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
 
-			<!--Floating nav -->
+            <!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			
 			<p class="Section">
-				6.4 A SIMPLE GRAPHICAL LANGUAGE
+				<span class="contentNum graphicsLanguage"></span>
 			</p>
 			
 			<p>
@@ -71,7 +59,7 @@
 			</p>
 			
 			<p>
-				This section describes the features of the language: its data types and instructions.  Don’t worry if you don’t immediately understand the purpose of some of the language features.  Section 6.5 will show you some example programs and describe how they were created.  That section should clear up any confusion about how you would actually use the language.
+				This section describes the features of the language: its data types and instructions.  Don’t worry if you don’t immediately understand the purpose of some of the language features.  <span class="contentNum graphicsAlgorithms"></span> will show you some example programs and describe how they were created.  That section should clear up any confusion about how you would actually use the language.
 			</p>
 			<!-- End main content -->
 			<hr />
@@ -90,17 +78,18 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("graphics", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("graphicsLanguage");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("graphicsLanguage");		// get arrow paths
 				});	
+
 			</script>
 
 			<div>

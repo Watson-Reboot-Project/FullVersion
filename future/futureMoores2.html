@@ -12,16 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,45 +34,20 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch15s3p1.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch15s3p3.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
+			
 			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
 
 			<p class="Section">
-				15.3.2 The exponential growth of supercomputer speed
+				<span class="contentNum futureMoores2"></span>
 			</p>
 
 			<p >
-				Figure 15.7 presents a table of the world’s fastest supercomputers over the past 20 years together with their speed in gigaFLOPs (billions of floating point operations per second) and the approximate date at which each came online. As can be seen from the table the speed of the world’s fastest supercomputer increased more than 500,000 times over the period – from 60 gigaFLOPS (10<sup>9</sup>FLOPS, billons of FLOPS) to 33.86 petaFLOPS (10<sup>15</sup> FLOPS, a million billion FLOPS). This difference represents just over 9 doublings in the 20 year period from 1993 to 2013, or a little less than once every 2 years.
+				<span class="figNum computertable"></span> presents a table of the world’s fastest supercomputers over the past 20 years together with their speed in gigaFLOPs (billions of floating point operations per second) and the approximate date at which each came online. As can be seen from the table the speed of the world’s fastest supercomputer increased more than 500,000 times over the period – from 60 gigaFLOPS (10<span class="Superscript">9</span>FLOPS, billons of FLOPS) to 33.86 petaFLOPS (10<span class="Superscript">15</span> FLOPS, a million billion FLOPS). This difference represents just over 9 doublings in the 20 year period from 1993 to 2013, or a little less than once every 2 years.
 			</p>
 
 			<!--
@@ -388,20 +365,20 @@
 				</table>
 			</center>
 			-->
-			<img src="Images/fig15-9.png" alt="" class="Image">
+			<img src="images/computertable.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 15.7: World’s Fastest Supercomputers 1993 - 2013
+				<span class="figNum computertable"></span> World’s Fastest Supercomputers 1993 - 2013
 			</p>
 
-			<img src="Images/fig15-6.png" alt="" class="Image">
+			<img src="images/computergraph.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 15.8: World’s Fastest Supercomputers 1993 - 2013
+				<span class="figNum computergraph"></span> World’s Fastest Supercomputers 1993 - 2013
 			</p>
 
 			<p >
-				Figure 15.8 plots the data on the world’s fastest supercomputers from 1993 to 2013 which was presented in Figure 15.17. Figure 15.8 uses the logarithmic scale where exponential growth appears as a straight line. A trend line which projects historical growth through 2020 is included (shown as a yellow line in the figure). If the growth trend of the past 20 years continues to hold supercomputers should pass the one exaFLOPS (10<sup>18</sup>FLOPS, a billion billion FLOPS) benchmark by 2020.
+				<span class="figNum computergraph"></span> plots the data on the world’s fastest supercomputers from 1993 to 2013 which was presented in <span class="figNum trekquality"></span>. <span class="figNum computergraph"></span> uses the logarithmic scale where exponential growth appears as a straight line. A trend line which projects historical growth through 2020 is included (shown as a yellow line in the figure). If the growth trend of the past 20 years continues to hold supercomputers should pass the one exaFLOPS (10<span class="Superscript">18</span>FLOPS, a billion billion FLOPS) benchmark by 2020.
 			</p>
 
 			<p >
@@ -433,6 +410,20 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<div class="floating-next"></div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("futureMoores2");		// get arrow paths
+				});	
+
+			</script>
 
 			<div>
 

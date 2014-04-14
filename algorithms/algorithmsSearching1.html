@@ -12,14 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+			
+	   <!-- Java Script files -->
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -28,52 +34,32 @@
 	</head>
 
 	<body>
-		<div id="wrapper" class="page-wrapper">
+    <div class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
+			<div class="floating-next"></div>
+			<!-- End floating nav -->
 			<!-- End nav -->
-
 			<!-- Main content -->
 			
 			<p class="Section">
-				5.3.1  Sequential search
+				<span class="contentNum algorithmsSearching1"></span>
 			</p>
 
 			<p>
-				<span class="Bolded">Sequential search</span> works in the following way: starting at the first item in the list, compare each item in the list to the item you are looking for.  As soon as you find the item, print “Yes, found it” and then quit.  If you reach the end of the list without having found the item, you should print “No, did not find it” and then quit.  The algorithm for sequential search is expressed more formally in Figure 5.4.  Note that step three of the algorithm is reached only in the event that the entire list was searched and the target item not discovered.
+				<span class="Bolded">Sequential search</span> works in the following way: starting at the first item in the list, compare each item in the list to the item you are looking for.  As soon as you find the item, print “Yes, found it” and then quit.  If you reach the end of the list without having found the item, you should print “No, did not find it” and then quit.  The algorithm for sequential search is expressed more formally in <span class="figNum seqsearch"></span>.  Note that step three of the algorithm is reached only in the event that the entire list was searched and the target item not discovered.
 			</p>
 
 			<p>
-				Figure 5.5 illustrates the behavior of the sequential search algorithm given the eight item list (50,10,30,80,70,20,60,40) and a target value of 20.  When looking for the value 20, only the first six items of this particular list need to be examined.  This is because the target value occurs in the sixth position of the list.  If, on the other hand, the target value was 50 and the list remained unchanged, this algorithm would have to examine only one item – the first item in the list.  Given the same list and a target value of 90, the algorithm would be forced to examine all eight items to determine that this target does not occur anywhere in the list.
+				<span class="figNum seqsearch20"></span> illustrates the behavior of the sequential search algorithm given the eight item list (50,10,30,80,70,20,60,40) and a target value of 20.  When looking for the value 20, only the first six items of this particular list need to be examined.  This is because the target value occurs in the sixth position of the list.  If, on the other hand, the target value was 50 and the list remained unchanged, this algorithm would have to examine only one item – the first item in the list.  Given the same list and a target value of 90, the algorithm would be forced to examine all eight items to determine that this target does not occur anywhere in the list.
 			</p>
 
 			<p>
@@ -97,17 +83,17 @@
 			</ul>
 			<br/>
 			<p class="Figure">
-				Figure 5.4:  Sequential search
+				<span class="figNum seqsearch"></span>  Sequential search
 			</p>
 
 			<img src="Images/AlgorithmsIMGS/fig5-5.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.5:  Sequential search for the value 20
+				<span class="figNum seqsearch20"></span>  Sequential search for the value 20
 			</p>
 
 			<p>
-				To begin with, if the target item is not in the list, it will be necessary to look through the entire list to verify this fact.  So, for <span class="Ital">N</span> = 8 items, a search that ends in failure will require <span class="Ital">N</span>, or 8, comparisons.  Let’s say we were executing sequential search on an antique computer that requires 1/1,000 of a second to perform a comparison.<span class="Footnote" title="Footnote: The value of 1,000 comparisons per second was chosen for illustrative purposes only. Modern computers are orders of magnitude faster. In section 5.4 we will switch to a computer with a somewhat more realistic processing speed."><a href="#ftn2" id="body_ftn2">[2]</a></span>  In that case, an unsuccessful search of 10,000 items would require 10 seconds.
+				To begin with, if the target item is not in the list, it will be necessary to look through the entire list to verify this fact.  So, for <span class="Ital">N</span> = 8 items, a search that ends in failure will require <span class="Ital">N</span>, or 8, comparisons.  Let’s say we were executing sequential search on an antique computer that requires 1/1,000 of a second to perform a comparison.<span class="Footnote" title="Footnote: The value of 1,000 comparisons per second was chosen for illustrative purposes only. Modern computers are orders of magnitude faster. In <span class="contentNum algorithmSorting"></span> we will switch to a computer with a somewhat more realistic processing speed."><a href="#ftn2" id="body_ftn2">[2]</a></span>  In that case, an unsuccessful search of 10,000 items would require 10 seconds.
 			</p>
 
 			<p>
@@ -142,8 +128,8 @@
 				<span class="Ital">Average number of sequential search comparisons for successful searches</span>   =   &frac12; <span class="Ital">N</span>
 			</p>
 
-			<p class="Section">
-				Exercises for Section 5.3.1
+			<p class="Exercise">
+				Exercises for <span class="contentNum algorithmsSearching1"></span>
 			</p>
 
 			<ol>
@@ -190,18 +176,20 @@
 				</p>
 			</nav>
 			
+				<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("algorithms", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("algorithmsSearching1");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithmsSearching1");		// get arrow paths
 				});	
+
 			</script>
+
 
 			<div>
 

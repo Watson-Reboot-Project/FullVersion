@@ -12,16 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,41 +34,16 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		   div.floating-previous
-		   {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		   div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		   <a href="ch15s1.html">
-		     <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		   </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		   div.floating-next
-		   {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		   div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		   <a href="ch15s3p1.html">
-		     <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		   </a>
-		      </div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
+			
 			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
 
 			<p class="Section">
-				15.2 The evolving nature of human-computer interaction
+				<span class="contentNum futureEvolving"></span>
 			</p>
 
 			<p>
@@ -90,7 +67,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 15.1 Bell Labs Holmdel, New Jersey computer center from 1973 – a leading edge computing center at the time
+				<span class="figNum bellholmdel"></span> Bell Labs Holmdel, New Jersey computer center from 1973 – a leading edge computing center at the time
 			</p>
 
 			<p>
@@ -100,17 +77,17 @@
 			<p class="Subfigure">DO 211 &nbsp;&nbsp; I=1,30</p>
 
 			<p>
-				is illustrated in Figure 15.2.
+				is illustrated in <span class="figNum punchcard"></span>.
 			</p>
 
 			<p>
 				Once a programmer had punched a program, he or she would give it to an operator. <span class="Bolded">Operators</span> were the people who actually worked directly with the machine. The operator would take the punched cards and place them in a card reader. The <span class="Bolded">card reader</span> would quickly process a deck of cards, sensing where the holes had been punched and thereby “reading” the characters that had been punched on them.
 			</p>
 
-			<img src="Images/fig15-1.png" alt="" class="Image">
+			<img src="images/punchcard.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 15.2: An 80 column punch card
+				<span class="figNum punchcard"></span> An 80 column punch card
 			</p>
 
 			<p>
@@ -171,14 +148,14 @@
 			</p>
 
 			<p>
-				The interface paradigm developed by Xerox at PARC, which came to be known as the Graphical User Interface or GUI, eventually revolutionized computing, but it didn’t make any money for Xerox. Although Xerox did create a “commercial” version of the Alto in 1981, called the Star (shown in Figure 15.3), few were sold. People debate the reasons for this market failure, but certainly the high cost (approximately $20,000 per workstation), slow speed, and limited capabilities contributed to the lack of market acceptance. Regardless of the lack of market success, the Xerox Star is the first commercial computer that would look “familiar” to a present-day computer user.
+				The interface paradigm developed by Xerox at PARC, which came to be known as the Graphical User Interface or GUI, eventually revolutionized computing, but it didn’t make any money for Xerox. Although Xerox did create a “commercial” version of the Alto in 1981, called the Star (shown in <span class="figNum xeroxstar"></span>), few were sold. People debate the reasons for this market failure, but certainly the high cost (approximately $20,000 per workstation), slow speed, and limited capabilities contributed to the lack of market acceptance. Regardless of the lack of market success, the Xerox Star is the first commercial computer that would look “familiar” to a present-day computer user.
 			</p>
 
-			<img src="Images/fig15-2.png" alt="" class="Image">
+			<img src="images/xeroxstar.png" alt="" class="Image">
 			
 
 			<p class="Figure" >
-				Figure 15.3: the Xerox Star – circa 1981
+				<span class="figNum xeroxstar"></span> the Xerox Star – circa 1981
 			</p>
 
 			<p>
@@ -206,15 +183,15 @@
 			</p>
 
 			<p>
-				By the midpoint of the first decade of the 21<sup>st</sup> century, many households had multiple computers and computer-like devices, such as game machines, so it was only natural to want to allow these devices to communicate with each other and with the wider Internet. Additionally, the growing popularity of laptops over desktops meant that people didn’t want to have to plug their laptop into their cable/DSL modem in order to connect to the Internet. This situation led to the rapid adoption of wireless routers. Wireless routers establish LANs (Local Area Networks) which enable devices to connect to each other and the Internet using short range RF “radio frequency” transmitters and receivers.
+				By the midpoint of the first decade of the 21<span class="Superscript">st</span> century, many households had multiple computers and computer-like devices, such as game machines, so it was only natural to want to allow these devices to communicate with each other and with the wider Internet. Additionally, the growing popularity of laptops over desktops meant that people didn’t want to have to plug their laptop into their cable/DSL modem in order to connect to the Internet. This situation led to the rapid adoption of wireless routers. Wireless routers establish LANs (Local Area Networks) which enable devices to connect to each other and the Internet using short range RF “radio frequency” transmitters and receivers.
 			</p>
 
 			<p>
-				Progressing in parallel with the rise of broadband Internet access and wireless Local Area Networks in the home, mobile communications were undergoing a sea change during the first decade of the 21<sup>st</sup> century. At the beginning of this period high-end professionals often carried around two separate devices: a PDA (Personal Digital Assistant) and a mobile phone. PDA’s were devices that served as digital appointment calendars and note taking devices, with a modest number of additional features like calculators and clocks. They were generally devoid of any type of wireless access to the Internet and supported only low resolution black and white LCD (Liquid Crystal Displays) displays. Most mobile phones (called “cell phones” in the US) generally supported voice calls and little else.
+				Progressing in parallel with the rise of broadband Internet access and wireless Local Area Networks in the home, mobile communications were undergoing a sea change during the first decade of the 21<span class="Superscript">st</span> century. At the beginning of this period high-end professionals often carried around two separate devices: a PDA (Personal Digital Assistant) and a mobile phone. PDA’s were devices that served as digital appointment calendars and note taking devices, with a modest number of additional features like calculators and clocks. They were generally devoid of any type of wireless access to the Internet and supported only low resolution black and white LCD (Liquid Crystal Displays) displays. Most mobile phones (called “cell phones” in the US) generally supported voice calls and little else.
 			</p>
 
 			<p>
-				By the midpoint of the first decade of the 21<sup>st</sup> century mobile phones began supplanting PDA’s as the phones took on more and more of the features that had once been exclusive to PDA’s – appointment calendars, address books, calculator functions, etc. The screens on mobile phones still tended to be small, and relatively low resolution, though color was being introduced and resolutions were improving.
+				By the midpoint of the first decade of the 21<span class="Superscript">st</span> century mobile phones began supplanting PDA’s as the phones took on more and more of the features that had once been exclusive to PDA’s – appointment calendars, address books, calculator functions, etc. The screens on mobile phones still tended to be small, and relatively low resolution, though color was being introduced and resolutions were improving.
 			</p>
 
 			<p>
@@ -226,7 +203,7 @@
 			</p>
 
 			<p>
-				By midpoint of the second decade of the 21<sup>st</sup> century smart phones were ubiquitous and high speed Internet access was available throughout most of the US. Phone numbers became predominately associated with individuals rather than with locations. Fixed ‘land line’ phones continued to exist, but primarily in business settings as more and more households discontinued traditional land line service – many viewing such service as an overpriced relic of a bygone era. The coverage area of high speed mobile networks continued to improve, as did the bandwidth available to smart devices with the move from 3G to 4G and LTE. (Mobile broadband speeds tended to generally reside in the range of 2 Mbps to 10 Mbps as of mid 2013.)
+				By midpoint of the second decade of the 21<span class="Superscript">st</span> century smart phones were ubiquitous and high speed Internet access was available throughout most of the US. Phone numbers became predominately associated with individuals rather than with locations. Fixed ‘land line’ phones continued to exist, but primarily in business settings as more and more households discontinued traditional land line service – many viewing such service as an overpriced relic of a bygone era. The coverage area of high speed mobile networks continued to improve, as did the bandwidth available to smart devices with the move from 3G to 4G and LTE. (Mobile broadband speeds tended to generally reside in the range of 2 Mbps to 10 Mbps as of mid 2013.)
 			</p>
 
 			<p>
@@ -266,6 +243,20 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<div class="floating-next"></div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("futureEvolving");		// get arrow paths
+				});	
+
+			</script>
 
 			<div>
 

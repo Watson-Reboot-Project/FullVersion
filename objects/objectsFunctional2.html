@@ -12,15 +12,16 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,40 +32,14 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch09s2.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch10.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				9.2.2  User-defined functions
+				<span class="contentNum objectsFunctional2"></span>
 			</p>
 
 			<p>
@@ -94,7 +69,7 @@
 			</p>
 
 			<p>
-				While <span class="Subfigure">defun</span> is used to define functions, it is not, itself, a traditional function.  Most Lisp functions accept one or more elements as input, and return a single result value.  The <span class="Subfigure">defun</span> procedure returns <span class="Italicized">function_name</span> – the name of the function being defined – as its result.  In addition, <span class="Subfigure">defun</span> has the “side effect” of actually creating the function and adding its name to the collection of functions recognized by Lisp.  Thus, when the Lisp Eval interpreter, illustrated in Figure 9.11, encounters a list with the symbol <span class="Subfigure">defun</span> as its first element, it will take the “yes” branch at the condition labeled “Is the first element of S non-standard?”
+				While <span class="Subfigure">defun</span> is used to define functions, it is not, itself, a traditional function.  Most Lisp functions accept one or more elements as input, and return a single result value.  The <span class="Subfigure">defun</span> procedure returns <span class="Italicized">function_name</span> – the name of the function being defined – as its result.  In addition, <span class="Subfigure">defun</span> has the “side effect” of actually creating the function and adding its name to the collection of functions recognized by Lisp.  Thus, when the Lisp Eval interpreter, illustrated in <span class="figNum lispinterpreter"></span>, encounters a list with the symbol <span class="Subfigure">defun</span> as its first element, it will take the “yes” branch at the condition labeled “Is the first element of S non-standard?”
 			</p>
 
 			<p>
@@ -140,7 +115,7 @@
 			</p>
 
 			<p>
-				At this point you might be saying, hold on a second <span class="Subfigure">L</span> is an atom, not a list, and <span class="Subfigure">car</span> can only be applied to lists, so what gives here?  What gives is that since <span class="Subfigure">L</span> is not quoted, it will be evaluated by the Lisp interpreter prior to <span class="Subfigure">car</span> being called.  So, the value bound to <span class="Subfigure">L</span>, not <span class="Subfigure">L</span> itself, is what will be passed to <span class="Subfigure">car</span>.  This behavior can be seen by tracing <span class="Subfigure">(car L)</span> on the Eval graph of Figure 9.11.  
+				At this point you might be saying, hold on a second <span class="Subfigure">L</span> is an atom, not a list, and <span class="Subfigure">car</span> can only be applied to lists, so what gives here?  What gives is that since <span class="Subfigure">L</span> is not quoted, it will be evaluated by the Lisp interpreter prior to <span class="Subfigure">car</span> being called.  So, the value bound to <span class="Subfigure">L</span>, not <span class="Subfigure">L</span> itself, is what will be passed to <span class="Subfigure">car</span>.  This behavior can be seen by tracing <span class="Subfigure">(car L)</span> on the Eval graph of <span class="figNum lispinterpreter"></span>.  
 			</p>
 
 			<p>
@@ -179,14 +154,14 @@
 				(b) Definition of a function that returns the first element (head) of a list
 			</p>
 
-			<img src="Images/fig9-12c.png" alt="" class="Image">
+			<img src="images/lispuser.png" alt="" class="Image">
 
 			<p class="Figure">
 				(c) Invocation and return of user-defined function <span class="Subfigure">head</span>
 			</p>
 
 			<p class="Figure">
-				Figure 9.12:  An overview of user-defined functions in Lisp
+				<span class="figNum lispfunctions"></span>  An overview of user-defined functions in Lisp
 			</p>
 
 			<p>
@@ -198,7 +173,7 @@
 			</p>
 
 			<p>
-				Figure 9.12 contains a summary of user-defined Lisp functions.  Part (a) describes the format of the <span class="Subfigure">defun</span> procedure.  Part (b) presents our example user-defined function, <span class="Subfigure">head</span>.  Part (c) illustrates function invocation and return using the definition given in Part (b).
+				<span class="figNum lispfunctions"></span> contains a summary of user-defined Lisp functions.  Part (a) describes the format of the <span class="Subfigure">defun</span> procedure.  Part (b) presents our example user-defined function, <span class="Subfigure">head</span>.  Part (c) illustrates function invocation and return using the definition given in Part (b).
 			</p>
 
 			<p>
@@ -291,19 +266,19 @@
 			<br/>
 
 			<p class="Figure">
-				Figure 9.13:  The format of the <span class="Subfigure">cond</span> function
+				<span class="figNum condformat"></span>  The format of the <span class="Subfigure">cond</span> function
 			</p>
 
 			<p>
-				As we learned in Chapter 8, the three basic control constructs of imperative programming are sequence, selection, and repetition.  Functional languages such as Lisp also implement a form of these control constructs.  At this point we have seen how to write Lisp procedures that consist of a sequence of nested operations, thus we have mastered sequence in Lisp
+				As we learned in <span class="contentNum javascript"></span>, the three basic control constructs of imperative programming are sequence, selection, and repetition.  Functional languages such as Lisp also implement a form of these control constructs.  At this point we have seen how to write Lisp procedures that consist of a sequence of nested operations, thus we have mastered sequence in Lisp
 			</p>
 
 			<p>
-				We now turn our attention to selection.  Selection is implemented in Lisp using the “condition” operation,  <span class="Subfigure">cond</span>.  The cond operator is similar to the If-Then-Else construction of Chapter 8, except that it allows many different “cases” to be tested instead of just two.
+				We now turn our attention to selection.  Selection is implemented in Lisp using the “condition” operation,  <span class="Subfigure">cond</span>.  The cond operator is similar to the If-Then-Else construction of <span class="contentNum javascript"></span>, except that it allows many different “cases” to be tested instead of just two.
 			</p>
 
 			<p>
-				The format of the <span class="Subfigure">cond</span> function is shown in Figure 9.13.  This function takes the form of a list, where the first element of the list is the atom <span class="Subfigure">cond</span>.  Following the function name are one or more condition/result lists. Each of these lists contains two elements.  The first element is a condition, or predicate, that will return either true or false.  If the condition is true, the associated result list will be evaluated and its result returned as the result of the <span class="Subfigure">cond</span> function.  If none of the conditions are true, <span class="Subfigure">cond</span> will return nil.  If multiple conditions are true, <span class="Subfigure">cond</span> will return the result associated with the <span class="Italicized">first</span> true condition.
+				The format of the <span class="Subfigure">cond</span> function is shown in <span class="figNum condformat"></span>.  This function takes the form of a list, where the first element of the list is the atom <span class="Subfigure">cond</span>.  Following the function name are one or more condition/result lists. Each of these lists contains two elements.  The first element is a condition, or predicate, that will return either true or false.  If the condition is true, the associated result list will be evaluated and its result returned as the result of the <span class="Subfigure">cond</span> function.  If none of the conditions are true, <span class="Subfigure">cond</span> will return nil.  If multiple conditions are true, <span class="Subfigure">cond</span> will return the result associated with the <span class="Italicized">first</span> true condition.
 			</p>
 			
 			<ul class="Blockcenter">
@@ -336,7 +311,7 @@
 			</p>
 
 			<p class="Figure">
-				Figure 9.14:  A program that illustrates selection via the <span class="Subfigure">cond</span> function
+				<span class="figNum legadefinition"></span>  A program that illustrates selection via the <span class="Subfigure">cond</span> function
 			</p>
 			<p class="Figure">
 				 
@@ -347,7 +322,7 @@
 			</p>
 
 			<p>
-				Figure 9.14(a) presents the definition of a function that uses <span class="Subfigure">cond</span> to perform a condition test.  The function, called <span class="Subfigure">legal</span>, determines whether a person is of legal drinking age by comparing their <span class="Subfigure">AGE</span> to 21.  If <span class="Subfigure">AGE</span> is greater than or equal to 21, the function returns true, otherwise the function returns false.  The input/output behavior of legal is illustrated in Figure 9.14(b) using three different values for <span class="Subfigure">AGE</span>, one less than 21, one equal to 21, and one greater than 21.
+				<span class="figNum legadefinition"></span>(a) presents the definition of a function that uses <span class="Subfigure">cond</span> to perform a condition test.  The function, called <span class="Subfigure">legal</span>, determines whether a person is of legal drinking age by comparing their <span class="Subfigure">AGE</span> to 21.  If <span class="Subfigure">AGE</span> is greater than or equal to 21, the function returns true, otherwise the function returns false.  The input/output behavior of legal is illustrated in <span class="figNum legadefinition"></span>(b) using three different values for <span class="Subfigure">AGE</span>, one less than 21, one equal to 21, and one greater than 21.
 			</p>
 
 			<p>
@@ -355,7 +330,7 @@
 			</p>
 
 			<p>
-				The <span class="Subfigure">cond</span> of  Figure 9.14(a)  has two condition/result pairs.  The first condition/result pair reads <span class="Subfigure">((&gt;= AGE 21) T)</span>.  Thus, if <span class="Subfigure">(&gt;= AGE 21)</span> is true, then its associated result, <span class="Subfigure">T</span>, meaning true, will be returned.  Assuming that <span class="Subfigure">(&gt;= AGE 21)</span> is not true, <span class="Subfigure">cond</span> would next examine its second condition/result pair.  This pair reads <span class="Subfigure">( T nil)</span>.  Placing a <span class="Subfigure">T</span> in the condition portion of the second condition/result pair guarantees that the result of this pair, nil, will be returned if this pair is ever examined.  
+				The <span class="Subfigure">cond</span> of  <span class="figNum legadefinition"></span>(a)  has two condition/result pairs.  The first condition/result pair reads <span class="Subfigure">((&gt;= AGE 21) T)</span>.  Thus, if <span class="Subfigure">(&gt;= AGE 21)</span> is true, then its associated result, <span class="Subfigure">T</span>, meaning true, will be returned.  Assuming that <span class="Subfigure">(&gt;= AGE 21)</span> is not true, <span class="Subfigure">cond</span> would next examine its second condition/result pair.  This pair reads <span class="Subfigure">( T nil)</span>.  Placing a <span class="Subfigure">T</span> in the condition portion of the second condition/result pair guarantees that the result of this pair, nil, will be returned if this pair is ever examined.  
 			</p>
 
 			<p>
@@ -384,11 +359,11 @@
 			</p>
 
 			<p>
-				As was the case with imperative language If-Then-Else statements, <span class="Subfigure">cond</span> functions may be nested within one another.  Figure 9.15 contains a Lisp function based on the yuppie example illustrated in Figure 8.14.  While the input/output behavior of these two programs is different, comparing them gives a good feel for the differences between Lisp functions and imperative programs.  The general rule used to define yuppies is the same in both figures – i.e., that yuppies are individuals who are under 40 and make $50,000 or more per year.  The Lisp version of this program is a function that accepts two inputs, <span class="Subfigure">AGE</span> and <span class="Subfigure">INCOME</span>, and returns a list indicating whether or not the conditions of yuppiedom have been met.  If the conditions have been met, the list <span class="Subfigure">(yuppie)</span> will be returned.  If the inputs for <span class="Subfigure">AGE</span> and <span class="Subfigure">INCOME</span> do not fall with in the yuppie range, other lists such as <span class="Subfigure">(too old)</span>, <span class="Subfigure">(too poor)</span>, and <span class="Subfigure">(old and poor)</span> will be returned.  
+				As was the case with imperative language If-Then-Else statements, <span class="Subfigure">cond</span> functions may be nested within one another.  <span class="figNum legalinout"></span> contains a Lisp function based on the yuppie example illustrated in <span class="figNum ifelsenest"></span>.  While the input/output behavior of these two programs is different, comparing them gives a good feel for the differences between Lisp functions and imperative programs.  The general rule used to define yuppies is the same in both figures – i.e., that yuppies are individuals who are under 40 and make $50,000 or more per year.  The Lisp version of this program is a function that accepts two inputs, <span class="Subfigure">AGE</span> and <span class="Subfigure">INCOME</span>, and returns a list indicating whether or not the conditions of yuppiedom have been met.  If the conditions have been met, the list <span class="Subfigure">(yuppie)</span> will be returned.  If the inputs for <span class="Subfigure">AGE</span> and <span class="Subfigure">INCOME</span> do not fall with in the yuppie range, other lists such as <span class="Subfigure">(too old)</span>, <span class="Subfigure">(too poor)</span>, and <span class="Subfigure">(old and poor)</span> will be returned.  
 			</p>
 
 			<p>
-				In addition to the nesting of <span class="Subfigure">cond</span> operations, Figure 9.15 introduces a number of other concepts.  The <span class="Subfigure">yuppie</span> function is the first function we’ve written that uses multiple input – two numeric atoms in this case, <span class="Subfigure">AGE</span> and <span class="Subfigure">INCOME</span>.  This function is also the first one to return a list, as opposed to an atom.
+				In addition to the nesting of <span class="Subfigure">cond</span> operations, <span class="figNum legalinout"></span> introduces a number of other concepts.  The <span class="Subfigure">yuppie</span> function is the first function we’ve written that uses multiple input – two numeric atoms in this case, <span class="Subfigure">AGE</span> and <span class="Subfigure">INCOME</span>.  This function is also the first one to return a list, as opposed to an atom.
 			</p>
 
 			<p>
@@ -421,7 +396,7 @@
 			<br/>
 
 			<p class="Figure">
-				Figure 9.15:  A Lisp program that illustrates nested conditions
+				<span class="figNum legalinout"></span>  A Lisp program that illustrates nested conditions
 			</p>
 			
 			<!-- End main content -->
@@ -441,17 +416,18 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("objects", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("objectsFunctional2");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("objectsFunctional2");		// get arrow paths
 				});	
+
 			</script>
 
 			<div>

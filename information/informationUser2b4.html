@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.5.2.4 Queries involving both “select” and “project”
+				<span class="contentNum informationUser2b4"></span>
 			</p>
 
 			<p>
@@ -117,7 +101,7 @@
 			</p>
 
 			<p>
-				It is interesting to note that during the discussion of the programmer’s view of data in Section 3.4, we constructed a program that essentially answered the same question. That program, presented in Figure 3.11, is ten lines long and requires knowledge of file systems and programming concepts in order to be developed.</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Actually, Figure 3.11 does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer."><a href="#ftn5" id="body_ftn5">[5]</a></span></span>
+				It is interesting to note that during the discussion of the programmer’s view of data in <span class="contentNum informationProgrammer"></span>, we constructed a program that essentially answered the same question. That program, presented in <span class="figNum csmajorlist"></span>, is ten lines long and requires knowledge of file systems and programming concepts in order to be developed.</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Actually, Figure 3.11 does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer."><a href="#ftn5" id="body_ftn5">[5]</a></span></span>
 			</p>
 
 			<p>
@@ -194,12 +178,12 @@
 				This solution concentrates first on determining the attributes needed to solve the problem, rather than the tuples needed to do so. Such an approach makes a lot of sense when dealing with tables that contain large numbers of attributes, since it helps us to focus on which parts of a relation are relevant to the question being answered.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 3.5.2.4
+			<p class="Exercise">
+				Exercises for <span class="contentNum informationUser2b4"></span>
 			</p>
 
 			<p>
-				Using the relations presented in Figures 3.14, 3.15, and 3.18, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
+				Using the relations presented in <span class="figNum facultyrelation"></span>, <span class="figNum studentrelation"></span>, and <span class="figNum coursesrelation"></span>, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
 			</p>
 
 			<ol>
@@ -247,7 +231,7 @@
 			</p>
 			
 			<p class="Footnote">
-				<a href="#body_ftn5" id="ftn5">[5]</a> Actually, Figure 3.11 does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer.
+				<a href="#body_ftn5" id="ftn5">[5]</a> Actually, <span class="figNum csmajorlist"></span> does not contain a “complete” program, only the main parts of one. The entire program would be substantially longer.
 			</p>
 			
 			<p class="Emphasized">
@@ -268,18 +252,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationUser2b4");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationUser2b4");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

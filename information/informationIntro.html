@@ -11,14 +11,18 @@
 
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
@@ -32,40 +36,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+    	<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.1 Introduction
+				<span class="contentNum informationIntro"></span>
 			</p>
 
 			<p>
@@ -73,23 +60,23 @@
 			</p>
 
 			<p>
-				Our discussion of information storage and retrieval focuses on four distinct “views” of the process, or “levels” at which it takes place: the hardware level, the file organization level, the programmer level, and the end-user level. These four views are illustrated in Figure 3.1
+				Our discussion of information storage and retrieval focuses on four distinct “views” of the process, or “levels” at which it takes place: the hardware level, the file organization level, the programmer level, and the end-user level. These four views are illustrated in <span class="figNum infostorage"></span>.
 			</p>
 
 			<p>
-				Section 3.2 examines information storage and retrieval from the point of view of what happens at the hardware level. The discussion focuses on disk drives, which are the most popular form of mass storage device.
+				<span class="contentNum informationHardware"></span> examines information storage and retrieval from the point of view of what happens at the hardware level. The discussion focuses on disk drives, which are the most popular form of mass storage device.
 			</p>
 
 			<p>
-				Section 3.3 introduces the file concept and explores three different alternatives for storing files on disk. These alternative storage techniques are known as: contiguous, linked, and indexed storage.
+				<span class="contentNum informationOrganization"></span> introduces the file concept and explores three different alternatives for storing files on disk. These alternative storage techniques are known as: contiguous, linked, and indexed storage.
 			</p>
 
 			<p>
-				Section 3.4 looks at information storage and retrieval from the point of view of the application programmer. While details of the software development process, including programming, are deferred until Part III of the text, this section will give you a feel for how programmers manipulate data files.
+				<span class="contentNum informationProgrammer"></span> looks at information storage and retrieval from the point of view of the application programmer. While details of the software development process, including programming, are deferred until Part III of the text, this section will give you a feel for how programmers manipulate data files.
 			</p>
 
 			<p>
-				Finally, Section 3.5 examines how data appears to the end-user. The two most common end-user views of data are discussed: the view of the file system provided by the operating system, and the view of data provided by relational database systems. This second view will be explored in depth, due to the importance of relational database systems as end-user applications.
+				Finally, <span class="contentNum informationUser"></span> examines how data appears to the end-user. The two most common end-user views of data are discussed: the view of the file system provided by the operating system, and the view of data provided by relational database systems. This second view will be explored in depth, due to the importance of relational database systems as end-user applications.
 			</p>
 			
 			<!-- End main content -->
@@ -113,17 +100,15 @@
 
 			</div>
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationIntro");
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationIntro");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				3.5.2.6 Queries involving “select”, “project”, and “join”
+				<span class="contentNum informationUser2b6"></span>
 			</p>
 
 			<p>
@@ -73,7 +57,7 @@
 			</p>
 
 			<p>
-				Reviewing the three relations that make up our database: Faculty (Figure 3.14), Students (Figure 3.15), and Courses (Figure 3.18); we see that instructor names, office locations, and phone numbers are stored in Faculty, while course names and sequence numbers are stored in Courses. In other words, the information we want is not stored in any single table of the database, but is instead spread among multiple tables. Upon further examination we might also note that the two relations, Faculty and Courses, share an attribute in common: faculty names. Because Faculty and Courses share a field in common, they may be joined. The relational expression to perform this operation is:
+				Reviewing the three relations that make up our database: Faculty (<span class="figNum facultyrelation"></span>), Students (<span class="figNum studentrelation"></span>), and Courses (<span class="figNum coursesrelation"></span>); we see that instructor names, office locations, and phone numbers are stored in Faculty, while course names and sequence numbers are stored in Courses. In other words, the information we want is not stored in any single table of the database, but is instead spread among multiple tables. Upon further examination we might also note that the two relations, Faculty and Courses, share an attribute in common: faculty names. Because Faculty and Courses share a field in common, they may be joined. The relational expression to perform this operation is:
 			</p>
 
 			<p class="Subfigure">
@@ -84,10 +68,10 @@
 				The relation produced by this expression, Rel1, will contain all of the attributes of both Courses and Faculty (with the exception that Fname will be listed only once). Hence, there would be 11 attributes in the resulting relation: Fname, Seq_no, Course, Quarter, Year, Credits, Dept, Office, Phone, SSN, and Salary. Due to the fact that the Fname field in each row of Courses will match up with one (and only one) Fname entry in the Faculty relation, Rel1 will contain exactly the same number of tuples as Courses, eleven.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-21.png" alt="A relation, Rel4, together with the expressions that generated it" class="Image">
+			<img src="images/rel4expressions.png" alt="A relation, Rel4, together with the expressions that generated it" class="Image">
 
 			<p class="Figure">
-				Figure 3.21: A relation, Rel4, together with the expressions that generated it
+				<span class="figNum rel4expressions"></span> A relation, Rel4, together with the expressions that generated it
 			</p>
 
 			<p>
@@ -117,7 +101,7 @@
 			</p>
 
 			<p>
-				This sequence of relational expressions is summarized, and the resulting relation shown, in Figure 3.21.
+				This sequence of relational expressions is summarized, and the resulting relation shown, in <span class="figNum rel4expressions"></span>.
 			</p>
 
 			<p>
@@ -132,10 +116,10 @@
 				</li>
 			</ul>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-22.png" alt="The “Grades” relation – part of a university database" class="Image">
+			<img src="images/gradesrelation.png" alt="The “Grades” relation – part of a university database" class="Image">
 
 			<p class="Figure">
-				Figure 3.22: The “Grades” relation – part of a university database
+				<span class="figNum gradesrelation"></span> The “Grades” relation – part of a university database
 			</p>
 
 			<p>
@@ -143,7 +127,7 @@
 			</p>
 
 			<p>
-				The association between students and the courses they have taken is provided by the final relation of our university database, the Grades relation, which is shown in its entirety in Figure 3.22. This rather lengthy table contains three attributes: ID, Seq_no, and Grade; and has an entry for every course taken by every student. The ID attribute, which represents student ID numbers, is shared by both Grades and Students, and thus provides a link between those two tables. Likewise, a link is provided between Grades and Courses via the shared “Seq_no” field, which represents the sequence numbers of individual course offerings or sections.
+				The association between students and the courses they have taken is provided by the final relation of our university database, the Grades relation, which is shown in its entirety in <span class="figNum gradesrelation"></span>. This rather lengthy table contains three attributes: ID, Seq_no, and Grade; and has an entry for every course taken by every student. The ID attribute, which represents student ID numbers, is shared by both Grades and Students, and thus provides a link between those two tables. Likewise, a link is provided between Grades and Courses via the shared “Seq_no” field, which represents the sequence numbers of individual course offerings or sections.
 			</p>
 
 			<p>
@@ -220,17 +204,17 @@
 			</p>
 
 			<p>
-				The contents of relation R3 is shown in Figure 3.23. As you can see, R3 consists of all of the grade records for the course with sequence number “100010”. While we needed the course sequence number to produce this table, the only information contained in the table that is currently of interest to us is the student ID numbers. Hence, we can project out this column:
+				The contents of relation R3 is shown in <span class="figNum relationr3"></span>. As you can see, R3 consists of all of the grade records for the course with sequence number “100010”. While we needed the course sequence number to produce this table, the only information contained in the table that is currently of interest to us is the student ID numbers. Hence, we can project out this column:
 			</p>
 
 			<p class="Subfigure">
 				R4 &#8592; Project ID from R3
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-23.png" alt="Relation R3 – the student numbers and grades of all students who took Math 241 in the spring of 2013 under Dr. Carpente" class="Image">
+			<img src="images/relationr3.png" alt="Relation R3 – the student numbers and grades of all students who took Math 241 in the spring of 2013 under Dr. Carpente" class="Image">
 
 			<p class="Figure">
-				Figure 3.23: Relation R3 – the student numbers and grades of all students
+				<span class="figNum relationr3"></span> Relation R3 – the student numbers and grades of all students
 				<br />
 				who took Math 241 in the spring of 2013 under Dr. Carpenter
 			</p>
@@ -252,27 +236,27 @@
 			</p>
 
 			<p>
-				The final table resulting from this series of relational expressions is shown in Figure 3.24.
+				The final table resulting from this series of relational expressions is shown in <span class="figNum relationr6"></span>.
 			</p>
 
 			<p>
 				Although the rows of this table are shown sorted by both last name and student ID number, relational database theory treats relations are</span> <span class="Ital">unordered</span> sets of tuples, so the order of the rows in the displayed table is technically unpredictable. Most commercially available database applications, however, allow the user to easily sort the rows of a table into any order he or she desires.
 			</p>
 
-			<img src="Images/InfoStorageRetrIMGS/fig3-24.png" alt="Relation R6 – The names and ID numbers of all students who took Math 241 in the spring of 2013 under Dr. Carpenter" class="Image">
+			<img src="images/relationr6.png" alt="Relation R6 – The names and ID numbers of all students who took Math 241 in the spring of 2013 under Dr. Carpenter" class="Image">
 
 			<p class="Figure">
-				Figure 3.24: Relation R6 – The names and ID numbers of all students
+				<span class="figNum relationr6"></span> Relation R6 – The names and ID numbers of all students
 				<br />
 				who took Math 241 in the spring of 2013 under Dr. Carpenter
 			</p>
 
-			<p class="Section">
-				Exercises for Section 3.5.2.6
+			<p class="Exercise">
+				Exercises for <span class="contentNum informationUser2b6"></span>
 			</p>
 
 			<p>
-				Using the relations presented in Figures 3.14, 3.15, 3.18, and 3.22, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
+				Using the relations presented in Figures <span class="figNum facultyrelation"></span>, <span class="figNum studentrelation"></span>, <span class="figNum coursesrelation"></span>, and <span class="figNum gradesrelation">, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
 			</p>
 
 			<ol>
@@ -347,18 +331,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("information");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("information", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("informationUser2b6");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("informationUser2b6");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>

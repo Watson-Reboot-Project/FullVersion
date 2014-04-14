@@ -12,14 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+			
+	     <!-- Java Script files -->
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
@@ -28,48 +34,29 @@
 	</head>
 
 	<body>
-		<div id="wrapper" class="page-wrapper">
+    <div class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
+			<div class="floating-next"></div>
+			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				5.3.2  Binary search
+				<span class="contentNum algorithmsSearching2"></span>
 			</p>
-
+	
 			<p>
-				Binary search is another approach to the search problem.  It is much more efficient than sequential search, but requires that the search list be presorted.  Essentially, <span class="Bolded">binary search</span> begins by jumping to the midpoint of the search list and comparing the item it finds there to the target item it is searching for.  Consider the result of this comparison.  Clearly, if the target item is the same as the middle item, then the algorithm has found the item it was looking for and can print the “Yes, found it.” message and halt.  Let’s say that the middle item is smaller than the target item.  Since the search list was presorted, if the target item occurs anywhere in the list, it must be after the midpoint.  Hence, the first half of the list – everything up to and including the middle item – can be safely discarded without an exhaustive examination of each of the items in that portion of the list.  If the middle item had been larger than the target, then the target could only occur in the first half of the list.  The second half of the list – the middle item and everything after it – could be dropped.
+				<span class="Bolded">Binary search </span> is another approach to the search problem.  It is much more efficient than sequential search, but requires that the search list be presorted.  Essentially, <span class="Bolded">binary search</span> begins by jumping to the midpoint of the search list and comparing the item it finds there to the target item it is searching for.  Consider the result of this comparison.  Clearly, if the target item is the same as the middle item, then the algorithm has found the item it was looking for and can print the “Yes, found it.” message and halt.  Let’s say that the middle item is smaller than the target item.  Since the search list was presorted, if the target item occurs anywhere in the list, it must be after the midpoint.  Hence, the first half of the list – everything up to and including the middle item – can be safely discarded without an exhaustive examination of each of the items in that portion of the list.  If the middle item had been larger than the target, then the target could only occur in the first half of the list.  The second half of the list – the middle item and everything after it – could be dropped.
 			</p>
 
 			<p>
@@ -77,7 +64,7 @@
 			</p>
 
 			<p>
-				The binary search algorithm is presented formally in Figure 5.6.
+				The binary search algorithm is presented formally in <span class="figNum binarysearch"></span>.
 			</p>
 			
 			<ul class="Blockcenter">
@@ -105,7 +92,7 @@
 			</ul>
 			<br/>
 			<p class="Figure">
-				Figure 5.6:  Binary search
+				<span class="figNum binarysearch"></span>  Binary search
 			</p>
 
 			<p>
@@ -236,8 +223,8 @@
 				Finally, it is important to note, once again, that binary searches can only be performed on lists that are already sorted.  Given an unsorted list, it is necessary to first sort the list before beginning the binary search procedure.  This observation leads us to our next topic of discussion: the sorting problem and algorithms for its solution.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 5.3.2
+			<p class="Exercise">
+				Exercises for <span class="contentNum algorithmsSearching2"></span>
 			</p>
 
 			<ol>
@@ -292,18 +279,20 @@
 				</p>
 			</nav>
 			
+		<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("algorithms", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("algorithmsSearching2");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithmsSearching2");		// get arrow paths
 				});	
+
 			</script>
+
 
 			<div>
 
