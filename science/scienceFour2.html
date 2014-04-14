@@ -10,22 +10,20 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-			<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="js/master.js"></script>
-			<script type="text/javascript" src="js/Numbering.js"></script>
-			<script type="text/javascript" src="js/Miscellaneous.js"></script>
-			<script type="text/javascript" src="js/nav.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <!-- CSS files -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+    <link href="../lib/css/styles.css" rel="stylesheet">
+    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
 		
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+    <!-- Java Script files -->
+    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -36,7 +34,7 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
+			<div id="includedContentForPage"></div>
 			<div class="floating-previous"></div>
 			
 			<!-- End floating nav -->
@@ -64,24 +62,24 @@
 				It is important to note that the terms “program” and “algorithm” are not synonymous.  A description of how to sort a list of numbers is an algorithm.  For example, here is the selection sort algorithm:
 			</p>
 	
-			<ul>
-				<p>
+			<ul class="Blockcenter">
+				<li>
 					Step 1:  Remove the smallest item from the input list.
-				</p>
+				</li>
 	
-				<p>
+				<li>
 					Step 2:  Append this smallest item to the end of an output list.
-				</p>
+				</li>
 	
-				<ul>
-					<p>
+				<ul class="Subblockcenter">
+					<li>
 						(This output list will be empty when you first begin.)
-					</p>
+					</li>
 				</ul>
 	
-				<p>
+				<li>
 					Step 3:  Repeat the above two steps until the input list is empty.
-				</p>
+				</li>
 			</ul>
 
 			<p>
@@ -89,7 +87,7 @@
 			</p>
 
 			<p>
-				Algorithms, including procedures for searching and sorting, are discussed in Chapter 5.  Chapter 6 continues our exploration of algorithms by introducing a language for drawing simple graphical images.  A Watson lab is included so that you can write programs in this language in order to create drawings and animation sequences.
+				Algorithms, including procedures for searching and sorting, are discussed in Chapter <span class="contentNum algorithms false"></span>.  Chapter <span class="contentNum graphics false"></span> continues our exploration of algorithms by introducing a language for drawing simple graphical images.  A Watson lab is included so that you can write programs in this language in order to create drawings and animation sequences.
 			</p>
 
 			<p>
@@ -101,11 +99,11 @@
 			</p>
 	
 			<p>
-				Computer programs read input data, manipulate that data in some way, and produce output.  A program of any complexity will need ways of organizing, or structuring, that data.  Hence, an understanding of data structures is critical to understanding computer software.  A <span class="Bolded">data structure</span> is a collection of data together with a group of operations that manipulate that data in certain predefined ways.  For example, the <span class="Bolded">queue</span> is a standard data structure that models a waiting line.  It supports two basic operations enqueue and dequeue.  “Enqueue” adds an item to the end of the waiting line.  “Dequeue” removes an item from the front of the waiting line.  Chapter 7 examines a variety of data structures, including stacks, queues, lists, and trees.  The Watson lab associated with that chapter will allow you to directly experiment with the behavior of a number of these data structures. 
+				Computer programs read input data, manipulate that data in some way, and produce output.  A program of any complexity will need ways of organizing, or structuring, that data.  Hence, an understanding of data structures is critical to understanding computer software.  A <span class="Bolded">data structure</span> is a collection of data together with a group of operations that manipulate that data in certain predefined ways.  For example, the <span class="Bolded">queue</span> is a standard data structure that models a waiting line.  It supports two basic operations enqueue and dequeue.  “Enqueue” adds an item to the end of the waiting line.  “Dequeue” removes an item from the front of the waiting line.  Chapter <span class="contentNum structures false"></span> examines a variety of data structures, including stacks, queues, lists, and trees.  The Watson lab associated with that chapter will allow you to directly experiment with the behavior of a number of these data structures. 
 			</p>
 
 			<p>
-				Chapters 8 and 9 continue the study of software by examining the major types, or paradigms, of programming languages.  A <span class="Bolded">paradigm</span> is a way of thinking about a problem or modeling a problem solution.  There are at least three identifiable programming paradigms: the imperative paradigm, the functional paradigm, and the logical paradigm.  Some computer scientists view object-oriented programming as a fourth paradigm.  Others prefer to view objects as an extension to the imperative, functional, and logical paradigms.  Regardless, all four of these approaches are covered in the text – the imperative approach in Chapter 8, the functional, logical, and object-oriented approaches in Chapter 9.  A Watson lab has been constructed for the imperative paradigm.  This lab will help you gain additional insight into writing computer programs.
+				Chapters <span class="contentNum javascript false"></span> and <span class="contentNum objects false"></span>  continue the study of software by examining the major types, or paradigms, of programming languages.  A <span class="Bolded">paradigm</span> is a way of thinking about a problem or modeling a problem solution.  There are at least three identifiable programming paradigms: the imperative paradigm, the functional paradigm, and the logical paradigm.  Some computer scientists view object-oriented programming as a fourth paradigm.  Others prefer to view objects as an extension to the imperative, functional, and logical paradigms.  Regardless, all four of these approaches are covered in the text – the imperative approach in Chapter 8, the functional, logical, and object-oriented approaches in Chapter <span class="contentNum objects false"></span>.  A Watson lab has been constructed for the imperative paradigm.  This lab will help you gain additional insight into writing computer programs.
 			</p>
 
 			<p>
@@ -144,12 +142,12 @@
 				<span class="figNum paradigms"></span> Examples of the functional and imperative paradigms
 			</p>
 
-
-				Figure <span class="figNum paradigms"></span> illustrates two implementations of an algorithm for converting temperature readings from Celsius to Fahrenheit.  Part (a) contains an imperative version of the algorithm while part (b) contains a functional version of the same algorithm.  Both code fragments do the same thing: read a temperature; multiply that temperature by 1.8; add 32 to the result; and then display the final answer.  
+			<p>
+				<!--Figure--> <span class="figNum paradigms"></span> illustrates two implementations of an algorithm for converting temperature readings from Celsius to Fahrenheit.  Part (a) contains an imperative version of the algorithm while part (b) contains a functional version of the same algorithm.  Both code fragments do the same thing: read a temperature; multiply that temperature by 1.8; add 32 to the result; and then display the final answer.  
 			</p>
 	
 			<p>
-				Don’t worry if some of the details of this example elude you.  Chapters <span class="contentNum javascript"></span> and <span class="contentNum objects"></span> discuss imperative and functional programming much more thoroughly.  At this point all you need to recognize is that the various paradigms can produce quite different programs, even if those programs are based on the same underlying algorithm.
+				Don’t worry if some of the details of this example elude you.  Chapters <span class="contentNum javascript false"></span> and <span class="contentNum objects false"></span> discuss imperative and functional programming much more thoroughly.  At this point all you need to recognize is that the various paradigms can produce quite different programs, even if those programs are based on the same underlying algorithm.
 			</p>
 
 			<p>
@@ -216,19 +214,20 @@
 			<div>
 
 			</div>
-			
+		
+
 			<div class="floating-next"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				
+
 				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-					pageObj = getArrowPathsByPage("scienceFour2");		// get arrow paths
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("scienceFour2");		// get arrow paths
 				});	
-				
+
 			</script>
 		</div>
 	</body>

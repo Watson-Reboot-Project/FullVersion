@@ -9,18 +9,21 @@
 
 		<title>Watson</title>
 
-		<!-- Google fonts -->
+		 	<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,42 +34,17 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s5p2.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-			  <!--
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch12.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-			  -->
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.5.3  Program execution
+				<span class="contentNum assemblyMachine3"></span>
 			</p>
 			
 			<p>
@@ -104,7 +82,7 @@
 			</p>
 			
 			<p>
-				To execute the program of Figure 11.28 a three (0000 0011<span class="Subscript">two</span>) must first be loaded into the Watson Virtual Machine program counter.  The reason for this is that the first executable instruction of the program is located at memory address three.
+				To execute the program of <span class="figNum andornot"></span> a three (0000 0011<span class="Subscript">two</span>) must first be loaded into the Watson Virtual Machine program counter.  The reason for this is that the first executable instruction of the program is located at memory address three.
 			</p>
 			
 			<p>
@@ -124,20 +102,20 @@
 			</p>
 			
 			<p class="Section">
-				Exercises for Section 11.5
+				Exercises for <span class="contentNum assemblyMachine3"></span>
 			</p>
 			
 			<ol>
 				<li>
-					Translate the program of Figure 11.4 from the assembly language level to the machine language level.
+					Translate the program of <span class="figNum assemblydec"></span> from the assembly language level to the machine language level.
 				</li>
 				<br/>
 				<li>
-					Trace through the program of Figure 11.4 outlining the actions taken during each pass through the instruction cycle.  Be sure to clearly indicate any changes made to the values held in registers or main memory locations.
+					Trace through the program of <span class="figNum assemblydec"></span> outlining the actions taken during each pass through the instruction cycle.  Be sure to clearly indicate any changes made to the values held in registers or main memory locations.
 				</li>
 				<br/>
 				<li>
-					Translate the program of Figure 11.5 from the assembly language level to the machine language level.
+					Translate the program of <span class="figNum minorcode"></span> from the assembly language level to the machine language level.
 				</li>
 				<br/>
 				<li>
@@ -177,6 +155,23 @@
 			<div>
 
 			</div>
+			
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyMachine3");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

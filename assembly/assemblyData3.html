@@ -9,18 +9,22 @@
 
 		<title>Watson</title>
 
-		<!-- Google fonts -->
+			<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,44 +35,20 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s4p2.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s5.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.4.3  Images
-			</p>
-			
+				<span class="contentNum assemblyData3"></span>
+			</p>			
 			<p>
-				As you may recall from your study of computer graphics in Chapter 6, digital images are composed of a large number of basic picture elements called pixels.  Each pixel represents the particular brightness and color value of a tiny dot that is to be displayed on a screen or drawn on paper.  By arranging pixels into two-dimensional grids, an image can be formed.
+				As you may recall from your study of computer graphics in <span class="contentNum graphics"></span>, digital images are composed of a large number of basic picture elements called pixels.  Each pixel represents the particular brightness and color value of a tiny dot that is to be displayed on a screen or drawn on paper.  By arranging pixels into two-dimensional grids, an image can be formed.
 			</p>
 			
 			<p>
@@ -76,17 +56,17 @@
 			</p>
 			
 			<p>
-				Figure 11.23 presents a digital image and the bit map that underlies it.  The image is very simple, containing the word “Hi” drawn as black letters on a white background.  The “resolution” of the image is eleven pixels per line by nine lines.  Each pixel represents one of only two colors, “1” is used for black and “0” for white. In order to help clarify the meaning of the bit map, the pixel grid lines are shown in the figure.  In reality, these lines would not be displayed.  They simply mark the boundaries of each pixel.
+				<span class="figNum twoscomplement"></span> presents a digital image and the bit map that underlies it.  The image is very simple, containing the word “Hi” drawn as black letters on a white background.  The “resolution” of the image is eleven pixels per line by nine lines.  Each pixel represents one of only two colors, “1” is used for black and “0” for white. In order to help clarify the meaning of the bit map, the pixel grid lines are shown in the figure.  In reality, these lines would not be displayed.  They simply mark the boundaries of each pixel.
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-23.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 11.23:  A monochrome image and its underlying bit map.
+				<span class="figNum twoscomplement"></span>:  A monochrome image and its underlying bit map.
 			</p>
 			
 			<p>
-				Although we presented the bit map in Figure 11.23 in its two-dimensional form, as we have seen, computer memory is really a one-dimensional structure.  So, the bit map would actually be stored in a form similar to the following:
+				Although we presented the bit map in <span class="figNum twoscomplement"></span> in its two-dimensional form, as we have seen, computer memory is really a one-dimensional structure.  So, the bit map would actually be stored in a form similar to the following:
 			</p>
 			
 			<p class="Subfigure">
@@ -101,29 +81,29 @@
 				Finally, it should be noted that this sequence of 1’s and 0’s can be interpreted in many ways.  As we have just seen, when interpreted as a two-dimensional bit map of size 11 by 9 where a 0 is a light area and a 1 is a dark area, it is a graphical image of the word “Hi”.<span class="Footnote" title="Footnote: Which is, of course, quite different from the ASCII representation of the characters “H” and “i”."><a href="#ftn6" id="body_ftn6">[6]</a></span>  This same bit pattern would have an entirely different meaning if interpreted as a sequence of unsigned numbers, a sequence of signed numbers, a sequence of floating point numbers, a sequence of ASCII characters, or a sequence of program instructions.  Thus, determining the meaning of a symbol, or sequence of symbols, requires that you know the type of data being represented and how it is encoded.
 			</p>
 			
-			<p class="Section">
-				Exercises for Section 11.4.3
+			<p class="Exercise">
+				Exercises for <span class="contentNum assemblyData3"></span>
 			</p>
 			
 			<ol>
 				<li>
-					Interpret the bit pattern of Figure 11.23 as a sequence of 8-bit unsigned integers.   Ignore any extra bits that may occur at the end of the pattern.
+					Interpret the bit pattern of <span class="figNum twoscomplement"></span> as a sequence of 8-bit unsigned integers.   Ignore any extra bits that may occur at the end of the pattern.
 				</li>
 				<br/>
 				<li>
-					Interpret the bit pattern of Figure 11.23 as a sequence of 8-bit two’s complement numbers.  Ignore any extra bits that may occur at the end of the pattern.
+					Interpret the bit pattern of <span class="figNum twoscomplement"></span> as a sequence of 8-bit two’s complement numbers.  Ignore any extra bits that may occur at the end of the pattern.
 				</li>
 				<br/>
 				<li>
-					Interpret the bit pattern of Figure 11.23 as a sequence of 16-bit unsigned integers.   Ignore any extra bits that may occur at the end of the pattern.
+					Interpret the bit pattern of <span class="figNum twoscomplement"></span> as a sequence of 16-bit unsigned integers.   Ignore any extra bits that may occur at the end of the pattern.
 				</li>
 				<br/>
 				<li>
-					Interpret the bit pattern of Figure 11.23 as a sequence of 16-bit two’s complement numbers.  Ignore any extra bits that may occur at the end of the pattern.
+					Interpret the bit pattern of <span class="figNum twoscomplement"></span> as a sequence of 16-bit two’s complement numbers.  Ignore any extra bits that may occur at the end of the pattern.
 				</li>
 				<br/>
 				<li>
-					Interpret the bit pattern of Figure 11.23 as a sequence of 32-bit floating point numbers.  Ignore any extra bits that may occur at the end of the pattern.
+					Interpret the bit pattern of <span class="figNum twoscomplement"></span> as a sequence of 32-bit floating point numbers.  Ignore any extra bits that may occur at the end of the pattern.
 				</li>
 			</ol>
 			
@@ -155,6 +135,23 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyData3");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
+
 		</div>
 	</body>
 </html>

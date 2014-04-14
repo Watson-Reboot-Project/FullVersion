@@ -12,19 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-	    <link href = "css/ch08.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<link rel='stylesheet' href='css/generalmedia.css'>
-		<script src="js/jquery-ui.js"></script>
-		
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script src="../lib/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -35,38 +35,16 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch08s4.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch08s6.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">8.5 Expressions and Assignment</p>
+			<p class="Section">
+				<span class="contentNum javascriptExpressions"></span>
+			</p>
+			
 			<p>
 				As we have just seen, the “prompt” statements can be used to store user input into a variable. The “prompt” statements are really just specialized versions of the more general “assignment” statement.  &nbsp; Assignments take the form:
 			</p>
@@ -88,7 +66,7 @@
 			</p>
 
 			<p>
-				The numeric expressions supported by Watson JavaScript are very similar to the spreadsheet formulas presented in Section 2.4.2 of Chapter 2. Watson JavaScript numeric expressions support the same math operators as do spreadsheet formulas; namely, addition “+”, subtraction “-”, multiplication “*”, and division “/”. The precedence of these operators remains the same, with multiplication and division being performed ahead of addition and subtraction. Parentheses for grouping sub-expressions are used identically in both systems.
+				The numeric expressions supported by Watson JavaScript are very similar to the spreadsheet formulas presented in <span class="contentNum t false"></span> of Chapter <span class="contentNum tools false"></span>. Watson JavaScript numeric expressions support the same math operators as do spreadsheet formulas; namely, addition “+”, subtraction “-”, multiplication “*”, and division “/”. The precedence of these operators remains the same, with multiplication and division being performed ahead of addition and subtraction. Parentheses for grouping sub-expressions are used identically in both systems.
 			</p>
 
 			<p>
@@ -103,12 +81,12 @@
 				Y + Z
 			</p>
 
-			<img src="Images/fig8-8.png" alt="Operator precedence in Watson Javascript mathematical expressions" class="Image">
+			<img src="images/opsprecedence.png" alt="Operator precedence in Watson Javascript mathematical expressions" class="Image">
 			
 			<br/>
 
 			<p class="Figure">
-				Figure 8.8: &nbsp; Operator precedence in Watson JavaScript mathematical expressions
+				<span class="figNum opsprecedence"></span> &nbsp; Operator precedence in Watson JavaScript mathematical expressions
 			</p>
 
 			<p>
@@ -124,7 +102,7 @@
 			</p>
 
 			<p>
-				The priorities, or precedence, of the various Watson JavaScript mathematical operators are summarized in Figure 8.8. This figure is almost identical to Figure 2.5, which contains the priorities for spreadsheet formulas.
+				The priorities, or precedence, of the various Watson JavaScript mathematical operators are summarized in <span class="figNum opsprecedence"></span>. This figure is almost identical to Figure 2.5, which contains the priorities for spreadsheet formulas.
 			</p>
 
 			<p>
@@ -147,9 +125,7 @@
 				10 + 15 / 3 * 8
 			</p>
 
-			<p class="Figure">
-				&nbsp;
-			</p>
+			<br/>
 
 			<p>
 				There are now three operations that need to be performed to compute the result: one addition, one division, and one multiplication. Since multiplication and division are at a higher precedence level than addition and subtraction, the division of 15 by 3 is performed, resulting in:
@@ -171,7 +147,7 @@
 				Finally, the addition takes place, producing the result:
 			</p>
 
-			<p class="Figure">
+			<p class="Subfigure">
 				50
 			</p>
 
@@ -231,12 +207,10 @@
 				This statement would first evaluate the text expression &nbsp; <span class="Subfigure">“George ” + “Bush”</span> which generates the text string “George Bush”, and then assign that value to the text variable <span class="Subfigure">president</span>. Note that in order for this statement to have meaning in Watson JavaScript, <span class="Subfigure">president</span> must be a text variable and not a numeric variable. Also note that a space was included at the end of the first text string, “George ”. This was necessary so that when this string was concatenated with “Bush” a blank would appear between the first and last name.
 			</p>
 
-			<p>
-				&nbsp;
-			</p>
+			<br/>
 
-			<p class="Section">
-				Exercises for Section 8.5
+			<p class="Exercise">
+				Exercises for <span class="contentNum javascriptExpressions"></span>
 			</p>
 
 			<ol>
@@ -262,7 +236,7 @@
 
 				<li>
 					<p>
-						Write a Watson JavaScript program that computes the product of three numbers entered by the user. In other words, the program should ask for and receive three integer values from a user, multiply these three numbers together, and then print the product. This program will be similar to the program of Figure 8.7 that computes the sum of two numbers.
+						Write a Watson JavaScript program that computes the product of three numbers entered by the user. In other words, the program should ask for and receive three integer values from a user, multiply these three numbers together, and then print the product. This program will be similar to the program of <span class="figNum inoutnum"></span> that computes the sum of two numbers.
 					</p>
 				</li>
 
@@ -305,17 +279,19 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("javascript", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("javascriptExpressions");
-
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("javascriptExpressions");		// get arrow paths
 				});	
+				
 			</script>
 
 			<div>

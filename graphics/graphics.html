@@ -10,20 +10,24 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
 	</head>
 
 	<body>
@@ -31,74 +35,32 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentChapterTOC"></div>
 
-			<!-- End nav -->
-			
+			<!-- End navbar -->
+
+			<!-- Chapter Index listing -->
    		<div id="ContentAreaSections" class="well bold-me"></div>
    		<!-- End Chapter Index listing -->
 
 			
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div> 
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
-			<!-- Main content -->
-			
-			<!--
-			<ul>
-				<a href="ch06s1.html"><li>6.1 Introduction</li></a>
-				<a href="ch06s2.html"><li>6.2 What is Computer Graphics?</li></a>
-				<a href="ch06s3.html"><li>6.3 Fundamental Graphical Concepts</li></a>
-				<a href="ch06s4.html"><li>6.4 A Simple Graphical Language</li></a> 
-					<ul>
-						<a href="ch06s4p1.html"><li>6.4.1 Data Types, Constants, Variables, and Expressions</li></a>
-						<a href="ch06s4p2.html"><li>6.4.2 Instructions</li></a>
-					</ul>
-				<a href="ch06s5.html"><li>6.5 Developing Algorithms with WGL</li></a>
-					<ul>
-						<a href="ch06s5p1.html"><li>6.5.1 Creating Simple Static Images</li></a>
-						<a href="ch06s5p2.html"><li>6.5.2 Creating Complex Images and Animation</li></a>
-					</ul>				
-			</ul>
-			-->
-			
+
 			<!-- Previous and Next Chapter buttons -->
 			<br>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 col-sm-6 col-xs-12">	
-						<a href="#" onclick="prevArrowPage(chapObj)">
-							<button class="btn btn-sm btn-blue" type="button"><i class="fa fa-step-backward"></i> Previous Chapter</button>
-						</a>
-					</div>
-					<div class="col-md-5 col-sm-6 col-xs-12 pull-right">
-						<a href="#" onclick="nextArrowPage(chapObj)">	
-							<button class="btn btn-sm btn-blue" type="button">Next Chapter <i class="fa fa-step-forward"></i></button>
-						</a>	
-					</div>					
+					<!--Floating nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->
 				</div> 
 			</div>
 
@@ -108,14 +70,14 @@
 				
 				$(document).ready(function() {
 					loadLocalTableOfContents("graphics");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("graphics", spans);
-					// once the document has loaded, set figure numbers and arrow paths
+					populateNav();
+					populateChapterButtons();
+					
 					pageObj = getArrowPathsByPage("graphics");
 					chapObj = getArrowPathsByChapter("graphics");
-
 				});	
 			</script>
+
 			
 			<!-- End main content -->
 			<hr />

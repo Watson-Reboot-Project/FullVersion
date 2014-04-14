@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href="../lib/css/bootstrap.css" rel="stylesheet">
+		<link href="../lib/css/styles.css" rel="stylesheet">
+		<link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,54 +33,36 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				2.4.1 Basic features of a spreadsheet<span class="Footnote" title="Footnote: I have endeavored to keep this discussion of spreadsheets as generic as possible, avoiding references to particular products, such as Microsoft Excel. However, occasionally “implementation specific” details cannot be avoided. In such cases the details presented conform to the way the Watson Spreadsheet Lab works. When these details differ from Microsoft Excel’s way of doing things, the differences are pointed out in a footnote such as this."><a href="#ftn6" id="body_ftn6">[6]</a></span>
+				<span class="contentNum toolsSpreadsheets1"></span><span class="Footnote" title="Footnote: I have endeavored to keep this discussion of spreadsheets as generic as possible, avoiding references to particular products, such as Microsoft Excel. However, occasionally “implementation specific” details cannot be avoided. In such cases the details presented conform to the way the Watson Spreadsheet Lab works. When these details differ from Microsoft Excel’s way of doing things, the differences are pointed out in a footnote such as this."><a href="#ftn6" id="body_ftn6">[6]</a></span>
 			</p>
 		
 			<p>
 				A spreadsheet consists of a rectangular grid, or table, of “cells.”  The table is divided into horizontal rows (usually numbered 1, 2, 3, etc.) and vertical columns (usually labeled A, B, C, etc.).  The location of each cell in the table can be specified by its column letter and row number.  For example, the upper-left-most cell of a spreadsheet is labeled A1, since its location is column A, row 1.  Cell locations are always specified with the column designator listed first, followed by the row designator.  
 			</p>
 		
-			<img src="Images/fig2-3.png" alt="A simple spreadsheet" class="Image">
+			<img src="images/simplespreadsheet.png" alt="A simple spreadsheet" class="Image">
 		
 			<p class="Figure">
-				Figure 2.3:  A simple spreadsheet
+				<span class="figNum simplespreadsheet"></span>  A simple spreadsheet
 			</p>
 		
 			<p>
-				A small spreadsheet containing four columns and eight rows is shown in Figure 2.3.  Notice that the word “Grades” is stored in cell B2.  The value “100” is stored in cell C3.  In order to use a spreadsheet program effectively, the first task you must master is to become comfortable with the cell reference system.
+				A small spreadsheet containing four columns and eight rows is shown in <span class="figNum simplespreadsheet"></span>.  Notice that the word “Grades” is stored in cell B2.  The value “100” is stored in cell C3.  In order to use a spreadsheet program effectively, the first task you must master is to become comfortable with the cell reference system.
 			</p>
 			<p>
 				Each cell of a spreadsheet may hold one of three things: a number, a text string, or a formula.  <span class="Bolded">Numbers</span> are generally composed of the digits 0 through 9 together with an optional decimal point and sign.  Hence, “50”, “50.0”, “+50”, and “+50.0” are all valid ways of representing the number fifty.<span class="Footnote" title="Footnote: Spreadsheet programs differ in their abilities to handle numeric data that contains special symbols (e.g., “$” and “,”). While all spreadsheets will recognize “50000” and “75” as numbers, some programs will not accept “50,000” and “$75” as numeric data. The Watson Spreadsheet lab generally does not allow special characters in numeric data. Newer versions of Microsoft Excel do allow some special symbols in numeric data."><a href="#ftn7" id="body_ftn7">[7]</a></span>
@@ -145,18 +128,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("tools");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("tools", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("toolsSpreadsheets1");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("toolsSpreadsheets1");		// get arrow paths
+			});	
+
+		</script>
 
 
 		</div>

@@ -12,12 +12,16 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
@@ -31,44 +35,22 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 
-			<!--Floating nav -->
-			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
-			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">8.1 Introduction</p>
+			<p class="Section">
+				<span class="contentNum javascriptIntro"></span>
+			</p>
+			
 			<p>
 				We have now reached the halfway point in our discussion of software. As such, this is a good place to review where we have been and to summarize where we are going.
 			</p>
 
 			<p>
-				Chapter 5 focused on the problem solving process in general and introduced the concept of an algorithm. Chapter 6 presented a simple programming language for drawing graphical images. That language, the Watson Graphics Language (WGL), was used to introduce many of the basic features of imperative programming languages. These features include data types, constants, variables, assignment statements, and output statements; as well as the control constructs “sequence” and “repetition”. The lab that accompanied Chapter 6 gave you an opportunity to explore the behavior of several existing WGL programs, and to begin writing programs yourself. Chapter 7 focused on data structures and addressed the question of how data can be organized to facilitate the problem solving process.
+				Chapter 5 focused on the problem solving process in general and introduced the concept of an algorithm. Chapter 6 presented a simple programming language for drawing graphical images. That language, the Watson Graphics Language (WGL), was used to introduce many of the basic features of imperative programming languages. These features include data types, constants, variables, assignment statements, and output statements; as well as the control constructs “sequence” and “repetition”. The lab that accompanied Chapter <span class="contentNum graphics false"></span> gave you an opportunity to explore the behavior of several existing WGL programs, and to begin writing programs yourself. Chapter <span class="contentNum structures false"></span> focused on data structures and addressed the question of how data can be organized to facilitate the problem solving process.
 			</p>
 
 			<p>
@@ -88,11 +70,11 @@
 			</p>
 
 			<p>
-				The chapter following this one, Chapter 9, discusses the functional and logical programming paradigms. Functional programming is illustrated with the language Lisp. Logic programming is introduced with Prolog. Both of these languages are frequently used in the study of A. I., or artificial intelligence.
+				The chapter following this one, Chapter <span class="contentNum objects false"></span>, discusses the functional and logical programming paradigms. Functional programming is illustrated with the language Lisp. Logic programming is introduced with Prolog. Both of these languages are frequently used in the study of A. I., or artificial intelligence.
 			</p>
 
 			<p>
-				The last chapter in this part of the book is Chapter 10: Building Large Software Systems. Chapter 10 begins with a discussion of object-oriented programming. Object-oriented features influence the ways in which the parts of a program are organized and how they communicate with one another. Object-oriented languages are extremely useful for writing complex programs that support mouse-based, graphical user interfaces. Chapter 10 also includes an introduction to the field of software engineering, which focuses on the unique challenges that must be faced when constructing large programs, such as those that require many thousands of worker-hours to complete.
+				The last chapter in this part of the book is Chapter <span class="contentNum engineering false"></span>: Building Large Software Systems. Chapter <span class="contentNum engineering false"></span> begins with a discussion of object-oriented programming. Object-oriented features influence the ways in which the parts of a program are organized and how they communicate with one another. Object-oriented languages are extremely useful for writing complex programs that support mouse-based, graphical user interfaces. Chapter 10 also includes an introduction to the field of software engineering, which focuses on the unique challenges that must be faced when constructing large programs, such as those that require many thousands of worker-hours to complete.
 			</p>
 			
 			<!-- End main content -->
@@ -112,17 +94,19 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("javascript", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("javascriptIntro");
-
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("javascriptIntro");		// get arrow paths
 				});	
+				
 			</script>
 
 			<div>

@@ -12,19 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-	    <link href = "css/ch08.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<link rel='stylesheet' href='css/generalmedia.css'>
-		<script src="js/jquery-ui.js"></script>
-		
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script src="../lib/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -35,43 +35,19 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch08s8.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch09.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			<p class="Section">
-				8.9 Arrays and High-level Data Structures
+				<span class="contentNum javascriptArrays"></span>
 			</p>
 			
 			<p>
-				We now come to the final section of this chapter on imperative programming using Watson JavaScript. This section introduces the array data structure and illustrates how it can be used to implement higher-level data structures, such as stacks, which were described in Chapter 7.
+				We now come to the final section of this chapter on imperative programming using Watson JavaScript. This section introduces the array data structure and illustrates how it can be used to implement higher-level data structures, such as stacks, which were described in Chapter <span class="contentNum structures false"></span>.
 			</p>
 
 			<p>
@@ -79,13 +55,13 @@
 			</p>
 
 			<p>
-				A ten-element integer array is illustrated in Figure 8.35. This array happens to be located in the computer’s memory at addresses 1000 to 1009, but it could just as easily have been located elsewhere. Immediately to the left of each element is the array name and subscript used to reference that element. The name of this particular array is <span class="Subfigure">A</span>. The first position of <span class="Subfigure">A</span> contains the value 10, the second position the value 999, the third 50, and so forth. Note that the elements are stored in “contiguous” memory locations – the first element is “next to” the second element, which is next to the third, which is next to the fourth, etc.
+				A ten-element integer array is illustrated in <span class="figNum tenintarray"></span>. This array happens to be located in the computer’s memory at addresses 1000 to 1009, but it could just as easily have been located elsewhere. Immediately to the left of each element is the array name and subscript used to reference that element. The name of this particular array is <span class="Subfigure">A</span>. The first position of <span class="Subfigure">A</span> contains the value 10, the second position the value 999, the third 50, and so forth. Note that the elements are stored in “contiguous” memory locations – the first element is “next to” the second element, which is next to the third, which is next to the fourth, etc.
 			</p>
 
-			<img src="Images/fig8-35.png" alt="An illustration of a ten-element integer array" class="ImageTall">
+			<img src="images/tenintarray.png" alt="An illustration of a ten-element integer array" class="ImageTall">
 			
 			<p class="Figure">
-				Figure 8.35: &nbsp; An illustration of a ten-element integer array
+				<span class="figNum tenintarray"></span> &nbsp; An illustration of a ten-element integer array
 			</p>
 
 			<p>
@@ -97,7 +73,7 @@
 			</p>
 
 			<p>
-				where <span class="Italicized">name</span> is the name of the array,</span> <span class="Italicized">size</span> is the number of individual elements that can be stored in the array, and <span class="Italicized">type</span> is the type of those elements, either numeric or text. Hence, the ten-element integer array named <span class="Subfigure">A</span> illustrated in Figure 8.35 would be declared in Watson JavaScript as:
+				where <span class="Italicized">name</span> is the name of the array,</span> <span class="Italicized">size</span> is the number of individual elements that can be stored in the array, and <span class="Italicized">type</span> is the type of those elements, either numeric or text. Hence, the ten-element integer array named <span class="Subfigure">A</span> illustrated in <span class="figNum tenintarray"></span> would be declared in Watson JavaScript as:
 			</p>
 
 			<p class="Subfigure">
@@ -126,7 +102,7 @@
 			<br/>
 
 			<p>
-				would initialize the first, fifth, and eighth elements of <span class="Subfigure">A</span> to the values shown in Figure 8.35. The other elements could be initialized in a similar manner. The value of the eighth element of <span class="Subfigure">A</span>, which is located at <span class="Subfigure">A[7]</span>, could be copied to a variable named <span class="Subfigure">X</span> with a statement such as:
+				would initialize the first, fifth, and eighth elements of <span class="Subfigure">A</span> to the values shown in <span class="figNum tenintarray"></span>. The other elements could be initialized in a similar manner. The value of the eighth element of <span class="Subfigure">A</span>, which is located at <span class="Subfigure">A[7]</span>, could be copied to a variable named <span class="Subfigure">X</span> with a statement such as:
 			</p>
 
 			<p class="Subfigure">
@@ -134,7 +110,7 @@
 			</p>
 
 			<p>
-				Given the values in Figure 8.35, this statement would place 37 into <span class="Subfigure">X</span>. The value of <span class="Subfigure">A[7]</span>could be incremented by 5, from 37 to 42, with the following statement:
+				Given the values in <span class="figNum tenintarray"></span>, this statement would place 37 into <span class="Subfigure">X</span>. The value of <span class="Subfigure">A[7]</span>could be incremented by 5, from 37 to 42, with the following statement:
 			</p>
 
 			<p class="Subfigure">
@@ -162,7 +138,7 @@
 			<br/>
 
 			<p>
-				can be used to place the value 42 into <span class="Subfigure">A[6]</span>, the seventh element of <span class="Subfigure">A</span>. This is so because the semantics of the assignment statement dictate that the value of the expression on the right hand side of the assignment operator is copied into the location specified by the variable or array element on the left hand side. Similarly, the following statements will retrieve a copy of the value stored at <span class="Subfigure">A[1]</span>, the value 999 according to Figure 8.35, and place it into <span class="Subfigure">X</span>.
+				can be used to place the value 42 into <span class="Subfigure">A[6]</span>, the seventh element of <span class="Subfigure">A</span>. This is so because the semantics of the assignment statement dictate that the value of the expression on the right hand side of the assignment operator is copied into the location specified by the variable or array element on the left hand side. Similarly, the following statements will retrieve a copy of the value stored at <span class="Subfigure">A[1]</span>, the value 999 according to <span class="figNum tenintarray"></span>, and place it into <span class="Subfigure">X</span>.
 			</p>
 
 			<ul class="Blockcenter">
@@ -201,11 +177,11 @@
 			</p>
 
 			<p>
-				Since the value of <span class="Subfigure">A[5]</span> is 1066 (according to Figure 8.35), element &nbsp; </span><span class="Subfigure">A[8]</span> is assigned the result of 1066 - 2, or 1064. This value overwrites any value previously stored in <span class="Subfigure">A[8]</span>, such as 99 according to Figure 8.35.
+				Since the value of <span class="Subfigure">A[5]</span> is 1066 (according to <span class="figNum tenintarray"></span>), element &nbsp; </span><span class="Subfigure">A[8]</span> is assigned the result of 1066 - 2, or 1064. This value overwrites any value previously stored in <span class="Subfigure">A[8]</span>, such as 99 according to <span class="figNum tenintarray"></span>.
 			</p>
 
 			<p>
-				The true power of variable subscripts becomes apparent when it is necessary to perform a specific operation on many individual array elements. For example, let’s say that we wanted to initialize all ten elements of the array of Figure 8.35 to zero.
+				The true power of variable subscripts becomes apparent when it is necessary to perform a specific operation on many individual array elements. For example, let’s say that we wanted to initialize all ten elements of the array of <span class="figNum tenintarray"></span> to zero.
 			</p>
 
 			<p>
@@ -257,7 +233,7 @@
 			</p>
 
 			<p>
-				The technique is illustrated in Figure 8.36. The program presented in that figure declares a ten-element array <span class="Subfigure">A</span>, and an integer variable <span class="Subfigure">i</span>. The variable is used to control a “for” loop that executes a total of ten times. Contained within the loop is a statement that assigns zero to the element at index position <span class="T39">i</span> of <span class="Subfigure">A</span>.
+				The technique is illustrated in <span class="figNum tenintprogram"></span>. The program presented in that figure declares a ten-element array <span class="Subfigure">A</span>, and an integer variable <span class="Subfigure">i</span>. The variable is used to control a “for” loop that executes a total of ten times. Contained within the loop is a statement that assigns zero to the element at index position <span class="T39">i</span> of <span class="Subfigure">A</span>.
 			</p>
 
 			<p>
@@ -306,7 +282,7 @@
 			<br/>
 
 			<p class="Figure">
-				Figure 8.36: &nbsp; A partial program that declares a ten-element array and initializes each of its elements to zero
+				<span class="figNum tenintprogram"></span> &nbsp; A partial program that declares a ten-element array and initializes each of its elements to zero
 			</p>
 
 			
@@ -336,13 +312,13 @@
 			
 
 			<p>
-				Using iteration constructs and variable-based array references leads to compact and flexible programs. Even with the small ten-element array of Figure 8.35, initializing all of the array elements to zero with the program of Figure 8.36 required only four lines of code (after discounting variable declarations), rather than the ten lines of code that would be needed if we avoided iteration.
+				Using iteration constructs and variable-based array references leads to compact and flexible programs. Even with the small ten-element array of <span class="figNum tenintarray"></span>, initializing all of the array elements to zero with the program of <span class="figNum tenintprogram"></span> required only four lines of code (after discounting variable declarations), rather than the ten lines of code that would be needed if we avoided iteration.
 			</p>
 
 			
 
 			<p>
-				The advantage of the iterative approach becomes even more pronounced when we consider larger arrays. For example, let’s assume that we wanted to increase the size of array <span class="Subfigure">A</span> from 10 to 100 elements, and initialize each of these one hundred elements to zero. Regardless of the fact that we are increasing the amount of work to be done tenfold, the required changes to the program of Figure 8.36 are actually relatively minor.
+				The advantage of the iterative approach becomes even more pronounced when we consider larger arrays. For example, let’s assume that we wanted to increase the size of array <span class="Subfigure">A</span> from 10 to 100 elements, and initialize each of these one hundred elements to zero. Regardless of the fact that we are increasing the amount of work to be done tenfold, the required changes to the program of <span class="figNum tenintprogram"></span> are actually relatively minor.
 			</p>
 
 			
@@ -354,13 +330,13 @@
 			
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp; </span>var A = new Array(100); // Numeric
+				var A = new Array(100); // Numeric
 			</p>
 
 			
 
 			<p>
-				The only other change required to the program of Figure 8.36 would be to update the “for” loop to allow it to repeat 100 times.
+				The only other change required to the program of <span class="figNum tenintprogram"></span> would be to update the “for” loop to allow it to repeat 100 times.
 			</p>
 
 			
@@ -378,7 +354,7 @@
 			
 
 			<p>
-				By combining both arrays and loops, programmers can solve all sorts of problems that involve processing large amounts of data.  For example, Figure 8.37 presents a function subprogram that performs a sequential search of a 100-element array for a target item. As you may recall from Chapter 5, search algorithms generally accept as input a list and a target item. Their task is to determine whether the target item is present in the list.
+				By combining both arrays and loops, programmers can solve all sorts of problems that involve processing large amounts of data.  For example, <span class="figNum searchfunction"></span> presents a function subprogram that performs a sequential search of a 100-element array for a target item. As you may recall from Chapter <span class="contentNum algorithms false"></span>, search algorithms generally accept as input a list and a target item. Their task is to determine whether the target item is present in the list.
 			</p>
 
 			
@@ -426,7 +402,7 @@
 			<br/>
 
 			<p class="Figure">
-				Figure 8.37: &nbsp; A function subprogram for searching a numeric array
+				<span class="figNum searchfunction"></span> &nbsp; A function subprogram for searching a numeric array
 			</p>
 
 			
@@ -434,19 +410,19 @@
 			
 
 			<p>
-				The sequential search algorithm accomplishes this task by comparing the target item to each of the items of the list, starting with the first item and continuing to search until either a list item identical to the target item is found or all of the list items have been examined. The sequential search procedure was outlined in Figure 5.4 of Chapter 5.
+				The sequential search algorithm accomplishes this task by comparing the target item to each of the items of the list, starting with the first item and continuing to search until either a list item identical to the target item is found or all of the list items have been examined. The sequential search procedure was outlined in <span class="figNum seqsearch"></span> of Chapter <span class="contentNum algorithms false"></span>.
 			</p>
 
 			
 
 			<p>
-				In the function of Figure 8.37, a numeric array of indeterminate size, named <span class="Subfigure">list</span>, will hold the items to be searched. Another numeric variable, <span class="Subfigure">size</span>, will specify the number of elements stored in the list. A third numeric variable named <span class="Subfigure">target</span> will contain the value we are looking for. Since all three of these variables specify inputs to the function, they are declared in the function parameter list.
+				In the function of <span class="figNum searchfunction"></span>, a numeric array of indeterminate size, named <span class="Subfigure">list</span>, will hold the items to be searched. Another numeric variable, <span class="Subfigure">size</span>, will specify the number of elements stored in the list. A third numeric variable named <span class="Subfigure">target</span> will contain the value we are looking for. Since all three of these variables specify inputs to the function, they are declared in the function parameter list.
 			</p>
 
 			
 
 			<p>
-				Instead of printing messages to report whether or not the target item occurs in the list (as was done in Figure 5.4), this function returns an integer number that indicates the index position of the first list item that matches the target. If no list item matches the target, a value of –1 is returned to indicate an unsuccessful search.
+				Instead of printing messages to report whether or not the target item occurs in the list (as was done in <span class="figNum seqsearch"></span>), this function returns an integer number that indicates the index position of the first list item that matches the target. If no list item matches the target, a value of –1 is returned to indicate an unsuccessful search.
 			</p>
 
 			
@@ -468,13 +444,13 @@
 			</p>
 
 			<p>
-				The final example of this chapter is presented in Figure 8.38. It illustrates how a higher-order data structure, in this case the stack, can be implemented in Watson JavaScript.
+				The final example of this chapter is presented in <span class="figNum watsonstack"></span>. It illustrates how a higher-order data structure, in this case the stack, can be implemented in Watson JavaScript.
 			</p>
 
 			
 
 			<p>
-				Stacks were discussed in detail in Chapter 7. Essentially a stack is a first-in, first-out data structure. Items can be placed onto the top of the stack via the “push” operator and removed from the top by “pop”.
+				Stacks were discussed in detail in Chapter <span class="contentNum structures false"></span>. Essentially a stack is a first-in, first-out data structure. Items can be placed onto the top of the stack via the “push” operator and removed from the top by “pop”.
 			</p>
 			<!-- Manual fig 8.38
 			
@@ -624,13 +600,13 @@
 			<div id="fig38Div" class="divness"></div>
 
 			<p class="Figure">
-				Figure 8.38: &nbsp; An implementation of the stack data structure in Watson JavaScript
+				<span class="figNum watsonstack"></span> &nbsp; An implementation of the stack data structure in Watson JavaScript
 			</p>
 
 			
 
 			<p>
-				The program of Figure 8.38 constructs a stack out of an array, a variable, and two functions. The array will hold the actual stack items, the variable keeps up with the position of the “top” item of the stack, and the two functions implement the actual “push” and “pop” operations. The stack is designed to hold at most 100 numbers. Only numbers, as opposed to text, may be stored in this stack.
+				The program of <span class="figNum watsonstack"></span> constructs a stack out of an array, a variable, and two functions. The array will hold the actual stack items, the variable keeps up with the position of the “top” item of the stack, and the two functions implement the actual “push” and “pop” operations. The stack is designed to hold at most 100 numbers. Only numbers, as opposed to text, may be stored in this stack.
 			</p>
 
 			
@@ -648,7 +624,7 @@
 			
 
 			<p>
-				Following initialization of the stack to its empty configuration, the main program pushes three items onto the stack: 10, 20, and 30. It then proceeds to pop each item off the stack and print returned values. The actions of the “push” operations are illustrated in Figure 8.39. The actions of the “pop” operations are shown in Figure 8.40.
+				Following initialization of the stack to its empty configuration, the main program pushes three items onto the stack: 10, 20, and 30. It then proceeds to pop each item off the stack and print returned values. The actions of the “push” operations are illustrated in <span class="figNum stackpushes"></span>. The actions of the “pop” operations are shown in <span class="figNum stackpops"></span>.
 			</p>
 
 			
@@ -666,7 +642,7 @@
 			
 
 			<p>
-				<span class="Subfigure">Push</span> begins by comparing the current value of TOP to 99 in order to determine whether there is room in the <span class="Subfigure">STACK</span> array to accept another item. Remember, the simple stack implementation illustrated in Figure 8.38 can hold at most 100 items – in positions <span class="Subfigure">STACK[0]</span> through <span class="Subfigure">STACK[99]</span>. If <span class="Subfigure">TOP</span> is currently less than 99, there is room in the array for at least one more item, so <span class="Subfigure">push</span> increments the <span class="Subfigure">TOP</span> variable by one and then places the <span class="Subfigure">item</span> into array position <span class="Subfigure">STACK[TOP]</span>. Note that if <span class="Subfigure">TOP</span> is equal to 99 the <span class="Subfigure">STACK</span> array is full and <span class="Subfigure">push</span> takes no action.
+				<span class="Subfigure">Push</span> begins by comparing the current value of TOP to 99 in order to determine whether there is room in the <span class="Subfigure">STACK</span> array to accept another item. Remember, the simple stack implementation illustrated in <span class="figNum watsonstack"></span> can hold at most 100 items – in positions <span class="Subfigure">STACK[0]</span> through <span class="Subfigure">STACK[99]</span>. If <span class="Subfigure">TOP</span> is currently less than 99, there is room in the array for at least one more item, so <span class="Subfigure">push</span> increments the <span class="Subfigure">TOP</span> variable by one and then places the <span class="Subfigure">item</span> into array position <span class="Subfigure">STACK[TOP]</span>. Note that if <span class="Subfigure">TOP</span> is equal to 99 the <span class="Subfigure">STACK</span> array is full and <span class="Subfigure">push</span> takes no action.
 			</p>
 
 			
@@ -677,7 +653,7 @@
 
 			
 
-			<img src="Images/fig8-39a.png" alt="The state of the stack after the push(10) operation" class="Image">
+			<img src="images/stackpush10.png" alt="The state of the stack after the push(10) operation" class="Image">
 			
 			<p class="Figure">
 				Part(a) – The state of the stack after the push(10) operation
@@ -685,7 +661,7 @@
 
 			
 
-			<img src="Images/fig8-39b.png" alt="The state of the stack after the push(20) operation" class="Image">
+			<img src="images/stackpush20.png" alt="The state of the stack after the push(20) operation" class="Image">
 			
 			<p class="Figure">
 				Part(b) – The state of the stack after the push(20) operation
@@ -693,7 +669,7 @@
 
 			
 
-			<img src="Images/fig8-39c.png" alt="The state of the stack after the push(30) operation" class="Image">
+			<img src="images/stackpush30.png" alt="The state of the stack after the push(30) operation" class="Image">
 			
 			<p class="Figure">
 				Part(c) – The state of the stack after the push(30) operation
@@ -702,24 +678,24 @@
 			
 
 			<p class="Figure">
-				Figure 8.39: &nbsp; The behavior of the <span class="Subfigure">push</span> operations
+				<span class="figNum stackpushes"></span> &nbsp; The behavior of the <span class="Subfigure">push</span> operations
 			</p>
 
 			<br /><br />
 
-			<img src="Images/fig8-40a.png" alt="The state of the stack after the first pop operation" class="Image">
+			<img src="images/stackfirstpop.png" alt="The state of the stack after the first pop operation" class="Image">
 			
 			<p class="Figure">
 				Part(a) – The state of the stack after the first pop operation
 			</p>
 
-			<img src="Images/fig8-40b.png" alt="The state of the stack after the second pop operation" class="Image">
+			<img src="images/stacksecondpop.png" alt="The state of the stack after the second pop operation" class="Image">
 			
 			<p class="Figure">
 				Part(b) – The state of the stack after the second pop operation
 			</p>
 
-			<img src="Images/fig8-40c.png" alt="The state of the stack after the third pop operation" class="Image">
+			<img src="images/stackthirdpop.png" alt="The state of the stack after the third pop operation" class="Image">
 			
 			<p class="Figure">
 				Part(c) – The state of the stack after the third pop operation
@@ -727,7 +703,7 @@
 
 
 			<p class="Figure">
-				Figure 8.40: &nbsp; The behavior of the <span class="Subfigure">pop</span> operations
+				<span class="figNum stackpops"></span> &nbsp; The behavior of the <span class="Subfigure">pop</span> operations
 			</p>
 
 			
@@ -781,11 +757,11 @@
 			
 
 			<p>
-				There are many other benefits to implementing programs in languages that support object-oriented features. Many of these benefits will be discussed in Chapter 10.
+				There are many other benefits to implementing programs in languages that support object-oriented features. Many of these benefits will be discussed in Chapter <span class="contentNum engineering false"></span>.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 8.9
+			<p class="Exercise">
+				Exercises for <span class="contentNum javascriptArrays"></span>
 			</p>
 
 			<ol>
@@ -797,13 +773,13 @@
 
 				<li>
 					<p>
-						Modify the program of Figure 8.38 so that it can handle stacks up to size 500.&nbsp;
+						Modify the program of <span class="figNum watsonstack"></span> so that it can handle stacks up to size 500.&nbsp;
 					</p>
 				</li>
 
 				<li>
 					<p>
-						Modify the program of Figure 8.38 so that it implements a stack of strings, rather than a stack of numbers.&nbsp;
+						Modify the program of <span class="figNum watsonstack"></span> so that it implements a stack of strings, rather than a stack of numbers.&nbsp;
 					</p>
 				</li>
 			</ol>
@@ -825,17 +801,19 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("javascript", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("javascriptArrays");
-
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("javascriptArrays");		// get arrow paths
 				});	
+				
 			</script>
 
 			<div>

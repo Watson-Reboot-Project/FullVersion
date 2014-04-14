@@ -11,14 +11,19 @@
 
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
@@ -32,40 +37,23 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				1.3.1  How are computers used?  
+				<span class="contentNum scienceFour1"></span>  
 			</p>
 	
 			<p>
@@ -73,7 +61,7 @@
 			</p>
 	
 			<p>
-				Computers were originally conceived of as machines for automating the process of mathematical calculation.  Given this fact, it is more than a little surprising that many of today’s most popular computer applications focus on communication rather than computation.  Chapter 2 examines five of the most common communication oriented applications: email, instant messengers, web browsers, word processors, and presentation software such as Microsoft’s PowerPoint.
+				Computers were originally conceived of as machines for automating the process of mathematical calculation.  Given this fact, it is more than a little surprising that many of today’s most popular computer applications focus on communication rather than computation.  <span class="contentNum tools true"></span> examines five of the most common communication oriented applications: email, instant messengers, web browsers, word processors, and presentation software such as Microsoft’s PowerPoint.
 			</p>
 	
 			<p>
@@ -97,7 +85,7 @@
 			</p>
 
 			<p>
-				Chapter 2 includes a detailed discussion of spreadsheets.  Additionally, the Watson spreadsheet laboratory, which is included with this text, will give you a chance to construct a number of spreadsheets for yourself, in order to see how they can be used to solve real-world problems.
+				<span class="contentNum tools true"></span> includes a detailed discussion of spreadsheets.  Additionally, the Watson spreadsheet laboratory, which is included with this text, will give you a chance to construct a number of spreadsheets for yourself, in order to see how they can be used to solve real-world problems.
 			</p>
 
 			<p>
@@ -105,11 +93,11 @@
 			</p>
 
 			<p>
-				Chapter 3 examines the way data is physically stored by computers and looks at some of the techniques used to organize data so that it can be rapidly retrieved.  The chapter discusses the various kinds of files that can be stored along with the advantages and disadvantages of each.  Some techniques are appropriate for storing data that must be directly addressable based on a key.  For example, a university usually wants to access its student records by student ID number.  Other techniques are more appropriate for data that is sequential in nature.  In addition to individual files of information, database management systems are useful for organizing large collections of related information.  A <span class="Bolded">database management system</span> is a program that can be used to organize data in ways that make it easy for people to pose questions.  For example, a well-organized database would make it easy for the university registrar to find answers to questions such as “How many female engineering students have a GPA of 3.5 or above?” or “Which classes did Dr. O’Neal teach in the fall of 2003?”  A Watson database laboratory is included with this text.  It will give you a feel for the types of problems that can be solved using a modern relational database package.
+				<span class="contentNum information true"></span> examines the way data is physically stored by computers and looks at some of the techniques used to organize data so that it can be rapidly retrieved.  The chapter discusses the various kinds of files that can be stored along with the advantages and disadvantages of each.  Some techniques are appropriate for storing data that must be directly addressable based on a key.  For example, a university usually wants to access its student records by student ID number.  Other techniques are more appropriate for data that is sequential in nature.  In addition to individual files of information, database management systems are useful for organizing large collections of related information.  A <span class="Bolded">database management system</span> is a program that can be used to organize data in ways that make it easy for people to pose questions.  For example, a well-organized database would make it easy for the university registrar to find answers to questions such as “How many female engineering students have a GPA of 3.5 or above?” or “Which classes did Dr. O’Neal teach in the fall of 2003?”  A Watson database laboratory is included with this text.  It will give you a feel for the types of problems that can be solved using a modern relational database package.
 			</p>
 
 			<p>
-				The last chapter in the section on computer applications, Chapter 4, focuses on the impact of computers on society.  A number of issues of interest to the general public are addressed, including: security and privacy, freedom of expression, intellectual property rights, and computer crime.  In addition, issues of particular interest to the computing professional, such as accountability, liability, and professional licensing are discussed.  
+				The last chapter in the section on computer applications, <span class="contentNum ethical true"></span>, focuses on the impact of computers on society.  A number of issues of interest to the general public are addressed, including: security and privacy, freedom of expression, intellectual property rights, and computer crime.  In addition, issues of particular interest to the computing professional, such as accountability, liability, and professional licensing are discussed.  
 			</p>
 	
 			<p>
@@ -166,15 +154,14 @@
 			</div>
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("science", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("scienceFour1");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("scienceFour1");		// get arrow paths
 				});	
+
 			</script>
 
 		</div>

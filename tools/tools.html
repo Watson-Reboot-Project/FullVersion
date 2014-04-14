@@ -11,17 +11,19 @@
 
 			<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    <script type="text/javascript" src="js/master.js"></script>
-      <script type="text/javascript" src="js/TOCGenerator.js"></script>
-      <script type="text/javascript" src="js/Numbering.js"></script>
-      <script type="text/javascript" src="js/Miscellaneous.js"></script>
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+
 	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
@@ -35,74 +37,38 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-         <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentChapterTOC"></div>
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		<!-- End floating nav -->
-			<!-- Main content -->
-			
-			<!--<ul>
-				<a href="ch02s1.html"><li>2.1 Introduction</li></a>
-				<a href="ch02s2.html"><li>2.2  The changing role of computers</li></a>
-				<a href="ch02s3.html"><li>2.3   Communication-oriented applications</li></a>
-				<ul>
-					<a href="ch02s3p1.html"><li>2.3.1 Email</li></a>
-					<a href="ch02s3p2.html"><li>2.3.2 Instant messaging applications</li></a>
-					<a href="ch02s3p3.html"><li>2.3.3 Web browsers</li></a>
-					<a href="ch02s3p4.html"><li>2.3.4Word processors</li></a>
-					<a href="ch02s3p5.html"><li>2.3.5 Presentation software</li></a>
-				</ul>
-				<a href="ch02s4.html"><li>2.4  Spreadsheets</li></a>
-				<ul>
-					<a href="ch02s4p1.html"><li>2.4.1 Basic features of a spreadsheet</li></a>
-					<a href="ch02s4p2.html"><li>2.4.2 Formula evaluation: a closer look</li></a>
-					<a href="ch02s4p3.html"><li>2.4.3 Relative and absolute cell referencing</li></a>
-					<a href="ch02s4p4.html"><li>2.4.4 Miscellaneous features:  “replicate” and built-in functions</li></a>
-					<a href="ch02s4p5.html"><li>2.4.5 Solving problems with spreadsheets</li></a>
-				</ul>
-			</ul>-->
+			<div class="floating-next"></div>
+			<!-- End floating nav -->
 
-			<div id="ContentAreaSections" class="well bold-me"></div>
+			<!-- Chapter Index listing -->
+   		<div id="ContentAreaSections" class="well bold-me"></div>
    		<!-- End Chapter Index listing -->
+
+   		<!--Floating nav -->
+			<!-- Previous -->
+			<div id="prevButtonDiv"></div>
+			<!-- Next -->
+			<div id="nextButtonDiv"></div>
+			<!-- End floating nav -->
+
+
 
 			<!-- Previous and Next Chapter buttons -->
 			<br>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 col-sm-6 col-xs-12">	
-						<a href="#" onclick="prevArrowPage(chapObj)">
-							<button class="btn btn-sm btn-blue" type="button"><i class="fa fa-step-backward"></i> Previous Chapter</button>
-						</a>
-					</div>
-					<div class="col-md-5 col-sm-6 col-xs-12 pull-right">
-						<a href="#" onclick="nextArrowPage(chapObj)">	
-							<button class="btn btn-sm btn-blue" type="button">Next Chapter <i class="fa fa-step-forward"></i></button>
-						</a>	
-					</div>					
+					<!--Floating nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->					
 				</div> 
 			</div>
 
@@ -112,12 +78,11 @@
 				
 				$(document).ready(function() {
 					loadLocalTableOfContents("tools");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("tools", spans);
-					// once the document has loaded, set figure numbers and arrow paths
+					populateNav();
+					populateChapterButtons();
+					
 					pageObj = getArrowPathsByPage("tools");
 					chapObj = getArrowPathsByChapter("tools");
-
 				});	
 			</script>
 			

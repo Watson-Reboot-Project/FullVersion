@@ -9,18 +9,22 @@
 
 		<title>Watson</title>
 
-		<!-- Google fonts -->
+			<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,40 +35,17 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s5p1.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s5p3.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.5.2  Assembly language to machine language translation
+				<span class="contentNum assemblyMachine2"></span>
 			</p>
 			
 			<p>
@@ -72,17 +53,17 @@
 			</p>
 			
 			<p>
-				There are eighteen commands in the Watson assembly language.  There are sixteen commands in the Watson Virtual Machine language.  Referring back Figure 11.2 for an overview of the assembly language and Figure 11.25 for an overview of the machine language, we can see that with the exception of the <span class="Subfigure">.WORD</span> and <span class="Subfigure">.BLOCK</span> commands, every assembly language instruction maps to exactly one machine language instruction.  Thus the process of translation between these two levels is straightforward and can be automated.
+				There are eighteen commands in the Watson assembly language.  There are sixteen commands in the Watson Virtual Machine language.  Referring back <span class="figNum watsonassembly"></span> for an overview of the assembly language and <span class="figNum monovsbitmap"></span> for an overview of the machine language, we can see that with the exception of the <span class="Subfigure">.WORD</span> and <span class="Subfigure">.BLOCK</span> commands, every assembly language instruction maps to exactly one machine language instruction.  Thus the process of translation between these two levels is straightforward and can be automated.
 			</p>
 			
 			<p>
-				The programs that automatically translate assembly language programs to machine language are called “assemblers”.  Essentially, assemblers construct or “assemble” each of the machine language instructions of a program from the corresponding instruction in the assembly language version of the program.  Figure 11.28 illustrates the relationship between assembly language and machine language with an example program first shown in Figure 11.3.
+				The programs that automatically translate assembly language programs to machine language are called “assemblers”.  Essentially, assemblers construct or “assemble” each of the machine language instructions of a program from the corresponding instruction in the assembly language version of the program.  <span class="figNum andornot"></span> illustrates the relationship between assembly language and machine language with an example program first shown in <span class="figNum assemblytotal"></span>.
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-28.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.28: Machine and assembly language versions of the same program
+				<span class="figNum andornot"></span> Machine and assembly language versions of the same program
 			</p>
 			
 			<p>
@@ -90,11 +71,11 @@
 			</p>
 			
 			<p>
-				Beginning at some starting address (address zero in the Watson VM), reserve memory as specified by the <span class="Subfigure">.BLOCK</span> and <span class="Subfigure">.WORD</span> commands.  Perform the initializations required by the <span class="Subfigure">.WORD</span> commands.  Also note labels associated with each word, block, and command as they are encountered.  For example, <span class="Subfigure">TOTAL</span>, <span class="Subfigure">ABC</span>, and <span class="Subfigure">XYZ</span> are labels in the program of Figure 11.28.  After processing each of the <span class="Subfigure">.WORD</span> and <span class="Subfigure">.BLOCK</span> commands the “data segment” of your machine language program will be complete.
+				Beginning at some starting address (address zero in the Watson VM), reserve memory as specified by the <span class="Subfigure">.BLOCK</span> and <span class="Subfigure">.WORD</span> commands.  Perform the initializations required by the <span class="Subfigure">.WORD</span> commands.  Also note labels associated with each word, block, and command as they are encountered.  For example, <span class="Subfigure">TOTAL</span>, <span class="Subfigure">ABC</span>, and <span class="Subfigure">XYZ</span> are labels in the program of <span class="figNum andornot"></span>.  After processing each of the <span class="Subfigure">.WORD</span> and <span class="Subfigure">.BLOCK</span> commands the “data segment” of your machine language program will be complete.
 			</p>
 			
 			<p>
-				The executable instructions of a machine language program will immediately follow its data segment.  For each assembly language instruction, use the table of Figure 11.25 to produce a machine language equivalent.  Instruction names at the assembly level are mapped to op-codes at the machine level.  References to registers at the assembly level are mapped to 4-bit unsigned register numbers.  Labels at the assembly level are replaced with the address associated with that label at the machine level. And so forth.
+				The executable instructions of a machine language program will immediately follow its data segment.  For each assembly language instruction, use the table of <span class="figNum monovsbitmap"></span> to produce a machine language equivalent.  Instruction names at the assembly level are mapped to op-codes at the machine level.  References to registers at the assembly level are mapped to 4-bit unsigned register numbers.  Labels at the assembly level are replaced with the address associated with that label at the machine level. And so forth.
 			</p>
 			
 			<p>
@@ -121,6 +102,23 @@
 			<div>
 
 			</div>
+			
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyMachine2");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

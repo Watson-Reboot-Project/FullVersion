@@ -9,18 +9,21 @@
 
 		<title>Watson</title>
 
-		<!-- Google fonts -->
+			<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	   	<link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,56 +34,33 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s5.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s5p2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.5.1 The Watson Virtual Machine instruction set 
+				<span class="contentNum assemblyMachine1"></span>
 			</p>
 			
 			<p>
-				The general format of Watson VM language instructions is given in Figure 11.24.  The leftmost four bits of the sixteen-bit instruction (bits 13-16) contain the operation code.  Each instruction recognized by the machine has a unique operation code, or op-code.  Since Watson VM op-codes are four bits long, the Watson VM language can consist of at most sixteen different instructions.  In fact, the Watson Virtual Machine language contains exactly sixteen instructions.
+				The general format of Watson VM language instructions is given in <span class="figNum asciichars"></span>.  The leftmost four bits of the sixteen-bit instruction (bits 13-16) contain the operation code.  Each instruction recognized by the machine has a unique operation code, or op-code.  Since Watson VM op-codes are four bits long, the Watson VM language can consist of at most sixteen different instructions.  In fact, the Watson Virtual Machine language contains exactly sixteen instructions.
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-24.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.24: The format of a Watson Virtual Machine instruction
+				<span class="figNum asciichars"></span> The format of a Watson Virtual Machine instruction
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-25.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.25: The Watson Virtual Machine instruction set
+				<span class="figNum monovsbitmap"></span> The Watson Virtual Machine instruction set
 			</p>
 			
 			<p>
@@ -88,7 +68,7 @@
 			</p>
 			
 			<p>
-				Figure 11.25 illustrates the sixteen instructions that make up the Watson machine language.  The op-code, assembly language equivalent, and a description of behavior is presented for each instruction.  The general behavior of many of these instructions should already be familiar to you, since each machine language statement has a corresponding Watson assembly language statement and most of these were discussed in Section 11.3.  We’ll now fill in some of the low-level details that were omitted earlier.
+				<span class="figNum monovsbitmap"></span> illustrates the sixteen instructions that make up the Watson machine language.  The op-code, assembly language equivalent, and a description of behavior is presented for each instruction.  The general behavior of many of these instructions should already be familiar to you, since each machine language statement has a corresponding Watson assembly language statement and most of these were discussed in Section 11.3.  We’ll now fill in some of the low-level details that were omitted earlier.
 			</p>
 			
 			<p>
@@ -160,7 +140,7 @@
 			</p>
 			
 			<p>
-				The next two statements listed in Figure 11.25 are the arithmetic instructions <span class="Subfigure">ADD</span> and <span class="Subfigure">SUBTRACT</span>.  Both of these statements have a similar form: an op-code followed by three registers.  The first register (indicated by bits 9-12) will hold the result of the arithmetic operation.  The second and third registers (bits 5-8 and 1-4) provide the inputs.  Input values are assumed to be in two’s complement binary notation; outputs are generated in this notation as well.
+				The next two statements listed in <span class="figNum monovsbitmap"></span> are the arithmetic instructions <span class="Subfigure">ADD</span> and <span class="Subfigure">SUBTRACT</span>.  Both of these statements have a similar form: an op-code followed by three registers.  The first register (indicated by bits 9-12) will hold the result of the arithmetic operation.  The second and third registers (bits 5-8 and 1-4) provide the inputs.  Input values are assumed to be in two’s complement binary notation; outputs are generated in this notation as well.
 			</p>
 			
 			<p>
@@ -184,13 +164,13 @@
 			</p>
 			
 			<p>
-				The next three Watson machine language instructions implement the logical operations “and”, “or”, and “not”.  Because these statements operate on the bit-level, their function was not discussed in Section 11.3.  Basically, the “and” operation produces a “1” (meaning “true”) when both its first <span class="Ital">and</span> second input are “1” – otherwise (when either or both inputs are “0”) it produces a “0”.  The “or” operation produces a “1” (“true”) when either its first <span class="Ital">or</span> second input is “1” – otherwise (when both inputs are “0”) it produces a “0’.  The “not” operation simply inverts, or complements, its input bit.  Given a “1” it produces “0”.  Given a “0” it produces “1”.  The behavior of each of these three operators is summarized in Figure 11.26.
+				The next three Watson machine language instructions implement the logical operations “and”, “or”, and “not”.  Because these statements operate on the bit-level, their function was not discussed in Section 11.3.  Basically, the “and” operation produces a “1” (meaning “true”) when both its first <span class="Ital">and</span> second input are “1” – otherwise (when either or both inputs are “0”) it produces a “0”.  The “or” operation produces a “1” (“true”) when either its first <span class="Ital">or</span> second input is “1” – otherwise (when both inputs are “0”) it produces a “0’.  The “not” operation simply inverts, or complements, its input bit.  Given a “1” it produces “0”.  Given a “0” it produces “1”.  The behavior of each of these three operators is summarized in <span class="figNum watsonvmformat"></span>.
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-26.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.26:  The logical operators “and”, “or”, and “not”
+				<span class="figNum watsonvmformat"></span>  The logical operators “and”, “or”, and “not”
 			</p>
 			
 			<p>
@@ -237,7 +217,7 @@
 			</p>
 			
 			<p>
-				stores into register F (1111<span class="Subscript">two</span>) the complement of the value held in register A (1010<span class="Subscript">two</span>).  If register A contained the bit pattern “0000 0000 0000 0000” this instruction would place “1111 1111 1111 1111” into register F.  Note that <span class="Subfigure">NOT</span> simply applies the “not” table of Figure 11.26 in a bitwise manner to the contents of the input register to determine the pattern to be stored in the output register.
+				stores into register F (1111<span class="Subscript">two</span>) the complement of the value held in register A (1010<span class="Subscript">two</span>).  If register A contained the bit pattern “0000 0000 0000 0000” this instruction would place “1111 1111 1111 1111” into register F.  Note that <span class="Subfigure">NOT</span> simply applies the “not” table of <span class="figNum watsonvmformat"></span> in a bitwise manner to the contents of the input register to determine the pattern to be stored in the output register.
 			</p>
 			
 			<p>
@@ -297,7 +277,7 @@
 			<img src="Images/AssemblyIMGS/ill11-25.png" alt="" class="Image">
 			
 			<p>
-				Returning to our tour of the Watson Virtual Machine instruction set, the next two instructions implement the “shift” operators.  Like the logic operators, the shift instructions were not covered at the assembly level in Section 11.3.
+				Returning to our tour of the Watson Virtual Machine instruction set, the next two instructions implement the “shift” operators.  Like the logic operators, the shift instructions were not covered at the assembly level in <span class="contentNum assemblyProgramming"></span>.
 			</p>
 			
 			<p>
@@ -384,7 +364,7 @@
 			</p>
 			
 			<p>
-				There are ten different condition codes that are recognized by the <span class="Subfigure">BRANCH</span> statement. These are presented in Figure 11.27.  The first six conditions (<span class="Subfigure">EQ</span>, <span class="Subfigure">NE</span>, <span class="Subfigure">LT</span>, <span class="Subfigure">LE</span>, <span class="Subfigure">GT</span>, <span class="Subfigure">GE</span>) were discussed in Section 11.3.  The final four conditions (<span class="Subfigure">CARY</span>, <span class="Subfigure">NEG</span>, <span class="Subfigure">ZERO</span>, <span class="Subfigure">OVER</span>) were not discussed because they are not used as frequently and an understanding of their function requires some knowledge of data representation at the machine level.  Even though these four conditions were not mentioned in the assembly-level discussion of the <span class="Subfigure">BRANCH</span> instruction, statements such as:
+				There are ten different condition codes that are recognized by the <span class="Subfigure">BRANCH</span> statement. These are presented in <span class="figNum watsonvmset"></span>.  The first six conditions (<span class="Subfigure">EQ</span>, <span class="Subfigure">NE</span>, <span class="Subfigure">LT</span>, <span class="Subfigure">LE</span>, <span class="Subfigure">GT</span>, <span class="Subfigure">GE</span>) were discussed in <span class="contentNum assemblyProgramming"></span>.  The final four conditions (<span class="Subfigure">CARY</span>, <span class="Subfigure">NEG</span>, <span class="Subfigure">ZERO</span>, <span class="Subfigure">OVER</span>) were not discussed because they are not used as frequently and an understanding of their function requires some knowledge of data representation at the machine level.  Even though these four conditions were not mentioned in the assembly-level discussion of the <span class="Subfigure">BRANCH</span> instruction, statements such as:
 			</p>
 			
 			<p class="Subfigure">
@@ -396,11 +376,11 @@
 			<img src="Images/AssemblyIMGS/fig11-27.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.27:  The <span class="Subfigure">BRANCH</span> statement condition codes
+				<span class="figNum watsonvmset"></span>  The <span class="Subfigure">BRANCH</span> statement condition codes
 			</p>
 			
 			<p>
-				Looking at the table of Figure 11.27, we see that <span class="Subfigure">CARY</span> (code 0110) checks to see whether the last arithmetic (or compare) statement produced a carry – thus causing the “carry” status bit to be set to “1”.  <span class="Subfigure">NEG</span> (code 0111), <span class="Subfigure">ZERO</span> (code 1000), and <span class="Subfigure">OVER</span> (code 1001), each work in a similar manner.  <span class="Subfigure">NEG</span> checks to see whether the “Negative” status bit has been set to “1” – indicating that the last number produced by an arithmetic (or compare) statement had a “1” in its sign bit.  <span class="Subfigure">ZERO</span> checks to see whether the “Zero” status bit is set to “1”  – indicating that the result of the last arithmetic (or compare) statement was zero. <span class="Subfigure">OVER</span> determines whether an overflow occurred by determining whether the “Overflow” status bit is set to “1”.
+				Looking at the table of <span class="figNum watsonvmset"></span>, we see that <span class="Subfigure">CARY</span> (code 0110) checks to see whether the last arithmetic (or compare) statement produced a carry – thus causing the “carry” status bit to be set to “1”.  <span class="Subfigure">NEG</span> (code 0111), <span class="Subfigure">ZERO</span> (code 1000), and <span class="Subfigure">OVER</span> (code 1001), each work in a similar manner.  <span class="Subfigure">NEG</span> checks to see whether the “Negative” status bit has been set to “1” – indicating that the last number produced by an arithmetic (or compare) statement had a “1” in its sign bit.  <span class="Subfigure">ZERO</span> checks to see whether the “Zero” status bit is set to “1”  – indicating that the result of the last arithmetic (or compare) statement was zero. <span class="Subfigure">OVER</span> determines whether an overflow occurred by determining whether the “Overflow” status bit is set to “1”.
 			</p>
 			
 			<p>
@@ -451,6 +431,23 @@
 			<div>
 
 			</div>
+				
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyMachine1");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

@@ -12,15 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,54 +34,35 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+    		<div class="floating-previous"></div>
+    	<!-- End dynamic navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			
+			<!-- End floating nav -->
 
-			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
-			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				7.1 Introduction
+				<span class="contentNum structuresIntro"></span>
 			</p>
 
 			<p>
-				This chapter looks at the topic of data structures, which is concerned with the various ways data can be organized within a computer program.  This subject should not be confused with databases, which were discussed in Chapter 3.  Remember that databases are applications for organizing and storing large quantities of information in a flexible manner so that people can ask questions about that data.  In contrast, data structures are internal program objects that enable data to be manipulated efficiently by computer programs.
+				This chapter looks at the topic of data structures, which is concerned with the various ways data can be organized within a computer program.  This subject should not be confused with databases, which were discussed in Chapter <span class="contentNum information false"></span>.  Remember that databases are applications for organizing and storing large quantities of information in a flexible manner so that people can ask questions about that data.  In contrast, data structures are internal program objects that enable data to be manipulated efficiently by computer programs.
 			</p>
 
 			<p>
-				This chapter is organized in the following way.  After this introduction, Section 7.2 presents five of the most common “higher-level” data structures.  These include: stacks, queues, general lists, trees, and graphs.  These structures are “higher-level” in the sense that they are not generally included as built-in components of programming languages.  Instead, they must be implemented by programmers using the statements and “lower-level” data structures provided by the programming languages.  In Section 7.3 we take a look at three common lower-level data structures: variables, arrays, and records.  This section also introduces three data types common to most programming languages: integers, reals, and character strings.
+				This chapter is organized in the following way.  After this introduction, Section <span class="contentNum structuresData false"></span> presents five of the most common “higher-level” data structures.  These include: stacks, queues, general lists, trees, and graphs.  These structures are “higher-level” in the sense that they are not generally included as built-in components of programming languages.  Instead, they must be implemented by programmers using the statements and “lower-level” data structures provided by the programming languages.  In Section 7.3 we take a look at three common lower-level data structures: variables, arrays, and records.  This section also introduces three data types common to most programming languages: integers, reals, and character strings.
 			</p>
 
 			<p>
-				Section 7.4 describes, in general terms, how the higher-level data structures of Section 7.2  may be implemented by using the lower-level data structures of Section 7.3, together with simple algorithms of the type discussed in Chapter 5.  The final section of this chapter looks at the topic of Abstract Data Types which is illustrated using a stack.  Emphasis is placed on understanding why this topic is important from a computing standpoint.
+				Section 7.4 describes, in general terms, how the higher-level data structures of Section <span class="contentNum structuresData false"></span>  may be implemented by using the lower-level data structures of Section 7.3, together with simple algorithms of the type discussed in Chapter <span class="contentNum algorithms false"></span>.  The final section of this chapter looks at the topic of Abstract Data Types which is illustrated using a stack.  Emphasis is placed on understanding why this topic is important from a computing standpoint.
 			</p>
 			
+			<div class="floating-next"></div>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -98,14 +82,13 @@
 			
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("algorithms", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("structuresIntro");
-
 				});	
 			</script>
 

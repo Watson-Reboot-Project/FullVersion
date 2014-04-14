@@ -12,19 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-	    <link href = "css/ch08.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<link rel='stylesheet' href='css/generalmedia.css'>
-		<script src="js/jquery-ui.js"></script>
-		
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script src="../lib/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -35,39 +35,14 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch08s7.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch08s9.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			<p class="Section">
-				8.8 Recursion
+				<span class="contentNum javascriptRecursion"></span>
 			</p>
 			
 			<p>
@@ -75,7 +50,7 @@
 			</p>
 
 			<p>
-				We will begin our study of recursion by turning to a familiar example, the “beer” program, first introduced in Figure 8.24 and later rewritten to use a function in Figure 8.29. Figure 8.30 presents a recursive version of <span class="Subfigure">beer</span>. At first glance you might think that this program is an identical copy of the program of Figure 8.29. There are, however, two major differences between the two. First, instead of a “for” loop in the <span class="Subfigure">singsong</span> function, this program has an “if” statement. Also, just before the physical end of the function definition, immediately before the “}”, the version of <span class="Subfigure">singsong</span> in Figure 8.29 calls another copy of <span class="Subfigure">singsong</span>, passing it the number of <span class="Subfigure">beers</span> that remain on the wall.
+				We will begin our study of recursion by turning to a familiar example, the “beer” program, first introduced in <span class="figNum beeriterative"></span> and later rewritten to use a function in <span class="figNum beersubprogram"></span>. <span class="figNum beertailrecursive"></span> presents a recursive version of <span class="Subfigure">beer</span>. At first glance you might think that this program is an identical copy of the program of <span class="figNum beersubprogram"></span>. There are, however, two major differences between the two. First, instead of a “for” loop in the <span class="Subfigure">singsong</span> function, this program has an “if” statement. Also, just before the physical end of the function definition, immediately before the “}”, the version of <span class="Subfigure">singsong</span> in <span class="figNum beersubprogram"></span> calls another copy of <span class="Subfigure">singsong</span>, passing it the number of <span class="Subfigure">beers</span> that remain on the wall.
 			</p>
 			<!-- Manual fig 8.30
 			<p class="Subfigure">
@@ -165,7 +140,7 @@
 			<div id="fig30Div" class="divness"></div>
 			
 			<p class="Figure">
-				Figure 8.30: &nbsp; Beer – the tail recursive version
+				<span class="figNum beertailrecursive"></span> &nbsp; Beer – the tail recursive version
 			</p>
 
 			<p>
@@ -236,16 +211,16 @@
 				It returns to its caller, <span class="Subfigure">singsong</span><span class="Subscript">2</span>.
 			</p>
 
-			<img src="Images/fig8-31.png" alt="Illustration of the behavior of the recursive “beer” program, given 2 beers" class="Image">
+			<img src="images/beerillustration.png" alt="Illustration of the behavior of the recursive “beer” program, given 2 beers" class="Image">
 			
 			<br/>
 			
 			<p class="Figure">
-				Figure 8.31: &nbsp; Illustration of the behavior of the recursive “beer” program, given 2 <span class="Subfigure">beers</span>
+				<span class="figNum beerillustration"></span> &nbsp; Illustration of the behavior of the recursive “beer” program, given 2 <span class="Subfigure">beers</span>
 			</p>
 
 			<p>
-				<span class="Subfigure">singsong</span><span class="Subscript">2</span> “wakes up” at the point where the call to <span class="Subfigure">singsong</span><span class="Subscript">3</span> took place. Because the call took place at the very end of the function, <span class="Subfigure">singsong</span><span class="Subscript">2</span> now completes its execution. When this happens, control is returned to <span class="Subfigure">singsong</span><span class="Subscript">1</span>. Likewise, <span class="Subfigure">singsong</span><span class="Subscript">1</span> can now complete and return control to its caller, the main program. The main program prints “Later…” and then terminates. A graphical illustration of the behavior of this program given two <span class="Subfigure">beers</span> is presented in Figure 8.31.
+				<span class="Subfigure">singsong</span><span class="Subscript">2</span> “wakes up” at the point where the call to <span class="Subfigure">singsong</span><span class="Subscript">3</span> took place. Because the call took place at the very end of the function, <span class="Subfigure">singsong</span><span class="Subscript">2</span> now completes its execution. When this happens, control is returned to <span class="Subfigure">singsong</span><span class="Subscript">1</span>. Likewise, <span class="Subfigure">singsong</span><span class="Subscript">1</span> can now complete and return control to its caller, the main program. The main program prints “Later…” and then terminates. A graphical illustration of the behavior of this program given two <span class="Subfigure">beers</span> is presented in <span class="figNum beerillustration"></span>.
 			</p>
 
 			<p>
@@ -253,11 +228,11 @@
 			</p>
 
 			<p>
-				Figures 8.30 and 8.31 illustrate what is called “tail recursion” because the recursive call is the last action taken by subprogram. In tail recursion, there is no work to be done during the “unwinding” process because it was all done on the way “down” the spiral.
+				<span class="figNum beertailrecursive"></span> and <span class="figNum beerillustration"></span> illustrate what is called “tail recursion” because the recursive call is the last action taken by subprogram. In tail recursion, there is no work to be done during the “unwinding” process because it was all done on the way “down” the spiral.
 			</p>
 
 			<p>
-				Figure 8.32 contains yet another version of the “beer” program. This one illustrates “general”, as opposed to “tail”, recursion by ensuring that some work remains for the function to do after its recursive call completes.  The main feature of general recursion is that the recursive call isn’t the last executable statement performed by the subprogram.
+				<span class="figNum beerrecursive"></span> contains yet another version of the “beer” program. This one illustrates “general”, as opposed to “tail”, recursion by ensuring that some work remains for the function to do after its recursive call completes.  The main feature of general recursion is that the recursive call isn’t the last executable statement performed by the subprogram.
 			</p>
 
 			<p>
@@ -280,15 +255,15 @@
 			
 			<div id="fig32Div" class="divness"></div>
 			<p class="Figure">
-				Figure 8.32: &nbsp; Beer – the general recursive version
+				<span class="figNum beerrecursive"></span> &nbsp; Beer – the general recursive version
 			</p>
 
 			<p>
-				The output generated by the program when started with two beers is included in Figure 8.32. To help you trace through the recursive calls, the name and level number of the subprogram that generated each line of output is shown, with “main” being used to indicate output generated by the main program.
+				The output generated by the program when started with two beers is included in <span class="figNum beerrecursive"></span>. To help you trace through the recursive calls, the name and level number of the subprogram that generated each line of output is shown, with “main” being used to indicate output generated by the main program.
 			</p>
 
 			<p>
-				As you can see, on the way down through the levels of recursion, the output produced by this program is identical to that of Figure 8.30. It is only when the program reaches the lowest level, with zero <span class="Subfigure">beers</span>, that we notice any difference. Due to the existence of the “else” block, when <span class="Subfigure">beers</span> is equal to zero, the current version of <span class="Subfigure">singsong</span> prints “We’re out of beer.” &nbsp; before it terminates. In the example run included in Figure 8.32, there were only two <span class="Subfigure">beers</span> to begin with, so we run out at <span class="Subfigure">singsong</span><span class="Subscript">3</span>. At the completion of this version of the subprogram, control returns to the statement in <span class="Subfigure">singsong</span><span class="Subscript">2</span> immediately following the recursive call.  That statement is <span class="Subfigure">document.writeln(“Hic.”);</span> which is executed. Since this statement is the last statement of the “then” block, and the physical end of the function immediately follows the end of this “if-else” block, <span class="Subfigure">singsong</span><span class="Subscript">2</span> terminates. Control then returns to the <span class="Subfigure">document.writeln(“Hic.”);</span> statement in <span class="Subfigure">singsong</span><span class="Subscript">1</span>. After executing this statement, <span class="Subfigure">singsong</span><span class="Subscript">1</span> terminates, and control returns to the main program. That program prints “Later…” and execution concludes.
+				As you can see, on the way down through the levels of recursion, the output produced by this program is identical to that of <span class="figNum beertailrecursive"></span>. It is only when the program reaches the lowest level, with zero <span class="Subfigure">beers</span>, that we notice any difference. Due to the existence of the “else” block, when <span class="Subfigure">beers</span> is equal to zero, the current version of <span class="Subfigure">singsong</span> prints “We’re out of beer.” &nbsp; before it terminates. In the example run included in <span class="figNum beerrecursive"></span>, there were only two <span class="Subfigure">beers</span> to begin with, so we run out at <span class="Subfigure">singsong</span><span class="Subscript">3</span>. At the completion of this version of the subprogram, control returns to the statement in <span class="Subfigure">singsong</span><span class="Subscript">2</span> immediately following the recursive call.  That statement is <span class="Subfigure">document.writeln(“Hic.”);</span> which is executed. Since this statement is the last statement of the “then” block, and the physical end of the function immediately follows the end of this “if-else” block, <span class="Subfigure">singsong</span><span class="Subscript">2</span> terminates. Control then returns to the <span class="Subfigure">document.writeln(“Hic.”);</span> statement in <span class="Subfigure">singsong</span><span class="Subscript">1</span>. After executing this statement, <span class="Subfigure">singsong</span><span class="Subscript">1</span> terminates, and control returns to the main program. That program prints “Later…” and execution concludes.
 			</p>
 
 			<p>
@@ -359,7 +334,7 @@
 			</p>
 
 			<p>
-				Figure 8.33 illustrates a Watson JavaScript function for computing factorial. The contents of the subprogram read “If <span class="Italicized">N</span> is equal to zero then the result is one, otherwise the result is <span class="Italicized">N</span> &times; (</span><span class="Italicized">N</span>-1)!. Return the result.” &nbsp; The JavaScript function clearly reflects the mathematical definition. The factorial function could be rewritten using iteration, rather than recursion, but such a subprogram would not follow the mathematical definition of factorial as closely as the recursive version. Thus, the recursive version is preferred.
+				<span class="figNum graphicalcomp"></span> illustrates a Watson JavaScript function for computing factorial. The contents of the subprogram read “If <span class="Italicized">N</span> is equal to zero then the result is one, otherwise the result is <span class="Italicized">N</span> &times; (</span><span class="Italicized">N</span>-1)!. Return the result.” &nbsp; The JavaScript function clearly reflects the mathematical definition. The factorial function could be rewritten using iteration, rather than recursion, but such a subprogram would not follow the mathematical definition of factorial as closely as the recursive version. Thus, the recursive version is preferred.
 			</p>
 			
 			<ul class="Blockcenter">
@@ -386,25 +361,25 @@
 			</ul>
 
 			<p class="Figure">
-				Figure 8.33: &nbsp; A recursive function to compute N!
+				<span class="figNum graphicalcomp"></span> &nbsp; A recursive function to compute N!
 			</p>
 			
 			<p>
 				&nbsp;
 			</p>
 
-			<img src="Images/fig8-34.png" alt="" class="Image">
+			<img src="images/graphicalcompthree.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 8.34: &nbsp; A graphical illustration of the computation of 3!
+				<span class="figNum graphicalcompthree"></span> &nbsp; A graphical illustration of the computation of 3!
 			</p>
 
 			<p>
-				Figure 8.34 illuminates the recursive nature of this function by illustrating the computation of 3!. Note that the initial call to <span class="Italicized">fact</span> attempts to directly compute &nbsp;  &nbsp; <span class="Subfigure">result = 3 * fact(2); &nbsp; </span>but before it can do so, it must compute <span class="Subfigure">fact(2)</span>, which in turn must compute <span class="Subfigure">fact(1</span>), which in turn must compute <span class="Subfigure">fact(0)</span>. Once <span class="Subfigure">fact</span><span class="Subscript">4</span><span class="Subfigure">(0)</span> returns 1, <span class="Subfigure">fact</span><span class="Subscript">3</span><span class="Subfigure">(1)</span> can return 1. This enables <span class="Subfigure">fact</span><span class="Subscript">2</span><span class="Subfigure">(2)</span> to return 2, and <span class="Subfigure">fact</span><span class="Subscript">1</span><span class="Subfigure">(3)</span> to return 6.
+				<span class="figNum graphicalcompthree"></span> illuminates the recursive nature of this function by illustrating the computation of 3!. Note that the initial call to <span class="Italicized">fact</span> attempts to directly compute &nbsp;  &nbsp; <span class="Subfigure">result = 3 * fact(2); &nbsp; </span>but before it can do so, it must compute <span class="Subfigure">fact(2)</span>, which in turn must compute <span class="Subfigure">fact(1</span>), which in turn must compute <span class="Subfigure">fact(0)</span>. Once <span class="Subfigure">fact</span><span class="Subscript">4</span><span class="Subfigure">(0)</span> returns 1, <span class="Subfigure">fact</span><span class="Subscript">3</span><span class="Subfigure">(1)</span> can return 1. This enables <span class="Subfigure">fact</span><span class="Subscript">2</span><span class="Subfigure">(2)</span> to return 2, and <span class="Subfigure">fact</span><span class="Subscript">1</span><span class="Subfigure">(3)</span> to return 6.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 8.8
+			<p class="Exercise">
+				Exercises for <span class="contentNum javascriptRecursion"></span>
 			</p>
 
 			<ol>
@@ -469,7 +444,7 @@
 
 				<li>
 					<p>
-						Rewrite the factorial function of Figure 8.33 to use iteration rather than recursion.&nbsp;
+						Rewrite the factorial function of <span class="figNum graphicalcomp"></span> to use iteration rather than recursion.&nbsp;
 					</p>
 				</li>
 			</ol>
@@ -499,17 +474,19 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("javascript", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("javascriptRecursion");
-
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("javascriptRecursion");		// get arrow paths
 				});	
+				
 			</script>
 
 			<div>

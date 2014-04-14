@@ -12,13 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
@@ -32,44 +37,27 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			<div class="floating-previous"></div>
 
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
+
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				1.3.4  What are the limitations and potential of computers?  
+				<span class="contentNum scienceFour4"></span>  
 			</p>
 	
 			<p>
-				The final section of this text addresses three broad questions concerning the potential of computers.  Chapter 13 centers on a discussion of the fundamental theoretical and practical limits of computing.  In essence, it asks (and to some degree answers) what computers are fundamentally capable of.  Surprisingly, there are some things that no computer, ever, will be able to do.  Chapter 14 looks into computing and intelligence.  The chapter discusses some of the techniques, promises, and failures of the branch of computer science known as artificial intelligence or AI.  AI is concerned with making computers more human-like.  Chapter 15 reviews some of the history that has brought computing to where it is today, and then extrapolates current trends in an attempt to size up where the field is headed over the next three decades.
+				The final section of this text addresses three broad questions concerning the potential of computers. <span class="contentNum limits true"></span> centers on a discussion of the fundamental theoretical and practical limits of computing.  In essence, it asks (and to some degree answers) what computers are fundamentally capable of.  Surprisingly, there are some things that no computer, ever, will be able to do.  Chapter <span class="contentNum intelligence false"></span> looks into computing and intelligence.  The chapter discusses some of the techniques, promises, and failures of the branch of computer science known as artificial intelligence or AI.  AI is concerned with making computers more human-like.  <span class="contentNum future true"></span> reviews some of the history that has brought computing to where it is today, and then extrapolates current trends in an attempt to size up where the field is headed over the next three decades.
 			</p>
 	
 			<p>
@@ -97,17 +85,18 @@
 			</p>
 	
 			<p>
-				To address the question of “What problems can never be solved?”, computer scientists design and study abstract models of computers.  No thought is given to designing practical machines; the models are purposefully kept as simple as possible.  This is done in order to ease the process of analyzing what problems these models can and cannot solve.  There are three common computing models: finite state automata, push-down automata, and Turing machines.  These models are only introduced here.  More detailed descriptions are provided in Chapter 13. 
+				To address the question of “What problems can never be solved?”, computer scientists design and study abstract models of computers.  No thought is given to designing practical machines; the models are purposefully kept as simple as possible.  This is done in order to ease the process of analyzing what problems these models can and cannot solve.  There are three common computing models: finite state automata, push-down automata, and Turing machines.  These models are only introduced here.  More detailed descriptions are provided in Chapter <span class="contentNum limits false"></span>. 
 			</p>
 	
 			<p>
-				<span class="Bolded">Finite state automata</span> consist of a collection of states (usually drawn as circles) and transitions between states (usually drawn as labeled arrows).  Finite state automata are simple machines, with a limited amount of memory, that can process strings of input data one character at a time.  As each character is read, the automaton traverses the transition labeled with the input character.  After all input characters have been read, the input is accepted if the automaton is in a special “accepting” state.  Otherwise the input is rejected.  Figure 1.3 shows a finite state automaton that accepts all strings of zeros and ones that begin with a one.  Even though finite automata are quite limited in what they can do, they are still quite useful.  For example, programs based on finite automata are used to create efficient pattern matchers.
+				<span class="Bolded">Finite state automata</span> consist of a collection of states (usually drawn as circles) and transitions between states (usually drawn as labeled arrows).  Finite state automata are simple machines, with a limited amount of memory, that can process strings of input data one character at a time.  As each character is read, the automaton traverses the transition labeled with the input character.  After all input characters have been read, the input is accepted if the automaton is in a special “accepting” state.  Otherwise the input is rejected.  
+				<span class="figNum finiteautomaton"></span> shows a finite state automaton that accepts all strings of zeros and ones that begin with a one.  Even though finite automata are quite limited in what they can do, they are still quite useful.  For example, programs based on finite automata are used to create efficient pattern matchers.
 			</p>
 	
-			<img src="Images/SciCompIntroIMGS/fig1-3.png" alt="A finite automaton that accepts all strings of zeros and ones that begin with a one" class="Image">
+			<img src="images/finiteautomaton.png" alt="A finite automaton that accepts all strings of zeros and ones that begin with a one" class="Image">
 		
 			<p class="Figure">
-				Figure 1.3:  A finite automaton that accepts all strings of zeros and ones that begin with a one
+				<span class="figNum finiteautomaton"></span> A finite automaton that accepts all strings of zeros and ones that begin with a one
 			</p>
 		
 			<p>
@@ -175,7 +164,7 @@
 			</p>
 		
 			<p>
-				To get some sense of where computing may be in thirty years, we again turn to Moore’s law, which was introduced in Section 1.3.3.  <span class="Bolded">Moore’s law</span> states that computing power and memory density double roughly every eighteen months.  This “law” is just a future projection based on past performance – but as they say in investment circles “historical performance is no guarantee of future advancements”. 
+				To get some sense of where computing may be in thirty years, we again turn to Moore’s law, which was introduced in <span class="contentNum scienceFour3"></span>.  <span class="Bolded">Moore’s law</span> states that computing power and memory density double roughly every eighteen months.  This “law” is just a future projection based on past performance – but as they say in investment circles “historical performance is no guarantee of future advancements”. 
 			</p>
 		
 			<p>
@@ -235,17 +224,17 @@
 
 			</div>
 
+
 			<!-- Arrow navigation scripts -->
-			<script>
-				var pageObj;
+						<script>
+				var pageObj;											// do NOT change name of variable
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("science", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("scienceFour4");
-
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("scienceFour4");		// get arrow paths
 				});	
+				
 			</script>
 		</div>
 	</body>

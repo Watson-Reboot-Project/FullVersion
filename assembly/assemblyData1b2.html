@@ -12,15 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,40 +36,17 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s4p1a.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s4p1c.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.4.1.2 Numeric bases and base conversions
+				<span class="contentNum assemblyData1b2"></span>
 			</p>
 			
 			<p>Now that we have reviewed the concept of number systems and the idea of counting in a variety of bases, let’s look more carefully at what exactly a numeric “base” is.</p>
@@ -116,7 +98,7 @@
 			<img src="Images/AssemblyIMGS/ill11-3.png" alt="" class="Image">
 			
 			<p>
-				As a final example, Figure 11.14 illustrates the representation of the number “nineteen ninety nine” in all three of the bases we have discussed (base ten, base two, and base sixteen).
+				As a final example, <span class="figNum ninetynine"></span> illustrates the representation of the number “nineteen ninety nine” in all three of the bases we have discussed (base ten, base two, and base sixteen).
 			</p>
 			
 			<p>
@@ -124,7 +106,7 @@
 			</p>
 			
 			<p>
-				Converting from base two to base sixteen and from base sixteen to base two is easy.  In fact, the only reason computer scientists even use base sixteen is because it serves as convenient “shorthand” for base two.  Figure 11.15 illustrates the fact that each base sixteen digit can be represented by a group of exactly four base two digits.  
+				Converting from base two to base sixteen and from base sixteen to base two is easy.  In fact, the only reason computer scientists even use base sixteen is because it serves as convenient “shorthand” for base two. <span class="figNum hextobin"></span> illustrates the fact that each base sixteen digit can be represented by a group of exactly four base two digits.  
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-14pt1.png" alt="" class="Image">
@@ -132,27 +114,27 @@
 			<img src="Images/AssemblyIMGS/fig11-14pt3.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.14:  Nineteen ninety nine – written in base ten, base two, and base sixteen
+				<span class="figNum ninetynine"></span> Nineteen ninety nine – written in base ten, base two, and base sixteen
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-15.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.15:  Hexadecimal digits and their binary equivalence’s
+				<span class="figNum hextobin"></span>  Hexadecimal digits and their binary equivalence’s
 			</p>
 			
 			<p>
-				To convert from base sixteen to base two, simply replace each base sixteen digit with its corresponding group of four binary digits.  For example, the rather imposing hexadecimal number 1AFC3<span class="Subscript">sixteen</span> can easily be converted its binary representation as illustrated in Figure 11.16
+				To convert from base sixteen to base two, simply replace each base sixteen digit with its corresponding group of four binary digits.  For example, the rather imposing hexadecimal number 1AFC3<span class="Subscript">sixteen</span> can easily be converted its binary representation as illustrated in <span class="figNum sixteentotwo"></span>
 			</p>
 			
 			<p>
-				Converting from base two to base sixteen is just as straightforward.  We scan the base two number from right to left replacing each group of four binary digits that we encounter with the equivalent hexadecimal digit. It is important that we group the digits of the base two representation from <span class="Ital">right to left</span> in case the number of digits is not evenly divisible by four.  If this occurs, we simply add leading 0’s until the number of digits is divisible by four.  Conversion of the bit pattern 11111001111<span class="Subscript">two</span> to its hexadecimal representation is represented in Figure 11.17
+				Converting from base two to base sixteen is just as straightforward.  We scan the base two number from right to left replacing each group of four binary digits that we encounter with the equivalent hexadecimal digit. It is important that we group the digits of the base two representation from <span class="Ital">right to left</span> in case the number of digits is not evenly divisible by four.  If this occurs, we simply add leading 0’s until the number of digits is divisible by four.  Conversion of the bit pattern 11111001111<span class="Subscript">two</span> to its hexadecimal representation is represented in <span class="figNum twotosixteen"></span>
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-16.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 11.16:  Conversion of a number from base sixteen to base two
+				<span class="figNum sixteentotwo"></span>  Conversion of a number from base sixteen to base two
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-17.png" alt="" class="Image">
@@ -160,15 +142,15 @@
 			<p>                                            L                                                   R</p>
 						
 			<p class="Figure">
-				Figure 11.17:  Conversion of a number from base two to base sixteen
+				<span class="twotosixteen"></span>  Conversion of a number from base two to base sixteen
 			</p>
 			
 			<p>
-				It is important that you understand that these conversions between binary and hexadecimal representations in no way change the actual number being represented, 7CF<span class="Subscript">sixteen</span> and 11111001111<span class="Subscript">two</span> both refer to the same number 1999<span class="Subscript">ten</span> as was illustrated in Figure 11.14
+				It is important that you understand that these conversions between binary and hexadecimal representations in no way change the actual number being represented, 7CF<span class="Subscript">sixteen</span> and 11111001111<span class="Subscript">two</span> both refer to the same number 1999<span class="Subscript">ten</span> as was illustrated in <span class="figNum ninetynine"></span>
 			</p>
 			
 			<p>
-				We have now looked at conversion methods from base two (and base sixteen) to base ten (Figure 11.14), from base sixteen to base two (Figure 11.16), and from base two to base sixteen (Figure 11.17).   The only conversions involving decimal, hexadecimal, and binary that we have yet to cover are from base ten to base sixteen and from base ten to base two.  We really only need to look at base ten to base two conversion, since conversion between base two and sixteen is so trivial.  If you have a base ten number and want its base sixteen representation, you can apply a decimal to binary conversion algorithm and then change the base two result to its base sixteen representation via the grouping method described above.
+				We have now looked at conversion methods from base two (and base sixteen) to base ten (<span class="figNum ninetynine"></span>), from base sixteen to base two (<span class="figNum sixteentotwo"></span>), and from base two to base sixteen (<span class="figNum twotosixteen"></span>).   The only conversions involving decimal, hexadecimal, and binary that we have yet to cover are from base ten to base sixteen and from base ten to base two.  We really only need to look at base ten to base two conversion, since conversion between base two and sixteen is so trivial.  If you have a base ten number and want its base sixteen representation, you can apply a decimal to binary conversion algorithm and then change the base two result to its base sixteen representation via the grouping method described above.
 			</p>
 			
 			<p>
@@ -178,15 +160,15 @@
 			<img src="Images/AssemblyIMGS/fig11-18.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 11.18:  Conversion of a number from base ten to base two 
+				<span class="figNum tentotwo"></span>  Conversion of a number from base ten to base two 
 			</p>
 			
 			<p>
-				Given the decimal number 37, the largest power of two that can be subtracted is 32 = 2 <span class="Superscript">5</span>, leaving a remainder of five.  The largest power of two that can be subtracted from 5 is     4 = 2 <span class="Superscript">2</span>, which leaves a remainder of one.  Finally, the largest power of two that can be subtracted from 1 is 1=2 <span class="Superscript">0</span>, leaving a remainder of zero.  The base two representation of the number is thus formed by placing 1’s in the thirty-two’s, four’s, and units positions and 0’s in all other positions, giving 100101.  The conversion process for this number is illustrated in Figure 11.18.
+				Given the decimal number 37, the largest power of two that can be subtracted is 32 = 2 <span class="Superscript">5</span>, leaving a remainder of five.  The largest power of two that can be subtracted from 5 is     4 = 2 <span class="Superscript">2</span>, which leaves a remainder of one.  Finally, the largest power of two that can be subtracted from 1 is 1=2 <span class="Superscript">0</span>, leaving a remainder of zero.  The base two representation of the number is thus formed by placing 1’s in the thirty-two’s, four’s, and units positions and 0’s in all other positions, giving 100101.  The conversion process for this number is illustrated in <span class="figNum tentotwo"></span>.
 			</p>
 			
-			<p class="Section">
-				Exercises for Section 11.4.1.2
+			<p class="Exercise">
+				Exercises for <span class="contentNum assemblyData1b2"></span>
 			</p>
 			
 			<ol>
@@ -258,6 +240,23 @@
 			<div>
 
 			</div>
+			
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyData1b2");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

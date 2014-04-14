@@ -12,15 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,40 +34,17 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s4p1.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s4p1b.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.4.1.1 Number systems
+				<span class="contentNum assemblyData1b1"></span>
 			</p>
 			
 			<p>
@@ -94,7 +74,7 @@
 			<img src="Images/AssemblyIMGS/fig11-12.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 11.12: The numbers zero through eight in base ten and base two
+				<span class="figNum basetentwo"></span> The numbers zero through eight in base ten and base two
 			</p>
 			
 			<p>
@@ -102,7 +82,7 @@
 			 </p>
 			
 			<p>
-				This process for generating base two numbers can be continued indefinitely.  The base ten (decimal) and base two (binary) representations of the numbers zero through eight are shown in Figure 11.12.  In order to make the counting algorithm as clear as possible, leading 0’s are shown in the binary representations of zero through seven.
+				This process for generating base two numbers can be continued indefinitely.  The base ten (decimal) and base two (binary) representations of the numbers zero through eight are shown in <span class= "figNum basetentwo"></span>.  In order to make the counting algorithm as clear as possible, leading 0’s are shown in the binary representations of zero through seven.
 			</p>
 			
 			<p>
@@ -112,24 +92,24 @@
 			<img src="Images/AssemblyIMGS/fig11-13.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 11.13: The numbers zero through twenty in base ten, two, and sixteen
+				<span class="figNum tentwosixteen"></span> The numbers zero through twenty in base ten, two, and sixteen
 			</p>
 			
 			<p>
-				Base sixteen, or <span class="Ital">hexadecimal</span>, uses sixteen symbols: “0” through “9” for the numbers zero through nine, and “A” through “F” for the numbers ten through fifteen.  The number sixteen is written as “10” in base sixteen, since after the symbol “F” is encountered, it is necessary to cycle back to the beginning of the sequence, “0”.  When this occurs, the character immediately to the left of the current character (an understood “0”) is incremented to “1”, giving “10”.  Figure 11.13 illustrates the base ten, base two, and base sixteen representations of the numbers zero through twenty.
+				Base sixteen, or <span class="Ital">hexadecimal</span>, uses sixteen symbols: “0” through “9” for the numbers zero through nine, and “A” through “F” for the numbers ten through fifteen.  The number sixteen is written as “10” in base sixteen, since after the symbol “F” is encountered, it is necessary to cycle back to the beginning of the sequence, “0”.  When this occurs, the character immediately to the left of the current character (an understood “0”) is incremented to “1”, giving “10”.  <span class="figNum tentwosixteen"></span> illustrates the base ten, base two, and base sixteen representations of the numbers zero through twenty.
 			</p>
 			
 			<p>
 				In order to clearly distinguish which base a number-symbol is to be interpreted under, I will generally write the base: two, ten, or sixteen, as a subscript immediately following the digits of the number.  Hence, 11<span class="Subscript">two</span> is three, 11<span class="Subscript">ten</span> is eleven, and 11<span class="Subscript">sixteen</span> is seventeen.
 			</p>
 			
-			<p class="Section">
-				Exercises for Section 11.4.1.1
+			<p class="Exercise">
+				Exercises for <span class="contentNum assemblyData1b1"></span>
 			</p>
 			
 			<ol>
 				<li>
-					Extend the table of Figure 11.13 from twenty to thirty-five in all three bases.
+					Extend the table of Figure <span class="figNum tentwosixteen"></span> from twenty to thirty-five in all three bases.
 				</li>
 				<br/>
 				<li>
@@ -157,6 +137,18 @@
 			<div>
 
 			</div>
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+				
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("assemblyData1b1");		// get arrow paths
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

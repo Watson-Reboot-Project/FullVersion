@@ -12,22 +12,21 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <style type='text/css'>
-			table td {
-			border:none;
-			}
-		</style>
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link rel='stylesheet' href='lib/css/bootstrap-3.css'>
-	    <link href = "lib/assembly.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-	    
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -36,44 +35,21 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s3p2.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s3p4.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.3.3 Implementing selection constructs in assembly language 
+				<span class="contentNum assemblyProgramming3"></span>
 			</p>
 			
 			<p>
-				Now that we have a basic understanding of variables, assignment, and sequence in assembly language programs, we turn our attention to the issue of implementing the high-level selection, or “if”, construct.  Figure 11.5 contains an assembly language program that determines whether an individual is a minor or not based on his or her age.  In this example, the value “1” is used to mean “true” and the value “0” false.  
+				Now that we have a basic understanding of variables, assignment, and sequence in assembly language programs, we turn our attention to the issue of implementing the high-level selection, or “if”, construct.  <span class="figNum minorcode"></span> contains an assembly language program that determines whether an individual is a minor or not based on his or her age.  In this example, the value “1” is used to mean “true” and the value “0” false.  
 			</p>
 			
 			<p>
@@ -130,7 +106,7 @@
 			-->
 			<div id='fig115Div'></div>
 			<p class="Figure">
-				Figure 11.5: High-level and assembly code to determine whether a person is a minor.
+				<span class="figNum minorcode"></span> High-level and assembly code to determine whether a person is a minor.
 			</p>
 			
 			<p>
@@ -223,7 +199,7 @@
 			</p>
 			
 			<p>
-				In the example of Figure 11.5, the variable <span class="Subfigure">AGE</span> is to be compared to the value 18.  In order to do so, the values must first be loaded into registers.  This is accomplished by loading <span class="Subfigure">AGE</span> into register A and issuing a load immediate of 18 into register B.  The actual statements to accomplish this task are:
+				In the example of <span class="figNum , the variable <span class="Subfigure">AGE</span> is to be compared to the value 18.  In order to do so, the values must first be loaded into registers.  This is accomplished by loading <span class="Subfigure">AGE</span> into register A and issuing a load immediate of 18 into register B.  The actual statements to accomplish this task are:
 			</p>
 			
 			<ul class="Blockcenter">
@@ -351,15 +327,15 @@
 			-->
 			<div id='fig116Div'></div>
 			<p class="Figure">
-				Figure 11.6: High-level and assembly code to increment minor and adult counters.
+				<span class="figNum minorcounter"></span> High-level and assembly code to increment minor and adult counters.
 			</p>
 			
 			<p>
-				Figure 11.6 presents a program that extends the ideas of Figure 11.5 from the “if-then” construct to the more general “if-then-else” construct.  
+				<span class="figNum minorcounter"></span> presents a program that extends the ideas of <span class="figNum minorcode"></span> from the “if-then” construct to the more general “if-then-else” construct.  
 			</p>
 			
 			<p>
-				The purpose of the program of Figure 11.6 is to illustrate how a high-level “if-then-else” structure can be implemented as a series of assembly language instructions.  The actual high-level “if” construct adds one to either the number of “adults” or the number of “minors” – depending on whether the value of “age” is less than 18 or not.  This high-level construct is not really a complete program, in the sense that it would need to be placed in a repetition structure (loop) in order to “process” more than one person.
+				The purpose of the program of <span class="figNum minorcounter"></span> is to illustrate how a high-level “if-then-else” structure can be implemented as a series of assembly language instructions.  The actual high-level “if” construct adds one to either the number of “adults” or the number of “minors” – depending on whether the value of “age” is less than 18 or not.  This high-level construct is not really a complete program, in the sense that it would need to be placed in a repetition structure (loop) in order to “process” more than one person.
 			</p>
 			
 			<ul class="Blockcenter">
@@ -417,15 +393,15 @@
 			</p>
 			
 			<p class="Figure">
-				Figure 11.7:  General templates for implementing selection constructs in assembly 
+				<span class="figNum selectiontemplate"></span>  General templates for implementing selection constructs in assembly 
 			</p>
 			
 			<p>
-				Figure 11.7 summarizes the process of translating high-level “if-then” and “if-then-else” constructs to assembly language.  Part (a) of the figure contains a template for generating an assembly version of an “if-then” construct.  Part (b) presents a template for generating an assembly version of an “if-then-else” construct.  
+				<span class="figNum selectiontemplate"></span> summarizes the process of translating high-level “if-then” and “if-then-else” constructs to assembly language.  Part (a) of the figure contains a template for generating an assembly version of an “if-then” construct.  Part (b) presents a template for generating an assembly version of an “if-then-else” construct.  
 			</p>
 			
-			<p class="Section">
-				Exercises for Section 11.3.3
+			<p class="Exercise">
+				Exercises for <span class="contentNum assemblyProgramming3"></span>
 			</p>
 			
 			<ol>
@@ -482,6 +458,23 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyProgramming3");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
+
 		</div>
 		<script type='text/javascript' src='lib/js/angular.js'></script>
     	<script type='text/javascript' src='lib/js/jQuery.js'></script>

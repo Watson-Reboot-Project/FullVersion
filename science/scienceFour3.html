@@ -12,13 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+			<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 	    
 		<meta name="description" content="">
 		<meta name="author" content="Burt">
@@ -32,48 +38,28 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				1.3.3  How does computer hardware work?  
+				<span class="contentNum scienceFour3"></span> 
 			</p>
 
 			<p>
-				So far, this chapter has looked at a number of common applications of computing and described how such applications can be constructed from algorithms and data structures expressed in the form of computer programs.  The next logical question is: “How does computer hardware execute these programs?”.  This section introduces some of the main concepts of computing hardware.  These concepts will be amplified and extended in Chapters 11 and 12.
+				So far, this chapter has looked at a number of common applications of computing and described how such applications can be constructed from algorithms and data structures expressed in the form of computer programs.  The next logical question is: “How does computer hardware execute these programs?”.  This section introduces some of the main concepts of computing hardware.  These concepts will be amplified and extended in Chapters <span class="contentNum assembly false"></span> and <span class="contentNum circuits false"></span>.
 			</p>
 
 			<p>
-				All general-purpose computers, at a minimum, consist of the following hardware components: a central processing unit, main memory, secondary storage, various input/output devices, and a data bus.  A diagram showing the major hardware components is presented in Figure 1.2.  
+				All general-purpose computers, at a minimum, consist of the following hardware components: a central processing unit, main memory, secondary storage, various input/output devices, and a data bus.  A diagram showing the major hardware components is presented in <span class="figNum blockdiagram"></span>.  
 			</p>
 
 			<p>
@@ -84,10 +70,10 @@
 				<span class="Bolded">Main memory</span> is where the programs and data that are currently being used are located.  Main memory is often referred to as <span class="Bolded">RAM</span>, which stands for Random Access Memory.  This acronym is derived from the fact that the CPU may access the contents of main memory in any order – there is no fixed or predefined sequence.  In 2003, a new personal computer typically had between 512 megabytes to one gigabyte of main memory, meaning they could store somewhere between one half to one billion characters.  
 			</p>
 	
-			<img src="Images/SciCompIntroIMGS/fig1-2.png" alt="A block diagram of a computer" class="Image">
+			<img src="images/blockdiagram.png" alt="A block diagram of a computer" class="Image">
 	
 			<p class="Figure">
-				Figure 1.2:  A block diagram of a computer
+				<span class="figNum blockdiagram"></span> A block diagram of a computer
 			</p>
 
 			<p>
@@ -131,7 +117,7 @@
 			</p>
 	
 			<p>
-				In order to help you gain a familiarity with the capabilities and limitations of computing hardware, a Watson Instruction Set Architecture (ISA) lab is presented in Chapter 11.  This lab simulates the workings of a very simple computer so that you can study the various hardware components, such as the CPU.  The machine is fully programmable with its own internal machine language.  A <span class="Bolded">Machine language</span> is the set of instructions, expressed as a series of 1’s and 0’s, that are directly executable by the machine.  Different types of machines, such as PC’s and Mac’s, have their own unique machine languages.
+				In order to help you gain a familiarity with the capabilities and limitations of computing hardware, a Watson Instruction Set Architecture (ISA) lab is presented in <span class="contentNum assembly true"></span>.  This lab simulates the workings of a very simple computer so that you can study the various hardware components, such as the CPU.  The machine is fully programmable with its own internal machine language.  A <span class="Bolded">Machine language</span> is the set of instructions, expressed as a series of 1’s and 0’s, that are directly executable by the machine.  Different types of machines, such as PC’s and Mac’s, have their own unique machine languages.
 			</p>
 	
 			<p>
@@ -143,7 +129,7 @@
 			</p>
 	
 			<p>
-				As mentioned above, computers really only understand machine language.  These machine languages consist entirely of 1’s and 0’s.  This fact brings two questions to mind.  First, if computers only process 1’s and 0’s, how can they do word processing involving character data or math involving numbers greater than one?  Second, how can an electronic device store and process the symbols “1” and “0” anyway?  The first question is addressed in Chapter 11 and the second in Chapter 12.  Here, I only attempt to give you an intuitive feel for some of the material that will be covered in these chapters.
+				As mentioned above, computers really only understand machine language.  These machine languages consist entirely of 1’s and 0’s.  This fact brings two questions to mind.  First, if computers only process 1’s and 0’s, how can they do word processing involving character data or math involving numbers greater than one?  Second, how can an electronic device store and process the symbols “1” and “0” anyway?  The first question is addressed in <span class="contentNum assembly true"></span> and the second in <span class="contentNum circuits"></span>.  Here, I only attempt to give you an intuitive feel for some of the material that will be covered in these chapters.
 			</p>
 	
 			<p>
@@ -163,7 +149,7 @@
 			</p>
 	
 			<p>
-				In addition to storing symbols, computers must be able to manipulate them.  As strange as this may sound, <span class="Ital">all</span> of the operations that a computer can perform, from math and logic to playing sound and graphics, can be expressed in terms of only three basic operations: “and”, “or”, and “not”.  <span class="Bolded">And</span> takes two inputs, if they are both “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Or</span> also takes two inputs, if either or both inputs are “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Not</span> takes a single input, if the input is “1” the output is “0”, and vice versa.  Electrical circuits for each of these three logic operations can easily be built, and these basic circuits can be combined to produce circuits capable of more complex behavior.  Chapter 12 explores this subject in more detail and introduces the Watson Digital Lab which can be used to design and test simple digital circuits.
+				In addition to storing symbols, computers must be able to manipulate them.  As strange as this may sound, <span class="Ital">all</span> of the operations that a computer can perform, from math and logic to playing sound and graphics, can be expressed in terms of only three basic operations: “and”, “or”, and “not”.  <span class="Bolded">And</span> takes two inputs, if they are both “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Or</span> also takes two inputs, if either or both inputs are “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Not</span> takes a single input, if the input is “1” the output is “0”, and vice versa.  Electrical circuits for each of these three logic operations can easily be built, and these basic circuits can be combined to produce circuits capable of more complex behavior. <span class="contentNum circuits true"></span> explores this subject in more detail and introduces the Watson Digital Lab which can be used to design and test simple digital circuits.
 			</p>
 			
 			<!-- Footnotes -->
@@ -198,15 +184,14 @@
 
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("science", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("scienceFour3");
+				var pageObj;											// do NOT change name of variable
 
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("scienceFour3");		// get arrow paths
 				});	
+
 			</script>
 
 		</div>

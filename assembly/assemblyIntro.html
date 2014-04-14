@@ -9,18 +9,22 @@
 
 		<title>Watson</title>
 
-		<!-- Google fonts -->
+			<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,45 +35,17 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
-
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
-
-		
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>			
+	
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.1  Introduction
+				<span class="contentNum assemblyIntro"></span>
 			</p>
 			
 			<p>
@@ -77,15 +53,15 @@
 			</p>
 			
 			<p>
-				Section 11.2 presents a brief overview of the principle features of register-based machines, using the Watson Virtual Machine as a model.  We will try to avoid getting bogged down in too many details in this section, preferring instead to move quickly to Section 11.3, which provides an introduction to assembly language programming.  The assembly level is the lowest level of code that humans normally interact with.  
+				<span class="contentNum assemblyRegisters"></span> presents a brief overview of the principle features of register-based machines, using the Watson Virtual Machine as a model.  We will try to avoid getting bogged down in too many details in this section, preferring instead to move quickly to <span class="contentNum assemblyProgramming"></span>, which provides an introduction to assembly language programming.  The assembly level is the lowest level of code that humans normally interact with.  
 			</p>
 			
 			<p>
-				Section 11.4 contains a rather detailed presentation of how various types of data, such as numbers, characters, and images, can be represented at the machine level.  This section also examines how basic numeric operations, such as addition and multiplication, can be performed.
+				<span class="contentNum assemblyData"></span> contains a rather detailed presentation of how various types of data, such as numbers, characters, and images, can be represented at the machine level.  This section also examines how basic numeric operations, such as addition and multiplication, can be performed.
 			</p>
 			
 			<p>
-				Section 11.5 fills in some of the details concerning the architecture of register-based machines, outlined in Section 11.2.  The Watson Virtual Machine is used as a guide to explore the translation of programs from the assembly level to the machine level.  Machine level is the lowest level of software.  At this level, programs and data are represented as strings of 1’s and 0’s.  Finally, the concept of the instruction cycle and details of how machine language programs are actually executed are described.
+				<span class="contentNum assemblyMachine"></span> fills in some of the details concerning the architecture of register-based machines, outlined in <span class="contentNum assemblyRegisters"></span>.  The Watson Virtual Machine is used as a guide to explore the translation of programs from the assembly level to the machine level.  Machine level is the lowest level of software.  At this level, programs and data are represented as strings of 1’s and 0’s.  Finally, the concept of the instruction cycle and details of how machine language programs are actually executed are described.
 			</p>
 			
 			<!-- End main content -->
@@ -108,6 +84,23 @@
 			<div>
 
 			</div>
+			
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyIntro");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

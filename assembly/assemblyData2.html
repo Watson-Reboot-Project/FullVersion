@@ -12,15 +12,18 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,40 +34,17 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s4p1e.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s4p3.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.4.2  Characters
+				<span class="contentNum assemblyData2"></span>
 			</p>
 			
 			<p>
@@ -87,17 +67,17 @@
 			</p>
 			
 			<p>
-				Figure 11.22 contains a table illustrating the binary and hexadecimal representations of all of the printable ASCII characters.  These range from the space character at position 32  (20<span class="Subscript"> sixteen</span> or 0010 0000 <span class="Subscript">two</span>), to the tilde, “~”, at position 126 (7E<span class="Subscript"> sixteen</span> or 0111 1110<span class="Subscript"> two</span>).
+				<span class="figNum onefortythree"></span> contains a table illustrating the binary and hexadecimal representations of all of the printable ASCII characters.  These range from the space character at position 32  (20<span class="Subscript"> sixteen</span> or 0010 0000 <span class="Subscript">two</span>), to the tilde, “~”, at position 126 (7E<span class="Subscript"> sixteen</span> or 0111 1110<span class="Subscript"> two</span>).
 			</p>
 			
 			<p>
-				The ASCII code for a character may be found in the table by locating the row and column in which the character appears.  The row specifies the high-order hexadecimal digit (or high-order four binary digits) and the column specifies the low-order hexadecimal digit    (or low-order four binary digits).  For example, the ASCII code for “H” is 48<span class="Subscript"> sixteen</span> since it appears on the row labeled “4” and in the column labeled “8”.  This same character expressed as a binary number is 0100 1000<span class="Subscript">two</span>.   To see this, you could either directly convert 48 <span class="Subscript">sixteen</span> to 0100 1000<span class="Subscript"> two</span> or you could perform the table lookup using the binary values rather than the hexadecimal values.  To determine the decimal version of the ASCII value, you must perform the conversion from base two (or base sixteen) to base ten using the algorithm discussed in Section 11.4.1. In the case of “H” the decimal representation is 72 <span class="Subscript">ten</span> (4 * 16 + 8 * 1).
+				The ASCII code for a character may be found in the table by locating the row and column in which the character appears.  The row specifies the high-order hexadecimal digit (or high-order four binary digits) and the column specifies the low-order hexadecimal digit    (or low-order four binary digits).  For example, the ASCII code for “H” is 48<span class="Subscript"> sixteen</span> since it appears on the row labeled “4” and in the column labeled “8”.  This same character expressed as a binary number is 0100 1000<span class="Subscript">two</span>.   To see this, you could either directly convert 48 <span class="Subscript">sixteen</span> to 0100 1000<span class="Subscript"> two</span> or you could perform the table lookup using the binary values rather than the hexadecimal values.  To determine the decimal version of the ASCII value, you must perform the conversion from base two (or base sixteen) to base ten using the algorithm discussed in <span class="contentNum assemblyData1"></span>. In the case of “H” the decimal representation is 72 <span class="Subscript">ten</span> (4 * 16 + 8 * 1).
 			</p>
 			
 			<img src="Images/AssemblyIMGS/fig11-22.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 11.22:  The printable ASCII Characters
+				<span class="figNum onefortythree"></span>  The printable ASCII Characters
 			</p>
 			
 			<p>
@@ -116,8 +96,8 @@
 				It is interesting to note what happens when you hold down the shift key as you strike the “y”.  What the shift key actually does (for the keys marked with letters of the alphabet) is set bit six to “0”.  Thus, the combination of “shift” and “y” produces “0101 1001” which is the ASCII code for “Y”
 			</p>
 			
-			<p class="Section">
-				Exercises for Section 11.4.2
+			<p class="Exercise">
+				Exercises for <span class="contentNum assemblyData2"></span>
 			</p>
 			
 			<ol>
@@ -159,6 +139,23 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyData2");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
+
 		</div>
 	</body>
 </html>

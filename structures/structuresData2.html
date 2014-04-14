@@ -12,16 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
-
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -31,44 +35,24 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+    		<div class="floating-previous"></div>
+    	<!-- End dynamic navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			
+			<!-- End floating nav -->
 
-			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
-			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				7.2.2 Queues
+				<span class="contentNum structuresData2"></span>
 			</p>
 
 			<p>
-				In America, a waiting line, such as the kind you encounter at a bank or supermarket, is simply referred to as a “line”.  In Britain, a waiting line is called a “queue” (pronounced like the letter “Q”).  Figure 7.3 illustrates a real-world queue that you might encounter at a local movie theater.  John is buying a ticket to see the next Star Wars movie.  Ben, Tre’ and Ryan are waiting in line to buy their tickets.  The three of them are thus considered to be waiting in the queue.  Since John is in the process of buying his ticket, he is not considered to be part of the queue – he is not “waiting”.  Ben is at the front, or head, of the queue.  He will be the next person to be served.  Ryan is at the back, or end, of the line.  He must wait for everyone ahead of him to be served before he gets to buy his ticket.
+				In America, a waiting line, such as the kind you encounter at a bank or supermarket, is simply referred to as a “line”.  In Britain, a waiting line is called a “queue” (pronounced like the letter “Q”).  <span class="figNum realqueue"></span> illustrates a real-world queue that you might encounter at a local movie theater.  John is buying a ticket to see the next Star Wars movie.  Ben, Tre’ and Ryan are waiting in line to buy their tickets.  The three of them are thus considered to be waiting in the queue.  Since John is in the process of buying his ticket, he is not considered to be part of the queue – he is not “waiting”.  Ben is at the front, or head, of the queue.  He will be the next person to be served.  Ryan is at the back, or end, of the line.  He must wait for everyone ahead of him to be served before he gets to buy his ticket.
 			</p>
 
 			<p>
@@ -83,16 +67,17 @@
 				More formally, a <span class="Bolded">queue</span> is a list in which all insertions take place at one end, the <span class="Bolded">back</span> of the queue, and all deletions take place at the opposite end, the <span class="Bolded">front</span> or head of the queue.  The basic queue data structure does not allow the insertion or deletion of items from the middle of the list.  Thus, it does not support concepts like people “breaking” in line or giving up and leaving because the line to too long.
 			</p>
 
-			<img src="Images/DataStructIMGS/fig7-4.png" alt="" class="Image">
+			<img src="images/queueops.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 7.4:  Operations on a Queue
+				<span class="figNum queueops"></span>:  Operations on a Queue
 			</p>
 
 			<p>
-				Figure 7.4 presents a sequence of operations applied to an initially empty queue, and illustrates the resulting queue configurations.  In order to help you clearly distinguish between the behavior of stacks verses queue, Figure 7.4 uses the same data presented in Figure 7.2 along with the same pattern of operations applied to the structure.  Notice that even though the order of operations is the same in both of these figures, the contents of the two structures is quite different.
+				<span class="figNum queueops"></span> presents a sequence of operations applied to an initially empty queue, and illustrates the resulting queue configurations.  In order to help you clearly distinguish between the behavior of stacks verses queue, <span class="figNum queueops"></span> uses the same data presented in <span class="figNum stackops"></span> along with the same pattern of operations applied to the structure.  Notice that even though the order of operations is the same in both of these figures, the contents of the two structures is quite different.
 			</p>
 			
+			<div class="floating-next"></div>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -112,14 +97,13 @@
 			
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("algorithms", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("structuresData2");
-
 				});	
 			</script>
 

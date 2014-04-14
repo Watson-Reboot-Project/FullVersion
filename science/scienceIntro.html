@@ -10,7 +10,7 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 		<!-- CSS files -->
 		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 		<link href = "../lib/css/styles.css" rel = "stylesheet">
@@ -23,10 +23,8 @@
 		<script type="text/javascript" src="../lib/js/master.js"></script> 
 		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+	   
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -37,43 +35,41 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<!-- Navbar -->
 			<div id="includedContentForPage"></div>
-    	<!-- End Navbar -->
+    		<div class="floating-previous"></div>
+    	<!-- End dynamic navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<div class="floating-previous"></div>
-
-			<!-- Next -->
-			<div class="floating-next"></div>
+			
 			<!-- End floating nav -->
-			<!-- End nav -->
+
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				<span class="contentNum scienceFour"></span>
+				<span class="contentNum scienceIntro"></span> <!-- Must change using js to pull 1.1 and Introduction -->
 			</p>
 	
 			<p>
-				Our study of computer science will be guided by four questions, which, taken together, give a good overview of computing.  These questions are:
+				This chapter provides an introduction to, and overview of, the science of computing.  <span class="contentNum scienceWhat"></span> sets the stage by defining the term “computing.” <span class="contentNum scienceFour"></span> discusses the four central questions addressed by this text. 
 			</p>
 	
-			<ol>
+			<ul>
 				<li>How are computers used?</li>
-	
+		
 				<li>How does computer software work?</li>
-	
+		
 				<li>How does computer hardware work?</li>
-	
+		
 				<li>What are the limitations and potential of computing?</li>
-			</ol>
+			</ul>
 	
 			<p>
-				Each of these questions is briefly addressed below, and more thoroughly explored throughout the remainder of the text.  These questions, and their answers, will take us through computing in what is called a “top-down, breadth-first” manner.  The phrase “breadth-first” applies to this text since it spans the breadth of computing, touching on each of the major areas that make up the field.  “Top-down” means that the presentation begins at the level of computer applications, such as spreadsheets and databases, and then works its way through a study of the algorithms and software used to implement and support those applications – starting with the highest, most abstract, levels of software and proceeding through more detailed, lower-level, software, until the actual computer hardware is reached.  A description of computer hardware in terms of the major components of a computer and how those components can be constructed from simple logic gates is then presented.  The final area addressed by the book focuses on discovering the practical limitations and ultimate potential of computers.
+				Later chapters of this text will explore each of these subjects in more detail.  As you read this chapter, try not to become overly concerned about fully understanding every detail of every topic that is mentioned.  Instead, take this chapter for what it is – a foretaste of the topics we will cover, a light snack to whet your appetite for what is to come. 
 			</p>
 			
+			<div class="floating-next"></div>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -91,9 +87,6 @@
 				</p>
 			</nav>
 
-			<div>
-
-			</div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -102,7 +95,7 @@
 				$(document).ready(function() {
 				populateNav();										// populate nav content
 				populateSpans();									// populate figure/content spans
-				pageObj = getArrowPathsByPage("scienceFour");		// get arrow paths
+				pageObj = getArrowPathsByPage("scienceIntro");		// get arrow paths
 				});	
 
 			</script>

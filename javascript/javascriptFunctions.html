@@ -12,19 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-	    <link href = "css/ch08.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<link rel='stylesheet' href='css/generalmedia.css'>
-		<script src="js/jquery-ui.js"></script>
-		
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script src="../lib/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -35,39 +35,14 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch08s6p3.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch08s8.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			<p class="Section">
-				8.7 Functions
+				<span class="contentNum javascriptFunctions"></span>
 			</p>
 			
 			<p>
@@ -83,21 +58,21 @@
 			</p>
 
 			<p>
-				Subprograms can call other subprograms (including copies of themselves as we will see in Section 8.8). These subprograms can, in turn, call other subprograms. This “chain” of subprogram invocations can extend to an arbitrary depth as long as the “bottom” of the chain is eventually reached. It is necessary that infinite calling sequences be avoided, since each subprogram in the “chain” of subprogram invocations must eventually complete its task and return control to the program that called it.
+				Subprograms can call other subprograms (including copies of themselves as we will see in <span class="contentNum javascriptRecursion"></span>). These subprograms can, in turn, call other subprograms. This “chain” of subprogram invocations can extend to an arbitrary depth as long as the “bottom” of the chain is eventually reached. It is necessary that infinite calling sequences be avoided, since each subprogram in the “chain” of subprogram invocations must eventually complete its task and return control to the program that called it.
 			</p>
 
 			<p>
-				Figure 8.25 illustrates the process of subprogram invocation and return. In the particular situation presented in the figure, a main program calls a subprogram named X. When this subprogram is called, execution of the main program is suspended and X begins to run. At some point during the execution of X, subprogram Y is called. When this occurs, X is temporarily suspended and control passes to Y. Likewise, during the execution of Y, subprogram Z is called. As a result, the execution of Y is suspended and Z begins to run. Subprogram Z is at the “bottom” of the calling chain, since it doesn’t call any other subprograms.  It will run to completion.
+				<span class="figNum subprogram"></span> illustrates the process of subprogram invocation and return. In the particular situation presented in the figure, a main program calls a subprogram named X. When this subprogram is called, execution of the main program is suspended and X begins to run. At some point during the execution of X, subprogram Y is called. When this occurs, X is temporarily suspended and control passes to Y. Likewise, during the execution of Y, subprogram Z is called. As a result, the execution of Y is suspended and Z begins to run. Subprogram Z is at the “bottom” of the calling chain, since it doesn’t call any other subprograms.  It will run to completion.
 			</p>
 
 			<p>
 				When Z completes, control will return to subprogram Y. Subprogram Y will continue execution from the point at which it was suspended. At the completion of Y, control will return to subprogram X, again, at the point where it was suspended. Finally, when X completes, control will return to the main program, which can now run to completion.
 			</p>
 
-			<img src="Images/fig8-25.png" alt="Subprogram invocation and return" class="Image">
+			<img src="images/subprogram.png" alt="Subprogram invocation and return" class="Image">
 			
 			<p class="Figure">
-				Figure 8.25: &nbsp; Subprogram invocation and return
+				<span class="figNum subprogram"></span> &nbsp; Subprogram invocation and return
 			</p>
 
 			<p>
@@ -154,7 +129,7 @@
 			</ul>
 
 			<p class="Figure">
-				Figure 8.26: &nbsp; A program containing a programmer-defined function
+				<span class="figNum definedfunction"></span> &nbsp; A program containing a programmer-defined function
 			</p>
 
 			<p>
@@ -174,7 +149,7 @@
 			</p>
 
 			<p>
-				Figure 8.26 presents a program that prints a simple banner of the form:
+				<span class="figNum definedfunction"></span> presents a program that prints a simple banner of the form:
 			</p>
 
 			<p class="Subfigure">
@@ -186,11 +161,11 @@
 			</p>
 
 			<p>
-				Subprogram definitions in Watson JavaScript are located in the declarations section of the main program, immediately above the program statements. To help the definition of <span class="Subfigure">banner</span> stand out from the rest of the program, it is shaded in gray in Figure 8.26.
+				Subprogram definitions in Watson JavaScript are located in the declarations section of the main program, immediately above the program statements. To help the definition of <span class="Subfigure">banner</span> stand out from the rest of the program, it is shaded in gray in <span class="figNum definedfunction"></span>.
 			</p>
 
 			<p>
-				In the program of Figure 8.26, <span class="Subfigure">banner</span> will receive a single input value from the calling program. This value is a text string that will be accessed through the variable <span class="Subfigure">message</span>. The statements of the <span class="Subfigure">banner</span> function will cause a simple banner to be displayed by: writing a blank line, then four asterisks, then the contents of the <span class="Subfigure">message</span> string, then four more asterisks, and finally another blank line. Note that the content of the banner’s <span class="Subfigure">message</span> is not fixed. Whatever text string is passed to this subprogram will be printed between the asterisks.
+				In the program of <span class="figNum definedfunction"></span>, <span class="Subfigure">banner</span> will receive a single input value from the calling program. This value is a text string that will be accessed through the variable <span class="Subfigure">message</span>. The statements of the <span class="Subfigure">banner</span> function will cause a simple banner to be displayed by: writing a blank line, then four asterisks, then the contents of the <span class="Subfigure">message</span> string, then four more asterisks, and finally another blank line. Note that the content of the banner’s <span class="Subfigure">message</span> is not fixed. Whatever text string is passed to this subprogram will be printed between the asterisks.
 			</p>
 
 			<p>
@@ -300,17 +275,17 @@
 			<div id="fig27Div" class="divness"></div>
 
 			<p class="Figure">
-				Figure 8.27: &nbsp; A program to raise an integer value to the third power
+				<span class="figNum thirdpower"></span> &nbsp; A program to raise an integer value to the third power
 			</p>
 
 
 			<p>
-				Figure 8.27 contains a program for raising a number to the third power. The program declares three things: an integer variable named “</span><span class="Subfigure">a</span>”, an integer variable named “</span><span class="Subfigure">b</span>”, and a function named <span class="Subfigure">power</span>. The <span class="Subfigure">power</span> function is a general purpose subprogram for raising</span> <span class="Italicized">x</span> to the</span> <span class="Italicized">y</span> power (</span><span class="Italicized">x</span><span class="Superscript">y</span> ) given values for both</span> <span class="Italicized">x</span> and</span> <span class="Italicized">y</span>. Unlike the <span class="Subfigure">banner</span> function, which did not need to return a value to the calling program, this subprogram must have the ability to report its results back to whomever called it.
+				<span class="figNum thirdpower"></span> contains a program for raising a number to the third power. The program declares three things: an integer variable named “</span><span class="Subfigure">a</span>”, an integer variable named “</span><span class="Subfigure">b</span>”, and a function named <span class="Subfigure">power</span>. The <span class="Subfigure">power</span> function is a general purpose subprogram for raising</span> <span class="Italicized">x</span> to the</span> <span class="Italicized">y</span> power (</span><span class="Italicized">x</span><span class="Superscript">y</span> ) given values for both</span> <span class="Italicized">x</span> and</span> <span class="Italicized">y</span>. Unlike the <span class="Subfigure">banner</span> function, which did not need to return a value to the calling program, this subprogram must have the ability to report its results back to whomever called it.
 			</p>
 
 
 			<p>
-				The main program of Figure 8.27 begins by prompting the user to enter a value. The user’s input is then read into the numeric variable “<span class="Subfigure">a</span>”. The next statement:
+				The main program of <span class="figNum thirdpower"></span> begins by prompting the user to enter a value. The user’s input is then read into the numeric variable “<span class="Subfigure">a</span>”. The next statement:
 			</p>
 
 			<p class="Subfigure">
@@ -330,7 +305,7 @@
 			</p>
 
 			<p>
-				The <span class="Subfigure">power</span> subprogram of Figure 8.27 declares two numeric variables for use within the body of the function. These variables, named “</span><span class="Subfigure">i</span>” and “z”, are known as a “local variables” since they exist only within the <span class="Subfigure">power</span> function. The main program doesn’t know about “</span><span class="Subfigure">i</span>” or “z”. It only knows about <span class="Subfigure">a</span>, <span class="Subfigure">b</span>, and a function named <span class="Subfigure">power</span>. Thus, the main program cannot directly access or in any way modify “</span><span class="Subfigure">i</span>” or “z”. This concept, known as “information hiding” is very important when writing sizable programs.
+				The <span class="Subfigure">power</span> subprogram of <span class="figNum thirdpower"></span> declares two numeric variables for use within the body of the function. These variables, named “</span><span class="Subfigure">i</span>” and “z”, are known as a “local variables” since they exist only within the <span class="Subfigure">power</span> function. The main program doesn’t know about “</span><span class="Subfigure">i</span>” or “z”. It only knows about <span class="Subfigure">a</span>, <span class="Subfigure">b</span>, and a function named <span class="Subfigure">power</span>. Thus, the main program cannot directly access or in any way modify “</span><span class="Subfigure">i</span>” or “z”. This concept, known as “information hiding” is very important when writing sizable programs.
 			</p>
 
 			<p>
@@ -374,15 +349,15 @@
 			</p>
 
 			<p>
-				Although “return” statements can occur anywhere within a function, they usually appear as the very last statement. Not all functions have “return” statements. Specifically, functions that return nothing to their calling program, such as the <span class="Subfigure">banner</span> function of Figure 8.26, generally do not include “return”
+				Although “return” statements can occur anywhere within a function, they usually appear as the very last statement. Not all functions have “return” statements. Specifically, functions that return nothing to their calling program, such as the <span class="Subfigure">banner</span> function of <span class="figNum definedfunction"></span>, generally do not include “return”
 			</p>
 
 			<p>
-				When the “return” is executed, three things happen: the function ceases execution, the return value is passed back to the calling program, and the calling program “wakes up” at the point at which the function was called. Thus, when the “return” statement of Figure 8.27 is executed, control returns to the main program and the value of <span class="Subfigure">a</span><span class="Superscript">3</span> is assigned to “<span class="Subfigure">b</span>”.
+				When the “return” is executed, three things happen: the function ceases execution, the return value is passed back to the calling program, and the calling program “wakes up” at the point at which the function was called. Thus, when the “return” statement of <span class="figNum thirdpower"></span> is executed, control returns to the main program and the value of <span class="Subfigure">a</span><span class="Superscript">3</span> is assigned to “<span class="Subfigure">b</span>”.
 			</p>
 
 			<p>
-				Figure 8.28 presents another example of a program that incorporates the <span class="Subfigure">power</span> function of Figure 8.27. The main program of Figure 8.28 computes the value of the third degree polynomial:</span> <span class="Italicized">A X</span><span class="Superscript">3</span><span class="Italicized">+ B X</span><span class="Superscript">2</span><span class="Italicized">+ C X + D</span> &nbsp; where</span> <span class="Italicized">A</span>,</span> <span class="Italicized">B</span>,</span> <span class="Italicized">C</span>,</span> <span class="Italicized">D</span>, and</span> <span class="Italicized">X</span> are numeric values entered by the user.
+				<span class="figNum computevalue"></span> presents another example of a program that incorporates the <span class="Subfigure">power</span> function of <span class="figNum thirdpower"></span>. The main program of <span class="figNum computevalue"></span> computes the value of the third degree polynomial:</span> <span class="Italicized">A X</span><span class="Superscript">3</span><span class="Italicized">+ B X</span><span class="Superscript">2</span><span class="Italicized">+ C X + D</span> &nbsp; where</span> <span class="Italicized">A</span>,</span> <span class="Italicized">B</span>,</span> <span class="Italicized">C</span>,</span> <span class="Italicized">D</span>, and</span> <span class="Italicized">X</span> are numeric values entered by the user.
 			</p>
 
 			<p>
@@ -517,7 +492,7 @@
 			<div id="fig28Div" class="divness"></div>
 
 			<p class="Figure">
-				Figure 8.28: &nbsp; A program to compute the value of &nbsp; <span class="Subfigure">A X</span><span class="Superscript">3</span><span class="Subfigure">+ B X</span><span class="Superscript">2</span><span class="Subfigure">+ C X + D</span>
+				<span class="figNum computevalue"></span> &nbsp; A program to compute the value of &nbsp; <span class="Subfigure">A X</span><span class="Superscript">3</span><span class="Subfigure">+ B X</span><span class="Superscript">2</span><span class="Subfigure">+ C X + D</span>
 			</p>
 
 			<p>
@@ -528,7 +503,7 @@
 				When a function subprogram is called, the evaluation of the current statement in the calling program is temporarily interrupted. When the function returns, its value is substituted into the current expression at the point of the call, and execution of the interrupted statement resumes. Hence, if <span class="Subfigure">x</span> were 3, <span class="Subfigure">power(x,3)</span> would evaluate to 27 and <span class="Subfigure">power(x,2)</span> would evaluate to 9. Assuming <span class="Subfigure">a</span> was 10, <span class="Subfigure">b</span> was 20, <span class="Subfigure">c</span> was 30, and <span class="Subfigure">d</span> was 40, the above expression would be evaluated in the following way:
 			</p>
 
-			<img src="Images/fig8-pre29.png" alt="" class="Image">
+			<img src="images/fig8-pre29.png" alt="" class="Image">
 			
 			<p>
 				So the value assigned to the variable <span class="Subfigure">y</span> under these assumptions is 580.
@@ -539,7 +514,7 @@
 			</p>
 
 			<p>
-				One other point should be made about the program of Figure 8.28. The program illustrates the concept of local variable names. Note that both the main program and the <span class="Subfigure">power</span> function have variables named <span class="Subfigure">x</span> and <span class="Subfigure">y</span>.  Watson JavaScript will not confuse the variables in the main program with those of the subprogram.
+				One other point should be made about the program of <span class="figNum computevalue"></span>. The program illustrates the concept of local variable names. Note that both the main program and the <span class="Subfigure">power</span> function have variables named <span class="Subfigure">x</span> and <span class="Subfigure">y</span>.  Watson JavaScript will not confuse the variables in the main program with those of the subprogram.
 			</p>
 
 			<p>
@@ -548,7 +523,7 @@
 
 
 			<p>
-				Let’s conclude this section by revisiting the <span class="Subfigure">beer</span> program of Figure 8.24. Figure 8.29 presents a revised version of this program, incorporating a function called <span class="Subfigure">singsong</span>. The main program now asks the user for the number of bottles, and stores the response in <span class="Subfigure">count</span>. </span><span class="Subfigure">singsong</span> is then called and the value of <span class="Subfigure">count</span> is passed to the input parameter, <span class="Subfigure">beers</span>.
+				Let’s conclude this section by revisiting the <span class="Subfigure">beer</span> program of <span class="figNum beeriterative"></span>. <span class="figNum beersubprogram"></span> presents a revised version of this program, incorporating a function called <span class="Subfigure">singsong</span>. The main program now asks the user for the number of bottles, and stores the response in <span class="Subfigure">count</span>. </span><span class="Subfigure">singsong</span> is then called and the value of <span class="Subfigure">count</span> is passed to the input parameter, <span class="Subfigure">beers</span>.
 			</p>
 
 			<p>
@@ -556,7 +531,7 @@
 			</p>
 
 			<p>
-				The input/output behavior of this program is identical to the program of Figure 8.24 with the sole exception that “Later…” is printed at the end of the song. In fact, if it were not for this minor difference, a user would have no way of knowing which version of the program he or she was executing.
+				The input/output behavior of this program is identical to the program of <span class="figNum beeriterative"></span> with the sole exception that “Later…” is printed at the end of the song. In fact, if it were not for this minor difference, a user would have no way of knowing which version of the program he or she was executing.
 			</p>
 			<!-- Manual fig 8.29
 			<p class="Subfigure">
@@ -644,13 +619,13 @@
 
 
 			<p class="Figure">
-				Figure 8.29: Beer – the iterative subprogram version
+				<span class="figNum beersubprogram"></span> Beer – the iterative subprogram version
 			</p>
 			
 			<div id="fig29Div" class="divness"></div>
 
-			<p class="Section">
-				Exercises for Section 8.7
+			<p class="Exercise">
+				Exercises for <span class="contentNum javascriptFunctions"></span>
 			</p>
 
 			<ol>
@@ -680,7 +655,7 @@
 				<br/>
 
 				<li>
-					Rewrite the program of Figure 8.29 so that the function returns a string. The new <span class="Subfigure">singsong</span> function should test <span class="Subfigure">beers</span> to see if it is greater than zero. If so, it should print the lyrics and then return the text string “Later…”. If not, it should return the text string “Sorry…”. Have your main program print out this return value. Hence, if a user enters zero or a negative number in answer to the question “How many bottles?” the response presented will be “Sorry…”. If the user enters a positive number greater than zero, the lyrics of the song will be printed followed by “Later…”.
+					Rewrite the program of <span class="figNum beersubprogram"></span> so that the function returns a string. The new <span class="Subfigure">singsong</span> function should test <span class="Subfigure">beers</span> to see if it is greater than zero. If so, it should print the lyrics and then return the text string “Later…”. If not, it should return the text string “Sorry…”. Have your main program print out this return value. Hence, if a user enters zero or a negative number in answer to the question “How many bottles?” the response presented will be “Sorry…”. If the user enters a positive number greater than zero, the lyrics of the song will be printed followed by “Later…”.
 				</li>
 			</ol>
 			
@@ -701,17 +676,19 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("javascript", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("javascriptFunctions");
-
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("javascriptFunctions");		// get arrow paths
 				});	
+				
 			</script>
 
 			<div>

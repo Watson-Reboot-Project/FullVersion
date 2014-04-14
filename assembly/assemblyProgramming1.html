@@ -9,18 +9,22 @@
 
 		<title>Watson</title>
 
-		<!-- Google fonts -->
+			<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,44 +35,21 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+            <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch11s3.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch11s3p2.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				11.3.1  An overview of the Watson Assembly Language
+				<span class="contentNum assemblyProgramming1"></span>
 			</p>
 			
 			<p>
-				The Watson assembly language consists of 18 instructions, which can be divided into six groups.  These instructions are summarized in Figure 11.2.  Here I will provide a brief overview of these instructions.  The remainder of this section is devoted to exploring these instructions in much more depth and examining at how they can be used in simple assembly language programs.
+				The Watson assembly language consists of 18 instructions, which can be divided into six groups.  These instructions are summarized in <span class="figNum watsonassembly"></span>.  Here I will provide a brief overview of these instructions.  The remainder of this section is devoted to exploring these instructions in much more depth and examining at how they can be used in simple assembly language programs.
 			</p>
 			
 			<p>
@@ -130,11 +111,11 @@
 			</ul>
 			
 			<p class="Figure">
-				Figure 11.2:  The Watson Assembly Language
+				<span class="figNum watsonassembly"></span>  The Watson Assembly Language
 			</p>
 			
 			<p>
-				Discussion of the next two groups of Watson assembly language instructions, the logic and shift operators, is deferred to Section 11.5.  The reason for doing so is that it is difficult to say much about these statements without some understanding of data representation at the machine level, which is covered in Section 11.4.
+				Discussion of the next two groups of Watson assembly language instructions, the logic and shift operators, is deferred to <span class="contentNum assemblyMachine"></span>.  The reason for doing so is that it is difficult to say much about these statements without some understanding of data representation at the machine level, which is covered in <span class="contentNum assemblyData"></span>.
 			</p>
 			
 			<p>
@@ -165,6 +146,22 @@
 			<div>
 
 			</div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+
+					pageObj = getArrowPathsByPage("assemblyProgramming1");		// get arrow paths
+					chapObj = getCurrChapter("assembly");
+
+				});	
+				
+			</script>
 		</div>
 	</body>
 </html>

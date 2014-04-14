@@ -12,15 +12,19 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,40 +35,20 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+    		<div class="floating-previous"></div>
+    	<!-- End dynamic navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
+			
+			<!-- End floating nav -->
 
-			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
-		    <!-- End floating nav -->
-			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				7.2.1 Stacks
+				<span class="contentNum structuresData1"></span>
 			</p>
 
 			<p>
@@ -76,7 +60,7 @@
 			</p>
 
 			<p>
-				As mentioned earlier, the stack data structure models the behavior of real-world stacks of objects.  The two primary operations that can be applied to stack data structures are “push” and “pop”.  The <span class="Bolded">push</span> operator is used to add a new item onto the top of the stack.  The <span class="Bolded">pop</span> operator is used to remove the top item from the stack.  Stack data structures do not support the removal of items from the middle of the stack.  The stack of real-world blocks in Figure 7.1 could thus be modeled by applying the following operations to a initially empty stack data structure:
+				As mentioned earlier, the stack data structure models the behavior of real-world stacks of objects.  The two primary operations that can be applied to stack data structures are “push” and “pop”.  The <span class="Bolded">push</span> operator is used to add a new item onto the top of the stack.  The <span class="Bolded">pop</span> operator is used to remove the top item from the stack.  Stack data structures do not support the removal of items from the middle of the stack.  The stack of real-world blocks in <span class="figNum threeblockstack"></span> could thus be modeled by applying the following operations to a initially empty stack data structure:
 			</p>
 			
 			<ul class="Blockcenter">
@@ -90,10 +74,10 @@
 				The removal of “A” could be accomplished by issuing the <span class="Subfigure">Pop</span> command.
 			</p>
 
-			<img src="Images/DataStructIMGS/fig7-2.png" alt="Operations on a stack" class="Image">
+			<img src="images/stackops.png" alt="Operations on a stack" class="Image">
 			
 			<p class="Figure">
-				Figure 7.2:  Operations on a stack
+				<span class="figNum stackops"></span>  Operations on a stack
 			</p>
 
 			<p>
@@ -101,7 +85,7 @@
 			</p>
 
 			<p>
-				In order to ensure that you have a clear understanding of the behavior of the stack data structure, Figure 7.2 presents a sequence of stack operations and a pictorial representation of the stack that would result after each operation is applied.  Note again that the “pop” operation always removes the last item placed on the top of the stack.
+				In order to ensure that you have a clear understanding of the behavior of the stack data structure, <span class="figNum stackops"></span> presents a sequence of stack operations and a pictorial representation of the stack that would result after each operation is applied.  Note again that the “pop” operation always removes the last item placed on the top of the stack.
 			</p>
 
 			<p>
@@ -124,12 +108,13 @@
 				Note that in order to handle these interruptible tasks properly, a data structure such as a stack that incorporates Last-In, First-Out behavior must be employed.
 			</p>
 
-			<img src="Images/DataStructIMGS/fig7-3.png" alt="A real-world example of a queue (or waiting line)" class="Image">
+			<img src="images/realqueue.png" alt="A real-world example of a queue (or waiting line)" class="Image">
 
 			<p class="Figure">
-				Figure 7.3:  A real-world example of a queue (or waiting line)
+				<span class="figNum realqueue"></span>  A real-world example of a queue (or waiting line)
 			</p>
 			
+			<div class="floating-next"></div>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -149,14 +134,13 @@
 			
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("algorithms", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("structuresData1");
-
 				});	
 			</script>
 

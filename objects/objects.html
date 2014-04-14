@@ -12,15 +12,17 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -31,38 +33,31 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentChapterTOC"></div>
 
 			<!-- End nav -->
 			
-   		<div id="ContentAreaSections" class="well bold-me"></div>
-   		<!-- End Chapter Index listing -->
+			<!-- Chapter Index listing -->
+			<div id="ContentAreaSections" class="well bold-me"></div>
+			<!-- End Chapter Index listing -->
 		
 		
-			<!--Floating nav -->
-				<!-- Next -->
-				<style>
-				div.floating-next
-				{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-				div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-				</style>
-				<div class="floating-next">
-				<a href="ch09s1.html">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-				</div>
-			<!-- End floating nav -->
+			<!-- Previous -->
+			<div class="floating-previous"></div>
+			<!-- Next -->
+			<div class="floating-next"></div>
 			<!-- Main content -->
 			
+			<!--
 			<ul>
 				<a href="ch09s1.html"><li>9.1  Introduction</li></a>
 				<a href="ch09s2.html"><li>9.2 Functional programming</li></a>
 				<ul>
-					<!-- There is no section 9.2.1 (9.2 runs into 9.2.1) -->
+					<!-- There is no section 9.2.1 (9.2 runs into 9.2.1) --><!--
 					<a href="ch09s2p2.html"><li>9.2.2  User-defined functions</li></a>
 				</ul>
 			</ul>
+			-->
 			
 			<!-- End main content -->
 			<hr />
@@ -87,12 +82,11 @@
 				
 				$(document).ready(function() {
 					loadLocalTableOfContents("objects");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("objects", spans);
-					// once the document has loaded, set figure numbers and arrow paths
+					populateNav();
+					populateChapterButtons();
+					
 					pageObj = getArrowPathsByPage("objects");
 					chapObj = getArrowPathsByChapter("objects");
-
 				});	
 			</script>
 

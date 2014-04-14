@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href="../lib/css/bootstrap.css" rel="stylesheet">
+		<link href="../lib/css/styles.css" rel="stylesheet">
+		<link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,22 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
 			<p class="Section">
-				2.4.3 Relative and absolute cell referencing
+				<span class="contentNum toolsSpreadsheets3"></span>
 			</p>
 		
 			<p>
@@ -73,45 +56,45 @@
 			</p>
 		
 			<p>
-				Figure 2.9 reproduces the spreadsheet for converting temperatures from Celsius to Fahrenheit that was first introduced in Figure 2.4.  Part (a) of the figure shows the actual contents of the cells, while part (b) shows the values that would be displayed.  Notice that the only cells that are being used in this table are B2, B3, C2, and C3.  When referring to a rectangular collection of cells, called a <span class="Bolded">block</span> of cells, normally only the upper left hand cell and the lower right hand cell are listed.  So, in this case, the cells of interest are in the block B2-C3.  Parts (c) and (d) of Figure 2.9 show the cell contents and displayed values that would result from “moving” block B2-C3 to block A1-B2.
+				<span class="figNum cellpremove"></span> reproduces the spreadsheet for converting temperatures from Celsius to Fahrenheit that was first introduced in <span class="figNum ctofspreadsheet"></span>.  Part (a) of the figure shows the actual contents of the cells, while part (b) shows the values that would be displayed.  Notice that the only cells that are being used in this table are B2, B3, C2, and C3.  When referring to a rectangular collection of cells, called a <span class="Bolded">block</span> of cells, normally only the upper left hand cell and the lower right hand cell are listed.  So, in this case, the cells of interest are in the block B2-C3.  Parts (c) and (d) of <span class="figNum cellpremove"></span> show the cell contents and displayed values that would result from “moving” block B2-C3 to block A1-B2.
 			</p>
 		
 			<p>
 				Comparing part (b) of the figure to part (d), we can see that the “move” operation does exactly what we would expect it to do.  It moves the spreadsheet for temperature conversions to a different portion of the table.  However, a careful comparison of parts (a) and (c) will reveal that “move” involves more than at first meets the eye.  When the formula  = (9/5) * B2 + 32 stored in cell B3 was moved to cell A2, it was modified to read = (9/5) * A1 + 32.  While this change might at first seem perplexing, it is necessary in order to allow the temperature conversion spreadsheet to work properly at its new location in the table.  If the formula had not been modified, it would be in error after the move, since cell B2 no longer holds the temperature to be converted.
 			</p>
 		
-			<img src="Images/fig2-9a.png" alt="" class="Image">
+			<img src="images/spreadmovementsa.png" alt="" class="Image">
 			
 		    <p class="Figure">
 				(a)  Cell contents before move
 			</p>	
 				
-			<img src="Images/fig2-9b.png" alt="" class="Image">
+			<img src="images/spreadmovementsb.png" alt="" class="Image">
 				
 		    <p class="Figure">
 				(b) Displayed values before move
 			</p>
 		
-			<img src="Images/fig2-9c.png" alt="" class="Image">
+			<img src="images/spreadmovementsc.png" alt="" class="Image">
 			
 		    <p class="Figure">
 				(c) Cell contents after move
 			</p>
 			
-			<img src="Images/fig2-9d.png" alt="" class="Image">
+			<img src="images/spreadmovementsd.png" alt="" class="Image">
 			
 		    <p class="Figure">
 				(d) Displayed values after move
 			</p>
 		
 			<p class="Figure">
-				Figure 2.9:  An overview of the effect of the “move” operation
+				<span class="figNum spreadmovements"></span>  An overview of the effect of the “move” operation
 			</p>
 		
-			<img src="Images/fig2-10.png" alt="" class="Image">
+			<img src="images/relativecellreference.png" alt="" class="Image">
 		
 			<p class="Figure">
-				Figure 2.10:  An illustration of relative cell referencing
+				<span class="figNum relativecellreference"></span>  An illustration of relative cell referencing
 			</p>
 		
 			<p>
@@ -119,7 +102,7 @@
 			</p>
 		
 			<p>
-				This concept of relative cell referencing is further illustrated in Figure 2.10, which shows how a formula that is located in cell B3 would be modified if copied to C7.  In its original location, the formula appears as = <span class="Subfigure">A1 + C2</span>.  Since cell A1 is located two cells up and one cell to the left of cell B3, when the formula is moved or copied to C7 this reference is changed to B5.  Note that B5 is exactly two cells up and one cell to the left of C7.  Likewise, the reference to cell C2 in the original formula, which is one cell up and one cell to the right of B3, will be changed to D6 when the formula is moved to C7 since D6 is one cell up and one cell to the right of C7.
+				This concept of relative cell referencing is further illustrated in <span class="figNum relativecellreference"></span>, which shows how a formula that is located in cell B3 would be modified if copied to C7.  In its original location, the formula appears as = <span class="Subfigure">A1 + C2</span>.  Since cell A1 is located two cells up and one cell to the left of cell B3, when the formula is moved or copied to C7 this reference is changed to B5.  Note that B5 is exactly two cells up and one cell to the left of C7.  Likewise, the reference to cell C2 in the original formula, which is one cell up and one cell to the right of B3, will be changed to D6 when the formula is moved to C7 since D6 is one cell up and one cell to the right of C7.
 			</p>
 		
 			<p>
@@ -130,10 +113,10 @@
 				Absolute cell referencing comes in most handy when there are one or more values that will be referenced in many different formulas.  For example, say you were constructing a financial spreadsheet that dealt with employee salaries.  It is likely that the current federal, state, and local income tax rates would be used in many calculations throughout the entire spreadsheet.  Placing these rates in fixed cells and having all formulas that use these rates refer absolutely to those cells would be a very good idea.  This is because tax rates inevitably change over time.  When a tax rate increases, the only change that will have to be made to the spreadsheet will be to insert the new rate in the appropriate cell.
 			</p>
 		
-			<img src="Images/fig2-11.png" alt="" class="Image">
+			<img src="images/absolutecellreference.png" alt="" class="Image">
 		
 			<p class="Figure">
-				Figure 2.11:  An illustration of absolute verses relative cell referencing
+				<span class="figNum absolutecellreference"></span>  An illustration of absolute verses relative cell referencing
 			</p>
 		
 			<p>
@@ -153,21 +136,21 @@
 			</p>
 		
 			<p>
-				Figure 2.12 illustrates the effect of “mixed” cell references.  As in the previous two figures, the formula originally located in cell B3, refers to cell A1 and C2, and is moved to cell C7.  The reference to A1 is $A1, which locks the column to “A”, but allows the row reference to remain relative.  Since row 1 is two rows above row 3, when the formula is moved to row 7 the referenced cell will be on row 5 (two rows above row 7).  Hence the complete reference will be $A5.  The reference C$2 is handled in a similar manner, except the row is locked to 2, while the column is relative (one column to the right of the current cell).
+				<span class="figNum mixedcellreference"></span> illustrates the effect of “mixed” cell references.  As in the previous two figures, the formula originally located in cell B3, refers to cell A1 and C2, and is moved to cell C7.  The reference to A1 is $A1, which locks the column to “A”, but allows the row reference to remain relative.  Since row 1 is two rows above row 3, when the formula is moved to row 7 the referenced cell will be on row 5 (two rows above row 7).  Hence the complete reference will be $A5.  The reference C$2 is handled in a similar manner, except the row is locked to 2, while the column is relative (one column to the right of the current cell).
 			</p>
 		
-			<img src="Images/fig2-12.png" alt="" class="Image">
+			<img src="images/mixedcellreference.png" alt="" class="Image">
 		
 			<p class="Figure">
-				Figure 2.12:  An illustration of “mixed” cell referencing
+				<span class="figNum mixedcellreference"></span>  An illustration of “mixed” cell referencing
 			</p>
 		
 			<p>
 				In the preceding discussion, the terms “move” and “copy” were used somewhat interchangeably.  This is because both operations handle cell contents in the same way.  The only difference between the two is that “move” erases the contents of the source cells after performing a copy operation.  Hence, after a “copy” there will be two instances of cell contents: the original (source) contents, and the copied (destination) contents.  After a “move” there will be only one instance of the cell contents, in the destination location.
 			</p>
 		
-			<p class="Section">
-				Exercises for Section 2.4.3
+			<p class="Exercise">
+				Exercises for <span class="contentNum toolsSpreadsheets3"></span>
 			</p>
 		
 			<ol>
@@ -232,18 +215,16 @@
 			<div>
 
 			</div>
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("tools");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("tools", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("toolsSpreadsheets3");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("toolsSpreadsheets3");		// get arrow paths
+			});	
+
+		</script>
 
 
 		</div>

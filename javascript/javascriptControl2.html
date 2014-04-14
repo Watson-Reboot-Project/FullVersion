@@ -12,20 +12,20 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-	    <link href = "css/ch08.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/grid.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<link rel='stylesheet' href='css/generalmedia.css'>
-		<script src="js/jquery-ui.js"></script>
-		
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script src="../lib/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -36,38 +36,16 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-              <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+			<div class="floating-previous"></div>
 
-			<!--Floating nav -->
-		      <!-- Previous -->
-		      <style>
-		        div.floating-previous
-		        {position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-		        div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-previous">
-		        <a href="ch08s6p1.html">
-		          <img id="larrow" style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-		        </a>
-		      </div>
-		
-		      <!-- Next -->
-		      <style>
-		        div.floating-next
-		        {position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-		        div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-		      </style>
-		      <div class="floating-next">
-		        <a href="ch08s6p3.html">
-		          <img id="rarrow" style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-		        </a>
-		      </div>
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
-			<p class="Section">8.6.2 Selection</p>
+			<p class="Section">
+				<span class="contentNum javascriptControl2"></span>
+			</p>
+			
 			<p>
 				Selection statements give imperative languages the ability to make choices based on the results of certain condition tests. These condition tests take the form of <span class="Bolded">Boolean expressions</span>, which are expressions that evaluate to either <span class="Italicized">true</span> or <span class="Italicized">false</span>.<span class="Footnote"><span class="Footnote" title="Footnote: Boolean expressions are named for the mathematician George Boole. Hence, the word “Boolean” should always be capitalized."><a href="#ftn5" id="body_ftn5">[5]</a></span></span> &nbsp; There are various types of Boolean expressions, but the types supported in Watson JavaScript are based on relational operators. <span class="Bolded">Relational operators</span> compare two expressions of like type to determine whether their values satisfy some criterion. The general form of all Boolean expressions supported in Watson JavaScript is:
 			</p>
@@ -337,10 +315,10 @@
 				Selection statements use the results of Boolean expressions to choose which sequence of actions to perform next. Watson JavaScript supports two different selection statements: If-Else and If. Each is described below.
 			</p>
 						
-			<img src="Images/fig8-11.png" alt="An illustration of the behavior of the If-Else selection construct" class="Image">
+			<img src="images/ifelseconstruct.png" alt="An illustration of the behavior of the If-Else selection construct" class="Image">
 
 			<p class="Figure">
-				Figure 8.11: &nbsp; An illustration of the behavior of the If-Else selection construct
+				<span class="figNum ifelseconstruct"></span> &nbsp; An illustration of the behavior of the If-Else selection construct
 			</p>
 
 			<p>
@@ -365,7 +343,7 @@
 			<br/>
 
 			<p>
-				If-Else statements specify a Boolean expression and two separate blocks of code: one that is to be executed if the expression is true, the other to be executed if the expression is false. The behavior of the If-Else statement is illustrated graphically in Figure 8.11
+				If-Else statements specify a Boolean expression and two separate blocks of code: one that is to be executed if the expression is true, the other to be executed if the expression is false. The behavior of the If-Else statement is illustrated graphically in <span class="figNum ifelseconstruct"></span>
 			</p>
 			
 			<!--			
@@ -411,11 +389,11 @@
 			-->
 			<div id="fig12Div" class="divness"></div>
 			<p class="Figure">
-				Figure 8.12: &nbsp; A program that illustrates selection via If-Else
+				<span class="figNum ifelseprogram"></span> &nbsp; A program that illustrates selection via If-Else
 			</p>
 
 			<p>
-				Figure 8.12 presents a program that uses an If-Else statement to determine whether a person is of legal drinking age (in the US). The program prompts a user to enter his or her age and then stores whatever the user inputs into a variable called <span class="Subfigure">age</span>. This variable is then tested against the constant 21. If <span class="Subfigure">age</span> is less than 21, the text string “No beer for you.” is displayed. Otherwise, if <span class="Subfigure">age</span> is greater than or equal to 21, the text string “Here, have a cold one!” is displayed.
+				<span class="figNum ifelseprogram"></span> presents a program that uses an If-Else statement to determine whether a person is of legal drinking age (in the US). The program prompts a user to enter his or her age and then stores whatever the user inputs into a variable called <span class="Subfigure">age</span>. This variable is then tested against the constant 21. If <span class="Subfigure">age</span> is less than 21, the text string “No beer for you.” is displayed. Otherwise, if <span class="Subfigure">age</span> is greater than or equal to 21, the text string “Here, have a cold one!” is displayed.
 			</p>
 
 			<p>
@@ -423,7 +401,7 @@
 			</p>
 
 			<p>
-				While only one statement occurs in the “then” and “else” blocks of the program of Figure 8.12, If-Else structures in general allow multiple statements per block. The program of Figure 8.13 illustrates multi-statement “then” and “else” blocks. The purpose of the program is to compute the absolute value of an input number. The program begins by requesting input from the user and storing that input in the variable <span class="Subfigure">num</span>. The phrase “The absolute value of the ” is then displayed on the screen. Next, <span class="Subfigure">num</span> is tested to determine whether its value is less than zero. If it is, the sequence of “write” statements in the “then” block generates a message of the form:
+				While only one statement occurs in the “then” and “else” blocks of the program of <span class="figNum ifelseprogram"></span>, If-Else structures in general allow multiple statements per block. The program of <span class="figNum ifthenelse"></span> illustrates multi-statement “then” and “else” blocks. The purpose of the program is to compute the absolute value of an input number. The program begins by requesting input from the user and storing that input in the variable <span class="Subfigure">num</span>. The phrase “The absolute value of the ” is then displayed on the screen. Next, <span class="Subfigure">num</span> is tested to determine whether its value is less than zero. If it is, the sequence of “write” statements in the “then” block generates a message of the form:
 			</p>
 
 			<p class="Subfigure">
@@ -539,7 +517,7 @@
 			-->
 			<div id="fig13Div" class="divness"></div>
 			<p class="Figure">
-				Figure 8.13: &nbsp; A program that illustrates multi-statement “then” and “else” blocks
+				<span class="figNum ifthenelse"></span> &nbsp; A program that illustrates multi-statement “then” and “else” blocks
 			</p>
 
 			<p>
@@ -551,7 +529,7 @@
 			</p>
 
 			<p>
-				The idea of nested If-Else statements is illustrated in Figure 8.14. This program determines whether or not a person is classified as a “baller” based on their age and income. For the purposes of this example, a baller is defined as someone under 25 years of age with an income of $50,000 or more per year. Because this definition depends on two condition tests, age and income, an If-Else statement for testing one of them must be embedded in an If-Else statement to test the other.
+				The idea of nested If-Else statements is illustrated in <span class="figNum ifelsenest"></span>. This program determines whether or not a person is classified as a “baller” based on their age and income. For the purposes of this example, a baller is defined as someone under 25 years of age with an income of $50,000 or more per year. Because this definition depends on two condition tests, age and income, an If-Else statement for testing one of them must be embedded in an If-Else statement to test the other.
 			</p>
 			
 			<!-- Manual fig 8.14
@@ -662,7 +640,7 @@
 			
 			<div id="fig14Div" class="divness"></div>
 			<p class="Figure">
-				Figure 8.14: &nbsp; A program that illustrates nested If-Else statements
+				<span class="figNum ifelsenest"></span> &nbsp; A program that illustrates nested If-Else statements
 			</p>
 
 			<p>
@@ -706,13 +684,13 @@
 			</ul>
 
 			<p>
-				As you probably suspect, if the Boolean expression is true, the statements in the code block enclosed in braces are executed. Otherwise, they are skipped. Program control returns to a single path at the end of the block, so the statement following the “}” will always be executed regardless of the results of the Boolean Expression. The behavior of the If construct is graphically illustrated in Figure 8.15.
+				As you probably suspect, if the Boolean expression is true, the statements in the code block enclosed in braces are executed. Otherwise, they are skipped. Program control returns to a single path at the end of the block, so the statement following the “}” will always be executed regardless of the results of the Boolean Expression. The behavior of the If construct is graphically illustrated in <span class="figNum ifconstruct"></span>.
 			</p>
 			
-			<img src="Images/fig8-15.png" alt="An illustration of the behavior of the If selection construct" class="ImageTall">
+			<img src="images/ifconstruct.png" alt="An illustration of the behavior of the If selection construct" class="ImageTall">
 
 			<p class="Figure">
-				Figure 8.15: &nbsp; An illustration of the behavior of the If selection construct
+				<span class="figNum ifconstruct"></span> &nbsp; An illustration of the behavior of the If selection construct
 			</p>
 			<!-- Manual 8.16
 			<p class="P95">
@@ -753,7 +731,7 @@
 			-->
 			<div id="fig16Div" class="divness"></div>
 			<p class="Figure">
-				Figure 8.16: &nbsp; A program that illustrates selection via If
+				<span class="figNum ifprogram"></span> &nbsp; A program that illustrates selection via If
 			</p>
 
 			<p>
@@ -761,12 +739,12 @@
 			</p>
 
 			<p>
-				The program of Figure 8.16 illustrates the use of an If statement. The purpose of the program is to report whether a user is or is not a minor based on his or her age. The program begins by prompting the user to enter his or her age. The input is then stored in the variable <span class="Subfigure">age</span>. Next, the text string “You are ” is displayed. An If statement then checks to see whether <span class="Subfigure">age</span> is greater than or equal to 18. If the condition is true, the word “not ” is printed. Finally, the phrase “a minor.” is displayed. Thus, this program prints either: “You are not a minor.” or “You are a minor.” depending on the value of <span class="Subfigure">age</span>.
+				The program of <span class="figNum ifprogram"></span> illustrates the use of an If statement. The purpose of the program is to report whether a user is or is not a minor based on his or her age. The program begins by prompting the user to enter his or her age. The input is then stored in the variable <span class="Subfigure">age</span>. Next, the text string “You are ” is displayed. An If statement then checks to see whether <span class="Subfigure">age</span> is greater than or equal to 18. If the condition is true, the word “not ” is printed. Finally, the phrase “a minor.” is displayed. Thus, this program prints either: “You are not a minor.” or “You are a minor.” depending on the value of <span class="Subfigure">age</span>.
 			</p>
 
 
-			<p class="Section">
-				Exercises for Section 8.6.2
+			<p class="Exercise">
+				Exercises for <span class="contentNum javascriptControl2"></span>
 			</p>
 
 			<ol>
@@ -985,17 +963,19 @@
 				</p>
 			</nav>
 			
+			<div class="floating-next"></div>
+
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;
+				var pageObj;											// do NOT change name of variable
+				var chapObj;
 				
 				$(document).ready(function() {
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("javascript", spans);
-					// once the document has loaded, set figure numbers and arrow paths, must pass in the specific page currently on
-					pageObj = getArrowPathsByPage("javascriptControl2");
-
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("javascriptControl2");		// get arrow paths
 				});	
+				
 			</script>
 
 			<div>

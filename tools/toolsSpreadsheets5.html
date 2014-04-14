@@ -10,18 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href = "css/bootstrap.css" rel = "stylesheet">
-	    <link href = "css/styles.css" rel = "stylesheet">
-	    <link href = "css/generalmedia.css" rel = "stylesheet">
-		<link href = "css/colmn_test.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!-- CSS files -->
+		<link href="../lib/css/bootstrap.css" rel="stylesheet">
+		<link href="../lib/css/styles.css" rel="stylesheet">
+		<link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -32,40 +33,24 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContent"></div>
-    <script type="text/javascript" src="js/nav.js"></script>
+			<div id="includedContentForPage"></div>
+
+			<!-- Navbar -->
+			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<style>
-			div.floating-previous
-			{position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;}
-			div.floating-previous a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-previous">
-				<a href="#" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="Images/left-arrow-blue.png" alt="Previous page" width="40">
-				</a>
-			</div>
-
+			<div class="floating-previous"></div>
 			<!-- Next -->
-			<style>
-			div.floating-next
-			{position:fixed;z-index:200; left: auto; right:1px; top:45%;}
-			div.floating-next a, div.floating-menu h3 {display:block;margin:0 0.5em;}
-			</style>
-			<div class="floating-next">
-				<a href="#" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="Images/right-arrow-blue.png" alt="Next page" width="40">
-				</a>
-			</div>
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
 			
-			<p class="Section" >
-			2.4.5 Solving problems with spreadsheets
+			<p class="Section">
+				<span class="contentNum toolsSpreadsheets5"></span>
 			</p>
 		
 			<p>
@@ -96,7 +81,7 @@
 				The homework average can be computed either by using the built-in “average” function or by directly specifying the formula = <span class="Subfigure">(B4+B5+B6+B7)/4</span>.  The exam average cannot be computed in such a straightforward manner due to the fact that all exams are not weighted equally.  Exams 1 and 2 are each 20% of the final grade, while Exam 3 is 30%.  Hence, all three exams together make up only 70% of the overall grade.  These relationships can be captured by the following formula: = <span class="Subfigure">(.2*D4+.2*D5+.3*D6) / .7</span> which expresses the exam average using the 100 point scale.  Each of the exam grades is multiplied by its appropriate weight and summed giving the number of points earned from exams.  This value is then divided by 0.7, since the total number of points earnable on exams is 70% of total possible points.  For convenience sake, I’ve placed the formula for computing the homework average in cell B9 and the formula for computing the exam average in cell D9.
 			</p>
 		
-			<img src="Images/fig2-14a.png" alt="" class="Image">
+			<img src="images/avgactualcontentsa.png" alt="" class="Image">
 		
 			<p class="Figure">
 				[Note Cell D9 holds the formula <span class="Bolded">= (.2*D4 + .2*D5 + .3*D6) / .7</span>> ]
@@ -106,14 +91,14 @@
 				(a) Actual cell contents 
 			</p>
 		
-			<img src="Images/fig2-14b.png" alt="" class="Image">
+			<img src="images/avgactualcontentsb.png" alt="" class="Image">
 			
 			<p class="Figure">
 				(b) Displayed values
 			</p>
 		
 			<p class="Figure">
-				Figure 2.14:  A spreadsheet for computing an individual student’s course average
+				<span class="figNum avgactualcontents"></span> A spreadsheet for computing an individual student’s course average
 			</p>
 		
 			<p>
@@ -125,7 +110,7 @@
 			</p>
 		
 			<p>
-				Figure 2.14 shows the completed spreadsheet with perfect scores for each of the homework and exam grades.  Additional titles have been added to improve readability, such as “<span class="Subfigure">Averages</span>” in cell A9,  “<span class="Subfigure">Points earned</span>” in cell A10 and “<span class="Subfigure">Final score</span>” in cell A12.  Scale indicators were also added in cells C9 and E9.  These are text strings of the form: “<span class="Subfigure">/20</span>” and “<span class="Subfigure">/100</span>”.
+				<span class="figNum avgactualcontents"></span> shows the completed spreadsheet with perfect scores for each of the homework and exam grades.  Additional titles have been added to improve readability, such as “<span class="Subfigure">Averages</span>” in cell A9,  “<span class="Subfigure">Points earned</span>” in cell A10 and “<span class="Subfigure">Final score</span>” in cell A12.  Scale indicators were also added in cells C9 and E9.  These are text strings of the form: “<span class="Subfigure">/20</span>” and “<span class="Subfigure">/100</span>”.
 			</p>
 		
 			<p>
@@ -136,8 +121,8 @@
 				Hopefully, this example has given you some insight into the process of constructing a spreadsheet to solve a useful problem.  The following exercises provide an opportunity for you to try your hand at a number of different problems.  As is the case with most tools, your proficiency at solving problems with spreadsheets will improve with practice. 
 			</p>
 		
-			<p class="Section">
-				Exercises for Section 2.4.5
+			<p class="Exercise">
+				Exercises for <span class="contentNum toolsSpreadsheets5"></span>
 			</p>
 		
 			<p>
@@ -160,7 +145,7 @@
 				<li>
 					Suppose you are a member of a long-range planning team at NASA.  Your team is looking into the feasibility of constructing a wheel-shaped space station that would spin to simulate Earth-normal gravity.  Both the size of the station and its rate of spin affect the “artificial gravity” on the station.  The underlying physics equation describing this relationship is: 
 					
-					<img src="Images/fig2-gravform.png" alt="" class="Blockcenter">
+					<img src="images/fig2-gravform.png" alt="" class="Blockcenter">
 			
 					<ul class="Blockcenter">
 						<li>Where:</li>
@@ -185,7 +170,7 @@
 						Construct a table showing the radius, <span class="Ital">R</span>, needed in order to have acceleration equal to that produced by Earth-normal gravity, in a wheel-shaped space station that rotates, <span class="Ital">T</span>, once in 10 seconds, 20 seconds, 30 seconds, … , 60 seconds.  Acceleration due to gravity on the surface of the Earth, <span class="Ital">A</span>, is 32 feet per second per second.  The particular version of the above formula that you need to solve for is:
 					</p>
 				
-					<img src="Images/fig2-gravform2.png" alt="" class="Blockcenter">
+					<img src="images/fig2-gravform2.png" alt="" class="Blockcenter">
 
 				</li>
 				<br/>
@@ -236,18 +221,16 @@
 
 			</div>
 
-			<script>
-				var pageObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("tools");
-					var spans = document.getElementsByClassName("figNum");		// get the span elements on this page with the class 'figNum'
-					populateFigureDictionary("tools", spans);
-					// once the document has loaded, set figure numbers and arrow paths
-					pageObj = getArrowPathsByPage("toolsSpreadsheets5");
+		<script>
+			var pageObj;											// do NOT change name of variable
 
-				});	
-			</script>
+			$(document).ready(function() {
+			populateNav();										// populate nav content
+			populateSpans();									// populate figure/content spans
+			pageObj = getArrowPathsByPage("toolsSpreadsheets5");		// get arrow paths
+			});	
+
+		</script>
 
 		</div>
 	</body>
