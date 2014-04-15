@@ -3,10 +3,6 @@
     background-color: #4870B6;
     border: none;
 }
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus /* nav bar slider icon after click */ 
-{
-  background-color: #333333;
-}
 
 /* hover in nav bar, changes color when mobile screen is used */
 ul.nav a:hover { color: #000; }
@@ -51,6 +47,11 @@ ul.nav a:hover { color: #000; }
 
 /* the padding for the body or main content */
 body { padding-top: 10%; }
+@media screen and (max-width: 800px) { body { padding-top: 15%;}}
+@media screen and (max-width: 600px) { body { padding-top: 25%;}}
+@media screen and (max-width: 400px) { body { padding-top: 35%;}}
+
+.well .bold-me{ padding-left: 10%; }
 @media screen and (max-width: 800px) { body { padding-top: 15%;}}
 @media screen and (max-width: 600px) { body { padding-top: 25%;}}
 @media screen and (max-width: 400px) { body { padding-top: 35%;}}
@@ -100,22 +101,22 @@ body { padding-top: 10%; }
 
 }
 
-/* Font awesome icons */ 
+/* Font awesome icons, book and section listing */ 
 .fa-book, .fa-list-ul {  
   padding-right: 5px; 
   position: relative; 
 }
 
-.fa-plus { margin-right: -300%; }
-.fa-minus{ margin-left: -300%; }
+.fa-plus { margin-left: -300%; }
+.fa-minus{ margin-right: -300%; }
  @media screen and (max-width: 800px) { .fa-plus, .fa-minus { margin: 0;}} 
 
 #fontAs{
-  max-width: 50%; 
+  max-width: 50%;
   padding: 0;
 }
 
-/* Banner down arrow, placement */
+/* Banner down arrow, placement, no longer being used */
 #clickme{ 
   padding-right: 90% !important;
   padding-top: 0%;
@@ -126,7 +127,7 @@ body { padding-top: 10%; }
     margin: 20px;
 }
 
-/* Collasping and expanding buttons on section_toc.html */
+/* Collasping and expanding buttons on section_toc.html, no longer being used */
 #expand, #collapse { margin-bottom: 3%; }
 
 /* Styles for collapsing sections/section */
@@ -161,36 +162,65 @@ body { padding-top: 10%; }
     width: 100%;
 }
 
-/* Previous and Next arrow styling */
+/* Previous and Next arrow styling 
 
-#prevArrowStyle{
-  position: absolute; 
-  z-index: 200; 
-  left: 1px; 
-  right: auto; 
-  width: 20px; 
-  top: 12%;
-
-}
-
-#nextArrowStyle{
-  position: fixed; 
-  z-index:200; 
-  left: auto; 
-  right: 1px; 
-  top: 90%;
-  display: block; 
-  margin: 0 0.5em;
-
-
-}
+}*/
 /*@media screen and (max-width: 800px) { #nextArrowStyle { max-width: 75%;}}
 @media screen and (max-width: 600px) { #nextArrowStyle { max-width: 50%;}}
 @media screen and (max-width: 400px) { #nextArrowStyle { max-width: 25%;}}
 */
 
+#prevArrowStyle{
+  /*position: absolute; 
+  z-index: 200; 
+  left: 1px; 
+  right: auto; 
+  width: 20px; 
+  top: 12%;*/
+  position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;
+      display:block;margin:0 0.5em;
+
+}
+
+#nextArrowStyle{
+  /*position: fixed; 
+  z-index:200; 
+  left: auto; 
+  right: 1px; 
+  top: 90%;
+  display: block; 
+  margin: 0 0.5em;*/
+        position:fixed;z-index:200; left: auto; right:1px; top:45%;
+      display:block;margin:0 0.5em;
 
 
+}
+
+#prevArrowStyle1{
+  /*position: absolute; 
+  z-index: 200; 
+  left: 1px; 
+  right: auto; 
+  width: 20px; 
+  top: 12%;*/
+  position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;
+      display:block;margin:0 0.5em;
+
+}
+
+#nextArrowStyle1{
+  /*position: fixed; 
+  z-index:200; 
+  left: auto; 
+  right: 1px; 
+  top: 90%;
+  display: block; 
+  margin: 0 0.5em;*/
+        position:fixed;z-index:200; left: auto; right:1px; top:45%;
+      display:block;margin:0 0.5em;
+
+
+}
 
 
 

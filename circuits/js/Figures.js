@@ -194,7 +194,7 @@ function Figures(setup, controller, truthTable) {
 				inputB = controller.addInput(5, 38, "B", inputVals[1]);
 			}
 			
-			var nor = controller.addNorGate(50, 25);
+			var nor = controller.addNorGate(30, 25);
 			var output = controller.addOutput(190, 25, "Z");
 			
 			controller.connectComponents(inputA, nor, [1]);
@@ -220,7 +220,7 @@ function Figures(setup, controller, truthTable) {
 				inputB = controller.addInput(5, 38, "B", inputVals[1]);
 			}
 			
-			var nand = controller.addNandGate(50, 25);
+			var nand = controller.addNandGate(30, 25);
 			var output = controller.addOutput(185, 25, "Z");
 			
 			controller.connectComponents(inputA, nand, [1]);

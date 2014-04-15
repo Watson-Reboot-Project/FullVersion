@@ -9,7 +9,7 @@
 *				three output lines.
 ***************************************************************************************/
 
-function Connector(initX, initY, setName, id, setup) {
+function Connector(initX, initY, setName, id, setup, displayMode) {
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE DECLARATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -43,7 +43,7 @@ function Connector(initX, initY, setName, id, setup) {
 	var group;						// the group that will be composed of the connector's components
 	var transFg;					// the transparent foreground that makes it easy for users to click the connector
 	
-	var gScale = setup.getGScale();
+	var scale;
 	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
 	var thisObj = this;
@@ -74,12 +74,15 @@ function Connector(initX, initY, setName, id, setup) {
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
+	if (displayMode == true) scale = 0.75;
+	else scale = 1;
+	
 	// make the rectangle
     compShape = new Kinetic.Rect({
-        x: gScale * 20,
-        y: gScale * 20,
-        width: gScale * 10,
-        height: gScale * 10,
+        x: scale * 20,
+        y: scale * 20,
+        width: scale * 10,
+        height: scale * 10,
         fill: 'black',
         stroke: 'black',
         strokeWidth: 1
@@ -87,7 +90,7 @@ function Connector(initX, initY, setName, id, setup) {
 	   
 	// create the plugin line
 	pin0 = new Kinetic.Line({
-		points : [gScale * 5, gScale * 25, gScale * 20, gScale * 25],
+		points : [scale * 5, scale * 25, scale * 20, scale * 25],
 		stroke : 'black',
 		strokeWidth : 1,
 		lineCap : 'round',
@@ -96,7 +99,7 @@ function Connector(initX, initY, setName, id, setup) {
 
 	// create the first plugout line
 	pin1 = new Kinetic.Line({
-		points : [gScale * 25, gScale * 5, gScale * 25, gScale * 20],
+		points : [scale * 25, scale * 5, scale * 25, scale * 20],
 		stroke : 'black',
 		strokeWidth : 1,
 		lineCap : 'round',
@@ -105,7 +108,7 @@ function Connector(initX, initY, setName, id, setup) {
 
 	// create the second plugout line
 	pin2 = new Kinetic.Line({
-		points : [gScale * 30, gScale * 25, gScale * 45, gScale * 25],
+		points : [scale * 30, scale * 25, scale * 45, scale * 25],
 		stroke : 'black',
 		strokeWidth : 1,
 		lineCap : 'round',
@@ -114,7 +117,7 @@ function Connector(initX, initY, setName, id, setup) {
 	
 	// create the third plugout line
 	pin3 = new Kinetic.Line({
-		points : [gScale * 25, gScale * 30, gScale * 25, gScale * 45],
+		points : [scale * 25, scale * 30, scale * 25, scale * 45],
 		stroke : 'black',
 		strokeWidth : 1,
 		lineCap : 'round',
@@ -123,10 +126,10 @@ function Connector(initX, initY, setName, id, setup) {
 
 	// create the transparent rectangle
 	transFg = new Kinetic.Rect({
-		x: gScale * 5,
-		y: gScale * 5,
-		width: gScale * 40,
-		height: gScale * 40
+		x: scale * 5,
+		y: scale * 5,
+		width: scale * 40,
+		height: scale * 40
 	});
 	
 	// create the group object
@@ -274,7 +277,7 @@ function Connector(initX, initY, setName, id, setup) {
 		else if (num == 2) { pin2Comp = comp; pin2.enableStroke(); }
 		else { pin3Comp = comp; pin3.enableStroke(); }
 		
-		//evaluate();
+		evaluate();
 	}
 	
 	// get the plugout that is currently selected

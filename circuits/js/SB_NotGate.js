@@ -78,7 +78,9 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	this.getOutputBoxCoords = getOutputBoxCoords;
 	this.loopCheckForward = loopCheckBackward;
 	this.loopCheckBackward = loopCheckBackward;
-	
+	this.getSerialStringDeclaration = getSerialStringDeclaration;
+	this.getSerialStringConnections = getSerialStringConnections;
+
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	// make a custom shape for the triangle; just three lines
 	gateShapeTriangle = new Kinetic.Shape({
@@ -149,7 +151,7 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 		if (mouseOver !== "crosshair") document.body.style.cursor = 'default';
 	});
 	
-	setDeleteIcon("empty.bmp");
+	setDeleteIcon("images/empty.bmp");
 	
 	iconLayer.on('mouseover', function() { document.body.style.cursor = 'pointer'; });
 	iconLayer.on('mouseout', function() { document.body.style.cursor = 'default'; });
@@ -251,8 +253,8 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	function setMouseOver(str) { mouseOver = str; }
 	
 	function toggleDeleteIcon(bool) {
-		if (bool) setDeleteIcon("delete.ico");
-		else setDeleteIcon("empty.bmp");
+		if (bool) setDeleteIcon("images/delete.ico");
+		else setDeleteIcon("images/empty.bmp");
 	}
 	
 	function getInputBox() {
@@ -429,5 +431,23 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 		if (pluginComp !== null) result = pluginComp.loopCheckBackward(comp);
 	
 		return result;
+	}
+	
+	function getSerialStringDeclaration() {
+		var str = "not," + group.getX() + "," + group.getY() + "," + ID;
+		return str;
+	}
+	
+	function getSerialStringConnections() {
+		if (plugoutComp !== null) {
+			var str = ID + "," + plugoutComp.getID();
+			if (plugoutComp.getType() == "and" || plugoutComp.getType() == "or") {
+				str += "," + plugoutComp.getPluginNumber(thisObj);
+			}
+			
+			return str;
+		}
+		
+		return null;
 	}
 }

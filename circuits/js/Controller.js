@@ -26,7 +26,7 @@
 *								in terms of digital circuits.
 ***************************************************************************************/
 
-function Controller(setup, truthTable) {
+function Controller(setup, truthTable, draggable, displayMode) {
 
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE DECLARATIONS/DEFINITIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -48,6 +48,7 @@ function Controller(setup, truthTable) {
 	var stage = setup.getStage();
 	var lastDist = 0;
 	var startScale = 1;
+	var bg = setup.getBG();
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FUNCTION DECLARATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -88,14 +89,25 @@ function Controller(setup, truthTable) {
 	this.refreshScale = refreshScale;
 	this.getInputValues = getInputValues;
 	
+	this.updateNumberOfInputs = updateNumberOfInputs;
+	this.updateNumberOfOutputs = updateNumberOfOutputs;
+	
+	this.addComponent = addComponent;
+	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FUNCTION IMPLEMENTATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
 	var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-	console.log(screenWidth);
+	//console.log(screenWidth);
 	
-	if (screenWidth < 500) {
+	bg.on('click tap', function() {
+		if (displayMode == true) {
+			setup.solve();
+		}
+	});
+	
+	if (screenWidth < 500 && draggable == true) {
 		mainLayer.setDraggable("draggable");
 		
 		stage.getContent().addEventListener('touchmove', function(evt) {
@@ -333,7 +345,8 @@ function Controller(setup, truthTable) {
 	*/
 	function connectComponents(comp1, comp2, opts) {
 		selectedComp = comp1;					// set the selectedComp to the first component (it's like the user selected it in the sand-box)
-		
+		if (!opts) opts = [ 0 ];
+					
 		if (comp1.getFunc() == "gate" && comp2.getFunc() == "gate") { // if both components are gates (from gate to gate); opts = [ pluginNum ]
 			setWireFromGateToGate(comp2, comp1.getPlugout(), comp2.getPlugin(opts[0]), opts[0]);	// make the connection
 		}
@@ -382,8 +395,19 @@ function Controller(setup, truthTable) {
 	//----- AND & DELETE FUNCTIONS -------
 	//------------------------------------
 	
+	function addComponent(type, x, y, id) {
+		var comp;
+		
+		if (type == "and") comp = addAndGate(x, y, id);
+		else if (type == "or") comp = addOrGate(x, y, id);
+		else if (type == "not") comp = addNotGate(x, y, id);
+		else if (type == "connector") comp = addConnector(x, y, id);
+		
+		return comp;
+	}
+	
 	function addOrGate(initX, initY) {
-		var orGate = new OrGate(gScale * initX, gScale * initY, "Or Gate", nextID++, setup);
+		var orGate = new OrGate(gScale * initX, gScale * initY, "Or Gate", nextID++, setup, displayMode);
 		components.push(orGate);
 		registerComponent(orGate);
 		orGate.draw();
@@ -415,7 +439,7 @@ function Controller(setup, truthTable) {
 	}
 	
 	function addAndGate(initX, initY) {
-		var andGate = new AndGate(gScale * initX, gScale * initY, "And Gate", nextID++, setup);
+		var andGate = new AndGate(gScale * initX, gScale * initY, "And Gate", nextID++, setup, displayMode);
 		components.push(andGate);
 		registerComponent(andGate);
 		andGate.draw();
@@ -447,7 +471,7 @@ function Controller(setup, truthTable) {
 	}
 	
 	function addNotGate(initX, initY) {
-		var notGate = new NotGate(gScale * initX, gScale * initY, "Not Gate", nextID++, setup);
+		var notGate = new NotGate(gScale * initX, gScale * initY, "Not Gate", nextID++, setup, displayMode);
 		components.push(notGate);
 		registerComponent(notGate);
 		notGate.draw();
@@ -455,7 +479,7 @@ function Controller(setup, truthTable) {
 	}
 	
 	function addConnector(initX, initY) {
-		var conn = new Connector(gScale * initX, gScale * initY, "Connector", nextID++, setup);
+		var conn = new Connector(gScale * initX, gScale * initY, "Connector", nextID++, setup, displayMode);
 		components.push(conn);
 		registerComponent(conn);
 		conn.draw();
@@ -463,7 +487,7 @@ function Controller(setup, truthTable) {
 	}
 
 	function addInput(initX, initY, text, value) {
-		input = new InputNode(gScale * initX, gScale * initY, text, value, "Input Node", nextID++, setup);
+		input = new InputNode(gScale * initX, gScale * initY, text, value, "Input Node", text, setup);
 		components.push(input);
 		inputs.push(input);
 		registerComponent(input);
@@ -472,7 +496,7 @@ function Controller(setup, truthTable) {
 	}
 	
 	function addOutput(initX, initY, text) {
-		output = new OutputNode(gScale * initX, gScale * initY, text, "Output Node", nextID++, setup);
+		output = new OutputNode(gScale * initX, gScale * initY, text, "Output Node", text, setup);
 		components.push(output);
 		outputs.push(output);
 		registerComponent(output);
@@ -599,5 +623,55 @@ function Controller(setup, truthTable) {
 	
 	function getDistance(p1, p2) {
         return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2));
+	}
+	
+	function updateNumberOfInputs(res) {
+		var alphabet = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
+		
+		var header = [ ];
+		
+		var numOutputs = outputs.length;
+		for (var i = 0; i < res; i++) header.push(alphabet[i]);
+		for (var i = 0; i < numOutputs; i++) header.push(alphabet[25 - i]);
+			
+		for (var i = 0; i < inputs.length; i++) {
+			deleteInputNode(inputs[i]);
+		}
+		inputs = [];
+		
+		var ind = 0;
+		for (var i = 0; i < res; i++) {
+			addInput(5, ((600 / (res + 1)) * (i + 1)), header[ind++], 0);
+		}
+		
+		//truthTable.resetTruthTable(res, numOutputs, header);
+		numInputs = res;
+		
+		return inputs;
+	}
+	
+	function updateNumberOfOutputs(res) {
+		var alphabet = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
+		
+		var header = [ ];
+
+		var numInputs = inputs.length;
+		for (var i = 0; i < numInputs; i++) header.push(alphabet[i]);
+		for (var i = 0; i < res; i++) header.push(alphabet[25 - i]);
+			
+		for (var i = 0; i < outputs.length; i++) {
+			deleteOutputNode(outputs[i]);
+		}
+		outputs = [];
+		
+		var ind = numInputs;
+		for (var i = 0; i < res; i++) {
+			addOutput(820, ((550 / (res + 1)) * (i + 1)), header[ind++]);
+		}
+		
+		//truthTable.resetTruthTable(numInputs, res, header);
+		numOutputs = res;
+		
+		return outputs;
 	}
 }

@@ -1,4 +1,4 @@
-function Setup(container, figureNo) {
+function Setup(container, figureNo, draggable, displayMode) {
 	
 	var ratio = 1;
 	var initHeight;
@@ -7,6 +7,8 @@ function Setup(container, figureNo) {
 	var initScale = 1;
 	var maxWidth;
 	var initOffset;
+	var ratio;
+	var ratioOverride = false;
 	
 	this.setStageDimensions = setStageDimensions;
 	this.getGScale = getGScale;
@@ -19,46 +21,88 @@ function Setup(container, figureNo) {
 	this.setInitWidth = setInitWidth;
 	this.setMaxWidth = setMaxWidth;
 	this.setInitScale = setInitScale;
+	this.retrieveUpdates = retrieveUpdates;
+	this.getBG = getBG;
+	this.solve = solve;
 	
+	var stage;
+	var mainLayer;
 	var timeout = false;
+	var gScale = 1;
+	var truthTable;
+	var controller;
+	var serializer;
+	var figure;
+	var thisObj = this;
+	var bg;
 	
-	//var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-	//var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-
 	var width = 880;
 	var height = 800;
 	
-	var stage = new Kinetic.Stage({
+	
+		retrieveUpdates();
+		
+	function retrieveUpdates() {
+		stage = new Kinetic.Stage({
 			container : container,
 			width : width,
 			height : height
 		});
 		
-	var mainLayer = new Kinetic.Layer();
+		mainLayer = new Kinetic.Layer();
 
-	var bg = new Kinetic.Rect({
-			x : 0,
-			y : 0,
-			width : stage.getWidth(),
-			height : stage.getHeight()
+		bg = new Kinetic.Rect({
+				x : 0,
+				y : 0,
+				width : stage.getWidth(),
+				height : stage.getHeight()
 		});
+		
+		stage.add(mainLayer);
+		mainLayer.add(bg);
+	
+		truthTable = new TruthTable(container, figureNo);
+		controller = new Controller(thisObj, truthTable, draggable, displayMode);
+		serializer = new Serializer();
+		if(typeof(Storage) !== "undefined")
+		{
+			//var str = localStorage.getItem("DL_SB_" + curExercise);
+			//var str = localStorage.getItem("DL_SB_" + figureNo);
+			
+			if (displayMode == true) {
+				var dataStore = new DataStore();
+				var str = dataStore.loadExerciseData("circuits", figureNo);
+				
+				if (str) {
+					serializer.deserialize(controller, str);
+					//controller.evaluateCircuit();
+				}
+				else {
+					//document.getElementById(container).innerHTML = "";
+				}
+				
+				initWidth = 850;
+				initHeight = 600;
+				ratioOverride = true;
+				ratio = 0.75;
+				initScale = 0.75;
+			}
+			else {
+				figure = new Figures(thisObj, controller, truthTable);
+				figure.setFigure(thisObj, controller, figureNo, width, height, null);
+			}
+		}
+		else
+		{
+			console.log("Web storage not supported.");
+			// no web storage support
+		}
+		
+		setStageDimensions(initWidth, initHeight);
+		resizeTop();
+	}
 
-	var thisObj = this;
-	
-	stage.add(mainLayer);
-	mainLayer.add(bg);
-	
-	var gScale = 1;
-	console.log("FigureNo is " + figureNo);
-	var truthTable = new TruthTable(container, figureNo);
-	var controller = new Controller(this, truthTable);
-
-	var figure = new Figures(this, controller, truthTable);
-	figure.setFigure(this, controller, figureNo, width, height, null);
-	
-	setStageDimensions(initWidth, initHeight);
-	
-	console.log(width + ", " + height);
+	//console.log(width + ", " + height);
 	
 	$(window).resize( function() {
 		if (timeout == false) {
@@ -85,16 +129,15 @@ function Setup(container, figureNo) {
 	
 	function getStage() { return stage; }
 	
-	resizeTop();
-	
 	function resizeTop() {
 		width = document.getElementById(container).offsetWidth;
 		//width = window.innerWidth;
 		height = window.innerHeight;
-		console.log("w: "+ width);
-		console.log("iw: " + initWidth);
-		var ratio = width / initWidth;
-		console.log("Ratio: " + ratio);
+		
+		if (!ratioOverride) ratio = width / initWidth;
+		else ratioOverride = false;
+		
+		//console.log("Ratio: " + ratio);
 		if (ratio <= initScale) {
 			stage.setScale(ratio);
 			stage.setSize(initWidth * ratio, initHeight * ratio);
@@ -106,7 +149,6 @@ function Setup(container, figureNo) {
 			stage.setSize(initWidth * initScale, initHeight * initScale);
 			if (ratio * (1.5) >= 1) truthTable.setTruthTableScale(100, 6, 0);
 			else truthTable.setTruthTableScale((initScale * 1.5) * 100, 6, 0);
-			console.log("calc: " + ((width / 2) - (truthTable.getTableWidth() / 2)));
 			truthTable.setTableOffset((width / 2) - (truthTable.getTableWidth() / 2));
 		}
 		
@@ -162,6 +204,10 @@ function Setup(container, figureNo) {
 	function setInitScale(scale) { initScale = scale; }
 	
 	function setMaxWidth(width) { maxWidth = width; }
+	
+	function getBG() { return bg; }
+	
+	function solve() { solveButton(figureNo); }
 }
 
 //stage = new Kinetic.Stage({container: container, width: width, height: height });

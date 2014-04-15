@@ -71,10 +71,13 @@ function NorGate(initX, initY, setName, id, setup) {
 			drawFunc : function (context) {
 				// begin custom shape
 				context.beginPath();
-				context.moveTo(gScale * 50, gScale * 0);
-				context.quadraticCurveTo(gScale * 75, gScale * 0, gScale * 100, gScale * 25);
-				context.quadraticCurveTo(gScale * 75, gScale * 50, gScale * 50, gScale * 50);
-				context.quadraticCurveTo(gScale * 75, gScale * 25, gScale * 50, gScale * 0);
+				context.moveTo(50, 0);
+				context.lineTo(70, 0);
+				context.quadraticCurveTo(95, 0, 110, 25);
+				context.quadraticCurveTo(95, 50, 70, 50);
+				context.lineTo(50, 50);
+				context.quadraticCurveTo(75, 25, 50, 0);
+				
 				// complete custom shape
 				context.closePath();
 				// KineticJS specific context method
@@ -86,9 +89,9 @@ function NorGate(initX, initY, setName, id, setup) {
 		
 	// create the circle
 	 gateShapeCircle = new Kinetic.Circle({
-		x: gScale * 103,
+		x: gScale * 117,
 		y: gScale * 25,
-		radius: gScale * 5,
+		radius: gScale * 7,
 		stroke: 'black',
 		strokeWidth: 1
 	  });
@@ -113,7 +116,7 @@ function NorGate(initX, initY, setName, id, setup) {
 
 	// the line for the plugout
 	plugout = new Kinetic.Line({
-			points : [gScale * 108, gScale * 25, gScale * 140, gScale * 25],
+			points : [gScale * 124, gScale * 25, gScale * 160, gScale * 25],
 			stroke : 'black',
 			strokeWidth : 1,
 			lineCap : 'round',

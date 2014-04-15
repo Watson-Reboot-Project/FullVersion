@@ -45,7 +45,7 @@
 			<!-- Main content -->
 			
 			<p class="Section">
-				<span class="contentNum assemblyIntro"></span>
+				<span class="contentNum assemblyintro"></span>
 			</p>
 			
 			<p>
@@ -89,13 +89,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "assembly";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
-					pageObj = getArrowPathsByPage("assemblyIntro");		// get arrow paths
+					pageObj = getArrowPathsByPage("assemblyintro");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 
 				});	

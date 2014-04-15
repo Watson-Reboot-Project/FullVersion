@@ -24,9 +24,6 @@
 		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -155,7 +152,8 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-
+				var chapID = "science";
+				
 				$(document).ready(function() {
 				populateNav();										// populate nav content
 				populateSpans();									// populate figure/content spans

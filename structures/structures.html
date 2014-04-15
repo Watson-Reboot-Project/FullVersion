@@ -25,12 +25,6 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<style type="text/css">
-			div.floating-previous { position:fixed; z-index:200; left:1px; right: auto; width:20px; top:45%; }
-			div.floating-previous a, div.floating-menu h3 { display:block; margin:0 0.5em; }
-			div.floating-next { position:fixed; z-index:200; left: auto; right:1px; top:45%; }
-			div.floating-next a, div.floating-menu h3 { display:block; margin:0 0.5em; }
-		</style>
 	</head>
 
 	<body>
@@ -57,31 +51,16 @@
 			<!-- Main content -->
 			<!-- Ch.7 Data Structures -->
 			
-			<!--
-			<ul>
-				<a href="ch07s1.html"><li>7.1 Introduction</li></a>
-				<a href="ch07s2.html"><li>7.2 Higher-level data structures</li></a>
-				<ul>
-					<a href="ch07s2p1.html"><li>7.2.1 Stacks</li></a>
-					<a href="ch07s2p2.html"><li>7.2.2 Queues</li></a>
-				</ul>
-			</ul>
-			-->
-			
 			<!-- Previous and Next Chapter buttons -->
 			<br>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 col-sm-6 col-xs-12">	
-						<a href="#" onclick="prevArrowPage(chapObj)">
-							<button class="btn btn-sm btn-blue" type="button"><i class="fa fa-step-backward"></i> Previous Chapter</button>
-						</a>
-					</div>
-					<div class="col-md-5 col-sm-6 col-xs-12 pull-right">
-						<a href="#" onclick="nextArrowPage(chapObj)">	
-							<button class="btn btn-sm btn-blue" type="button">Next Chapter <i class="fa fa-step-forward"></i></button>
-						</a>	
-					</div>					
+					<!--Floating chapter nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->
 				</div> 
 			</div>
 
@@ -92,6 +71,7 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("structures");
 					populateNav();
+					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("structures");
 					chapObj = getArrowPathsByChapter("structures");

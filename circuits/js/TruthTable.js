@@ -85,8 +85,6 @@ function TruthTable(container, figureNum) {
 		tbl.appendChild(tbdy);
 		
 		
-		console.log("Suffix: " + figureNum);
-		console.log("topDiv-" + figureNum);
 		//body.appendChild(tbl);
 		document.getElementById("topDiv-" + figureNum).appendChild(tbl);
 		

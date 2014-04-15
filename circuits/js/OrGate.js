@@ -11,7 +11,7 @@
 *				the components the OR gate outputs to.
 ***************************************************************************************/
 
-function OrGate(initX, initY, setName, id, setup) {
+function OrGate(initX, initY, setName, id, setup, displayMode) {
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE DECLARATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -36,7 +36,7 @@ function OrGate(initX, initY, setName, id, setup) {
 	var gateShape;					// the custom shape for the OR gate
 	var transFg;					// a transparent foreground for the OR gate
 	
-	var gScale = setup.getGScale();
+	var scale;
 	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
 	var thisObj = this;
@@ -66,24 +66,21 @@ function OrGate(initX, initY, setName, id, setup) {
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
+	if (displayMode == true) scale = 0.75;
+	else scale = 1;
+	
 	// a custom shape to draw the or gate; composed of three quadratic curves
 	gateShape = new Kinetic.Shape({
 			drawFunc : function (context) {
 				// begin custom shape
-				/*
+				
 				context.beginPath();
-				context.moveTo(gScale * 50, gScale * 0);
-				context.quadraticCurveTo(gScale * 75, gScale * 0, gScale * 100, gScale * 25);
-				context.quadraticCurveTo(gScale * 75, gScale * 50, gScale * 50, gScale * 50);
-				context.quadraticCurveTo(gScale * 75, gScale * 25, gScale * 50, gScale * 0);
-				*/
-				context.beginPath();
-				context.moveTo(50, 0);
-				context.lineTo(70, 0);
-				context.quadraticCurveTo(95, 0, 110, 25);
-				context.quadraticCurveTo(95, 50, 70, 50);
-				context.lineTo(50, 50);
-				context.quadraticCurveTo(75, 25, 50, 0);
+				context.moveTo(scale * 50, 0);
+				context.lineTo(scale * 70, 0);
+				context.quadraticCurveTo(scale * 95, 0, scale * 110, scale * 25);
+				context.quadraticCurveTo(scale * 95, scale * 50, scale * 70, scale * 50);
+				context.lineTo(scale * 50, scale * 50);
+				context.quadraticCurveTo(scale * 75, scale * 25, scale * 50, 0);
 				
 				// complete custom shape
 				context.closePath();
@@ -96,7 +93,7 @@ function OrGate(initX, initY, setName, id, setup) {
 
 	// the line for the first plugin
 	plugin1 = new Kinetic.Line({
-			points : [gScale * 28, gScale * 12, gScale * 60, gScale * 12],
+			points : [scale * 28, scale * 12, scale * 60, scale * 12],
 			stroke : 'black',
 			strokeWidth : 1,
 			lineCap : 'round',
@@ -105,7 +102,7 @@ function OrGate(initX, initY, setName, id, setup) {
 
 	// the line for the second plugin
 	plugin2 = new Kinetic.Line({
-			points : [gScale * 28, gScale * 38, gScale * 60, gScale * 38],
+			points : [scale * 28, scale * 38, scale * 60, scale * 38],
 			stroke : 'black',
 			strokeWidth : 1,
 			lineCap : 'round',
@@ -114,7 +111,7 @@ function OrGate(initX, initY, setName, id, setup) {
 
 	// the line for the plugout
 	plugout = new Kinetic.Line({
-			points : [gScale * 100, gScale * 25, gScale * 132, gScale * 25],
+			points : [scale * 110, scale * 25, scale * 132, scale * 25],
 			stroke : 'black',
 			strokeWidth : 1,
 			lineCap : 'round',
@@ -123,8 +120,8 @@ function OrGate(initX, initY, setName, id, setup) {
 	
 	// create the transparent rectangle that makes it easy to click the OR gate
 	transFg = new Kinetic.Rect({
-		x: gScale * 28,
-		y: gScale * 0,
+		x: scale * 28,
+		y: scale * 0,
 		width: plugout.getPoints()[1].x - plugin1.getPoints()[0].x,
 		height: (plugin2.getPoints()[0].y + 10)
 	});
@@ -288,7 +285,9 @@ function OrGate(initX, initY, setName, id, setup) {
 			var res = 0;
 			if (plugin1Val == 1 || plugin2Val == 1) {
 				res = 1;
+				gateShape.setFill("red");
 			}
+			else gateShape.setFill("blue");
 			
 			if (plugoutComp !== null) {
 				plugoutComp.setPluginVal(thisObj, res);

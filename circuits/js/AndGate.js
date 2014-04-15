@@ -12,7 +12,7 @@
 *				class is very similar (the only major difference is the evaluate function).
 ***************************************************************************************/
 
-function AndGate(initX, initY, setName, id, setup) {
+function AndGate(initX, initY, setName, id, setup, displayMode) {
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE DECLARATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -37,7 +37,7 @@ function AndGate(initX, initY, setName, id, setup) {
 	var gateShape;					// the custom shape for the AND gate
 	var transFg;					// a transparent foreground for the AND gate
 	
-	var scale = setup.getGScale();
+	var scale;
 	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
 	var thisObj = this;
@@ -66,22 +66,22 @@ function AndGate(initX, initY, setName, id, setup) {
 	this.probe = probe;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	
+			
+	if (displayMode == true) scale = 0.75;
+	else scale = 1;
+				
 	// a custom shape to draw the AND gate; composed of one quadratic curve and a line
 	gateShape = new Kinetic.Shape({
 			drawFunc : function (context) {
 				// begin custom shape
-				/*
+				
 				context.beginPath();
 				context.moveTo(scale * 50, 0);
-				context.quadraticCurveTo(scale * 125, scale * 25, scale * 50, scale * 50);
-				*/
-				context.beginPath();
-				context.moveTo(50, 0);
-				context.lineTo(70, 0);
-				context.quadraticCurveTo(95, 0, 100, 25);
-				context.quadraticCurveTo(95, 50, 70, 50);
-				context.lineTo(50, 50);
+				context.lineTo(scale * 70, 0);
+				context.quadraticCurveTo(scale * 95, 0, scale * 100, scale * 25);
+				context.quadraticCurveTo(scale * 95, scale * 50, scale * 70, scale * 50);
+				context.lineTo(scale * 50, scale * 50);
+				
 				// complete custom shape
 				context.closePath();
 				// KineticJS specific context method
@@ -111,7 +111,7 @@ function AndGate(initX, initY, setName, id, setup) {
 
 	// the line for the plugout
 	plugout = new Kinetic.Line({
-			points : [scale * 87, scale * 25, scale * 123, scale * 25],
+			points : [scale * 100, scale * 25, scale * 123, scale * 25],
 			stroke : 'black',
 			strokeWidth : 1,
 			lineCap : 'round',
@@ -281,7 +281,11 @@ function AndGate(initX, initY, setName, id, setup) {
 	function evaluate() {
 		if (plugin1Val != -1 && plugin2Val != -1) {
 			var res = 0;
-			if (plugin1Val == 1 && plugin2Val == 1) res = 1;
+			if (plugin1Val == 1 && plugin2Val == 1) {
+				res = 1;
+				gateShape.setFill("red");
+			}
+			else gateShape.setFill("blue");
 			
 			if (plugoutComp !== null) {
 				plugoutComp.setPluginVal(thisObj, res);

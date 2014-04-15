@@ -26,12 +26,6 @@
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		
-		<style type="text/css">
-			div.floating-previous { position:fixed; z-index:200; left:1px; right: auto; width:20px; top:45%; }
-			div.floating-previous a, div.floating-menu h3 { display:block; margin:0 0.5em; }
-			div.floating-next { position:fixed; z-index:200; left: auto; right:1px; top:45%; }
-			div.floating-next a, div.floating-menu h3 { display:block; margin:0 0.5em; }
-		</style>
 	</head>
 
 	<body>
@@ -55,40 +49,16 @@
 			
 			<!-- Main content -->
 			
-			<!--
-			<a href="ch08.html"><p class="Section">Chapter 8: Javascript Programming</p></a>
-			<ul>
-				<a href="ch08s1.html"><li>8.1 Introduction</li></a>
-				<a href="ch08s2.html"><li>8.2 Overview of Watson Javascript</li></a>
-				<a href="ch08s3.html"><li>8.3 Data Types, Constants, Variables</li></a>
-				<a href="ch08s4.html"><li>8.4 Input and Output Statements</li></a> 
-				<a href="ch08s5.html"><li>8.5 Expressions and Assignment</li></a>
-				<a href="ch08s6.html"><li>8.6 The Three Primary Control Constructs</li></a>
-					<ul>
-						<a href="ch08s6p1.html"><li>8.6.1 Sequence</li></a>
-						<a href="ch08s6p2.html"><li>8.6.2 Selection</li></a>
-						<a href="ch08s6p3.html"><li>8.6.3 Repetition</li></a>
-					</ul>
-				<a href="ch08s7.html"><li>8.7 Functions</li></a>
-				<a href="ch08s8.html"><li>8.8 Recursion</li></a>	
-				<a href="ch08s9.html"><li>8.9 Arrays and High-level Data Structures</li></a>					
-			</ul>
-			-->
-			
 			<!-- Previous and Next Chapter buttons -->
 			<br>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 col-sm-6 col-xs-12">	
-						<a href="#" onclick="prevArrowPage(chapObj)">
-							<button class="btn btn-sm btn-blue" type="button"><i class="fa fa-step-backward"></i> Previous Chapter</button>
-						</a>
-					</div>
-					<div class="col-md-5 col-sm-6 col-xs-12 pull-right">
-						<a href="#" onclick="nextArrowPage(chapObj)">	
-							<button class="btn btn-sm btn-blue" type="button">Next Chapter <i class="fa fa-step-forward"></i></button>
-						</a>	
-					</div>					
+					<!--Floating chapter nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->
 				</div> 
 			</div>
 			
@@ -116,6 +86,7 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("javascript");
 					populateNav();
+					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("javascript");
 					chapObj = getArrowPathsByChapter("javascript");

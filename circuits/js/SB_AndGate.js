@@ -88,6 +88,9 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 	this.setDeleteIcon = setDeleteIcon;
 	this.loopCheckForward = loopCheckForward;
 	this.loopCheckBackward = loopCheckBackward;
+	this.getSerialStringDeclaration = getSerialStringDeclaration;
+	this.getSerialStringConnections = getSerialStringConnections;
+	this.getPluginNumber = getPluginNumber;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -161,7 +164,7 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 		if (mouseOver !== "crosshair") document.body.style.cursor = 'default';
 	});
 	
-	setDeleteIcon("empty.bmp");
+	setDeleteIcon("images/empty.bmp");
 	
 	iconLayer.on('mouseover', function() { document.body.style.cursor = 'pointer'; });
 	iconLayer.on('mouseout', function() { document.body.style.cursor = 'default'; });
@@ -276,8 +279,8 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 	function setMouseOver(str) { mouseOver = str; console.log("Mouse over: " + str); }
 	
 	function toggleDeleteIcon(bool) {
-		if (bool) setDeleteIcon("delete.ico");
-		else setDeleteIcon("empty.bmp");
+		if (bool) setDeleteIcon("images/delete.ico");
+		else setDeleteIcon("images/empty.bmp");
 	}
 	
 	function getInputBox(num) {
@@ -511,5 +514,34 @@ function SB_AndGate(initX, initY, setName, id, setup) {
 		
 		if (result1 || result2) return true;
 		else return false;
+	}
+	
+	function getSerialStringDeclaration() {
+		var str = "and," + group.getX() + "," + group.getY() + "," + ID;
+		return str;
+	}
+	
+	function getSerialStringConnections() {
+		if (plugoutComp !== null) {
+			var str = ID + "," + plugoutComp.getID();
+			if (plugoutComp.getType() == "and" || plugoutComp.getType() == "or") {
+				str += "," + plugoutComp.getPluginNumber(thisObj);
+			}
+			
+			return str;
+		}
+		
+		return null;
+	}
+	
+	function getPluginNumber(comp, plugoutNum) {
+		if (comp.getType() == "connector") {
+			if (connectorPlugin1 == plugoutNum) return 1;
+			else if (connectorPlugin2 = plugoutNum) return 2;
+		}
+		else {
+			if (plugin1Comp !== null && plugin1Comp == comp) return 1;
+			else if (plugin2Comp !== null &&plugin2Comp == comp) return 2;
+		}
 	}
 }

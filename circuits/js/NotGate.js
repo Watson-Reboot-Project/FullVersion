@@ -11,7 +11,7 @@
 *				the component the OR gate outputs to.
 ***************************************************************************************/
 
-function NotGate(initX, initY, setName, id, setup) {
+function NotGate(initX, initY, setName, id, setup, displayMode) {
 
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE DECLARATIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -31,7 +31,7 @@ function NotGate(initX, initY, setName, id, setup) {
 	var gateShapeCircle;			// the circle that is used to draw the NOT gate
 	var transFg;					// a transparent foreground that makes the NOT gate easier to click
 	
-	var gScale = setup.getGScale();
+	var scale;
 	var mainLayer = setup.getMainLayer();
 	var stage = setup.getStage();
 	var thisObj = this;
@@ -56,15 +56,19 @@ function NotGate(initX, initY, setName, id, setup) {
 	this.probe = probe;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	if (displayMode == true) scale = 0.75;
+	else scale = 1;
+	
 	// make a custom shape for the triangle; just three lines
 	gateShapeTriangle = new Kinetic.Shape({
 			drawFunc : function (context) {
 				// begin custom shape
 				context.beginPath();
-				context.moveTo(gScale * 50, gScale * 0);
-				context.lineTo(gScale * 50, gScale * 50);
-				context.lineTo(gScale * 100, gScale * 25);
-				context.lineTo(gScale * 50, gScale * 0);
+				context.moveTo(scale * 50, scale * 0);
+				context.lineTo(scale * 50, scale * 50);
+				context.lineTo(scale * 100, scale * 25);
+				context.lineTo(scale * 50, scale * 0);
 				// complete custom shape
 				context.closePath();
 				// KineticJS specific context method
@@ -76,16 +80,16 @@ function NotGate(initX, initY, setName, id, setup) {
 		
 	 // create the circle
 	 gateShapeCircle = new Kinetic.Circle({
-        x: gScale * 107,
-        y: gScale * 25,
-        radius: gScale * 7,
+        x: scale * 107,
+        y: scale * 25,
+        radius: scale * 7,
         stroke: 'black',
         strokeWidth: 1
       });
 
 	// the line associated with the NOT gate's input
 	plugin = new Kinetic.Line({
-			points : [gScale * 12, gScale * 25, gScale * 50, gScale * 25],
+			points : [scale * 12, scale * 25, scale * 50, scale * 25],
 			stroke : 'black',
 			strokeWidth : 1,
 			lineCap : 'round',
@@ -94,7 +98,7 @@ function NotGate(initX, initY, setName, id, setup) {
 
 	// the line associated with the NOT gate's output
 	plugout = new Kinetic.Line({
-			points : [gScale * 114, gScale * 25, gScale * 146, gScale * 25],
+			points : [scale * 114, scale * 25, scale * 146, scale * 25],
 			stroke : 'black',
 			strokeWidth : 1,
 			lineCap : 'round',
@@ -103,10 +107,10 @@ function NotGate(initX, initY, setName, id, setup) {
 
 	// the transparent rectangle
 	transFg = new Kinetic.Rect({
-		x: gScale * 12,
-		y: gScale * 0,
+		x: scale * 12,
+		y: scale * 0,
 		width: plugout.getPoints()[1].x - plugin.getPoints()[0].x,
-		height: gScale * 50
+		height: scale * 50
 	});
 
 	// create the group at the x,y coords passed to this object
@@ -197,8 +201,14 @@ function NotGate(initX, initY, setName, id, setup) {
 	// add a value to this AND gate's input values (used in computing the output of the circuit); these two values will be OR'ed together
 	function setPluginVal(comp, val) {
 		pluginVal = val;
-		if (pluginVal == 1) plugin.setStroke("red");
-		else plugin.setStroke("blue");
+		if (pluginVal == 1) {
+			plugin.setStroke("red");
+			gateShapeTriangle.setFill("blue"); gateShapeCircle.setFill("blue");
+		}
+		else {
+			plugin.setStroke("blue");
+			gateShapeTriangle.setFill("red"); gateShapeCircle.setFill("red");
+		}
 		evaluate();
 	}
 	
