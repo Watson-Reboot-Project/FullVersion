@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
 	<body>
@@ -50,7 +50,7 @@
 			</p>
 
 			<p>
-				Section 14.2 provides an overview of artificial intelligence including the goals of the field, its underlying assumptions, a brief history of the field, and a summary of progress to date in a number of areas. Section 14.3 describes a variety of topics that have been studied in the effort to achieve intelligent behavior in machines, including: game playing and search, automated reasoning, and neural networks and machine learning. The presentation of these topics is independent from one another, so the instructor and/or student can pick and choose which areas are of interest.
+				<span class="contentNum intelligenceOverview"></span> provides an overview of artificial intelligence including the goals of the field, its underlying assumptions, a brief history of the field, and a summary of progress to date in a number of areas. <span class="contentNum intelligenceApproaches"></span> describes a variety of topics that have been studied in the effort to achieve intelligent behavior in machines, including: game playing and search, automated reasoning, and neural networks and machine learning. The presentation of these topics is independent from one another, so the instructor and/or student can pick and choose which areas are of interest.
 			</p>
   
 			<!-- End main content -->
@@ -78,14 +78,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "intelligence";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceIntro");		// get arrow paths
-					chapObj = getCurrChapter("intelligence");
 
 				});	
 				

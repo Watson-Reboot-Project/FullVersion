@@ -700,7 +700,7 @@
 			</section>
 			<section><!--Chapter Six Section Two-->
 				<id>graphicsWhat</id>
-				<name>What is Computer ../graphics/Graphics?</name>
+				<name>What is Computer Graphics?</name>
 				<path>../graphics/graphicsWhat.html</path>
 			</section>
 			<section><!--Chapter Six Section Three-->
@@ -1172,7 +1172,7 @@
 	<!--**** CHAPTER TEN: ENGINEERING. DOES NOT EXIST ****-->
 	<chapter>
 		<id>engineering</id>
-		<name> Theoretical and Practical Limits of Computing </name>
+		<name> Building Large Software Systems </name>
 		<path> ../engineering/engineering.html </path>
 		<figures> <figure> </figure></figures>
 	</chapter><!--End of Chapter Ten -->
@@ -1185,9 +1185,9 @@
 		<sections>
 			<!--Start of Sub-sections-->
 			<section>
-				<id>assemblyIntro</id>
+				<id>assemblyintro</id>
 				<name>Introduction</name>
-				<path>../assembly/assemblyIntro.html</path>
+				<path>../assembly/assemblyintro.html</path>
 			</section>
 			<section>
 				<id>assemblyRegisters</id>
@@ -1981,19 +1981,19 @@
 							<path>../future/futureImproving2.html</path>
 						</section>
 						<section><!--Chapter Fifteen Section Four Sub-section Three-->
-							<id>futureImproving2</id>
+							<id>futureImproving3</id>
 							<name>Bio-computing</name>
-							<path>../future/futureImproving2.html</path>
+							<path>../future/futureImproving3.html</path>
 						</section>
 						<section><!--Chapter Fifteen Section Four Sub-section Four-->
-							<id>futureImproving2</id>
+							<id>futureImproving4</id>
 							<name>Molecular-level computing</name>
-							<path>../future/futureImproving2.html</path>
+							<path>../future/futureImproving4.html</path>
 						</section>
 						<section><!--Chapter Fifteen Section Four Sub-section Five-->
-							<id>futureImproving2</id>
+							<id>futureImproving5</id>
 							<name>Quantum computing</name>
-							<path>../future/futureImproving2.html</path>
+							<path>../future/futureImproving5.html</path>
 						</section>
 					</sections>
 			</section>
@@ -2016,7 +2016,7 @@
 									<section><!--Chapter Fifteen Section Five Sub-sub-section Two Part One-->
 										<id>futurePredictions2b1</id>
 										<name>Exponential doubling of computing speed will continue through 2030</name>
-										<path>../future/futurePredictions2b.html</path>
+										<path>../future/futurePredictions2b1.html</path>
 									</section>
 									<section><!--Chapter Fifteen Section Five Sub-sub-section Two Part Two-->
 										<id>futurePredictions2b2</id>

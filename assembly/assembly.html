@@ -10,23 +10,21 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
-			
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
 	</head>
 
 	<body>
@@ -35,53 +33,85 @@
 			<!-- Header division -->
 
 			<div id="includedContentChapterTOC"></div>
-              
+
 			<!-- End navbar -->
 
 			<!-- Chapter Index listing -->
    			<div id="ContentAreaSections" class="well bold-me"></div>
    			<!-- End Chapter Index listing -->
 
+			
 			<!--Floating nav -->
-		    <!-- Previous -->
+			<!-- Previous -->
 			<div class="floating-previous"></div>
+			<!-- Next -->
 			<div class="floating-next"></div>
-		    
+			<!-- End floating nav -->
+
+			<!-- Previous and Next Chapter buttons -->
+			<br>
+			<div class="container">
+				<div class="row">
+					<!--Floating chapter nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->
+				</div> 
+			</div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
-
-			<br>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5 col-sm-6 col-xs-12">	
-						<a href="#" onclick="prevArrowPage(chapObj)">
-							<button class="btn btn-sm btn-blue" type="button"><i class="fa fa-step-backward"></i> Previous Chapter</button>
-						</a>
-					</div>
-					<div class="col-md-5 col-sm-6 col-xs-12 pull-right">
-						<a href="#" onclick="nextArrowPage(chapObj)">	
-							<button class="btn btn-sm btn-blue" type="button">Next Chapter <i class="fa fa-step-forward"></i></button>
-						</a>	
-					</div>					
-				</div> 
-			</div>
-
-			<script>
+			
+			
+		<script>
 				var pageObj;
 				var chapObj;
 				
 				$(document).ready(function() {
 					loadLocalTableOfContents("assembly");
 					populateNav();
+					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("assembly");
 					chapObj = getArrowPathsByChapter("assembly");
 				});	
 			</script>
-			
-			<!-- End main content -->	
+
+
+			<!-- <a href="ch12.html"><p class="Section">Chapter 12: Digital Circuit Design</p></a>
+			<ul>
+				<a href="ch12s1.html"><li>12.1 Introduction</li></a>
+				<a href="ch12s2.html"><li>12.2 Fundamentals of Digital Logic</li></a>
+					<ul>
+						<a href="ch12s2p1.html"><li>12.2.1 Switches</li></a>
+						<a href="ch12s2p2.html"><li>12.2.2 Gates</li></a>
+						<a href="ch12s2p3.html"><li>12.2.3 Boolean Algebra</li></a>
+						<a href="ch12s2p4.html"><li>12.2.4 Other Gates</li></a>
+					</ul>
+				<a href="ch12s3.html"><li>12.3 Combinatorial Circuits</li></a>
+					<ul>
+						<a href="ch12s3p1.html"><li>12.3.1 The "Exclusive Or" Circuit</li></a>
+						<a href="ch12s3p2.html"><li>12.3.2 Comparators</li></a>
+						<a href="ch12s3p3.html"><li>12.3.3 Adders</li></a>
+						<a href="ch12s3p4.html"><li>12.3.4 Decoders and Encoders</li></a>
+						<a href="ch12s3p5.html"><li>12.3.5 Multiplexers and Demultiplexers</li></a>
+					</ul>
+				<a href="ch12s4.html"><li>12.4 Sequential Circuits</li></a> 
+					<ul>
+						<a href="ch12s4p1.html"><li>12.4.1 The R-S Flip-flop</li></a>
+						<a href="ch12s4p2.html"><li>12.4.2 The Clocked R-S Flip-flop</li></a>
+					</ul>
+				<a href="ch12s5.html"><li>12.5 Design of a Simple Microcomputer</li></a>
+					<ul>
+						<a href="ch12s5p1.html"><li>12.5.1 The Watson Virtual Machine Revisited</li></a>
+						<a href="ch12s5p2.html"><li>12.5.2 The Arithmetic/Logic Unit</li></a>
+						<a href="ch12s5p3.html"><li>12.5.3 Random Access Memory (RAM)</li></a>
+					</ul>				
+			</ul>-->
+			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -101,6 +131,7 @@
 			<div>
 
 			</div>
+
 		</div>
 	</body>
 </html>

@@ -17,7 +17,7 @@
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 			
-	     <!-- Java Script files -->
+	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 			<script type="text/javascript" src="../lib/js/nav.js"></script>
@@ -132,7 +132,7 @@
 			</ul>
 
 			<p>
-				Figure 5.7 illustrates two examples of binary search on a seven item list – one successful, the other unsuccessful.  Note that in either case, only three comparisons were required to determine whether the target item was in the original seven item list.  In fact, no more than three comparisons will ever be needed in a binary search of a seven item list.  A sequential search of a seven item list requires 3.5 comparisons, on average, for successful searches and 7 comparisons for unsuccessful searches.<span class="Footnote" title="Footnote: It is, of course, impossible to perform 3.5 comparison operations, or any other non whole number of comparisons. However, when computing an average, fractions are often produced."><a href="#ftn3" id="body_ftn3">[3]</a></span>
+				<span class="figNum binaryten"></span> illustrates two examples of binary search on a seven item list – one successful, the other unsuccessful.  Note that in either case, only three comparisons were required to determine whether the target item was in the original seven item list.  In fact, no more than three comparisons will ever be needed in a binary search of a seven item list.  A sequential search of a seven item list requires 3.5 comparisons, on average, for successful searches and 7 comparisons for unsuccessful searches.<span class="Footnote" title="Footnote: It is, of course, impossible to perform 3.5 comparison operations, or any other non whole number of comparisons. However, when computing an average, fractions are often produced."><a href="#ftn3" id="body_ftn3">[3]</a></span>
 			</p>
 
 			<p>
@@ -152,11 +152,11 @@
 			</p>
 
 			<p class="Figure">
-				Figure 5.7:  Two examples of binary search
+				<span class="figNum binaryten"></span> Two examples of binary search
 			</p>
 			
 			<p>
-				The true advantage of binary search over sequential search can really only be seen on large problem sizes.  Figure 5.8 shows that at most only 14 comparisons would be necessary to perform a binary search of a 10,000 item list.  This is a worst case result – at every point the target item is assumed not to match the current “middle” item.  Also, whenever the two “halves” of the list were not exactly the same size (remember, they can differ by one item), the larger portion was selected.  
+				The true advantage of binary search over sequential search can really only be seen on large problem sizes.  <span class="figNum binarycount"></span> shows that at most only 14 comparisons would be necessary to perform a binary search of a 10,000 item list.  This is a worst case result – at every point the target item is assumed not to match the current “middle” item.  Also, whenever the two “halves” of the list were not exactly the same size (remember, they can differ by one item), the larger portion was selected.  
 			</p>
 
 			<p>
@@ -170,7 +170,7 @@
 			<img src="Images/AlgorithmsIMGS/fig5-8.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 5.8:  Number of comparisons in a binary search of a 10,000 item list (worst case)
+				<span class="figNum binarycount"></span>  Number of comparisons in a binary search of a 10,000 item list (worst case)
 			</p>
 
 			<p>
@@ -188,7 +188,7 @@
 			<img src="Images/AlgorithmsIMGS/fig5-9.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.9:  A comparison of the predicted runtimes of sequential and binary search
+				<span class="figNum seqvbinary"></span>  A comparison of the predicted runtimes of sequential and binary search
 			</p>
 
 			<p>
@@ -208,7 +208,7 @@
 			</p>
 
 			<p>
-				Figure 5.9 contains a graphical comparison of the runtimes of sequential search and binary search, given the assumptions concerning comparison times discussed above.  The runtime of sequential search appears as a straight line with a constant slope.  For this reason, sequential search is known as a linear algorithm.  Binary search appears as a curve with a slope that grows ever more shallow with increasing problem size, and is known as a logarithmic algorithm.  In general, logarithmic algorithms are preferred over linear algorithms, since they tend to run faster on large problems.
+				<span class="figNum seqvbinary"></span> contains a graphical comparison of the runtimes of sequential search and binary search, given the assumptions concerning comparison times discussed above.  The runtime of sequential search appears as a straight line with a constant slope.  For this reason, sequential search is known as a linear algorithm.  Binary search appears as a curve with a slope that grows ever more shallow with increasing problem size, and is known as a logarithmic algorithm.  In general, logarithmic algorithms are preferred over linear algorithms, since they tend to run faster on large problems.
 			</p>
 
 			<p>
@@ -216,7 +216,7 @@
 			</p>
 
 			<p>
-				Under the assumptions of Figure 5.9, binary search becomes faster than sequential search on lists that contain about 2,500 or more items.  Under different assumptions, the point at which binary search becomes faster than sequential search would shift.  For example, if we assumed that binary search comparisons were ten times slower than sequential search comparisons, binary search would become faster than sequential search on lists that contained more than 160 items.<span class="Footnote" title="Footnote: Assuming binary search comparisons are ten times slower than sequential search comparisons, while much more realistic than assuming they are 100 times slower, is still quite generous."><a href="#ftn4" id="body_ftn4">[4]</a></span>
+				Under the assumptions of <span class="figNum seqvbinary"></span>, binary search becomes faster than sequential search on lists that contain about 2,500 or more items.  Under different assumptions, the point at which binary search becomes faster than sequential search would shift.  For example, if we assumed that binary search comparisons were ten times slower than sequential search comparisons, binary search would become faster than sequential search on lists that contained more than 160 items.<span class="Footnote" title="Footnote: Assuming binary search comparisons are ten times slower than sequential search comparisons, while much more realistic than assuming they are 100 times slower, is still quite generous."><a href="#ftn4" id="body_ftn4">[4]</a></span>
 			</p>
 
 			<p>
@@ -229,7 +229,7 @@
 
 			<ol>
 				<li>
-					In a manner similar to Figure 5.7, illustrate the behavior of a binary search for the value 75 in the list:  25   30   35   40   45   50   55   60   65   70   75   80   85   90   95
+					In a manner similar to <span class="figNum binaryten"></span>, illustrate the behavior of a binary search for the value 75 in the list:  25   30   35   40   45   50   55   60   65   70   75   80   85   90   95
 				</li>
 				<br/>
 				<li>
@@ -283,7 +283,8 @@
 
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;											// do NOT change name of variable
+				var pageObj;
+				var chapID="algorithms";											// do NOT change name of variable
 
 				$(document).ready(function() {
 				populateNav();										// populate nav content

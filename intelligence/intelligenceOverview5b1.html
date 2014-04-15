@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
 	<body>
@@ -53,7 +53,7 @@
 			</p>
 
 			<p>
-				Note that while statistical machine learning techniques differ from the neural networks mentioned in Section 14.2.4 above, they are both sub-disciplines of machine learning – they are both trained on large data sets and learn to recognize patterns present in the data. The major difference between the two is that neural networks are inspired by biological neural systems and the feedback cycles that appear to be inherent to those systems, while statistical machine learning techniques have grown out of mathematics and statistics rather than biology. Neural networks were once the most popular machine learning model but since the turn of the century statistical methods have become dominant.
+				Note that while statistical machine learning techniques differ from the neural networks mentioned in <span class="contentNum intelligenceOverview4"></span> above, they are both sub-disciplines of machine learning – they are both trained on large data sets and learn to recognize patterns present in the data. The major difference between the two is that neural networks are inspired by biological neural systems and the feedback cycles that appear to be inherent to those systems, while statistical machine learning techniques have grown out of mathematics and statistics rather than biology. Neural networks were once the most popular machine learning model but since the turn of the century statistical methods have become dominant.
 			</p>
 
 			<p>
@@ -73,7 +73,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.9: An early attempt at machine translation. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum machinetrans"></span> An early attempt at machine translation. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 
 			<p>
@@ -93,7 +93,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.10: A Google video that provides a brief overview of the technology underlying Google Translate.
+				<span class="figNum googletranslate"></span> A Google video that provides a brief overview of the technology underlying Google Translate.
 			</p>
 
 			<p>
@@ -121,7 +121,7 @@
 			</div>
 	
 			<p class="Figure">
-				Figure 14.11: A Google video demonstrating how Google Translate with Conversation Mode works.
+				<span class="figNum googleconverse"></span> A Google video demonstrating how Google Translate with Conversation Mode works.
 			</p>
 			<!-- End main content -->
 			<hr />
@@ -148,14 +148,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "intelligence";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceOverview5b1");		// get arrow paths
-					chapObj = getCurrChapter("intelligence");
 
 				});	
 				

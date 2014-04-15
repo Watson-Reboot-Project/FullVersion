@@ -15,7 +15,7 @@
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
+		<link href = "../lib/css/colmn_test.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
 	<body>
@@ -90,14 +90,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "intelligence";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceApproaches");		// get arrow paths
-					chapObj = getCurrChapter("intelligence");
 
 				});	
 				

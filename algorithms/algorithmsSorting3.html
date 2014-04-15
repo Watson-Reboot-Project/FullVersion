@@ -9,23 +9,27 @@
 
 		<title>Watson</title>
 
-			<!-- Google fonts -->
+		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-			<!-- <link href="../lib/css/colmn_test.css" rel="stylesheet"> -->
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 			
-	    <!-- Java Script files -->
+	   <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script>
-		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -37,8 +41,13 @@
 			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
+			<!--Floating nav -->
+			<!-- Previous -->
+			<div class="floating-previous"></div>
+			<!-- Next -->
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
+			<!-- End nav -->
 
 			<!-- Main content -->
 			
@@ -57,12 +66,12 @@
 			<img src="Images/AlgorithmsIMGS/fig5-17.png" alt="" class="Image">
  
 			<p class="Figure">
-				Figure 5.17:  Merging two sorted lists
+				<span class="figNum mergetwo"></span>  Merging two sorted lists
 			</p>
 
 
 			<p>
-				The main idea behind merge sort is that combining, or merging, two presorted lists into a third sorted list is a relatively quick and easy process.  Essentially, the merge algorithm works its way through the two presorted lists from front to back.  As it moves through these two lists it constructs a third “sorted list” that will hold all of the items in the two input lists combined into a single sorted list.  Each of the two input lists will have a separate “current item”.  The algorithm compares the two “current items” and appends the smallest onto the end of the “sorted list”.  The input list from which this item came then has its “current item” advanced to the next item in that list.  This process is repeated until the end of either input list is reached.  At that point, the remaining items in the other input list are appended to the end of the “sorted list.”  This process is illustrated in Figure 5.17.
+				The main idea behind merge sort is that combining, or merging, two presorted lists into a third sorted list is a relatively quick and easy process.  Essentially, the merge algorithm works its way through the two presorted lists from front to back.  As it moves through these two lists it constructs a third “sorted list” that will hold all of the items in the two input lists combined into a single sorted list.  Each of the two input lists will have a separate “current item”.  The algorithm compares the two “current items” and appends the smallest onto the end of the “sorted list”.  The input list from which this item came then has its “current item” advanced to the next item in that list.  This process is repeated until the end of either input list is reached.  At that point, the remaining items in the other input list are appended to the end of the “sorted list.”  This process is illustrated in <span class="figNum mergetwo"></span>.
 			</p>
 
 			<p>
@@ -88,7 +97,7 @@
 			<img src="Images/AlgorithmsIMGS/fig5-18.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.18:  Dividing an eight item unsorted list into eight lists, each containing one item
+				<span class="figNum divideeight"></span>  Dividing an eight item unsorted list into eight lists, each containing one item
 			</p>
 			
 			<br/>
@@ -96,11 +105,11 @@
 			<img src="Images/AlgorithmsIMGS/fig5-19.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.19:  Merging eight single item lists into one eight item sorted list
+				<span class="figNum mergeeight"></span>  Merging eight single item lists into one eight item sorted list
 			</p>
 
 			<p>
-				Figure 5.18 illustrates the process of dividing a single unsorted list of eight items into eight lists, each one item long.  First, the eight item input list is divided into two unsorted lists of size four, then four lists of size two, and finally, eight lists of size one.  In general this approach can be used to divide any list of size <span class="Ital">N</span> into <span class="Ital">N</span> lists of size one.  The <span class="Ital">N</span> item list is first divided into two lists of size <span class="Ital">N</span>/2.  This is done by computing the mid point of the original list and marking the first half as one list and the second half as another list.  If the original list contains an odd number of items and therefore cannot be evenly divided, one of the lists is allowed to have one extra item.  By repeating this divide step over and over, eventually a point will be reached where there are <span class="Ital">N</span> total lists, each of size one.
+				<span class="figNum divideeight"></span> illustrates the process of dividing a single unsorted list of eight items into eight lists, each one item long.  First, the eight item input list is divided into two unsorted lists of size four, then four lists of size two, and finally, eight lists of size one.  In general this approach can be used to divide any list of size <span class="Ital">N</span> into <span class="Ital">N</span> lists of size one.  The <span class="Ital">N</span> item list is first divided into two lists of size <span class="Ital">N</span>/2.  This is done by computing the mid point of the original list and marking the first half as one list and the second half as another list.  If the original list contains an odd number of items and therefore cannot be evenly divided, one of the lists is allowed to have one extra item.  By repeating this divide step over and over, eventually a point will be reached where there are <span class="Ital">N</span> total lists, each of size one.
 			</p>
 			
 			<p>
@@ -108,18 +117,18 @@
 			</p>
 
 			<p>
-				The final step of every divide-and-conquer algorithm is to combine the results of the subproblems.  This is where the actual work goes on in merge sort.  The algorithm will consider each of the <span class="Ital">N</span> single item lists in pairs.  Pairs of single item lists will be merged to form a total of <span class="Ital">N</span>/2 lists of two items each.  In turn, these lists will be processed in pairs to form <span class="Ital">N</span>/4 sorted lists, each four items in length.  This merging of pairs will continue until a single sorted list is produced.  The merge process, applied to the input list of Figure 5.18, is illustrated in Figure 5.19.
+				The final step of every divide-and-conquer algorithm is to combine the results of the subproblems.  This is where the actual work goes on in merge sort.  The algorithm will consider each of the <span class="Ital">N</span> single item lists in pairs.  Pairs of single item lists will be merged to form a total of <span class="Ital">N</span>/2 lists of two items each.  In turn, these lists will be processed in pairs to form <span class="Ital">N</span>/4 sorted lists, each four items in length.  This merging of pairs will continue until a single sorted list is produced.  The merge process, applied to the input list of <span class="figNum divideeight"></span>, is illustrated in <span class="figNum mergeeight"></span>.
 			</p>
 			
 			<img src="Images/AlgorithmsIMGS/fig5-20.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.20:  Merge sort
+				<span class="figNum mergesort"></span>  Merge sort
 			</p>
 
 
 			<p>
-				The merge sort algorithm is presented in Figure 5.20.  Since merging is not a “simple” operation, the above algorithm includes a description of the steps required to merge two lists together.  Notice that the algorithm specifies that the lists must be merged in pairs.  All pairs of length one lists should be merged, then all pairs of length two lists, then pairs of length four lists, etc.  It is important that <span class="Ital">equal</span> length lists should be merged whenever possible.  Merging two length one lists to form a length two list and then merging that with a length one list to form a length three list, then merging that with another length one list should not be done.  Instead, the two pairs of length one lists should be merged, then the resulting pair of length two lists should be merged.  Merging pairs of lists in this order will ensure that each “pass” through the data reduces the number of lists in half, while doubling the length of those lists.
+				The merge sort algorithm is presented in <span class="figNum mergesort"></span>.  Since merging is not a “simple” operation, the above algorithm includes a description of the steps required to merge two lists together.  Notice that the algorithm specifies that the lists must be merged in pairs.  All pairs of length one lists should be merged, then all pairs of length two lists, then pairs of length four lists, etc.  It is important that <span class="Ital">equal</span> length lists should be merged whenever possible.  Merging two length one lists to form a length two list and then merging that with a length one list to form a length three list, then merging that with another length one list should not be done.  Instead, the two pairs of length one lists should be merged, then the resulting pair of length two lists should be merged.  Merging pairs of lists in this order will ensure that each “pass” through the data reduces the number of lists in half, while doubling the length of those lists.
 			</p>
 
 			<p>
@@ -131,11 +140,11 @@
 			</p>
 
 			<p>
-				During each pass through step 2.1 of the algorithm, all <span class="Ital">N</span> input items must be processed.  This can be seen in Figure 5.19, which illustrates the merge sorting of eight items.  At each level (corresponding to an iteration of step 2 of the algorithm), eight items are processed.  We established earlier that merging is a linear operation.  Merging <span class="Ital">N</span> items takes at most <span class="Ital">N</span>&nbsp;-&nbsp;1 comparisons.  Thus, the number of comparisons needed to perform step 2.1 will never exceed <span class="Ital">N</span>.
+				During each pass through step 2.1 of the algorithm, all <span class="Ital">N</span> input items must be processed.  This can be seen in <span class="figNum mergeeight"></span>, which illustrates the merge sorting of eight items.  At each level (corresponding to an iteration of step 2 of the algorithm), eight items are processed.  We established earlier that merging is a linear operation.  Merging <span class="Ital">N</span> items takes at most <span class="Ital">N</span>&nbsp;-&nbsp;1 comparisons.  Thus, the number of comparisons needed to perform step 2.1 will never exceed <span class="Ital">N</span>.
 			</p>
 
 			<p>
-				The number of iterations of step 2 is given by log<span class="Subscript">2</span><span class="Ital">N</span>.  This result follows from the fact that the number of lists to be merged is reduced by one half during each execution of step 2.1.  This behavior can be seen on the eight item list of Figure 5.19.  For eight items, there are three levels at which merging must be performed (log<span class="Subscript">2</span>8 =  3, since 2<span class="Superscript">3</span>  =  8).
+				The number of iterations of step 2 is given by log<span class="Subscript">2</span><span class="Ital">N</span>.  This result follows from the fact that the number of lists to be merged is reduced by one half during each execution of step 2.1.  This behavior can be seen on the eight item list of <span class="figNum mergeeight"></span>.  For eight items, there are three levels at which merging must be performed (log<span class="Subscript">2</span>8 =  3, since 2<span class="Superscript">3</span>  =  8).
 			</p>
 
 			<p>
@@ -195,25 +204,25 @@
 			</p>
 
 			<p>
-				Figure 5.21 contains a graphical comparison of the runtimes of selection sort, insertion sort (average case), and merge sort.  This analysis assumes a comparison time of 1/10,000 second for merge sort, and 1/1,000,000 second for selection and insertion.  The horizontal axis represents problem size, while the vertical axis represents runtime, in seconds.
+				<span class="figNum selectioninsertionmerge"></span> contains a graphical comparison of the runtimes of selection sort, insertion sort (average case), and merge sort.  This analysis assumes a comparison time of 1/10,000 second for merge sort, and 1/1,000,000 second for selection and insertion.  The horizontal axis represents problem size, while the vertical axis represents runtime, in seconds.
 			</p>
 
 			<p>
-				It is interesting to note that while merge sort is astonishingly efficient on large lists, insertion sort is much better for small lists – due to the lower “overhead” per comparison.  Given our very conservative assumptions concerning the relative speed of merge sort comparison operations, the graph of Figure 5.21 shows merge sort becoming more efficient than insertion for lists of size 5,000 or larger.  In reality, the crossover point where merge becomes faster is closer to size 100.
+				It is interesting to note that while merge sort is astonishingly efficient on large lists, insertion sort is much better for small lists – due to the lower “overhead” per comparison.  Given our very conservative assumptions concerning the relative speed of merge sort comparison operations, the graph of <span class="figNum selectioninsertionmerge"></span> shows merge sort becoming more efficient than insertion for lists of size 5,000 or larger.  In reality, the crossover point where merge becomes faster is closer to size 100.
 			</p>
 			
 			<img src="Images/AlgorithmsIMGS/fig5-21.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.21:  A comparison of selection, insertion, and merge sort
+				<span class="figNum selectioninsertionmerge"></span>  A comparison of selection, insertion, and merge sort
 			</p>
 
 			<p>
 				Before leaving the topic of sorting, one other sort should be mentioned.  Quick sort is a very popular divide-and-conquer sorting algorithm that is extremely efficient under most circumstances.  In fact, quick sort is generally considered to be the fastest “comparison” sort when all factors are taken into account.  In quick sort, the majority of the work is done in the problem decomposition step, rather than in the recombination step as in merge sort.  While the algorithm is not difficult to understand, it is not quite as straightforward as merge sort, so further discussion of quick sort is deferred to a later course.
 			</p>
 
-			<p class="Section">
-				Exercises for Section 5.4.3
+			<p class="Eercise">
+				Exercises for <span class="contentNum algorithmsSorting3"></span>
 			</p>
 
 			<ol>
@@ -256,19 +265,15 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("algorithmsSorting3");		// get arrow paths
-					chapObj = getCurrChapter("algorithms");
-
-				});	
+				var chapID="algorithms";
 				
-			</script>
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithmsSorting3");		// get arrow paths
+				});	
 
+			</script>
 
 			<div>
 

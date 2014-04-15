@@ -12,10 +12,10 @@
 	<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-			<!-- <link href="../lib/css/colmn_test.css" rel="stylesheet"> -->
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -25,7 +25,10 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -37,8 +40,13 @@
 			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
+			<!--Floating nav -->
+			<!-- Previous -->
+			<div class="floating-previous"></div>
+			<!-- Next -->
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
+			<!-- End nav -->
 
 			<!-- Main content -->
 			
@@ -93,17 +101,14 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("algorithmsSorting");		// get arrow paths
-					chapObj = getCurrChapter("algorithms");
-
-				});	
+				var chapID="algorithms";
 				
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithmsSorting");		// get arrow paths
+				});	
+
 			</script>
 
 

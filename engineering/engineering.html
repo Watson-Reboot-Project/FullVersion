@@ -10,21 +10,19 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
-			
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<!-- CSS files -->
+		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script> 
+		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
-
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -34,24 +32,43 @@
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
+			 <div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
-			<div id="includedContentForPage"></div>
-            <div class="floating-previous"></div>
+			<!-- Navbar division -->
 
+			<div id="includedContentChapterTOC"></div>
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
+			<!--CHAPTER 13:THEORETICAL AND PRACTICAL LIMITS OF COMPUTING-->
 			
 			<p class="Section">
 				<span class="contentNum engineering"></span>
 			</p>
-
 			
-			<p class="P3"> </p>
-			<p class="P4">This chapter has not yet been written.  It will eventually describe the problems inherit in constructing large software systems and some of the techniques software engineers have developed for managing these problem. </p>
-			<!-- End main content -->
+			<p>
+				This chapter has not yet been written.  It will eventually describe the problems inherit in constructing large software systems and some of the techniques software engineers have developed for managing these problem. 
+			</p>
 
+			<br>
+			<div class="container">
+				<div class="row">
+					<!--Floating chapter nav -->
+					<!-- Previous -->
+					<div id="prevButtonDiv"></div>
+					<!-- Next -->
+					<div id="nextButtonDiv"></div>
+					<!-- End floating nav -->
+				</div> 
+			</div>
+			
+			<!-- End main content -->
+			<hr />
+			<p class="Emphasized">
+				<a href="#tippytop">Return to top</a>
+			</p>
 			<nav>
 				<p>
 					--
@@ -67,21 +84,23 @@
 			<div>
 
 			</div>
-			<!-- Arrow navigation scripts -->
+
 			<script>
-				var pageObj;											// do NOT change name of variable
+				var pageObj;
 				var chapObj;
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("engineering");		// get arrow paths
-					chapObj = getCurrChapter("engineering");
-
-				});	
+				var chapID = "engineering";
 				
+				$(document).ready(function() {
+					loadLocalTableOfContents("engineering");
+					populateNav();
+					populateSpans();
+					populateChapterButtons();
+					
+					pageObj = getArrowPathsByPage("engineering");
+					chapObj = getArrowPathsByChapter("engineering");
+				});	
 			</script>
+			
 		</div>
 	</body>
 </html>

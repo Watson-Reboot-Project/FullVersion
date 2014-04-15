@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
 	<body>
@@ -103,7 +103,9 @@
 				One way of judging our progress to date in giving computers the ability to use language intelligently is to look at the evolution of voice-based search and the rise of ‘intelligent’ assistants. Such a review can also help us understand the limitations of our present tools and techniques.
 			</p>
 
-			<p>The first large-scale general purpose (speaker independent, large vocabulary, continuous utterance) deployment of speech recognition technology intended for a wide audience was Google’s voice-based web search. Released in 2008 for Android and iPhone smart phones, this technology enabled one to speak a search query, rather than type. While remarkably impressive for its time, Google voice search simply returned a web page of Google search results – exactly as if the speaker had typed the search query.</p>
+			<p>
+				The first large-scale general purpose (speaker independent, large vocabulary, continuous utterance) deployment of speech recognition technology intended for a wide audience was Google’s voice-based web search. Released in 2008 for Android and iPhone smart phones, this technology enabled one to speak a search query, rather than type. While remarkably impressive for its time, Google voice search simply returned a web page of Google search results – exactly as if the speaker had typed the search query.
+			</p>
 			
 			<!--
 			<video controls="controls" src="../video/Google%20Mobile%20App%20for%20iPhone%20with%20Voice%20Search%20%28November%202008%29.mp4">Google Mobile App for iPhone with Voice Search (November 2008)</video>
@@ -119,7 +121,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.12: A Google video from November 2008 introducing Google Mobile App for iPhone with Voice Search.
+				<span class="figNum googlevoice"></span> A Google video from November 2008 introducing Google Mobile App for iPhone with Voice Search.
 			</p>
 
 			<p>
@@ -139,7 +141,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.13: A demonstration of Google Voice Actions.
+				<span class="figNum voiceactions"></span> A demonstration of Google Voice Actions.
 			</p>
 
 			<p>
@@ -159,7 +161,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.14: An Apple video introducing Siri.
+				<span class="figNum applesiri"></span> An Apple video introducing Siri.
 			</p>
 
 			<p>
@@ -191,7 +193,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.15: This video is comparing the functionality of the first version of Siri with its second iteration. Siri may sound a bit odd in this video to an American audience as the British versions are being compared.
+				<span class="figNum siriversions"></span> This video is comparing the functionality of the first version of Siri with its second iteration. Siri may sound a bit odd in this video to an American audience as the British versions are being compared.
 			</p>
 			
 			<p>
@@ -211,7 +213,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.16: This video demonstration of some of the features of Google Now (circa September 2012).
+				<span class="figNum googlenow"></span> This video demonstration of some of the features of Google Now (circa September 2012).
 			</p>
 
 			<p>
@@ -235,7 +237,7 @@
 			</div>
 	  
 			<p class="Figure">
-				Figure 14.17: Jeopardy! IBM Watson Day 3 (Feb 16, 2011).
+				<span class="figNum ibmwatson"></span> Jeopardy! IBM Watson Day 3 (Feb 16, 2011).
 			</p>
 
 			<p>
@@ -255,7 +257,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.18: A video from IBM that provides an overview of Watson and the Jeopardy! challenge.
+				<span class="figNum watsonoverview"></span> A video from IBM that provides an overview of Watson and the Jeopardy! challenge.
 			</p>
 
 			<p>
@@ -287,14 +289,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "intelligence";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceOverview5b2");		// get arrow paths
-					chapObj = getCurrChapter("intelligence");
 
 				});	
 				

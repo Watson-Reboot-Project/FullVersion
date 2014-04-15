@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
 	<body>
@@ -45,7 +45,7 @@
 			</p>
 
 			<p>
-				Broadly speaking, <span class="Bolded">Computer vision</span> is the branch of computer science which aims to give computers the ability to see. Achieving computer vision has long been one of the goals of artificial intelligence researchers. In the early days it was through that this problem shouldn’t be too difficult, as one could simply attach a camera to a computer. There were even some early successes, such as the perceptrons that could distinguish male faces from female faces (which we discussed in Section 14.2.4). Unfortunately teaching a computer to recognize various objects in the real world from different angles and under different lighting conditions is far, far harder than distinguishing men from women based solely on still photographs of front facing ‘head shots’.
+				Broadly speaking, <span class="Bolded">Computer vision</span> is the branch of computer science which aims to give computers the ability to see. Achieving computer vision has long been one of the goals of artificial intelligence researchers. In the early days it was through that this problem shouldn’t be too difficult, as one could simply attach a camera to a computer. There were even some early successes, such as the perceptrons that could distinguish male faces from female faces (which we discussed in <span class="contentNum intelligenceOverview4"></span>). Unfortunately teaching a computer to recognize various objects in the real world from different angles and under different lighting conditions is far, far harder than distinguishing men from women based solely on still photographs of front facing ‘head shots’.
 			</p>
 
 			<p>
@@ -65,7 +65,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.19: A video of Freddy in action circa 1971. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum freddybot"></span> A video of Freddy in action circa 1971. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 
 			<p>
@@ -89,7 +89,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.20: An advertisement for Google Goggles.
+				<span class="figNum googlegoggles"></span> An advertisement for Google Goggles.
 			</p>
 
 			<p>
@@ -121,7 +121,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.21: A “product vision” video of “Project Natal” from 2009.
+				<span class="figNum projectnatal"></span> A “product vision” video of “Project Natal” from 2009.
 			</p>
 
 			<p>
@@ -149,7 +149,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.22: A Wired magazine video that demonstrates the technical capabilities of the Kinect for Xbox One.
+				<span class="figNum xboxkinect"></span> A Wired magazine video that demonstrates the technical capabilities of the Kinect for Xbox One.
 			</p>
 
 			<p>
@@ -184,14 +184,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "intelligence";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceOverview5b3");		// get arrow paths
-					chapObj = getCurrChapter("intelligence");
 
 				});	
 				

@@ -12,18 +12,22 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
-			
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel="stylesheet">
+		
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/kinetic.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -141,17 +145,21 @@
 				Exercises for <span class="contentNum circuitsCombinatorial2"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
-					<p>
+					<p class="exercise solvable 9">
 						Construct a two-bit comparator for equality using the outline of the circuit provided in this section.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 9"></div>
 				</li>
 
 				<li>
-					<p>
+					<p class="exercise solvable 10">
 						Construct a one-bit comparator for less than. Also, provide a truth table and Boolean equation for the circuit.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 10"></div>
 				</li>
 
 				<li>
@@ -218,87 +226,52 @@
 				</p>
 			</nav>
 
-			<div>
-
-			</div>
-
-			<!-- Arrow navigation scripts -->
-			<script>
-				var pageObj;											// do NOT change name of variable
-				var chapObj;
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("circuitsCombinatorial2");		// get arrow paths
-					chapObj = getCurrChapter("circuits");
-
-				});	
-				
-			</script>
 		</div>
 		
-			<!-- Figure js -->
-			<script src="js/DigiLogic/Controller.js"></script>
-			<script src="js/DigiLogic/AndGate.js"></script>
-			<script src="js/DigiLogic/AndGate3.js"></script>
-			<script src="js/DigiLogic/AndGate4.js"></script>
-			<script src="js/DigiLogic/NandGate.js"></script>
-			
-			<script src="js/DigiLogic/OrGate.js"></script>
-			<script src="js/DigiLogic/OrGate3.js"></script>
-			<script src="js/DigiLogic/OrGate4.js"></script>
-			<script src="js/DigiLogic/NorGate.js"></script>
-			
-			<script src="js/DigiLogic/NotGate.js"></script>
-			<script src="js/DigiLogic/Connector.js"></script>
-			<script src="js/DigiLogic/InputNode.js"></script>
-			<script src="js/DigiLogic/OutputNode.js"></script>
-			<script src="js/DigiLogic/PopupMenu.js"></script>
-			<script src="js/DigiLogic/Figures.js"></script>
-			<script src="js/DigiLogic/TruthTable.js"></script>
-			<script src="js/DigiLogic/Setup.js"></script>
-			<script src="js/DigiLogic/DigitalLogicFigure.js"></script>
-			
-			<!-- Sandbox js -->
-			<script src="js/DigiLogic/SB_Controller.js"></script>
-			<script src="js/DigiLogic/SB_AndGate.js"></script>
-			<script src="js/DigiLogic/SB_OrGate.js"></script>
-			<script src="js/DigiLogic/SB_NotGate.js"></script>
-			<script src="js/DigiLogic/SB_Connector.js"></script>
-			<script src="js/DigiLogic/SB_InputNode.js"></script>
-			<script src="js/DigiLogic/SB_OutputNode.js"></script>
-			<script src="js/DigiLogic/SB_PopupMenu.js"></script>
-			<script src="js/DigiLogic/SB_Exercises.js"></script>
-			<script src="js/DigiLogic/SB_TruthTable.js"></script>
-			<script src="js/DigiLogic/SB_Setup.js"></script>
-			<script src="js/DigiLogic/DigitalLogicsLab.js"></script>
-			<script src="js/DigiLogic/Evaluate.js"></script>
+		<!-- Figure js -->
+		<script src="js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		<script src="js/WatsonDataStore.js"></script>
+		<script src="js/Serializer.js"></script>
+		<script src="js/Controller.js"></script>
+		<script src="js/AndGate.js"></script>
+		<script src="js/AndGate3.js"></script>
+		<script src="js/AndGate4.js"></script>
+		<script src="js/NandGate.js"></script>
 		
+		<script src="js/OrGate.js"></script>
+		<script src="js/OrGate3.js"></script>
+		<script src="js/OrGate4.js"></script>
+		<script src="js/NorGate.js"></script>
+		
+		<script src="js/NotGate.js"></script>
+		<script src="js/Connector.js"></script>
+		<script src="js/InputNode.js"></script>
+		<script src="js/OutputNode.js"></script>
+		<script src="js/PopupMenu.js"></script>
+		<script src="js/Figures.js"></script>
+		<script src="js/TruthTable.js"></script>
+		<script src="js/Setup.js"></script>
+		<script src="js/DigitalLogicFigure.js"></script>
+		
+		<!-- Arrow navigation scripts -->
 		<script>
-			var figuree = new DigitalLogicFigure("container-e", "e");
-			var figure12 = new DigitalLogicFigure("container-12", "12");
-			if (detectMobile() == false) {
-				document.getElementById("Scratch").innerText="Scratch Pad";
-				var lab = new DigitalLogicsLab(1);
-			}
+			var pageObj;											// do NOT change name of variable
+			var chapID = "circuits";
+			var sectID = "circuitsCombinatorial2";
 
-			function detectMobile() { 
-				 if( navigator.userAgent.match(/Android/i)
-				 || navigator.userAgent.match(/webOS/i)
-				 || navigator.userAgent.match(/iPhone/i)
-				 || navigator.userAgent.match(/iPad/i)
-				 || navigator.userAgent.match(/iPod/i)
-				 || navigator.userAgent.match(/BlackBerry/i)
-				 || navigator.userAgent.match(/Windows Phone/i)
-				 ) {
-					return true;
-				 }
-				 else {
-					return false;
-				  }
-				}
+			$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				
+				var figuree = new DigitalLogicFigure("container-e", "e", false, false);
+				var figure12 = new DigitalLogicFigure("container-12", "12", false, false);
+
+				pageObj = getArrowPathsByPage(sectID);				// get arrow paths
+			});	
+
+			setupExerciseButtons(sectID);
+			
 		</script>
 	</body>
 </html>

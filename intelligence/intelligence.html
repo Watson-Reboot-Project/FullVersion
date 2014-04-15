@@ -24,9 +24,6 @@
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
-
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
@@ -55,7 +52,7 @@
 			<br>
 			<div class="container">
 				<div class="row">
-					<!--Floating nav -->
+					<!--Floating chapter nav -->
 					<!-- Previous -->
 					<div id="prevButtonDiv"></div>
 					<!-- Next -->
@@ -64,19 +61,6 @@
 				</div> 
 			</div>
 
-			<script>
-				var pageObj;
-				var chapObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("intelligence");
-					populateNav();
-					populateChapterButtons();
-					
-					pageObj = getArrowPathsByPage("intelligence");
-					chapObj = getArrowPathsByChapter("intelligence");
-				});	
-			</script>
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -97,6 +81,21 @@
 			<div>
 
 			</div>
+
+			<script>
+				var pageObj;
+				var chapObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("intelligence");
+					populateNav();
+					populateChapterButtons();
+					
+					pageObj = getArrowPathsByPage("intelligence");
+					chapObj = getArrowPathsByChapter("intelligence");
+				});	
+			</script>
+			
 		</div>
 	</body>
 </html>

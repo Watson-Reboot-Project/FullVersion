@@ -12,20 +12,24 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-			<!-- <link href="../lib/css/colmn_test.css" rel="stylesheet"> -->
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script>
-		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script> 
+			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="description" content="">
+		<meta name="author" content="Burt">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
 
@@ -37,8 +41,13 @@
 			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
+			<!--Floating nav -->
+			<!-- Previous -->
+			<div class="floating-previous"></div>
+			<!-- Next -->
+			<div class="floating-next"></div>
 			<!-- End floating nav -->
+			<!-- End nav -->
 
 			<!-- Main content -->
 			
@@ -58,7 +67,7 @@
 			<img src="Images/AlgorithmsIMGS/fig5-13.png" alt="" class="Image">
 
 			<p class="Figure">
-				Figure 5.13:  An example of insertion sort
+				<span class="figNum insertionex"></span>  An example of insertion sort
 			</p>
 
 			<p>
@@ -66,11 +75,11 @@
 			</p>
 
 			<p>
-				The insertion sort procedure is illustrated on an eight item list in Figure 5.13.  Notice that this is exactly the same list that was used to illustrate the behavior of selection sort in Figure 5.11.  A careful examination of Figure 5.13 will reveal that 19 comparison operations are required to sort these values using the insertion method.  This is approximately one half of the 36 comparisons needed by selection sort.
+				The insertion sort procedure is illustrated on an eight item list in <span class="figNum insertionex"></span>.  Notice that this is exactly the same list that was used to illustrate the behavior of selection sort in <span class="figNum selectionex"></span>.  A careful examination of <span class="figNum insertionex"></span> will reveal that 19 comparison operations are required to sort these values using the insertion method.  This is approximately one half of the 36 comparisons needed by selection sort.
 			</p>
 
 			<p>
-				A more formal version of the insertion sort algorithm is presented in Figure 5.14.  While this version of the algorithm may appear somewhat more complex than the English version presented above, it is really just a more detailed description of the same process.  Most of the action occurs in Step 3.  Step 3.1 selects the first item from the unsorted list and marks it as the item to be inserted.  Step 3.2 begins the scan for the insertion point at the end of the sorted list.  Step 3.3 moves backwards through the list comparing the item to be inserted with the present “current item”.  When either the beginning of the sorted list is reached (3.3.1) <span class="Ital">or</span> a current item less than the item to be inserted is encountered (3.3.2), the item is inserted.  Otherwise, the algorithm steps backwards to the preceding item in the sorted list  (3.3.3).
+				A more formal version of the insertion sort algorithm is presented in <span class="figNum insertionsort"></span>.  While this version of the algorithm may appear somewhat more complex than the English version presented above, it is really just a more detailed description of the same process.  Most of the action occurs in Step 3.  Step 3.1 selects the first item from the unsorted list and marks it as the item to be inserted.  Step 3.2 begins the scan for the insertion point at the end of the sorted list.  Step 3.3 moves backwards through the list comparing the item to be inserted with the present “current item”.  When either the beginning of the sorted list is reached (3.3.1) <span class="Ital">or</span> a current item less than the item to be inserted is encountered (3.3.2), the item is inserted.  Otherwise, the algorithm steps backwards to the preceding item in the sorted list  (3.3.3).
 			</p>
 			
 			<ul class="Blockcenter">
@@ -107,11 +116,11 @@
 			</ul>
 			<br/>
 			<p class="Figure">
-				Figure 5.14:  Insertion sort
+				<span class="figNum insertionsort"></span>  Insertion sort
 			</p>
 
 			<p>
-				The number of comparisons required to sort <span class="Ital">N</span> items using the insertion method varies depending on the original order of the items.  Figure 5.15 illustrates this fact on a five item list.  Part (a) of Figure 5.15 shows that 10 comparisons are required to sort the five items when they are originally arranged in reverse sorted order.  Part (b) of Figure 5.15 shows that only four comparisons are required by the algorithm when the input list is already presorted.  This is different from the selection sort algorithm which always requires a fixed number of comparisons to sort <span class="Ital">N</span> items, regardless of their original order.
+				The number of comparisons required to sort <span class="Ital">N</span> items using the insertion method varies depending on the original order of the items.  <span class="figNum insertionrev"></span> illustrates this fact on a five item list.  Part (a) of <span class="figNum insertionrev"></span> shows that 10 comparisons are required to sort the five items when they are originally arranged in reverse sorted order.  Part (b) of <span class="figNum insertionrev"></span> shows that only four comparisons are required by the algorithm when the input list is already presorted.  This is different from the selection sort algorithm which always requires a fixed number of comparisons to sort <span class="Ital">N</span> items, regardless of their original order.
 			</p>
 
 			<img src="Images/AlgorithmsIMGS/fig5-15a.png" alt="" class="Image">
@@ -127,23 +136,23 @@
 			</p>
 
 			<p class="Figure">
-				Figure 5.15:  Effect of input item order on number of insertion sort comparisons
+				<span class="figNum insertionrev"></span>  Effect of input item order on number of insertion sort comparisons
 			</p>
 
 			<p>
-				A general formula for determining the number of comparisons required by insertion sort to order an <span class="Ital">N</span> item list would be very useful.  However, as Figure 5.15 illustrates, the number of comparisons performed by insertion sort depends, in large part, on the original order of the items to be sorted.  So, no one formula, based on input size alone, can be developed to capture the required number of comparisons.  Instead, three general formulas are developed below: one for the worse possible performance of the algorithm on a problem of size <span class="Ital">N</span>, another for the best possible performance of the algorithm on a problem of size <span class="Ital">N</span>, and a third for the average, or expected, performance of the algorithm on a problem of size <span class="Ital">N</span>.
+				A general formula for determining the number of comparisons required by insertion sort to order an <span class="Ital">N</span> item list would be very useful.  However, as <span class="figNum insertionrev"></span> illustrates, the number of comparisons performed by insertion sort depends, in large part, on the original order of the items to be sorted.  So, no one formula, based on input size alone, can be developed to capture the required number of comparisons.  Instead, three general formulas are developed below: one for the worse possible performance of the algorithm on a problem of size <span class="Ital">N</span>, another for the best possible performance of the algorithm on a problem of size <span class="Ital">N</span>, and a third for the average, or expected, performance of the algorithm on a problem of size <span class="Ital">N</span>.
 			</p>
 
 			<p>
-				As was discussed during the analysis of the selection sort algorithm, the total number of comparisons required by a sort algorithm is the product of the number of “passes” through the list and the average number of comparisons performed per pass.  Examining Figures 5.13 and 5.15 reveals that insertion sort requires exactly <span class="Ital">N</span>&nbsp;-&nbsp;1 passes through the sorted list – for eight items seven passes were made, for five items four passes were made.  The reason that <span class="Ital">N</span>&nbsp;-&nbsp;1 passes will be needed for <span class="Ital">N</span> items is that the unsorted list starts out with <span class="Ital">N</span>&nbsp;-&nbsp;1 items and during each pass one item is removed from that list and placed in the sorted list.  Thus, after <span class="Ital">N</span>&nbsp;-&nbsp;1 passes the unsorted list will be empty and the sorted list will contain all <span class="Ital">N</span> of the original items.
+				As was discussed during the analysis of the selection sort algorithm, the total number of comparisons required by a sort algorithm is the product of the number of “passes” through the list and the average number of comparisons performed per pass.  Examining <span class="figNum insertionex"></span> and <span class="figNum insertionrev"></span> reveals that insertion sort requires exactly <span class="Ital">N</span>&nbsp;-&nbsp;1 passes through the sorted list – for eight items seven passes were made, for five items four passes were made.  The reason that <span class="Ital">N</span>&nbsp;-&nbsp;1 passes will be needed for <span class="Ital">N</span> items is that the unsorted list starts out with <span class="Ital">N</span>&nbsp;-&nbsp;1 items and during each pass one item is removed from that list and placed in the sorted list.  Thus, after <span class="Ital">N</span>&nbsp;-&nbsp;1 passes the unsorted list will be empty and the sorted list will contain all <span class="Ital">N</span> of the original items.
 			</p>
 
 			<p>
-				Now that the number of passes through the sorted list is known, we can examine the amount of work required per pass.  This is the point at which the order of the inputs has an effect on the number of comparisons needed.  Let’s say the input items are presorted, as was the case in part (b) of Figure 5.15.  In this case, the last item in the sorted list will <span class="Ital">always</span> be less than or equal to the first item in the unsorted list.  Since only one comparison during each pass through the sorted list will be needed to discover the insertion point, the total number of comparisons necessary for insertion sort in this case is <span class="Ital">N</span>&nbsp;-&nbsp;1.  Notice that this is the best possible case for insertion sort.  Insertion sort performs the minimum number of comparisons when it is given a list that is presorted.
+				Now that the number of passes through the sorted list is known, we can examine the amount of work required per pass.  This is the point at which the order of the inputs has an effect on the number of comparisons needed.  Let’s say the input items are presorted, as was the case in part (b) of <span class="figNum insertionrev"></span>.  In this case, the last item in the sorted list will <span class="Ital">always</span> be less than or equal to the first item in the unsorted list.  Since only one comparison during each pass through the sorted list will be needed to discover the insertion point, the total number of comparisons necessary for insertion sort in this case is <span class="Ital">N</span>&nbsp;-&nbsp;1.  Notice that this is the best possible case for insertion sort.  Insertion sort performs the minimum number of comparisons when it is given a list that is presorted.
 			</p>
 
 			<p>
-				Figure 5.15 part (a) represents the worst case for insertion sort.  When the items are in reverse sorted order, insertion sort will require its maximum number of comparisons.  In this case, the insertion point will always be at the beginning of the sorted list, forcing the algorithm during each pass to examine and compare every item in the sorted list to the item to be inserted.  The number of comparisons will be <span class="Ital">N</span>&nbsp;-&nbsp;1 times the average length of the sorted list.  You should convince yourself, using reasoning similar to that used for selection sort, that the average length of the sorted list will be 1/2<span class="Ital">N</span> items.  Hence, the total number of comparisons required by insertion sort in the worst case is (<span class="Ital">N</span>&nbsp;-&nbsp;1)&times;1/2<span class="Ital">N</span>  =  1/2(<span class="Ital">N</span><span class="Superscript">2</span>&nbsp;-&nbsp;<span class="Ital">N</span>).  This formula gives 10 comparisons for a 5 item list, as we would expect from Figure 5.15 part (a).
+				<span class="figNum insertionrev"></span> part (a) represents the worst case for insertion sort.  When the items are in reverse sorted order, insertion sort will require its maximum number of comparisons.  In this case, the insertion point will always be at the beginning of the sorted list, forcing the algorithm during each pass to examine and compare every item in the sorted list to the item to be inserted.  The number of comparisons will be <span class="Ital">N</span>&nbsp;-&nbsp;1 times the average length of the sorted list.  You should convince yourself, using reasoning similar to that used for selection sort, that the average length of the sorted list will be 1/2<span class="Ital">N</span> items.  Hence, the total number of comparisons required by insertion sort in the worst case is (<span class="Ital">N</span>&nbsp;-&nbsp;1)&times;1/2<span class="Ital">N</span>  =  1/2(<span class="Ital">N</span><span class="Superscript">2</span>&nbsp;-&nbsp;<span class="Ital">N</span>).  This formula gives 10 comparisons for a 5 item list, as we would expect from <span class="figNum insertionrev"></span> part (a).
 			</p>
 
 			<p>
@@ -182,7 +191,7 @@
 			<img src="Images/AlgorithmsIMGS/fig5-16.png" alt="" class="Image">
 			
 			<p class="Figure">
-				Figure 5.16:  A comparison of the predicted runtimes of selection and insertion sort
+				<span class="figNum selectionvsinsertion"></span>  A comparison of the predicted runtimes of selection and insertion sort
 			</p>
 
 
@@ -204,7 +213,7 @@
 			</ul>
 			
 			<p>
-				Figure 5.16 contains a graphical comparison of the expected runtimes of both selection and insertion sort.  The horizontal axis represents increasing problem size, and the vertical axis represents the projected runtime, in seconds.  The graph indicates that while both algorithms are quadratic in nature, insertion sort runs, on average, in about half the time of selection sort when both are given lists of equal size.
+				<span class="figNum selectionvsinsertion"></span> contains a graphical comparison of the expected runtimes of both selection and insertion sort.  The horizontal axis represents increasing problem size, and the vertical axis represents the projected runtime, in seconds.  The graph indicates that while both algorithms are quadratic in nature, insertion sort runs, on average, in about half the time of selection sort when both are given lists of equal size.
 			</p>
 
 			<p>
@@ -264,17 +273,14 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("algorithmsSorting2");		// get arrow paths
-					chapObj = getCurrChapter("algorithms");
-
-				});	
+				var chapID="algorithms";
 				
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithm algorithmsSorting2");		// get arrow paths
+				});	
+
 			</script>
 
 			<div>

@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
 	<body>
@@ -65,7 +65,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.23: A video of the Stanford Cart moving across a room. These scenes are taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum standfordcart"></span> A video of the Stanford Cart moving across a room. These scenes are taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 
 			<p>
@@ -85,7 +85,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.24: a demonstration from the early 1990’s of the CMU autonomous driving vehicle. These scenes are taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum autonomousvan"></span> A demonstration from the early 1990’s of the CMU autonomous driving vehicle. These scenes are taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 
 			<p>
@@ -109,7 +109,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.25: A research presentation given by Sebastian Thrun and Chris Urmson at the 2011 IEEE International Conference on Intelligent Robots and Systems. While this is not a ‘slick’ video, it does present a very good overview of how the Google self-driving car actually works.
+				<span class="figNum selfdrivencar"></span> A research presentation given by Sebastian Thrun and Chris Urmson at the 2011 IEEE International Conference on Intelligent Robots and Systems. While this is not a ‘slick’ video, it does present a very good overview of how the Google self-driving car actually works.
 			</p> 
 
 			<p>
@@ -145,7 +145,7 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.26: A video from Google illustrating one potential benefit of self driving vehicles
+				<span class="figNum selfcarpros"></span> A video from Google illustrating one potential benefit of self driving vehicles
 			</p>
 			<!-- End main content -->
 			<hr />
@@ -184,14 +184,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "intelligence";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceOverview5b4");		// get arrow paths
-					chapObj = getCurrChapter("intelligence");
 
 				});	
 				

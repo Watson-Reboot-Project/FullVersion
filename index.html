@@ -10,7 +10,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Watson</title>
-
+      <!-- Google fonts -->
+      <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+      <!-- CSS files -->
+      <link href="lib/css/bootstrap.css" rel="stylesheet">
+      <link href="lib/css/styles.css" rel="stylesheet">
+      <link href="lib/css/generalmedia.css" rel="stylesheet">
       <!-- Java Script files -->
       <script type="text/javascript" src="lib/js/jquery-1.10.2.min.js"></script>      
       <script type="text/javascript" src="lib/js/nav.js"></script>
@@ -20,51 +25,16 @@
       <script type="text/javascript" src="lib/js/Miscellaneous.js"></script>
 
       <meta name="viewport" content="width=device-width; initial-scale=1.0">
-      <!-- Google fonts -->
-      <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-      <!-- CSS files -->
-      <link href="lib/css/bootstrap.css" rel="stylesheet">
-      <link href="lib/css/styles.css" rel="stylesheet">
-      <link href="lib/css/generalmedia.css" rel="stylesheet">
-
-      <!-- arrow navigation 
-      <style type="text/css">
-      div.floating-previous { position:fixed; z-index:200; left:1px; right: auto; width:20px; top:45%; }
-      div.floating-previous a, div.floating-menu h3 { display:block; margin:0 0.5em; }
-      div.floating-next { position:fixed; z-index:200; left: auto; right:1px; top:45%; }
-      div.floating-next a, div.floating-menu h3 { display:block; margin:0 0.5em; }
-      </style>-->
-
-      <div id="prevArrowStyle" class="floating-previous"></div>
+      
   </head>
 
   <body>
 
     <!-- Dynamic Navbar -->
-    <div id="includedContent"></div>
+    <div id="includedContent"></div> <!-- Dynamic navbar for index.html page --> 
 
-    <script>
-    $(document).ready(function() {
-      loadChaptersTableOfContents(); // loads the Chapter table of contents
-      populateNav();                    // populate nav content
-    }); 
-    </script>
-
-    <!--Floating nav -->
-    <!-- Previous -->
-    <!--<div class="floating-previous">
-      <a href="index.html">
-        <img id="larrow" style="border:0;" src="lib/images/left-arrow-blue.png" alt="Previous page" width= "40">
-      </a>
-    </div>-->
-
-    <!-- Next -->
-    <!--<div class="floating-next">
-      <a href="science.html">
-        <img id="rarrow" style="border:0;" src="lib/images/right-arrow-blue.png" alt="Next page" width="40">
-      </a>
-    </div>-->
-    <div id="nextArrowStyle" class="floating-next"></div>
+    <!--<div id="prevArrowStyle" class="floating-previous"></div> Previous floating arrow -->
+    <!--<div id="nextArrowStyle" class="floating-next"></div>  Next floating arrow -->
 
     <!-- End floating nav -->
     <!-- End nav -->
@@ -88,6 +58,24 @@
 
         <p><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact</a></p>
       </div>
+
+      <script>
+          $(document).ready(function() {
+            loadChaptersTableOfContents();    // loads the Chapter table of contents
+            populateNav();                    // populate navigation content
+          }); 
+      </script>
+      <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-50062005-1', 'latech.edu');
+		  ga('send', 'pageview');
+		
+		</script>
+
     </div><!-- End page-wrapper -->
 </body>
 </html>

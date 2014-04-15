@@ -76,17 +76,14 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("algorithmsSummary");		// get arrow paths
-					chapObj = getCurrChapter("algorithms");
-
-				});	
+				var chapID="algorithms";
 				
+				$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("algorithmsSummary");		// get arrow paths
+				});	
+
 			</script>
 
 			<div>

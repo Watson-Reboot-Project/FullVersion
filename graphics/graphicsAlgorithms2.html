@@ -557,30 +557,39 @@
 			
 			<div class="floating-next"></div>
 
-			<!-- Arrow navigation scripts -->
-			<script>
-				var pageObj;											// do NOT change name of variable
 
-				$(document).ready(function() {
-				populateNav();										// populate nav content
-				populateSpans();									// populate figure/content spans
-				pageObj = getArrowPathsByPage("graphicsAlgorithms2");		// get arrow paths
-				});	
-
-			</script>
 
 
 			<div>
 
 			</div>
 		</div>
-		<script src="js/Graphics/all.js"></script>
+		<script src="js/all.js"></script>
 		<script>
+
+			var pageObj;
+			var chapID="graphics";											// do NOT change name of variable
+
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("graphicsAlgorithms2");		// get arrow paths
+					console.log(pageObj.next);
+				});	
+
 		var figure3 = new setup("container3", "drawing_window3", "drawingCanvas3", "run_walk3", "run3", "walk3", "variable_window3", "var_win3", "program_window3", "program_code3", 3);
 		var figure4 = new setup("container4", "drawing_window4", "drawingCanvas4", "run_walk4", "run4", "walk4", "variable_window4", "var_win4", "program_window4", "program_code4", 4);
 		var figure5 = new setup("container5", "drawing_window5", "drawingCanvas5", "run_walk5", "run5", "walk5", "variable_window5", "var_win5", "program_window5", "program_code5", 5);
 		var figure6 = new setup("container6", "drawing_window6", "drawingCanvas6", "run_walk6", "run6", "walk6", "variable_window6", "var_win6", "program_window6", "program_code6", 6);
+
+
 		</script>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+
+
+			</script>
 		
 	</body>
 </html>

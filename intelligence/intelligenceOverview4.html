@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
-			<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
 
 	<body>
@@ -69,7 +69,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.5: A 1961 prediction about the future of AI made by Claude Shannon five years after the Dartmouth Conference. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum claudeshannon"></span> A 1961 prediction about the future of AI made by Claude Shannon five years after the Dartmouth Conference. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 				
 			<p>
@@ -91,11 +91,11 @@
 			</div>
 			
 			<p class="Figure">
-				Figure 14.6: A retrospective of some of the early successes made by AI researchers in the late 1950’s and early 1960’s. These scenes are taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum airesearch"></span> A retrospective of some of the early successes made by AI researchers in the late 1950’s and early 1960’s. These scenes are taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 
 			<p>
-				Much of the work in this period was based on variations of the search techniques and formal logics discussed in Section 14.3.1 and 14.3.2. What researchers soon discovered, however, was that the techniques they used to achieve their impressive results on small, limited problems could not be scaled up to attack more substantial problems. This was due to the underlying exponential nature of the search spaces associated with these problems. When one is dealing with a very small problem, such as searching a maze for an exit, the “brute force” approach of exhaustively testing every possible solution path is feasible. This approach, however, cannot be applied to larger problems, such as communicating in a natural language, where there are billions upon billions of potential solution paths.
+				Much of the work in this period was based on variations of the search techniques and formal logics discussed in <span class="contentNum intelligenceApproaches1"></span> and <span class="contentNum intelligenceApproaches2"></span>. What researchers soon discovered, however, was that the techniques they used to achieve their impressive results on small, limited problems could not be scaled up to attack more substantial problems. This was due to the underlying exponential nature of the search spaces associated with these problems. When one is dealing with a very small problem, such as searching a maze for an exit, the “brute force” approach of exhaustively testing every possible solution path is feasible. This approach, however, cannot be applied to larger problems, such as communicating in a natural language, where there are billions upon billions of potential solution paths.
 			</p>
 
 			<p>
@@ -132,7 +132,7 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.7: Terry Winograd interacting with SHRDLU. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum terryshrdlu"></span> Terry Winograd interacting with SHRDLU. This scene is taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 
 			<p>
@@ -217,11 +217,11 @@
 			</div>
 
 			<p class="Figure">
-				Figure 14.8: This is a perceptron learning to distinguish male faces from female faces taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
+				<span class="figNum perceptronfaces"></span> This is a perceptron learning to distinguish male faces from female faces taken from the 1992 PBS series “The Machine That Changed The World”, episode four “The Thinking Machine”.
 			</p>
 
 			<p>
-				Research into artificial neural networks came to an abrupt halt in the early 1970’s. Many people credit<span class="Footnote" title="Footnote: Or blame, depending on their point of view."><a href="#ftn6" id="body_ftn6">[6]</a></span> Marvin Minsky and Seymour Papert’s 1969 book <span class="Ital">Perceptrons</span> with bringing about the end of research into neural network based machine learning for nearly a decade and a half. Minsky and Papert proved that while it is true that perceptrons can learn anything they are capable of representing, the fact is that they are actually capable of representing very little. The most often cited example is that a perceptron with two inputs cannot learn to distinguish when its inputs are the same from when they are different. In other words, a perceptron cannot represent the exclusive-or, <span class="Ital">xor</span>, operation of Chapter 12.
+				Research into artificial neural networks came to an abrupt halt in the early 1970’s. Many people credit<span class="Footnote" title="Footnote: Or blame, depending on their point of view."><a href="#ftn6" id="body_ftn6">[6]</a></span> Marvin Minsky and Seymour Papert’s 1969 book <span class="Ital">Perceptrons</span> with bringing about the end of research into neural network based machine learning for nearly a decade and a half. Minsky and Papert proved that while it is true that perceptrons can learn anything they are capable of representing, the fact is that they are actually capable of representing very little. The most often cited example is that a perceptron with two inputs cannot learn to distinguish when its inputs are the same from when they are different. In other words, a perceptron cannot represent the exclusive-or, <span class="Ital">xor</span>, operation of Chapter <span class="contentNum circuits"></span>.
 			</p>
 
 			<p>
@@ -273,14 +273,13 @@
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
-				var chapObj;
+				var chapID = "intelligence";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceOverview4");		// get arrow paths
-					chapObj = getCurrChapter("intelligence");
 
 				});	
 				
