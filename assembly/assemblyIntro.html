@@ -15,7 +15,6 @@
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -36,9 +35,11 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
+			
+			<!--
             <div class="floating-previous"></div>
 			<div class="floating-next"></div>			
-	
+			-->
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
@@ -63,6 +64,11 @@
 			<p>
 				<span class="contentNum assemblyMachine"></span> fills in some of the details concerning the architecture of register-based machines, outlined in <span class="contentNum assemblyRegisters"></span>.  The Watson Virtual Machine is used as a guide to explore the translation of programs from the assembly level to the machine level.  Machine level is the lowest level of software.  At this level, programs and data are represented as strings of 1’s and 0’s.  Finally, the concept of the instruction cycle and details of how machine language programs are actually executed are described.
 			</p>
+			
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
 			
 			<!-- End main content -->
 			<hr />
@@ -94,7 +100,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-
+					populateBottomArrows();
 					pageObj = getArrowPathsByPage("assemblyintro");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 
