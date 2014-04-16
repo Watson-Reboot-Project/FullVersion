@@ -314,6 +314,12 @@ function Connector(initX, initY, setName, id, setup, displayMode) {
 	// give the connector an input (only one is needed)
 	// add a value to this AND gate's input values (used in computing the output of the circuit); these two values will be OR'ed together
 	function setPluginVal(comp, val) {
+		var plugin;
+		if (pluginPin == 0) plugin = pin0;
+		else if (pluginPin == 1) plugin = pin1;
+		else if (pluginPin == 2) plugin = pin2;
+		else if (pluginPin == 3) plugin = pin3;
+		
 		pluginVal = val;
 		if (pluginVal == 1) plugin.setStroke("red");
 		else plugin.setStroke("blue");
