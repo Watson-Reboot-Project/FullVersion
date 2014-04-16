@@ -16,6 +16,7 @@
 	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
@@ -946,6 +947,9 @@
 			<p class="Footnote">
 				<a href="#body_ftn6" id="ftn6">[6]</a>&nbsp; Note: &nbsp; Our definition is equal opportunity – both men and women can be ballers.
 			</p>
+
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
 			
 			<!-- End main content -->
 			<p class="Emphasized">
@@ -973,6 +977,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptControl2");		// get arrow paths
 				});	
 				

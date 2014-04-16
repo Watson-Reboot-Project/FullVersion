@@ -17,6 +17,7 @@
 	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -296,6 +297,9 @@
 				<a href="#body_ftn4" id="ftn4">[4]</a>&nbsp; And incorrect answers on exams, I might add.
 			</p>
 
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+
 			<!-- End main content -->
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -322,6 +326,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptControl1");		// get arrow paths
 				});	
 				

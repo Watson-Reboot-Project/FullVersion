@@ -63,7 +63,7 @@
 				While insertion sort works well on relatively short lists (e.g., 50 to 100 items), it tends to become quite slow on longer lists.  For example, assuming a machine capable of one million high-level comparison operations per second, insertion sort could arrange 10,000 student records in about 25 seconds, which might be acceptable if sorting were not performed very often.  However, sorting 300 million social security numbers on the same machine would require over 700 <span class="Ital">years</span>, on average, and over 14 <span class="Ital">centuries</span> in the worst case.  Clearly, no one can afford to wait that long for a list to be sorted.  Thankfully, computer scientists have developed more efficient sorting techniques, such as merge sort and quick sort.
 			</p>
  
-			<img src="Images/AlgorithmsIMGS/fig5-17.png" alt="" class="Image">
+			<img src="Images/mergetwo.png" alt="" class="Image">
  
 			<p class="Figure">
 				<span class="figNum mergetwo"></span>  Merging two sorted lists
@@ -94,7 +94,7 @@
 				Divide-and-conquer algorithms tend to consist of three identifiable parts: (1) a procedure for dividing a complex problem into two or more simpler problems, (2) a procedure for solving simple instances of the problem, and (3) a procedure for combining the results of subproblems so that they form the answer to a larger problem.
 			</p>
 
-			<img src="Images/AlgorithmsIMGS/fig5-18.png" alt="" class="Image">
+			<img src="Images/divideeight.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum divideeight"></span>  Dividing an eight item unsorted list into eight lists, each containing one item
@@ -102,7 +102,7 @@
 			
 			<br/>
 			
-			<img src="Images/AlgorithmsIMGS/fig5-19.png" alt="" class="Image">
+			<img src="Images/mergeeightmergeeight.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum mergeeight"></span>  Merging eight single item lists into one eight item sorted list
@@ -120,7 +120,7 @@
 				The final step of every divide-and-conquer algorithm is to combine the results of the subproblems.  This is where the actual work goes on in merge sort.  The algorithm will consider each of the <span class="Ital">N</span> single item lists in pairs.  Pairs of single item lists will be merged to form a total of <span class="Ital">N</span>/2 lists of two items each.  In turn, these lists will be processed in pairs to form <span class="Ital">N</span>/4 sorted lists, each four items in length.  This merging of pairs will continue until a single sorted list is produced.  The merge process, applied to the input list of <span class="figNum divideeight"></span>, is illustrated in <span class="figNum mergeeight"></span>.
 			</p>
 			
-			<img src="Images/AlgorithmsIMGS/fig5-20.png" alt="" class="Image">
+			<img src="Images/mergesort.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum mergesort"></span>  Merge sort
@@ -211,7 +211,7 @@
 				It is interesting to note that while merge sort is astonishingly efficient on large lists, insertion sort is much better for small lists – due to the lower “overhead” per comparison.  Given our very conservative assumptions concerning the relative speed of merge sort comparison operations, the graph of <span class="figNum selectioninsertionmerge"></span> shows merge sort becoming more efficient than insertion for lists of size 5,000 or larger.  In reality, the crossover point where merge becomes faster is closer to size 100.
 			</p>
 			
-			<img src="Images/AlgorithmsIMGS/fig5-21.png" alt="" class="Image">
+			<img src="Images/selectioninsertionmerge.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum selectioninsertionmerge"></span>  A comparison of selection, insertion, and merge sort
@@ -221,7 +221,7 @@
 				Before leaving the topic of sorting, one other sort should be mentioned.  Quick sort is a very popular divide-and-conquer sorting algorithm that is extremely efficient under most circumstances.  In fact, quick sort is generally considered to be the fastest “comparison” sort when all factors are taken into account.  In quick sort, the majority of the work is done in the problem decomposition step, rather than in the recombination step as in merge sort.  While the algorithm is not difficult to understand, it is not quite as straightforward as merge sort, so further discussion of quick sort is deferred to a later course.
 			</p>
 
-			<p class="Eercise">
+			<p class="Exercise">
 				Exercises for <span class="contentNum algorithmsSorting3"></span>
 			</p>
 

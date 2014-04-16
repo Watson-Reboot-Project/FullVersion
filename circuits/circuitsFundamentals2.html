@@ -14,7 +14,10 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel="stylesheet">
+		
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 	    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
@@ -38,8 +41,9 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-            <div class="floating-previous"></div>
-			<div class="floating-next"></div>
+      
+      <!--<div class="floating-previous"></div>
+			<div class="floating-next"></div>-->
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -140,7 +144,7 @@
 					<p>
 						Develop the complete truth table for the following circuit:&nbsp;
 						
-						<img src="Images/fig12s2p2-ex1.png" alt="" class="ImageTall">
+						<img src="images/fig12s2p2-ex1.png" alt="" class="ImageTall">
 					</p>
 				</li>
 
@@ -148,7 +152,7 @@
 					<p>
 						Draw a circuit using switches, a power supply, and a light bulb for the following logic circuit:&nbsp;
 						
-						<img src="Images/fig12s2p2-ex2.png" alt="" class="ImageTall">
+						<img src="images/fig12s2p2-ex2.png" alt="" class="ImageTall">
 					</p>
 				</li>
 
@@ -165,6 +169,12 @@
 			<div id="truthTableDiv1" class="ui-widget-content" style="position: relative; visibility: hidden"></div>
 				
 			<!-- End main content -->
+
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+
 			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -183,6 +193,7 @@
 
 			<!-- Figure js -->
 			<script src="js/visibility.js"></script>
+			<script type="text/javascript" src="js/global.js"></script>
 			<script src="js/WatsonDataStore.js"></script>
 			<script src="js/Serializer.js"></script>
 			<script src="js/Controller.js"></script>
@@ -206,35 +217,22 @@
 			<script src="js/Setup.js"></script>
 			<script src="js/DigitalLogicFigure.js"></script>
 			
-			<!-- Sandbox js -->
-			<script src="js/SB_Serializer.js"></script>
-			<script src="js/SB_Controller.js"></script>
-			<script src="js/SB_AndGate.js"></script>
-			<script src="js/SB_OrGate.js"></script>
-			<script src="js/SB_NotGate.js"></script>
-			<script src="js/SB_Connector.js"></script>
-			<script src="js/SB_InputNode.js"></script>
-			<script src="js/SB_OutputNode.js"></script>
-			<script src="js/SB_PopupMenu.js"></script>
-			<script src="js/SB_Exercises.js"></script>
-			<script src="js/SB_TruthTable.js"></script>
-			<script src="js/SB_Setup.js"></script>
-			<script src="js/DigitalLogicsLab.js"></script>
-			<script src="js/Evaluate.js"></script>
-			
 		<script>
 			var pageObj;				// holds previous and next arrows
 			var chapID = "circuits";
-
+			var sectID = "circuitsFundamentals2";
+			
 			$(document).ready(function() {
 				populateNav();											// populate page with nav bar, nav arrows
-				pageObj = getArrowPathsByPage("circuitsFundamentals2");	// get prev and next paths for nav arrows
+				pageObj = getArrowPathsByPage(sectID);					// get prev and next paths for nav arrows
 				populateSpans();										// populate figure and content spans
+				populateBottomArrows();
 			
 				var figureand = new DigitalLogicFigure("container-and", "and", false, false);
 				var figureor = new DigitalLogicFigure("container-or", "or", false, false);
 				var figurenot = new DigitalLogicFigure("container-not", "not", false, false);
 				var figurea = new DigitalLogicFigure("container-a", "a", false, false); 
+				
 			});
 			
 		</script>

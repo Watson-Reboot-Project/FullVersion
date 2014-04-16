@@ -12,18 +12,23 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
-			
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel="stylesheet">
+		
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/kinetic.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -36,8 +41,9 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-            <div class="floating-previous"></div>
-			<div class="floating-next"></div>
+			<!--
+      <div class="floating-previous"></div>
+			<div class="floating-next"></div>-->
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -58,6 +64,11 @@
 			</p>
 
 			<!-- End main content -->
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+
 			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -74,26 +85,19 @@
 				</p>
 			</nav>
 
-			<div>
-
-			</div>
-
-			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "circuits";
-
+				var sectID = "circuitsMicrocomputer";
+				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("circuitsMicrocomputer");		// get arrow paths
-					chapObj = getCurrChapter("circuits");
+					populateBottomArrows();
+					pageObj = getArrowPathsByPage(sectID);				// get arrow paths
 
 				});	
-				
 			</script>
-
 		</div>
 	</body>
 </html>

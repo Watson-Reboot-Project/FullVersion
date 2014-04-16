@@ -14,6 +14,7 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href = "../lib/css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
@@ -350,6 +351,10 @@
 			<p class="Figure">
 				<span class="figNum watsonstatements"></span> The Watson JavaScript program statements.
 			</p>
+
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -377,6 +382,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptOverview");		// get arrow paths
 				});	
 				

@@ -14,11 +14,15 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
-	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet"
+	    ><link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel="stylesheet">
+		
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 	    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/kinetic.js"></script>
 		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
@@ -37,8 +41,9 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-            <div class="floating-previous"></div>
-			<div class="floating-next"></div>
+      
+      <!--<div class="floating-previous"></div>
+			<div class="floating-next"></div>-->
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -61,7 +66,7 @@
 			</p>
 
 			<!-- <h1>INSERT TRUTH TABLE</h1> -->
-			<img class="Image" src="Images/fig12-a.png" alt="3-to-8 Decoder Truth Table">
+			<img class="Image" src="images/fig12-a.png" alt="3-to-8 Decoder Truth Table">
 			
 
 			<p>
@@ -93,15 +98,15 @@
 			</p>
 
 			<!-- <h1>INSERT BLACK BOX</h1> -->
-			<img class="ImageTall" src="Images/fig12-b.png" alt="3-to-8 Decoder Black Box">
+			<img class="ImageTall" src="images/fig12-b.png" alt="3-to-8 Decoder Black Box">
 			<p>
 				In general, since an <span class="Ital">n</span> input decoder will always have 2 <span class="Ital">n</span> outputs, its “black box” can be expressed in the following manner:
 			</p>
 
 			<!-- <h1>INSERT BLACK BOX</h1> -->
-			<img class="Image" src="Images/fig12-c.png" alt="4-to-2 Decoder Black Box">
+			<img class="Image" src="images/fig12-c.png" alt="4-to-2 Decoder Black Box">
 			<p>
-				The symbol <img src="Images/fig12-h.png" alt="Symbol">, along with a number or variable, is frequently used as a shorthand in circuit design to represent the indicated number of lines without actually drawing them. Since modern computers are based on 32-bit words, this compact representation is very important.
+				The symbol <img src="images/fig12-h.png" alt="Symbol">, along with a number or variable, is frequently used as a shorthand in circuit design to represent the indicated number of lines without actually drawing them. Since modern computers are based on 32-bit words, this compact representation is very important.
 			</p>
 
 			<p>
@@ -113,7 +118,7 @@
 			</p>
 
 			<!-- <h1>INSERT TRUTH TABLE</h1> -->
-			<img class="ImageTall" src="Images/fig12-d.png" alt="4-to-2 Decoder Truth Table">
+			<img class="ImageTall" src="images/fig12-d.png" alt="4-to-2 Decoder Truth Table">
 			<p>
 				Note that twelve of the sixteen rows of the truth table are “grayed out”. These rows represent input configurations that are disallowed because either no input line is high, or multiple input lines are high. Thus, in these cases, there is no single high input line for the circuit to return the corresponding binary number of.
 			</p>
@@ -141,7 +146,7 @@
 			</p>
 
 			<!-- <h1>INSERT ALLOWED ROWS</h1> -->
-			<img class="Image" src="Images/fig12-e.png" alt="Only Allowed Rows">
+			<img class="Image" src="images/fig12-e.png" alt="Only Allowed Rows">
 
 			<p>
 				As you can see, this truth table is the exact inverse of the table for the three-to-eight decoder that was presented earlier.
@@ -152,28 +157,32 @@
 			</p>
 
 			<!-- <h1>INSERT BLACK BOX</h1> -->
-			<img class="ImageTall" src="Images/fig12-f.png" alt="8-to-3 Encoder Black Box">
+			<img class="ImageTall" src="images/fig12-f.png" alt="8-to-3 Encoder Black Box">
 			<p>
 				<span>In general, a 2</span><span class="Superscript">n</span> <span>to</span> <span class="Ital">n</span> <span>encoder can be drawn as:</span>
 			</p>
 			<!-- <h1>INSERT CONVERTER</h1> -->
-			<img class="Image" src="Images/fig12-g.png" alt="2n-to-n Encoder Black Box">
+			<img class="Image" src="images/fig12-g.png" alt="2n-to-n Encoder Black Box">
 
 			<p class="Exercise">
 				Exercises for <span class="contentNum circuitsCombinatorial4"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
-					<p>
+					<p class="exercise solvable 16">
 						Draw a complete implementation of a two-to-four decoder using only gates, connectors, and wires.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 16"></div>
 				</li>
 
 				<li>
-					<p>
+					<p class="exercise solvable 17">
 						Draw a complete implementation of a four-to-two encoder using only gates, connectors, and wires. You may assume disallowed input configurations will never occur.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 17"></div>
 				</li>
 			</ol>
 			
@@ -181,8 +190,13 @@
 			<p class="Section" id="Scratch"></p>
 			<div id="sandbox1"></div>
 			<div id="truthTableDiv1" class="ui-widget-content" style="position: relative; visibility: hidden"></div>
-
 			<!-- End main content -->
+
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+
 			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -199,27 +213,10 @@
 				</p>
 			</nav>
 
-			<div>
-
-			</div>
-
-			<!-- Arrow navigation scripts -->
-			<script>
-				var pageObj;											// do NOT change name of variable
-				var chapID = "circuits";
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-
-					pageObj = getArrowPathsByPage("circuitsCombinatorial4");		// get arrow pathh
-				});	
-				
-			</script>
-
 		</div>
 			<!-- Figure js -->
 			<script src="js/visibility.js"></script>
+			<script type="text/javascript" src="js/global.js"></script>
 			<script src="js/WatsonDataStore.js"></script>
 			<script src="js/Serializer.js"></script>
 			<script src="js/Controller.js"></script>
@@ -243,25 +240,23 @@
 			<script src="js/Setup.js"></script>
 			<script src="js/DigitalLogicFigure.js"></script>
 			
-			<!-- Sandbox js -->
-			<script src="js/SB_Serializer.js"></script>
-			<script src="js/SB_Controller.js"></script>
-			<script src="js/SB_AndGate.js"></script>
-			<script src="js/SB_OrGate.js"></script>
-			<script src="js/SB_NotGate.js"></script>
-			<script src="js/SB_Connector.js"></script>
-			<script src="js/SB_InputNode.js"></script>
-			<script src="js/SB_OutputNode.js"></script>
-			<script src="js/SB_PopupMenu.js"></script>
-			<script src="js/SB_Exercises.js"></script>
-			<script src="js/SB_TruthTable.js"></script>
-			<script src="js/SB_Setup.js"></script>
-			<script src="js/DigitalLogicsLab.js"></script>
-			<script src="js/Evaluate.js"></script>
+		<script>
+			var pageObj;											// do NOT change name of variable
+			var chapID = "circuits";
+			var sectID = "circuitsCombinatorial4";
 			
-			<script>
-			var figure16 = new DigitalLogicFigure("container-16", "16");
-			var figure17 = new DigitalLogicFigure("container-17", "17");
-			</script>
+			$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				populateBottomArrows();
+				pageObj = getArrowPathsByPage(sectID);				// get arrow paths
+				
+				var figure16 = new DigitalLogicFigure("container-16", "16",false,false);
+				var figure17 = new DigitalLogicFigure("container-17", "17",false,false);
+				
+				setupExerciseButtons(sectID);
+			});	
+			
+		</script>
 	</body>
 </html>

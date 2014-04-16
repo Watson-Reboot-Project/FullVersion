@@ -16,6 +16,7 @@
 	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -1341,6 +1342,9 @@
 			</ul>
 			
 			<br/>
+
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
 			
 			<!-- End main content -->
 			<hr />
@@ -1369,6 +1373,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptControl3");		// get arrow paths
 				});	
 				

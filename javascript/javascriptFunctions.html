@@ -16,6 +16,7 @@
 	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -37,6 +38,7 @@
 
 			<div id="includedContentForPage"></div>
 			<div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
 			<!-- End nav -->
 
@@ -658,6 +660,8 @@
 					Rewrite the program of <span class="figNum beersubprogram"></span> so that the function returns a string. The new <span class="Subfigure">singsong</span> function should test <span class="Subfigure">beers</span> to see if it is greater than zero. If so, it should print the lyrics and then return the text string “Later…”. If not, it should return the text string “Sorry…”. Have your main program print out this return value. Hence, if a user enters zero or a negative number in answer to the question “How many bottles?” the response presented will be “Sorry…”. If the user enters a positive number greater than zero, the lyrics of the song will be printed followed by “Later…”.
 				</li>
 			</ol>
+
+			<div class="arrows-nav-bottom"></div>
 			
 			<!-- End main content -->
 			<hr />
@@ -676,7 +680,6 @@
 				</p>
 			</nav>
 			
-			<div class="floating-next"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -686,6 +689,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptFunctions");		// get arrow paths
 				});	
 				
@@ -695,7 +699,7 @@
 
 			</div>
 		</div>
-		<script src="js/acorn.js"></script>
+		<script src="../lib/js/acorn.js"></script>
 	    <script src="js/interpreter.js"></script>
 	    <script src="js/editor.js"></script>
 		<script src="js/figures.js"></script>

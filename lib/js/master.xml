@@ -307,7 +307,7 @@
 									</section>
 									<section><!--Chapter Three Section Five Sub-section Two Part Six-->
 										<id>informationUser2b6</id>
-										<name>Queires involving "select", "project", and "join"</name>
+										<name>Queries involving "select", "project", and "join"</name>
 										<path>../information/informationUser2b6.html</path>
 									</section>
 								</sections>
@@ -610,45 +610,42 @@
 
 		<!--21 Figures in Chapter Five-->
 		<figures>
-			<figure>
+			<figure><!--5.2-->
 				<id>bruteforce</id>
 			</figure>
-			<figure>
+			<figure><!--5.2-->
 				<id>better</id>
 			</figure>
-			<figure>
+			<figure><!--5.2-->
 				<id>runtimes</id>
 			</figure>
-			<figure>
+			<figure><!--5.3.1-->
 				<id>seqsearch</id>
 			</figure>
-			<figure>
+			<figure><!--5.3.1-->
 				<id>seqsearch20</id>
 			</figure>
-			<figure>
+			<figure><!--5.3.2-->
 				<id>binarysearch</id>
 			</figure>
-			<!--Set of 2 Figures-->
-			<figure>
-				<id>binary10</id>
-			</figure>
-			<figure>
-				<id>binary55</id>
+			<!--Set of 3 Figures-->
+			<figure><!--5.3.2-->
+				<id>binaryten</id>
 			</figure>
 			<!--End of Set-->
-			<figure>
+			<figure><!--5.3.2-->
 				<id>binarycount</id>
 			</figure>
-			<figure>
-				<id>seqvbinary</id>
+			<figure><!--5.3.2-->
+				<id>seqvsbinary</id>
 			</figure>
-			<figure>
+			<figure><!--5.4.1-->
 				<id>selectionsort</id>
 			</figure>
-			<figure>
+			<figure><!--5.4.1-->
 				<id>selectionex</id>
 			</figure>
-			<figure>
+			<figure><!--5.4.1-->
 				<id>selectionanal</id>
 			</figure>
 			<figure>
@@ -661,9 +658,9 @@
 			<figure>
 				<id>insertionrev</id>
 			</figure>
-			<figure>
+			<!--<figure>
 				<id>insertionpre</id>
-			</figure>
+			</figure>-->
 			<!--End of Set-->
 			<figure>
 				<id>selectionvsinsertion</id>
@@ -1842,31 +1839,18 @@
 			<figure>
 				<id>cabbagecomplete</id>
 			</figure>
-			<!--Set of 2 Figures-->
 			<figure>
-				<id>breadthfirst</id>
+				<id>searchtypes</id>
 			</figure>
-			<figure>
-				<id>depthfirst</id>
-			</figure>
-			<!--End of Figures-->
 			<figure>
 				<id>logicandornot</id>
 			</figure>
 			<figure>
 				<id>logicimplies</id>
 			</figure>
-			<!--Set of 3 Figures-->
 			<figure>
-				<id>notnotp</id>
+				<id>notimplications</id>
 			</figure>
-			<figure>
-				<id>pimpliesq</id>
-			</figure>
-			<figure>
-				<id>notparenthesis</id>
-			</figure>
-			<!--End of Set-->
 			<figure>
 				<id>ponenstruth</id>
 			</figure>
@@ -1879,17 +1863,9 @@
 			<figure>
 				<id>summerfacts</id>
 			</figure>
-			<!--Set of 3 Figures-->
 			<figure>
-				<id>chainresolution</id>
+				<id>modusresolutions</id>
 			</figure>
-			<figure>
-				<id>ponensresolution</id>
-			</figure>
-			<figure>
-				<id>tollensresolution</id>
-			</figure>
-			<!--End of Set-->
 			<figure>
 				<id>notswimming</id>
 			</figure>
@@ -1908,20 +1884,9 @@
 			<figure>
 				<id>fixedperceptron</id>
 			</figure>
-			<!--Set of 4 Figures-->
 			<figure>
-				<id>itemsclassified</id>
+				<id>trainingpasses</id>
 			</figure>
-			<figure>
-				<id>trainingpassone</id>
-			</figure>
-			<figure>
-				<id>trainingpasstwo</id>
-			</figure>
-			<figure>
-				<id>ltrainingpasssix</id>
-			</figure>
-			<!--End of Set-->
 		</figures><!--End of Figures-->
 	</chapter>
 	

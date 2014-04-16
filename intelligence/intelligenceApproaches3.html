@@ -15,7 +15,7 @@
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
+		<link href="../lib/css/grid.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
@@ -46,7 +46,7 @@
 
 
 			<p>
-				As was discussed in Section 14.2 many of the recent advances in AI, such as progress in speech recognition and automatic translation, have been due to both big data and the resurgence of interest in machine learning techniques – systems that learn from examples instead of being explicitly programmed for every eventuality.
+				As was discussed in <span class="contentNum intelligenceOverview"></span> many of the recent advances in AI, such as progress in speech recognition and automatic translation, have been due to both big data and the resurgence of interest in machine learning techniques – systems that learn from examples instead of being explicitly programmed for every eventuality.
 			</p>
 
 			<p>
@@ -54,23 +54,23 @@
 			</p>
 
 			<p>
-				Human brains are composed of trillions of individual nerve cells, called <span class="Bolded">neurons</span>. The major components of biological neurons are illustrated in Figure 14.18. Like all cells, neurons have a <span class="Ital">nucleus</span> that keeps the neuron alive and functioning. In addition, neurons have a large number of branched protrusions, called <span class="Bolded">dendrites</span>, that receive chemical signals from other neurons. Neurons also have long thin fiber-like appendages, called <span class="Bolded">axons</span>, down which they send electro-chemical signals. At the end of a neuron’s axon are branch-like structures that come in contact with the dendrites of other neurons. In response to the signals it receives from other neurons, a neuron may fire – sending an electro-chemical pulse down its axon in order to transmit signals to other neurons.
+				Human brains are composed of trillions of individual nerve cells, called <span class="Bolded">neurons</span>. The major components of biological neurons are illustrated in <span class="figNum braincell"></span>. Like all cells, neurons have a <span class="Ital">nucleus</span> that keeps the neuron alive and functioning. In addition, neurons have a large number of branched protrusions, called <span class="Bolded">dendrites</span>, that receive chemical signals from other neurons. Neurons also have long thin fiber-like appendages, called <span class="Bolded">axons</span>, down which they send electro-chemical signals. At the end of a neuron’s axon are branch-like structures that come in contact with the dendrites of other neurons. In response to the signals it receives from other neurons, a neuron may fire – sending an electro-chemical pulse down its axon in order to transmit signals to other neurons.
 			</p>
 
 			<p>
 				Neurons are not in direct physical contact with one another. Instead, there are tiny gaps, called <span class="Bolded">synapses</span>, between the dendrites of one neuron and the axons of others. The signals that pass between neurons must cross these synaptic gaps. This is accomplished by the signaling neuron releasing <span class="Ital">neurotransmitter</span> chemicals into the synapse. A synapse may be either excitatory or inhibitory. Signals arriving at <span class="Bolded">excitatory synapses</span> increase the likelihood that the receiving neuron will fire. Signals arriving at <span class="Bolded">inhibitory synapses</span> decrease the likelihood of the neuron firing.
 			</p>
 
-			<img src="Images/CompAndIntelIMGS/fig14-40.png" alt="Illustration of a brain cell (neuron)" class="Image">
+			<img src="images/braincell.png" alt="Illustration of a brain cell (neuron)" class="Image">
 
 			<p class="Figure">
-				Figure 14.42:&nbsp;Illustration of a brain cell (neuron)
+				<span class="figNum braincell"></span>&nbsp;Illustration of a brain cell (neuron)
 			</p>
 
-			<img src="Images/CompAndIntelIMGS/fig14-41.png" alt="An N-input perceptron" class="Image">
+			<img src="images/ninputperceptron.png" alt="An N-input perceptron" class="Image">
 
 			<p class="Figure">
-				Figure 14.43:&nbsp;An N-input perceptron
+				<span class="figNum ninputperceptron"></span>&nbsp;An N-input perceptron
 			</p>
 
 			<p>
@@ -78,7 +78,7 @@
 			</p>
 
 			<p>
-				A <span class="Bolded">perceptron</span> is a simple processing element that models some of the features of individual neurons. Figure 14.43 depicts an N-input perceptron. The output of a perceptron is either “0” or “1”. The use of a binary output in the perceptron model reflects the fact that biological neurons appear to either “fire” or “not fire”. The inputs to a perceptron, on the other hand, can be arbitrary real numbers – positive, zero, or negative, with fractions allowed. In Figure 14.43, these inputs are indicated by X<span class="Subscript">1</span> through X<span class="Subscript">n</span>.
+				A <span class="Bolded">perceptron</span> is a simple processing element that models some of the features of individual neurons. <span class="figNum ninputperceptron"></span> depicts an N-input perceptron. The output of a perceptron is either “0” or “1”. The use of a binary output in the perceptron model reflects the fact that biological neurons appear to either “fire” or “not fire”. The inputs to a perceptron, on the other hand, can be arbitrary real numbers – positive, zero, or negative, with fractions allowed. In <span class="figNum ninputperceptron"></span>, these inputs are indicated by X<span class="Subscript">1</span> through X<span class="Subscript">n</span>.
 			</p>
 
 			<p>
@@ -86,13 +86,13 @@
 			</p>
 
 			<p>
-				Once the inputs have been “weighted”, they are sent to a summation unit that adds them together. In Figure 14.43, the box labeled  represents this summation unit. The sum of the weighted inputs is then sent to a threshold comparator, the rightmost box in Figure 14.43. Every perceptron will have an internal threshold value that controls how sensitive it is to its inputs. If the weighted sum of a perceptron’s inputs is greater than its internal threshold value, then the perceptron will fire (generate a “1”), otherwise the perceptron will not fire (it generates a “0”).
+				Once the inputs have been “weighted”, they are sent to a summation unit that adds them together. In <span class="figNum ninputperceptron"></span>, the box labeled &#931; represents this summation unit. The sum of the weighted inputs is then sent to a threshold comparator, the rightmost box in <span class="figNum ninputperceptron"></span>. Every perceptron will have an internal threshold value that controls how sensitive it is to its inputs. If the weighted sum of a perceptron’s inputs is greater than its internal threshold value, then the perceptron will fire (generate a “1”), otherwise the perceptron will not fire (it generates a “0”).
 			</p>
 
-			<img src="Images/CompAndIntelIMGS/fig14-42.png" alt="An N-input perceptron with a fixed threshold" class="Image">
+			<img src="images/fixedperceptron.png" alt="An N-input perceptron with a fixed threshold" class="Image">
 
 			<p class="Figure">
-				Figure 14.44: An N-input perceptron with a fixed threshold
+				<span class="figNum fixedperceptron"></span> An N-input perceptron with a fixed threshold
 			</p>
 
 			<p>
@@ -104,11 +104,11 @@
 			</p>
 
 			<p>
-				The standard model of a perceptron can be modified slightly, as illustrated in Figure 14.44, in order to use a fixed-value threshold comparator. The most common fixed value to compare against is zero. If the weighted sum of the inputs is greater than zero the perceptron fires, otherwise it does not. In order to use a zero value threshold comparator, the “real” threshold will be negated and treated as a weight (W<span class="Subscript">0</span>) attached to an input port ( X<span class="Subscript">0</span>) fixed at “1”. This modification of the model is simply a computational convenience – it allows us to treat the threshold just like any other weight, but it doesn’t change what the perceptron is capable of learning.
+				The standard model of a perceptron can be modified slightly, as illustrated in <span class="figNum fixedperceptron"></span>, in order to use a fixed-value threshold comparator. The most common fixed value to compare against is zero. If the weighted sum of the inputs is greater than zero the perceptron fires, otherwise it does not. In order to use a zero value threshold comparator, the “real” threshold will be negated and treated as a weight (W<span class="Subscript">0</span>) attached to an input port ( X<span class="Subscript">0</span>) fixed at “1”. This modification of the model is simply a computational convenience – it allows us to treat the threshold just like any other weight, but it doesn’t change what the perceptron is capable of learning.
 			</p>
 
 			<p>
-				In order to understand the way this modification works, think of a standard perceptron, based on the diagram of Figure 14.43, that has a threshold of five. This perceptron would fire if:
+				In order to understand the way this modification works, think of a standard perceptron, based on the diagram of <span class="figNum ninputperceptron"></span>, that has a threshold of five. This perceptron would fire if:
 			</p>
 
 			<p class="Subfigure">
@@ -146,38 +146,77 @@
 			</p>
 
 			<p>
-				Figure14.43 illustrates portions of the perceptron learning process. Part (a) of the figure presents the examples that the perceptron will be trained on. The training examples are plotted on a two-dimensional four-by-four grid. The horizontal axis corresponds to the <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">1</span></span> input of the perceptron and the vertical axis corresponds to the <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">2</span></span> input. Thus, in this example, inputs are expected to vary in the range 1 – 4. In such a simple system, there are only 16 possible inputs (1,1), (1,2), (1,3), (1,4), (2,1), (2,2)… etc. Our goal is to teach the perceptron to fire on the two elements located at positions (3,1) and (3,2), and avoid firing on the other training elements. Note that when I say “the element at position (3,1), I mean the element where input <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 3</span> and input <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1</span>.
+				<span class="figNum ninputperceptron"></span> illustrates portions of the perceptron learning process. Part (a) of the figure presents the examples that the perceptron will be trained on. The training examples are plotted on a two-dimensional four-by-four grid. The horizontal axis corresponds to the <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">1</span></span> input of the perceptron and the vertical axis corresponds to the <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">2</span></span> input. Thus, in this example, inputs are expected to vary in the range 1 – 4. In such a simple system, there are only 16 possible inputs (1,1), (1,2), (1,3), (1,4), (2,1), (2,2)… etc. Our goal is to teach the perceptron to fire on the two elements located at positions (3,1) and (3,2), and avoid firing on the other training elements. Note that when I say “the element at position (3,1), I mean the element where input <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 3</span> and input <span class="Subfigure">X</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1</span>.
 			</p>
 			
-			<img src="Images/CompAndIntelIMGS/fig14-43a.png" alt="The items to be classified" class="Image">
+			<div class="section group">
+				<div class="col span_1_of_2">
+					<img src="images/itemsclassified.png" alt="The items to be classified" class="Image">
+			
+					<p class="Figure">
+						(a) The items to be classified
+					</p>
+				</div>
+				<div class="col span_1_of_2">
+					<img src="images/trainingpassone.png" alt="One false positive, two false negatives" class="Image">
+			
+					<p class="Figure">
+						(b) Training Pass #1
+						<br/>One false positive, two false negatives
+					</p>
+				</div>
+			</div>
+			
+			<div class="section group">
+				<div class="col span_1_of_2">
+					<img src="images/trainingpasstwo.png" alt="One false positive" class="Image">
+
+					<p class="Figure">
+						(c) Training Pass #2
+						<br/>One false positive
+					</p>
+				</div>
+				<div class="col span_1_of_2">
+					<img src="images/trainingpasssix.png" alt="All items correctly classified" class="Image">
+
+					<p class="Figure">
+						(d) Training Pass #6
+						<br/>All items correctly classified
+					</p>
+				</div>
+			</div>
+			
+			<!-- non-grid images
+			<img src="images/itemsclassified.png" alt="The items to be classified" class="Image">
 			
 			<p class="Figure">
 				(a) The items to be classified
 			</p>
 			
-			<img src="Images/CompAndIntelIMGS/fig14-43b.png" alt="One false positive, two false negatives" class="Image">
+			<img src="images/trainingpassone.png" alt="One false positive, two false negatives" class="Image">
 			
 			<p class="Figure">
 				(b) Training Pass #1
 				<br/>One false positive, two false negatives
 			</p>
 			
-			<img src="Images/CompAndIntelIMGS/fig14-43c.png" alt="One false positive" class="Image">
+			<img src="images/trainingpasstwo.png" alt="One false positive" class="Image">
 
 			<p class="Figure">
 				(c) Training Pass #2
 				<br/>One false positive
 			</p>
 			
-			<img src="Images/CompAndIntelIMGS/fig14-43d.png" alt="All items correctly classified" class="Image">
+			<img src="images/trainingpasssix.png" alt="All items correctly classified" class="Image">
 
 			<p class="Figure">
 				(d) Training Pass #6
 				<br/>All items correctly classified
 			</p>
+			-->
 			
 			<p class="Figure">
-				Figure 14.45: A two-input perceptron learning to recognize a linearly separable problem
+				<span class="figNum trainingpasses"></span> A two-input perceptron learning to recognize a linearly separable problem
 			</p>
 
 			<p>
@@ -185,7 +224,7 @@
 			</p>
 
 			<p>
-				Figure 14.45, Part (b) shows the initial classification efforts of the perceptron when the weights are set to <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -3.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.0</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1.0</span>. According to the figure, training elements (3,1) and (3,2) produce false negatives, and element (2,4) generates a false positive. The other elements happened to be classified correctly.
+				<span class="figNum trainingpasses"></span>, Part (b) shows the initial classification efforts of the perceptron when the weights are set to <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -3.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.0</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1.0</span>. According to the figure, training elements (3,1) and (3,2) produce false negatives, and element (2,4) generates a false positive. The other elements happened to be classified correctly.
 			</p>
 
 			<p>
@@ -367,7 +406,7 @@
 			</p>
 
 			<p>
-				Now, let’s apply this learning rule to the situation illustrated in Figure 14.45 (b) to generate a new weight set. Again, (3,1) and (3,2) are false negatives and (2,4) is a false positive. The current perceptron weights are <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -3.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.0</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1.0</span> .
+				Now, let’s apply this learning rule to the situation illustrated in <span class="figNum trainingpasses"></span> (b) to generate a new weight set. Again, (3,1) and (3,2) are false negatives and (2,4) is a false positive. The current perceptron weights are <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -3.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.0</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1.0</span> .
 			</p>
 
 			<p>
@@ -421,11 +460,11 @@
 			</ul>
 			<br/>
 			<p>
-				Thus, after one pass through the training set, the perceptron weights have been changed from <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -3.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1.0</span> to <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -2.78</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.88</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 0.78</span> . Figure 14.22(c) illustrates the state of the perceptron at this point. The perceptron fires on training examples (2,4), (3,1) and (3,2); and does not fire on any of the other examples. All training examples save false positive (2,4) are classified correctly.
+				Thus, after one pass through the training set, the perceptron weights have been changed from <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -3.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.0</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 1.0</span> to <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -2.78</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.88</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 0.78</span> . <span class="figNum trainingpasses"></span>(c) illustrates the state of the perceptron at this point. The perceptron fires on training examples (2,4), (3,1) and (3,2); and does not fire on any of the other examples. All training examples save false positive (2,4) are classified correctly.
 			</p>
 
 			<p>
-				At this point, the perceptron learning rule would be applied again and the weights updated. After six repetitions of the training process, all training examples would be correctly classified. This situation is illustrated in Figure 14.45(d).
+				At this point, the perceptron learning rule would be applied again and the weights updated. After six repetitions of the training process, all training examples would be correctly classified. This situation is illustrated in <span class="figNum trainingpasses"></span>(d).
 			</p>
 
 			<p>
@@ -441,7 +480,7 @@
 			</p>
 
 			<p>
-				Well, for a two-input problem, such as the one illustrated in Figure 14.45, the problem must be linearly separable. <span class="Bolded">Linearly separable</span> means that if you plot the elements of the training set on a two-dimensional grid, you must be able to separate the two output groups by a single straight line. Our example was learnable because it was linearly separable. In fact, if you look back at Parts (b), (c), and (d) of Figure 14.45 you can see the line, or <span class="Ital">decision surface</span>, that separates the two output categories. The decision surface has a positive side (above) and a negative side (below). Any input lying above the decision surface will cause the perceptron to fire. Any input lying on or below the decision surface will cause the perceptron to fail to fire. Thus, the orientation of a perceptron’s decision surface completely describes the knowledge possessed by that perceptron.
+				Well, for a two-input problem, such as the one illustrated in <span class="figNum trainingpasses"></span>, the problem must be linearly separable. <span class="Bolded">Linearly separable</span> means that if you plot the elements of the training set on a two-dimensional grid, you must be able to separate the two output groups by a single straight line. Our example was learnable because it was linearly separable. In fact, if you look back at Parts (b), (c), and (d) of <span class="figNum trainingpasses"></span> you can see the line, or <span class="Ital">decision surface</span>, that separates the two output categories. The decision surface has a positive side (above) and a negative side (below). Any input lying above the decision surface will cause the perceptron to fire. Any input lying on or below the decision surface will cause the perceptron to fail to fire. Thus, the orientation of a perceptron’s decision surface completely describes the knowledge possessed by that perceptron.
 			</p>
 
 			<p>
@@ -449,7 +488,7 @@
 			</p>
 
 			<p>
-				An understanding of decision surfaces lets us accurately predict how a trained perceptron will react when presented with a “new” input that it has never seen before. If that input is above its decision surface, the perceptron will fire, otherwise it will not. Referring back to Figure 14.45(d) we can say with assurance that presenting item (4,2) to the perceptron will cause it to fire. Similarly, we can know that item (2,3) will not cause the perceptron to fire.
+				An understanding of decision surfaces lets us accurately predict how a trained perceptron will react when presented with a “new” input that it has never seen before. If that input is above its decision surface, the perceptron will fire, otherwise it will not. Referring back to <span class="figNum trainingpasses"></span>(d) we can say with assurance that presenting item (4,2) to the perceptron will cause it to fire. Similarly, we can know that item (2,3) will not cause the perceptron to fire.
 			</p>
 
 			<p>
@@ -461,7 +500,7 @@
 			</p>
 
 			<p class="Section">
-				Exercises for Section 14.3.3
+				Exercises for <span class="contentNum intelligenceApproaches3"></span>
 			</p>
 
 			<ol>
@@ -478,7 +517,7 @@
 				</li>
 
 				<li>
-					<p>Apply the perceptron learning rule to the problem illustrated in Figure 14.45(c) in order to generate a new weight set. Assume the current weights are: <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -2.78</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.88</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 0.78</span> . All training examples are classified correctly except for a false positive on item (2,4). The learning rate is 0.22 .</p>
+					<p>Apply the perceptron learning rule to the problem illustrated in <span class="figNum trainingpasses"></span>(c) in order to generate a new weight set. Assume the current weights are: <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">0</span></span> <span class="Subfigure">= -2.78</span>, <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">1</span></span> <span class="Subfigure">= 0.88</span>, and <span class="Subfigure">W</span><span class="Subscript"><span class="Subfigure">2</span></span> <span class="Subfigure">= 0.78</span> . All training examples are classified correctly except for a false positive on item (2,4). The learning rate is 0.22 .</p>
 				</li>
 			</ol>
 			<!-- End main content -->

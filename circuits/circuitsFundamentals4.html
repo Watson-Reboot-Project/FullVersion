@@ -14,8 +14,9 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			<link href = "../lib/css/colmn_test.css" rel="stylesheet">
 		
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
@@ -39,8 +40,9 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-            <div class="floating-previous"></div>
-			<div class="floating-next"></div>
+      
+      <!--<div class="floating-previous"></div>
+			<div class="floating-next"></div>-->
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -244,6 +246,12 @@
 			</p>
 
 			<!-- End main content -->
+
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+
 			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -296,6 +304,7 @@
 				populateNav();
 				populateSpans();
 				pageObj = getArrowPathsByPage(sectID);
+				populateBottomArrows();
 			
 				var figurenand0 = new DigitalLogicFigure("container-nand0", "nand0", false, false);
 				var figurenand = new DigitalLogicFigure("container-nand", "nand", false, false);
@@ -308,8 +317,6 @@
 				
 				setupExerciseButtons(sectID);
 			});
-			
-			
 		</script>
 	</body>
 </html>

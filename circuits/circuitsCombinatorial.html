@@ -14,16 +14,17 @@
 	    <!-- CSS files -->
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
+			<link href="../lib/css/colmn_test.css" rel="stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script>
-		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/master.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -36,8 +37,10 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-            <div class="floating-previous"></div>
+			<!--
+      <div class="floating-previous"></div>
 			<div class="floating-next"></div>
+			-->
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -51,6 +54,12 @@
 			<p>
 				<span>Combinational circuits are digital circuits that do not involve any kind of feedback. In other words, the output of a combinational circuit cannot be fed back into that circuit as input. In this section we’ll talk about a number of combinational circuits that are used in the construction of digital computers. These circuits include comparators, adders, decoders, encoders, multiplexers, and demultiplexers. First, we begin with a relatively simply circuit, the “exclusive or” or</span> <span class="Ital">xor</span> <span>.</span>
 			</p>
+
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -76,13 +85,15 @@
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "circuits";
+				var secID = "circuitsCombinatorial";
 
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateBottomArrows();
 
-					pageObj = getArrowPathsByPage("circuitsCombinatorial");		// get arrow paths
-					chapObj = getCurrChapter("circuits");
+					pageObj = getArrowPathsByPage(secID);		// get arrow paths
+					chapObj = getCurrChapter(chapID);
 
 				});	
 				

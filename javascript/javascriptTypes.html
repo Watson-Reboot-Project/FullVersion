@@ -14,6 +14,7 @@
 	    <!-- CSS files -->
 	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -368,6 +369,9 @@
 				<a href="#body_ftn2" id="ftn2">[2]</a>&nbsp; Within the supported range.
 			</p>
 
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+
 			<!-- End main content -->
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -394,6 +398,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptTypes");		// get arrow paths
 				});	
 				

@@ -51,6 +51,8 @@ body { padding-top: 10%; }
 @media screen and (max-width: 600px) { body { padding-top: 25%;}}
 @media screen and (max-width: 400px) { body { padding-top: 35%;}}
 
+/*.well .bold-me{}*/
+
 .navbar .navbar-collapse {
   text-align: center;
 }
@@ -155,7 +157,7 @@ body { padding-top: 10%; }
     top: 0px;
     right:0px;
     width: 100%;
-    border-radius: 0; 
+    border-radius: 0 !important;
 }
 
 /* Previous and Next arrow styling 
@@ -166,56 +168,69 @@ body { padding-top: 10%; }
 @media screen and (max-width: 400px) { #nextArrowStyle { max-width: 25%;}}
 */
 
-.prevArrowStyleTop{
+.prevChapArrowStyle{
   /*position: absolute; 
   z-index: 200; 
   left: 1px; 
   right: auto; 
   width: 20px; 
   top: 12%;*/
-  position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;
+  position:fixed;z-index:200;left:1px; right: auto; width:40px; top:60%;
       display:block;margin:0 0.5em;
+        vertical-align: middle;
+        /*max-width: 8%;*/
 
 }
+
+.nextChapArrowStyle{
+  /*position: fixed; 
+  z-index:200; 
+  left: auto; 
+  right: 1px; 
+  top: 90%;
+  display: block; 
+  margin: 0 0.5em;*/
+        position:fixed;z-index:200; left: auto; width:40px; right:1px; top:60%;
+      display:block;margin:0 0.5em;
+        vertical-align: middle;
+
+
+}
+
+.prevArrowStyleTop{
+
+    position: absolute;
+    top: auto;
+    left:1%;
+    top: 15%;
+    z-index: 200;
+
+}
+
 
 .nextArrowStyleTop{
-  /*position: fixed; 
-  z-index:200; 
-  left: auto; 
-  right: 1px; 
-  top: 90%;
-  display: block; 
-  margin: 0 0.5em;*/
-        position:fixed;z-index:200; left: auto; right:1px; top:45%;
-      display:block;margin:0 0.5em;
-
+    position: absolute;
+    bottom: auto;
+    right:1%;
+    top: 15%;
+    z-index: 200;
 
 }
 
-.prevArrowStyle1{
-  /*position: absolute; 
-  z-index: 200; 
-  left: 1px; 
-  right: auto; 
-  width: 20px; 
-  top: 12%;*/
-  position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;
-      display:block;margin:0 0.5em;
+.prevArrowStyleBottom{
+
+    position: absolute;
+    bottom: relative;
+    left: 1%;
+    z-index: 200;
 
 }
 
-.nextArrowStyle1{
-  /*position: fixed; 
-  z-index:200; 
-  left: auto; 
-  right: 1px; 
-  top: 90%;
-  display: block; 
-  margin: 0 0.5em;*/
-        position:fixed;z-index:200; left: auto; right:1px; top:45%;
-      display:block;margin:0 0.5em;
-
-
+.nextArrowStyleBottom {
+    position: absolute;
+    bottom: relative;
+    right: 1%;
+    z-index: 200;
 }
 
 

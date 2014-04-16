@@ -9,21 +9,26 @@
 
 		<title>Watson</title>
 
-			<!-- Google fonts -->
+		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
-			
+	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href = "../lib/css/colmn_test.css" rel="stylesheet">
+		
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/kinetic.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -36,8 +41,9 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-            <div class="floating-previous"></div>
-			<Div class="floating-next"></div>
+      
+      <!--<div class="floating-previous"></div>
+			<Div class="floating-next"></div>-->
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -53,13 +59,13 @@
 				<span>An R-S flip-flop can be constructed from two interconnected</span> <span class="Ital">nor</span> <span>gates. <span class="figNum channeltwo"></span> illustrates such an R-S flip-flop. As discussed in <span class="contentNum circuitsFundamentals4"></span>, a</span> <span class="Ital">nor</span> <span>is simply an</span> <span class="Ital">or</span> <span>gate followed by a</span> <span class="Ital">not</span> <span>gate. For clarity, <span class="figNum channeltwo"></span> shows the two</span> <span class="Ital">nor</span> <span>gates of the flip-flop as having been decomposed into their underlying</span> <span class="Ital">or</span> <span>and</span> <span class="Ital">not</span> <span>gates.</span>
 			</p>
 
-			<img src="Images/fig12-23.png" alt="" class="Image">
+			<img src="images/channeltwo.png" alt="" class="Image">
 
 			<p class="Figure">
 				<span class="figNum channeltwo"></span> R-S Flip-flop
 			</p>
 
-			<img src="Images/fig12-24.png" alt="" class="Image">
+			<img src="images/channelthree.png" alt="" class="Image">
 
 			<p class="Figure">
 				<span class="figNum channelthree"></span> An R-S flip-flop holding a “1”
@@ -81,7 +87,7 @@
 				If we apply a “1” to the R (reset) input, in order to place a “0” into the bit, the following events occur. The output of the top <span class="Ital">nor</span> <span>gate (the Q signal) goes low, this is fed back to the input of the bottom</span> <span class="Ital">nor</span> <span>gate, which causes its output (the Q signal) to go high. This signal is fed back to the top</span> <span class="Ital">nor</span>gate, but since it already has another high input there is no change in the output – it remains low. This is a stable circuit, as shown in <span class="figNum rsflipflop"></span>. The flip-flop has been reset to “0”.
 			</p>
 
-			<img src="Images/fig12-25.png" alt="" class="Image">
+			<img src="images/rsflipflop.png" alt="" class="Image">
 
 			<p class="Figure">
 				<span class="figNum rsflipflop"></span> An R-S flip-flop reset to “0”
@@ -95,13 +101,13 @@
 				<span>Now we apply a high signal to the S (set) input, in order to set the bit to “1”. This action causes the following events to occur. The output of the bottom</span> <span class="Ital">nor</span> <span>gate becomes 0 since one of its inputs is now high. This low signal is applied as an input to the top</span> <span class="Ital">nor</span> <span>gate, where the R input is also low. The output of the top</span> <span class="Ital">nor</span> <span>is forced high, and this high output is fed back into the bottom</span> <span class="Ital">nor</span> <span>gate, which does not change its state since its other input was already high. The flip-flop has been set to “1”, as can be seen in <span class="figNum rsflipflopreset"></span>.</span>
 			</p>
 
-			<img src="Images/fig12-26.png" alt="" class="Image">
+			<img src="images/rsflipflopone.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum rsflipflopone"></span> An R-S flip-flop holding a “0”
 			</p>
 			
-			<img src="Images/fig12-27.png" alt="" class="Image">
+			<img src="images/rsflipflopreset.png" alt="" class="Image">
 
 			<p class="Figure">
 				<span class="figNum rsflipflopreset"></span> An R-S flip-flop set to “1”
@@ -115,13 +121,13 @@
 				<span>Notice that state of the flip-flop shown in <span class="figNum rsflipflopzero"></span> is identical to its original state given in <span class="figNum channelthree"></span>. They both represent the flip-flop in its “1” state, with “0” on both input lines. Comparing <span class="figNum rsflipflopone"></span> and <span class="figNum rsflipflopzero"></span> illustrates another feature of flip-flops. That is that the value output by the circuit is</span> <span class="Ital">not</span> <span>solely dependent on its current inputs. When the R and S inputs are both low, “0”, the value output on the Q line depends on whether the most recent high, “1”, input was on the set line or the reset line. <span class="figNum rsflipflopone"></span> shows the circuit outputting a “0” on Q, because the most recent input</span> <span>operation was “reset”. <span class="figNum rsflipflopzero"></span> shows the circuit outputting a “1”, because the most recent input operation was “set”.</span>
 			</p>
 
-			<img src="Images/fig12-28.png" alt="" class="Image">
+			<img src="images/rsflipflopzero.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum rsflipflopzero"></span> An R-S flip-flop holding a “1”
 			</p>
 			
-			<img src="Images/fig12-29.png" alt="" class="Image">
+			<img src="images/rsflipflopsetone.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum rsflipflopsetone"></span> An R-S flip-flop in a stable but invalid state
@@ -135,7 +141,7 @@
 				We conclude this introduction to the R-S flip-flop with its truth table.
 			</p>
 
-			<img src="Images/fig12-rsflipfloptable.png" alt="" class="ImageTall">
+			<img src="images/fig12-rsflipfloptable.png" alt="" class="ImageTall">
 			
 			<p class="Exercise">
 				Exercises for <span class="contentNum circuitsSequential1"></span>
@@ -149,6 +155,11 @@
 				</li>
 			</ol>
 			<!-- End main content -->
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+
 			<hr />
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -165,24 +176,18 @@
 				</p>
 			</nav>
 
-			<div>
-
-			</div>
-
-			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "circuits";
-
+				var sectID = "circuitsSequential1";
+				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateBottomArrows();
+					pageObj = getArrowPathsByPage(sectID);				// get arrow paths
 
-					pageObj = getArrowPathsByPage("circuitsSequential1");		// get arrow paths
-					chapObj = getCurrChapter("circuits");
-
-				});	
-				
+				});
 			</script>
 		</div>
 	</body>

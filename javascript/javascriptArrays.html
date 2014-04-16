@@ -16,7 +16,9 @@
 	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
@@ -37,6 +39,7 @@
 
 			<div id="includedContentForPage"></div>
 			<div class="floating-previous"></div>
+			<div class="floating-next"></div>
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -784,6 +787,9 @@
 				</li>
 			</ol>
 
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -800,8 +806,6 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
-			
-			<div class="floating-next"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -811,6 +815,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptArrays");		// get arrow paths
 				});	
 				

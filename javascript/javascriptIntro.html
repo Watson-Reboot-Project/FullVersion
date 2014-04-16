@@ -14,17 +14,15 @@
 	    <!-- CSS files -->
 	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script>
-		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
+			<script type="text/javascript" src="../lib/js/master.js"></script>
+			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
+			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+			<script type="text/javascript" src="../lib/js/nav.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -76,6 +74,9 @@
 			<p>
 				The last chapter in this part of the book is Chapter <span class="contentNum engineering false"></span>: Building Large Software Systems. Chapter <span class="contentNum engineering false"></span> begins with a discussion of object-oriented programming. Object-oriented features influence the ways in which the parts of a program are organized and how they communicate with one another. Object-oriented languages are extremely useful for writing complex programs that support mouse-based, graphical user interfaces. Chapter 10 also includes an introduction to the field of software engineering, which focuses on the unique challenges that must be faced when constructing large programs, such as those that require many thousands of worker-hours to complete.
 			</p>
+
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
 			
 			<!-- End main content -->
 			<hr />
@@ -104,6 +105,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
+					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptIntro");		// get arrow paths
 				});	
 				
