@@ -14,6 +14,7 @@
 		<!-- CSS files -->
 		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/styles2.css" rel = "stylesheet">
 		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 
 		<!-- Java Script files -->
@@ -40,12 +41,14 @@
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<div class="floating-previous"></div>
-
+			<!--<div class="floating-previous"></div>-->
 			<!-- Next -->
-			<div class="floating-next"></div>
+			<!--<div class="floating-next"></div>-->
 			<!-- End floating nav -->
-			<!-- End nav -->
+
+			<span class="prevArrowStyleTop"><a href="#" onclick="prevArrowPage(pageObj)">
+						<img style="border:0;" src="../lib/images/left-arrow-blue.png" alt="Next page" width="40"></a>
+			</span>
 
 			<!-- Main content -->
 			
@@ -128,6 +131,10 @@
 			<p>
 				Computer scientists and other computing professionals have responded to the above issues in recent years by forming organizations such as Computer Professionals for Social Responsibility and by the publication of a Code of Ethics by the Association for Computing Machinery.  However, unlike engineers, computing professionals are not licensed to practice their vocation.  There is no organization responsible for defining and enforcing a uniform set of professional standards and ethical guidelines – or for imposing sanctions on individuals who engage in irresponsible or unethical professional behavior.
 			</p>
+
+			<span class="nextArrowStyleBottom"><a href="#" onclick="nextArrowPage(pageObj)">
+						<img style="border:0;" src="../lib/images/right-arrow-blue.png" alt="Next page" width="40"></a>
+			</span>
 			
 			<!-- End main content -->
 			<hr />
@@ -160,6 +167,17 @@
 				pageObj = getArrowPathsByPage("scienceFour1");		// get arrow paths
 				});	
 
+			</script>
+			
+			
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-50062005-1', 'latech.edu');
+			  ga('send', 'pageview');
 			</script>
 
 		</div>

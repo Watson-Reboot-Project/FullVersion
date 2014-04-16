@@ -14,6 +14,7 @@
 		<!-- CSS files -->
 		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 		<link href = "../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/styles2.css" rel = "stylesheet">
 		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 
 		<!-- Java Script files -->
@@ -24,9 +25,6 @@
 		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -43,12 +41,14 @@
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<div class="floating-previous"></div>
-
+			<!--<div class="floating-previous"></div>-->
 			<!-- Next -->
-			<div class="floating-next"></div>
+			<!--<div class="floating-next"></div>-->
 			<!-- End floating nav -->
-			<!-- End nav -->
+
+			<span class="prevArrowStyleTop"><a href="#" onclick="prevArrowPage(pageObj)">
+						<img style="border:0;" src="../lib/images/left-arrow-blue.png" alt="Next page" width="40"></a>
+			</span>
 
 			<!-- Main content -->
 			
@@ -73,7 +73,11 @@
 			<p>
 				Each of these questions is briefly addressed below, and more thoroughly explored throughout the remainder of the text.  These questions, and their answers, will take us through computing in what is called a “top-down, breadth-first” manner.  The phrase “breadth-first” applies to this text since it spans the breadth of computing, touching on each of the major areas that make up the field.  “Top-down” means that the presentation begins at the level of computer applications, such as spreadsheets and databases, and then works its way through a study of the algorithms and software used to implement and support those applications – starting with the highest, most abstract, levels of software and proceeding through more detailed, lower-level, software, until the actual computer hardware is reached.  A description of computer hardware in terms of the major components of a computer and how those components can be constructed from simple logic gates is then presented.  The final area addressed by the book focuses on discovering the practical limitations and ultimate potential of computers.
 			</p>
-			
+
+			<span class="nextArrowStyleBottom"><a href="#" onclick="nextArrowPage(pageObj)">
+						<img style="border:0;" src="../lib/images/right-arrow-blue.png" alt="Next page" width="40"></a>
+			</span>
+
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -106,6 +110,17 @@
 					pageObj = getArrowPathsByPage("scienceFour");		// get arrow paths
 				});	
 
+			</script>
+			
+			
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-50062005-1', 'latech.edu');
+			  ga('send', 'pageview');
 			</script>
 
 		</div>

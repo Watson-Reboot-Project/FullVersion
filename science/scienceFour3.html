@@ -14,6 +14,7 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 	
 
@@ -25,9 +26,6 @@
 			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -38,15 +36,20 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
+			<!-- Navbar -->
 			<div id="includedContentForPage"></div>
+			<!-- End Navbar -->
 
 			<!--Floating nav -->
 			<!-- Previous -->
-			<div class="floating-previous"></div>
+			<!--<div class="floating-previous"></div>-->
 			<!-- Next -->
-			<div class="floating-next"></div>
+			<!--<div class="floating-next"></div>-->
 			<!-- End floating nav -->
-			<!-- End nav -->
+
+			<span class="prevArrowStyleTop"><a href="#" onclick="prevArrowPage(pageObj)">
+						<img style="border:0;" src="../lib/images/left-arrow-blue.png" alt="Next page" width="40"></a>
+			</span>
 
 			<!-- Main content -->
 			
@@ -121,7 +124,7 @@
 			</p>
 	
 			<p>
-				In section 1.3.2 the various kinds of programming languages: imperative, functional, logical, and object-oriented, were introduced.  These programming languages are known as <span class="Bolded">high-level languages</span> because they hide many of the details inherent in machine languages.  Programs written in high-level languages are not <span class="Ital">directly</span> executable by a machine.  How then are programs that are written in these languages ever run?  One common approach is to translate programs written high-level languages into the machine language of a particular type of computer.  The programs that translate other programs from high-level languages to machine languages are called <span class="Bolded">compilers</span>.  After translation, these functionally equivalent machine language programs can be executed to perform the tasks specified by the original high-level programs.  
+				In <span class="contentNum scienceFour2"></span> the various kinds of programming languages: imperative, functional, logical, and object-oriented, were introduced.  These programming languages are known as <span class="Bolded">high-level languages</span> because they hide many of the details inherent in machine languages.  Programs written in high-level languages are not <span class="Ital">directly</span> executable by a machine.  How then are programs that are written in these languages ever run?  One common approach is to translate programs written high-level languages into the machine language of a particular type of computer.  The programs that translate other programs from high-level languages to machine languages are called <span class="Bolded">compilers</span>.  After translation, these functionally equivalent machine language programs can be executed to perform the tasks specified by the original high-level programs.  
 			</p>
 	
 			<p>
@@ -151,6 +154,10 @@
 			<p>
 				In addition to storing symbols, computers must be able to manipulate them.  As strange as this may sound, <span class="Ital">all</span> of the operations that a computer can perform, from math and logic to playing sound and graphics, can be expressed in terms of only three basic operations: “and”, “or”, and “not”.  <span class="Bolded">And</span> takes two inputs, if they are both “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Or</span> also takes two inputs, if either or both inputs are “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Not</span> takes a single input, if the input is “1” the output is “0”, and vice versa.  Electrical circuits for each of these three logic operations can easily be built, and these basic circuits can be combined to produce circuits capable of more complex behavior. <span class="contentNum circuits true"></span> explores this subject in more detail and introduces the Watson Digital Lab which can be used to design and test simple digital circuits.
 			</p>
+
+			<span class="nextArrowStyleBottom"><a href="#" onclick="nextArrowPage(pageObj)">
+						<img style="border:0;" src="../lib/images/right-arrow-blue.png" alt="Next page" width="40"></a>
+			</span>
 			
 			<!-- Footnotes -->
 			<hr/>
@@ -193,6 +200,17 @@
 				pageObj = getArrowPathsByPage("scienceFour3");		// get arrow paths
 				});	
 
+			</script>
+			
+			
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-50062005-1', 'latech.edu');
+			  ga('send', 'pageview');
 			</script>
 
 		</div>

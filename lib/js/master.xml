@@ -895,7 +895,7 @@
 			</section>
 			<section><!--Chapter Eight Section Three-->
 				<id>javascriptTypes</id>
-				<name>Data Tyes, Constants, Variables</name>
+				<name>Data Types, Constants, Variables</name>
 				<path>../javascript/javascriptTypes.html</path>
 			</section>
 			<section><!--Chapter Eight Section Four-->
@@ -1182,9 +1182,9 @@
 		<sections>
 			<!--Start of Sub-sections-->
 			<section>
-				<id>assemblyintro</id>
+				<id>assemblyIntro</id>
 				<name>Introduction</name>
-				<path>../assembly/assemblyintro.html</path>
+				<path>../assembly/assemblyIntro.html</path>
 			</section>
 			<section>
 				<id>assemblyRegisters</id>

@@ -10,17 +10,17 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	    <!-- CSS files -->
-	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
-	    <link href="../lib/css/ch08.css" rel = "stylesheet">
-	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
-	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<!-- CSS files -->
+		<link href="../lib/css/bootstrap.css" rel = "stylesheet">
+		<link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+		<link href="../lib/css/ch08.css" rel = "stylesheet">
+		<link href="../lib/css/styles.css" rel = "stylesheet">
+		<link href = "../lib/css/styles2.css" rel = "stylesheet">
+		<link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<!-- Java Script files -->
+		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script src="../lib/js/jquery-ui.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
@@ -45,7 +45,7 @@
 			<p class="Section">
 				<span class="contentNum javascriptRecursion"></span>
 			</p>
-			
+
 			<p>
 				This section is concerned with the topic of recursion. <span class="Bolded">Recursion</span> is a type of repetition that is implemented when a subprogram calls itself. When a recursive call takes place, control is passed to what appears to be a brand new copy of the subprogram – complete with its own set of parameters and local variables. This copy of the subprogram may, in turn, call another copy of the subprogram. That copy may call another copy, and so on and so forth. Eventually, these recursive calls must terminate and return control to the original calling program.
 			</p>
@@ -55,91 +55,91 @@
 			</p>
 			<!-- Manual fig 8.30
 			<p class="Subfigure">
-				&nbsp; </span>var count; // Numeric
+			&nbsp; </span>var count; // Numeric
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span>function singsong (beers /*Numeric*/) // Returns nothing
+			&nbsp; </span>function singsong (beers /*Numeric*/) // Returns nothing
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span>{
+			&nbsp; </span>{
 			</p>
 
 			<div class="P37">
-				&nbsp;  &nbsp; </span>if (beers &gt; 0)
+			&nbsp;  &nbsp; </span>if (beers &gt; 0)
 			</div>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp; </span> {
+			&nbsp;  &nbsp; </span> {
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  document.write(beers);
+			&nbsp;  &nbsp;  document.write(beers);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  document.writeln(“ bottles of beer on the wall,”);
+			&nbsp;  &nbsp;  document.writeln(“ bottles of beer on the wall,”);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp; </span>document.write(beers);
+			&nbsp;  &nbsp; </span>document.write(beers);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  document.writeln(“ bottles of beer.”);
+			&nbsp;  &nbsp;  document.writeln(“ bottles of beer.”);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  document.writeln(“Take one down. Pass it around.”);
+			&nbsp;  &nbsp;  document.writeln(“Take one down. Pass it around.”);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  beers = beers – 1;
+			&nbsp;  &nbsp;  beers = beers – 1;
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; &nbsp;  &nbsp;  document.write(beers);
+			&nbsp; &nbsp;  &nbsp;  document.write(beers);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  document.writeln(“ bottles of beer on the wall.”);
+			&nbsp;  &nbsp;  document.writeln(“ bottles of beer on the wall.”);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  document.writeln(“ ”);
+			&nbsp;  &nbsp;  document.writeln(“ ”);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;  &nbsp;  singsong(beers);
+			&nbsp;  &nbsp;  singsong(beers);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; }
+			&nbsp; }
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span>}
+			&nbsp; </span>}
 			</p>
 
 			<p class="Subfigure">
-				&nbsp;
+			&nbsp;
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span>count = parseFloat(prompt(“How many bottles?”,0));
+			&nbsp; </span>count = parseFloat(prompt(“How many bottles?”,0));
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span>singsong(count);
+			&nbsp; </span>singsong(count);
 			</p>
 
 			<p class="Subfigure">
-				&nbsp; </span>document.writeln(“Later...”);
+			&nbsp; </span>document.writeln(“Later...”);
 			</p>
 			-->
 			<div id="fig30Div" class="divness"></div>
-			
+
 			<p class="Figure">
 				<span class="figNum beertailrecursive"></span> &nbsp; Beer – the tail recursive version
 			</p>
@@ -153,11 +153,17 @@
 			</p>
 
 			<ul class="Blockcenter">
-				<li><span class="Subfigure">2 bottles of beer on the wall.</span></li>
-				<li><span class="Subfigure">2 bottles of beer.</span></li>
-				<li><span class="Subfigure">Take one down. Pass it around.</span></li>
+				<li>
+					<span class="Subfigure">2 bottles of beer on the wall.</span>
+				</li>
+				<li>
+					<span class="Subfigure">2 bottles of beer.</span>
+				</li>
+				<li>
+					<span class="Subfigure">Take one down. Pass it around.</span>
+				</li>
 			</ul>
-			
+
 			<br/>
 
 			<p>
@@ -165,9 +171,11 @@
 			</p>
 
 			<ul class="Blockcenter">
-				<li><span class="Subfigure">1 bottles of beer on the wall.</span></li>
+				<li>
+					<span class="Subfigure">1 bottles of beer on the wall.</span>
+				</li>
 			</ul>
-			
+
 			<br/>
 
 			<p>
@@ -177,23 +185,31 @@
 			<p>
 				<span class="Subfigure">Singsong</span><span class="Subscript">2</span> receives “1” for the number of <span class="Subfigure">beers</span> from <span class="Subfigure">singsong</span><span class="Subscript">1</span>. Since one is greater than zero the “then” block is executed, causing the following lines to be printed.
 			</p>
-			
+
 			<ul class="Blockcenter">
-				<li><span class="Subfigure">1 bottles of beer on the wall.</span></li>
-				<li><span class="Subfigure">1 bottles of beer.</span></li>
-				<li><span class="Subfigure">Take one down. Pass it around.</span></li>
+				<li>
+					<span class="Subfigure">1 bottles of beer on the wall.</span>
+				</li>
+				<li>
+					<span class="Subfigure">1 bottles of beer.</span>
+				</li>
+				<li>
+					<span class="Subfigure">Take one down. Pass it around.</span>
+				</li>
 			</ul>
-			
+
 			<br/>
 
 			<p>
 				<span class="Subfigure">Singsong</span><span class="Subscript">2</span> then subtracts one from its copy of <span class="Subfigure">beers</span> and prints:
 			</p>
-			
+
 			<ul class="Blockcenter">
-				<li><span class="Subfigure">0 bottles of beer on the wall.</span></li>
+				<li>
+					<span class="Subfigure">0 bottles of beer on the wall.</span>
+				</li>
 			</ul>
-			
+
 			<br/>
 
 			<p>
@@ -213,9 +229,9 @@
 			</p>
 
 			<img src="images/beerillustration.png" alt="Illustration of the behavior of the recursive “beer” program, given 2 beers" class="Image">
-			
+
 			<br/>
-			
+
 			<p class="Figure">
 				<span class="figNum beerillustration"></span> &nbsp; Illustration of the behavior of the recursive “beer” program, given 2 <span class="Subfigure">beers</span>
 			</p>
@@ -240,20 +256,18 @@
 				The major differences between the revised program and the previous version are:
 			</p>
 
-			
 			<p>
 				(1) &nbsp; The “if” has been replaced by an “if-else”.
 			</p>
-			
+
 			<p>
 				(2) &nbsp; The statement <span class="Subfigure">document.writeln(“Hic.”); has been added to the “then” block following the recursive call, and
 			</p>
-			
+
 			<p>
 				(3) &nbsp; The “else” block holds the statement: <span class="Subfigure">document.writeln(“We’re out of beer.”);</span>
 			</p>
-			
-			
+
 			<div id="fig32Div" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum beerrecursive"></span> &nbsp; Beer – the general recursive version
@@ -286,12 +300,16 @@
 			<p>
 				Factorial is defined recursively as:
 			</p>
-			
+
 			<ul class="Blockcenter">
-				<li><span class="Subfigure"> 0 ! = 1</span></li>
-				<li><span class="Subfigure">N ! = N ⋅ ( N − 1 ) !</span></li>
+				<li>
+					<span class="Subfigure"> 0 ! = 1</span>
+				</li>
+				<li>
+					<span class="Subfigure">N ! = N ⋅ ( N − 1 ) !</span>
+				</li>
 			</ul>
-			
+
 			<br/>
 
 			<p>
@@ -337,34 +355,60 @@
 			<p>
 				<span class="figNum graphicalcomp"></span> illustrates a Watson JavaScript function for computing factorial. The contents of the subprogram read “If <span class="Italicized">N</span> is equal to zero then the result is one, otherwise the result is <span class="Italicized">N</span> &times; (</span><span class="Italicized">N</span>-1)!. Return the result.” &nbsp; The JavaScript function clearly reflects the mathematical definition. The factorial function could be rewritten using iteration, rather than recursion, but such a subprogram would not follow the mathematical definition of factorial as closely as the recursive version. Thus, the recursive version is preferred.
 			</p>
-			
+
 			<ul class="Blockcenter">
-				<li><span class="Subfigure">function fact (n /*Numeric*/) // Returns Numeric</span></li>
-				<li><span class="Subfigure">{</span></li>
+				<li>
+					<span class="Subfigure">function fact (n /*Numeric*/) // Returns Numeric</span>
+				</li>
+				<li>
+					<span class="Subfigure">{</span>
+				</li>
 				<ul class="Subblockcenter">
-					<li><span class="Subfigure">var result; // Numeric</span></li>
+					<li>
+						<span class="Subfigure">var result; // Numeric</span>
+					</li>
 					<br/>
-					<li><span class="Subfigure">if (n == 0)</span></li>
-					<li><span class="Subfigure">{</span></li>
+					<li>
+						<span class="Subfigure">if (n == 0)</span>
+					</li>
+					<li>
+						<span class="Subfigure">{</span>
+					</li>
 					<ul class="Subblockcenter">
-						<li><span class="Subfigure">result = 1;</span></li>
+						<li>
+							<span class="Subfigure">result = 1;</span>
+						</li>
 					</ul>
-					<li><span class="Subfigure">}</span></li>
-					<li><span class="Subfigure">else</span></li>
-					<li><span class="Subfigure">{</span></li>
+					<li>
+						<span class="Subfigure">}</span>
+					</li>
+					<li>
+						<span class="Subfigure">else</span>
+					</li>
+					<li>
+						<span class="Subfigure">{</span>
+					</li>
 					<ul class="Subblockcenter">
-						<li><span class="Subfigure">result = n * fact(n-1);</span></li>
+						<li>
+							<span class="Subfigure">result = n * fact(n-1);</span>
+						</li>
 					</ul>
-					<li><span class="Subfigure">}</span></li>
-					<li><span class="Subfigure">return(result);</span></li>
+					<li>
+						<span class="Subfigure">}</span>
+					</li>
+					<li>
+						<span class="Subfigure">return(result);</span>
+					</li>
 				</ul>
-				<li><span class="Subfigure">}</span></li>
+				<li>
+					<span class="Subfigure">}</span>
+				</li>
 			</ul>
 
 			<p class="Figure">
 				<span class="figNum graphicalcomp"></span> &nbsp; A recursive function to compute N!
 			</p>
-			
+
 			<p>
 				&nbsp;
 			</p>
@@ -389,29 +433,55 @@
 						Show exactly what will be output by the following program, assuming the user enters a value of 3 at the prompt.&nbsp;
 					</p>
 				</li>
-				
+
 				<ul class="Blockcenter">
-					<li><span class="Subfigure">var a; // Numeric</span></li>
+					<li>
+						<span class="Subfigure">var a; // Numeric</span>
+					</li>
 					<br/>
-					<li><span class="Subfigure">function dub ( x /*Numeric*/ ) // Returns nothing</span></li>
-					<li><span class="Subfigure">{</span></li>
+					<li>
+						<span class="Subfigure">function dub ( x /*Numeric*/ ) // Returns nothing</span>
+					</li>
+					<li>
+						<span class="Subfigure">{</span>
+					</li>
 					<ul class="Subblockcenter">
-						<li><span class="Subfigure">if (x &gt; 1)</span></li>
-						<li><span class="Subfigure"></span></li>
-							<ul class="Subblockcenter">
-								<li><span class="Subfigure">document.writeln("Rub a dub dub,");</span></li>
-								<li><span class="Subfigure">document.write(x);</span></li>
-								<li><span class="Subfigure">document.writeln(" men in a tub.");</span></li>
-								<li><span class="Subfigure">dub(x-1);</span></li>
-							</ul>
-						<li><span class="Subfigure">}</span></li>
+						<li>
+							<span class="Subfigure">if (x &gt; 1)</span>
+						</li>
+						<li>
+							<span class="Subfigure"></span>
+						</li>
+						<ul class="Subblockcenter">
+							<li>
+								<span class="Subfigure">document.writeln("Rub a dub dub,");</span>
+							</li>
+							<li>
+								<span class="Subfigure">document.write(x);</span>
+							</li>
+							<li>
+								<span class="Subfigure">document.writeln(" men in a tub.");</span>
+							</li>
+							<li>
+								<span class="Subfigure">dub(x-1);</span>
+							</li>
+						</ul>
+						<li>
+							<span class="Subfigure">}</span>
+						</li>
 					</ul>
-					<li><span class="Subfigure">}</span></li>
+					<li>
+						<span class="Subfigure">}</span>
+					</li>
 					<br/>
-					<li><span class="Subfigure">a = parseFloat(prompt(“Yo, dude! &nbsp; Numberage.",0));</span></li>
-					<li><span class="Subfigure">dub(a);</span></li>
+					<li>
+						<span class="Subfigure">a = parseFloat(prompt(“Yo, dude! &nbsp; Numberage.",0));</span>
+					</li>
+					<li>
+						<span class="Subfigure">dub(a);</span>
+					</li>
 				</ul>
-				
+
 				<br/>
 
 				<li>
@@ -419,28 +489,54 @@
 						Show exactly what would be output by the following program.&nbsp;
 					</p>
 				</li>
-				
+
 				<ul class="Blockcenter">
-					<li><span class="Subfigure">function goForIt (i /*Numeric*/ ) // Returns nothing</span></li>
-					<li><span class="Subfigure">{</span></li>
+					<li>
+						<span class="Subfigure">function goForIt (i /*Numeric*/ ) // Returns nothing</span>
+					</li>
+					<li>
+						<span class="Subfigure">{</span>
+					</li>
 					<ul class="Subblockcenter">
-						<li><span class="Subfigure">i = i - 1;</span></li>
-						<li><span class="Subfigure">document.writeln(i);</span></li>
-						<li><span class="Subfigure">if (i &gt; 0)</span></li>
-						<li><span class="Subfigure">{</span></li>
-							<ul class="Subblockcenter">
-								<li><span class="Subfigure">goForIt(i);</span></li>
-							</ul>
-						<li><span class="Subfigure">}</span></li>
-						<li><span class="Subfigure">document.writeln(i);</span></li>
+						<li>
+							<span class="Subfigure">i = i - 1;</span>
+						</li>
+						<li>
+							<span class="Subfigure">document.writeln(i);</span>
+						</li>
+						<li>
+							<span class="Subfigure">if (i &gt; 0)</span>
+						</li>
+						<li>
+							<span class="Subfigure">{</span>
+						</li>
+						<ul class="Subblockcenter">
+							<li>
+								<span class="Subfigure">goForIt(i);</span>
+							</li>
+						</ul>
+						<li>
+							<span class="Subfigure">}</span>
+						</li>
+						<li>
+							<span class="Subfigure">document.writeln(i);</span>
+						</li>
 					</ul>
-					<li><span class="Subfigure">}</span></li>
+					<li>
+						<span class="Subfigure">}</span>
+					</li>
 					<br/>
-					<li><span class="Subfigure">document.writeln("This program does nothing");</span></li>
-					<li><span class="Subfigure">goForIt(4);</span></li>
-					<li><span class="Subfigure">document.writeln("useful.");</span></li>
+					<li>
+						<span class="Subfigure">document.writeln("This program does nothing");</span>
+					</li>
+					<li>
+						<span class="Subfigure">goForIt(4);</span>
+					</li>
+					<li>
+						<span class="Subfigure">document.writeln("useful.");</span>
+					</li>
 				</ul>
-				
+
 				<br/>
 
 				<li>
@@ -449,7 +545,7 @@
 					</p>
 				</li>
 			</ol>
-			
+
 			<!-- Footnotes -->
 			<hr/>
 			<p class="Section">
@@ -462,7 +558,7 @@
 
 			<!--bottom navigation arrows -->
 			<div class="arrows-nav-bottom"></div>
-			
+
 			<!-- End main content -->
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
@@ -478,21 +574,25 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
-			
+
 			<div class="floating-next"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
-				var pageObj;											// do NOT change name of variable
+				var pageObj;
+				// do NOT change name of variable
 				var chapID = "javascript";
-				
+
 				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
+					populateNav();
+					// populate nav content
+					populateSpans();
+					// populate figure/content spans
 					populateTopAndBottomArrows();
-					pageObj = getArrowPathsByPage("javascriptRecursion");		// get arrow paths
-				});	
-				
+					pageObj = getArrowPathsByPage("javascriptRecursion");
+					// get arrow paths
+				});
+
 			</script>
 
 			<div>
@@ -500,12 +600,29 @@
 			</div>
 		</div>
 		<script src="js/acorn.js"></script>
-	    <script src="js/interpreter.js"></script>
-	    <script src="js/editor.js"></script>
+		<script src="js/interpreter.js"></script>
+		<script src="js/editor.js"></script>
 		<script src="js/figures.js"></script>
 		<script>
-		var figure30 = new Figure(30);
-		var figure32 = new Figure(32);
-	</script>
+			var figure30 = new Figure(30);
+			var figure32 = new Figure(32);
+		</script>
+
+		<script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-50062005-1', 'latech.edu');
+			ga('send', 'pageview');
+		</script>
 	</body>
 </html>
