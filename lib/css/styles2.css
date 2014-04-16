@@ -46,10 +46,10 @@ ul.nav a:hover { color: #000; }
 }
 
 /* the padding for the body or main content */
-body { padding-top: 15%; }
-@media screen and (max-width: 800px) { body { padding-top: 20%;}}
-@media screen and (max-width: 600px) { body { padding-top: 30%;}}
-@media screen and (max-width: 400px) { body { padding-top: 40%;}}
+body { padding-top: 10%; }
+@media screen and (max-width: 800px) { body { padding-top: 15%;}}
+@media screen and (max-width: 600px) { body { padding-top: 25%;}}
+@media screen and (max-width: 400px) { body { padding-top: 35%;}}
 
 /*.well .bold-me{}*/
 
@@ -108,10 +108,7 @@ body { padding-top: 15%; }
 
 .fa-plus { margin-left: -300%; }
 .fa-minus{ margin-right: -300%; }
-@media screen and (max-width: 800px) { .fa-plus { margin-left: -200%; } 
-@media screen and (max-width: 800px) { .fa-minus { margin-right: -200%;}}
-@media screen and (max-width: 400px) { .fa-plus { margin-left: 0; } 
-@media screen and (max-width: 400px) { .fa-minus { margin-right: 0;}}
+@media screen and (max-width: 800px) { .fa-plus, .fa-minus {margin: 0;}}
 
 #fontAs{
   max-width: 50%;
@@ -179,11 +176,17 @@ body { padding-top: 15%; }
   left: 1px; 
   right: auto; 
   width: 20px; 
-  top: 12%;*/
+  top: 12%;
   position:fixed;z-index:200;left:1px; right: auto; width:40px; top:60%;
       display:block;margin:0 0.5em;
         vertical-align: middle;
         /*max-width: 8%;*/
+
+    position: absolute;
+    top: auto;
+    left:15%;
+    top: 15%;
+    z-index: 200;
 
 }
 
@@ -194,10 +197,15 @@ body { padding-top: 15%; }
   right: 1px; 
   top: 90%;
   display: block; 
-  margin: 0 0.5em;*/
+  margin: 0 0.5em;
         position:fixed;z-index:200; left: auto; width:40px; right:1px; top:60%;
       display:block;margin:0 0.5em;
-        vertical-align: middle;
+        vertical-align: middle;*/
+    position: absolute;
+    bottom: auto;
+    right:17%;
+    top: 15%;
+    z-index: 200;
 
 
 }
@@ -206,7 +214,7 @@ body { padding-top: 15%; }
 
     position: absolute;
     top: auto;
-    left:15%;
+    left:15%; /* 1% */
     top: 15%;
     z-index: 200;
 
@@ -216,7 +224,7 @@ body { padding-top: 15%; }
 .nextArrowStyleTop{
     position: absolute;
     bottom: auto;
-    right:17%;
+    right:17%; /* 1% */
     top: 15%;
     z-index: 200;
 

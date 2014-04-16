@@ -66,19 +66,6 @@
 			<!-- Main content -->
 			
 			
-		<script>
-				var pageObj;
-				var chapObj;
-				
-				$(document).ready(function() {
-					loadLocalTableOfContents("assembly");
-					populateNav();
-					populateChapterButtons();
-					
-					pageObj = getArrowPathsByPage("assembly");
-					chapObj = getArrowPathsByChapter("assembly");
-				});	
-			</script>
 
 
 			<!-- <a href="ch12.html"><p class="Section">Chapter 12: Digital Circuit Design</p></a>
@@ -114,7 +101,7 @@
 				
 			<!--bottom navigation arrows -->
 			<div class="arrows-nav-bottom"></div>
-			<br>
+			<br/>
 			
 			<!-- End main content -->
 			<hr />
@@ -132,6 +119,20 @@
 					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
 				</p>
 			</nav>
+			
+			<script>
+				var pageObj;
+				var chapObj;
+				
+				$(document).ready(function() {
+					loadLocalTableOfContents("assembly");
+					populateNav();
+					populateChapterButtons();
+					
+					pageObj = getArrowPathsByPage("assembly");
+					chapObj = getArrowPathsByChapter("assembly");
+				});	
+			</script>
 
 			<div>
 

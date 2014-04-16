@@ -35,10 +35,9 @@
 
 			<div id="includedContentForPage"></div>
 			
-			<!--
-            <div class="floating-previous"></div>
+      <div class="floating-previous"></div>
 			<div class="floating-next"></div>
-			-->
+
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
@@ -404,10 +403,6 @@
 				The final two conditions, <span class="Subfigure">LE</span> (code 0011) and <span class="Subfigure">GT</span> (code 0100), each involve a test of two separate status bits.  <span class="Subfigure">LE</span> is true when either the “Negative” bit <span class="Ital">or</span> the “Zero” bit is set to “1” or both are “1”.  <span class="Subfigure">GT</span> is true when both the “Negative” bit  <span class="Ital">and</span> the “Zero” bit are reset to “0”.
 			</p>
 			
-			<br>
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-			<br>
 			
 			<!-- End main content -->
 			<hr />
@@ -447,7 +442,6 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					populateBottomArrows();
 					pageObj = getArrowPathsByPage("assemblyMachine1");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 

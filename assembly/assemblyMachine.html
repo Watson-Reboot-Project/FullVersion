@@ -35,11 +35,10 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-			
-			<!--
-            <div class="floating-previous"></div>
+
+       <div class="floating-previous"></div>
 			<div class="floating-next"></div>
-			-->
+
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
@@ -68,10 +67,6 @@
 				Since a word of memory can hold a program instruction as well as data, the size of each Watson Virtual Machine instruction is sixteen bits.  This is also the size of the instruction register located in the CPU.  Finally, the status bit registers, as their names imply, are each one bit long. 
 			</p>
 			
-			<br>
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-			<br>
 			
 			<!-- End main content -->
 			<hr />
@@ -103,7 +98,6 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					populateBottomArrows();
 					pageObj = getArrowPathsByPage("assemblyMachine");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 
