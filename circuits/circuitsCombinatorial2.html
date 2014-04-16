@@ -14,9 +14,8 @@
     <!-- CSS files -->
     <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
     <link href = "../lib/css/styles.css" rel = "stylesheet">
-    <link href = "../lib/css/styles2.css" rel = "stylesheet"
-    ><link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-		<link href = "../lib/css/colmn_test.css" rel="stylesheet">
+    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 	
     <!-- Java Script files -->
     <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
@@ -218,7 +217,7 @@
 			<div id="truthTableDiv1" class="ui-widget-content" style="position: relative; visibility: hidden"></div>
 			
 			<!-- End main content -->
-			
+
 			<br>
 			<!--bottom navigation arrows -->
 			<div class="arrows-nav-bottom"></div>
@@ -276,6 +275,7 @@
 			$(document).ready(function() {
 				populateNav();										// populate nav content
 				populateSpans();									// populate figure/content spans
+				populateBottomArrows();
 				pageObj = getArrowPathsByPage(sectID);				// get arrow paths
 				
 				var figuree = new DigitalLogicFigure("container-e", "e", false, false);

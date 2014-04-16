@@ -15,7 +15,6 @@
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -35,9 +34,11 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
+			
+			<!--
             <div class="floating-previous"></div>
 			<div class="floating-next"></div>
-
+			-->
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
@@ -100,6 +101,11 @@
 				Real world computers are similar to the Watson Virtual machine in that they contain a main memory, CPU, and data bus.  The Watson Virtual Machine differs from real machines in that it has no I/O devices (such as keyboards, display screens, mice, and modems); nor any long-term storage devices (like disk drives).  The size of its memory is also very small, containing only 256 “words”.  Modern computers typically have memories capable of storing hundreds of millions of words.  There are other differences between the Watson VM and real-world computers, such as the size of the numbers it can manipulate and the limited number of commands in its machine language. 
 			</p>
 			
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+			
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -130,7 +136,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-
+					populateBottomArrows();
 					pageObj = getArrowPathsByPage("assemblyRegisters");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 

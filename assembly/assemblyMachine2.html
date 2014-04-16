@@ -15,7 +15,6 @@
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -36,9 +35,11 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
+
+			<!--
             <div class="floating-previous"></div>
 			<div class="floating-next"></div>
-
+			-->
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
@@ -82,6 +83,11 @@
 				At the conclusion of this process, the machine language equivalent of the assembly language program will be held in the main memory of the Watson Virtual Machine.  In order to begin program execution, the program counter is loaded with the address of the first executable machine language instruction – the first instruction following the data segment.
 			</p>
 			
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+			
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -112,7 +118,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-
+					populateBottomArrows();
 					pageObj = getArrowPathsByPage("assemblyMachine2");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 

@@ -46,10 +46,10 @@ ul.nav a:hover { color: #000; }
 }
 
 /* the padding for the body or main content */
-body { padding-top: 10%; }
-@media screen and (max-width: 800px) { body { padding-top: 15%;}}
-@media screen and (max-width: 600px) { body { padding-top: 25%;}}
-@media screen and (max-width: 400px) { body { padding-top: 35%;}}
+body { padding-top: 15%; }
+@media screen and (max-width: 800px) { body { padding-top: 20%;}}
+@media screen and (max-width: 600px) { body { padding-top: 30%;}}
+@media screen and (max-width: 400px) { body { padding-top: 40%;}}
 
 /*.well .bold-me{}*/
 
@@ -58,13 +58,15 @@ body { padding-top: 10%; }
 }
 
 #logo{
-  padding-left: 50%;
+  padding-left: 40%;
 }
 
 .navbar-right{
   padding-right: 13%;
 } 
-@media screen and (max-width: 640px) { .navbar-right { padding-right: 0%;}}
+@media screen and (max-width: 800px) { .navbar-right { padding-right: 10%;}}
+@media screen and (max-width: 600px) { .navbar-right { padding-right: 5%;}}
+@media screen and (max-width: 400px) { .navbar-right { padding-right: 0%;}}
 
 .small-img{ width: 10%; }
 .medium-img{ width: 50%; }
@@ -106,7 +108,10 @@ body { padding-top: 10%; }
 
 .fa-plus { margin-left: -300%; }
 .fa-minus{ margin-right: -300%; }
- @media screen and (max-width: 800px) { .fa-plus, .fa-minus { margin: 0;}} 
+@media screen and (max-width: 800px) { .fa-plus { margin-left: -200%; } 
+@media screen and (max-width: 800px) { .fa-minus { margin-right: -200%;}}
+@media screen and (max-width: 400px) { .fa-plus { margin-left: 0; } 
+@media screen and (max-width: 400px) { .fa-minus { margin-right: 0;}}
 
 #fontAs{
   max-width: 50%;
@@ -201,7 +206,7 @@ body { padding-top: 10%; }
 
     position: absolute;
     top: auto;
-    left:1%;
+    left:15%;
     top: 15%;
     z-index: 200;
 
@@ -211,7 +216,7 @@ body { padding-top: 10%; }
 .nextArrowStyleTop{
     position: absolute;
     bottom: auto;
-    right:1%;
+    right:17%;
     top: 15%;
     z-index: 200;
 

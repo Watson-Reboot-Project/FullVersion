@@ -15,7 +15,6 @@
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -37,9 +36,11 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
+			
+			<!--
             <div class="floating-previous"></div>
 			<div class="floating-next"></div>
-
+			-->
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
@@ -56,6 +57,11 @@
 			<p>
 				While assembly languages were a great leap forward and are much easier to read and write than machine languages, such languages are still tied very closely to the underlying machine they were designed for.  Thus, the assembly language you will learn in this section is specific to the Watson VM.  However, since the Watson VM incorporates most of the features found in today’s microprocessors, learning to program a real machine – such as an x86 microprocessor – will be much easier after covering the basics here.
 			</p>
+			
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
 			
 			<!-- End main content -->
 			<hr />
@@ -88,7 +94,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-
+					populateBottomArrows();
 					pageObj = getArrowPathsByPage("assemblyProgramming");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 

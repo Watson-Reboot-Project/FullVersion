@@ -15,7 +15,7 @@
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-			<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+	
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
@@ -34,9 +34,10 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
+			<!--
 			<div id="includedContentForPage"></div>
 			<div class="floating-previous"></div>
-			
+			-->
 			<!-- End nav -->
 
 			<!-- Main content -->			
@@ -124,6 +125,11 @@
 				Eventually, at some point in the distant future, humans may decide that merging with intelligence systems to create super powerful merged human / AI hybrids is a desirable thing. These hybrids would presumably blend the creativity and insight of human beings with the exponentially increasing power of computing hardware to become a fundamentally different type of “post-human”. Thus, I’m not saying the singularity will <span class="Ital">never</span> happen, just that it is not something that will occur any time “soon”.
 			</p>
 			
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+			
 			<!-- End main content -->
 			<hr />
 			<!-- Footnotes -->
@@ -150,7 +156,6 @@
 				</p>
 			</nav>
 			
-			<div class="floating-next"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -160,6 +165,7 @@
 				$(document).ready(function() {
 				populateNav();										// populate nav content
 				populateSpans();									// populate figure/content spans
+				populateBottomArrows();
 				pageObj = getArrowPathsByPage("futurePredictions3b3");		// get arrow paths
 				});	
 

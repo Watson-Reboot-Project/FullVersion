@@ -15,7 +15,7 @@
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
@@ -34,8 +34,10 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
+			<!--
 			<div id="includedContentForPage"></div>
 			<div class="floating-previous"></div>
+			-->
 			
 			<!-- End nav -->
 
@@ -62,10 +64,10 @@
 				This should not be surprising. Individual technologies tend to follow what are called “S” curves rather than true exponentials. An “s” curve, which is illustrated in <span class="figNum scurvegraphl"></span>, is indistinguishable from an exponential in its early phases. Both begin by showing very little apparent progress over a long span of time, then suddenly progress appears to “take off”. In an “s” curve, after this spurt of rapid progress, things settle down into a state where only minor, incremental progress is made. In a true exponential, things never settle down, but continue to accelerate without end.
 			</p>
 
-			<img src="images/scurvegraph1.png" alt="" class="Image">
+			<img src="images/scurvegraph.png" alt="" class="Image">
 
 			<p class="Figure">
-				<span class="figNum scurvegraphl"></span> An “s” curve
+				<span class="figNum scurvegraph"></span> An “s” curve
 			</p>
 
 			<p >
@@ -96,6 +98,11 @@
 				(from Wikipedia “Accelerating Change” <a href="http://en.wikipedia.org/wiki/File:PPTMooresLawai.jpg">http://en.wikipedia.org/wiki/File:PPTMooresLawai.jpg</a>)
 			</p>
 			
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+			
 			<!-- End main content -->
 			<hr />
 			<!-- Footnotes -->
@@ -122,7 +129,6 @@
 				</p>
 			</nav>
 			
-			<div class="floating-next"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -132,6 +138,7 @@
 				$(document).ready(function() {
 				populateNav();										// populate nav content
 				populateSpans();									// populate figure/content spans
+				populateBottomArrows();
 				pageObj = getArrowPathsByPage("futureMoores3");		// get arrow paths
 				});	
 

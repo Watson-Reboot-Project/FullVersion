@@ -214,9 +214,17 @@ body { padding-top: 10%; }
   margin: 0 0.5em;*/
         position:fixed;z-index:200; left: auto; right:1px; top:45%;
       display:block;margin:0 0.5em;
+}
 
+.prevChapArrowStyle{
+  max-width: 40px;
 
 }
+
+.nextChapArrowStyle {
+  max-width: 40px;
+
+  }
 
 
 

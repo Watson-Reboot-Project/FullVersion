@@ -15,7 +15,6 @@
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
-		<link href="../lib/css/colmn_test.css" rel="stylesheet">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -36,9 +35,11 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
+			
+			<!--
             <div class="floating-previous"></div>
 			<div class="floating-next"></div>
-
+			-->
 		    <!-- End floating nav -->
 			<!-- End nav -->
 
@@ -126,6 +127,11 @@
 				Don’t be overly concerned if the behavior and usefulness of each of the above instructions isn’t immediately obvious.  We’re just “looking at the roadmap” here.  The details of each statement are presented throughout the remainder of this chapter.
 			</p>
 			
+			<br>
+			<!--bottom navigation arrows -->
+			<div class="arrows-nav-bottom"></div>
+			<br>
+			
 			<!-- End main content -->
 			<hr />
 			<p class="Emphasized">
@@ -155,7 +161,7 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-
+					populateBottomArrows();
 					pageObj = getArrowPathsByPage("assemblyProgramming1");		// get arrow paths
 					chapObj = getCurrChapter("assembly");
 
