@@ -12,16 +12,15 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link href = "../lib/css/styles.css" rel = "stylesheet">
-	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
-	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+	   <link href="../lib/css/bootstrap.css" rel="stylesheet">
+		<link href="../lib/css/styles2.css" rel="stylesheet">
+		<link href="../lib/css/generalmedia.css" rel="stylesheet">
 	
 
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="../lib/js/nav.js"></script>
+			<script type="text/javascript" src="../lib/js/nav2.js"></script>
 			<script type="text/javascript" src="../lib/js/master.js"></script> 
 			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
@@ -39,17 +38,6 @@
 			<!-- Navbar -->
 			<div id="includedContentForPage"></div>
 			<!-- End Navbar -->
-
-			<!--Floating nav -->
-			<!-- Previous -->
-			<!--<div class="floating-previous"></div>-->
-			<!-- Next -->
-			<!--<div class="floating-next"></div>-->
-			<!-- End floating nav -->
-
-			<span class="prevArrowStyleTop"><a href="#" onclick="prevArrowPage(pageObj)">
-						<img style="border:0;" src="../lib/images/left-arrow-blue.png" alt="Next page" width="40"></a>
-			</span>
 
 			<!-- Main content -->
 			
@@ -154,10 +142,6 @@
 			<p>
 				In addition to storing symbols, computers must be able to manipulate them.  As strange as this may sound, <span class="Ital">all</span> of the operations that a computer can perform, from math and logic to playing sound and graphics, can be expressed in terms of only three basic operations: “and”, “or”, and “not”.  <span class="Bolded">And</span> takes two inputs, if they are both “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Or</span> also takes two inputs, if either or both inputs are “1”, it produces a “1”; otherwise it produces a “0”.  <span class="Bolded">Not</span> takes a single input, if the input is “1” the output is “0”, and vice versa.  Electrical circuits for each of these three logic operations can easily be built, and these basic circuits can be combined to produce circuits capable of more complex behavior. <span class="contentNum circuits true"></span> explores this subject in more detail and introduces the Watson Digital Lab which can be used to design and test simple digital circuits.
 			</p>
-
-			<span class="nextArrowStyleBottom"><a href="#" onclick="nextArrowPage(pageObj)">
-						<img style="border:0;" src="../lib/images/right-arrow-blue.png" alt="Next page" width="40"></a>
-			</span>
 			
 			<!-- Footnotes -->
 			<hr/>
@@ -169,25 +153,11 @@
 				<a class="Footnote_20_Symbol" id="ftn2" href="#body_ftn2">[2] </a></span> Named after Intel co-founder Gordon Moore.
 			</p>
 			
-			<!-- End main content -->
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
+			<div class="push"></div>
+				
+		</div> <!-- End wrapper -->
 
-			<div>
-
-			</div>
+		<div class="blueFooterBar"></div> <!-- populates the bottom blue footber with navigation arrows -->
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -212,7 +182,5 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-
-		</div>
 	</body>
 </html>

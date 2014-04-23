@@ -131,6 +131,7 @@ function Setup(container, figureNo, draggable, displayMode) {
 	
 	function resizeTop() {
 		width = document.getElementById(container).offsetWidth;
+		if (width == 0) { timeout = false; return; }
 		//width = window.innerWidth;
 		height = window.innerHeight;
 		
@@ -207,7 +208,7 @@ function Setup(container, figureNo, draggable, displayMode) {
 	
 	function getBG() { return bg; }
 	
-	function solve() { solveButton(figureNo); }
+	function solve() {  }
 }
 
 //stage = new Kinetic.Stage({container: container, width: width, height: height });

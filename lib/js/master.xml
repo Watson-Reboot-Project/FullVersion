@@ -1074,7 +1074,7 @@
 	<!--Opening Tag for Chapter Nine-->
 	<chapter>
 		<id>objects</id>
-		<name>The Science of Computing</name>
+		<name>Functional, Logical, and Object-Oriented Programming</name>
 		<path>../objects/objects.html</path>
 		<sections>
 			<!--Start of Sub-sections-->
@@ -1637,7 +1637,7 @@
 		</figures><!--End of Figures-->
 	</chapter><!--End of Chapter Twelve-->
 
-<!--****CHAPTER THIRTEERN: ENGINEERING DOES NOT EXIST****-->
+<!--****CHAPTER THIRTEERN: LIMITS DOES NOT EXIST****-->
 	<chapter>
 		<id>limits</id>
 		<name> Theoretical and Practical Limits of Computing </name>

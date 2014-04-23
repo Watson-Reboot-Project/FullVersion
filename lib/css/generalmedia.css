@@ -55,9 +55,8 @@ a:active {
 
 #vid {
 	width:70%;
-	opacity:0.5;
 	margin: 0 auto;
-	display: block;
+	display: inline-block;
 }
 
 #main {
@@ -110,8 +109,7 @@ a:active {
 	display: block;
 	width:40%;
 }
-.Video { /* Centers video */
-	opacity:0.5;
+.video { /* Centers video */
 	width:70%;
 	margin: 0 auto;
 	display: block;
@@ -179,31 +177,31 @@ IMG.displayed {
 
 /* @media definitions for various devices and resolutions */
 @media screen and (max-width: 360px) {
-	#wrapper{width:240px; font-size:50%}
+	#wrapper{ width:240px; font-size:50%}
 	#header{font-size:80%}
 	#headnav{ font-size:60%}
 	#chapnav{font-size:60%}
 }
 @media screen and (max-width: 480px) and (min-width:361px) {
-	#wrapper{width:320px; font-size:70%}
+	#wrapper{ width:320px; font-size:70%}
 	#header{font-size:90%}
 	#headnav{ font-size:70%}
 	#chapnav{font-size:70%}
 }
 @media screen and (max-width: 720px) and (min-width:481px) {
-	#wrapper{width: 440px; font-size:80%}
+	#wrapper{ width: 440px; font-size:80%}
 	#header{}
 	#headnav{font-size:80%}
 	#chapnav{font-size:80%}
 }
 @media screen and (min-width:721px) and (max-width:900px){
-	#wrapper{width:680px; font-size:90%}
+	#wrapper{ width:680px; font-size:90%}
 	#header{ font-size:110%}
 	#headnav{font-size:90%}
 	#chapnav{font-size:90%}
 }
 @media screen and (min-width:901px){
-	#wrapper{width:880px}
+	#wrapper{ width:880px}
 	#header{font-size:120%}
 	#headnav{}
 	#chapnav{}

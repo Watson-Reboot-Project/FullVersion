@@ -155,7 +155,8 @@ body { padding-top: 10%; }
     top: 0px;
     right:0px;
     width: 100%;
-    border-radius: 0; 
+    border-radius: 0;
+    z-index: 1000 !important;
 }
 
 /* Previous and Next arrow styling 
@@ -217,14 +218,23 @@ body { padding-top: 10%; }
 }
 
 .prevChapArrowStyle{
-  max-width: 40px;
+
+    position: absolute;
+    left: 12%;
+    bottom: absolute;
+    z-index: 200;
+    max-width: 40px;
 
 }
 
-.nextChapArrowStyle {
-  max-width: 40px;
+.nextChapArrowStyle{
 
-  }
+    position: absolute;
+    right: 12%;
+    bottom: absolute;
+    z-index: 200;
+    max-width: 40px;
+}
 
 
 

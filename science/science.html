@@ -12,14 +12,13 @@
 		<!-- Google fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 		<!-- CSS files -->
-		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
-		<link href = "../lib/css/styles.css" rel = "stylesheet">
-		<link href = "../lib/css/styles2.css" rel = "stylesheet">
-		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/bootstrap.css" rel="stylesheet">
+		<link href="../lib/css/styles2.css" rel="stylesheet">
+		<link href="../lib/css/generalmedia.css" rel="stylesheet">
 		<!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/nav2.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script> 
 		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
@@ -33,42 +32,33 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
+			<!-- Navbar -->
 			<div id="includedContentChapterTOC"></div>
-
 			<!-- End navbar -->
 
 			<!-- Chapter Index listing -->
    		<div id="ContentAreaSections" class="well bold-me"></div>
    		<!-- End Chapter Index listing -->
 
-			
-			<!--Floating nav -->
-			<!-- Previous -->
-			<!--<div class="floating-previous"></div>-->
-			<!-- Next -->
-			<!--<div class="floating-next"></div>-->
-			<!-- End floating nav -->
-
-			<span class="prevArrowStyleTop"><a href="#" onclick="prevArrowPage(pageObj)">
-						<img style="border:0;" src="../lib/images/left-arrow-blue.png" alt="Next page" width="40"></a>
-			</span>
-
-			<span class="nextArrowStyleBottom"><a href="#" onclick="nextArrowPage(pageObj)">
-						<img style="border:0;" src="../lib/images/right-arrow-blue.png" alt="Next page" width="40"></a>
-			</span>
-
-			<!-- Previous and Next Chapter buttons -->
-			<br>
-			<div class="container">
-				<div class="row">
-					<!--Floating chapter nav -->
-					<!-- Previous -->
-					<div id="prevButtonDiv"></div>
-					<!-- Next -->
-					<div id="nextButtonDiv"></div>
-					<!-- End floating nav -->
-				</div> 
-			</div>
+   		</div><!-- End wrapper -->
+			<!--<footer class="footer">
+					<div class="verybottom">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="Emphasized container text-center">
+										<a href="#tippytop" id="returntop">Return to top</a>
+										<a href="#" onclick="nextArrowPage(pageObj)"><i class="pull-right fa fa-chevron-right"></i></a>
+										<a href="#" onclick="nextChapArrowPage(chapObj)"><i class="pull-right fa fa-step-forward"></i></a>
+										<a href="#" onclick="prevArrowPage(pageObj)"><i class="fa fa-chevron-left"></i></a>
+										<a href="#" onclick="prevChapArrowPage(chapObj)"><i class="fa fa-step-backward"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</footer>-->
+			<div class="blueFooterBarIndex"></div> <!-- populates the bottom blue footber with navigation arrows for Index pages -->
 
 			<script>
 				var pageObj;
@@ -77,7 +67,6 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("science");
 					populateNav();
-					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("science");
 					chapObj = getArrowPathsByChapter("science");
@@ -94,27 +83,6 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-			
-			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
 
-			<div>
-
-			</div>
-		</div>
 	</body>
 </html>

@@ -35,6 +35,16 @@
 		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+			.ttTD {
+				border-style:solid;
+				border-left:thick double #ff0000;
+			}
+			.truthTable {
+				border-collapse: separate;
+			}
+		</style>
 
 		<!--
 		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
@@ -52,13 +62,13 @@
 
 			<!-- Sandbox -->
 			<p class="Section" id="Scratch"></p>
-			<div id="sandbox1"></div>
+			<div id="sandbox1" style="border: 2px solid blue;"></div>
 			<div id="truthTableDiv1" class="ui-widget-content" style="position: relative; visibility: hidden"></div>
 			<!-- End Sandbox -->
 			
 			<div class="col-md-5 col-sm-6 col-xs-12" style="text-align:center; width:100%">
 				<a href="#" onclick="saveExercise()">
-					<button class="btn btn-sm btn-blue" type="button">Save Exercise</button>
+					<button class="btn btn-sm btn-blue" type="button" style="margin-top: 10px">Save Exercise</button>
 				</a>
 			</div>
 			<br>
