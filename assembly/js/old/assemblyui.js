@@ -1,4 +1,9 @@
-var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembler',function() {
+var tabsstuff = angular
+		.module('assembly', [ 'ui.bootstrap' ])
+
+		.provider(
+				'assembler',
+				function() {
 
 					var assembler = function(tableName, varTable, figureMode) {
 						this.tableName = tableName;
@@ -12,18 +17,12 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 						// Has the table been edited recently?
 						// Set to true by default
 						this.edited = true;
-						
-						// Flag for if the recent command has altered memory
-						this.storeFlag = false;
-						
-						// Location in memory array where memory has recently been altered.
-						this.altMemIndex = 0;
 
 						// A flag indicating whether the program has been run
 						// before
 						// Primarily used for checking if values should be reset
 						this.done = false;
-						
+
 						// Initial program counter
 						// Increased when .Block and .Word is used/modified
 						this.programCounter = 0;
@@ -80,22 +79,22 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 						// Also gives flag about if Registers are used
 						// Initial firstChild.nodeValues set to 0 and false
 						this.register = [ [ "REG0", 0, false, "REG0," ], // Reg0
-						[ "REG1", 0, false, "REG1," ], // Reg1
-						[ "REG2", 0, false, "REG2," ], // Reg2
-						[ "REG3", 0, false, "REG3," ], // Reg3
-						[ "REG4", 0, false, "REG4," ], // Reg4
-						[ "REG5", 0, false, "REG5," ], // Reg5
-						[ "REG6", 0, false, "REG6," ], // Reg6
-						[ "REG7", 0, false, "REG7," ], // Reg7
-						[ "REG8", 0, false, "REG8," ], // Reg8
-						[ "REG9", 0, false, "REG9," ], // Reg9
-						[ "REGA", 0, false, "REGA," ], // RegA
-						[ "REGB", 0, false, "REGB," ], // RegB
-						[ "REGC", 0, false, "REGC," ], // RegC
-						[ "REGD", 0, false, "REGD," ], // RegD
-						[ "REGE", 0, false, "REGE," ], // RegE
-						[ "REGF", 0, false, "REGF," ] // RegF
-						];
+						                  [ "REG1", 0, false, "REG1," ], // Reg1
+						                  [ "REG2", 0, false, "REG2," ], // Reg2
+						                  [ "REG3", 0, false, "REG3," ], // Reg3
+						                  [ "REG4", 0, false, "REG4," ], // Reg4
+						                  [ "REG5", 0, false, "REG5," ], // Reg5
+						                  [ "REG6", 0, false, "REG6," ], // Reg6
+						                  [ "REG7", 0, false, "REG7," ], // Reg7
+						                  [ "REG8", 0, false, "REG8," ], // Reg8
+						                  [ "REG9", 0, false, "REG9," ], // Reg9
+						                  [ "REGA", 0, false, "REGA," ], // RegA
+						                  [ "REGB", 0, false, "REGB," ], // RegB
+						                  [ "REGC", 0, false, "REGC," ], // RegC
+						                  [ "REGD", 0, false, "REGD," ], // RegD
+						                  [ "REGE", 0, false, "REGE," ], // RegE
+						                  [ "REGF", 0, false, "REGF," ] // RegF
+										];
 
 						// Memory storage
 						// Initially zero before starting
@@ -129,7 +128,7 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 							}
 
 							var finalVal = parseInt(hex, 16);
-							// console.log("FinalVal is " + finalVal);
+							//console.log("FinalVal is " + finalVal);
 							if (finalVal < 0) {
 								finalVal = 0xFFFF + finalVal + 1;
 							}
@@ -212,12 +211,9 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 								if (table.rows[progLine].cells[this.labelNum].firstChild != null
 										&& table.rows[progLine].cells[this.labelNum].firstChild.nodeValue != null) {
 									var ref = table.rows[progLine].cells[this.labelNum].firstChild.nodeValue;
-									this.labels[refLine++] = [ ref,
-											progLine + this.offSet ];
+									this.labels[refLine++] = [ ref, progLine + this.offSet ];
 									if (table.rows[progLine].cells[this.cmdNum].firstChild.nodeValue == ".BLOCK") {
-										this.offSet += parseInt(
-												table.rows[progLine].cells[this.arg1Num].firstChild.nodeValue,
-												10) - 1;
+										this.offSet += parseInt(table.rows[progLine].cells[this.arg1Num].firstChild.nodeValue,10) - 1;
 									}
 								}
 								progLine++;
@@ -240,44 +236,30 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 									hex = this.decimalToHex(hex, 4);
 									// Store in memory and update program
 									// counter
-									this.memory[memLine] = [ hex[0], hex[1],
-											hex[2], hex[3] ];
-									this.initMemory[memLine] = [ hex[0],
-											hex[1], hex[2], hex[3] ];
+									this.memory[memLine] = [ hex[0], hex[1], hex[2], hex[3] ];
+									this.initMemory[memLine] = [ hex[0], hex[1], hex[2], hex[3] ];
 									this.programCounter++;
 									this.startCounter = this.programCounter;
 									// Store variable for display
-									this.varMemory[index] = [
-											table.rows[progLine].cells[this.labelNum].firstChild.nodeValue,
-											arg1, memLine++ ];
-									this.initVarMemory[index] = [
-											this.varMemory[index][0],
-											this.varMemory[index][1],
-											this.varMemory[index++][2] ];
+									this.varMemory[index] = [table.rows[progLine].cells[this.labelNum].firstChild.nodeValue, arg1, memLine++ ];
+									this.initVarMemory[index] = [ this.varMemory[index][0], this.varMemory[index][1], this.varMemory[index++][2] ];
 									break;
 
 								case ".BLOCK": // .Block before program
-									// Reserve number of rows indicated by
-									// argument
+									// Reserve number of rows indicated by argument
 									var arg1 = table.rows[progLine].cells[this.arg1Num].firstChild.nodeValue;
 									for (var i = 0; i < arg1; i++) {
-										this.memory[memLine] = [ '0', '0', '0',
-												'0' ];
-										this.initMemory[memLine] = [ '0', '0',
-												'0', '0' ];
+										this.memory[memLine] = [ '0', '0', '0', '0' ];
+										this.initMemory[memLine] = [ '0', '0', '0', '0' ];
 										this.programCounter++;
 										this.startCounter = this.programCounter;
 										// Store in Variable Array
 										var name = table.rows[progLine].cells[this.labelNum].firstChild.nodeValue;
-										if (arg1 > 1) {
-											name = name + '[' + i + ']';
+										if(arg1 > 1){
+											name = name +'['+i+']';
 										}
-										this.varMemory[index] = [ name, 0,
-												memLine++ ];
-										this.initVarMemory[index] = [
-												this.varMemory[index][0],
-												this.varMemory[index][1],
-												this.varMemory[index++][2] ];
+										this.varMemory[index] = [name,  0, memLine++];
+										this.initVarMemory[index] = [this.varMemory[index][0],this.varMemory[index][1],this.varMemory[index++][2]];
 									}
 									break;
 
@@ -795,12 +777,9 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 						// value1 and value2 are in hex
 						this.store = function(reg, value1, value2) {
 							// Convert data from register into hex
-							var hex = this.decimalToHex(this.register[reg][1],
-									4);
+							var hex = this.decimalToHex(this.register[reg][1], 4);
 							// Store register data in hex in memory
-							this.memory[parseInt(value1 + value2, 16)] = [
-									hex[0], hex[1], hex[2], hex[3] ];
-							this.altMemIndex = parseInt(value1 + value2, 16);
+							this.memory[parseInt(value1 + value2, 16)] = [ hex[0], hex[1], hex[2], hex[3] ];
 							// Update value in Variable array
 							var x = parseInt(value1 + value2, 16);
 							for (var i = 0; i < this.varMemory.length; i++) {
@@ -808,7 +787,7 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 								if (this.varMemory[i][2] == x) {
 									this.varMemory[i][1] = this.register[reg][1];
 								}
-
+								
 							}
 							// Debug/Demo code
 							// console.log("Store " + this.register[reg][0] + "
@@ -897,13 +876,9 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 						// Store a value in memory pointed at by another
 						// register
 						this.storeInd = function(reg1, reg2) {
-							// console.log(this.decimalToHex(this.register[reg1][1],
-							// 4));
-							var hex = this.decimalToHex(this.register[reg1][1],
-									4);
-							this.memory[this.register[reg2][1]] = [ hex[0],
-									hex[1], hex[2], hex[3] ];
-							this.altMemIndex = this.register[reg2][1];
+							//console.log(this.decimalToHex(this.register[reg1][1], 4));
+							var hex = this.decimalToHex(this.register[reg1][1], 4);
+							this.memory[this.register[reg2][1]] = [hex[0], hex[1], hex[2], hex[3]]; 
 							// Updating of the Variable array
 							var x = parseInt(this.register[reg2][1], 10);
 							for (var i = 0; i < this.varMemory.length; i++) {
@@ -914,8 +889,7 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 								}
 							}
 							// Debug Code
-							// console.log("STOREIND "+ this.register[reg2][1]+"
-							// = "+this.register[reg1][1]);
+							// console.log("STOREIND "+ this.register[reg2][1]+" = "+this.register[reg1][1]);
 							// console.log("VarMemory :"+this.varMemory[i][2]);
 						};
 
@@ -935,8 +909,7 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 							}
 							// Debug/Demo Code
 							// console.log("Load " + this.register[reg][0]);
-							// console.log(this.register[reg][0]+ "= "
-							// +this.register[reg][1]);
+							// console.log(this.register[reg][0]+ "= " +this.register[reg][1]);
 						};
 
 						// Load a given value into a register
@@ -1089,103 +1062,87 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 1: // 0001b Load
 								this.load(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 2: // 0010b Store
 								this.store(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = true;
 								break;
 							case 3: // 0011b LoadInd
 								this.loadInd(this.memory[line][1],
 										this.memory[line][2]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 4: // 0100b StoreInd
 								this.storeInd(this.memory[line][1],
 										this.memory[line][2]);
 								this.programCounter++;
-								this.storeFlag = true;
 								break;
 							case 5: // 0101b Add
 								this.add(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 6: // 0110b Subtract
 								this.sub(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 7: // 0111b And
 								this.and(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 8: // 1000b Or
 								this.or(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 9: // 1001b Not
 								this.not(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 10: // 1010b ASL
 								this.asl(this.memeory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 11: // 1011b ASR
 								this.asr(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 12: // 1100b Compare
 								this.compare(this.memory[line][2],
 										this.memory[line][3]);
 								this.programCounter++;
-								this.storeFlag = false;
 								break;
 							case 13: // 1101b Branch
 								this.branch(this.memory[line][1],
 										this.memory[line][2],
 										this.memory[line][3]);
-								this.storeFlag = false;
 								break;
 							case 14: // 1110b Jump
 								this.jump(this.memory[line][2],
 										this.memory[line][3]);
-								this.storeFlag = false;
 								break;
 							case 15: // 1111b Halt
 								this.halt();
-								this.storeFlag = false;
 								break;
 							}
 						};
@@ -1207,8 +1164,8 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 							if (!this.stop) {
 
 								for (var i = 0; i < 7; i++) { // iterate
-									// throughout
-									// the cells
+																// throughout
+																// the cells
 									// for (var i = 0; i < numCells; i++) {
 									var index = this.previousCounter
 											- this.offSet;
@@ -1242,28 +1199,28 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 								}
 								this.previousCounter = this.programCounter;
 								for (var i = 0; i < numCells; i++) { // iterate
-									// throughout
-									// the
-									// cells
+																		// throughout
+																		// the
+																		// cells
 									table.rows[this.programCounter
 											- this.offSet].cells[i].style.color = '#FF0000'; // highlight
-									// all
-									// cells
-									// red
+																								// all
+																								// cells
+																								// red
 								}
 								parser.eval(this.programCounter);
 
 							} else {
 								// console.log("Inner Walk stop is true");
 							}
-							return 0;
+
 						};
 
 						// Runs through the program
 						// First checks if the code has recently been edited.
 						this.run = function() {
 							if (this.edited) {
-								// this.init();
+								this.init();
 							}
 							if (this.done) {
 								this.reset();
@@ -1285,9 +1242,7 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 								this.memory[i][1] = this.initMemory[i][1];
 								this.memory[i][2] = this.initMemory[i][2];
 								this.memory[i][3] = this.initMemory[i][3];
-								console.log("Line " + i + ", Memory: "
-										+ this.memory[i] + ", InitMem: "
-										+ this.initMemory[i]);
+								console.log("Line "+i+", Memory: "+this.memory[i]+", InitMem: "+this.initMemory[i]);
 							}
 
 							for (var i = 0; i < this.varMemory.length; i++) {
@@ -1336,7 +1291,7 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 							this.done = false;
 							this.stop = false;
 						};
-						
+
 						// Returns the current value of the program counter
 						this.returncounter = function() {
 							var progcount = this.programCounter;
@@ -1366,18 +1321,6 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 							var zeroflag = this.zeroFlag;
 							return zeroflag;
 						};
-						
-						// Returns value of storeFlag
-						this.returnStoreFlag = function() {
-							var storeFlag = this.storeFlag;
-							return storeFlag;
-						};
-						
-						// Returns the index of the most recently altered memory location
-						this.returnAltMemIndex = function() {
-							var memIndex = this.altMemIndex;
-							return memIndex;
-						};
 
 					};
 
@@ -1387,328 +1330,308 @@ var tabsstuff = angular.module('assembly', [ 'ui.bootstrap' ]).provider('assembl
 
 				});
 
-tabsstuff.controller('assemblycontroller', function($scope, assembler,$interval) {
+tabsstuff.controller('assemblycontroller',
+		function($scope, assembler, $interval) {
 
-	$scope.tabs = [];
+			$scope.tabs = [];
 
-	$scope.error = function() {
-		document.write('<h1>you broke it.</h1>');
-	};
+			$scope.error = function() {
+				document.write('<h1>you broke it.</h1>');
+			};
 
-	var tableName = "program";
-	var varTable = "variables";
-	var bool = false;
-	var attemptingToRun = false;
+			var tableName = "program";
+			var varTable = "variables";
+			var bool = false;
+			var attemptingToRun = false;
+			var previousCounter;
+			var running = false;
 
-	var runText = "Run";
-	var walkText = "Walk";
-	var intervalId;
-	var hasRan = false;
+			var runText = "Run";
+			var walkText = "Walk";
+			var intervalId;
+			var hasRan = false;
 
-	$scope.assembler = new assembler(tableName, varTable, bool);
+			$scope.assembler = new assembler(tableName, varTable, bool);
 
-	var memoryhasran = false;
+			$scope.assembler.init();
 
-	$scope.memory = [];
-	var memory = new Array(256);
-	for ( var i = 0; i < 256; i++) {
-		memory[i] = [ "0", "0", "0", "0" ];
-	}
-	$scope.assembler.init();
+			$scope.architecture = function(updateCounter) {
 
-	$scope.architecture = function(updateCounter) {
+				var varmemcount = 0;
+				var regcount = 0;
+				var memcount = 0;
 
-		// var varlength = $scope.assembler.varMemory.length;
-		var varmemcount = 0;
-		var regcount = 0;
-
-		$scope.varMemory = [];
-		$scope.addVarMemory = function() {
-			$scope.varMemory.push({
-				title : $scope.assembler.varMemory[varmemcount][0],
-				value : $scope.assembler.varMemory[varmemcount][1]
-			});
-			varmemcount += 1;
-		};
-
-		$scope.varRegister = [];
-		$scope.addVarRegister = function() {
-			$scope.varRegister.push({
-				title : $scope.assembler.varRegister[regcount][0],
-				value : $scope.assembler.varRegister[regcount][1]
-			});
-			regcount += 1;
-		};
-
-		var assemblerReg = $scope.assembler.register;
-		var register = [];
-		for ( var i = 0; i < 16; i++) {
-			register[i] = $scope.assembler.decimalToHex(assemblerReg[i][1], 4);
-		}
-		$scope.register = [];
-		$scope.addRegister = function(num) {
-			if (num < 10) {
-				$scope.register.push({
-					content : num,
-					value : register[num]
-				});
-			} else if (num == 10) {
-				$scope.register.push({
-					content : "A",
-					value : register[num]
-				});
-			} else if (num == 11) {
-				$scope.register.push({
-					content : "B",
-					value : register[num]
-				});
-			} else if (num == 12) {
-				$scope.register.push({
-					content : "C",
-					value : register[num]
-				});
-			} else if (num == 13) {
-				$scope.register.push({
-					content : "D",
-					value : register[num]
-				});
-			} else if (num == 14) {
-				$scope.register.push({
-					content : "E",
-					value : register[num]
-				});
-			} else if (num == 15) {
-				$scope.register.push({
-					content : "F",
-					value : register[num]
-				});
-			}
-		};
-
-		var overflowFlag = $scope.assembler.returnOverflowFlag();
-		$scope.overflowFlag = [ {
-			flag : overflowFlag
-		} ];
-
-		var negativeFlag = $scope.assembler.returnNegFlag();
-		$scope.negativeFlag = [ {
-			flag : negativeFlag
-		} ];
-
-		var carryFlag = $scope.assembler.returnCarryFlag();
-		$scope.carryFlag = [ {
-			flag : carryFlag
-		} ];
-
-		var zeroFlag = $scope.assembler.returnZeroFlag();
-		$scope.zeroFlag = [ {
-			flag : zeroFlag
-		} ];
-
-		var temp = $scope.assembler.memory;
-		$scope.temp = temp;
-		
-
-		$scope.varlength = $scope.assembler.varMemory.length;
-		$scope.vars = [];
-
-		$scope.addvars = function(num) {
-
-			$scope.vars.push({
-				memno : num,
-				con1 : memory[num][0] = $scope.assembler.decimalToHex(temp[num][0], 1),
-				con2 : memory[num][1] = $scope.assembler.decimalToHex(temp[num][1], 1),
-				con3 : memory[num][2] = $scope.assembler.decimalToHex(temp[num][2], 1),
-				con4 : memory[num][3] = $scope.assembler.decimalToHex(temp[num][3], 1)
-			});
-
-		};
-
-		$scope.addmemory = function(num) {
-			$scope.memory.push({
-				memno : num,
-				con1 : memory[num][0] = $scope.assembler.decimalToHex(temp[num][0], 1),
-				con2 : memory[num][1] = $scope.assembler.decimalToHex(temp[num][1], 1),
-				con3 : memory[num][2] = $scope.assembler.decimalToHex(temp[num][2], 1),
-				con4 : memory[num][3] = $scope.assembler.decimalToHex(temp[num][3], 1)
-			});
-		};
-
-		if ($scope.varlength != 0) {
-			if(memoryhasran == false){
-				for ( var i = $scope.varlength; i < 256; i++) {
-					$scope.addmemory(i);
-				}
-				memoryhasran = true;
-			}
-		}
-
-		for ( var i = 0; i < $scope.varlength; i++) {
-			$scope.addvars(i);
-		}
-
-		if ($scope.assembler.varMemory.length > $scope.assembler.varRegister.length) {
-			for ( var i = 0; i < $scope.assembler.varMemory.length; i++) {
-				$scope.addVarMemory();
-				if ($scope.assembler.varRegister[i] != null) {
-					$scope.addVarRegister();
-				}
-			}
-		} else {
-			for ( var i = 0; i < $scope.assembler.varRegister.length; i++) {
-				$scope.addVarRegister();
-				if ($scope.assembler.varMemory[i] != null) {
+				$scope.varMemory = [];
+				$scope.addVarMemory = function() {
+					$scope.varMemory.push({
+						title : $scope.assembler.varMemory[varmemcount][0],
+						value : $scope.assembler.varMemory[varmemcount][1]
+					});
+					varmemcount += 1;
+				};
+				for (var i = 0; i < $scope.assembler.varMemory.length; i++) {
+					if ($scope.assembler.varMemory == 0) {
+						break;
+					}
 					$scope.addVarMemory();
 				}
-			}
-		}
 
-		for ( var i = 0; i < 16; i++) {
-			$scope.addRegister(i);
-		}
+				$scope.varRegister = [];
+				$scope.addRegister = function() {
+					$scope.varRegister.push({
+						title : $scope.assembler.varRegister[regcount][0],
+						value : $scope.assembler.varRegister[regcount][1]
+					});
+					regcount += 1;
+				};
+				for (var i = 0; i < $scope.assembler.varRegister.length; i++) {
+					if ($scope.assembler.varRegister == 0) {
+						break;
+					}
+					$scope.addRegister();
+				}
 
-		if (updateCounter) {
-			var counter = $scope.assembler.returncounter();
-			previousCounter = counter;
-			$scope.counter = [ {
-				content : counter
-			} ];
-			$scope.instructionRegister = [ {
-				con1 : memory[counter][0] = temp[counter][0],
-				con2 : memory[counter][1] = temp[counter][1],
-				con3 : memory[counter][2] = temp[counter][2],
-				con4 : memory[counter][3] = temp[counter][3]
-			} ];
-		}
+				var assemblerReg = $scope.assembler.register;
+				var register = [];
+				for(var i = 0; i < 16; i++){
+					register[i] = $scope.assembler.decimalToHex(assemblerReg[i][1], 4);
+				}
+				$scope.register = [ {
+					content : "0",
+					value : register[0]
+				}, {
+					content : "1",
+					value : register[1]
+				}, {
+					content : "2",
+					value : register[2]
+				}, {
+					content : "3",
+					value : register[3]
+				}, {
+					content : "4",
+					value : register[4]
+				}, {
+					content : "5",
+					value : register[5]
+				}, {
+					content : "6",
+					value : register[6]
+				}, {
+					content : "7",
+					value : register[7]
+				}, {
+					content : "8",
+					value : register[8]
+				}, {
+					content : "9",
+					value : register[9]
+				}, {
+					content : "A",
+					value : register[10]
+				}, {
+					content : "B",
+					value : register[11]
+				}, {
+					content : "C",
+					value : register[12]
+				}, {
+					content : "D",
+					value : register[13]
+				}, {
+					content : "E",
+					value : register[14]
+				}, {
+					content : "F",
+					value : register[15]
+				}, ];
 
-	};
+				var overflowFlag = $scope.assembler.returnOverflowFlag();
+				$scope.overflowFlag = [ {
+					flag : overflowFlag
+				} ];
 
-	
-	// Simplified version to update memory display
-	// Only updates loations that have been changed.
-	$scope.updateMemory = function() {
-		var temp = $scope.assembler.memory; // Grab current memory
-		var memTable = document.getElementById(/*unique memory identifier*/); // Grab current memory display
-		var altered = $scope.assembler.returnStoreFlag();
-		if(altered) { // Determine if memory has been changed
-			var index = $scope.assembler.returnAltMemIndex(); // If true, return where it was changed
-			memTable[index][0].firstChild.nodeValue = temp[index][0];  // Update
-			memTable[index][1].firstChild.nodeValue = temp[index][1];  // Update
-			memTable[index][2].firstChild.nodeValue = temp[index][2];  // Update
-			memTable[index][3].firstChild.nodeValue = temp[index][3];  // Update
-		}
-	};
-	
-	$scope.buttonColor = function(button) {
-		if (button == "Run") {
-			return 'btn btn-success';
-		} else if (button == "Walk") {
-			return 'btn btn-warning';
-		} else if (button == "Pause") {
-			return 'btn btn-warning :hover';
-		} else if (button == "Reset") {
-			return 'btn btn-danger';
-		}
-	};
+				var negativeFlag = $scope.assembler.returnNegFlag();
+				$scope.negativeFlag = [ {
+					flag : negativeFlag
+				} ];
 
-	$scope.architecture(true);
+				var carryFlag = $scope.assembler.returnCarryFlag();
+				$scope.carryFlag = [ {
+					flag : carryFlag
+				} ];
 
-	$scope.pause = function() {
-		// $scope.assembler.pause();
-		$scope.architecture(true);
-		$interval.cancel(intervalId);
-	};
+				var zeroFlag = $scope.assembler.returnZeroFlag();
+				$scope.zeroFlag = [ {
+					flag : zeroFlag
+				} ];
 
-	$scope.reset = function() {
-		$scope.assembler.reset();
-		$scope.architecture(true);
-		$interval.cancel(intervalId);
-		running = false;
+				var temp = $scope.assembler.memory;
+				var memory = new Array(256);
+				for (var i = 0; i < 256; i++) {
+					memory[i] = [ "0", "0", "0", "0" ];
+				}
+				for (var i = 0; i < 256; i++) {
+					for (var j = 0; j < 4; j++) {
+						if (typeof temp[i][j] == 'string'
+								|| temp[i][j] instanceof String) {
+							memory[i][j] = temp[i][j];
+						} else {
+							memory[i][j] = $scope.assembler.decimalToHex(
+									temp[i][j], 1);
+						}
+					}
+				}
 
-	};
+				$scope.memory = [];
+				$scope.addmemory = function() {
+					$scope.memory.push({
+						memno : memcount,
+						con1 : memory[memcount][0],
+						con2 : memory[memcount][1],
+						con3 : memory[memcount][2],
+						con4 : memory[memcount][3]
+					});
+					memcount += 1;
+				};
+				for (var i = 0; i < 256; i++) {
+					$scope.addmemory();
+				}
 
-	$scope.walk = function() {
-		$scope.done = $scope.assembler.done;
-		running = true;
-		// $scope.memory[counter].set_color(1);
-		$scope.architecture(true);
-		if (hasRan) {
-			$scope.reset();
-			hasRan = false;
-		}
-		if ($scope.assembler.stop == false) {
-			var temp = $scope.assembler.walk();
-		} else {
-			$interval.cancel(intervalId);
-			// console.log("I've stopped!");
-			hasRan = true;
-			attemptingToRun = false;
-			runText = "Run";
-			walkText = "Walk";
-			$scope.buttons();
-		}
-		$scope.architecture(false);
-		return 0;
-	};
+				if (updateCounter) {
+					var counter = $scope.assembler.returncounter();
+					previousCounter = counter;
+					$scope.counter = [ {
+						content : counter
+					} ];
+					$scope.instructionRegister = [ {
+						con1 : memory[counter][0],
+						con2 : memory[counter][1],
+						con3 : memory[counter][2],
+						con4 : memory[counter][3]
+					} ];
+				}
 
-	$scope.run = function() {
-		if (!attemptingToRun) {
-			if (hasRan) {
-				$scope.reset();
-				hasRan = false;
-			}
-			running = true;
-			$scope.assembler.run();
+				$scope.set_color = function(num) {
+					if (running) {
+						if (num == previousCounter) {
+							return {
+								color : "red"
+							};
+						} else {
+							return {
+								color : "black"
+							};
+						}
+					}
+				};
+
+			};
+
+			$scope.buttonColor = function(button) {
+				if (button == "Run") {
+					return 'btn btn-success';
+				} else if (button == "Walk") {
+					return 'btn btn-warning';
+				} else if (button == "Pause") {
+					return 'btn btn-warning :hover';
+				} else if (button == "Reset") {
+					return 'btn btn-danger';
+				}
+			};
+
 			$scope.architecture(true);
-			intervalId = $interval($scope.walk, 200);
-			// console.log("Run has been called!");
-		}
-	};
 
-	$scope.buttons = function() {
+			$scope.pause = function() {
+				// $scope.assembler.pause();
+				$scope.architecture(true);
+				$interval.cancel(intervalId);
+			};
 
-		$scope.runText = [ {
-			name : runText
-		} ];
-		$scope.walkText = [ {
-			name : walkText
-		} ];
-	};
+			$scope.reset = function() {
+				$scope.assembler.reset();
+				$scope.architecture(true);
+				$interval.cancel(intervalId);
+				running = false;
 
-	$scope.buttons();
+			};
 
-	$scope.runButton = function() {
-		if (attemptingToRun) {
-			$scope.pause();
-			runText = "Run";
-			walkText = "Walk";
+			$scope.walk = function() {
+				$scope.done = $scope.assembler.done;
+				running = true;
+				// $scope.memory[counter].set_color(1);
+				$scope.architecture(true);
+				if (hasRan) {
+					$scope.reset();
+					hasRan = false;
+				}
+				if ($scope.assembler.stop == false) {
+					$scope.assembler.walk();
+				} else {
+					$interval.cancel(intervalId);
+					// console.log("I've stopped!");
+					hasRan = true;
+					attemptingToRun = false;
+					runText = "Run";
+					walkText = "Walk";
+					$scope.buttons();
+				}
+				$scope.architecture(false);
+
+			};
+
+			$scope.run = function() {
+				if (!attemptingToRun) {
+					if (hasRan) {
+						$scope.reset();
+						hasRan = false;
+					}
+					running = true;
+					$scope.assembler.run();
+					$scope.architecture(true);
+					intervalId = $interval($scope.walk, 175);
+					// console.log("Run has been called!");
+				}
+			};
+
+			$scope.buttons = function() {
+
+				$scope.runText = [ {
+					name : runText
+				} ];
+				$scope.walkText = [ {
+					name : walkText
+				} ];
+			};
+
 			$scope.buttons();
-			attemptingToRun = false;
-		} else {
-			runText = "Pause";
-			walkText = "Reset";
-			$scope.buttons();
-			$scope.run();
-			attemptingToRun = true;
-		}
-	};
 
-	$scope.walkButton = function() {
-		if (!attemptingToRun) {
-			var rButton = document.getElementById('runButton');
-			var wButton = document.getElementById('walkButton');
-			rButton.disabled = true;
-			wButton.disabled = true;
-			var temp = $scope.walk();
-			rButton.disabled = false;
-			wButton.disabled = false;
-		} else {
-			$scope.reset();
-			runText = "Run";
-			walkText = "Walk";
-			$scope.buttons();
-			attemptingToRun = false;
-		}
-	};
-});
-// vim: ts=4 sw=4 noet
+			$scope.runButton = function() {
+				if (attemptingToRun) {
+					$scope.pause();
+					runText = "Run";
+					walkText = "Walk";
+					$scope.buttons();
+					attemptingToRun = false;
+				} else {
+					runText = "Pause";
+					walkText = "Reset";
+					$scope.buttons();
+					$scope.run();
+					attemptingToRun = true;
+				}
+			};
+
+			$scope.walkButton = function() {
+				if (!attemptingToRun) {
+					$scope.walk();
+				} else {
+					$scope.reset();
+					runText = "Run";
+					walkText = "Walk";
+					$scope.buttons();
+					attemptingToRun = false;
+				}
+			};
+
+		});

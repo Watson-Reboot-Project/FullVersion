@@ -1,0 +1,112 @@
+.spanMemWrapper{
+	height: 410px;
+	width:100%;
+	border: 1px solid black;
+	overflow-y: scroll;
+}
+
+.spanMem {
+	width:100%;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.spanVarMem{
+	width:100%;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.spanReg {
+	height:auto;
+	width:auto;
+	border: 1px solid black;
+	overflow-y:auto;
+}
+
+table td {
+	border: none;
+}
+
+td.clear {
+	color: #FFFFFF;
+}
+
+td.comment {
+	color: #007500;
+}
+
+td.constant {
+	color: #A52A2A;
+}
+
+td.keyword {
+	color: #CC0099;
+}
+
+td.command {
+	color: #0000FF;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.table th,
+.table td {
+  padding: 0px;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+/* Added by tboz203: making the tabs a tad smaller */
+.nav > li > a {
+	padding: 6px 10px;
+}
+
+#btn-grid {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/* Added by tboz203: trying to gridify the editor buttons */
+#btn-grid tr:not(:last-child) > td {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#btn-grid tr:not(:first-child) > td {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-left: 0;
+}
+
+/* Added by tboz203: making the */
+@media (max-width: 767px) {
+	.tabbable {
+		padding: 0;
+	}
+}
+
+#table {
+	width: 90px;
+}
+
+#Editor1 {
+	height: 275px;
+	overflow-y: auto;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+/* vim: set ts=4 sw=4 noet :*/

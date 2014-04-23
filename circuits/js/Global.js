@@ -26,7 +26,7 @@ function setupExerciseButtons(sectID) {
 			}
 		}
 	}
-}				
+}
 
 
 function populateExerciseDivs() {
@@ -36,7 +36,7 @@ function populateExerciseDivs() {
 		var exerID = divs[i].className.replace("exerciseDiv ", "");
 		divs[i].innerHTML = '<button id="solve1" onclick="solveButton(' + exerID + ')">Solve</button>\
 								<button id="toggle' + exerID + '" onclick="toggleView(\'toggle' + exerID + '\', \'container-exer' + exerID + '\')">View</button> \
-								<div id="container-exer' + exerID + '" class="Centered"></div>\
+								<div id="container-exer' + exerID + '" class="Centered" style="border: 2px solid blue; margin-top:5px"></div>\
 								<br><br>';
 	}
 }

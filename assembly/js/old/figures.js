@@ -1156,15 +1156,15 @@ var Figure = function(figNum) {
 	this.htmlString = "<div ng-controller='assemblycontroller"+this.figNum+"' class='container' id='fig"+this.figNum+"'>\
 		<div class='row'>\
 \
-			<div style='width:100%' id='table' id='fig"+this.figNum+"'>"+this.figCode+"\
+			<div class='col-lg-12 col-md-12' id='table' id='fig"+this.figNum+"'>"+this.figCode+"\
 			</div>\
 			<br>\
 			<div class='row'>\
 			<div class='text-center'>\
 				<div class='btn-group-horizontal'>\
-					<button type='button' ng-class='buttonColor(runtext.name)' style='width:10%; min-width:75px'\
+					<button type='button' ng-class='buttonColor(runtext.name)' style='width:10%'\
 						ng-repeat='runtext in runText' ng-click='runButton()'>{{runtext.name}}</button>\
-					<button type='button' ng-class='buttonColor(walktext.name)' style='width:10%; min-width:75px;'\
+					<button type='button' ng-class='buttonColor(walktext.name)' style='width:10%'\
 						ng-repeat='walktext in walkText' ng-click='walkButton()'>{{walktext.name}}</button>\
 				</div>\
 				</div>\
@@ -1187,13 +1187,13 @@ var Figure = function(figNum) {
 								<tbody ng-repeat='mem in varMemory'>\
 									<tr>\
 										<th>{{mem.title}}</th>\
-										<td class='text-center'>{{mem.value}}</td>\
+										<td>{{mem.value}}</td>\
 									</tr>\
 								</tbody>\
 							</table>\
 						</div>\
 					</div>\
-					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2' style='margin-left:4%'>\
+					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2'>\
 						<div id='table' style='width: 90px'>\
 							<table id='variables' class='table table-bordered'>\
 								<thead>\
@@ -1204,7 +1204,7 @@ var Figure = function(figNum) {
 								<tbody ng-repeat='reg in varRegister'>\
 									<tr>\
 										<th>{{reg.title}}</th>\
-										<td class='text-center'>{{reg.value}}</td>\
+										<td>{{reg.value}}</td>\
 									</tr>\
 								</tbody>\
 							</table>\
@@ -1279,45 +1279,34 @@ var Figure = function(figNum) {
 \
 			</tab> <!-- tab containing the memory, register, program counters, and flags -->\
 			<tab heading='Architecture'> <br>\
-			<div class='container' style='width:100%;'>\
+			<div class='container' style='width: 1049px;'>\
 				<div class='row'>\
-					<div class='col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default'\
-						style='width: 245px; border: 1px solid;'>\
+					<div\
+						class='col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default'\
+						style='width: 220px; border: 1px solid;'>\
 						<h4 style='text-align:center'>Memory</h4>\
-						<div class='spanMemWrapper' style='margin-right:5%; margin-bottom:5%;'>\
-							<div class='spanVarMem' >\
-								<table class='table table-bordered' ng-repeat='var in vars' style='table-layoud: fixed;'>\
-									<tr ng-style='set_color(var.memno)'>\
-										<th style='text-align:right'>{{var.memno}}</th>\
-										<td style='text-align:center'>{{var.con1}}</td>\
-										<td style='text-align:center'>{{var.con2}}</td>\
-										<td style='text-align:center'>{{var.con3}}</td>\
-										<td style='text-align:center'>{{var.con4}}</td>\
-									</tr>\
-								</table>\
-							</div>\
-							<div class='spanMem'>\
-								<table class='table table-bordered' ng-repeat='mem in memory' style='table-layout: fixed;'>\
-									<tr ng-style='set_color(mem.memno)'>\
-										<th style='text-align:right'>{{mem.memno}}</th>\
-										<td style='text-align:center'>{{mem.con1}}</td>\
-										<td style='text-align:center'>{{mem.con2}}</td>\
-										<td style='text-align:center'>{{mem.con3}}</td>\
-										<td style='text-align:center'>{{mem.con4}}</td>\
-									</tr>\
-								</table>\
-	\
-							</div>\
+						<div class='spanMem'>\
+							<table class='table table-bordered' ng-repeat='mem in memory'\
+								style='table-layout: fixed;'>\
+								<tr ng-style='set_color(mem.memno)'>\
+									<th style='text-align:right'>{{mem.memno}}</th>\
+									<td style='text-align:center'>{{mem.con1}}</td>\
+									<td style='text-align:center'>{{mem.con2}}</td>\
+									<td style='text-align:center'>{{mem.con3}}</td>\
+									<td style='text-align:center'>{{mem.con4}}</td>\
+								</tr>\
+							</table>\
+\
 						</div>\
 					</div>\
 					<div\
-						class='col-lg-1 col-md-1 col-sm-1 col-xs-1'\
-						style='height:auto; width: 10%; text-align:center; border: 1px solid; margin-top: 15%'>Data Bus</div>\
-					<div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 panel panel-default' style='border: 1px solid'>\
+						class='col-lg-1 col-md-1 col-sm-1 col-xs-1 panel panel-default'\
+						style='height: 35px; width: 10%; border: 1px solid; margin-top: 15%'>Data Bus</div>\
+					<div class='col-lg-6 col-md-6'style='border: 1px solid'>\
 					<h3 style='text-align:center'>CPU</h3>\
-						<div class='panel panel-default' style='width: 100%;'>\
+						<div class='panel panel-default' style='width: 500px;'>\
 							<!-- table containing the register information -->\
-							<div class='col-lg-4  col-md-4 col-sm-4 col-xs-4' style='margin-bottom:2.75%'>\
+							<div class='col-lg-4  col-md-3 col-sm-2 col-xs-2'>\
 								<h4>Registers</h4>\
 								<!-- I should be outside of this box -->\
 								<div class='spanReg'>\
@@ -1359,7 +1348,7 @@ var Figure = function(figNum) {
 								</table>\
 								<!-- flag table -->\
 								<div class='row'>\
-									<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2' style='margin-top:30%'>\
+									<div class='col-lg-2 col-md-2' style='margin-top:22%'>\
 										<table class='table table-bordered'\
 											style='height: 150px; width: 170px;'>\
 											<thead>\
@@ -1369,20 +1358,20 @@ var Figure = function(figNum) {
 											</thead>\
 											<tbody>\
 												<tr>\
-													<td><strong>Carry</strong></td>\
 													<td class='text-center' ng-repeat='carry in carryFlag'>{{carry.flag}}</td>\
+													<td>Carry</td>\
 												</tr>\
 												<tr>\
-													<td><strong>Negative</strong></td>\
 													<td class='text-center' ng-repeat='neg in negativeFlag'>{{neg.flag}}</td>\
+													<td>Negative</td>\
 												</tr>\
 												<tr>\
-													<td><strong>Zero</strong></td>\
 													<td class='text-center' ng-repeat='zero in zeroFlag'>{{zero.flag}}</td>\
+													<td>Zero</td>\
 												</tr>\
 												<tr>\
-													<td><strong>Overflow</strong></td>\
 													<td class='text-center' ng-repeat='over in overflowFlag'>{{over.flag}}</td>\
+													<td>Overflow</td>\
 												</tr>\
 											</tbody>\
 										</table>\
@@ -2757,20 +2746,14 @@ tabsstuff.controller(assemblycontroller,
 		var hasRan = false;
 
 		$scope.assembler = new assembler(tableName, varTable, bool);
-		var memoryhasran = false;
 
-		$scope.memory = [];
-		var memory = new Array(256);
-		for ( var i = 0; i < 256; i++) {
-			memory[i] = [ "0", "0", "0", "0" ];
-		}
 		$scope.assembler.init();
 
 		$scope.architecture = function(updateCounter) {
 
-			// var varlength = $scope.assembler.varMemory.length;
 			var varmemcount = 0;
 			var regcount = 0;
+			var memcount = 0;
 
 			$scope.varMemory = [];
 			$scope.addVarMemory = function() {
@@ -2780,60 +2763,82 @@ tabsstuff.controller(assemblycontroller,
 				});
 				varmemcount += 1;
 			};
+			for (var i = 0; i < $scope.assembler.varMemory.length; i++) {
+				if ($scope.assembler.varMemory == 0) {
+					break;
+				}
+				$scope.addVarMemory();
+			}
 
 			$scope.varRegister = [];
-			$scope.addVarRegister = function() {
+			$scope.addRegister = function() {
 				$scope.varRegister.push({
 					title : $scope.assembler.varRegister[regcount][0],
 					value : $scope.assembler.varRegister[regcount][1]
 				});
 				regcount += 1;
 			};
+			for (var i = 0; i < $scope.assembler.varRegister.length; i++) {
+				if ($scope.assembler.varRegister == 0) {
+					break;
+				}
+				$scope.addRegister();
+			}
 
 			var assemblerReg = $scope.assembler.register;
 			var register = [];
-			for ( var i = 0; i < 16; i++) {
+			for(var i = 0; i < 16; i++){
 				register[i] = $scope.assembler.decimalToHex(assemblerReg[i][1], 4);
 			}
-			$scope.register = [];
-			$scope.addRegister = function(num) {
-				if (num < 10) {
-					$scope.register.push({
-						content : num,
-						value : register[num]
-					});
-				} else if (num == 10) {
-					$scope.register.push({
-						content : "A",
-						value : register[num]
-					});
-				} else if (num == 11) {
-					$scope.register.push({
-						content : "B",
-						value : register[num]
-					});
-				} else if (num == 12) {
-					$scope.register.push({
-						content : "C",
-						value : register[num]
-					});
-				} else if (num == 13) {
-					$scope.register.push({
-						content : "D",
-						value : register[num]
-					});
-				} else if (num == 14) {
-					$scope.register.push({
-						content : "E",
-						value : register[num]
-					});
-				} else if (num == 15) {
-					$scope.register.push({
-						content : "F",
-						value : register[num]
-					});
-				}
-			};
+			$scope.register = [ {
+				content : "0",
+				value : register[0]
+			}, {
+				content : "1",
+				value : register[1]
+			}, {
+				content : "2",
+				value : register[2]
+			}, {
+				content : "3",
+				value : register[3]
+			}, {
+				content : "4",
+				value : register[4]
+			}, {
+				content : "5",
+				value : register[5]
+			}, {
+				content : "6",
+				value : register[6]
+			}, {
+				content : "7",
+				value : register[7]
+			}, {
+				content : "8",
+				value : register[8]
+			}, {
+				content : "9",
+				value : register[9]
+			}, {
+				content : "A",
+				value : register[10]
+			}, {
+				content : "B",
+				value : register[11]
+			}, {
+				content : "C",
+				value : register[12]
+			}, {
+				content : "D",
+				value : register[13]
+			}, {
+				content : "E",
+				value : register[14]
+			}, {
+				content : "F",
+				value : register[15]
+			}, ];
 
 			var overflowFlag = $scope.assembler.returnOverflowFlag();
 			$scope.overflowFlag = [ {
@@ -2856,65 +2861,35 @@ tabsstuff.controller(assemblycontroller,
 			} ];
 
 			var temp = $scope.assembler.memory;
-			$scope.temp = temp;
-			
+			var memory = new Array(256);
+			for (var i = 0; i < 256; i++) {
+				memory[i] = [ "0", "0", "0", "0" ];
+			}
+			for (var i = 0; i < 256; i++) {
+				for (var j = 0; j < 4; j++) {
+					if (typeof temp[i][j] == 'string'
+							|| temp[i][j] instanceof String) {
+						memory[i][j] = temp[i][j];
+					} else {
+						memory[i][j] = $scope.assembler.decimalToHex(
+								temp[i][j], 1);
+					}
+				}
+			}
 
-			$scope.varlength = $scope.assembler.varMemory.length;
-			$scope.vars = [];
-
-			$scope.addvars = function(num) {
-
-				$scope.vars.push({
-					memno : num,
-					con1 : memory[num][0] = $scope.assembler.decimalToHex(temp[num][0], 1),
-					con2 : memory[num][1] = $scope.assembler.decimalToHex(temp[num][1], 1),
-					con3 : memory[num][2] = $scope.assembler.decimalToHex(temp[num][2], 1),
-					con4 : memory[num][3] = $scope.assembler.decimalToHex(temp[num][3], 1)
-				});
-
-			};
-
-			$scope.addmemory = function(num) {
+			$scope.memory = [];
+			$scope.addmemory = function() {
 				$scope.memory.push({
-					memno : num,
-					con1 : memory[num][0] = $scope.assembler.decimalToHex(temp[num][0], 1),
-					con2 : memory[num][1] = $scope.assembler.decimalToHex(temp[num][1], 1),
-					con3 : memory[num][2] = $scope.assembler.decimalToHex(temp[num][2], 1),
-					con4 : memory[num][3] = $scope.assembler.decimalToHex(temp[num][3], 1)
+					memno : memcount,
+					con1 : memory[memcount][0],
+					con2 : memory[memcount][1],
+					con3 : memory[memcount][2],
+					con4 : memory[memcount][3]
 				});
+				memcount += 1;
 			};
-
-			if ($scope.varlength != 0) {
-				if(memoryhasran == false){
-					for ( var i = $scope.varlength; i < 256; i++) {
-						$scope.addmemory(i);
-					}
-					memoryhasran = true;
-				}
-			}
-
-			for ( var i = 0; i < $scope.varlength; i++) {
-				$scope.addvars(i);
-			}
-
-			if ($scope.assembler.varMemory.length > $scope.assembler.varRegister.length) {
-				for ( var i = 0; i < $scope.assembler.varMemory.length; i++) {
-					$scope.addVarMemory();
-					if ($scope.assembler.varRegister[i] != null) {
-						$scope.addVarRegister();
-					}
-				}
-			} else {
-				for ( var i = 0; i < $scope.assembler.varRegister.length; i++) {
-					$scope.addVarRegister();
-					if ($scope.assembler.varMemory[i] != null) {
-						$scope.addVarMemory();
-					}
-				}
-			}
-
-			for ( var i = 0; i < 16; i++) {
-				$scope.addRegister(i);
+			for (var i = 0; i < 256; i++) {
+				$scope.addmemory();
 			}
 
 			if (updateCounter) {
@@ -2924,31 +2899,29 @@ tabsstuff.controller(assemblycontroller,
 					content : counter
 				} ];
 				$scope.instructionRegister = [ {
-					con1 : memory[counter][0] = temp[counter][0],
-					con2 : memory[counter][1] = temp[counter][1],
-					con3 : memory[counter][2] = temp[counter][2],
-					con4 : memory[counter][3] = temp[counter][3]
+					con1 : memory[counter][0],
+					con2 : memory[counter][1],
+					con3 : memory[counter][2],
+					con4 : memory[counter][3]
 				} ];
 			}
 
+			$scope.set_color = function(num) {
+				if (running) {
+					if (num == previousCounter) {
+						return {
+							color : "red"
+						};
+					} else {
+						return {
+							color : "black"
+						};
+					}
+				}
+			};
+
 		};
 
-		
-		// Simplified version to update memory display
-		// Only updates loations that have been changed.
-		$scope.updateMemory = function() {
-			var temp = $scope.assembler.memory; // Grab current memory
-			var memTable = document.getElementById(/*unique memory identifier*/); // Grab current memory display
-			var altered = $scope.assembler.returnStoreFlag();
-			if(altered) { // Determine if memory has been changed
-				var index = $scope.assembler.returnAltMemIndex(); // If true, return where it was changed
-				memTable[index][0].firstChild.nodeValue = temp[index][0];  // Update
-				memTable[index][1].firstChild.nodeValue = temp[index][1];  // Update
-				memTable[index][2].firstChild.nodeValue = temp[index][2];  // Update
-				memTable[index][3].firstChild.nodeValue = temp[index][3];  // Update
-			}
-		};
-		
 		$scope.buttonColor = function(button) {
 			if (button == "Run") {
 				return 'btn btn-success';
@@ -2987,7 +2960,7 @@ tabsstuff.controller(assemblycontroller,
 				hasRan = false;
 			}
 			if ($scope.assembler.stop == false) {
-				var temp = $scope.assembler.walk();
+				$scope.assembler.walk();
 			} else {
 				$interval.cancel(intervalId);
 				// console.log("I've stopped!");
@@ -2998,7 +2971,7 @@ tabsstuff.controller(assemblycontroller,
 				$scope.buttons();
 			}
 			$scope.architecture(false);
-			return 0;
+
 		};
 
 		$scope.run = function() {
@@ -3010,7 +2983,7 @@ tabsstuff.controller(assemblycontroller,
 				running = true;
 				$scope.assembler.run();
 				$scope.architecture(true);
-				intervalId = $interval($scope.walk, 200);
+				intervalId = $interval($scope.walk, 175);
 				// console.log("Run has been called!");
 			}
 		};
@@ -3045,13 +3018,7 @@ tabsstuff.controller(assemblycontroller,
 
 		$scope.walkButton = function() {
 			if (!attemptingToRun) {
-				var rButton = document.getElementById('runButton');
-				var wButton = document.getElementById('walkButton');
-				rButton.disabled = true;
-				wButton.disabled = true;
-				var temp = $scope.walk();
-				rButton.disabled = false;
-				wButton.disabled = false;
+				$scope.walk();
 			} else {
 				$scope.reset();
 				runText = "Run";
@@ -3063,4 +3030,3 @@ tabsstuff.controller(assemblycontroller,
 
 	});
 }
-// vim: ts=4 sw=4 noet nolist
