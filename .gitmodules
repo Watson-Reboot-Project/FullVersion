@@ -1,3 +1,6 @@
 [submodule "database"]
     path = information
     url = https://github.com/Watson-Reboot-Project/Database
+[submodule "information"]
+	path = information
+	url = git@github.com:Watson-Reboot-Project/Database
