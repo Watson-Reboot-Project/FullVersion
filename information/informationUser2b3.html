@@ -1,201 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
+<html lang="en" ng-app='DatabaseApp'>
+  <head>
+    <meta charset="utf-8">
 
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>Watson</title>
+    <title>Watson</title>
 
-		<!-- Google fonts -->
-	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	  <!-- CSS files -->
-		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
-		<link href = "../lib/css/styles2.css" rel = "stylesheet">
-		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-		<!-- Java Script files -->
-		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav2.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script> 
-		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
-		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <!-- CSS files -->
+    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+    <link href = "figure/css/database.css" rel = "stylesheet">
+    <!-- Java Script files -->
+    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/js/nav2.js"></script>
+    <script type="text/javascript" src="../lib/js/master.js"></script>
+    <script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+    <script type="text/javascript" src="../lib/js/Numbering.js"></script>
+    <script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-	</head>
+  </head>
 
-	<body>
-		<div id="wrapper" class="page-wrapper">
-			<a id="tippytop"></a>
-			<!-- Header division -->
+  <body>
+    <div id="wrapper" class="page-wrapper">
+      <a id="tippytop"></a>
+      <!-- Header division -->
 
-			<!-- Navbar -->
-			<div id="includedContentForPage"></div>
-			<!-- End Navbar -->
+      <!-- Navbar -->
+      <div id="includedContentForPage"></div>
+      <!-- End Navbar -->
 
-			
 
-			<!-- Main content -->
-			<p class="Section">
-				<span class="contentNum informationUser2b3"></span>
-			</p>
 
-			<p>
-				Sometimes we are interested in retrieving particular columns, or attributes, of a table, rather than retrieving particular rows, or tuples. Perhaps a list of faculty names and phone numbers is needed; or a list of student names and addresses.
-			</p>
+      <!-- Main content -->
+      <p class="Section">
+        <span class="contentNum informationUser2b3"></span>
+      </p>
 
-			<div>
-				The</span> <span class="Bolded">project</span> operator</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Pronounced “pro -ject”, as in “projector”."><a href="#ftn4" id="body_ftn4">[4]</a></span></span> is used to retrieve particular attributes, or columns, from a relation. For example,</span>
-			</div>
+      <p>
+        Sometimes we are interested in retrieving particular columns, or attributes, of a table, rather than retrieving particular rows, or tuples. Perhaps a list of faculty names and phone numbers is needed; or a list of student names and addresses.
+      </p>
 
-			<p class="Subfigure">
-				Project Fname, Phone from Faculty
-			</p>
+      <div>
+        The</span> <span class="Bolded">project</span> operator</span><span class="Footnote_20_Symbol"><span class="Footnote" title="Footnote: Pronounced “pro -ject”, as in “projector”."><a href="#ftn4" id="body_ftn4">[4]</a></span></span> is used to retrieve particular attributes, or columns, from a relation. For example,</span>
+      </div>
 
-			<p>
-				would produce the relation shown in <span class="figNum projectfaculty"></span>. This newly generated relation contains an entry for each row, or tuple, in its parent relation, “Faculty”. However, only the specified attributes, namely “Fname” and “Phone”, are included.
-			</p>
+      <p class="Subfigure">
+        Project Fname, Phone from Faculty
+      </p>
 
-			<p>
-				The general format used in this book for the “project” query is:
-			</p>
+      <p>
+        would produce the relation shown in <span class="figNum projectfaculty"></span>. This newly generated relation contains an entry for each row, or tuple, in its parent relation, “Faculty”. However, only the specified attributes, namely “Fname” and “Phone”, are included.
+      </p>
 
-			<p class="Subfigure">
-				Project</span> <span class="Italicized">attribute_list</span> from</span> <span class="Italicized">relation
-			</p>
+      <p>
+        The general format used in this book for the “project” query is:
+      </p>
 
-			<p>
-				where the field “relation” will be replaced with the name of an existing relation, and “attribute_list” will be replaced by a comma separated list of attribute names.
-			</p>
+      <p class="Subfigure">
+        Project</span> <span class="Italicized">attribute_list</span> from</span> <span class="Italicized">relation
+      </p>
 
-			<p>
-				<span class="figNum coursesrelation"></span> presents another relation from our university database. This relation, the “Courses” relation, contains information about the university’s course offerings. The relation would contain an entry for every section of every course ever offered. Each row, or tuple, of this relation includes the name of the faculty member who taught the course, the sequence number of the particular section, the name of the course, the quarter and year offered, and the number of credit hours the course is worth.
-			</p>
+      <p>
+        where the field “relation” will be replaced with the name of an existing relation, and “attribute_list” will be replaced by a comma separated list of attribute names.
+      </p>
 
-			<img src="images/projectfaculty.png" alt="Results of Project Fname, Phone from Faculty" class="Image">
+      <p>
+        <span class="figNum coursesrelation"></span> presents another relation from our university database. This relation, the “Courses” relation, contains information about the university’s course offerings. The relation would contain an entry for every section of every course ever offered. Each row, or tuple, of this relation includes the name of the faculty member who taught the course, the sequence number of the particular section, the name of the course, the quarter and year offered, and the number of credit hours the course is worth.
+      </p>
 
-			<p class="Figure">
-				<span class="figNum projectfaculty"></span> Results of Project Fname, Phone from Faculty
-			</p>
+      <!-- <img src="images/projectfaculty.png" alt="Results of Project Fname, Phone from Faculty" class="Image"> -->
 
-			<img src="images/coursesrelation.png" alt="The “Courses” relation – part of a university database" class="Image">
+      <div id='project1'></div>
 
-			<p class="Figure">
-				<span class="figNum coursesrelation"></span> The “Courses” relation – part of a university database
-			</p>
+      <p class="Figure">
+        <span class="figNum projectfaculty"></span> Results of Project Fname, Phone from Faculty
+      </p>
 
-			<p>
-				Given the “Courses” relation, a list of course names and the credit hours they are worth can be generated by the following relational query:
-			</p>
+      <img src="images/coursesrelation.png" alt="The “Courses” relation – part of a university database" class="Image">
 
-			<p class="Subfigure">
-				Project Course, Credits from Courses
-			</p>
+      <p class="Figure">
+        <span class="figNum coursesrelation"></span> The “Courses” relation – part of a university database
+      </p>
 
-			<p>
-				The results of this query are presented in <span class="figNum projectcourses"></span>.
-			</p>
+      <p>
+        Given the “Courses” relation, a list of course names and the credit hours they are worth can be generated by the following relational query:
+      </p>
 
-			<p>
-				Note that the relation of <span class="figNum projectcourses"></span> contains only eight tuples, whereas there are eleven tuples in its parent relation, “Courses”. The reason for this discrepancy is that duplicate entries have been eliminated. Relations are generally considered to “sets” of tuples, and as such, duplicate entries are not allowed. “Project” operations often generate tables that contain some duplicate rows, but most relational database packages will delete these duplicates automatically.
-			</p>
+      <p class="Subfigure">
+        Project Course, Credits from Courses
+      </p>
 
-			<img src="images/projectcourses.png" alt="Results of Project Course, Credits from Courses" class="Image">
+      <p>
+        The results of this query are presented in <span class="figNum projectcourses"></span>.
+      </p>
 
-			<p class="Figure">
-				<span class="figNum projectcourses"></span> Results of Project Course, Credits from Courses
-			</p>
+      <p>
+        Note that the relation of <span class="figNum projectcourses"></span> contains only eight tuples, whereas there are eleven tuples in its parent relation, “Courses”. The reason for this discrepancy is that duplicate entries have been eliminated. Relations are generally considered to “sets” of tuples, and as such, duplicate entries are not allowed. “Project” operations often generate tables that contain some duplicate rows, but most relational database packages will delete these duplicates automatically.
+      </p>
 
-			<p>
-				As with “select”, the relation produced by a “project” operator can be assigned a name so that it can be referred to in subsequent relational operations. For example,
-			</p>
+      <!-- <img src="images/projectcourses.png" alt="Results of Project Course, Credits from Courses" class="Image"> -->
 
-			<p class="Subfigure">
-				Names_and_addresses &#8592; Project Sname, Address, City, State from Students
-			</p>
+      <div id='project2'></div>
 
-			<p>
-				would place student names and address information (street address, city, and state) into a relation named “Names_and_addresses”.
-			</p>
+      <p class="Figure">
+        <span class="figNum projectcourses"></span> Results of Project Course, Credits from Courses
+      </p>
 
-			<p>
-				In summary, the “project” operator creates a new relation that consists of a subset of the columns, or attributes, of an existing relation. Every tuple of the parent relation will contribute to the projected relation, but duplicate rows will be deleted. Unlike “select”, there is no condition test associated with “project”. Remember to use the “project” operator when you are interested in retrieving particular fields of a relation.
-			</p>
+      <p>
+        As with “select”, the relation produced by a “project” operator can be assigned a name so that it can be referred to in subsequent relational operations. For example,
+      </p>
 
-			<p class="Exercise">
-				<br />
-				Exercises for <span class="contentNum informationUser2b3"></span>
-			</p>
+      <p class="Subfigure">
+        Names_and_addresses &#8592; Project Sname, Address, City, State from Students
+      </p>
 
-			<p>
-				Using the relations presented in <span class="figNum facultyrelation"></span>, <span class="figNum studentrelation"></span>, and <span class="figNum coursesrelation"></span>, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
-			</p>
+      <p>
+        would place student names and address information (street address, city, and state) into a relation named “Names_and_addresses”.
+      </p>
 
-			<ol>
-				<li>
-					<p>
-						Generate a list of the names of all students enrolled in the university.
-					</p>
-				</li>
+      <p>
+        In summary, the “project” operator creates a new relation that consists of a subset of the columns, or attributes, of an existing relation. Every tuple of the parent relation will contribute to the projected relation, but duplicate rows will be deleted. Unlike “select”, there is no condition test associated with “project”. Remember to use the “project” operator when you are interested in retrieving particular fields of a relation.
+      </p>
 
-				<li>
-					<p>
-						Generate a list of the names of all courses taught at the university.
-					</p>
-				</li>
+      <p class="Exercise">
+        <br />
+        Exercises for <span class="contentNum informationUser2b3"></span>
+      </p>
 
-				<li>
-					<p>
-						Generate a list of the names of all faculty employed by the university.
-					</p>
-				</li>
-			</ol>
+      <p>
+        Using the relations presented in <span class="figNum facultyrelation"></span>, <span class="figNum studentrelation"></span>, and <span class="figNum coursesrelation"></span>, develop</span> <span class="Ital">relational queries</span> to solve each of the following problems.
+      </p>
 
-			<!-- End main content -->
+      <ol>
+        <li>
+          <p>
+            Generate a list of the names of all students enrolled in the university.
+          </p>
+        </li>
 
-			<!-- Footnotes -->
-			<hr/>
-			<p class="Section">
-				Footnotes
-			</p>
-			
-			<p class="Footnote">
-				<a href="#body_ftn4" id="ftn4">[4]</a> Pronounced “pro -ject”, as in “projector”.
-			</p>
-			
-			
-			<div class="push"></div>
-				
-		</div> <!-- End wrapper -->
+        <li>
+          <p>
+            Generate a list of the names of all courses taught at the university.
+          </p>
+        </li>
 
-		<div class="blueFooterBar"></div> <!-- populates the bottom blue footber with navigation arrows -->
-		
-		<script>
-			var pageObj;											// do NOT change name of variable
-			var chapID = "information";				// stores current chapter for Section button in navbar
+        <li>
+          <p>
+            Generate a list of the names of all faculty employed by the university.
+          </p>
+        </li>
+      </ol>
 
-			$(document).ready(function() {
-			populateNav();										// populate nav content
-			populateSpans();									// populate figure/content spans
-			pageObj = getArrowPathsByPage("informationUser2b3");		// get arrow paths
-			});	
+      <!-- End main content -->
 
-		</script>
-		
-		
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
-			
-	</body>
+      <!-- Footnotes -->
+      <hr/>
+      <p class="Section">
+        Footnotes
+      </p>
+
+      <p class="Footnote">
+        <a href="#body_ftn4" id="ftn4">[4]</a> Pronounced “pro -ject”, as in “projector”.
+      </p>
+
+
+      <div class="push"></div>
+
+    </div> <!-- End wrapper -->
+
+    <div class="blueFooterBar"></div> <!-- populates the bottom blue footber with navigation arrows -->
+
+    <script>
+      var pageObj;                      // do NOT change name of variable
+      var chapID = "information";       // stores current chapter for Section button in navbar
+
+      $(document).ready(function() {
+      populateNav();                    // populate nav content
+      populateSpans();                  // populate figure/content spans
+      pageObj = getArrowPathsByPage("informationUser2b3");    // get arrow paths
+      });
+
+    </script>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-50062005-1', 'latech.edu');
+        ga('send', 'pageview');
+      </script>
+
+  <script type='text/javascript' data-main='figure/js/2b3_config' src='lib/js/require.js'></script>
+  </body>
 </html>

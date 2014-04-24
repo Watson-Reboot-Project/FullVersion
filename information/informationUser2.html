@@ -1,120 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>Watson</title>
+    <title>Watson</title>
 
-		<!-- Google fonts -->
-	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-	  <!-- CSS files -->
-		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
-		<link href = "../lib/css/styles2.css" rel = "stylesheet">
-		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-		<!-- Java Script files -->
-		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav2.js"></script>
-		<script type="text/javascript" src="../lib/js/master.js"></script> 
-		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
-		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <!-- CSS files -->
+    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
+    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+    <!-- Java Script files -->
+    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/js/nav2.js"></script>
+    <script type="text/javascript" src="../lib/js/master.js"></script>
+    <script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
+    <script type="text/javascript" src="../lib/js/Numbering.js"></script>
+    <script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-	</head>
+  </head>
 
-	<body>
-		<div id="wrapper" class="page-wrapper">
-			<a id="tippytop"></a>
-			<!-- Header division -->
+  <body>
+    <div id="wrapper" class="page-wrapper">
+      <a id="tippytop"></a>
+      <!-- Header division -->
 
-			<!-- Navbar -->
-			<div id="includedContentForPage"></div>
-			<!-- End Navbar -->
+      <!-- Navbar -->
+      <div id="includedContentForPage"></div>
+      <!-- End Navbar -->
 
-			<!-- Main content -->
-			<p class="Section">
-				<span class="contentNum informationUser2"></span>
-			</p>
+      <!-- Main content -->
+      <p class="Section">
+        <span class="contentNum informationUser2"></span>
+      </p>
 
-			<p>
-				<span class="Bolded">Database</span> programs, such as Microsoft Access, are popular end-user applications that allow people to organize large quantities of data in ways that make it easy to answer questions about that data.
-			</p>
+      <p>
+        <span class="Bolded">Database</span> programs, such as Microsoft Access, are popular end-user applications that allow people to organize large quantities of data in ways that make it easy to answer questions about that data.
+      </p>
 
-			<p>
-				For example, a database for a university should make it easy to answer questions such as:
-			</p>
+      <p>
+        For example, a database for a university should make it easy to answer questions such as:
+      </p>
 
-			<ul>
-				<li>
-					<p>
-						Who is currently majoring in computer science?
-					</p>
-				</li>
+      <ul>
+        <li>
+          <p>
+            Who is currently majoring in computer science?
+          </p>
+        </li>
 
-				<li>
-					<p>
-						What are the names and student ID numbers of the students who took Dr. Carpenter’s offering of Math 241 in the spring of 2013?
-					</p>
-				</li>
+        <li>
+          <p>
+            What are the names and student ID numbers of the students who took Dr. Carpenter’s offering of Math 241 in the spring of 2013?
+          </p>
+        </li>
 
-				<li>
-					<p>
-						Who taught CS 100 in the fall of 2012?
-					</p>
-				</li>
+        <li>
+          <p>
+            Who taught CS 100 in the fall of 2012?
+          </p>
+        </li>
 
-				<li>
-					<p>
-						Where is Dr. O’Neal’s office located?
-					</p>
-				</li>
-			</ul>
-			
-			<img src="images/facultyrelation.png" alt="The “Faculty” relation – part of a university database" class="Image">
-			
-			<p class="Figure">
-				<span class="figNum facultyrelation"></span> The “Faculty” relation – part of a university database
-			</p>
+        <li>
+          <p>
+            Where is Dr. O’Neal’s office located?
+          </p>
+        </li>
+      </ul>
 
-			<p>
-				In order to answer these kinds of questions, a university database must maintain information on faculty, students, courses offered, and grades earned.
-			</p>
-			
-			<!-- End main content -->
-			<div class="push"></div>
-				
-		</div> <!-- End wrapper -->
+      <img src="images/facultyrelation.png" alt="The “Faculty” relation – part of a university database" class="Image">
 
-		<div class="blueFooterBar"></div> <!-- populates the bottom blue footber with navigation arrows -->
-		
-		<script>
-			var pageObj;											// do NOT change name of variable
-			var chapID = "information";				// stores current chapter for Section button in navbar
+      <p class="Figure">
+        <span class="figNum facultyrelation"></span> The “Faculty” relation – part of a university database
+      </p>
 
-			$(document).ready(function() {
-			populateNav();										// populate nav content
-			populateSpans();									// populate figure/content spans
-			pageObj = getArrowPathsByPage("informationUser2");		// get arrow paths
-			});	
+      <p>
+        In order to answer these kinds of questions, a university database must maintain information on faculty, students, courses offered, and grades earned.
+      </p>
 
-		</script>
-		
-		
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
-			
-	</body>
+      <!-- End main content -->
+      <div class="push"></div>
+
+    </div> <!-- End wrapper -->
+
+    <div class="blueFooterBar"></div> <!-- populates the bottom blue footber with navigation arrows -->
+
+    <script>
+      var pageObj;                      // do NOT change name of variable
+      var chapID = "information";       // stores current chapter for Section button in navbar
+
+      $(document).ready(function() {
+      populateNav();                    // populate nav content
+      populateSpans();                  // populate figure/content spans
+      pageObj = getArrowPathsByPage("informationUser2");    // get arrow paths
+      });
+
+    </script>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-50062005-1', 'latech.edu');
+        ga('send', 'pageview');
+      </script>
+
+  </body>
 </html>
