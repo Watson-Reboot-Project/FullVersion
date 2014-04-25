@@ -1,3 +1,4 @@
 [submodule "information"]
 	path = information
 	url = git@github.com:Watson-Reboot-Project/Database
+	branch = master
