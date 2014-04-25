@@ -26,9 +26,6 @@
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
-
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -41,16 +38,7 @@
 			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
-			<!--Floating nav -->
-			<!-- Previous -->
-			<div class="floating-previous"></div>
-			<!-- Next -->
-			<div class="floating-next"></div>
-			<!-- End floating nav -->
-			<!-- End nav -->
-
 			<!-- Main content -->
-			
 			<p class="Section">
 				<span class="contentNum algorithmsSorting2"></span>
 			</p>
@@ -64,7 +52,7 @@
 				<span class="Bolded">Insertion sort</span> removes the <span class="Ital">first</span> item from the unsorted list and marks it as the item to be inserted.  It then works its way from the <span class="Ital">back</span> to the <span class="Ital">front</span> of the sorted list, at each step comparing the item to be inserted with the current item.  As long as the current item is larger than the item to be inserted, the algorithm continues moving backward through the sorted list.  Eventually it will either reach the beginning of the list or encounter an item that is less than or equal to the item to be inserted.  When that happens the algorithm inserts the item at the current insertion point.
 			</p>
 
-			<img src="Images/insertionex.png" alt="" class="Image">
+			<img src="images/insertionex.png" alt="" class="Image">
 
 			<p class="Figure">
 				<span class="figNum insertionex"></span>  An example of insertion sort
@@ -123,13 +111,13 @@
 				The number of comparisons required to sort <span class="Ital">N</span> items using the insertion method varies depending on the original order of the items.  <span class="figNum insertionrev"></span> illustrates this fact on a five item list.  Part (a) of <span class="figNum insertionrev"></span> shows that 10 comparisons are required to sort the five items when they are originally arranged in reverse sorted order.  Part (b) of <span class="figNum insertionrev"></span> shows that only four comparisons are required by the algorithm when the input list is already presorted.  This is different from the selection sort algorithm which always requires a fixed number of comparisons to sort <span class="Ital">N</span> items, regardless of their original order.
 			</p>
 
-			<img src="Images/insertionrev.png" alt="" class="Image">
+			<img src="images/insertionrev.png" alt="" class="Image">
 
 			<p class="Figure">
 				(a)  Insertion sort of five items originally in reverse sorted order
 			</p>
 			
-			<img src="Images/insertionpre.png" alt="" class="Image">
+			<img src="images/insertionpre.png" alt="" class="Image">
 
 			<p class="Figure">
 				(b)  Insertion sort of five presorted items
@@ -188,7 +176,7 @@
 			</p>
 
 
-			<img src="Images/selectionvsinsertion.png" alt="" class="Image">
+			<img src="images/selectionvsinsertion.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum selectionvsinsertion"></span>  A comparison of the predicted runtimes of selection and insertion sort
@@ -252,23 +240,11 @@
 			</ol>
 			
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
-			
-			<div class="floating-next"></div>
+			<div class="push"></div> <!-- pushes the footer static bottom -->
+				
+		</div> <!-- End wrapper -->
+
+		<div class="blueFooterBar"></div> <!-- populates the footer -->	
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -294,9 +270,5 @@
 			  ga('send', 'pageview');
 			</script>
 
-			<div>
-
-			</div>
-		</div>
 	</body>
 </html>

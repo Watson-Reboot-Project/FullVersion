@@ -92,6 +92,7 @@ function SB_Connector(initX, initY, setName, id, setup) {
 	this.getSerialStringDeclaration = getSerialStringDeclaration;
 	this.getSerialStringConnections = getSerialStringConnections;
 	this.getPluginNumber = getPluginNumber;
+	this.toggleHitBoxes = toggleHitBoxes;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -165,7 +166,7 @@ function SB_Connector(initX, initY, setName, id, setup) {
 		if (mouseOver !== "crosshair") document.body.style.cursor = 'default';
 	});
 	
-	setDeleteIcon("images/empty.bmp");
+	//setDeleteIcon("images/empty.bmp");
 	
 	iconLayer.on('mouseover', function() { document.body.style.cursor = 'pointer'; });
 	iconLayer.on('mouseout', function() { document.body.style.cursor = 'default'; });
@@ -193,18 +194,32 @@ function SB_Connector(initX, initY, setName, id, setup) {
 	
 	function setDeleteIcon (image){
          var imageObj = new Image();
+		 
+		 if (deleteImg) {
+			deleteImg.remove();
+			deleteImg.destroy();
+			mainLayer.draw();
+		 }
+		 
+		 if (image == "images/empty.bmp" && deleteImg) {
+			deleteImg = null;
+			return;
+		}
+		
          imageObj.onload = function (){
-         var deleteImg = new Kinetic.Image({
-			  x: group.getX() + mainLayer.getX() + 35,
-			  y: group.getY() + mainLayer.getY() + -10,
+         deleteImg = new Kinetic.Image({
+			  x: 35,
+			  y: -10,
 			  image: imageObj,
 			  scaleX: 0.4,
 			  scaleY: 0.4
 		 });
 
-         iconLayer.destroyChildren();
-         iconLayer.add(deleteImg);
-         iconLayer.draw();
+         //iconLayer.destroyChildren();
+         //iconLayer.add(deleteImg);
+         //iconLayer.draw();
+			group.add(deleteImg);
+			group.draw();
 		};
 		imageObj.src = image;
     }
@@ -216,6 +231,7 @@ function SB_Connector(initX, initY, setName, id, setup) {
 		output2Box.remove();
 		output3Box.remove();
 		iconLayer.remove();
+		setDeleteIcon("images/empty.bmp");
 	}
 	
 
@@ -292,6 +308,25 @@ function SB_Connector(initX, initY, setName, id, setup) {
 			mainLayer.add(output2Box);
 			mainLayer.add(output3Box);
 			stage.draw();
+		}
+	}
+	
+	function toggleHitBoxes(bool) {
+		if (bool == true) {
+			inputBox.setStroke("green");
+			inputBox.setStrokeWidth(1);
+			output1Box.setStroke("green");
+			output1Box.setStrokeWidth(1);
+			output2Box.setStroke("green");
+			output2Box.setStrokeWidth(1);
+			output3Box.setStroke("green");
+			output3Box.setStrokeWidth(1);
+		}
+		else {
+			inputBox.setStroke('rgba(0,0,0,0)');
+			outputBox1.setStroke('rgba(0,0,0,0)');
+			outputBox2.setStroke('rgba(0,0,0,0)');
+			outputBox3.setStroke('rgba(0,0,0,0)');
 		}
 	}
 	

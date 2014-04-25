@@ -14,7 +14,7 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
-	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		
 	    <!-- Java Script files -->
@@ -40,9 +40,6 @@
 			<!-- Header division -->
 
 			<div id="includedContentForPage"></div>
-      
-      <!--<div class="floating-previous"></div>
-			<div class="floating-next"></div>-->
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -56,26 +53,10 @@
 			<p>Lots of devices have two states: a voltage is high or low, a switch is open or closed, a light is on or off. There are many ways of modeling these two-state systems, some are very concrete and some are more abstract. In this section we’ll look at a number of these models, beginning with simple models that are based on mechanical switches and light bulbs, moving next to representations that use logic gates, and ending with an abstract representation that involves equations written in a type of mathematics known as Boolean algebra.</p>
 
 			<!-- End main content -->
-			<br>
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-			<br>
+			<div class="push"></div>
+			</div>
 			
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
+			<div class="blueFooterBar"></div>
 
 			<script>
 				var pageObj;											// do NOT change name of variable
@@ -85,7 +66,6 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					populateBottomArrows();
 					pageObj = getArrowPathsByPage(sectID);				// get arrow paths
 
 				});	
@@ -102,6 +82,5 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-		</div>
 	</body>
 </html>

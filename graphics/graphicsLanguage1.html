@@ -26,9 +26,6 @@
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
-
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -40,16 +37,7 @@
 
 			<div id="includedContentForPage"></div>
 
-            <!--Floating nav -->
-			<!-- Previous -->
-			<div class="floating-previous"></div>
-			<!-- Next -->
-			<div class="floating-next"></div>
-			<!-- End floating nav -->
-			<!-- End nav -->
-
-			<!-- Main content -->
-			
+			<!-- Main content -->			
 			<p class="Section">
 				<span class="contentNum graphicsLanguage1"></span>
 			</p>
@@ -107,23 +95,11 @@
 				For example, if <span class="Ital">g1</span> were a polygon, a triangle in this case, it could be expressed as the following list of points: <span class="Ital">( p1, p2, p3, p1)</span>.  In this example, lines would be implicitly defined from <span class="Ital">p1</span> to <span class="Ital">p2</span><span class="T2">; from </span><span class="Ital">p2</span> to <span class="Ital">p3</span><span class="T2">; and from </span><span class="Ital">p3</span> back to <span class="Ital">p1</span>.  We can also express this polygon using only distance variables, such as:  <span class="Ital">( ( d1, d2), (d3, d4), (d5, d6), (d1, d2) )</span> or even distance constants, such as:  <span class="Ital">( (100, 100), (200, 100), (150, 150), (100, 100) )</span>.  Variables of type polygon are always named beginning with the letter “<span class="Ital">g</span>”, since we are already using “<span class="Ital">p</span>” for points, followed by one or more digits.  Hence, <span class="Ital">g1</span>, <span class="Ital">g3</span>, and <span class="Ital">g5</span> are all valid polygon names.
 			</p>
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
-			
-			<div class="floating-next"></div>
+			<div class="push"></div> <!-- pushes the footer static bottom -->
+				
+		</div> <!-- End wrapper -->
+
+		<div class="blueFooterBar"></div> <!-- populates the footer -->	
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -148,9 +124,6 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-			<div>
-
-			</div>
-		</div>
+			
 	</body>
 </html>

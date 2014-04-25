@@ -13,12 +13,12 @@
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 		<!-- CSS files -->
 		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
-		<link href = "../lib/css/styles2.css" rel = "stylesheet">
+		<link href="../lib/css/styles.css" rel="stylesheet">
 		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/nav2.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script> 
 		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
@@ -61,7 +61,7 @@
 			</p>
 
 			<p>
-				Being able to refer to data using these logical groupings is much more convenient than being forced to think in terms of tracks and sectors, but how are these concepts actually implemented? Typically, all of the fields that make up a record are placed in a fixed order and stored in physically adjacent locations. In other words, all of the parts of a record, (e.g., name, age, major, etc.) are stored next to one another. Figure 3.3 illustrates one possibility for organizing student records. These records consist of eight fields that occur in the order: name, age, major, ID, sex, address, city, and state. The number of characters (bytes) required to represent each field is given in the figure. The total length of a student record corresponding to this organization will be 83 bytes. An actual record that follows this organization is shown in Figure 3.4. The title of each field, and its position in the 83-character-long record, is indicated. Since “spaces” are real characters that must be stored in the record, they are represented in Figure 3.4 using the</span> <span class="Bolded">•</span> symbol.
+				Being able to refer to data using these logical groupings is much more convenient than being forced to think in terms of tracks and sectors, but how are these concepts actually implemented? Typically, all of the fields that make up a record are placed in a fixed order and stored in physically adjacent locations. In other words, all of the parts of a record, (e.g., name, age, major, etc.) are stored next to one another. <span class="figNum studentfields"></span> illustrates one possibility for organizing student records. These records consist of eight fields that occur in the order: name, age, major, ID, sex, address, city, and state. The number of characters (bytes) required to represent each field is given in the figure. The total length of a student record corresponding to this organization will be 83 bytes. An actual record that follows this organization is shown in <span class="figNum studentrecord"></span>. The title of each field, and its position in the 83-character-long record, is indicated. Since “spaces” are real characters that must be stored in the record, they are represented in <span class="figNum studentrecord"></span> using the</span> <span class="Bolded">•</span> symbol.
 			</p>
 
 			<img src="images/studentrecord.png" alt="An example of a student record" class="Image">
@@ -99,7 +99,7 @@
 				
 		</div> <!-- End wrapper -->
 
-		<div class="blueFooterBar"></div> <!-- populates the bottom blue footber with navigation arrows -->
+		<div class="blueFooterBar"></div> <!-- populates the bottom footer -->
 
 		<script>
 			var pageObj;											// do NOT change name of variable

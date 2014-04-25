@@ -1184,7 +1184,7 @@
 			<section>
 				<id>assemblyIntro</id>
 				<name>Introduction</name>
-				<path>../assembly/assemblyIntro.html</path>
+				<path>../assembly/assemblyintro.html</path>
 			</section>
 			<section>
 				<id>assemblyRegisters</id>

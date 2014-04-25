@@ -14,7 +14,7 @@
 		<!-- CSS files -->
 		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 		<link href = "../lib/css/styles.css" rel = "stylesheet">
-		<link href = "../lib/css/styles2.css" rel = "stylesheet">
+		<link href="../lib/css/styles.css" rel="stylesheet">
 		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -34,59 +34,21 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-				<!--<a href="#" onclick="prevChapArrowPage(chapObj)"><img class="prevChapArrowStyleBottom" src="../lib/images/prev-chap-arrow.png"></a>
-				
-				<a href="#" onclick="nextChapArrowPage(chapObj)"><img class="nextChapArrowStyleBottom" src="../lib/images/next-chap-arrow.png"></a>-->
-			<br><br><br>
-
-			<!-- Navbar division -->
-
+			<!-- Navbar -->
 			<div id="includedContentChapterTOC"></div>
-			  
-			<!-- End nav -->
-			
-   		<div id="ContentAreaSections" class="well bold-me"></div>
-   		<!-- End Chapter Index listing -->
+			<!-- End navbar -->
 
-			<!--Floating nav -->
-			<div class="floating-previous"></div>
-			<div class="floating-next"></div>
-			<!-- End floating nav -->
+			<!-- Chapter Index listing -->
+			<div id="ContentAreaSections" class="well bold-me"></div>
+			<!-- End Chapter Index listing -->
 			
 			<!-- Main content -->
-			
-			<!-- Previous and Next Chapter buttons -->
-			<br>
-			<div class="container">
-				<div class="row">
-					<!--Floating chapter nav -->
-					<!-- Previous -->
-					<div id="prevButtonDiv"></div>
-					<!-- Next -->
-					<div id="nextButtonDiv"></div>
-					<!-- End floating nav -->
-				</div> 
-			</div>
-
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-			
+		
+			<div class="push"></div>
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
+			</div> 
+			
+			<div class="blueFooterBarIndex"></div>
 			
 			<script>
 				var pageObj;
@@ -95,8 +57,6 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("javascript");
 					populateNav();
-					populateChapterButtons();
-					populateTopAndBottomArrows();
 					
 					pageObj = getArrowPathsByPage("javascript");
 					chapObj = getArrowPathsByChapter("javascript");
@@ -114,9 +74,5 @@
 			  ga('send', 'pageview');
 			</script>
 
-			<div>
-
-			</div>
-		</div>
 	</body>
 </html>

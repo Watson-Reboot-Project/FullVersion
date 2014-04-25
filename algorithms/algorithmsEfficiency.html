@@ -26,9 +26,6 @@
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
-
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -41,16 +38,8 @@
 			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
-			<!--Floating nav -->
-			<!-- Previous -->
-			<div class="floating-previous"></div>
-			<!-- Next -->
-			<div class="floating-next"></div>
-			<!-- End floating nav -->
-			<!-- End nav -->
 
 			<!-- Main content -->
-			
 			<p class="Section">
 				<span class="contentNum algorithmsEfficiency"></span>
 			</p>
@@ -135,7 +124,7 @@
 				<span class="figNum runtimes"></span> contains a graph of the runtimes of these two algorithms.  The horizontal dimension represents the length of one wall of the room, in feet.  The vertical axis represents the amount of time (in seconds) required to solve the problem.  The figure shows that for problem sizes less than 3 by 3, Algorithm A is faster.  In the case where the problem size is exactly 3 by 3 both algorithms require the same amount of time.  For problem sizes greater than 3 by 3, Algorithm B is faster.
 			</p>
 			
-			<img src="Images/runtimes.png" alt="" class="Image">
+			<img src="images/runtimes.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum runtimes"></span>  A comparison of the run-times of algorithms A and B
@@ -189,21 +178,11 @@
 			</ol>
 			
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
+			<div class="push"></div> <!-- pushes the footer static bottom -->
+				
+		</div> <!-- End wrapper -->
+
+		<div class="blueFooterBar"></div> <!-- populates the footer -->	
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -228,9 +207,5 @@
 			  ga('send', 'pageview');
 			</script>
 
-			<div>
-
-			</div>
-		</div>
 	</body>
 </html>

@@ -40,26 +40,12 @@
    		<div id="ContentAreaSections" class="well bold-me"></div>
    		<!-- End Chapter Index listing -->
 
-			
-			<!--Floating nav -->
-			<!-- Previous -->
-			<div class="floating-previous"></div>
-			<!-- Next -->
-			<div class="floating-next"></div>
-			<!-- End floating nav -->
+   		<!-- End main content -->
+			<div class="push"></div> <!-- pushes the footer static bottom -->
+				
+		</div> <!-- End wrapper -->
 
-			<!-- Previous and Next Chapter buttons -->
-			<br>
-			<div class="container">
-				<div class="row">
-					<!--Floating nav -->
-					<!-- Previous -->
-					<div id="prevButtonDiv"></div>
-					<!-- Next -->
-					<div id="nextButtonDiv"></div>
-					<!-- End floating nav -->
-				</div> 
-			</div>
+		<div class="blueFooterBarIndex"></div> <!-- populates the footer -->	
 
 			<script>
 				var pageObj;
@@ -68,7 +54,6 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("graphics");
 					populateNav();
-					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("graphics");
 					chapObj = getArrowPathsByChapter("graphics");
