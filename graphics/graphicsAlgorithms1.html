@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -31,11 +32,11 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
+		
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
 
       
 
@@ -586,7 +587,6 @@
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("graphicsAlgorithms1");		// get arrow paths
-					chapObj = getCurrChapter("graphics");
 
 				});	
 				
@@ -608,7 +608,7 @@
 
 			</div>
 		</div>
-		<script src="js/Graphics/all.js"></script>
+		<script src="js/all.js"></script>
 		<script>
 		var figure1 = new setup("container", "drawing_window", "drawingCanvas", "run_walk", "run", "walk", "variable_window", "var_win", "program_window", "program_code", 1);
 		var figure2 = new setup("container2", "drawing_window2", "drawingCanvas2", "run_walk2", "run2", "walk2", "variable_window2", "var_win2", "program_window2", "program_code2", 2);

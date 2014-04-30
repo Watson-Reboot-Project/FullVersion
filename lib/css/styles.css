@@ -1,10 +1,10 @@
-/* navigation bar */
+/* Navigation bar */
 .navbar-default {
     background-color: #4870B6;
     border: none;
 }
 
-/* hover in nav bar, changes color when mobile screen is used */
+/* Hove in nav bar, changes color when mobile screen is used */
 ul.nav a:hover { color: #000; }
 @media screen and (max-width: 640px) {.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #FFF;}}
 
@@ -13,7 +13,7 @@ ul.nav a:hover { color: #000; }
   float: none;
   padding: 20px 15px 15px;
   color: #FFF;
-  font-family: "Eurostile", "Exo 2", sans-serif;
+  font-family: "Eurostile", "Exo 2", sans-serif; /* Defines the navigation bars font-stlye */
   font-size: 18px;
   letter-spacing: 1px;
   text-shadow: none;
@@ -51,8 +51,6 @@ body { padding-top: 15%;}
 @media screen and (max-width: 800px) { body { padding-top: 25%; }}
 @media screen and (max-width: 600px) { body { padding-top: 30%; }}
 @media screen and (max-width: 400px) { body { padding-top: 45%; }}
-
-/*.well .bold-me{}*/
 
 .navbar .navbar-collapse {
   text-align: center;
@@ -111,6 +109,7 @@ body { padding-top: 15%;}
 .fa-minus{ margin-right: -300%; }
 @media screen and (max-width: 800px) { .fa-plus, .fa-minus {margin: 0;}}
 
+
 .fa-chevron-right {padding-right: 3%; padding-left: 3%; font-size: 2em; color:#FFF;}
 .fa-step-forward  {padding-right: 3%; padding-left: 3%; font-size: 2em;}
 
@@ -120,7 +119,7 @@ body { padding-top: 15%;}
     left: 1%;
     z-index: 200;
     padding-right: 3%; padding-left: 3%;
-    color: #fff;
+    color: #FFF;
     font-size: 2em;
 }
 
@@ -130,7 +129,7 @@ body { padding-top: 15%;}
     left: 10%;
     z-index: 200;
     padding-left: 3%;
-    color: #fff;
+    color: #FFF;
     font-size: 2em;
 }
 
@@ -138,6 +137,8 @@ body { padding-top: 15%;}
   max-width: 50%;
   padding: 0
 }
+@media screen and (max-width: 745px)  { #fontAs {max-width: 20px; padding: 0;}}
+
 
 /* Banner down arrow, placement, no longer being used */
 #clickme{ 
@@ -156,9 +157,12 @@ body { padding-top: 15%;}
 /* Styles for collapsing sections/section */
 #years, #months, #posts{ cursor:pointer;}
 #years, .bold-me {font-weight: bold;} #months {font-weight: medium;}
-.archive_year { cursor: pointer; list-style: none; padding-left: 1%; font-size: 99%; }
-.archive_month { list-style-type: disc; cursor: pointer; padding-left: 3%; font-size: 96%;}
-.archive_posts { list-style-type: circle; padding-left: 5%; font-size: 93%;}
+.archive_year   { cursor: pointer; list-style: none; padding-left: 1%; font-size: 99%; text-indent: -1%; }
+.archive_month  { list-style-type: disc; cursor: pointer; padding-left: 3%; font-size: 96%; text-indent: -1%; }
+.archive_posts  { list-style-type: circle; padding-left: 5%; font-size: 93%; text-indent: -1%;}
+@media screen and (max-width: 480px) { .archive_year {cursor: pointer; list-style: none; padding-left: 1%; font-size: 85%; text-indent: -3%; }}
+@media screen and (max-width: 480px) { .archive_month { list-style-type: disc; cursor: pointer; padding-left: 3%; font-size: 80%; text-indent: -2em%; }}
+@media screen and (max-width: 480px) { .archive_posts { list-style-type: circle; padding-left: 5%; font-size: 75%; text-indent: -3%; }}
 
 
 /* below css makes the navbar static at the top */
@@ -170,90 +174,6 @@ body { padding-top: 15%;}
     border-radius: 0 !important;
     z-index: 1000 !important;
 }
-
-.prevChapArrowStyle{
-
-    position: absolute;
-    left: 12%;
-    bottom: absolute;
-    z-index: 200;
-
-}
-
-.prevChapArrowStyleTop{
-
-    position: absolute;
-    left: 14%;
-    top: 15%;
-    z-index: 200;
-    max-width: 40px;
-
-}
-
-.nextChapArrowStyle{
-
-    position: absolute;
-    right: 12%;
-    bottom: absolute;
-    z-index: 200;
-}
-
-.prevChapArrowStyleBottom{
-
-    position: absolute;
-    left: 10%;
-    z-index: 200;
-    max-width: 40px;
-
-}
-
-.nextChapArrowStyleBottom{
-
-    position: absolute;
-    bottom: absolute;
-    right: 13%;
-    z-index: 200;
-    max-width: 40px;
-}
-
-.prevArrowStyleTop{
-
-    position: absolute;
-    top: auto;
-    left:1%; /* 15% */
-    top: 15%;
-    z-index: 200;
-
-}
-
-
-.nextArrowStyleTop{
-
-    position: absolute;
-    bottom: auto;
-    right:1%; /* 17% */
-    top: 15%;
-    z-index: 200;
-
-}
-
-.prevArrowStyleBottom{
-
-    position: absolute;
-    bottom: relative;
-    left: 1%;
-    z-index: 200;
-
-}
-
-.nextArrowStyleBottom {
-
-    position: absolute;
-    bottom: relative;
-    right: 1%;
-    z-index: 200;
-}
-
 
 .Emphasized{
   font-weight: bold;
@@ -272,6 +192,11 @@ color: #FFF;
 text-decoration: none;
 }
 
+.nav > li.inline {
+  position: relative;
+  display: inline-block;
+}
+
 .footer {
 
     position: relative;
@@ -285,18 +210,31 @@ text-decoration: none;
     background: #4870B6;
 }
 
-html, body {
+html, body{
    height: 100%;
    min-height: 100%;
 }
 
-.push { width:100%; height:4em; position:relative; bottom:0; }
+body { 
+
+  width:fixed;
+  height:fixed;
+  background: url(../images/textures/texture10.png) no-repeat scroll center top transparent;
+  background-repeat: repeat;
+  background-size: 100% 100%;
+    -webkit-background-size: 100% 100%; 
+    -khtml-background-size: 100% 100%; 
+    -moz-background-size: 100% 100%;
+    background-size: absolute;
+} 
+
+.push { width:100%; height:12em; position:relative; bottom:0 !important; }
 
 #returntop{
   font-size: 15px;
   letter-spacing: 0.5px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto auto !importantj;
+  text-align: center;
 }
 
 #navprevarrow{
@@ -315,7 +253,8 @@ html, body {
   margin-top: .75em;
 }
 
-/* Next and prev Chapter buttons, no longer bein used */
+/* solveEx, no longer being used */
+/* Next and prev Chapter buttons, no longer being used */
 .btn-blue {
   color: #fff;
   background-color: #4870B6;
@@ -332,3 +271,5 @@ html, body {
   background-color: #3C5D96;
   border-color: #5482D4;
 }
+
+
