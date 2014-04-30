@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
@@ -35,13 +36,10 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-     
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -210,10 +208,10 @@
 				populateSpans();										// populate figure and content spans
 				
 			
-				var figureand = new DigitalLogicFigure("container-and", "and", false, false);
-				var figureor = new DigitalLogicFigure("container-or", "or", false, false);
-				var figurenot = new DigitalLogicFigure("container-not", "not", false, false);
-				var figurea = new DigitalLogicFigure("container-a", "a", false, false); 
+				var figureand = new DigitalLogicFigure("container-and", "and", false, false, "andgate");
+				var figureor = new DigitalLogicFigure("container-or", "or", false, false, "orgate");
+				var figurenot = new DigitalLogicFigure("container-not", "not", false, false, "notgate");
+				var figurea = new DigitalLogicFigure("container-a", "a", false, false, "switchequivalent"); 
 				
 			});
 			

@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -30,14 +31,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-			<div class="floating-previous"></div>
-			
-			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
@@ -70,18 +71,9 @@
 				In 1967 (nearly 50 years ago) the Philco-Ford Company produced a short film entitled “1999 A.D.” that attempted to predict what life would be like for the typical family at the turn of the century. One of the most interesting sequences in the film describes what computing will be like (<span class="figNum ninetyninead"></span>).&nbsp;While the hairstyles, clothing, and background music, along with the somewhat offensive depiction of the roles of men and women, clearly date this video as being from the 1960’s, if one looks beyond these shortcomings the video is really quite insightful. It predicts home computers and printers, Internet connections, email, online shopping, online banking, flat screen monitors, and web cams. The accuracy of these predictions is amazing when one considers that in 1967 computers of the day filled large rooms, took a small army of people to manage, and cost hundreds of thousands to millions of dollars - and there was, of course, no Internet, nor email, nor online banking and shopping. One interesting feature of the video that turned out to be wrong was the idea that home computer systems would need automated backup components that would kick in if a primary unit failed. While this idea seems antiquated today, back in the 1960s electronic components were unreliable and failed rather frequently, so this idea probably seemed quite reasonable at the time.
 			</p>
 
-			<!--
-			<video controls="controls" src="../Video/fn19%20The%20Internet%20in%201969.mp4">
-				The Internet in 1969
-			</video>
-			-->
-			
 			<div class="video">
-			<video controls>
-				<source src="video/future/ninetyninead.mp4" type="video/mp4">
-				<object data="video/future/ninetyninead.mp4" width="480" height="360">
-				<embed width="480" height="360" src="ninetyninead.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/ninetyninead.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -94,11 +86,8 @@
 			</p>
 			
 			<div class="video">
-			<video controls>
-				<source src="video/future/applenavigator.mp4" type="video/mp4">
-				<object data="video/future/applenavigator.mp4" width="480" height="360">
-				<embed width="480" height="360" src="applenavigator.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/applenavigator.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -129,11 +118,8 @@
 			</p>
 			
 			<div class="video">
-			<video controls>
-				<source src="video/future/attyouwill.mp4" type="video/mp4">
-				<object data="video/future/attyouwill.mp4" width="480" height="360">
-				<embed width="480" height="360" src="attyouwill.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/attyouwill.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -148,19 +134,18 @@
 			<p>
 				One interesting prediction I made was the rise of e-books and “book readers” that sound a lot like today’s tablets and smart phones. Here is the quote from the May 1997 edition of the text:
 			</p>
-			<ul  class="Blockcenter"></li>
+			<ul  class="Blockcenter">
 			<p>
 				&nbsp;&nbsp;… <span class="Ital">computers also have many advantages over paper. Within a decade these advantages, such as multimedia, hypertext, and ease of information retrieval, will begin to overtake paper. … These books will be viewed with a relatively inexpensive and portable “book reader.” These “book readers” will really be more like a combination TV, telephone, and Web browser. Many publications, especially periodicals, will not be distributed in any physical form. Instead, your reader will be able to automatically download Time (or just the articles you are likely to find of interest) directly off the Net.</span>
-			</p></ul></li>
+			</p></ul>
 
 			<p>
 				Five years later, in the 2002 edition of the book I gave a more complete description of a smart phone. Here are some selected quotes from that edition:
 			</p>
-			<ul  class="Blockcenter"></li>
+			<ul  class="Blockcenter">
 			<p>
 				<span class="Ital">&nbsp;&nbsp;With mobile devices, a mouse can be replaced with a touch sensitive display screen… The line between cell phones and PDAs is already starting to blur and this trend will accelerate…. In addition to calendar, address book, and scheduling applications, most phones will include web access capabilities over relatively high bandwidth data links…. Phones will also begin to include GPS (Global Positioning System) receivers. Incorporating GPS into a PDA Phone will allow the phone to always know where it is. That knowledge, combined with access to the Net, will enable all sorts of applications. Such a phone could give you turn-by-turn directions to the nearest In’N’Out Burger, determine when you have missed a turn and modify its instructions on how to get there based on this new information.</span>
-			</ul></li>
-			</p>
+			</p></ul>
 
 			<p>
 				It is important to remember that I wrote these words five years before the first iPhone was announced (2007) and six years before the Android (2008).
@@ -169,10 +154,10 @@
 			<p>
 				Another prediction, probably the one I’m most proud of because it deals with a social implication of then-future technology, was my suggestion that access to (what we now call) the Internet would forever change the nature of human conversation so that long drawn out arguments over a trivial questions of fact would come to an end. Here is the quote from the May 1997 edition when the Internet was in its infancy and people connected to it by low speed dial up modem:
 			</p>
-			<ul  class="Blockcenter"></li>
+			<ul  class="Blockcenter">
 			<p>
 				&nbsp;&nbsp;… <span class="Ital">this technology will affect most aspects of our daily lives in ways both profound and mundane. Most questions of fact should be answerable anywhere and anytime by affordable access to the GII (Global Information Infrastructure). If nothing else this will be great for settling friendly disagreements quickly. Arguments of the type: “Star Trek originally premiered in September of 1967.” “No, it premiered in September of 1968!” will be settled quickly and effortlessly by accessing the GII.</span>
-			</p></ul></li>
+			</p></ul>
 
 			<p>
 				Note that in 2013 simply asking Siri “When did the original Star Trek series premier?” brings up a results page that tells me it premiered on Thursday, September 8, 1966.
@@ -182,7 +167,6 @@
 				Of course, I’m picking and choosing quotes to highlight those predictions I got right. But it should be clear from the various examples presented in this section that by carefully observing existing and emerging trends it is sometimes possible to predict, at least in ‘outline’ form, certain future technological innovations.
 			</p>
 			
-			<!-- End main content -->
 			<hr />
 			<!-- Footnotes -->
 			<p class="Section">
@@ -191,10 +175,6 @@
 			
 			<p class="Footnote">
 				<a href="#body_ftn15" id="ftn15">[15]</a>&nbsp; While this quote is generally attributed to Berra, a similar quote “Prediction is very difficult, especially if it’s about the future.” is attributed to physicist Niels Bohr. Some have suggested the joke first originated with Mark Twain (Samuel Clemens).
-			</p>
-			
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
 			</p>
 			<div class="push"></div>
 				

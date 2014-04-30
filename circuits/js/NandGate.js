@@ -35,6 +35,7 @@ function NandGate(initX, initY, setName, id, setup) {
 	
 	var group;						// the group that all of the AND gate's components are added to
 	var gateShape;					// the custom shape for the AND gate
+	var gateShapeCircle;
 	var transFg;					// a transparent foreground for the AND gate
 	
 	var scale = setup.getGScale();

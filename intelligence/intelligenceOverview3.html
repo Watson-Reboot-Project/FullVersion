@@ -12,13 +12,14 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
@@ -28,15 +29,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
-
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
-			<!-- End floating nav -->
 
 			<!-- Main content -->
 
@@ -54,19 +54,10 @@
 			<p>
 				Here is one version of the Turing test. &nbsp;A human interrogator enters into a conversation with an entity (which may either be another human or a machine) via a computer terminal. The human and the entity are not allowed to see one another or communicate in any way, other than by typed messages.<span class="Footnote" title="Footnote: The modern equivalent would be texting from your smart phone."><a href="#ftn5" id="body_ftn5">[5]</a></span> The goal of the human interrogator is to determine whether he or she is, in fact, communicating with another human or with a machine. If the human cannot reliably determine the difference between the two, we conclude that the machine is exhibiting intelligent behavior.
 			</p>
-			<!--
-			<div>
-			<video controls="controls" src="../video/TMTCTW%20-%20The%20Turing%20Test.mp4">
-				<video controls="controls" src="../video/TMTCTW%20-%20The%20Turing%20Test.mp4">TMTCTW - The Turing Test</video>
-			</video>
-			</div>
-			-->
+
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/TMTCTWTheTuringTestRE.mp4" type="video/mp4">
-				<object data="video/ai/TMTCTWTheTuringTestRE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="TMTCTWTheTuringTestRE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/turingtest.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -78,22 +69,16 @@
 				This test is designed to limit bias against the machine. Passing the test does not require an ability to see, to hear, or to speak. It does not require the ability to perform physical tasks, such as riding a bike or playing a musical instrument. What is required is that the machine be capable of reasoning in a manner similar to humans and of communicating in a human language, such as English. While the fictional computer HAL of “2001: A Space Odyssey” could easily pass such a test, no real computer has ever even come close.
 			</p>
 
-			<!--
-			<video controls="controls" src="../video/TMTCTW%20-%20Eliza.mp4">TMTCTW - Eliza</video>
-			-->
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/TMTCTWElizaRE.mp4" type="video/mp4">
-				<object data="video/ai/TMTCTWElizaRE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="TMTCTWElizaRE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/elizaprogram.mp4" type="video/mp4">
 			</video>
 			</div>
 			
 			<p class="Figure">
 				<span class="figNum elizaprogram"></span> A demonstration of Eliza the first and most famous conversation program.
 			</p>
-			<!-- End main content -->
+
 			<hr />
 			
 			<p class="Section">
@@ -102,9 +87,6 @@
 			
 			<p class="Footnote">
 				<a href="#body_ftn5" id="ftn5">[5]</a>&nbsp; The modern equivalent would be texting from your smart phone.
-			</p>
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
 			</p>
 			<div class="push"></div>
 				

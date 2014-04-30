@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
@@ -35,15 +36,11 @@
 
 	</head>
 
-	<body>
+	<body>			
+		<div id="includedContentForPage"></div>
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-      
-
-		  <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -182,10 +179,10 @@
 				pageObj = getArrowPathsByPage(sectID);					// get prev and next paths for nav arrows
 				populateSpans();										// populate figure and content spans
 			
-				var figureandNTT = new DigitalLogicFigure("container-andNTT", "andNTT",false,false);
-				var figureorNTT = new DigitalLogicFigure("container-orNTT", "orNTT",false,false);
-				var figurenotNTT = new DigitalLogicFigure("container-notNTT", "notNTT",false,false);
-				var figurea = new DigitalLogicFigure("container-a", "a",false,false);
+				var figureandNTT = new DigitalLogicFigure("container-andNTT", "andNTT", false, false, "booleanbasic");
+				var figureorNTT = new DigitalLogicFigure("container-orNTT", "orNTT", false, false, "booleanbasic");
+				var figurenotNTT = new DigitalLogicFigure("container-notNTT", "notNTT", false, false, "booleanbasic");
+				var figurea = new DigitalLogicFigure("container-a", "a", false, false, "switchequivalent");
 				
 			});
 		</script>

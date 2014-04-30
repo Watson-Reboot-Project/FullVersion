@@ -12,6 +12,8 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
+	    <link href="../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -30,14 +32,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-			<div class="floating-previous"></div>
-			
-			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
@@ -47,20 +49,12 @@
 			</p>
 
 			<p>
-				When it comes to integrated circuits constructed from silicon-based semi-conductors, to paraphrase Monty Python: They’re "not dead yet.” (<span class="figNum bellholmdel"></span>1)&nbsp;Before we talk about the problems faced in continuing to improve integrated circuits, let’s take a few moments to briefly review why this technology has been so successful for so long.
+				When it comes to integrated circuits constructed from silicon-based semi-conductors, to paraphrase Monty Python: They’re "not dead yet.” (<span class="figNum montypython"></span>)&nbsp;Before we talk about the problems faced in continuing to improve integrated circuits, let’s take a few moments to briefly review why this technology has been so successful for so long.
 			</p>
-			<!--
-			<video controls="controls" src="../Video/fn09%20Monty%20Python%20-%20I%27m%20not%20dead%20yet.mp4">
-				Monty Python - I'm not dead yet
-			</video>
-			-->
 			
 			<div class="video">
-			<video controls>
-				<source src="video/future/montypython.mp4" type="video/mp4">
-				<object data="video/future/montypython.mp4" width="480" height="360">
-				<embed width="480" height="360" src="montypython.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/montypython.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -113,11 +107,6 @@
 			
 			<p class="Footnote">
 				<a href="#body_ftn8" id="ftn8">[8]</a>&nbsp;<a href="http://arstechnica.com/information-technology/2013/08/moores-law-could-stay-on-track-with-extreme-uv-progress/">http://arstechnica.com/information-technology/2013/08/moores-law-could-stay-on-track-with-extreme-uv-progress/</a>
-			</p>
-			
-			
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
 			</p>
 			<div class="push"></div>
 				

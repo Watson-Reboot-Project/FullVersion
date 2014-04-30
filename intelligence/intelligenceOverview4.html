@@ -12,13 +12,14 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
@@ -28,15 +29,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
-
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
-			<!-- End floating nav -->
 
 			<!-- Main content -->
 
@@ -56,15 +56,9 @@
 			</p>
 
 			  
-			<!--
-			<video controls="controls" src="../video/TMTCTW%20-%20Claude%20Shannon%20prediction%201961.mp4">TMTCTW - Claude Shannon prediction 1961</video>
-			-->
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/TMTCTWClaudeShannonprediction1961RE.mp4" type="video/mp4">
-				<object data="video/ai/TMTCTWClaudeShannonprediction1961RE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="TMTCTWClaudeShannonprediction1961RE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/claudeshannon.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -75,18 +69,10 @@
 			<p>
 				This optimism was bolstered by an impressive array of accomplishments that were rapidly achieved. In the late 1950’s, Arthur Samuel wrote a checkers playing program that could learn from its mistakes and thus, over time, become better at playing the game. There was much excitement when the program eventually became better than its creator at the game. Other AI programs developed in the late 1950’s and 1960’s include Logic Theorist (1956) by Allen Newell and Herbert Simon, which could prove simple mathematical theorems, SAINT (1963) by Jim Slagle which could solve calculus problems, and STUDENT (1967) by Daniel Bobrow which could solve word-based algebra problems.
 			</p>
-
       
-			<!--
-			<video controls="controls" src="../video/TMTCTW%20-%20Early%20Success%20%281960%29.mp4">TMTCTW - Early Success (1960)</video>
-			-->
-			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/TMTCTWEarlySuccess1960RE.mp4" type="video/mp4">
-				<object data="video/ai/TMTCTWEarlySuccess1960RE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="TMTCTWEarlySuccess1960RE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/airesearch.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -119,15 +105,9 @@
 			</p>
 
       
-			<!--
-			<video controls="controls" src="../video/TMTCTW%20-%20SHRDLU.mp4">TMTCTW - SHRDLU</video>
-			-->
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/TMTCTWSHRDLURE.mp4" type="video/mp4">
-				<object data="video/ai/TMTCTWSHRDLURE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="TMTCTWSHRDLURE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/terryshrdlu.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -204,15 +184,9 @@
 			</p>
 
       
-			<!--
-			<video controls="controls" src="../video/13%20TMTCTW%20-%20Perceptrons.mp4">13 TMTCTW - Perceptrons</video>
-			-->
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/TMTCTWPerceptronsRE.mp4" type="video/mp4">
-				<object data="video/ai/TMTCTWPerceptronsRE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="TMTCTWPerceptronsRE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/perceptronfaces.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -248,10 +222,6 @@
 			
 			<p class="Footnote">
 				<a href="#body_ftn6" id="ftn6">[6]</a>&nbsp; Or blame, depending on their point of view.
-			</p>
-			
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
 			</p>
 			<div class="push"></div>
 				

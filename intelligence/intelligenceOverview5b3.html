@@ -12,13 +12,14 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
@@ -28,15 +29,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
-
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
-			<!-- End floating nav -->
 
 			<!-- Main content -->
 
@@ -51,16 +51,10 @@
 			<p>
 				One of the first computer vision projects, called Freddy, was conducted at the University of Edinburgh under the direction of Donald Michie from 1969 through 1976. In its initial version (1969-1971) Freddy consisted of a camera overlooking a rotating platform on which common objects, such as a cup, were placed. The camera was hooked to a computer that attempted to recognize the objects on the platform. The system was later expanded in the 1973 to 1976 timeframe as Freddy II. The second iteration of Freddy included a robot arm that could manipulate objects and be programmed to perform simple tasks like putting together a toy car from various parts – the car body, four wheels, and two axles. While Freddy was able to recognize, under carefully controlled conditions, the objects it had been programmed to detect, the process was quite slow, taking several minutes on some objects. The methods used to program Freddy couldn’t be effectively scaled up to larger numbers of objects or ‘real world’ lighting and viewing conditions.
 			</p>
-			<!--
-			<video controls="controls" src="../video/TMTCTW%20-%20The%20complexity%20of%20vision%20%281971%29.mp4">TMTCTW - The complexity of vision (1971)</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/TMTCTWThecomplexityofvision1971RE.mp4" type="video/mp4">
-				<object data="video/ai/TMTCTWThecomplexityofvision1971RE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="TMTCTWThecomplexityofvision281971RE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/freddybot.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -75,16 +69,10 @@
 			<p>
 				One computer vision application you might be familiar with is Google Goggles. <span class="Bolded">Google Goggles</span> is an application that uses the camera on your smart phone (Android or iPhone) to take a picture and then send it to Google’s servers where computer vision algorithms search the image to determine whether it contains any recognizable objects. The system works best on product logos, works of art, text, and famous landmarks. Food, cars, plants, and animals are examples of objects that Goggles can’t recognize.
 			</p>
-			<!--
-			<video controls="controls" src="../video/Google%20Goggles.mp4">Google Goggles</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/GoogleGoggles.mp4" type="video/mp4">
-				<object data="video/ai/GoogleGoggles.mp4" width="480" height="360">
-				<embed width="480" height="360" src="GoogleGoggles.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/googlegoggles.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -107,16 +95,10 @@
 			<p>
 				Kinect was first announced in June of 2009 at E3 (the Electronic Entertainment Expo) under the name “Project Natal”.  Project Natal promised to combine motion tracking of individual players, facial recognition, voice control (speech recognition), and video conferencing into a mass produced inexpensive (under $200) consumer product.
 			</p>
-			<!--
-			<video controls="controls" src="../video/E3%202009_%20Project%20Natal%20Xbox%20360%20Announcement.mp4">E3 2009_ Project Natal Xbox 360 Announcement</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/E32009ProjectNatalXbox360Announcement.mp4" type="video/mp4">
-				<object data="video/ai/E32009ProjectNatalXbox360Announcement.mp4" width="480" height="360">
-				<embed width="480" height="360" src="E32009ProjectNatalXbox360Announcement.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/projectnatal.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -135,16 +117,10 @@
 			<p>
 				In late 2013 Microsoft released the second iteration of Kinect as an integral part of their Xbox One launch.
 			</p>
-			<!--
-			<video controls="controls" src="../video/New%20Xbox%20One%20-%20Kinect_%20Exclusive%20WIRED%20video.mp4">New Xbox One - Kinect_ Exclusive WIRED video</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/NewXboxOneKinectExclusiveWIREDvideo.mp4" type="video/mp4">
-				<object data="video/ai/NewXboxOneKinectExclusiveWIREDvideo.mp4" width="480" height="360">
-				<embed width="480" height="360" src="NewXboxOneKinectExclusiveWIREDvideo.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/xboxkinect.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -160,10 +136,6 @@
 				Despite being a truly impressive innovation, it is important to clearly understand that <span class="Ital"><span class="Bolded">Kinect doesn’t “see” in the same sense that humans do</span></span>. Essentially Kinect is blind to most things in range of its sensors other than people’s faces and their bodies. What I mean by this is that Kinect possesses an internal ‘skeletal model’ of people’s joints and how those joints can move. It then looks for groupings of pixels in the images it is recording that appear to be moving in ways that match its internal model of how humans move. When it finds pixels moving in this way, it then tracks them. The result is a system that tracks human movement. Likewise, the system has a model of the way human faces are constructed and how they can move – smile, frown, close their eyes, etc. As with full body motion tracking, the system looks for pixels in configurations that match human faces, it can then crudely track a person’s facial features and even identify individuals it has been trained to recognize. Kinect doesn’t recognize cats, or coffee tables, or cups, or couches, or most anything else – it is limited to people’s faces and their bodies.
 			</p>
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
 			<div class="push"></div>
 				
 		</div> <!-- End wrapper -->

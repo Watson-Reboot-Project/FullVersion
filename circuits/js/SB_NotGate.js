@@ -132,7 +132,7 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	transFg = new Kinetic.Rect({
 		x:  scale * 50,
 		y:  -5,
-		width: 57 - plugin.getPoints()[0].x,
+		width: 57 - plugin.points()[0].x,
 		height:  scale * 50
 	});
 
@@ -236,27 +236,25 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 		var plug;
 		if (inputBox) {
 			plug = getPlugin();
-			inputBox.setPosition(plug.getPoints()[0].x - scale * 10, plug.getPoints()[0].y - scale * 20);
+			inputBox.position({ x: plug.points()[0] - scale * 10, y: plug.points()[1] - scale * 20 });
 			plug = getPlugout();
-			outputBox.setPosition(plug.getPoints()[0].x + scale * 3, plug.getPoints()[0].y - scale * 20);
+			outputBox.position({ x: plug.points()[0] + scale * 3, y: plug.points()[1] - scale * 20 });
 		}
 		else {
 			plug = getPlugin();
 			inputBox = new Kinetic.Rect({
-				x: plug.getPoints()[0].x - scale * 10,
-				y: plug.getPoints()[0].y - scale * 20,
-				width: (plug.getPoints()[1].x - plug.getPoints()[0].x) + 5,
+				x: plug.points()[0] - scale * 10,
+				y: plug.points()[1] - scale * 20,
+				width: (plug.points()[2] - plug.points()[0]) + 5,
 				height: scale * 40
-				//fill : 'black'
 			});
 			
 			plug = getPlugout();
 			outputBox = new Kinetic.Rect({
-				x: plug.getPoints()[0].x + scale * 3,
-				y: plug.getPoints()[0].y - scale * 20,
-				width: (plug.getPoints()[1].x - plug.getPoints()[0].x) + 5,
+				x: plug.points()[0] + scale * 3,
+				y: plug.points()[1] - scale * 20,
+				width: (plug.points()[2] - plug.points()[0]) + 5,
 				height: scale * 40
-				//fill : 'black'
 			});
 			
 			
@@ -311,7 +309,7 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	// returns the line for the plugin in GLOBAL coordinates; used in the controller for drawing wires (the controller functions in global coordinates; which makes sense)
 	function getPlugin() {
 		var line = new Kinetic.Line({
-			points: [group.getX() + plugin.getPoints()[0].x, group.getY() + plugin.getPoints()[0].y, group.getX() + plugin.getPoints()[1].x, group.getY() + plugin.getPoints()[1].y]
+			points: [group.position().x + plugin.points()[0], group.position().y + plugin.points()[1], group.position().x + plugin.points()[2], group.position().y + plugin.points()[3]]
 		});
 		
 		return line;
@@ -323,7 +321,7 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	// return the line for the plugout in GLOBAL coordinates; same concept as plugin line
 	function getPlugout() {
 		var line = new Kinetic.Line({
-			points: [group.getX() + plugout.getPoints()[0].x, group.getY() + plugout.getPoints()[0].y, group.getX() + plugout.getPoints()[1].x, group.getY() + plugout.getPoints()[1].y]
+			points: [group.position().x + plugout.points()[0], group.position().y + plugout.points()[1], group.position().x + plugout.points()[2], group.position().y + plugout.points()[3]]
 		});
 		
 		return line;
@@ -432,7 +430,7 @@ function SB_NotGate(initX, initY, setName, id, setup) {
 	
 	function deleteOutputConnection() {
 		plugoutComp.setPluginCompNull(thisObj);
-		plugoutWire.disableStroke();
+		plugoutWire.stroke(null);
 		plugoutComp = null;
 		plugoutWire = null;
 	}

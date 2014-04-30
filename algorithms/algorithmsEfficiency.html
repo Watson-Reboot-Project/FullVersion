@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -31,12 +32,12 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+			
 		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
 
 
 			<!-- Main content -->
@@ -58,7 +59,7 @@
 			</p>
 
 			<p>
-				The brute-force solution to this problem would be to actually cover the floor with the tiles you have been given, laying them in neat rows and keeping a careful count of how many tiles you used.  This algorithm, which will be referred to as Algorithm A, is presented in <span class="contentNum algorithmsIntro"></span>.  Note that this algorithm is so simple that any child could understand it – once he or she had learned to count.
+				The brute-force solution to this problem would be to actually cover the floor with the tiles you have been given, laying them in neat rows and keeping a careful count of how many tiles you used.  This algorithm, which will be referred to as Algorithm A, is presented in <span class="figNum bruteforce"></span>.  Note that this algorithm is so simple that any child could understand it – once he or she had learned to count.
 
 
 			<ul class="Blockcenter">
@@ -169,7 +170,7 @@
 				</li>
 				<br/>
 				<li>
-					Assuming 5 seconds to lay a tile and 10 seconds to perform a multiplication operation, compare the runtimes of the two algorithms, A and B, by constructing a graph similar to the one presented in <span class="figNum better"></span>.
+					Assuming 5 seconds to lay a tile and 10 seconds to perform a multiplication operation, compare the runtimes of the two algorithms, A and B, by constructing a graph similar to the one presented in <span class="figNum runtimes"></span>.
 				</li>
 				<br/>
 				<li>

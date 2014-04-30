@@ -12,13 +12,14 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
@@ -28,15 +29,14 @@
 	</head>
 
 	<body>
+
+			<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
-
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
-			<!-- End floating nav -->
 
 			<!-- Main content -->
 
@@ -51,16 +51,10 @@
 			<p>
 				One of the first autonomous vehicles to be constructed was the Stanford Cart, a product of SAIL (the Stanford Artificial Intelligence Laboratory). The <span class="Bolded">Stanford Cart</span> was a golf cart sized battery powered autonomous vehicle with an onboard camera and wireless connection to a large computer. The cart was designed to record video images and send those images to the computer for processing. The computer would analyze the images, determine how the cart should move, and transmit movement commands back to the vehicle. The cart would then execute the commands in order to move a few feet forward and the process would repeat itself. By the late 1970’s Hans Moravec, who was a graduate student at Stanford at the time, managed to bring the cart to a level where it was able to successfully navigate a large, 100 foot, room while avoiding chairs and other obstacles. Crossing the room required five hours.
 			</p>
-			<!--
-			<video controls="controls" src="../video/29%20TMTCTW%20-%20Stanford%20Cart%20%28circa%201979%29.mp4">29 TMTCTW - Stanford Cart (circa 1979)</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width = "480" controls>
-				<source src="videos/29TMTCTWStanfordCartcirca1979RE.mp4" type="video/mp4">
-				<object data="videos/29TMTCTWStanfordCartcirca1979RE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="videos/29TMTCTWStandfordCartcirca1979RE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/standfordcart.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -74,10 +68,7 @@
 			
 			<div class="video">
 			<video id="vid" controls>
-				<source src="video/ai/30TMTCTWCMUSelfDrivingvancirca1992RE.mp4" type="video/mp4">
-				<object data="video/ai/30TMTCTWCMUSelfDrivingvancirca1992RE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="30TMTCTWCMUSelfDrivingvancirca1992RE.swf">
-				</object>
+				<source src="videos/autonomousvan.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -92,16 +83,10 @@
 			<p>
 				The Google self-driving car utilizes a number of advanced sensors including 	a laser range finder mounted to the top of the car that incorporates 64 laser beams and spins to produce a 360 degree 3D map of the car’s surroundings. Other sensors include: four radars mounted in the bumpers – two on the front bumper, two on the rear bumper – that are used for detecting other vehicles so the car can safely merge into traffic; a camera mounted near the rear view mirror for detecting traffic lights; GPS for location tracking; and an inertial measurement unit and wheel encoder to determine speed and distance traveled. The car uses these sensors together with high resolution maps to safely navigate while obeying traffic laws and avoiding obstacles.
 			</p>
-			<!--
-			<video controls="controls" src="../video/31%20How%20Google%27s%20Self-Driving%20Car%20Works.mp4">31 How Google's Self-Driving Car Works</video>
-			-->
 			
 			<div class="video">
 			<video id="vid" controls>
-				<source src="video/ai/31HowGooglesSelfDrivingCarWorks.mp4" type="video/mp4">
-				<object data="video/ai/31HowGooglesSelfDrivingCarWorks.mp4" width="480" height="360">
-				<embed width="480" height="360" src="31HowGooglesSelfDrivingCarWorks.swf">
-				</object>
+				<source src="videos/selfdrivencar.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -128,16 +113,10 @@
 			<p>
 				Once these remaining obstacles are overcome, the public good that is likely to flow from self-driving vehicles, in reduced highway fatalities and other social benefits, will be immense.
 			</p>
-			<!--
-			<video controls="controls" src="../video/34SelfDriving.mp4">34SelfDriving</video>
-			-->
 			
 			<div class="video">
 			<video id="vid" controls>
-				<source src="video/ai/34SelfDrivingRE.mp4" type="video/mp4">
-				<object data="video/ai/34SelfDrivingRE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="video.swf">
-				</object>
+				<source src="videos/selfcarpros.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -157,10 +136,6 @@
 			<p class="Footnote">
 				<a href="#body_ftn8" id="ftn8">[8]</a>&nbsp; <a href="http://www.businessinsider.com/googles-self-driving-cars-get-in-their-first-accident-2011-8">http://www.businessinsider.com/googles-self-driving-cars-get-in-their-first-accident-2011-8</a>
 			</p>
-			
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
 			<div class="push"></div>
 				
 		</div> <!-- End wrapper -->
@@ -177,7 +152,6 @@
 					populateSpans();									// populate figure/content spans
 
 					pageObj = getArrowPathsByPage("intelligenceOverview5b4");		// get arrow paths
-
 				});	
 				
 			</script>

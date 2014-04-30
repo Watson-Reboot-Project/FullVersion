@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
@@ -34,14 +35,10 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-      
-
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -286,14 +283,14 @@
 				pageObj = getArrowPathsByPage(sectID);
 				
 			
-				var figurenand0 = new DigitalLogicFigure("container-nand0", "nand0", false, false);
-				var figurenand = new DigitalLogicFigure("container-nand", "nand", false, false);
-				var figurenor = new DigitalLogicFigure("container-nor", "nor", false, false);
-				var figureand3 = new DigitalLogicFigure("container-and3", "and3", false, false);
-				var figureor3 = new DigitalLogicFigure("container-or3", "or3", false, false); 
-				var figureand4 = new DigitalLogicFigure("container-and4", "and4", false, false);
-				var figureor4 = new DigitalLogicFigure("container-or4", "or4", false, false); 
-				var figureb = new DigitalLogicFigure("container-b", "b", false, false);
+				var figurenand0 = new DigitalLogicFigure("container-nand0", "nand0", false, false, "nandbasicgates");
+				var figurenand = new DigitalLogicFigure("container-nand", "nand", false, false, "nandnor");
+				var figurenor = new DigitalLogicFigure("container-nor", "nor", false, false, "nandnor");
+				var figureand3 = new DigitalLogicFigure("container-and3", "and3", false, false, "threefourandor");
+				var figureor3 = new DigitalLogicFigure("container-or3", "or3", false, false, "threefourandor"); 
+				var figureand4 = new DigitalLogicFigure("container-and4", "and4", false, false, "threefourandor");
+				var figureor4 = new DigitalLogicFigure("container-or4", "or4", false, false, "threefourandor"); 
+				var figureb = new DigitalLogicFigure("container-b", "b", false, false, "fourinputor");
 				
 				setupExerciseButtons(sectID);
 			});
@@ -307,7 +304,9 @@
 			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			
 			  ga('create', 'UA-50062005-1', 'latech.edu');
+			  //ga('create', 'UA-50062005-1', { 'userId': 'Batman' });
 			  ga('send', 'pageview');
+			  //ga('set', '&uid', {{"Batman"}});
 			</script>
 	</body>
 </html>
