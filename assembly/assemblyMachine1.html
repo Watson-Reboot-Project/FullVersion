@@ -35,8 +35,6 @@
 
 			<div id="includedContentForPage"></div>
 			
-      <div class="floating-previous"></div>
-			<div class="floating-next"></div>
 
 		    <!-- End floating nav -->
 			<!-- End nav -->
@@ -68,7 +66,7 @@
 			</p>
 			
 			<p>
-				<span class="figNum monovsbitmap"></span> illustrates the sixteen instructions that make up the Watson machine language.  The op-code, assembly language equivalent, and a description of behavior is presented for each instruction.  The general behavior of many of these instructions should already be familiar to you, since each machine language statement has a corresponding Watson assembly language statement and most of these were discussed in Section 11.3.  We’ll now fill in some of the low-level details that were omitted earlier.
+				<span class="figNum monovsbitmap"></span> illustrates the sixteen instructions that make up the Watson machine language.  The op-code, assembly language equivalent, and a description of behavior is presented for each instruction.  The general behavior of many of these instructions should already be familiar to you, since each machine language statement has a corresponding Watson assembly language statement and most of these were discussed in <span class="contentNum assemblyProgramming"></span>.  We’ll now fill in some of the low-level details that were omitted earlier.
 			</p>
 			
 			<p>
@@ -164,7 +162,7 @@
 			</p>
 			
 			<p>
-				The next three Watson machine language instructions implement the logical operations “and”, “or”, and “not”.  Because these statements operate on the bit-level, their function was not discussed in Section 11.3.  Basically, the “and” operation produces a “1” (meaning “true”) when both its first <span class="Ital">and</span> second input are “1” – otherwise (when either or both inputs are “0”) it produces a “0”.  The “or” operation produces a “1” (“true”) when either its first <span class="Ital">or</span> second input is “1” – otherwise (when both inputs are “0”) it produces a “0’.  The “not” operation simply inverts, or complements, its input bit.  Given a “1” it produces “0”.  Given a “0” it produces “1”.  The behavior of each of these three operators is summarized in <span class="figNum watsonvmformat"></span>.
+				The next three Watson machine language instructions implement the logical operations “and”, “or”, and “not”.  Because these statements operate on the bit-level, their function was not discussed in <span class="contentNum assemblyProgramming"></span>.  Basically, the “and” operation produces a “1” (meaning “true”) when both its first <span class="Ital">and</span> second input are “1” – otherwise (when either or both inputs are “0”) it produces a “0”.  The “or” operation produces a “1” (“true”) when either its first <span class="Ital">or</span> second input is “1” – otherwise (when both inputs are “0”) it produces a “0’.  The “not” operation simply inverts, or complements, its input bit.  Given a “1” it produces “0”.  Given a “0” it produces “1”.  The behavior of each of these three operators is summarized in <span class="figNum watsonvmformat"></span>.
 			</p>
 			
 			<img src="images/watsonvmformat.png" alt="" class="Image">
@@ -414,24 +412,10 @@
 			<p class="Footnote"><span class="footnodeNumber"><a class="Footnote_20_Symbol" id="ftn7" href="#body_ftn7">[7]</a></span> Memory address 0000 0001<span class="Subscript">two</span> is the second location in memory.  The first location is labeled memory address 0000 0000<span class="Subscript">two</span>.</p>
 			
 			<!-- Footnotes End -->
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
-
-			<div>
-
+			<div class="push"></div>
 			</div>
+			
+			<div class="blueFooterBar"></div>
 				
 
 			<!-- Arrow navigation scripts -->
@@ -459,6 +443,6 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-		</div>
+		
 	</body>
 </html>

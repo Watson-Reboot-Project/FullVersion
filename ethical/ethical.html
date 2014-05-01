@@ -25,8 +25,6 @@
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	</head>
@@ -36,34 +34,22 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
+			<!-- Navbar -->
 			<div id="includedContentChapterTOC"></div>
-
 			<!-- End navbar -->
 
+
 			<!-- Chapter Index listing -->
-   		<div id="ContentAreaSections" class="well bold-me"></div>
-   		<!-- End Chapter Index listing -->
+			<div id="ContentAreaSections" class="well bold-me"></div>
+			<!-- End Chapter Index listing -->
 
+			<!-- Main content -->
 			
-			<!--Floating nav -->
-			<!-- Previous -->
-			<div class="floating-previous"></div>
-			<!-- Next -->
-			<div class="floating-next"></div>
-			<!-- End floating nav -->
-
-			<!-- Previous and Next Chapter buttons -->
-			<br>
-			<div class="container">
-				<div class="row">
-					<!--Floating chapter nav -->
-					<!-- Previous -->
-					<div id="prevButtonDiv"></div>
-					<!-- Next -->
-					<div id="nextButtonDiv"></div>
-					<!-- End floating nav -->
-				</div> 
-			</div>
+			<div class="push"></div>
+			<!-- End main content -->
+			</div> 
+			
+			<div class="blueFooterBarIndex"></div>
 
 			<!--Necessary Bottom Script-->
 			<script>
@@ -73,7 +59,6 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("ethical");
 					populateNav();
-					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("ethical");
 					chapObj = getArrowPathsByChapter("ethical");
@@ -91,26 +76,6 @@
 			  ga('send', 'pageview');
 			</script>
 			
-			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
 
-			<div>
-
-			</div>
-		</div>
 	</body>
 </html>

@@ -17,7 +17,7 @@
 	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -37,10 +37,9 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContentForPage"></div>
-			<div class="floating-previous"></div>
-
-			<!-- End nav -->
+			<!-- Navbar -->
+			<div id="includedContentChapterTOC"></div>
+			<!-- End navbar -->
 
 			<!-- Main content -->
 			<p class="Section">
@@ -297,26 +296,11 @@
 				<a href="#body_ftn4" id="ftn4">[4]</a>&nbsp; And incorrect answers on exams, I might add.
 			</p>
 
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-
+			<div class="push"></div>
 			<!-- End main content -->
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
+			</div> 
 			
-			<div class="floating-next"></div>
+			<div class="blueFooterBarIndex"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -326,7 +310,6 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptControl1");		// get arrow paths
 				});	
 				
@@ -343,16 +326,12 @@
 			  ga('send', 'pageview');
 			</script>
 
-			<div>
-
-			</div>
-		</div>
 		<script src="js/acorn.js"></script>
 	    <script src="js/interpreter.js"></script>
 	    <script src="js/editor.js"></script>
 		<script src="js/figures.js"></script>
 		<script>
 		var figure10 = new Figure(10);
-	</script>
+		</script>
 	</body>
 </html>

@@ -43,26 +43,31 @@ ul.nav a:hover { color: #000; }
 .page-wrapper {
   width: 85%;
   margin: 0 auto;
+  min-height: 90%;
 }
 
 /* the padding for the body or main content */
-body { padding-top: 10%; }
-@media screen and (max-width: 800px) { body { padding-top: 15%;}}
-@media screen and (max-width: 600px) { body { padding-top: 25%;}}
-@media screen and (max-width: 400px) { body { padding-top: 35%;}}
+body { padding-top: 15%;}
+@media screen and (max-width: 800px) { body { padding-top: 25%; }}
+@media screen and (max-width: 600px) { body { padding-top: 30%; }}
+@media screen and (max-width: 400px) { body { padding-top: 45%; }}
+
+/*.well .bold-me{}*/
 
 .navbar .navbar-collapse {
   text-align: center;
 }
 
 #logo{
-  padding-left: 50%;
+  padding-left: 40%;
 }
 
 .navbar-right{
-  padding-right: 13%;
+  padding-right: 5%;
 } 
-@media screen and (max-width: 640px) { .navbar-right { padding-right: 0%;}}
+@media screen and (max-width: 800px) { .navbar-right { padding-right: 4%;}}
+@media screen and (max-width: 600px) { .navbar-right { padding-right: 3%;}}
+@media screen and (max-width: 400px) { .navbar-right { padding-right: 0%;}}
 
 .small-img{ width: 10%; }
 .medium-img{ width: 50%; }
@@ -104,11 +109,34 @@ body { padding-top: 10%; }
 
 .fa-plus { margin-left: -300%; }
 .fa-minus{ margin-right: -300%; }
- @media screen and (max-width: 800px) { .fa-plus, .fa-minus { margin: 0;}} 
+@media screen and (max-width: 800px) { .fa-plus, .fa-minus {margin: 0;}}
+
+.fa-chevron-right {padding-right: 3%; padding-left: 3%; font-size: 2em; color:#FFF;}
+.fa-step-forward  {padding-right: 3%; padding-left: 3%; font-size: 2em;}
+
+.fa-chevron-left {
+    position: absolute;
+    bottom: relative;
+    left: 1%;
+    z-index: 200;
+    padding-right: 3%; padding-left: 3%;
+    color: #fff;
+    font-size: 2em;
+}
+
+.fa-step-backward {
+    position: absolute;
+    bottom: relative;
+    left: 10%;
+    z-index: 200;
+    padding-left: 3%;
+    color: #fff;
+    font-size: 2em;
+}
 
 #fontAs{
   max-width: 50%;
-  padding: 0;
+  padding: 0
 }
 
 /* Banner down arrow, placement, no longer being used */
@@ -128,10 +156,166 @@ body { padding-top: 10%; }
 /* Styles for collapsing sections/section */
 #years, #months, #posts{ cursor:pointer;}
 #years, .bold-me {font-weight: bold;} #months {font-weight: medium;}
-.archive_year { cursor: pointer; list-style: none; }
-.archive_month { list-style-type: disc; cursor: pointer; }
-.archive_posts { list-style-type: circle;}
+.archive_year { cursor: pointer; list-style: none; padding-left: 1%; font-size: 99%; }
+.archive_month { list-style-type: disc; cursor: pointer; padding-left: 3%; font-size: 96%;}
+.archive_posts { list-style-type: circle; padding-left: 5%; font-size: 93%;}
 
+
+/* below css makes the navbar static at the top */
+.navbar {
+    position: absolute !important;
+    top: 0px;
+    right:0px;
+    width: 100%;
+    border-radius: 0 !important;
+    z-index: 1000 !important;
+}
+
+.prevChapArrowStyle{
+
+    position: absolute;
+    left: 12%;
+    bottom: absolute;
+    z-index: 200;
+
+}
+
+.prevChapArrowStyleTop{
+
+    position: absolute;
+    left: 14%;
+    top: 15%;
+    z-index: 200;
+    max-width: 40px;
+
+}
+
+.nextChapArrowStyle{
+
+    position: absolute;
+    right: 12%;
+    bottom: absolute;
+    z-index: 200;
+}
+
+.prevChapArrowStyleBottom{
+
+    position: absolute;
+    left: 10%;
+    z-index: 200;
+    max-width: 40px;
+
+}
+
+.nextChapArrowStyleBottom{
+
+    position: absolute;
+    bottom: absolute;
+    right: 13%;
+    z-index: 200;
+    max-width: 40px;
+}
+
+.prevArrowStyleTop{
+
+    position: absolute;
+    top: auto;
+    left:1%; /* 15% */
+    top: 15%;
+    z-index: 200;
+
+}
+
+
+.nextArrowStyleTop{
+
+    position: absolute;
+    bottom: auto;
+    right:1%; /* 17% */
+    top: 15%;
+    z-index: 200;
+
+}
+
+.prevArrowStyleBottom{
+
+    position: absolute;
+    bottom: relative;
+    left: 1%;
+    z-index: 200;
+
+}
+
+.nextArrowStyleBottom {
+
+    position: absolute;
+    bottom: relative;
+    right: 1%;
+    z-index: 200;
+}
+
+
+.Emphasized{
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.Emphasized > a:visited {
+color: #FFF;
+text-decoration: none;
+}
+
+.Emphasized > a:link {
+color: #FFF;
+text-decoration: none;
+}
+
+.footer {
+
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 4em;
+    width: 100%;
+    border-radius: 0 !important;
+    z-index: 1000 !important;
+    background: #4870B6;
+}
+
+html, body {
+   height: 100%;
+   min-height: 100%;
+}
+
+.push { width:100%; height:4em; position:relative; bottom:0; }
+
+#returntop{
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#navprevarrow{
+
+  padding-top: .5em;
+}
+
+#navnextarrow{
+
+  padding-top: .5em;
+}
+
+.navbar-toggle{
+
+  margin-right: 5%;
+  margin-top: .75em;
+}
+
+/* Next and prev Chapter buttons, no longer bein used */
 .btn-blue {
   color: #fff;
   background-color: #4870B6;
@@ -148,93 +332,3 @@ body { padding-top: 10%; }
   background-color: #3C5D96;
   border-color: #5482D4;
 }
-
-/* below css makes the navbar static at the top */
-.navbar {
-    position: absolute !important;
-    top: 0px;
-    right:0px;
-    width: 100%;
-    border-radius: 0;
-    z-index: 1000 !important;
-}
-
-/* Previous and Next arrow styling 
-
-}*/
-/*@media screen and (max-width: 800px) { #nextArrowStyle { max-width: 75%;}}
-@media screen and (max-width: 600px) { #nextArrowStyle { max-width: 50%;}}
-@media screen and (max-width: 400px) { #nextArrowStyle { max-width: 25%;}}
-*/
-
-.prevArrowStyleTop{
-  /*position: absolute; 
-  z-index: 200; 
-  left: 1px; 
-  right: auto; 
-  width: 20px; 
-  top: 12%;*/
-  position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;
-      display:block;margin:0 0.5em;
-
-}
-
-.nextArrowStyleTop{
-  /*position: fixed; 
-  z-index:200; 
-  left: auto; 
-  right: 1px; 
-  top: 90%;
-  display: block; 
-  margin: 0 0.5em;*/
-        position:fixed;z-index:200; left: auto; right:1px; top:45%;
-      display:block;margin:0 0.5em;
-
-
-}
-
-.prevArrowStyle1{
-  /*position: absolute; 
-  z-index: 200; 
-  left: 1px; 
-  right: auto; 
-  width: 20px; 
-  top: 12%;*/
-  position:fixed;z-index:200;left:1px; right: auto; width:20px;top:45%;
-      display:block;margin:0 0.5em;
-
-}
-
-.nextArrowStyle1{
-  /*position: fixed; 
-  z-index:200; 
-  left: auto; 
-  right: 1px; 
-  top: 90%;
-  display: block; 
-  margin: 0 0.5em;*/
-        position:fixed;z-index:200; left: auto; right:1px; top:45%;
-      display:block;margin:0 0.5em;
-}
-
-.prevChapArrowStyle{
-
-    position: absolute;
-    left: 12%;
-    bottom: absolute;
-    z-index: 200;
-    max-width: 40px;
-
-}
-
-.nextChapArrowStyle{
-
-    position: absolute;
-    right: 12%;
-    bottom: absolute;
-    z-index: 200;
-    max-width: 40px;
-}
-
-
-

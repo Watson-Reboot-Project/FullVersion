@@ -54,6 +54,7 @@ function SB_OutputNode(initX, initY, setText, setName, id, setup) {
 	this.loopCheckBackward = loopCheckBackward;
 	this.loopCheckForward = loopCheckForward;
 	this.getSerialStringDeclaration = getSerialStringDeclaration;
+	this.toggleHitBoxes = toggleHitBoxes;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -154,6 +155,16 @@ function SB_OutputNode(initX, initY, setText, setName, id, setup) {
 			
 			mainLayer.add(inputBox);
 			stage.draw();
+		}
+	}
+	
+	function toggleHitBoxes(bool) {
+		if (bool == true) {
+			inputBox.setStroke("green");
+			inputBox.setStrokeWidth(1);
+		}
+		else {
+			inputBox.disableStroke("green");
 		}
 	}
 	

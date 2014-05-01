@@ -56,6 +56,7 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 	this.loopCheckBackward = loopCheckBackward;
 	this.loopCheckForward = loopCheckForward;
 	this.getSerialStringConnections = getSerialStringConnections;
+	this.toggleHitBoxes = toggleHitBoxes;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -167,6 +168,16 @@ function SB_InputNode(initX, initY, setText, initValue, setName, id, setup) {
 			
 			mainLayer.add(outputBox);
 			stage.draw();
+		}
+	}
+	
+	function toggleHitBoxes(bool) {
+		if (bool == true) {
+			outputBox.setStroke("green");
+			outputBox.setStrokeWidth(1);
+		}
+		else {
+			outputBox.setStroke('rgba(0,0,0,0)');
 		}
 	}
 	

@@ -88,6 +88,7 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 	this.getSerialStringDeclaration = getSerialStringDeclaration;
 	this.getSerialStringConnections = getSerialStringConnections;
 	this.getPluginNumber = getPluginNumber;
+	this.toggleHitBoxes = toggleHitBoxes;
 	
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE ASSIGNMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
@@ -167,7 +168,7 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 		if (mouseOver !== "crosshair") document.body.style.cursor = 'default';
 	});
 	
-	setDeleteIcon("images/empty.bmp");
+	//setDeleteIcon("images/empty.bmp");
 	
 	iconLayer.on('mouseover', function() { document.body.style.cursor = 'pointer'; });
 	iconLayer.on('mouseout', function() { document.body.style.cursor = 'default'; });
@@ -193,18 +194,32 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 	
 	function setDeleteIcon(image) {
          var imageObj = new Image();
+		 
+		 if (deleteImg) {
+			deleteImg.remove();
+			deleteImg.destroy();
+			mainLayer.draw();
+		 }
+		 
+		 if (image == "images/empty.bmp" && deleteImg) {
+			deleteImg = null;
+			return;
+		}
+		
          imageObj.onload = function (){
-         var deleteImg = new Kinetic.Image({
-			  x: group.getX() + mainLayer.getX() + scale * 90,
-			  y: group.getY() + mainLayer.getY() + scale * -15,
+         deleteImg = new Kinetic.Image({
+			  x: scale * 90,
+			  y: scale * -15,
 			  image: imageObj,
 			  scaleX: 0.4,
 			  scaleY: 0.4
 		 });
 
-         iconLayer.destroyChildren();
-         iconLayer.add(deleteImg);
-         iconLayer.draw();
+         //iconLayer.destroyChildren();
+         //iconLayer.add(deleteImg);
+         //iconLayer.draw();
+			group.add(deleteImg);
+			group.draw();
 		};
 		imageObj.src = image;
     }
@@ -215,6 +230,7 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 		input2Box.remove();
 		outputBox.remove();
 		iconLayer.remove();
+		setDeleteIcon("images/empty.bmp");
 	}
 	
 	function getInputBoxCoords(num) {
@@ -275,6 +291,22 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 			mainLayer.add(input2Box);
 			mainLayer.add(outputBox);
 			stage.draw();
+		}
+	}
+	
+	function toggleHitBoxes(bool) {
+		if (bool == true) {
+			input1Box.setStroke("green");
+			input1Box.setStrokeWidth(1);
+			input2Box.setStroke("green");
+			input2Box.setStrokeWidth(1);
+			outputBox.setStroke("green");
+			outputBox.setStrokeWidth(1);
+		}
+		else {
+			input1Box.setStroke('rgba(0,0,0,0)');
+			input2Box.setStroke('rgba(0,0,0,0)');
+			outputBox.setStroke('rgba(0,0,0,0)');
 		}
 	}
 	

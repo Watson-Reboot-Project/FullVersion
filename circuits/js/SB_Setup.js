@@ -60,6 +60,7 @@ function SB_Setup(container, containerNum, exerNum, numInputs, numOutputs) {
 		
 		var str = dataStore.loadExerciseData("circuits", curExercise);
 		if (str !== null) {
+			console.log(str);
 			serializer.deserialize(controller, str);
 			controller.evaluateCircuit();
 		}

@@ -26,9 +26,6 @@
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
 
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
-
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -41,16 +38,7 @@
 			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
 
-			<!--Floating nav -->
-			<!-- Previous -->
-			<div class="floating-previous"></div>
-			<!-- Next -->
-			<div class="floating-next"></div>
-			<!-- End floating nav -->
-			<!-- End nav -->
-
 			<!-- Main content -->
-			
 			<p class="Section">
 				<span class="contentNum algorithmsSearching2"></span>
 			</p>
@@ -139,13 +127,13 @@
 				Of course, these numbers don’t tell the whole story.  Before a comparison between the target item and a list item can be performed, the list item must be selected.  In sequential search this amounted to simply selecting the next item in the list (adding one to the current position).  As we saw in the previous paragraph, the process of selecting the “middle” item for binary search is more complicated.  As one would expect, a computer will require more time to perform the “middle” item position calculation for binary search as compared to the next item position calculation for sequential search.  So, in reality, binary search might actually take longer than sequential search on a list of seven items.
 			</p>
 			
-			<img src="Images/binary10.png" alt="Successful binary search for the value 10" class="Image">
+			<img src="images/binary10.png" alt="Successful binary search for the value 10" class="Image">
 
 			<p class="Figure">
 				(a) Successful binary search for the value 10
 			</p>
 			
-			<img src="Images/binary55.png" alt="Unsuccessful binary search for the value 55" class="Image">
+			<img src="images/binary55.png" alt="Unsuccessful binary search for the value 55" class="Image">
 
 			<p class="Figure">
 				(b) Unsuccessful binary search for the value 55
@@ -167,7 +155,7 @@
 				The actual amount of time required by any search algorithm depends on both the number of comparisons it performs and the amount of time needed to perform each comparison.  A comparison operation in binary search may take longer than a comparison operation in sequential search since the location of the middle item must be determined.  For the purpose of discussion, let’s say that the process of selecting the middle item in binary search takes 100 times as long as finding the next item in sequential search.  In reality, a binary search comparison does not take anywhere near that long, but in the following analysis – which will show binary search to be more efficient than sequential search – we want to err on the side of caution.  
 			</p>
 
-			<img src="Images/binarycount.png" alt="" class="Image">
+			<img src="images/binarycount.png" alt="" class="Image">
 
 			<p class="Figure">
 				<span class="figNum binarycount"></span>  Number of comparisons in a binary search of a 10,000 item list (worst case)
@@ -185,7 +173,7 @@
 				When we consider larger lists, such as a search through 300 million social security records, the performance of binary search becomes even more impressive.  Earlier, we computed that sequential search would require about 42 hours to retrieve a social security record, given a valid social security number, and over 83 hours (3 &frac12; days) to determine that an input number was not valid – assuming one comparison every 1/1,000 of a second.  Binary search could perform the same search in under 3 seconds – assuming one comparison every 1/10 of a second.  This amazing result follows from the fact that each comparison eliminates one half of the items that remain to be searched.  Thus, even with the “handicap” of making comparisons take 100 times longer in binary searches than in sequential searches, the superiority of binary search on large lists is still readily apparent.
 			</p>
 			
-			<img src="Images/seqvsbinary.png" alt="" class="Image">
+			<img src="images/seqvsbinary.png" alt="" class="Image">
 			
 			<p class="Figure">
 				<span class="figNum seqvsbinary"></span>  A comparison of the predicted runtimes of sequential and binary search
@@ -268,22 +256,12 @@
 				<a class="Footnote_20_Symbol" id="ftn4" href="#body_ftn4">[4]</a>&nbsp;Assuming binary search comparisons are ten times slower than sequential search comparisons, while much more realistic than assuming they are 100 times slower, is still quite generous.
 			</p>
 			
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
-			
-		<div class="floating-next"></div>
+			<!-- End main content -->
+			<div class="push"></div> <!-- pushes the footer static bottom -->
+				
+		</div> <!-- End wrapper -->
+
+		<div class="blueFooterBar"></div> <!-- populates the footer -->	
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -307,11 +285,6 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-
-
-			<div>
-
-			</div>
-		</div>
+			
 	</body>
 </html>
