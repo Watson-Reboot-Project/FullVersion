@@ -55,30 +55,13 @@
 			</p>
 
 			<br>
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-			<br>
+			
 
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
-
-			<div>
-
+			<div class="push"></div>
 			</div>
+			
+			<div class="blueFooterBar"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -89,7 +72,6 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					populateBottomArrows();
 
 					pageObj = getArrowPathsByPage(secID);		// get arrow paths
 					chapObj = getCurrChapter(chapID);
@@ -108,6 +90,6 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-		</div>
+	
 	</body>
 </html>

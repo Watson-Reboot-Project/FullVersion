@@ -14,7 +14,7 @@
 		<!-- CSS files -->
 		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 		<link href = "../lib/css/styles.css" rel = "stylesheet">
-		<link href = "../lib/css/styles2.css" rel = "stylesheet">
+		<link href="../lib/css/styles.css" rel="stylesheet">
 		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -41,64 +41,20 @@
    		<div id="ContentAreaSections" class="well bold-me"></div>
    		<!-- End Chapter Index listing -->
 
-			
-			<!--Floating nav -->
-			<!-- Previous -->
-			<!--<div class="floating-previous"></div>-->
-			<!-- Next -->
-			<!--<div class="floating-next"></div>-->
-			<!-- End floating nav -->
-
-			<!-- Previous and Next Chapter buttons -->
-			<br>
-			<div class="container">
-				<div class="row">
-
-					<a href="../assembly/assembly.html" onclick="prevChapArrowPage(chapObj)"><img class="prevChapArrowStyle" src="../lib/images/prev-chap-arrow.png"></a>
-
-					<a href="../limits/limits.html" onclick="nextArrowPage(chapObj)"><img class="nextChapArrowStyle" src="../lib/images/next-chap-arrow.png"></a>
-					<!--Floating chapter nav -->
-					<!-- Previous -->
-					<!--<div id="prevButtonDiv"></div>-->
-					<!-- Next -->
-					<!--<div id="nextButtonDiv"></div>-->
-					<!-- End floating nav -->
-				</div> 
-			</div>
+		
+		
 		    <!-- End floating nav -->
-			<!-- End nav -->
 
 			<!-- Main content -->
 
 			<!-- End main content -->
 
-		
-			<span class="prevArrowStyleBottom"><a href="../assembly/assemblyMachine3.html" onclick="prevArrowPage(pageObj)">
-				<img style="border:0;" src="../lib/images/left-arrow-blue.png" alt="Previous page" width="40"></a>
-			</span>
-			<span class="nextArrowStyleBottom"><a href="circuitsIntro.html" onclick="nextArrowPage(pageObj)">
-				<img style="border:0;" src="../lib/images/right-arrow-blue.png" alt="Next page" width="40"></a>
-			</span>
-
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
-
-			<div>
-
+			<div class="push"></div>
 			</div>
+			
+			<div class="blueFooterBarIndex"></div>
+		
+			
 
 			<script>
 				var pageObj;
@@ -107,11 +63,8 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("circuits");
 					populateNav();
-					populateChapterButtons();
-					//populateBottomArrows();
-					
 					pageObj = getArrowPathsByPage("circuits");
-					chapObj = getArrowPathsByChapter("circuits");
+					chapObj = getArrowPathsByChapter("circuits");					
 				});	
 			</script>
 			
@@ -126,6 +79,5 @@
 			  ga('send', 'pageview');
 			</script>
 
-		</div>
 	</body>
 </html>

@@ -150,11 +150,13 @@ function Controller(setup, truthTable, draggable, displayMode) {
 			comp.getGroup().on('click tap', function(event) {
 				nodeMouseDown(event, comp);
 				mainLayer.drawScene();
+				ga("send", "event", "circuits", "walk", "figure");
 			});
 		}
 		else {
 			comp.getGroup().on('click tap', function (event) {
 				compMouseDown(event, comp);
+				ga("send", "event", "circuits", "walk", "figure");
 			});
 		}
 	}

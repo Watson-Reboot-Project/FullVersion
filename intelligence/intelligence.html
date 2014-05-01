@@ -66,21 +66,12 @@
 			<p class="Emphasized">
 				<a href="#tippytop">Return to top</a>
 			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
 
-			<div>
+				<div class="push"></div>
+				
+		</div> <!-- End wrapper -->
 
-			</div>
+		<div class="blueFooterBarIndex"></div> <!-- populates the bottom footer -->	
 
 			<script>
 				var pageObj;
@@ -89,7 +80,6 @@
 				$(document).ready(function() {
 					loadLocalTableOfContents("intelligence");
 					populateNav();
-					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("intelligence");
 					chapObj = getArrowPathsByChapter("intelligence");
@@ -107,6 +97,6 @@
 			  ga('send', 'pageview');
 			</script>
 			
-		</div>
+		
 	</body>
 </html>

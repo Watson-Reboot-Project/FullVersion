@@ -14,7 +14,7 @@
 	    <!-- CSS files -->
 	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -33,10 +33,9 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContentForPage"></div>
-			<div class="floating-previous"></div>
-
-			<!-- End nav -->
+			<!-- Navbar -->
+			<div id="includedContentChapterTOC"></div>
+			<!-- End navbar -->
 
 			<!-- Main content -->
 			<p class="Section">
@@ -75,27 +74,11 @@
 				The last chapter in this part of the book is Chapter <span class="contentNum engineering false"></span>: Building Large Software Systems. Chapter <span class="contentNum engineering false"></span> begins with a discussion of object-oriented programming. Object-oriented features influence the ways in which the parts of a program are organized and how they communicate with one another. Object-oriented languages are extremely useful for writing complex programs that support mouse-based, graphical user interfaces. Chapter 10 also includes an introduction to the field of software engineering, which focuses on the unique challenges that must be faced when constructing large programs, such as those that require many thousands of worker-hours to complete.
 			</p>
 
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-			
+			<div class="push"></div>
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
+			</div> 
 			
-			<div class="floating-next"></div>
+			<div class="blueFooterBarIndex"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -105,7 +88,6 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptIntro");		// get arrow paths
 				});	
 				
@@ -122,9 +104,5 @@
 			  ga('send', 'pageview');
 			</script>
 
-			<div>
-
-			</div>
-		</div>
 	</body>
 </html>

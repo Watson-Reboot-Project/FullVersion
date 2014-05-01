@@ -16,7 +16,7 @@
 	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href = "../lib/css/styles2.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -36,12 +36,9 @@
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContentForPage"></div>
-			<!-- static prev, next arrows -->
-			<div class="floating-previous"></div>
-			<div class="floating-next"></div>
-
-			<!-- End nav -->
+			<!-- Navbar -->
+			<div id="includedContentChapterTOC"></div>
+			<!-- End navbar -->
 
 			<!-- Main content -->
 			<p class="Section">
@@ -266,24 +263,11 @@
 				<a href="#body_ftn3" id="ftn3">[3]</a>&nbsp; It is interesting to note that before the invention of spreadsheets, programmers spent much of their time writing little special purpose programs, not much more complex than those in problems 3 and 4. These programs, which generally computed tables of values based on various formulas, were used for engineering design, financial analysis, and economic modeling. Today, most of these tasks can be accomplished with general-purpose spreadsheets.
 			</p>
 
-			<!--bottom navigation arrows -->
-			<div class="arrows-nav-bottom"></div>
-
+			<div class="push"></div>
 			<!-- End main content -->
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
+			</div> 
+			
+			<div class="blueFooterBarIndex"></div>
 
 			<!-- Arrow navigation scripts -->
 			<script>
@@ -293,7 +277,6 @@
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					populateTopAndBottomArrows();
 					pageObj = getArrowPathsByPage("javascriptExpressions");		// get arrow paths
 				});	
 				
@@ -310,9 +293,5 @@
 			  ga('send', 'pageview');
 			</script>
 
-			<div>
-
-			</div>
-		</div>
 	</body>
 </html>
