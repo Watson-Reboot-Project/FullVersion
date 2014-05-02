@@ -42,7 +42,7 @@ ul.nav a:hover { color: #000; }
 
 .page-wrapper {
   width: 85%;
-  margin: 0 auto;
+  margin: 10px auto;
   min-height: 90%;
 }
 
@@ -110,8 +110,17 @@ body { padding-top: 15%;}
 @media screen and (max-width: 800px) { .fa-plus, .fa-minus {margin: 0;}}
 
 
-.fa-chevron-right {padding-right: 3%; padding-left: 3%; font-size: 2em; color:#FFF;}
-.fa-step-forward  {padding-right: 3%; padding-left: 3%; font-size: 2em;}
+.fa-chevron-right {
+	position: absolute;
+	right: 1%;
+	padding-right: 3%; padding-left: 3%;
+	font-size: 2em;
+	color:#FFF;}
+.fa-step-forward  {
+	position: relative;
+	right: 10%;
+	padding-right: 3%; padding-left: 3%;
+	font-size: 2em;}
 
 .fa-chevron-left {
     position: absolute;
@@ -169,7 +178,7 @@ body { padding-top: 15%;}
 .navbar {
     position: absolute !important;
     top: 0px;
-    right:0px;
+    right: 0px;
     width: 100%;
     border-radius: 0 !important;
     z-index: 1000 !important;
@@ -200,9 +209,7 @@ text-decoration: none;
 .footer {
 
     position: relative;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    margin-top: 20px;
     height: 4em;
     width: 100%;
     border-radius: 0 !important;
@@ -215,25 +222,12 @@ html, body{
    min-height: 100%;
 }
 
-body { 
-
-  width:fixed;
-  height:fixed;
-  background: url(../images/textures/texture10.png) no-repeat scroll center top transparent;
-  background-repeat: repeat;
-  background-size: 100% 100%;
-    -webkit-background-size: 100% 100%; 
-    -khtml-background-size: 100% 100%; 
-    -moz-background-size: 100% 100%;
-    background-size: absolute;
-} 
-
 .push { width:100%; height:12em; position:relative; bottom:0 !important; }
 
 #returntop{
   font-size: 15px;
   letter-spacing: 0.5px;
-  margin: auto auto !importantj;
+  margin: auto auto !important;
   text-align: center;
 }
 
@@ -249,7 +243,7 @@ body {
 
 .navbar-toggle{
 
-  margin-right: 5%;
+  margin-right: 7%;
   margin-top: .75em;
 }
 
@@ -272,4 +266,130 @@ body {
   border-color: #5482D4;
 }
 
+/* This applys background to each chapter index page. Images are located in lib/images/textures/ */
+#scienceBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/scienceBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+  
+}
+
+#toolsBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/toolsBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#algorithmsBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/algorithmsBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+  
+}
+
+#assemblyBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/assemblyBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#circuitsBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/circuitsBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+  
+}
+
+#engineeringBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/engineeringBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#ethicalBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/ethicalBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+  
+}
+
+#futureBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/futureBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#graphicsBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/graphicsBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+  
+}
+
+#informationBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/informationBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#javascriptBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/javascriptBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+  
+}
+
+#intelligenceBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/intelligenceBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#limitsBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/limitsBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#objectsBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/objectsBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
+
+#structuresBackground{
+  width:fixed;
+  height:fixed;
+  background-repeat: repeat;
+  background: url(../images/textures/structuresBackground.png) repeat scroll center top transparent;
+  background-size: absolute;
+}
 

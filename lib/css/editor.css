@@ -30,16 +30,30 @@
 
 /*general table stuff*/
 .textArea{
-	height: 100%;
 	/*min-height: 200px;
 	max-height: 300px;
 	width:98%;*/
-	/* height: inherit; */
-	/* width: inherit; */
+	height: 100%;
+	/*width: 100%;*/
 	border-style: ridge;
-	/* margin:auto auto; */
+	margin:auto auto;
 	font-family:monospace;
-	/* overflow: auto; */
+	font-size: 100%;
+	overflow: auto;
+}
+
+.savePopup{
+	position: absolute;
+	right: 0;
+    background-color: #DDDDDD;
+	display: none;
+	font-family: arial;
+}
+
+.codeTable{
+	overflow: auto;
+	display: inline;
+	height: 100%;
 }
 
 table {
@@ -58,8 +72,8 @@ td {
 }
 
 .codeContainer{
+	overflow: auto;
 	position: relative;
-	display:inline;
 }
 
 /*insert bar stuff*/
@@ -69,7 +83,7 @@ td {
 	float: left;
 	position: relative;
 	border-right: 1px solid black;
-	display:inline;
+	display: inline-block;
 }
 
 .offsetDiv {
@@ -78,9 +92,14 @@ td {
 }
 
 .insertTable {
-	font-size: 14px;
+	width: 14px;
+	/*font-size: 14px;*/
 	float: left;
 	border-color: black;
+}
+
+.insert{
+	/*font-size: 11px;*/
 }
 
 .divider {

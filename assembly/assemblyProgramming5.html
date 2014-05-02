@@ -13,27 +13,39 @@
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
-	    <style type='text/css'>
-			table td {
-			border:none;
-			}
-		</style>
 		<link rel='stylesheet' href='../lib/css/bootstrap-3.css'>
+		<link rel='stylesheet' href='../lib/css/jquery-ui-custom.css'>
+		<link rel='stylesheet' href='../lib/css/Editor.css'>
+		<link rel='stylesheet' href='../lib/css/Dialogs.css'>
 		<link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
 		
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/angular.js"></script>
+	    <script type="text/javascript" src="../lib/js/jQuery.js"></script>
+	    <script type="text/javascript" src="../lib/js/less.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-ui.js"></script>
+<!--
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+-->
+	    <script type="text/javascript" src="../lib/js/ui-bootstrap-0.10.0.js"></script>
+	    <script type="text/javascript" src="../lib/js/tabs.js"></script>
+	    <script type="text/javascript" src="../lib/js/ui-bootstrap.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Editor.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/WatsonDialogs.js"></script>
+		<script type="text/javascript" src="../lib/js/WatsonDataStore.js"></script>
+		<script type="text/javascript" src="js/figuresV2.js"></script>
+		<script type="text/javascript" src="js/inserts.js"></script>
 
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	</head>
 
@@ -220,79 +232,7 @@
 			<p>
 				Here is an example that illustrates the process of memory address computation for array elements.  If we assume that the array <span class="Subfigure">A</span> begins at memory location 10, then <span class="Subfigure">A[3]</span> (the 4<span class="Superscript">th</span> element) will be stored at location 13.  
 			</p>
-			<!--
-			<img src="Images/AssemblyIMGS/fig11-11a.png" alt="" class="Image">
-			<!--Figure 11.11a Text (not formatted)
-			<p class="Subfigure">
-				<span class="Ital">base_address_of_array</span>  +  <span class="Ital">i</span>
-			</p>
 			
-			<p class="P97">10<span>      +  3</span></p>
-			
-			<p class="P97">13</p>
-			
-			<p class="P101">var i; // Numeric<span>   var i; //Numeric</span></p>
-			
-			<p class="P101">var a = new array(30); //Numeric <span>   var a = new array(30); //Numeric</span></p>
-			
-			<p class="P101"><span>   i = 0;</span><span>   for (i = 0; i &lt; 30; i++)</span><span>   while (i &lt; 30) </span></p>
-			
-			<p class="P101">{<span>   {</span></p>
-			
-			<p class="P101"><span class="T12">   </span>a[i] = -1;<span>    </span><span>     a[i] = -1;</span></p>
-			
-			<p class="P101"><span>     i = i + 1;</span></p>
-			
-			<p class="P101">}<span>   }</span></p>
-			
-			<p class="Figure">
-				(a) “for” and “while” versions of high-level code 
-			</p>
-			
-			<img src="Images/AssemblyIMGS/fig11-11b.png" alt="" class="Image">
-			<!--figure 11.11b text (not formatted)
-			<p><span class="Subfigure">I        .BLOCK    1                    </span>;   var i;  //  Numeric</p>
-			
-			<p><span class="Subfigure">A        .BLOCK    30                   </span>;   var a = new array(30); // Numeric</p>
-			
-			<p class="P73"><span class="Subfigure">LOADIMM   REGA, 0                 </span>;   </p>
-			
-			<p class="P73"><span class="Subfigure">STORE     REGA, I               </span>;   i = 0;</p>
-			
-			<p><span class="Subfigure">LOOP        LOAD      REGA, I              </span>;  while (i  &lt; 30) </p>
-			
-			<p class="P73"><span class="Subfigure">LOADIMM   REGB, 30         </span>; </p>
-			
-			<p class="P73"><span class="Subfigure">COMPARE   REGA, REGB           </span>;    </p>
-			
-			<p class="P73"><span class="Subfigure">BRANCH    GE, ENDLP            </span>;  {</p>
-			
-			<p class="P73"><span class="Subfigure">LOADIMM   REGA, 1                   </span>;                Register A assigned the base address of array a</p>
-			
-			<p class="P73"><span class="Subfigure">LOAD            REGB, I                     </span>;                Register B assigned the value of subscript i </p>
-			
-			<p class="P73"><span class="Subfigure">ADD            REGC, REGA, REGB </span>;                Register C assigned  the address of a[i]</p>
-			
-			<p class="P73"><span class="Subfigure">LOADIMM   REGD, -1           </span>;<span>           Register D assigned the constant  -1</span></p>
-			
-			<p class="P73"><span class="Subfigure">STOREIND  REGD, REGC           </span>;           a[i] = -1;</p>
-			
-			<p class="P73"><span class="Subfigure">LOAD            REGA, I                   </span>;</p>
-			
-			<p class="P73"><span class="Subfigure">LOADIMM   REGB, 1                   </span>;              </p>
-			
-			<p class="P73"><span class="Subfigure">ADD            REGC, REGA, REGB </span>;             </p>
-			
-			<p class="P73"><span class="Subfigure">STORE            REGC, I                   </span>;           i = i + 1;</p>
-			
-			<p class="P73"><span class="Subfigure">JUMP            LOOP                   </span>;  }</p>
-			
-			<p><span class="Subfigure">ENDLP HALT                                   </span>;  </p>
-			
-			<p class="Figure">
-				(b) Assembly language code 
-			</p>
-			-->
 			<div id='fig1111Div'></div>
 			<p class="Figure">
 				<span class="figNum initializing30"></span> Initializing all 30 elements of an array to -1
@@ -376,7 +316,7 @@
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("assemblyProgramming5");		// get arrow paths
-					chapObj = getCurrChapter("assembly");
+					
 
 				});	
 				
@@ -392,19 +332,10 @@
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
 			</script>
-		
-		<script type='text/javascript' src='../lib/js/angular.js'></script>
-    	<script type='text/javascript' src='../lib/js/jQuery.js'></script>
-    	<script type='text/javascript' src='../lib/js/less.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap-0.10.0.js'></script>
-    	<script type='text/javascript' src='../lib/js/tabs.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap.js'></script>   	
-		<script type='text/javascript' src='js/assemblyui.js'></script>	
-    	<script type='text/javascript' src='js/inputs.js'></script>
-    	<script src='js/figures.js'></script>
+			
     	
     	<script>
-    			var fig115 = new Figure(1111);
+    			var fig1111 = new Figure(1111, true);
 				angular.bootstrap(document.getElementById("fig1111"), ['assembly1111']);
 		</script>
 	</body>
