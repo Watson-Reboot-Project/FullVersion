@@ -12,6 +12,7 @@
 		<id>science</id>
 		<name>The Science of Computing</name>
 		<path>../science/science.html</path>
+		<texture>/lib/images/textures/texture1.png</textures>
 		<sections>
 			<section><!--Chapter One Section One-->
 				<id>scienceIntro</id>
