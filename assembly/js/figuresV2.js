@@ -41,31 +41,31 @@ var Figure = function(figNum, figureMode) {
 	if(this.figureMode){
 		if(this.figNum == 113) {
 			// Figure 11.3 Height
-			this.windowHeight = "195px";
+			this.windowHeight = "200px";
 			this.uniqID = "figure-assemblytotal";
 		} else if(this.figNum == 114) {
 			// Figure 11.4 Height
-			this.windowHeight = "160px";
+			this.windowHeight = "165px";
 			this.uniqID = "figure-assemblydec";
 		} else if(this.figNum == 115) {
 			// Figure 11.5 Height
-			this.windowHeight = "275px";
+			this.windowHeight = "280px";
 			this.uniqID = "figure-minorcode";
 		} else if(this.figNum == 116) {
 			// Figure 11.6 Height
-			this.windowHeight = "390px";
+			this.windowHeight = "395px";
 			this.uniqID = "figure-minorcounter";
 		} else if(this.figNum == 119) {
 			// Figure 11.9 Height
-			this.windowHeight = "470px";
+			this.windowHeight = "475px";
 			this.uniqID = "figure-assemblytimes";
 		} else if(this.figNum == 1110) {
 			// Figure 11.10 Height
-			this.windowHeight = "375px";
+			this.windowHeight = "380px";
 			this.uniqID = "figure-optimizedtimes";
 		} else if(this.figNum == 1111) {
 			// Figure 11.11 Height
-			this.windowHeight = "415px";
+			this.windowHeight = "420px";
 			this.uniqID = "figure-initializing30";
 		}
 	
@@ -94,7 +94,7 @@ var Figure = function(figNum, figureMode) {
 			<tab heading='Figure'> <br>\
 			<div class='container'>\
 				<div class='row'>\
-					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-3'>\
+					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2'>\
 						<div id='table'>\
 							<table id='variables"+this.figNum+"' class='table table-bordered'>\
 								<thead>\
@@ -104,15 +104,15 @@ var Figure = function(figNum, figureMode) {
 								</thead>\
 								<tbody ng-repeat='mem in varMemory'>\
 									<tr>\
-										<th ng-bind='mem.title'></th>\
-										<td class='text-center' ng-bind='mem.value'></td>\
+										<th ng-bind='mem.title' style='padding:0px'></th>\
+										<td class='text-center' ng-bind='mem.value' style='padding:0px'></td>\
 									</tr>\
 								</tbody>\
 							</table>\
 						</div>\
 					</div>\
-					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-3' style='margin-left:4%'>\
-						<div id='table'>\
+					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2' style='margin-left:20px'>\
+						<div id='table' class='col-lg-2 col-md-2 col-sm-2 col-xs-2' style='margin-left:20px'>\
 							<table id='variables' class='table table-bordered'>\
 								<thead>\
 									<tr>\
@@ -121,8 +121,8 @@ var Figure = function(figNum, figureMode) {
 								</thead>\
 								<tbody ng-repeat='reg in varRegister'>\
 									<tr>\
-										<th ng-bind='reg.title'></th>\
-										<td class='text-center' ng-bind='reg.value'></td>\
+										<th ng-bind='reg.title' style='padding:0px'></th>\
+										<td class='text-center' ng-bind='reg.value' style='padding:0px'></td>\
 									</tr>\
 								</tbody>\
 							</table>\
@@ -137,7 +137,7 @@ var Figure = function(figNum, figureMode) {
 				<div class='row'>\
 \
 					<!-- button group for the table and code -->\
-					<!-- <table id='btn-grid' class='col-lg-6 col-md-6'> -->\
+					<!-- <table id='btn-grid' class='col-lg-6 col-md-6 col-sm-6 col-sm-6'> -->\
 					<table id='btn-grid'>\
 						<tbody>\
 							<tr id='editor_button_group' class='btn-group-vertical'>\
@@ -172,28 +172,28 @@ var Figure = function(figNum, figureMode) {
 			<!-- tab containing the memory, register, program counters, and flags -->\
 			<tab heading='Architecture'> <br>\
 			<div class='container'>\
-				<div id='memory' class='col-lg-4 col-md-4 col-sm-4 col-xs-5 panel panel-default'>\
+				<div id='memory' class='col-lg-4 col-md-4 col-sm-4 col-xs-4 panel panel-default'>\
 					<h4 class='text-center'>Memory</h4>\
 					<div id='spanMemWrapper'>\
 						<div id='spanVarMem' >\
 							<table class='table table-bordered' ng-repeat='var in vars' style='table-layout: fixed;'>\
 								<tr ng-style='set_color(var.memno)'>\
-									<th ng-bind='var.memno'></th>\
-									<td ng-bind='var.con1'></td>\
-									<td ng-bind='var.con2'></td>\
-									<td ng-bind='var.con3'></td>\
-									<td ng-bind='var.con4'></td>\
+									<th ng-bind='var.memno' style='padding:0px'></th>\
+									<td ng-bind='var.con1' style='padding:0px'></td>\
+									<td ng-bind='var.con2' style='padding:0px'></td>\
+									<td ng-bind='var.con3' style='padding:0px'></td>\
+									<td ng-bind='var.con4' style='padding:0px'></td>\
 								</tr>\
 							</table>\
 						</div>\
 						<div id='spanMem'>\
 							<table class='table table-bordered' ng-repeat='mem in memory' style='table-layout: fixed;'>\
 								<tr ng-style='set_color(mem.memno)'>\
-									<th ng-bind='mem.memno'></th>\
-									<td ng-bind='mem.con1'></td>\
-									<td ng-bind='mem.con2'></td>\
-									<td ng-bind='mem.con3'></td>\
-									<td ng-bind='mem.con4'></td>\
+									<th ng-bind='mem.memno' style='padding:0px'></th>\
+									<td ng-bind='mem.con1' style='padding:0px'></td>\
+									<td ng-bind='mem.con2' style='padding:0px'></td>\
+									<td ng-bind='mem.con3' style='padding:0px'></td>\
+									<td ng-bind='mem.con4' style='padding:0px'></td>\
 								</tr>\
 							</table>\
 						</div>\
@@ -204,38 +204,38 @@ var Figure = function(figNum, figureMode) {
 				<h3 class='text-center'>CPU</h3>\
 					<div class='panel panel-default' style='width: 100%;'>\
 						<!-- table containing the register information -->\
-						<div id='registers' class='col-lg-4  col-md-4 col-sm-4 col-xs-6'>\
+						<div id='registers' class='col-lg-5 col-md-5 col-sm-5 col-xs-5'>\
 							<h4>Registers</h4>\
 							<!-- I should be outside of this box -->\
 							<div id='spanReg'>\
 								<table class='table table-bordered' style='table-layout:auto;' ng-repeat='reg in register'>\
 									<tbody>\
 										<tr>\
-											<th class='text-center' ng-bind='reg.content'></th>\
-											<td class='text-center' ng-bind='reg.value'></td>\
+											<th class='text-center' ng-bind='reg.content' style='padding:0px'></th>\
+											<td class='text-center' ng-bind='reg.value' style='padding:0px'></td>\
 										</tr>\
 									</tbody>\
 								</table>\
 							</div>\
 						</div>\
 						<!-- program counter and instruction register table -->\
-						<div id='counter-flags' class='col-lg-2 col-md-2 col-sm-4 col-xs-6'>\
+						<div id='counter-flags' class='col-lg-2 col-md-2 col-sm-2 col-xs-2'>\
 							<table class='table table-bordered'>\
 								<tbody>\
 									<tr>\
-										<th class='text-center' colspan='4'>Program Counter</th>\
+										<th class='text-center' colspan='4' style='padding:2px'>Program Counter</th>\
 									</tr>\
 									<tr>\
-										<td class='text-center' colspan='4' ng-repeat='cnt in counter' ng-bind='cnt.content'></td>\
+										<td class='text-center' colspan='4' ng-repeat='cnt in counter' ng-bind='cnt.content' style='padding:2px'></td>\
 									</tr>\
 									<tr>\
-										<th class='text-center' colspan='4'>Instruction Register</th>\
+										<th class='text-center' colspan='4' style='padding:2px'>Instruction Register</th>\
 									</tr>\
-									<tr ng-repeat='inst in instructionRegister' class='text-center'>\
-										<td ng-bind='inst.con1'></td>\
-										<td ng-bind='inst.con2'></td>\
-										<td ng-bind='inst.con3'></td>\
-										<td ng-bind='inst.con4'></td>\
+									<tr ng-repeat='inst in instructionRegister' class='text-center' style='padding:2px'>\
+										<td ng-bind='inst.con1' style='padding:2px'></td>\
+										<td ng-bind='inst.con2' style='padding:2px'></td>\
+										<td ng-bind='inst.con3' style='padding:2px'></td>\
+										<td ng-bind='inst.con4' style='padding:2px'></td>\
 									<tr>\
 								</tbody>\
 							</table>\
@@ -243,25 +243,25 @@ var Figure = function(figNum, figureMode) {
 							<table class='table table-bordered'>\
 								<thead>\
 									<tr>\
-										<th colspan='2' class='text-center'>Flags</th>\
+										<th colspan='2' class='text-center' style='padding:2px'>Flags</th>\
 									</tr>\
 								</thead>\
 								<tbody>\
 								<tr>\
-									<td><strong>Carry</strong></td>\
-									<td class='text-center' ng-repeat='carry in carryFlag' ng-bind='carry.flag'></td>\
+									<td style='padding:2px'><strong>Carry</strong></td>\
+									<td class='text-center' ng-repeat='carry in carryFlag' ng-bind='carry.flag' style='padding:2px'></td>\
 								</tr>\
 								<tr>\
-									<td><strong>Negative</strong></td>\
-									<td class='text-center' ng-repeat='neg in negativeFlag' ng-bind='neg.flag'></td>\
+									<td style='padding:2px'><strong>Negative</strong></td>\
+									<td class='text-center' ng-repeat='neg in negativeFlag' ng-bind='neg.flag' style='padding:2px'></td>\
 								</tr>\
 								<tr>\
-									<td><strong>Zero</strong></td>\
-									<td class='text-center' ng-repeat='zero in zeroFlag' ng-bind='zero.flag'></td>\
+									<td style='padding:2px'><strong>Zero</strong></td>\
+									<td class='text-center' ng-repeat='zero in zeroFlag' ng-bind='zero.flag' style='padding:2px'></td>\
 								</tr>\
 								<tr>\
-									<td><strong>Overflow</strong></td>\
-									<td class='text-center' ng-repeat='over in overflowFlag' ng-bind='over.flag'></td>\
+									<td style='padding:2px'><strong>Overflow</strong></td>\
+									<td class='text-center' ng-repeat='over in overflowFlag' ng-bind='over.flag' style='padding:2px'></td>\
 								</tr>\
 								</tbody>\
 							</table>\
@@ -306,8 +306,8 @@ var Figure = function(figNum, figureMode) {
 	this.word = function(){
 		editor1.addRow(memPointer,
 				[{text:"&lt;label&gt;", type:"label1", width:"60px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"&lt;const&gt;", type:"constant const1", width:"60px"}]);
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"&lt;const&gt;", type:"literal const1", width:"60px"}]);
 		memPointer++;
 		this.edited = true;
 		//console.log(".WORD pressed for "+this.figNum);
@@ -318,8 +318,8 @@ var Figure = function(figNum, figureMode) {
 	this.block = function(){
 		editor1.addRow(memPointer,
 				[{text:"&lt;label&gt;", type:"label1", width:"60px"},
-				{text:".BLOCK", type:"keyword", width:"74px", width:"60px"},
-				{text:"&lt;const&gt;", type:"constant const1"}]);
+				{text:".BLOCK", type:"datatype", width:"74px", width:"60px"},
+				{text:"&lt;const&gt;", type:"literal const1"}]);
 		memPointer++;
 		this.edited = true;
 		//console.log(".BLOCK pressed for "+this.figNum);
@@ -330,9 +330,9 @@ var Figure = function(figNum, figureMode) {
 	this.loadIMM = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
-				{text:"&lt;const&gt;", type:"constant const2", width:"60px"}]);
+				{text:"&lt;const&gt;", type:"literal const2", width:"60px"}]);
 		this.edited = true;
 		//console.log("LOADIMM pressed for "+this.figNum);
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
@@ -341,7 +341,7 @@ var Figure = function(figNum, figureMode) {
 	this.load = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
@@ -352,7 +352,7 @@ var Figure = function(figNum, figureMode) {
 	this.store = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
@@ -363,7 +363,7 @@ var Figure = function(figNum, figureMode) {
 	this.loadIND = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"LOADIND", type:"command", width:"74px"},
+				{text:"LOADIND", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
@@ -374,7 +374,7 @@ var Figure = function(figNum, figureMode) {
 	this.storeIND = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"STOREIND", type:"command", width:"74px"},
+				{text:"STOREIND", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
@@ -385,7 +385,7 @@ var Figure = function(figNum, figureMode) {
 	this.add = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
@@ -397,7 +397,7 @@ var Figure = function(figNum, figureMode) {
 	this.subtract = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"SUBTRACT", type:"command", width:"74px"},
+				{text:"SUBTRACT", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
@@ -409,7 +409,7 @@ var Figure = function(figNum, figureMode) {
 	this.and = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"AND", type:"command", width:"74px"},
+				{text:"AND", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
@@ -421,7 +421,7 @@ var Figure = function(figNum, figureMode) {
 	this.or = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"OR", type:"command", width:"74px"},
+				{text:"OR", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"50px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
@@ -433,7 +433,7 @@ var Figure = function(figNum, figureMode) {
 	this.not = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"NOT", type:"command", width:"74px"},
+				{text:"NOT", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
@@ -444,10 +444,10 @@ var Figure = function(figNum, figureMode) {
 	this.asl = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"ASL", type:"command", width:"74px"},
+				{text:"ASL", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
-				{text:"&lt;bits&gt;", type:"constant bits", width:"60px"}]);
+				{text:"&lt;bits&gt;", type:"literal bits", width:"60px"}]);
 		this.edited = true;
 		//console.log("ASL pressed for "+this.figNum);
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
@@ -456,10 +456,10 @@ var Figure = function(figNum, figureMode) {
 	this.asr = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"ASR", type:"command", width:"74px"},
+				{text:"ASR", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
-				{text:"&lt;bits&gt;", type:"constant bits", width:"50px"}]);
+				{text:"&lt;bits&gt;", type:"literal bits", width:"50px"}]);
 		this.edited = true;
 		//console.log("ASL pressed for "+this.figNum);
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
@@ -468,7 +468,7 @@ var Figure = function(figNum, figureMode) {
 	this.compare = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"COMPARE", type:"command", width:"74px"},
+				{text:"COMPARE", type:"keyword", width:"74px"},
 				{text:"&lt;reg&gt;,", type:"reg1", width:"60px"},
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
@@ -479,7 +479,7 @@ var Figure = function(figNum, figureMode) {
 	this.branch = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"BRANCH", type:"command", width:"74px"},
+				{text:"BRANCH", type:"keyword", width:"74px"},
 				{text:"&lt;cond&gt;,", type:"cond", width:"60px"},
 				{text:"&lt;label&gt;", width:"60px"}]);
 		this.edited = true;
@@ -490,7 +490,7 @@ var Figure = function(figNum, figureMode) {
 	this.jump = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"JUMP", type:"command", width:"74px"},
+				{text:"JUMP", type:"keyword", width:"74px"},
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
 		//console.log("JUMP pressed for "+this.figNum);
@@ -500,7 +500,7 @@ var Figure = function(figNum, figureMode) {
 	this.halt = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
-				{text:"HALT", type:"command", width:"74px"}]);
+				{text:"HALT", type:"keyword", width:"74px"}]);
 		this.edited = true;
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
@@ -608,31 +608,31 @@ var Figure = function(figNum, figureMode) {
 		// Editor Calls
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"TOTAL", type:"label1", width:"50px"},
-				 {text:".BLOCK", type: "keyword", width:"74px"},
-				 {text:"1", type: "constant", width:"50px"},
+				 {text:".BLOCK", type: "datatype", width:"74px"},
+				 {text:"1", type: "literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
 				 {text:"reserve a block of memory one word long for 'total'", type: "comment"}]);
 	editor1.addRow(editor1.getSelectedRowIndex(),
 			[{text:"ABC", type:"label1", width:"50px"},
-			 {text:".WORD", type:"keyword", width:"74px"},
-			 {text:"2", type:"constant", width:"50px"},
+			 {text:".WORD", type:"datatype", width:"74px"},
+			 {text:"2", type:"literal", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
 			 {text:";", width:"5px"},
 			 {text:"reserve a word of memory for variable 'abc'. Initialize to 2.", type: "comment"}]);
 	editor1.addRow(editor1.getSelectedRowIndex(),
 			[{text:"XYZ", type:"label1", width:"50px"},
-			 {text:".WORD", type:"keyword", width:"74px"},
-			 {text:"3", type:"constant", width:"50px"},
+			 {text:".WORD", type:"datatype", width:"74px"},
+			 {text:"3", type:"literal", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
 			 {text:";", width:"5px"},
 			 {text:"reserve a word of memory for variable 'xyz'. Initialize to 3.", type: "comment"}]);
 	editor1.addRow(editor1.getSelectedRowIndex(),
 			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"LOAD", type:"command", width:"74px"},
+			 {text:"LOAD", type:"keyword", width:"74px"},
 			 {text:"REGD,", width:"50px"},
 			 {text:"ABC", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
@@ -640,7 +640,7 @@ var Figure = function(figNum, figureMode) {
 			 {text:"load the value of variable 'abc' into register D.", type:"comment"}]);
 	editor1.addRow(editor1.getSelectedRowIndex(),
 			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"LOAD", type:"command", width:"74px"},
+			 {text:"LOAD", type:"keyword", width:"74px"},
 			 {text:"REGE,", width:"50px"},
 			 {text:"XYZ", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
@@ -648,7 +648,7 @@ var Figure = function(figNum, figureMode) {
 			 {text:"load the value of variable 'xyz' into register D.", type:"comment"}]);
 	editor1.addRow(editor1.getSelectedRowIndex(),
 			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"ADD", type:"command", width:"74px"},
+			 {text:"ADD", type:"keyword", width:"74px"},
 			 {text:"REGF,", width:"50px"},
 			 {text:"REGD,", width:"50px"},
 			 {text:"REGE", width:"50px"},
@@ -656,7 +656,7 @@ var Figure = function(figNum, figureMode) {
 			 {text:"add the contents of registers D and E placing the result in F.", type:"comment"}]);
 	editor1.addRow(editor1.getSelectedRowIndex(),
 			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"STORE", type:"command", width:"74px"},
+			 {text:"STORE", type:"keyword", width:"74px"},
 			 {text:"REGF,", width:"50px"},
 			 {text:"TOTAL", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
@@ -664,7 +664,7 @@ var Figure = function(figNum, figureMode) {
 			 {text:"store the value held in register F into the variable 'total'.", type:"comment"}]);
 	editor1.addRow(editor1.getSelectedRowIndex(),
 			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"HALT", type:"command", width:"74px"},
+			 {text:"HALT", type:"keyword", width:"74px"},
 			 {text:"&nbsp;", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
 			 {text:"&nbsp;", width:"50px"},
@@ -674,15 +674,15 @@ var Figure = function(figNum, figureMode) {
 		// Editor Calls
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"X", type:"label1", width:"50px"},
-				 {text:".WORD", type:"keyword", width:"74px"},
-				 {text:"15", type:"constant", width:"50px"},
+				 {text:".WORD", type:"datatype", width:"74px"},
+				 {text:"15", type:"literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"50px"},
 				 {text:"reserve a word of memory for variable 'x'. Initialize to 15.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"LOAD", type:"command", width:"74px"},
+				 {text:"LOAD", type:"keyword", width:"74px"},
 				 {text:"REGA,", width:"50px"},
 				 {text:"X", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -690,15 +690,15 @@ var Figure = function(figNum, figureMode) {
 				 {text:"load the value of variable 'x' into register A.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"LOADIMM", type:"command", width:"74px"},
+				 {text:"LOADIMM", type:"keyword", width:"74px"},
 				 {text:"REGB,", width:"50px"},
-				 {text:"1", type:"constant", width:"50px"},
+				 {text:"1", type:"literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
-				 {text:"load the constant value 1 into register B.", type:"comment"}]);
+				 {text:"load the literal value 1 into register B.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"SUBTRACT", type:"command", width:"74px"},
+				 {text:"SUBTRACT", type:"keyword", width:"74px"},
 				 {text:"REG0,", width:"50px"},
 				 {text:"REGA,", width:"50px"},
 				 {text:"REGB", width:"50px"},
@@ -706,7 +706,7 @@ var Figure = function(figNum, figureMode) {
 				 {text:"subtract the contents of register B from A placing result in 0.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"STORE", type:"command", width:"74px"},
+				 {text:"STORE", type:"keyword", width:"74px"},
 				 {text:"REG0,", width:"50px"},
 				 {text:"X", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -714,7 +714,7 @@ var Figure = function(figNum, figureMode) {
 				 {text:"store the value held in register 0 into the variable 'x'.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"HALT", type:"command", width:"74px"},
+				 {text:"HALT", type:"keyword", width:"74px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -724,31 +724,31 @@ var Figure = function(figNum, figureMode) {
 		// Editor Calls
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"AGE", type:"label1", width:"50px"},
-				 {text:".WORD", type:"keyword", width:"74px"},
-				 {text:"2", type:"constant", width:"50px"},
+				 {text:".WORD", type:"datatype", width:"74px"},
+				 {text:"2", type:"literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
 				 {text:"declare and initialize 'age' to 2. Our subject is 2 years old.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"MINOR", type:"label1", width:"50px"},
-				 {text:".BLOCK", type:"keyword", width:"74px"},
-				 {text:"1", type:"constant", width:"50px"},
+				 {text:".BLOCK", type:"datatype", width:"74px"},
+				 {text:"1", type:"literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
 				 {text:"declare 'minor'.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"LOADIMM", type:"command", width:"74px"},
+				 {text:"LOADIMM", type:"keyword", width:"74px"},
 				 {text:"REG0,", width:"50px"},
-				 {text:"0", type:"constant", width:"50px"},
+				 {text:"0", type:"literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
-				 {text:"load the constant value 0 into register 0.", type:"comment"}]);
+				 {text:"load the literal value 0 into register 0.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"STORE", type:"command", width:"74px"},
+				 {text:"STORE", type:"keyword", width:"74px"},
 				 {text:"REG0,", width:"50px"},
 				 {text:"MINOR", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -756,7 +756,7 @@ var Figure = function(figNum, figureMode) {
 				 {text:"store a zero into 'minor' – i.e., minor is assumed 'false'.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"IF", type:"label1", width:"50px"},
-				 {text:"LOAD", type:"command", width:"74px"},
+				 {text:"LOAD", type:"keyword", width:"74px"},
 				 {text:"REGA,", width:"50px"},
 				 {text:"AGE", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -764,15 +764,15 @@ var Figure = function(figNum, figureMode) {
 				 {text:"load the value of variable 'age' into register A.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"LOADIMM", type:"command", width:"74px"},
+				 {text:"LOADIMM", type:"keyword", width:"74px"},
 				 {text:"REGB,", width:"50px"},
-				 {text:"18", type:"constant", width:"50px"},
+				 {text:"18", type:"literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
-				 {text:"load the constant value 18 into register B.", type:"comment"}]);
+				 {text:"load the literal value 18 into register B.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"COMPARE", type:"command", width:"74px"},
+				 {text:"COMPARE", type:"keyword", width:"74px"},
 				 {text:"REGA,", width:"50px"},
 				 {text:"REGB", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -780,7 +780,7 @@ var Figure = function(figNum, figureMode) {
 				 {text:"compare registers A & B &#45; i.e., the value of 'age' to 18.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"BRANCH", type:"command", width:"74px"},
+				 {text:"BRANCH", type:"keyword", width:"74px"},
 				 {text:"LT,", width:"50px"},
 				 {text:"THEN", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -788,7 +788,7 @@ var Figure = function(figNum, figureMode) {
 				 {text:"comment'>IF 'age' is less than 18 branch to 'then'.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"JUMP", type:"command", width:"74px"},
+				 {text:"JUMP", type:"keyword", width:"74px"},
 				 {text:"ENDIF", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -796,15 +796,15 @@ var Figure = function(figNum, figureMode) {
 				 {text:"otherwise jump to the end of the if block &#45; 'endif'.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"THEN", type:"label1", width:"50px"},
-				 {text:"LOADIMM", type:"command", width:"74px"},
+				 {text:"LOADIMM", type:"keyword", width:"74px"},
 				 {text:"REG1,", width:"50px"},
-				 {text:"1", type:"constant", width:"50px"},
+				 {text:"1", type:"literal", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
-				 {text:"THEN: load the constant value 1 into register 1.", type:"comment"}]);
+				 {text:"THEN: load the literal value 1 into register 1.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				 {text:"STORE", type:"command", width:"74px"},
+				 {text:"STORE", type:"keyword", width:"74px"},
 				 {text:"REG1,", width:"50px"},
 				 {text:"MINOR", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -812,7 +812,7 @@ var Figure = function(figNum, figureMode) {
 				 {text:"store a one into 'minor' &#45; i.e., minor is 'true'.", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"ENDIF", type:"label1", width:"50px"},
-				 {text:"HALT", type:"command", width:"74px"},
+				 {text:"HALT", type:"keyword", width:"74px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
 				 {text:"&nbsp;", width:"50px"},
@@ -823,8 +823,8 @@ var Figure = function(figNum, figureMode) {
 		//MINORS .WORD 0   ; declare and initialize the number of 'minors' to 0. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"MINORS", type:"label1", width:"50px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"0", type:"constant", width:"50px"},
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"0", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -832,8 +832,8 @@ var Figure = function(figNum, figureMode) {
 		//ADULTS .WORD 0   ; declare and initialize the number of 'adults' to 0.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"ADULTS", type:"label1", width:"50px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"0", type:"constant", width:"50px"},
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"0", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -841,8 +841,8 @@ var Figure = function(figNum, figureMode) {
 		//AGE .WORD 21   ; declare and initialize the 'age' of the person to 21.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"AGE", type:"label1", width:"50px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"21", type:"constant", width:"50px"},
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"21", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -850,25 +850,25 @@ var Figure = function(figNum, figureMode) {
 		//IF LOAD REGA, AGE  ; load the value of variable 'age' into register A.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"IF", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
 				{text:"AGE", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"load the value of variable 'age' into register A.", type:"comment"}]);
-		//LOADIMM REGB, 18  ; load the constant value 18 into register B.
+		//LOADIMM REGB, 18  ; load the literal value 18 into register B.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGB,", width:"50px"},
-				{text:"18", type:"constant", width:"50px"},
+				{text:"18", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
-				{text:"load the constant value 18 into register B.", type:"comment"}]);
+				{text:"load the literal value 18 into register B.", type:"comment"}]);
 		//COMPARE REGA, REGB  ; compare registers A & B - i.e., the value of 'age' to 18
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"COMPARE", type:"command", width:"74px"},
+				{text:"COMPARE", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
 				{text:"REGB", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -877,7 +877,7 @@ var Figure = function(figNum, figureMode) {
 		//BRANCH LT, THEN  ; IF 'age' is less than 18 branch to 'then'.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"BRANCH", type:"command", width:"74px"},
+				{text:"BRANCH", type:"keyword", width:"74px"},
 				{text:"LT,", width:"50px"},
 				{text:"THEN", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -886,7 +886,7 @@ var Figure = function(figNum, figureMode) {
 		//JUMP ELSE   ; otherwise jump to 'else'. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"JUMP", type:"command", width:"74px"},
+				{text:"JUMP", type:"keyword", width:"74px"},
 				{text:"ELSE", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -895,25 +895,25 @@ var Figure = function(figNum, figureMode) {
 		//THEN LOAD REG0, MINORS  ; THEN: load the number of minors into register 0. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"THEN", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REG0,", width:"50px"},
 				{text:"MINORS", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"load the number of minors into register 0.", type:"comment"}]);
-		//LOADIMM REG1, 1  ; load the constant value 1 into register 1. 
+		//LOADIMM REG1, 1  ; load the literal value 1 into register 1. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REG1,", width:"50px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
-				{text:"load the constant value 1 into register 1.", type:"comment"}]);
+				{text:"load the literal value 1 into register 1.", type:"comment"}]);
 		//ADD REG0, REG0, REG1 ; add contents of register 1 to register 0.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REG0,", width:"50px"},
 				{text:"REG0,", width:"50px"},
 				{text:"REG1", width:"50px"},
@@ -922,7 +922,7 @@ var Figure = function(figNum, figureMode) {
 		//STORE REG0, MINORS  ; update number of minors from register 0. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REG0,", width:"50px"},
 				{text:"MINORS", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -931,7 +931,7 @@ var Figure = function(figNum, figureMode) {
 		//JUMP ENDIF   ; go to the statement labelled 'endif'. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"JUMP", type:"command", width:"74px"},
+				{text:"JUMP", type:"keyword", width:"74px"},
 				{text:"ENDIF", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -940,25 +940,25 @@ var Figure = function(figNum, figureMode) {
 		//ELSE LOAD REG0, ADULTS  ; ELSE: load the number of adults into register 0.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"ELSE", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REG0,", width:"50px"},
 				{text:"ADULTS", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"ELSE: load the number of adults into register 0.", type:"comment"}]);
-		//LOADIMM REG1, 1  ; load the constant value 1 into register 1 
+		//LOADIMM REG1, 1  ; load the literal value 1 into register 1 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REG1,", width:"50px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
-				{text:"load the constant value 1 into register 1", type:"comment"}]);
+				{text:"load the literal value 1 into register 1", type:"comment"}]);
 		// ADD REG0, REG0, REG1 ; add contents of register 1 to register 0.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REG0,", width:"50px"},
 				{text:"REG0,", width:"50px"},
 				{text:"REG1", width:"50px"},
@@ -967,7 +967,7 @@ var Figure = function(figNum, figureMode) {
 		//STORE REG0, ADULTS  ; update number of adults from register 0. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REG0,", width:"50px"},
 				{text:"ADULTS", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -976,7 +976,7 @@ var Figure = function(figNum, figureMode) {
 		//ENDIF HALT    ; halt execution of this assembly language program.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"ENDIF", type:"label1", width:"50px"},
-				{text:"HALT", type:"command", width:"74px"},
+				{text:"HALT", type:"keyword", width:"74px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -986,46 +986,46 @@ var Figure = function(figNum, figureMode) {
 		// Editor Calls
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"X", type:"label1", width:"50px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"5", type:"constant const1", width:"50px"},
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"5", type:"literal const1", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"declare and initialize 'x' to 5 /* first operand */",type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"Y", type:"label1", width:"50px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"4", type:"constant const1", width:"50px"},
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"4", type:"literal const1", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"declare and initialize 'y' to 4 /* second operand */",type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"Z", type:"label1", width:"50px"},
-				{text:".BLOCK", type:"keyword", width:"74px"},
-				{text:"1", type:"constant const1", width:"50px"},
+				{text:".BLOCK", type:"datatype", width:"74px"},
+				{text:"1", type:"literal const1", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"declare 'z' /* z will hold the product of the operands */",type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"I", type:"label1", width:"50px"},
-				{text:".BLOCK", type:"keyword", width:"74px"},
-				{text:"1", type:"constant const1", width:"50px"},
+				{text:".BLOCK", type:"datatype", width:"74px"},
+				{text:"1", type:"literal const1", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"declare 'i' /* i counts the number of loop iterations */",type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
-				{text:"0", type:"constant const2", width:"50px"},
+				{text:"0", type:"literal const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"Z", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1033,14 +1033,14 @@ var Figure = function(figNum, figureMode) {
 				{text:"z=0", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
-				{text:"1", type:"constant const1", width:"50px"},
+				{text:"1", type:"literal const1", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"I", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1048,7 +1048,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"i=1", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"LOOP", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"I", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1056,21 +1056,21 @@ var Figure = function(figNum, figureMode) {
 				{text:"while(i<=y)", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGB,", type:"reg1", width:"50px"},
 				{text:"Y", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"COMPARE", type:"command", width:"74px"},
+				{text:"COMPARE", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"REGB", type:"reg2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"BRANCH", type:"command", width:"74px"},
+				{text:"BRANCH", type:"keyword", width:"74px"},
 				{text:"GT,", type:"cond", width:"50px"},
 				{text:"ENDLP", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1078,28 +1078,28 @@ var Figure = function(figNum, figureMode) {
 				{text:"{", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"Z", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGB,", type:"reg1", width:"50px"},
 				{text:"X", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REGC,", type:"reg1", width:"50px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"REGB", type:"reg2", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGC,", type:"reg1", width:"50px"},
 				{text:"Z", type:"reg1", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1107,28 +1107,28 @@ var Figure = function(figNum, figureMode) {
 				{text:"z = z + x;", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"I", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGB,", type:"reg1", width:"50px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REGC,", type:"reg1", width:"50px"},
 				{text:"REGA,", type:"reg1", width:"50px"},
 				{text:"REGB", type:"reg2", width:"50px"},
 				{text:";", width:"5px"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGC,", type:"reg1", width:"50px"},
 				{text:"I", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1136,7 +1136,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"i = i + 1;", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"JUMP", type:"command", width:"74px"},
+				{text:"JUMP", type:"keyword", width:"74px"},
 				{text:"LOOP", type:"const2", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1144,7 +1144,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"}", type:"comment"}]);
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"ENDLP", type:"label1", width:"50px"},
-				{text:"HALT", type:"command", width:"74px"},
+				{text:"HALT", type:"keyword", width:"74px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1154,8 +1154,8 @@ var Figure = function(figNum, figureMode) {
 		// X .WORD 5   ; declare and initialize 'x' to 5 /* first operand */
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"X", type:"label1", width:"50px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"5", type:"constant", width:"50px"},
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"5", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -1163,8 +1163,8 @@ var Figure = function(figNum, figureMode) {
 		// Y .WORD 4   ; declare and initialize 'y' to 4 /* second operand */ 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"Y", type:"label1", width:"50px"},
-				{text:".WORD", type:"keyword", width:"74px"},
-				{text:"4", type:"constant", width:"50px"},
+				{text:".WORD", type:"datatype", width:"74px"},
+				{text:"4", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -1172,8 +1172,8 @@ var Figure = function(figNum, figureMode) {
 		// Z .BLOCK 1   ; declare 'z' /* z will hold the product of the operands */ 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"Z", type:"label1", width:"50px"},
-				{text:".BLOCK", type:"keyword", width:"74px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:".BLOCK", type:"datatype", width:"74px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -1181,25 +1181,25 @@ var Figure = function(figNum, figureMode) {
 		// I .BLOCK 1   ; declare 'i' /* i counts the number of loop iterations */ 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"I", type:"label1", width:"50px"},
-				{text:".BLOCK", type:"keyword", width:"74px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:".BLOCK", type:"datatype", width:"74px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"declare 'i' /* i counts the number of loop iterations */", type:"comment"}]);
-		//   LOADIMM REG1, 1  ; register 1 holds the constant value 1. 
+		//   LOADIMM REG1, 1  ; register 1 holds the literal value 1. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REG1,", width:"50px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"register 1 holds the constant value 1.", type:"comment"}]);
 		//   LOAD REGA, X  ; register A holds the value of variable 'x'.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
 				{text:"X", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1208,7 +1208,7 @@ var Figure = function(figNum, figureMode) {
 		//   LOAD REGB, Y  ; register B holds the value of variable 'y'. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGB,", width:"50px"},
 				{text:"Y", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1217,25 +1217,25 @@ var Figure = function(figNum, figureMode) {
 		//   LOADIMM REGC, 0  ; register C holds the value of variable 'z' - initially 0. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGC,", width:"50px"},
-				{text:"0", type:"constant", width:"50px"},
+				{text:"0", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"register C holds the value of variable 'z' - initially 0.", type:"comment"}]);
 		//   LOADIMM REGD, 1  ; register D holds the value of variable 'i' - initially 1.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGD,", width:"50px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"register D holds the value of variable 'i' - initially 1.", type:"comment"}]);
 		// LOOP COMPARE REGD, REGB  ; compare register D (the counter 'i') to register B ('y').
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"LOOP", type:"label1", width:"50px"},
-				{text:"COMPARE", type:"command", width:"74px"},
+				{text:"COMPARE", type:"keyword", width:"74px"},
 				{text:"REGD,", width:"50px"},
 				{text:"REGB", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1244,7 +1244,7 @@ var Figure = function(figNum, figureMode) {
 		//   BRANCH GT, ENDLP  ; if 'i' is greater than 'y' then branch to 'endlp'.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"BRANCH", type:"command", width:"74px"},
+				{text:"BRANCH", type:"keyword", width:"74px"},
 				{text:"GT,", width:"50px"},
 				{text:"ENDLP", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1253,7 +1253,7 @@ var Figure = function(figNum, figureMode) {
 		//   ADD REGC, REGC, REGA ; otherwise, add the value of 'x' to 'z'.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REGC,", width:"50px"},
 				{text:"REGC,", width:"50px"},
 				{text:"REGA", width:"50px"},
@@ -1262,7 +1262,7 @@ var Figure = function(figNum, figureMode) {
 		//   ADD REGD, REGD, REG1 ; add 1 to the counter 'i'.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REGD,", width:"50px"},
 				{text:"REGD,", width:"50px"},
 				{text:"REG1", width:"50px"},
@@ -1271,7 +1271,7 @@ var Figure = function(figNum, figureMode) {
 		//   JUMP LOOP   ; return to the top of the loop. 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"JUMP", type:"command", width:"74px"},
+				{text:"JUMP", type:"keyword", width:"74px"},
 				{text:"LOOP", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1280,7 +1280,7 @@ var Figure = function(figNum, figureMode) {
 		// ENDLP STORE REGD, I  ; copy results back to main memory variables.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"ENDLP", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGD,", width:"50px"},
 				{text:"I", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1289,7 +1289,7 @@ var Figure = function(figNum, figureMode) {
 		//   STORE REGC, Z  ; the product of 'x' and 'y' is saved in variable 'z'.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGC,", width:"50px"},
 				{text:"Z", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1298,7 +1298,7 @@ var Figure = function(figNum, figureMode) {
 		//   HALT    ; halt execution of this assembly language program.
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"HALT", type:"command", width:"74px"},
+				{text:"HALT", type:"keyword", width:"74px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1309,8 +1309,8 @@ var Figure = function(figNum, figureMode) {
 		// I .BLOCK 1   ; var i; // Numeric
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"I", type:"label1", width:"50px"},
-				{text:".BLOCK", type:"keyword", width:"74px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:".BLOCK", type:"datatype", width:"74px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -1318,8 +1318,8 @@ var Figure = function(figNum, figureMode) {
 		// A .BLOCK 30   ; var a = new array(30); // Numeric 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"A", type:"label1", width:"50px"},
-				{text:".BLOCK", type:"keyword", width:"74px"},
-				{text:"30", type:"constant", width:"50px"},
+				{text:".BLOCK", type:"datatype", width:"74px"},
+				{text:"30", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
@@ -1327,24 +1327,24 @@ var Figure = function(figNum, figureMode) {
 		//   LOADIMM REGA, 0  ;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
-				{text:"0", type:"constant", width:"50px"},
+				{text:"0", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		//   STORE REGA, I  ; i = 0;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
 				{text:"I", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
-				{text:"i = 0;", type:"constant"}]);
+				{text:"i = 0;", type:"comment"}]);
 		// LOOP LOAD REGA, I  ; while (i < 30)
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"LOOP", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
 				{text:"I", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1353,15 +1353,15 @@ var Figure = function(figNum, figureMode) {
 		//   LOADIMM REGB, 30  ;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGB,", width:"50px"},
-				{text:"30", type:"constant", width:"50px"},
+				{text:"30", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		//   COMPARE REGA, REGB  ;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"COMPARE", type:"command", width:"74px"},
+				{text:"COMPARE", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
 				{text:"REGB", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1369,7 +1369,7 @@ var Figure = function(figNum, figureMode) {
 		//   BRANCH GE, ENDLP  ; {
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"BRANCH", type:"command", width:"74px"},
+				{text:"BRANCH", type:"keyword", width:"74px"},
 				{text:"GE,", width:"50px"},
 				{text:"ENDLP", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1377,16 +1377,16 @@ var Figure = function(figNum, figureMode) {
 		//   LOADIMM REGA, 1  ; Register A assigned the base address of array a
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"Register A assigned the base address of array a", type:"comment"}]);
 		//   LOAD REGB, I  ; Register B assigned the value of subscript i
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGB,", width:"50px"},
 				{text:"I", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1395,7 +1395,7 @@ var Figure = function(figNum, figureMode) {
 		//   ADD REGC, REGA, REGB ; Register C assigned the address of a[i]
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REGC,", width:"50px"},
 				{text:"REGA,", width:"50px"},
 				{text:"REGB", width:"50px"},
@@ -1404,16 +1404,16 @@ var Figure = function(figNum, figureMode) {
 		//   LOADIMM REGD, -1  ; Register D assigned the constant -1 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGD,", width:"50px"},
-				{text:"-1", type:"constant", width:"50px"},
+				{text:"-1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"},
 				{text:"Register D assigned the constant -1", type:"comment"}]);
 		//   STOREIND REGD, REGC  ; a[i] = -1;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STOREIND", type:"command", width:"74px"},
+				{text:"STOREIND", type:"keyword", width:"74px"},
 				{text:"REGD,", width:"50px"},
 				{text:"REGC", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1422,7 +1422,7 @@ var Figure = function(figNum, figureMode) {
 		//   LOAD REGA, I  ;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOAD", type:"command", width:"74px"},
+				{text:"LOAD", type:"keyword", width:"74px"},
 				{text:"REGA,", width:"50px"},
 				{text:"I", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1430,15 +1430,15 @@ var Figure = function(figNum, figureMode) {
 		//   LOADIMM REGB, 1  ;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"LOADIMM", type:"command", width:"74px"},
+				{text:"LOADIMM", type:"keyword", width:"74px"},
 				{text:"REGB,", width:"50px"},
-				{text:"1", type:"constant", width:"50px"},
+				{text:"1", type:"literal", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:";", width:"5px"}]);
 		//   ADD REGC, REGA, REGB ; 
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"ADD", type:"command", width:"74px"},
+				{text:"ADD", type:"keyword", width:"74px"},
 				{text:"REGC,", width:"50px"},
 				{text:"REGA,", width:"50px"},
 				{text:"REGB", width:"50px"},
@@ -1446,7 +1446,7 @@ var Figure = function(figNum, figureMode) {
 		//   STORE REGC, I  ; i = i + 1;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"STORE", type:"command", width:"74px"},
+				{text:"STORE", type:"keyword", width:"74px"},
 				{text:"REGC,", width:"50px"},
 				{text:"I", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1455,7 +1455,7 @@ var Figure = function(figNum, figureMode) {
 		//   JUMP LOOP   ; }
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"50px"},
-				{text:"JUMP", type:"command", width:"74px"},
+				{text:"JUMP", type:"keyword", width:"74px"},
 				{text:"LOOP", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
@@ -1464,7 +1464,7 @@ var Figure = function(figNum, figureMode) {
 		// ENDLP HALT    ;
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"ENDLP", type:"label1", width:"50px"},
-				{text:"HALT", type:"command", width:"74px"},
+				{text:"HALT", type:"keyword", width:"74px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
 				{text:"&nbsp;", width:"50px"},
