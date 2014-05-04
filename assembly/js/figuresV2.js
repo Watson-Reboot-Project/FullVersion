@@ -172,9 +172,9 @@ var Figure = function(figNum, figureMode) {
 			<!-- tab containing the memory, register, program counters, and flags -->\
 			<tab heading='Architecture'> <br>\
 			<div class='container'>\
-				<div id='memory' class='col-lg-4 col-md-4 col-sm-4 col-xs-4 panel panel-default'>\
+				<div id='memory' class='col-lg-4 col-md-4 col-sm-4 col-xs-4 panel panel-default' style='border:1px solid;'>\
 					<h4 class='text-center'>Memory</h4>\
-					<div id='spanMemWrapper'>\
+					<div id='spanMemWrapper' style='margin-bottom:10px;'>\
 						<div id='spanVarMem' >\
 							<table class='table table-bordered' ng-repeat='var in vars' style='table-layout: fixed;'>\
 								<tr ng-style='set_color(var.memno)'>\
@@ -204,7 +204,7 @@ var Figure = function(figNum, figureMode) {
 				<h3 class='text-center'>CPU</h3>\
 					<div class='panel panel-default' style='width: 100%;'>\
 						<!-- table containing the register information -->\
-						<div id='registers' class='col-lg-5 col-md-5 col-sm-5 col-xs-5'>\
+						<div id='registers' class='col-lg-4 col-md-4 col-sm-4 col-xs-5' style='margin-bottom:10px;'>\
 							<h4>Registers</h4>\
 							<!-- I should be outside of this box -->\
 							<div id='spanReg'>\
