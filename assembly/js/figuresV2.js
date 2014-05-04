@@ -223,45 +223,45 @@ var Figure = function(figNum, figureMode) {
 							<table class='table table-bordered'>\
 								<tbody>\
 									<tr>\
-										<th class='text-center' colspan='4' style='padding:2px'>Program Counter</th>\
+										<th class='text-center' colspan='4' style='padding:2px; border: 1px solid;'>Program Counter</th>\
 									</tr>\
 									<tr>\
-										<td class='text-center' colspan='4' ng-repeat='cnt in counter' ng-bind='cnt.content' style='padding:2px'></td>\
+										<td class='text-center' colspan='4' ng-repeat='cnt in counter' ng-bind='cnt.content' style='padding:2px; border: 1px solid;'></td>\
 									</tr>\
 									<tr>\
-										<th class='text-center' colspan='4' style='padding:2px'>Instruction Register</th>\
+										<th class='text-center' colspan='4' style='padding:2px; border: 1px solid;'>Instruction Register</th>\
 									</tr>\
-									<tr ng-repeat='inst in instructionRegister' class='text-center' style='padding:2px'>\
-										<td ng-bind='inst.con1' style='padding:2px'></td>\
-										<td ng-bind='inst.con2' style='padding:2px'></td>\
-										<td ng-bind='inst.con3' style='padding:2px'></td>\
-										<td ng-bind='inst.con4' style='padding:2px'></td>\
+									<tr ng-repeat='inst in instructionRegister' class='text-center' style='padding:2px; border: 1px solid;'>\
+										<td ng-bind='inst.con1' style='padding:2px; border: 1px solid;'></td>\
+										<td ng-bind='inst.con2' style='padding:2px; border: 1px solid;'></td>\
+										<td ng-bind='inst.con3' style='padding:2px; border: 1px solid;'></td>\
+										<td ng-bind='inst.con4' style='padding:2px; border: 1px solid;'></td>\
 									<tr>\
 								</tbody>\
 							</table>\
 							<!-- flag table -->\
-							<table class='table table-bordered'>\
+							<table class='table table-bordered' style='margin-top:10px'>\
 								<thead>\
 									<tr>\
-										<th colspan='2' class='text-center' style='padding:2px'>Flags</th>\
+										<th colspan='2' class='text-center' style='padding:2px; border: 1px solid;'>Flags</th>\
 									</tr>\
 								</thead>\
 								<tbody>\
 								<tr>\
-									<td style='padding:2px'><strong>Carry</strong></td>\
-									<td class='text-center' ng-repeat='carry in carryFlag' ng-bind='carry.flag' style='padding:2px'></td>\
+									<td style='padding:2px; border: 1px solid;'><strong>Carry</strong></td>\
+									<td class='text-center' ng-repeat='carry in carryFlag' ng-bind='carry.flag' style='padding:2px; border: 1px solid;'></td>\
 								</tr>\
 								<tr>\
-									<td style='padding:2px'><strong>Negative</strong></td>\
-									<td class='text-center' ng-repeat='neg in negativeFlag' ng-bind='neg.flag' style='padding:2px'></td>\
+									<td style='padding:2px; border: 1px solid;'><strong>Negative</strong></td>\
+									<td class='text-center' ng-repeat='neg in negativeFlag' ng-bind='neg.flag' style='padding:2px; border: 1px solid;'></td>\
 								</tr>\
 								<tr>\
-									<td style='padding:2px'><strong>Zero</strong></td>\
-									<td class='text-center' ng-repeat='zero in zeroFlag' ng-bind='zero.flag' style='padding:2px'></td>\
+									<td style='padding:2px; border: 1px solid;'><strong>Zero</strong></td>\
+									<td class='text-center' ng-repeat='zero in zeroFlag' ng-bind='zero.flag' style='padding:2px; border: 1px solid;'></td>\
 								</tr>\
 								<tr>\
-									<td style='padding:2px'><strong>Overflow</strong></td>\
-									<td class='text-center' ng-repeat='over in overflowFlag' ng-bind='over.flag' style='padding:2px'></td>\
+									<td style='padding:2px; border: 1px solid;'><strong>Overflow</strong></td>\
+									<td class='text-center' ng-repeat='over in overflowFlag' ng-bind='over.flag' style='padding:2px; border: 1px solid;'></td>\
 								</tr>\
 								</tbody>\
 							</table>\
