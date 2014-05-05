@@ -10,25 +10,26 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-		<!-- CSS files -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
-		<link href="../lib/css/bootstrap.css" rel = "stylesheet">
-		<link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
-		<link href="../lib/css/ch08.css" rel = "stylesheet">
-		<link href="../lib/css/styles.css" rel = "stylesheet">
-		<link href="../lib/css/styles.css" rel="stylesheet">
-		<link href="../lib/css/generalmedia.css" rel = "stylesheet">
-
-		<!-- Java Script files -->
-		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script src="../lib/js/jquery-ui.js"></script>
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
+	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/grid.css" rel = "stylesheet">
+	    <!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -598,7 +599,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig38Div" class="divness"></div>
+			<div id="JSFigure-38" class="divness"></div>
 
 			<p class="Figure">
 				<span class="figNum watsonstack"></span> &nbsp; An implementation of the stack data structure in Watson JavaScript
@@ -765,23 +766,29 @@
 				Exercises for <span class="contentNum javascriptArrays"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
-					<p>
+					<p class="exercise solvable 13">
 						Write a function called <span class="Subfigure">sum</span> that returns the sum of the numbers stored in a 50-element numeric array.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 13"></div>
 				</li>
 
 				<li>
-					<p>
+					<p class="exercise solvable 14">
 						Modify the program of <span class="figNum watsonstack"></span> so that it can handle stacks up to size 500.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 14"></div>
 				</li>
 
 				<li>
-					<p>
+					<p class="exercise solvable 15">
 						Modify the program of <span class="figNum watsonstack"></span> so that it implements a stack of strings, rather than a stack of numbers.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 15"></div>
 				</li>
 			</ol>
 
@@ -790,37 +797,37 @@
 			</div> 
 			
 			<div class="blueFooterBar"></div>
-
+			<script src="js/acorn.js"></script>
+			<script src="js/interpreter.js"></script>
+			<script src="js/WatsonDataStore.js"></script>
+			<script src="js/WatsonEditor.js"></script>
+			<script src="js/JSFigures.js"></script>
+			<script src="js/WatsonDialogs.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/editor.css">
+			<link rel="stylesheet" type="text/css" href="../lib/css/Dialogs.css">
+			
 			<!-- Arrow navigation scripts -->
-			<script>
-				var pageObj;											// do NOT change name of variable
-				var chapID = "javascript";
-				
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-					pageObj = getArrowPathsByPage("javascriptArrays");		// get arrow paths
-				});	
-				
-			</script>
-			
-			
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
-
-		<script src="js/acorn.js"></script>
-	    <script src="js/interpreter.js"></script>
-	    <script src="js/editor.js"></script>
-		<script src="js/figures.js"></script>
 		<script>
-		var figure38 = new Figure(38);
+			var pageObj;											// do NOT change name of variable
+			var chapID = "javascript";
+			var sectID = "javascriptArrays";
+			
+			$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage(sectID);		// get arrow paths
+				setupExerciseButtons(sectID);
+			});	
+
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50062005-1', 'latech.edu');
+			ga('send', 'pageview');
+
+			var figure38 = new Figure(38, "watsonstack");
 		</script>
 	</body>
 </html>

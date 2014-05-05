@@ -14,7 +14,7 @@ function setupExerciseButtons(sectID) {
 	for (var i = 0; i < exercises.length; i++) {
 		for (var j = 0; j < exerciseList.length; j++) {
 			if (exerciseList[j].children.length != 0 && (exerciseList[j].children[0] == exercises[i])) {
-				var textContent = exercises[i].textContent.replace("\n", "");
+				var textContent = exercises[i].innerHTML.replace("\n", "");
 				while (textContent.charCodeAt(0) == 9) textContent = textContent.substring(1, textContent.length);
 				while (textContent.charCodeAt(textContent.length - 1) == 9) textContent = textContent.substring(0, textContent.length - 2);
 
@@ -34,8 +34,8 @@ function populateExerciseDivs() {
 	
 	for (var i = 0; i < divs.length; i++) {
 		var exerID = divs[i].className.replace("exerciseDiv ", "");
-		divs[i].innerHTML = '<button id="solve1" onclick="solveButton(' + exerID + ')">Solve</button>\
-								<button id="toggle' + exerID + '" onclick="toggleView(\'toggle' + exerID + '\', \'container-exer' + exerID + '\');">View</button> \
+		divs[i].innerHTML = '<button id="solve1" class="btn btn-sm btn-primary" onclick="solveButton(' + exerID + ')">Solve</button>\
+								<button id="toggle' + exerID + '" class="btn btn-sm btn-success" onclick="toggleView(\'toggle' + exerID + '\', \'container-exer' + exerID + '\');">View</button> \
 								<div id="container-exer' + exerID + '" class="Centered" style="border: 2px solid blue; margin-top:5px;"></div>\
 								<br><br>';
 	}
@@ -53,7 +53,7 @@ function solveButton(exerID) {
 	var exercise = exerciseFigsText[exerID];
 	
 	localStorage.setItem("currExerNum", exerID);
-	localStorage.setItem("currExerQues", "Problem " + section + "." + exercise[0] + ": " + exercise[1]);
+	localStorage.setItem("currExerQues", "<span class='Bolded'>Problem " + section + "." + exercise[0] + "</span><br/><br/>" + exercise[1]);
 
 	var win = window.open("solveExer.html", '_blank');
 	win.focus();

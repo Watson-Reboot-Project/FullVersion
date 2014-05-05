@@ -26,7 +26,8 @@
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -294,17 +295,23 @@
 				Exercises for <span class="contentNum assemblyProgramming4"></span>
 			</p>
 			
-			<ol>
+			<ol id="exerciseList">
 				<li>
-					Write an assembly language program to implement the high-level assignment statement:
-			
-					<p class="Subfigure">Z = X / Y;</p>
-			
-					using repeated subtraction, where <span class="Subfigure">X</span>, <span class="Subfigure">Y</span>, and <span class="Subfigure">Z</span> are positive integers.
+					<div class="exercise solvable 7">
+						Write an assembly language program to implement the high-level assignment statement:
+						<p class="Subfigure">Z = X / Y;</p>
+						using repeated subtraction, where <span class="Subfigure">X</span>, <span class="Subfigure">Y</span>, and <span class="Subfigure">Z</span> are positive integers.
+					</div>
+					
+					<div class="exerciseDiv 7"></div>
+					<br/>
 				</li>
-				<br/>
 				<li>
+					<p class="exercise solvable 8">
 					Write an assembly language program to compute the sum of the numbers from 1 to 20 using a loop construct.
+					</p>
+					
+					<div class="exerciseDiv 8"></div>
 				</li>
 			</ol>
 			
@@ -323,46 +330,39 @@
 			</div>
 			
 			<div class="blueFooterBar"></div>
-
+			<script type='text/javascript' src='../lib/js/angular.js'></script>
+			<script type='text/javascript' src='../lib/js/jQuery.js'></script>
+			<script type='text/javascript' src='../lib/js/less.js'></script>
+			<script type='text/javascript' src='../lib/js/ui-bootstrap-0.10.0.js'></script>
+			<script type='text/javascript' src='../lib/js/tabs.js'></script>
+			<script type='text/javascript' src='../lib/js/ui-bootstrap.js'></script>   	
+			<script type='text/javascript' src='js/assemblyui.js'></script>	
+			<script type='text/javascript' src='js/inputs.js'></script>
+			<script src='js/figures.js'></script>
+			
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "assembly";
-
+				var sectID = "assemblyProgramming4";
+				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("assemblyProgramming4");		// get arrow paths
-					
-
+					setupExerciseButtons(sectID);
 				});	
-				
-			</script>
-			
-			
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
-		
-		<script type='text/javascript' src='../lib/js/angular.js'></script>
-    	<script type='text/javascript' src='../lib/js/jQuery.js'></script>
-    	<script type='text/javascript' src='../lib/js/less.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap-0.10.0.js'></script>
-    	<script type='text/javascript' src='../lib/js/tabs.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap.js'></script>   	
-		<script type='text/javascript' src='js/assemblyui.js'></script>	
-    	<script type='text/javascript' src='js/inputs.js'></script>
-    	<script src='js/figures.js'></script>
-    	
-    	<script>
-    			var fig115 = new Figure(119);
-    			var fig116 = new Figure(1110);
+
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-50062005-1', 'latech.edu');
+				ga('send', 'pageview');
+
+				var fig115 = new Figure(119);
+				var fig116 = new Figure(1110);
 				angular.bootstrap(document.getElementById("fig119"), ['assembly119']);
 				angular.bootstrap(document.getElementById("fig1110"), ['assembly1110']);
 		</script>

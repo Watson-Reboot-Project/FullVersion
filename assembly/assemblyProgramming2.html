@@ -26,7 +26,8 @@
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -302,26 +303,41 @@
 				Exercises for <span class="contentNum assemblyProgramming2"></span>
 			</p>
 			
-			<ol>
+			<ol id="exerciseList">
 				<li>
-					<p>Write an assembly language program to implement the high-level assignment statement: </p>
-					
-					<p class="Subfigure">diff = xyz – abc;</p>
+					<div class="exercise solvable 1">
+						Write an assembly language program to implement the high-level assignment statement:
+						
+						<p class="Subfigure">diff = xyz – abc;</p>
+					</div>
+
+					<div class="exerciseDiv 1"></div>
 				</li>
 				<li>
-					<p>Write an assembly language program to implement the high-level assignment statement: </p>
+					<div class="exercise solvable 2">
+						Write an assembly language program to implement the high-level assignment statement:
+						
+						<p class="Subfigure">num = num + 4;</p>
+					</div>
 					
-					<p class="Subfigure">num = num + 4;</p>
+					<div class="exerciseDiv 2"></div>
 				</li>
 				<li>
-					<p>Write an assembly language program to implement the high-level assignment statement: </p>
+					<div class="exercise solvable 3">
+						Write an assembly language program to implement the high-level assignment statement:
 					
-					<p class="Subfigure">A = ( B + C ) -  D;</p>
+						<p class="Subfigure">A = ( B + C ) -  D;</p>
+					</div>
+					<div class="exerciseDiv 3"></div>
 				</li>
 				<li>
-					<p>Write an assembly language program to implement the high-level assignment statement: </p>
+					<p class="exercise solvable 4">
+					Write an assembly language program to implement the high-level assignment statement:
+					</p>
 					
 					<p class="Subfigure">A = 2 * ( B + C );</p>
+					
+					<div class="exerciseDiv 4"></div>
 				</li>
 			</ol>
 
@@ -345,46 +361,39 @@
 			</div>
 			
 			<div class="blueFooterBar"></div>
-
+			<script type='text/javascript' src='../lib/js/angular.js'></script>
+			<script type='text/javascript' src='../lib/js/jQuery.js'></script>
+			<script type='text/javascript' src='../lib/js/less.js'></script>
+			<script type='text/javascript' src='../lib/js/ui-bootstrap-0.10.0.js'></script>
+			<script type='text/javascript' src='../lib/js/tabs.js'></script>
+			<script type='text/javascript' src='../lib/js/ui-bootstrap.js'></script>   	
+			<script type='text/javascript' src='../js/assemblyui.js'></script>	
+			<script type='text/javascript' src='../js/inputs.js'></script>
+			<script src='js/figures.js'></script>
+			
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "assembly";
-
+				var sectID = "assemblyProgramming2";
+				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("assemblyProgramming2");		// get arrow paths
-					
-
+					setupExerciseButtons(sectID);
 				});	
-				
-			</script>
-			
-			
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
 
-		<script type='text/javascript' src='../lib/js/angular.js'></script>
-    	<script type='text/javascript' src='../lib/js/jQuery.js'></script>
-    	<script type='text/javascript' src='../lib/js/less.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap-0.10.0.js'></script>
-    	<script type='text/javascript' src='../lib/js/tabs.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap.js'></script>   	
-		<script type='text/javascript' src='../js/assemblyui.js'></script>	
-    	<script type='text/javascript' src='../js/inputs.js'></script>
-    	<script src='js/figures.js'></script>
-    	
-    	<script>
-    			var fig113 = new Figure(113);
-    			var fig114 = new Figure(114);
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-50062005-1', 'latech.edu');
+				ga('send', 'pageview');
+
+				var fig113 = new Figure(113);
+				var fig114 = new Figure(114);
 				angular.bootstrap(document.getElementById("fig113"), ['assembly113']);
 				angular.bootstrap(document.getElementById("fig114"), ['assembly114']);
 		</script>

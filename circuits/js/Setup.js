@@ -62,7 +62,7 @@ function Setup(container, figureNo, draggable, displayMode, exerID) {
 		mainLayer.add(bg);
 	
 		truthTable = new TruthTable(container, figureNo);
-		controller = new Controller(thisObj, truthTable, draggable, displayMode, exerID);
+		controller = new Controller(thisObj, truthTable, draggable, displayMode, exerID, container);
 		serializer = new Serializer();
 		if(typeof(Storage) !== "undefined")
 		{

@@ -14,20 +14,22 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script src="../lib/js/jquery-ui.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.min.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -215,7 +217,7 @@
 
 			<h5 class="P136">The final total is... 150</h5>
 			-->
-			<div id="fig18Div" class="divness"></div>
+			<div id="JSFigure-18" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum whilesum"></span> A program to compute the sum of an arbitrary number of non-negative numbers using a “While” loop
 			</p>
@@ -360,7 +362,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig19Div" class="divness"></div>
+			<div id="JSFigure-19" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum whilesumofn"></span> &nbsp; A program to compute the sum of N numbers using a “while” loop
 			</p>
@@ -518,7 +520,7 @@
 				&nbsp; </span> document.writeln(total);
 			</p>
 			-->
-			<div id="fig21Div" class="divness"></div>
+			<div id="JSFigure-21" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum forprogram"></span> &nbsp; A program to compute the sum of N numbers using a “For” loop
 			</p>
@@ -875,7 +877,7 @@
 				</tr>
 			</table>
 			-->
-			<div id="fig22Div" class="divness"></div>
+			<div id="JSFigure-22" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum foraverage"></span> &nbsp; A program to average grades using a “For” loop and an “If-Else” construct
 			</p>
@@ -1119,7 +1121,7 @@
 				2 times 12 equals 24&nbsp;  &nbsp; 4 times 12 equals 48
 			</p>
 			-->
-			<div id="fig23Div" class="divness"></div>
+			<div id="JSFigure-23" class="divness"></div>
 
 			<p class="Figure">
 				<span class="figNum formultiplication"></span> &nbsp; A program that prints the multiplication table using nested “For” loops.
@@ -1246,7 +1248,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig24Div" class="divness"></div>
+			<div id="JSFigure-24" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum beeriterative"></span> &nbsp; Beer – the iterative version
 			</p>
@@ -1263,127 +1265,145 @@
 				Exercises for <span class="contentNum javascriptControl3"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
 					Show exactly what would be output by the following program assuming that the value entered by the user for <span class="Subfigure">i</span> is: (a) &nbsp; 2, &nbsp;  (b) 5, &nbsp;  (c) 7.&nbsp;
-				</li>
-				<ul class="Blockcenter">
-					<li><span class="Subfigure">var i; // Numeric</span></li>
-					<li><span class="Subfigure">var j; // Numeric</span></li>
-					<li><span class="Subfigure">var x; // Numeric</span></li>
-					<br />
-					<li><span class="Subfigure">i = parseFloat(prompt(“Enter an integer value. ”,0));</span></li>
-					<li><span class="Subfigure">document.write( “Man, this question ”);</span></li>
-					<li><span class="Subfigure">if (i &lt; 5)</span></li>
-					<li><span class="Subfigure">{</span></li>
-					<ul class="Subblockcenter">
-						<li><span class="Subfigure">x = 5 - i;</span></li>
-						<li><span class="Subfigure">for (j = 1; j <= x; j++)</span></li>
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">var i; // Numeric</span></li>
+						<li><span class="Subfigure">var j; // Numeric</span></li>
+						<li><span class="Subfigure">var x; // Numeric</span></li>
+						<br />
+						<li><span class="Subfigure">i = parseFloat(prompt(“Enter an integer value. ”,0));</span></li>
+						<li><span class="Subfigure">document.write( “Man, this question ”);</span></li>
+						<li><span class="Subfigure">if (i &lt; 5)</span></li>
 						<li><span class="Subfigure">{</span></li>
 						<ul class="Subblockcenter">
-							<li><span class="Subfigure">document.write(“really ”);</span></li>
+							<li><span class="Subfigure">x = 5 - i;</span></li>
+							<li><span class="Subfigure">for (j = 1; j <= x; j++)</span></li>
+							<li><span class="Subfigure">{</span></li>
+							<ul class="Subblockcenter">
+								<li><span class="Subfigure">document.write(“really ”);</span></li>
+							</ul>
+							<li><span class="Subfigure">}</span></li>
+							<li><span class="Subfigure">document.writeln(“sucks!”);</span></li>
 						</ul>
 						<li><span class="Subfigure">}</span></li>
-						<li><span class="Subfigure">document.writeln(“sucks!”);</span></li>
-					</ul>
-					<li><span class="Subfigure">}</span></li>
-					<li><span class="Subfigure">else</span></li>
-					<li><span class="Subfigure">{</span></li>
-					<ul class="Subblockcenter">
-						<li><span class="Subfigure">document.write(“is ”);</span></li>
-						<li><span class="Subfigure"> x = i - 5;</span></li>
-						<li><span class="Subfigure">for (j = 1; j <= x; j++)</span></li>
+						<li><span class="Subfigure">else</span></li>
 						<li><span class="Subfigure">{</span></li>
 						<ul class="Subblockcenter">
-							<li><span class="Subfigure">document.write(“way ”);</span></li>
+							<li><span class="Subfigure">document.write(“is ”);</span></li>
+							<li><span class="Subfigure"> x = i - 5;</span></li>
+							<li><span class="Subfigure">for (j = 1; j <= x; j++)</span></li>
+							<li><span class="Subfigure">{</span></li>
+							<ul class="Subblockcenter">
+								<li><span class="Subfigure">document.write(“way ”);</span></li>
+							</ul>
+							<li><span class="Subfigure">}</span></li>
+							<li><span class="Subfigure">document.writeln(“cool!”);</span></li>
 						</ul>
 						<li><span class="Subfigure">}</span></li>
-						<li><span class="Subfigure">document.writeln(“cool!”);</span></li>
+						<li><span class="Subfigure">document.writeln(“Peace.”);</span></li>
 					</ul>
-					<li><span class="Subfigure">}</span></li>
-					<li><span class="Subfigure">document.writeln(“Peace.”);</span></li>
-				</ul>
 
-				<br/>
-				
+					<br/>
+					
+					</li>
 				<li>
+					<p class="exercise solvable 8">
 					Modify the program of <span class="figNum whilesum"></span> so that both negative and positive numbers can be added together. In order to do so and still have a way to exit the loop, use 0 as the exit sentinel.
-				</li>
+					</p>
+					
+					<div class="exerciseDiv 8"></div>
 				<br/>
+				</li>
 				<li>
+					<p class="exercise solvable 9">
 					Rewrite the program of <span class="figNum foraverage"></span> so that it uses a “while” loop to read in grades until a negative grade is entered, instead of using a “for” loop that requires the user to enter the number of grades in advance.
-				</li>
+					</p>
+					
+					<div class="exerciseDiv 9"></div>
 				<br/>
+				</li>
 				<li>
+					<p class="exercise solvable 10">
 					Modify the program of <span class="figNum beeriterative"></span> so that it correctly handles one bottle of beer. In other words, it should say “1 bottle of beer on the wall.” Instead of “1 bottles of beer…”
-				</li>
+					</p>
+					
+					<div class="exerciseDiv 10"></div>
 				<br/>
+				</li>
 				<li>
+					<p class="exercise solvable 11">
 					Rewrite the program of <span class="figNum beeriterative"></span> so that it uses a “For” loop instead of “While” loop. Note that “For” loops count “up” while the song counts “down”.
+					</p>
+					
+					<div class="exerciseDiv 11"></div>
+					<br/>
 				</li>
-				<br/>
 				<li>
 					Explain in a single easy-to-understand English sentence exactly what the following program does.
+					
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">var i; // Numeric</span></li>
+						<li><span class="Subfigure">var n; // Numeric</span></li>
+						<br/>
+						<li><span class="Subfigure">i = 1;</span></li>
+						<li><span class="Subfigure">n = 0;</span></li>
+						<li><span class="Subfigure">while (i <= 5)</span></li>
+						<li><span class="Subfigure">{</span></li>
+						<ul class="Subblockcenter">
+							<li><span class="Subfigure">n = n + i;</span></li>
+							<li><span class="Subfigure">i = i + 1;</span></li>
+						</ul>
+						<li><span class="Subfigure">}</span></li>
+						<li><span class="Subfigure">document.writeln(n);</span></li>
+					</ul>
 				</li>
 			</ol>
-
-			<ul class="Blockcenter">
-				<li><span class="Subfigure">var i; // Numeric</span></li>
-				<li><span class="Subfigure">var n; // Numeric</span></li>
-				<br/>
-				<li><span class="Subfigure">i = 1;</span></li>
-				<li><span class="Subfigure">n = 0;</span></li>
-				<li><span class="Subfigure">while (i <= 5)</span></li>
-				<li><span class="Subfigure">{</span></li>
-				<ul class="Subblockcenter">
-					<li><span class="Subfigure">n = n + i;</span></li>
-					<li><span class="Subfigure">i = i + 1;</span></li>
-				</ul>
-				<li><span class="Subfigure">}</span></li>
-				<li><span class="Subfigure">document.writeln(n);</span></li>
-			</ul>
 			
 			<div class="push"></div>
 			<!-- End main content -->
 			</div> 
 			
 			<div class="blueFooterBar"></div>
+			
+			<script src="js/acorn.js"></script>
+			<script src="js/interpreter.js"></script>
+			<script src="js/WatsonDataStore.js"></script>
+			<script src="js/WatsonEditor.js"></script>
+			<script src="js/JSFigures.js"></script>
+			<script src="js/WatsonDialogs.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/editor.css">
+			<link rel="stylesheet" type="text/css" href="../lib/css/Dialogs.css">
 
 			<!-- Arrow navigation scripts -->
-			<script>
-				var pageObj;											// do NOT change name of variable
-				var chapID = "javascript";
-				
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-					pageObj = getArrowPathsByPage("javascriptControl3");		// get arrow paths
-				});	
-				
-			</script>
-			
-			
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
-
-		<script src="js/acorn.js"></script>
-	    <script src="js/interpreter.js"></script>
-	    <script src="js/editor.js"></script>
-		<script src="js/figures.js"></script>
 		<script>
-		var figure18 = new Figure(18);
-		var figure19 = new Figure(19);
-		var figure21 = new Figure(21);
-		var figure22 = new Figure(22);
-		var figure23 = new Figure(23);
-		var figure24 = new Figure(24);
-	</script>
+			var pageObj;											// do NOT change name of variable
+			var chapID = "javascript";
+			var sectID = "javascriptControl3";
+			
+			$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage("javascriptControl3");		// get arrow paths
+				setupExerciseButtons(sectID);
+			});	
+
+
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50062005-1', 'latech.edu');
+			ga('send', 'pageview');
+
+			var figure18 = new Figure(18, "whilesum");
+			var figure19 = new Figure(19, "whilesumofn");
+			var figure21 = new Figure(21, "forprogram");
+			var figure22 = new Figure(22, "foraverage");
+			var figure23 = new Figure(23, "formultiplication");
+			var figure24 = new Figure(24, "beeriterative");
+		</script>
 	</body>
 </html>

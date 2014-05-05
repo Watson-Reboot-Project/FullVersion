@@ -14,20 +14,22 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script src="../lib/js/jquery-ui.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.min.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -273,7 +275,7 @@
 				document.write(b);&nbsp;
 			</p>
 			-->
-			<div id="fig27Div" class="divness"></div>
+			<div id="JSFigure-27" class="divness"></div>
 
 			<p class="Figure">
 				<span class="figNum thirdpower"></span> &nbsp; A program to raise an integer value to the third power
@@ -490,7 +492,7 @@
 				document.writeln(y);
 			</p>
 			-->
-			<div id="fig28Div" class="divness"></div>
+			<div id="JSFigure-28" class="divness"></div>
 
 			<p class="Figure">
 				<span class="figNum computevalue"></span> &nbsp; A program to compute the value of &nbsp; <span class="Subfigure">A X</span><span class="Superscript">3</span><span class="Subfigure">+ B X</span><span class="Superscript">2</span><span class="Subfigure">+ C X + D</span>
@@ -616,47 +618,49 @@
 			</p>
 			-->
 			
-			<div id="fig29Div" class="divness"></div>
+			<div id="JSFigure-29" class="divness"></div>
 
 
 			<p class="Figure">
 				<span class="figNum beersubprogram"></span> Beer – the iterative subprogram version
 			</p>
 			
-			<div id="fig29Div" class="divness"></div>
 
 			<p class="Exercise">
 				Exercises for <span class="contentNum javascriptFunctions"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
 					Describe in a single English statement what the following function does.
-				</li>
 
-				<ul class="Blockcenter">
-					<li><span class="Subfigure">function mystery (n /*Numeric*/) // Returns Numeric</span></li>
-					<li><span class="Subfigure">{</span></li>
-					<ul class="Subblockcenter">
-						<li><span class="Subfigure">var something; // Numeric</span></li>
-						<li><span class="Subfigure">var hmmm; // Numeric</span></li>
-						<br/>
-						<li><span class="Subfigure">something = 1;</span></li>
-						<li><span class="Subfigure">for (hmmm = 1; hmmm &le; n; hmmm++)</span></li>
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">function mystery (n /*Numeric*/) // Returns Numeric</span></li>
 						<li><span class="Subfigure">{</span></li>
 						<ul class="Subblockcenter">
-							<li><span class="Subfigure">something = something * 2;</span></li>
+							<li><span class="Subfigure">var something; // Numeric</span></li>
+							<li><span class="Subfigure">var hmmm; // Numeric</span></li>
+							<br/>
+							<li><span class="Subfigure">something = 1;</span></li>
+							<li><span class="Subfigure">for (hmmm = 1; hmmm &le; n; hmmm++)</span></li>
+							<li><span class="Subfigure">{</span></li>
+							<ul class="Subblockcenter">
+								<li><span class="Subfigure">something = something * 2;</span></li>
+							</ul>
+							<li><span class="Subfigure">}</span></li>
+							<li><span class="Subfigure">return(something);</span></li>
 						</ul>
 						<li><span class="Subfigure">}</span></li>
-						<li><span class="Subfigure">return(something);</span></li>
 					</ul>
-					<li><span class="Subfigure">}</span></li>
-				</ul>
-				
-				<br/>
-
+					
+					<br/>
+					</li>
 				<li>
-					Rewrite the program of <span class="figNum beersubprogram"></span> so that the function returns a string. The new <span class="Subfigure">singsong</span> function should test <span class="Subfigure">beers</span> to see if it is greater than zero. If so, it should print the lyrics and then return the text string “Later…”. If not, it should return the text string “Sorry…”. Have your main program print out this return value. Hence, if a user enters zero or a negative number in answer to the question “How many bottles?” the response presented will be “Sorry…”. If the user enters a positive number greater than zero, the lyrics of the song will be printed followed by “Later…”.
+					<p class="exercise solvable 12">
+						Rewrite the program of <span class="figNum beersubprogram"></span> so that the function returns a string. The new <span class="Subfigure">singsong</span> function should test <span class="Subfigure">beers</span> to see if it is greater than zero. If so, it should print the lyrics and then return the text string “Later…”. If not, it should return the text string “Sorry…”. Have your main program print out this return value. Hence, if a user enters zero or a negative number in answer to the question “How many bottles?” the response presented will be “Sorry…”. If the user enters a positive number greater than zero, the lyrics of the song will be printed followed by “Later…”.
+					</p>
+					
+					<div class="exerciseDiv 12"></div>
 				</li>
 			</ol>
 
@@ -665,22 +669,29 @@
 			</div> 
 			
 			<div class="blueFooterBar"></div>
-
+			
+			<script src="js/acorn.js"></script>
+			<script src="js/interpreter.js"></script>
+			<script src="js/WatsonDataStore.js"></script>
+			<script src="js/WatsonEditor.js"></script>
+			<script src="js/JSFigures.js"></script>
+			<script src="js/WatsonDialogs.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/editor.css">
+			<link rel="stylesheet" type="text/css" href="../lib/css/Dialogs.css">
+			
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "javascript";
+				var sectID = "javascriptFunctions";
 				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("javascriptFunctions");		// get arrow paths
+					setupExerciseButtons(sectID);
 				});	
-				
-			</script>
-			
-			
-			<script>
+
 			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -688,16 +699,11 @@
 			
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
-			</script>
 
-		<script src="../lib/js/acorn.js"></script>
-	    <script src="js/interpreter.js"></script>
-	    <script src="js/editor.js"></script>
-		<script src="js/figures.js"></script>
-		<script>
-		var figure27 = new Figure(27);
-		var figure28 = new Figure(28);
-		var figure29 = new Figure(29);
+			var figure27 = new Figure(27, "thirdpower");
+			var figure28 = new Figure(28, "computevalue");
+			var figure29 = new Figure(29, "beersubprogram");
+			
 	</script>
 	</body>
 </html>

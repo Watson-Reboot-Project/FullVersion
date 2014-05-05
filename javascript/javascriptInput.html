@@ -14,20 +14,22 @@
 	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/grid.css" rel = "stylesheet">
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script src="../lib/js/jquery-ui.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.min.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -145,7 +147,7 @@
 			</p>
 
 			<!-- <span class="figNum watsontextnum"></span> interactive -->
-			<div id="fig5Div" class="divness"></div>
+			<div id="JSFigure-5" class="divness"></div>
 			<!-- End <span class="figNum watsontextnum"></span> interactive -->
 			<p class="Figure">
 				<span class="figNum watsontextnum"></span> &nbsp; A Watson JavaScript program that outputs both text and numbers
@@ -288,7 +290,7 @@
 				Looking at <span class="figNum inouttext"></span> more closely, we see that the first thing this program does is to declare a text variable called <span class="Subfigure">firstName</span>. Next, a text input statement is executed which will prompt the user to enter his or her name, and store the text string entered by that user into the variable <span class="Subfigure">firstName</span>. If the user dismisses the input dialog without entering any text, the default value, an empty string “”, will be stored in <span class="Subfigure">firstName</span>.
 			</p>
 			
-			<div id="fig6Div" class="divness"></div>
+			<div id="JSFigure-6" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum inouttext"></span> &nbsp; A program that illustrates both input and output of text
 			</p>
@@ -480,7 +482,7 @@
 				&nbsp;
 			</p>
 			-->
-			<div id="fig7Div" class="divness"></div>
+			<div id="JSFigure-7" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum inoutnum"></span> &nbsp; A program that illustrates input and output of numeric data
 			</p>
@@ -497,12 +499,11 @@
 				Exercises for <span class="contentNum javascriptInput"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
 					<p>
 						Show exactly what would be printed by the following Watson JavaScript program.&nbsp;
 					</p>
-				</li>
 				
 				<ul class="Blockcenter">
 				<li style="color:grey;"><span class="Subfigure">&lt;html&gt;</span></li>
@@ -524,39 +525,50 @@
 				</ul>
 
 				<br/>
-
-				<li>
-					<p>Write a Watson JavaScript program to produce the following output. Be sure to skip the blank line between the sentences.</p>
 				</li>
 				
-				<ul class="Blockcenter">
-					<li><span class="Subfigure">I will not eat them</span></li>
-					<li><span class="Subfigure">in the rain.</span></li>
-				</ul>
-				<br />
-				<ul class="Blockcenter">
-					<li><span class="Subfigure">I will not eat them</span></li>
-					<li><span class="Subfigure">on a train.</span></li>
-				</ul>
-				
-				<br/>
-
 				<li>
-					<p>Modify the program of <span class="figNum inouttext"></span> so that it is capable of carrying on “conversations” such as the following, involving both a person’s name and age.</p>
+					<div class="exercise solvable 3">
+					Write a Watson JavaScript program to produce the following output. Be sure to skip the blank line between the sentences.
+					
+				
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">I will not eat them</span></li>
+						<li><span class="Subfigure">in the rain.</span></li>
+					</ul>
+					<br />
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">I will not eat them</span></li>
+						<li><span class="Subfigure">on a train.</span></li>
+					</ul>
+					
+					<br/>
+					</div>
+					<div class="exerciseDiv 3"></div>
+
+				</li>
+				
+				<li>
+					<div class="exercise solvable 4">
+					Modify the program of <span class="figNum inouttext"></span> so that it is capable of carrying on “conversations” such as the following, involving both a person’s name and age.
+					
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">Please enter your first name.</span></li>
+						<li><span class="Italicized">Mike</span></li>
+						<li><span class="Subfigure">Please enter your age.</span></li>
+						<li><span class="Italicized">45</span></li>
+						<li><span class="Subfigure">Hello Mike. Nice to meet you.</span></li>
+						<li><span class="Subfigure">I see that you are 45 years old.</span></li>
+						<li><span class="Subfigure">That's cool.</span></li>
+					</ul>
+					
+					<br/>
+					</div>
+					<div class="exerciseDiv 4"></div>
 				</li>
 			</ol>
-			<ul class="Blockcenter">
-				<li><span class="Subfigure">Please enter your first name.</span></li>
-				<li><span class="Italicized">Mike</span></li>
-				<li><span class="Subfigure">Please enter your age.</span></li>
-				<li><span class="Italicized">45</span></li>
-				<li><span class="Subfigure">Hello Mike. Nice to meet you.</span></li>
-				<li><span class="Subfigure">I see that you are 45 years old.</span></li>
-				<li><span class="Subfigure">That's cool.</span></li>
-			</ul>
 
-			<br/>
-
+			
 			<p>
 				In the above program run, the user’s inputs, <span class="Ital">Mike</span> and <span class="Ital">45</span>, are shown in italics. Your program should work with any name and age, so don’t “hard code” the values <span class="Ital">Mike</span> and <span class="Ital">45</span> into the program.
 			</p>
@@ -567,38 +579,40 @@
 			
 			<div class="blueFooterBar"></div>
 
+			<script src="js/acorn.js"></script>
+			<script src="js/interpreter.js"></script>
+			<script src="js/WatsonDataStore.js"></script>
+			<script src="js/WatsonEditor.js"></script>
+			<script src="js/JSFigures.js"></script>
+			<script src="js/WatsonDialogs.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/editor.css">
+			<link rel="stylesheet" type="text/css" href="css/Dialogs.css">
+			
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "javascript";
+				var sectID = "javascriptInput";
 				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("javascriptInput");		// get arrow paths
+					setupExerciseButtons(sectID);
 				});	
-				
-			</script>
-			
-			
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
 
-		<script src="js/acorn.js"></script>
-	    <script src="js/interpreter.js"></script>
-	    <script src="js/editor.js"></script>
-		<script src="js/figures.js"></script>
-		<script>
-		var figure5 = new Figure(5);
-		var figure6 = new Figure(6);
-		var figure7 = new Figure(7);
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-50062005-1', 'latech.edu');
+				ga('send', 'pageview');
+
+				var figure5 = new Figure(5, "watsontextnum");
+				var figure6 = new Figure(6, "inouttext");
+				var figure7 = new Figure(7, "inoutnum");
+				
 		</script>
 	</body>
 </html>

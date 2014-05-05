@@ -15,13 +15,15 @@
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 		<link rel='stylesheet' href='../lib/css/bootstrap-3.css'>
 		<link rel='stylesheet' href='../lib/css/jquery-ui-custom.css'>
-		<link rel='stylesheet' href='../lib/css/Editor.css'>
+		<link rel='stylesheet' href='../lib/css/editor.css'>
 		<link rel='stylesheet' href='../lib/css/Dialogs.css'>
 		<link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
 		
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/angular.js"></script>
@@ -36,7 +38,7 @@
 	    <script type="text/javascript" src="../lib/js/ui-bootstrap.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
-		<script type="text/javascript" src="../lib/js/Editor.js"></script>
+		<script type="text/javascript" src="../lib/js/editor.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/WatsonDialogs.js"></script>
@@ -280,23 +282,31 @@
 				Exercises for <span class="contentNum assemblyProgramming5"></span>
 			</p>
 			
-			<ol>
+			<ol id="exerciseList">
 				<li>
-					Complete the following program, the purpose of which is to compute the sum of the items given in the first <span class="Subfigure">N</span> elements of an array and then store that total in the variable <span class="Subfigure">TOTAL</span>.  To solve this problem efficiently you will probably want to use the <span class="Subfigure">LOADIND</span> (Load Indirect) instruction, which loads a value into a register from a location specified by another register.
+					<div class="exercise solvable 9">
+						Complete the following program, the purpose of which is to compute the sum of the items given in the first <span class="Subfigure">N</span> elements of an array and then store that total in the variable <span class="Subfigure">TOTAL</span>.  To solve this problem efficiently you will probably want to use the <span class="Subfigure">LOADIND</span> (Load Indirect) instruction, which loads a value into a register from a location specified by another register.
+						
+						<ul class="Blockcenter">
+							<li><span class="Subfigure">A &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;.WORD &nbsp; &nbsp; 2        ; a[0] = 2;</span></li>
+							<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 4        ; a[1] = 4;</span></li>
+							<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 8        ; a[2] = 8;</span></li>
+							<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 16       ; a[3] = 16;</span></li>
+							<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 32       ; a[4] = 32;</span></li>
+							<li><span class="Subfigure">TOTAL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .BLOCK &nbsp; &nbsp;1</span></li>
+							<li><span class="Subfigure">N &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;.WORD &nbsp; &nbsp; 5</span></li>
+						</ul>
+					</div>
 					
-					<ul class="Blockcenter">
-						<li><span class="Subfigure">A &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;.WORD &nbsp; &nbsp; 2        ; a[0] = 2;</span></li>
-						<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 4        ; a[1] = 4;</span></li>
-						<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 8        ; a[2] = 8;</span></li>
-						<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 16       ; a[3] = 16;</span></li>
-						<li><span class="Subfigure">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .WORD &nbsp; &nbsp; 32       ; a[4] = 32;</span></li>
-						<li><span class="Subfigure">TOTAL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .BLOCK &nbsp; &nbsp;1</span></li>
-						<li><span class="Subfigure">N &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;.WORD &nbsp; &nbsp; 5</span></li>
-					</ul>
+					<div class="exerciseDiv 9"></div>
 				</li>
 				<br/>
 				<li>
-					Beginning with an uninitialized array of 12 elements, write an assembly language program to assign the value 10 to the element at index zero, 20 to the element at index one, 30 to the element at index two, and so forth.  Ending with the value 120 in the final element located at index eleven.  You must solve this problem using a loop construct.
+					<div class="exercise solvable 10">
+						Beginning with an uninitialized array of 12 elements, write an assembly language program to assign the value 10 to the element at index zero, 20 to the element at index one, 30 to the element at index two, and so forth.  Ending with the value 120 in the final element located at index eleven.  You must solve this problem using a loop construct.
+					</div>
+					
+					<div class="exerciseDiv 10"></div>
 				</li>
 			</ol>
 
@@ -311,13 +321,13 @@
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "assembly";
-
+				var sectID = "assemblyProgramming5";
+				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					pageObj = getArrowPathsByPage("assemblyProgramming5");		// get arrow paths
-					
-
+					pageObj = getArrowPathsByPage(sectID);		// get arrow paths
+					setupExerciseButtons(sectID);
 				});	
 				
 			</script>
