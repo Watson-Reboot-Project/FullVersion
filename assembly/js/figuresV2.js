@@ -3139,7 +3139,7 @@ tabsstuff.controller(assemblycontroller,
 
 		if (updateCounter) {
 			var counter = $scope.assembler.returncounter();
-			previousCounter = counter;
+			this.previousCounter = counter;
 			$scope.counter = [ {
 				content : counter
 			} ];
@@ -3151,6 +3151,16 @@ tabsstuff.controller(assemblycontroller,
 			} ];
 		}
 
+		$scope.set_color = function(num) {
+			if(attemptingToRun){
+				if (num == this.previousCounter) {
+					return { color : "red" };
+				} else {
+					return { color : "black" };
+				}
+			}
+		};
+		
 	};
 
 
@@ -3178,6 +3188,14 @@ tabsstuff.controller(assemblycontroller,
 			return 'btn btn-warning :hover';
 		} else if (button == "Reset") {
 			return 'btn btn-danger';
+		}
+	};
+	
+	$scope.set_color = function(num) {
+		if (num == this.counter) {
+			return { color : "red" };
+		} else {
+				return { color : "black" };
 		}
 	};
 
@@ -3219,7 +3237,7 @@ tabsstuff.controller(assemblycontroller,
 		} else {
 			$scope.done = $scope.assembler.done;
 			running = true;
-			// $scope.memory[counter].set_color(1);
+			//$scope.memory[counter].set_color(1);
 			$scope.architecture(true);
 			if (hasRan) {
 				var temp = $scope.assembler.reset();
@@ -3292,6 +3310,8 @@ tabsstuff.controller(assemblycontroller,
 			$scope.buttons();
 			attemptingToRun = false;
 		}
+		
+		
 		
 		ga('send', 'event', 'assembly', 'walk', self.uniqID);
 	};
