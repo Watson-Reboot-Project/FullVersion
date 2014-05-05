@@ -1,4 +1,4 @@
-function Setup(container, figureNo, draggable, displayMode) {
+function Setup(container, figureNo, draggable, displayMode, exerID) {
 	
 	var ratio = 1;
 	var initHeight;
@@ -62,7 +62,7 @@ function Setup(container, figureNo, draggable, displayMode) {
 		mainLayer.add(bg);
 	
 		truthTable = new TruthTable(container, figureNo);
-		controller = new Controller(thisObj, truthTable, draggable, displayMode);
+		controller = new Controller(thisObj, truthTable, draggable, displayMode, exerID);
 		serializer = new Serializer();
 		if(typeof(Storage) !== "undefined")
 		{
@@ -131,6 +131,8 @@ function Setup(container, figureNo, draggable, displayMode) {
 	
 	function resizeTop() {
 		width = document.getElementById(container).offsetWidth;
+		if (width == 0) width = document.getElementById("wrapper").offsetWidth;
+
 		if (width == 0) { timeout = false; return; }
 		//width = window.innerWidth;
 		height = window.innerHeight;
@@ -140,6 +142,7 @@ function Setup(container, figureNo, draggable, displayMode) {
 		
 		//console.log("Ratio: " + ratio);
 		if (ratio <= initScale) {
+			if (displayMode == true && window.innerWidth < 350) ratio = ratio * 0.8;
 			stage.setScale(ratio);
 			stage.setSize(initWidth * ratio, initHeight * ratio);
 			truthTable.setTruthTableScale((ratio * 1.2) * 100, 3, 0);

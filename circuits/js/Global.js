@@ -19,10 +19,10 @@ function setupExerciseButtons(sectID) {
 				while (textContent.charCodeAt(textContent.length - 1) == 9) textContent = textContent.substring(0, textContent.length - 2);
 
 				var id = exercises[i].className.replace("exercise solvable ", "");
-				$("#container-exer" + id).slideUp();
 				var exer = new DigitalLogicFigure("container-exer" + id, id, false, true);
 				exerciseFigs.push(exer);
 				exerciseFigsText[id] = [ (j + 1), textContent ];
+				$("#container-exer" + id).slideUp();
 			}
 		}
 	}
@@ -35,8 +35,8 @@ function populateExerciseDivs() {
 	for (var i = 0; i < divs.length; i++) {
 		var exerID = divs[i].className.replace("exerciseDiv ", "");
 		divs[i].innerHTML = '<button id="solve1" onclick="solveButton(' + exerID + ')">Solve</button>\
-								<button id="toggle' + exerID + '" onclick="toggleView(\'toggle' + exerID + '\', \'container-exer' + exerID + '\')">View</button> \
-								<div id="container-exer' + exerID + '" class="Centered" style="border: 2px solid blue; margin-top:5px"></div>\
+								<button id="toggle' + exerID + '" onclick="toggleView(\'toggle' + exerID + '\', \'container-exer' + exerID + '\');">View</button> \
+								<div id="container-exer' + exerID + '" class="Centered" style="border: 2px solid blue; margin-top:5px;"></div>\
 								<br><br>';
 	}
 }
@@ -60,7 +60,11 @@ function solveButton(exerID) {
 }
 
 visibly.onVisible(function () {
+	refreshDLFigures();
+});
+
+function refreshDLFigures() {
 	for (var i = 0; i < exerciseFigs.length; i++) {
 		exerciseFigs[i].retieveUpdates();
 	}
-});
+}

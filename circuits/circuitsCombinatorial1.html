@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
@@ -34,14 +35,10 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-
-
-		  <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -194,9 +191,9 @@
 				populateSpans();									// populate figure/content spans
 				pageObj = getArrowPathsByPage(sectID);				// get arrow paths
 
-				var figurec = new DigitalLogicFigure("container-c", "c", false, false); 
-				var figured = new DigitalLogicFigure("container-d", "d", false, false);
-				var figure11 = new DigitalLogicFigure("container-11", "11", false, false);
+				var figurec = new DigitalLogicFigure("container-c", "c", false, false, "xorpart1"); 
+				var figured = new DigitalLogicFigure("container-d", "d", false, false, "xorpart2");
+				var figure11 = new DigitalLogicFigure("container-11", "11", false, false, "implementxor");
 				
 				setupExerciseButtons(sectID);
 			});

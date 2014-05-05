@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -31,12 +32,12 @@
 	</head>
 
 	<body>
-    <div class="page-wrapper" id="wrapper">
-			<a id="tippytop"></a>
-			<!-- Header division -->
 
 			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
 			<!-- End nav -->
+    		<div class="page-wrapper" id="wrapper">
+			<a id="tippytop"></a>
+			<!-- Header division -->
 
 			<!-- Main content -->
 			<p class="Section">
@@ -172,7 +173,7 @@
 			</p>
 
 			<p>
-				Before moving on to our final sort algorithm, let’s take a moment to compare the performance of insertion sort to selection sort.  Selection sort always requires exactly 1/2(<span class="Ital">N</span><span class="Superscript">2</span> + <span class="Ital">N</span>) comparisons to sort </span><span class="Ital">N </span>items.  In the worst case, insertion sort requires 1/2(<span class="Ital">N</span><span class="Superscript">2</span> - <span class="Ital">N</span>).  So, given any non-empty list, insertion sort will always perform fewer comparisons than selection sort.  In the expected case, insertion sort requires 1/4(<span class="Ital">N</span><span class="Superscript">2</span> - <span class="Ital">N</span>) comparisons, and thus should require about 1/2 the comparisons needed by selection sort.  This result is verified by the eight item list of Figures 5.11 and 5.13.
+				Before moving on to our final sort algorithm, let’s take a moment to compare the performance of insertion sort to selection sort.  Selection sort always requires exactly 1/2(<span class="Ital">N</span><span class="Superscript">2</span> + <span class="Ital">N</span>) comparisons to sort </span><span class="Ital">N </span>items.  In the worst case, insertion sort requires 1/2(<span class="Ital">N</span><span class="Superscript">2</span> - <span class="Ital">N</span>).  So, given any non-empty list, insertion sort will always perform fewer comparisons than selection sort.  In the expected case, insertion sort requires 1/4(<span class="Ital">N</span><span class="Superscript">2</span> - <span class="Ital">N</span>) comparisons, and thus should require about 1/2 the comparisons needed by selection sort.  This result is verified by the eight item list of <span class="figNum selectionex"></span> and <span class="figNum insertionex"></span>.
 			</p>
 
 
@@ -223,11 +224,11 @@
 				</li>
 				<br/>
 				<li>
-					How many comparisons are needed by insertion sort to sort an eight item list in the worst case?   in the best case?    in the average case?
+					How many comparisons are needed by insertion sort to sort an eight item list in the worst case?   In the best case?    In the average case?
 				</li>
 				<br/>
 				<li>
-					How many comparisons are needed by insertion sort to sort a 100 item list in the worst case?  in the best case?   in the average case?
+					How many comparisons are needed by insertion sort to sort a 100 item list in the worst case?  In the best case?   In the average case?
 				</li>
 				<br/>
 				<li>

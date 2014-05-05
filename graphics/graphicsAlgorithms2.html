@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -31,11 +32,11 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
+		
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
 
 			<!-- Main content -->
 			<p class="Section">
@@ -43,11 +44,11 @@
 			</p>
 			
 			<p>
-				In this section we explore another feature of the Watson Graphics Language, loops, and we examine how loops can be used to create complex static images as well as animation.  The WGL loop statement implements a control construct called iteration.  <span class="Bolded">Iteration</span> is the process of performing an action, or group of actions, some number of times.  The actual number of times the actions are to be repeated is specified in the loop statement. (As we will see in Chapter 8 other languages support more powerful ways of controlling the number of times a loop should be executed.)
+				In this section we explore another feature of the Watson Graphics Language, loops, and we examine how loops can be used to create complex static images as well as animation.  The WGL loop statement implements a control construct called iteration.  <span class="Bolded">Iteration</span> is the process of performing an action, or group of actions, some number of times.  The actual number of times the actions are to be repeated is specified in the loop statement. (As we will see in <span class="contentNum javascript"></span> other languages support more powerful ways of controlling the number of times a loop should be executed.)
 			</p>
 			
 			<p>
-				Let’s say we want to draw the image shown in <span class="contentNum concentric10"></span>.  This image consists of 10 concentric circles, drawn in blue, all of which share the same center point, (150,150).  The smallest circle has a diameter of 100 units (radius of 50).  The next circle a diameter of 120 units (radius of 60), and so forth.  The largest circle has a diameter of 280 units (radius of 140).
+				Let’s say we want to draw the image shown in <span class="figNum concentric10"></span>.  This image consists of 10 concentric circles, drawn in blue, all of which share the same center point, (150,150).  The smallest circle has a diameter of 100 units (radius of 50).  The next circle a diameter of 120 units (radius of 60), and so forth.  The largest circle has a diameter of 280 units (radius of 140).
 			</p>
 			
 			
@@ -61,7 +62,7 @@
 			</p>
 			
 			<p>
-				A task such as this, that involves a reasonably large number of very similar operations, can often be expressed succinctly using iteration.  Recall the basic structure of the loop statement, introduced in Section 6.4.2:
+				A task such as this, that involves a reasonably large number of very similar operations, can often be expressed succinctly using iteration.  Recall the basic structure of the loop statement, introduced in <span class="contentNum graphicsLanguage2"></span>:
 			</p>
 
 			

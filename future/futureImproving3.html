@@ -12,6 +12,8 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
+	    <link href="../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -30,14 +32,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-			<div class="floating-previous"></div>
-			
-			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
@@ -97,18 +99,10 @@
 			<p>
 				Progress towards this dream is being made. In March 2013 a team of bioengineers at Stanford led by Drew Endy announced the creation of the first “biological transistor” from DNA and RNA called a <span class="Bolded">transcriptor</span> (<span class="figNum transcriptors"></span>).&nbsp;Endy’s team illustrated how transcriptors could be used to implement <span class="Ital">and</span>, <span class="Ital">or</span>, <span class="Ital">nand,</span> <span class="Ital">nor</span> and other basic logic gates using a system they call Boolean Integrase Logic gates, or BIL gates.<span class="Footnote" title="Footnote: "><a href="#ftn13" id="body_ftn13">[13]</a></span> Such transcriptor logic based BIL gates could be used to activate / deactivate the expression of particular genes under program control. While in its early days, this exciting field is well worth watching as its impact could be truly enormous.
 			</p>
-			<!--
-			<video controls="controls" src="../Video/fn15%20Transcriptors%20%26%20Boolean%20Integrase%20Logic%20%28BIL%29%20gates%2C%20explained.mp4">
-				Transcriptors &amp; Boolean Integrase Logic (BIL) gates, explained
-			</video>
-			-->
 			
 			<div class="video">
-			<video controls>
-				<source src="video/future/transcriptors.mp4" type="video/mp4">
-				<object data="video/future/transcriptors.mp4" width="480" height="360">
-				<embed width="480" height="360" src="transcriptors.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/transcriptors.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -116,7 +110,6 @@
 				<span class="figNum transcriptors"></span> Video describing transcriptor logic
 			</p>
 			
-			<!-- End main content -->
 			<hr />
 			<!-- Footnotes -->
 			<p class="Section">
@@ -137,10 +130,6 @@
 
 			<p class="Footnote">
 				<a href="#body_ftn13" id="ftn13">[13]</a>&nbsp; Yes, this is a bad pun on Bill Gates name. Become a respected scientist and one day you too might be able to name your fundamental breakthrough something silly. &#x263a;
-			</p>
-			
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
 			</p>
 			<div class="push"></div>
 				

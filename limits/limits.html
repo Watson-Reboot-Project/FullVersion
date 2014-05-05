@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 		<!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 		<link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 		<link href = "../lib/css/styles.css" rel = "stylesheet">
 		<link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -28,73 +29,39 @@
 
 	</head>
 
-	<body>
+	<body id="limitsBackground">
+		<!-- Navbar -->
+		<div id="includedContentChapterTOC"></div>
+		<!-- End navbar -->
+
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-			 <div class="floating-previous"></div>
-			<div class="floating-next"></div>
-
-			<!-- Navbar division -->
-
-			<div id="includedContentChapterTOC"></div>
-		    <!-- End floating nav -->
-			<!-- End nav -->
 
 			<!-- Main content -->
 			<!--CHAPTER 13:THEORETICAL AND PRACTICAL LIMITS OF COMPUTING-->
 			
-			<p class="Section">
-				<span class="contentNum limits"></span>
-			</p>
+			<!-- Chapter Index listing -->
+			<div id="ContentAreaSections" class="well bold-me"></div>
+			<!-- End Chapter Index listing -->
 			
 			<p>
 				This chapter has not yet been written. It will eventually describe the theoretical and practical limits of computing.
 			</p>
 
-			<br>
-			<div class="container">
-				<div class="row">
-					<!--Floating chapter nav -->
-					<!-- Previous -->
-					<div id="prevButtonDiv"></div>
-					<!-- Next -->
-					<div id="nextButtonDiv"></div>
-					<!-- End floating nav -->
-				</div> 
-			</div>
-			
+			<div class="push"></div>
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-			<nav>
-				<p>
-					--
-				</p>
-				<p>
-					<a href="index.html">Home</a>
-				</p>
-				<p>
-					<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> Contact</a>
-				</p>
-			</nav>
-
-			<div>
-
-			</div>
+			</div> 
+			
+			<div class="blueFooterBarIndex"></div>
 
 			<script>
 				var pageObj;
 				var chapObj;
-				var chapID = "limits";
 				
 				$(document).ready(function() {
 					loadLocalTableOfContents("limits");
 					populateNav();
-					populateSpans();
-					populateChapterButtons();
 					
 					pageObj = getArrowPathsByPage("limits");
 					chapObj = getArrowPathsByChapter("limits");

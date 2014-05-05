@@ -12,13 +12,14 @@
 		 	<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
@@ -28,15 +29,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
-
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
-			<!-- End floating nav -->
 
 			<!-- Main content -->
 
@@ -107,16 +107,9 @@
 				The first large-scale general purpose (speaker independent, large vocabulary, continuous utterance) deployment of speech recognition technology intended for a wide audience was Google’s voice-based web search. Released in 2008 for Android and iPhone smart phones, this technology enabled one to speak a search query, rather than type. While remarkably impressive for its time, Google voice search simply returned a web page of Google search results – exactly as if the speaker had typed the search query.
 			</p>
 			
-			<!--
-			<video controls="controls" src="../video/Google%20Mobile%20App%20for%20iPhone%20with%20Voice%20Search%20%28November%202008%29.mp4">Google Mobile App for iPhone with Voice Search (November 2008)</video>
-			-->
-			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/GoogleMobileAppforiPhonewithvoiceSearch.mp4" type="video/mp4">
-				<object data="video/ai/GoogleMobileAppforiPhonewithvoiceSearch.mp4" width="480" height="360">
-				<embed width="480" height="360" src="GoogleMobileAppforiPhonewithvoiceSearch.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/googlevoice.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -127,16 +120,10 @@
 			<p>
 				Two years later, in 2010, Google extended this technology to enable Android phones to perform simple actions based on spoken input.  For example, the updated system made it possible to send a text message or email to someone on your contact list by speaking the request (e.g., “Send text message to Mike O’Neal. Wow! AI has a come a long way in a little over 50 years.”). Other actions included calling the phone number of a business by name (e.g., “Call Johnny’s Pizza in Ruston Louisiana”), getting directions (e.g., “Navigate to Louisiana Tech University”), or finding and playing music. This technology required the system to have some limited understanding of what the speaker was asking the phone to do. The implementation was straightforward as the system simply listened for special keywords, such as “navigate”, and then launched the appropriate application passing it any specified parameters, such as “Louisiana Tech University”, when the keyword was detected.
 			</p>
-			<!--
-			<video controls="controls" src="../video/Google%20Voice%20Actions%20for%20Android%20%28August%202010%29.mp4">Google Voice Actions for Android (August 2010)</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/GooglevoiceActionsforAndroidAugust2010.mp4" type="video/mp4">
-				<object data="video/ai/GooglevoiceActionsforAndroidAugust2010.mp4" width="480" height="360">
-				<embed width="480" height="360" src="GooglevoiceActionsforAndroidAugust2010.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/voiceactions.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -147,16 +134,10 @@
 			<p>
 				Apple followed suit a year later in the fall of 2011 with the introduction of Siri for the iPhone 4S.  Siri, billed as a “personal assistant”, could handle a wider range of tasks than Google Voice Actions and provided for a more natural spoken interface. The interface was far less rigid and didn’t require the speaker to remember particular keywords. So, for example, instead needing to say something precise like “Navigate to Louisiana Tech University” one could say “Show me how to get to Louisiana Tech” or “Give me directions to Louisiana Tech”, etc.
 			</p>
-			<!--
-			<video controls="controls" src="../video/Apple%20iPhone%204S%20Siri%20demo%20%28October%202011%29.mp4">an Apple video from September 2011 introducing Siri.</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/AppleiPhone4SSiridemoOctober2011.mp4" type="video/mp4">
-				<object data="video/ai/AppleiPhone4SSiridemoOctober2011.mp4" width="480" height="360">
-				<embed width="480" height="360" src="AppleiPhone4SSiridemoOctober2011.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/applesiri.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -179,16 +160,10 @@
 			<p>
 				Apple further improved Siri with the release of the iPhone 5 in September 2012. &nbsp;The revised version of Siri included expanded knowledge of sports and entertainment allowing the system to verbally respond to a wider range of question. For example, in response to “Who is Drew Brees?” Siri replied “Drew Brees currently plays quarterback for the Saints.” while showing me his picture and player stats. Despite this rather impressive result, the vast majority of questions posed to Siri (as of late 2013) generally return web pages, from either a Google search or Wolfram Alpha query.
 			</p>
-			<!--
-			<video controls="controls" src="../video/iPhone%205%20Siri%20Test%20vs%20iPhone%204S%20Siri%20Comparison%20Demo%20-%20New%20Features%20%28September%202012%29.mp4">this video comparing the functionality of the first version of Siri with its second iteration. Siri may sound a bit odd in this video to an American audience as the British versions are being compared.</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/iPhone5SiriTestvsiPhone4SSiriComparisonDemo.mp4" type="video/mp4">
-				<object data="video/ai/iPhone5SiriTestvsiPhone4SSiriComparisonDemo.mp4" width="480" height="360">
-				<embed width="480" height="360" src="iPhone5SiriTestvsiPhone4SSiriComparisonDemo.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/siriversions.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -199,16 +174,10 @@
 			<p>
 				In July 2012, several months prior to the release of the iPhone 5, Google once again raised the bar with the release of Google Now’s integrated voice search which dramatically expanded the scope of questions that can generate a verbal response.&nbsp; By pulling information from Wikipedia and a variety of other sources, reformatting that data, and providing a brief verbal summary, Google Now can provide a verbal response to large numbers of questions over substantial areas of human knowledge.  For example, if I ask “When did Man first step foot on the Moon?” Google responds with “July 20, 1969 is one guess based on results below.” while displaying the Google search results on which it based its answer.
 			</p>
-			<!--
-			<video controls="controls" src="../video/Google%20Now%20Voice%20Search%20Hands%20On%20%28Abridged%29%20%28July%202012%29.mp4">Google Now Voice Search Hands On (Abridged) (July 2012)</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/GoogleNowVoiceSearchHandsOnAbridgedJuly2012RE.mp4" type="video/mp4">
-				<object data="video/ai/GoogleNowVoiceSearchHandsOnAbridgedJuly2012RE.mp4" width="480" height="360">
-				<embed width="480" height="360" src="GoogleNowVoiceSearchHandsOnAbridgedJuly2012RE.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/googlenow.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -223,16 +192,10 @@
 			<p>
 				IBM’s Watson (not to be confused with the Watson labs used in this course) is an example of a question answering system that goes far beyond simple search. IBM’s Watson is most famous for winning a two game <span class="Ital">Jeopardy!</span> tournament in 2011 while competing against Ken Jennings and Brad Rutter, the two most successful humans to ever play the game.
 			</p>
-			<!--
-			<video controls="controls" src="../video/Jeopardy%21%20IBM%20Watson%20Day%203%20%28Feb%2016%2C%202011%29%20Part%202_2.mp4">Jeopardy! IBM Watson Day 3 (Feb 16, 2011) Part 2_2</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/JeopardyIBMWatsonDay3Feb162011Part22.mp4" type="video/mp4">
-				<object data="video/ai/JeopardyIBMWatsonDay3Feb162011Part22.mp4" width="480" height="360">
-				<embed width="480" height="360" src="JeopardyIBMWatsonDay3Feb162011Part22.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/ibmwatson.mp4" type="video/mp4">
 			</video>
 			</div>
 	  
@@ -243,16 +206,10 @@
 			<p>
 				During the games, Watson was given exactly the same clues as the human players, with the exception that Watson’s clues were in textual form since it could neither see nor hear. After receiving the clue, Watson would decompose it into key words and phrases and then simultaneously runs thousands of language analysis algorithms to find statistically related phrases in its repository of stored text (obtained from reference books, web sites, and Wikipedia). Watson then compared these thousands of different results, filtering against clues in the question category (such as the answer is probably a city) to select its final answer – generally the most popular result (the one returned by the greatest number of algorithms). The process, which is far more complex than that used by Google Now and Siri, is often called <span class="Ital">deep question answering</span>.
 			</p>
-			<!--
-			<video controls="controls" src="../video/IBM%20and%20the%20Jeopardy%20Challenge.mp4">a video from IBM that provides an overview of Watson and the Jeopardy! challenge.</video>
-			-->
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/IBMandtheJeopardyChallenge.mp4" type="video/mp4">
-				<object data="video/ai/IBMandtheJeopardyChallenge.mp4" width="480" height="360">
-				<embed width="480" height="360" src="video.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/watsonoverview.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -265,10 +222,6 @@
 			</p>
 
 			<!-- End main content -->
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
 			<div class="push"></div>
 				
 		</div> <!-- End wrapper -->

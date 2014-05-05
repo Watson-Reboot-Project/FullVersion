@@ -12,13 +12,14 @@
 		  	<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/colmn_test.css" rel="stylesheet">	    
 		<!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-	    <script type="text/javascript" src="..lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
@@ -28,15 +29,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div  class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
-
-			<div class="floating-previous"></div><!-- produces the previous arrow -->
-			<!-- End floating nav -->
 
 			<!-- Main content -->
 
@@ -80,17 +80,9 @@
 				<li><span class="Subfigure">DAVE: No, not at all.</span></li>
 
 				
-				<!--
-				<video controls="controls" src="../video/2001%20Conversation%20between%20HAL%20and%20Dave.mp4">2001 Conversation between HAL and Dave</video>
-				-->
-			</ul>
-			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="video/ai/2001ConversationbetweenHALandDave.mp4" type="video/mp4">
-				<object data="video/ai/22001ConversationbetweenHALandDave.mp4" width="480" height="360">
-				<embed width="480" height="360" src="2001ConversationbetweenHALandDave.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/davehal.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -104,11 +96,8 @@
 
 			
 			<div class="video">
-			<video id="vid" width="480" height="360" controls>
-				<source src="./video/ai/BBCinterviewwithHAL2001.mp4" type="video/mp4">
-				<object data="./video/ai/BBCinterviewwithHAL2001.mp4" width="480" height="360">
-				<embed width="480" height="360" src="BBCinterviewwithHAL2001.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/halinterview.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -159,9 +148,6 @@
 			
 			<p class="Footnote">
 				<a href="#body_ftn1" id="ftn1">[1]</a>&nbsp; This is not strictly true, as most smart phones have some limited built-in capacity for facial recognition in order to improve their ability to snap photos. On my iPhone 5 for example little boxes show up around people’s faces when in camera mode to let me know the phone knows where the people are.
-			</p>
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
 			</p>
 			<div class="push"></div>
 				

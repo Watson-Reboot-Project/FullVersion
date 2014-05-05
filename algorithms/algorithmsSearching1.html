@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -34,12 +35,11 @@
 	</head>
 
 	<body>
-    <div class="page-wrapper" id="wrapper">
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+    	<div class="page-wrapper" id="wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
-			<!-- End nav -->
 			
 			<p class="Section">
 				<span class="contentNum algorithmsSearching1"></span>
@@ -84,7 +84,7 @@
 			</p>
 
 			<p>
-				To begin with, if the target item is not in the list, it will be necessary to look through the entire list to verify this fact.  So, for <span class="Ital">N</span> = 8 items, a search that ends in failure will require <span class="Ital">N</span>, or 8, comparisons.  Let’s say we were executing sequential search on an antique computer that requires 1/1,000 of a second to perform a comparison.<span class="Footnote" title="Footnote: The value of 1,000 comparisons per second was chosen for illustrative purposes only. Modern computers are orders of magnitude faster. In <span class="contentNum algorithmSorting"></span> we will switch to a computer with a somewhat more realistic processing speed."><a href="#ftn2" id="body_ftn2">[2]</a></span>  In that case, an unsuccessful search of 10,000 items would require 10 seconds.
+				To begin with, if the target item is not in the list, it will be necessary to look through the entire list to verify this fact.  So, for <span class="Ital">N</span> = 8 items, a search that ends in failure will require <span class="Ital">N</span>, or 8, comparisons.  Let’s say we were executing sequential search on an antique computer that requires 1/1,000 of a second to perform a comparison.<span class="Footnote" title=""><a href="#ftn2" id="body_ftn2">[2]</a></span>  In that case, an unsuccessful search of 10,000 items would require 10 seconds.
 			</p>
 
 			<p>

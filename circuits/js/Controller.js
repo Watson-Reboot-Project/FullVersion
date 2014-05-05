@@ -26,7 +26,7 @@
 *								in terms of digital circuits.
 ***************************************************************************************/
 
-function Controller(setup, truthTable, draggable, displayMode) {
+function Controller(setup, truthTable, draggable, displayMode, exerID) {
 
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE DECLARATIONS/DEFINITIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -150,13 +150,13 @@ function Controller(setup, truthTable, draggable, displayMode) {
 			comp.getGroup().on('click tap', function(event) {
 				nodeMouseDown(event, comp);
 				mainLayer.drawScene();
-				ga("send", "event", "circuits", "walk", "figure");
+				ga("send", "event", "circuits", "walk", "figure-" + exerID);
 			});
 		}
 		else {
 			comp.getGroup().on('click tap', function (event) {
 				compMouseDown(event, comp);
-				ga("send", "event", "circuits", "walk", "figure");
+				ga("send", "event", "circuits", "walk", "figure-" + exerID);
 			});
 		}
 	}

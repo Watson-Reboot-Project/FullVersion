@@ -148,8 +148,8 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 	transFg = new Kinetic.Rect({
 		x:  37,
 		y:  -2,
-		width: 56 - plugin1.getPoints()[0].x,
-		height: (plugin2.getPoints()[0].y + 12)
+		width: 56 - plugin1.points()[0],
+		height: (plugin2.points()[1] + 12)
 	});
 
 	// create the group for the components that make up the OR gate; place it at the x,y coords passed to the object
@@ -253,38 +253,35 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 		var plug;
 		if (input1Box) {
 			plug = getPlugin(1);
-			input1Box.setPosition(plug.getPoints()[0].x - scale * 10, plug.getPoints()[0].y - scale * 15);
+			input1Box.position({ x: plug.points()[0] - scale * 10, y: plug.points()[1] - scale * 15 });
 			plug = getPlugin(2);
-			input2Box.setPosition(plug.getPoints()[0].x - scale * 10, plug.getPoints()[0].y - scale * 9);
+			input2Box.position({ x: plug.points()[0] - scale * 10, y: plug.points()[1] - scale * 9 });
 			plug = getPlugout();
-			outputBox.setPosition(plug.getPoints()[0].x - 0, plug.getPoints()[0].y - scale * 20);
+			outputBox.position({ x: plug.points()[0] - 0, y: plug.points()[1] - scale * 20 });
 		}
 		else {
 			plug = getPlugin(1);
 			input1Box = new Kinetic.Rect({
-				x: plug.getPoints()[0].x - scale * 10,
-				y: plug.getPoints()[0].y - scale * 15,
-				width: (plug.getPoints()[1].x - plug.getPoints()[0].x) + 5,
+				x: plug.points()[0] - scale * 10,
+				y: plug.points()[1] - scale * 15,
+				width: (plug.points()[2] - plug.points()[0]) + 5,
 				height: scale * 24
-				//fill : 'black'
 			});
 			
 			plug = getPlugin(2);
 			input2Box = new Kinetic.Rect({
-				x: plug.getPoints()[0].x - scale * 10,
-				y: plug.getPoints()[0].y - scale * 9,
-				width: (plug.getPoints()[1].x - plug.getPoints()[0].x) + 5,
+				x: plug.points()[0] - scale * 10,
+				y: plug.points()[1] - scale * 9,
+				width: (plug.points()[2] - plug.points()[0]) + 5,
 				height: scale * 24
-				//fill : 'black'
 			});
 			
 			plug = getPlugout();
 			outputBox = new Kinetic.Rect({
-				x: plug.getPoints()[0].x - 0,
-				y: plug.getPoints()[0].y - scale * 20,
-				width: (plug.getPoints()[1].x - plug.getPoints()[0].x) + 5,
+				x: plug.points()[0] - 0,
+				y: plug.points()[1] - scale * 20,
+				width: (plug.points()[2] - plug.points()[0]) + 5,
 				height: scale * 40
-				//fill : 'black'
 			});
 			
 			mainLayer.add(input1Box);
@@ -347,13 +344,17 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 		if (num == 1) {
 			line = new Kinetic.Line({
 				// make a new line and transform the line's coordinates to global coordinates; we do this by adding the group's coordinates to the line's coordinates
-				points: [group.getX() + plugin1.getPoints()[0].x, group.getY() + plugin1.getPoints()[0].y, group.getX() + plugin1.getPoints()[1].x, group.getY() + plugin1.getPoints()[1].y]
+				//points: [mainLayer.getX() + group.getX() + plugin1.points()[0].x, mainLayer.getY() + group.getY() + plugin1.points()[0].y, mainLayer.getX() + group.getX() + plugin1.points()[1].x, mainLayer.getY() +  group.getY() + plugin1.points()[1].y]
+				points: [group.position().x + plugin1.points()[0], group.position().y + plugin1.points()[1], group.position().x + plugin1.points()[2], group.position().y + plugin1.points()[3]]
+
 			});
 		}
 		else {
 			line = new Kinetic.Line({
 				// same concept as above; must transform coordinates to global coordinates
-				points: [group.getX() + plugin2.getPoints()[0].x, group.getY() + plugin2.getPoints()[0].y, group.getX() + plugin2.getPoints()[1].x, group.getY() + plugin2.getPoints()[1].y]
+				//points: [mainLayer.getX() + group.getX() + plugin2.points()[0].x, mainLayer.getY() + group.getY() + plugin2.points()[0].y, mainLayer.getX() + group.getX() + plugin2.points()[1].x, mainLayer.getY() + group.getY() + plugin2.points()[1].y]
+				points: [group.position().x + plugin2.points()[0], group.position().y + plugin2.points()[1], group.position().x + plugin2.points()[2], group.position().y + plugin2.points()[3]]
+
 			});
 		}
 		
@@ -381,7 +382,8 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 	// return the line for the plugout in GLOBAL coordinates; same concept as plugin lines
 	function getPlugout() {
 		var line = new Kinetic.Line({
-			points: [group.getX() + plugout.getPoints()[0].x, group.getY() + plugout.getPoints()[0].y, group.getX() + plugout.getPoints()[1].x, group.getY() + plugout.getPoints()[1].y]
+			//points: [mainLayer.getX() * mainLayer.getScale().x + group.getX() + plugout.points()[0].x, mainLayer.getY()  * mainLayer.getScale().y + group.getY() + plugout.points()[0].y, mainLayer.getX() * mainLayer.getScale().x + group.getX() + plugout.points()[1].x, mainLayer.getY() * mainLayer.getScale().y + group.getY() + plugout.points()[1].y]
+				points: [group.position().x + plugout.points()[0], group.position().y + plugout.points()[1], group.position().x + plugout.points()[2], group.position().y + plugout.points()[3]]
 		});
 				
 		return line;
@@ -517,7 +519,7 @@ function SB_OrGate(initX, initY, setName, id, setup) {
 	
 	function deleteOutputConnection() {
 		plugoutComp.setPluginCompNull(thisObj);
-		plugoutWire.disableStroke();
+		plugoutWire.stroke(null);
 		plugoutComp = null;
 		plugoutWire = null;
 	}

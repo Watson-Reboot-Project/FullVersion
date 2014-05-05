@@ -322,7 +322,8 @@ function Connector(initX, initY, setName, id, setup, displayMode) {
 		
 		pluginVal = val;
 		if (pluginVal == 1) plugin.setStroke("red");
-		else plugin.setStroke("blue");
+		else if (pluginVal == 0) plugin.setStroke("blue");
+		else plugin.setStroke("black");
 		evaluate();
 	}
 	
@@ -355,11 +356,17 @@ function Connector(initX, initY, setName, id, setup, displayMode) {
 			else if (num == 2) { pin2.setStroke("red"); pin2Wire.setStroke("red"); compShape.setFill("red"); }
 			else { pin3.setStroke("red"); pin3Wire.setStroke("red"); compShape.setFill("red"); }
 		}
-		else {
+		else if (pluginVal == 0) {
 			if (num == 0) { pin0.setStroke("blue"); pin0Wire.setStroke("blue"); compShape.setFill("blue"); }
 			else if (num == 1) { pin1.setStroke("blue"); pin1Wire.setStroke("blue"); compShape.setFill("blue"); }
 			else if (num == 2) { pin2.setStroke("blue"); pin2Wire.setStroke("blue"); compShape.setFill("blue"); }
 			else { pin3.setStroke("blue"); pin3Wire.setStroke("blue"); compShape.setFill("blue"); }
+		}
+		else {
+			if (num == 0) { pin0.setStroke("black"); pin0Wire.setStroke("black"); compShape.setFill("black"); }
+			else if (num == 1) { pin1.setStroke("black"); pin1Wire.setStroke("black"); compShape.setFill("black"); }
+			else if (num == 2) { pin2.setStroke("black"); pin2Wire.setStroke("black"); compShape.setFill("black"); }
+			else { pin3.setStroke("black"); pin3Wire.setStroke("black"); compShape.setFill("black"); }
 		}
 	}
 }

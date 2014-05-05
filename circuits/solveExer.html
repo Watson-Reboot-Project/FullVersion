@@ -6,7 +6,7 @@
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<title>Watson</title>
 
 		<!-- Google fonts -->
@@ -20,7 +20,7 @@
 	    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/kinetic.js"></script>
+		<script type="text/javascript" src="js/kinetic5-1.js"></script>
 		<!-- <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script> -->
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
@@ -30,9 +30,6 @@
 		
 		<link href = "css/Dialogs.css" rel = "stylesheet">
 		<link href = "css/jquery-ui-1.10.4.custom.css" rel = "stylesheet">
-	    
-		<meta name="description" content="">
-		<meta name="author" content="Burt">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
@@ -54,11 +51,10 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
 
 			<!-- Sandbox -->
 			<p class="Section" id="Scratch"></p>
@@ -84,6 +80,7 @@
 			<script src="js/WatsonDataStore.js"></script>
 			
 			<!-- Sandbox js -->
+			<script src="js/PinchLayer.js"></script>
 			<script src="js/SB_Serializer.js"></script>
 			<script src="js/SB_Controller.js"></script>
 			<script src="js/SB_AndGate.js"></script>
@@ -107,7 +104,7 @@
 			$(document).ready(function() {
 				populateNav();
 				
-				pageObj = getArrowPathsByPage("scienceFundamentals4");
+				pageObj = getArrowPathsByPage("solveExer");
 				
 				$("#container-0").slideUp();
 			
@@ -142,7 +139,7 @@
 			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
+			  ga('create', 'UA-50062005-1', 'latech.edu', { 'userId': 'Batman' });
 			  ga('send', 'pageview');
 			</script>
 	</body>

@@ -12,19 +12,36 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
-	    <link rel='stylesheet' href='../lib/css/bootstrap-3.css'>
-		<link rel='stylesheet' href='css/assembly.css'>
-	   <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
+		<link rel='stylesheet' href='../lib/css/bootstrap-3.css'>
+		<link rel='stylesheet' href='../lib/css/jquery-ui-custom.css'>
+		<link rel='stylesheet' href='../lib/css/Editor.css'>
+		<link rel='stylesheet' href='../lib/css/Dialogs.css'>
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
 			
 	    <!-- Java Script files -->
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/angular.js"></script>
+	    <script type="text/javascript" src="../lib/js/jQuery.js"></script>
+	    <script type="text/javascript" src="../lib/js/less.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-ui.js"></script>
+<!--
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+-->
+	    <script type="text/javascript" src="../lib/js/ui-bootstrap-0.10.0.js"></script>
+	    <script type="text/javascript" src="../lib/js/tabs.js"></script>
+	    <script type="text/javascript" src="../lib/js/ui-bootstrap.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/Editor.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/WatsonDialogs.js"></script>
+		<script type="text/javascript" src="../lib/js/WatsonDataStore.js"></script>
+		<script type="text/javascript" src="js/figuresV2.js"></script>
+		<script type="text/javascript" src="js/inserts.js"></script>
 
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -32,15 +49,10 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-			
-
-		  <!-- End floating nav -->
-			<!-- End nav -->
 
 			<!-- Main content -->
 			
@@ -359,7 +371,7 @@
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("assemblyProgramming2");		// get arrow paths
-					chapObj = getCurrChapter("assembly");
+					
 
 				});	
 				
@@ -376,19 +388,11 @@
 			  ga('send', 'pageview');
 			</script>
 
-		<script type='text/javascript' src='../lib/js/angular.js'></script>
-    	<script type='text/javascript' src='../lib/js/jQuery.js'></script>
-    	<script type='text/javascript' src='../lib/js/less.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap-0.10.0.js'></script>
-    	<script type='text/javascript' src='../lib/js/tabs.js'></script>
-    	<script type='text/javascript' src='../lib/js/ui-bootstrap.js'></script>   	
-		<script type='text/javascript' src='../js/assemblyui.js'></script>	
-    	<script type='text/javascript' src='../js/inputs.js'></script>
-    	<script src='js/figures.js'></script>
+		
     	
     	<script>
-    			var fig113 = new Figure(113);
-    			var fig114 = new Figure(114);
+    			var fig113 = new Figure(113, true);
+    			var fig114 = new Figure(114, true);
 				angular.bootstrap(document.getElementById("fig113"), ['assembly113']);
 				angular.bootstrap(document.getElementById("fig114"), ['assembly114']);
 		</script>

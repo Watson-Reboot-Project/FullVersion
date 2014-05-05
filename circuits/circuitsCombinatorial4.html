@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel="stylesheet">
@@ -35,13 +36,10 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-
-		    <!-- End floating nav -->
 			<!-- End nav -->
 
 			<!-- Main content -->
@@ -229,8 +227,8 @@
 				populateSpans();									// populate figure/content spans
 				pageObj = getArrowPathsByPage(sectID);				// get arrow paths
 				
-				var figure16 = new DigitalLogicFigure("container-16", "16",true,false);
-				var figure17 = new DigitalLogicFigure("container-17", "17",true,false);
+				var figure16 = new DigitalLogicFigure("container-16", "16", true, false, "threetoeightdec");
+				var figure17 = new DigitalLogicFigure("container-17", "17", true, false, "threetoeightenc");
 				
 				setupExerciseButtons(sectID);
 			});	

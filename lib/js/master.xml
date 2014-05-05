@@ -12,6 +12,7 @@
 		<id>science</id>
 		<name>The Science of Computing</name>
 		<path>../science/science.html</path>
+		<texture>/lib/images/textures/texture1.png</textures>
 		<sections>
 			<section><!--Chapter One Section One-->
 				<id>scienceIntro</id>
@@ -227,7 +228,7 @@
 					<sections>
 						<section><!--Chapter Three Section Three Sub-section One-->
 							<id>informationOrganization1</id>
-							<name>Contiguous storgae</name>
+							<name>Contiguous storage</name>
 							<path>../information/informationOrganization1.html</path>
 						</section>
 						<section><!--Chapter Three Section Three Sub-section Two-->
@@ -266,17 +267,17 @@
 			</section>
 			<section><!--Chapter Three Section Five-->
 				<id>informationUser</id>
-				<name>The programmer level</name>
+				<name>The end-user level</name>
 				<path>../information/informationUser.html</path>
 					<sections>
 						<section><!--Chapter Three Section Five Sub-section One-->
 							<id>informationUser1</id>
-							<name>Buffering and direct access</name>
+							<name>The operating system interface</name>
 							<path>../information/informationUser1.html</path>
 						</section>
 						<section><!--Chapter Three Section Five Sub-section Two-->
 							<id>informationUser2</id>
-							<name>Buffering and direct access</name>
+							<name>Relational Database systems</name>
 							<path>../information/informationUser2.html</path>
 								<!--Start of Sub-sub-sections-->
 								<sections>
@@ -788,7 +789,7 @@
 				<id>concentricprogram</id>
 			</figure>
 			<figure>
-				<id>concetricnop1</id>
+				<id>concentricnop1</id>
 			</figure>
 			<figure>
 				<id>growingcircle</id>
@@ -987,6 +988,9 @@
 				<id>ifelseprogram</id>
 			</figure>
 			<figure>
+				<id>ifthenelse</id>
+			</figure>
+			<figure>
 				<id>ifelsenest</id>
 			</figure>
 			<figure>
@@ -1169,8 +1173,8 @@
 	<!--**** CHAPTER TEN: ENGINEERING. DOES NOT EXIST ****-->
 	<chapter>
 		<id>engineering</id>
-		<name> Building Large Software Systems </name>
-		<path> ../engineering/engineering.html </path>
+		<name>Building Large Software Systems</name>
+		<path>../engineering/engineering.html</path>
 		<figures> <figure> </figure></figures>
 	</chapter><!--End of Chapter Ten -->
 
@@ -1640,8 +1644,8 @@
 <!--****CHAPTER THIRTEERN: LIMITS DOES NOT EXIST****-->
 	<chapter>
 		<id>limits</id>
-		<name> Theoretical and Practical Limits of Computing </name>
-		<path> ../limits/limits.html </path>
+		<name>Theoretical and Practical Limits of Computing</name>
+		<path>../limits/limits.html</path>
 		<figures> <figure> </figure></figures>
 	</chapter><!--End of Chapter Thirteen-->
 

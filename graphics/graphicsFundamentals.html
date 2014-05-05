@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -31,11 +32,12 @@
 	</head>
 
 	<body>
+		<div id="includedContentForPage"></div>
+		
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
 
-			<div id="includedContentForPage"></div>
 
 			<p class="Section">
 				<span class="contentNum graphicsFundamentals"></span>
@@ -69,7 +71,7 @@
 			</p>
 			
 			<p>
-				A <span class="Bolded">frame buffer</span> is just a block of high-speed computer memory that holds a “digital version” of an image.  This version of the image consists of one’s and zero’s.  For simple monochrome (black and white) images, the frame buffer holds a “1” for pixels that are on and a “0” for pixels that are off.  This arrangement is illustrated in Figure 6.4, part (c), which shows the portion of the frame buffer that corresponds to the image close-up of part (a).  As you can see, everywhere a pixel is active in the close-up, the frame buffer holds a “1”.  The frame buffer holds a “0” for every inactive pixel.  The main function of the graphics hardware is to scan the frame buffer, activating the display pixels corresponding to the locations of the frame buffer that contain “1”s.   Because of this correspondence between the bits (0’s and 1’s) in the frame buffer and pixels on the screen, graphical images are sometimes referred to as <span class="Bolded">bitmapped images</span>.
+				A <span class="Bolded">frame buffer</span> is just a block of high-speed computer memory that holds a “digital version” of an image.  This version of the image consists of one’s and zero’s.  For simple monochrome (black and white) images, the frame buffer holds a “1” for pixels that are on and a “0” for pixels that are off.  This arrangement is illustrated in <span class="figNum housegraphic"></span>, part (c), which shows the portion of the frame buffer that corresponds to the image close-up of part (a).  As you can see, everywhere a pixel is active in the close-up, the frame buffer holds a “1”.  The frame buffer holds a “0” for every inactive pixel.  The main function of the graphics hardware is to scan the frame buffer, activating the display pixels corresponding to the locations of the frame buffer that contain “1”s.   Because of this correspondence between the bits (0’s and 1’s) in the frame buffer and pixels on the screen, graphical images are sometimes referred to as <span class="Bolded">bitmapped images</span>.
 			</p>
 			
 			<p>
@@ -101,7 +103,7 @@
 			</p>
 			
 			<p>
-				All graphical systems, at some level, use Cartesian coordinate systems to specify graphical images.  You probably remember having studied coordinate systems in your math classes.  They are often covered when discussing how to plot mathematical functions.  A <span class="Bolded">Cartesian coordinate system</span> consists of two labeled axes at right angles to one another.  Both are essentially number lines.  One axis is drawn horizontally and is labeled X.  The other axis is drawn vertically and is labeled Y.  The point at which the two axes meet is called the <span class="Bolded">origin</span>.  A picture of a Cartesian coordinate system with X labeled from -10 to +10 and Y labeled from -5 to +5 is given in Figure 6.5.  You can see that the two axes divide space into four separate regions, or quadrants.  The upper right hand quadrant is known as quadrant one.  In quadrant one, X and Y values are always positive.
+				All graphical systems, at some level, use Cartesian coordinate systems to specify graphical images.  You probably remember having studied coordinate systems in your math classes.  They are often covered when discussing how to plot mathematical functions.  A <span class="Bolded">Cartesian coordinate system</span> consists of two labeled axes at right angles to one another.  Both are essentially number lines.  One axis is drawn horizontally and is labeled X.  The other axis is drawn vertically and is labeled Y.  The point at which the two axes meet is called the <span class="Bolded">origin</span>.  A picture of a Cartesian coordinate system with X labeled from -10 to +10 and Y labeled from -5 to +5 is given in <span class="figNum cartesian"></span>.  You can see that the two axes divide space into four separate regions, or quadrants.  The upper right hand quadrant is known as quadrant one.  In quadrant one, X and Y values are always positive.
 			</p>
 			
 			<img src="images/cartesian.png" alt="Cartesian coordinate system" class="Image">

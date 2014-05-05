@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -30,16 +31,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			
-			<div id="includedContentForPage"></div>
-			
-			<div class="floating-previous"></div>
-			<div class="floating-next"></div>
-			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
@@ -67,18 +66,10 @@
 			<p>
 				The <span class="Bolded">singularity</span> is a point in time at which the rate of technological change will become so rapid that unenhanced humans will no longer be able to comprehend what is happening. Kurzweil believes that humans (or at least a significant portion of the human population) will choose to merge with super intelligent AIs leading to a post-singularity world of near immortal, near God-like beings (<span class="figNum transcendant"></span>, <span class="figNum sixepochs"></span>).
 			</p>
-			<!--
-			<video controls="controls" src="../Video/fn32%20Transcendent%20Man%20Film%20Trailer.mp4">
-				Transcendent Man Film Trailer
-			</video>
-			-->
 			
 			<div class="video">
-			<video controls>
-				<source src="video/future/transcendant.mp4" type="video/mp4">
-				<object data="video/future/transcendant.mp4" width="480" height="360">
-				<embed width="480" height="360" src="transcendant.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/transcendant.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -87,11 +78,8 @@
 			</p>
 			
 			<div class="video">
-			<video controls>
-				<source src="video/future/sixepochs.mp4" type="video/mp4">
-				<object data="video/future/sixepochs.mp4" width="480" height="360">
-				<embed width="480" height="360" src="sixepochs.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/sixepochs.mp4" type="video/mp4">
 			</video>
 			</div>
 			
@@ -130,10 +118,6 @@
 			
 			<p class="Footnote">
 				<a href="#body_ftn22" id="ftn22">[22]</a>&nbsp; The basic idea underlying this lower estimate is that your brain has lots of redundancy that we should be able to eventually eliminate. Once we figure out how various evolved systems function, we should be able to redesign them to function more efficiently.
-			</p>
-			
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
 			</p>
 			<div class="push"></div>
 				

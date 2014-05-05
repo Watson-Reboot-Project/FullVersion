@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
+	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
@@ -30,17 +31,14 @@
 	</head>
 
 	<body>
+
+		<!--NavBar-->
+		<div id="includedContentForPage"></div> <!-- navigation bar and overall navigation. Must include inside "a page in the book", or a non index page -->
+			<!-- End nav -->
+
 		<div id="wrapper" class="page-wrapper">
 			<a id="tippytop"></a>
 			<!-- Header division -->
-
-			<div id="includedContentForPage"></div>
-			
-			
-			<div class="floating-previous"></div>
-			<div class="floating-next"></div>
-			
-			<!-- End nav -->
 
 			<!-- Main content -->			
 			<!-- CHAPTER 15:THE PAST, PRESENT, AND FUTURE OF COMPUTING -->
@@ -52,19 +50,10 @@
 			<p>
 				Even though self driving cars have been ‘just around the corner’ since at least the 1950’s (<span class="figNum worldfaircar"></span>), I’m reasonably confident that over the next 10 to 15 years auto-driving options will become available on higher end personal vehicles.&nbsp;We probably won’t call these vehicles “self-driving cars” because they will continue to support manual driving as the default option. Instead we will probably say something like “intelligent cruise control” is available on this model. In addition to self driving cars, self-driving taxis, 18-wheelers, and other service vehicles will be common by 2030.
 			</p>
-			<!--
-
-			<video controls="controls" src="../Video/fn25%20Futurama%201939%20New%20York%20World%27s%20Fair%20To%20New%20Horizons%201940%20General%20Motors%2023min.mp4">
-				Futurama 1939 New York World's Fair To New Horizons 1940 General Motors 23min
-			</video>
-			-->
 			
 			<div class="video">
-			<video controls>
-				<source src="video/future/worldfaircar.mp4" type="video/mp4">
-				<object data="video/future/worldfaircar.mp4" width="480" height="360">
-				<embed width="480" height="360" src="worldfaircar.swf">
-				</object>
+			<video id="vid" controls>
+				<source src="videos/worldfaircar.mp4" type="video/mp4">
 			</video>
 			</div>
 
@@ -75,12 +64,7 @@
 			<p>
 				The introduction of “intelligent cruise control” will be gradual and is, in fact, already happening. Systems that prevent you from following too closely to a vehicle in front of you – applying the brakes if necessary – are standard on some higher end models today. Systems to assist with steering in emergency situations are appearing. Some cars can now parallel park themselves. Systems that can handle driving on Interstates and freeways – including dealing with stop and go traffic – will probably be the next part of the driving experience to be automated. Systems capable of handling construction zones, understanding the hand signals of traffic cops, and coping with various kinds of inclement weather, such as ice and snow, will probably prove the most complex to develop.
 			</p>
-			
-			<hr />
-			<p class="Emphasized">
-				<a href="#tippytop">Return to top</a>
-			</p>
-		<div class="push"></div>
+			<div class="push"></div>
 				
 		</div> <!-- End wrapper -->
 
