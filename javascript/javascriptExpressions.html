@@ -27,7 +27,9 @@
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -67,7 +69,7 @@
 			</p>
 
 			<p>
-				The numeric expressions supported by Watson JavaScript are very similar to the spreadsheet formulas presented in <span class="contentNum t false"></span> of Chapter <span class="contentNum tools false"></span>. Watson JavaScript numeric expressions support the same math operators as do spreadsheet formulas; namely, addition “+”, subtraction “-”, multiplication “*”, and division “/”. The precedence of these operators remains the same, with multiplication and division being performed ahead of addition and subtraction. Parentheses for grouping sub-expressions are used identically in both systems.
+				The numeric expressions supported by Watson JavaScript are very similar to the spreadsheet formulas presented in <span class="contentNum toolsSpreadsheets2 true"></span> of Chapter <span class="contentNum tools false"></span>. Watson JavaScript numeric expressions support the same math operators as do spreadsheet formulas; namely, addition “+”, subtraction “-”, multiplication “*”, and division “/”. The precedence of these operators remains the same, with multiplication and division being performed ahead of addition and subtraction. Parentheses for grouping sub-expressions are used identically in both systems.
 			</p>
 
 			<p>
@@ -214,43 +216,48 @@
 				Exercises for <span class="contentNum javascriptExpressions"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
 					<p>
 						Show what would be printed by the following program.&nbsp;
 					</p>
+					<ul class="Blockcenter">
+						<li><span class="Subfigure">var A; // Numeric</span></li>
+						<li><span class="Subfigure">var B; // Numeric</span></li>
+						<li><span class="Subfigure">var C; // Numeric</span></li>
+						<br />
+						<li><span class="Subfigure">A = 5;</span></li>
+						<li><span class="Subfigure">B = 10;</span></li>
+						<li><span class="Subfigure">C = 2;</span></li>
+						<br />
+						<li><span class="Subfigure">document.writeln ( A / B * 100 );</span></li>
+						<li><span class="Subfigure">document.writeln ( A + B / C );</span></li>
+						<li><span class="Subfigure">document.writeln ( B * C - A );</span></li>
+					</ul>
 				</li>
-				<ul class="Blockcenter">
-					<li><span class="Subfigure">var A; // Numeric</span></li>
-					<li><span class="Subfigure">var B; // Numeric</span></li>
-					<li><span class="Subfigure">var C; // Numeric</span></li>
-					<br />
-					<li><span class="Subfigure">A = 5;</span></li>
-					<li><span class="Subfigure">B = 10;</span></li>
-					<li><span class="Subfigure">C = 2;</span></li>
-					<br />
-					<li><span class="Subfigure">document.writeln ( A / B * 100 );</span></li>
-					<li><span class="Subfigure">document.writeln ( A + B / C );</span></li>
-					<li><span class="Subfigure">document.writeln ( B * C - A );</span></li>
-				</ul>
-				
 
 				<li>
-					<p>
+					<p class="exercise solvable 5">
 						Write a Watson JavaScript program that computes the product of three numbers entered by the user. In other words, the program should ask for and receive three integer values from a user, multiply these three numbers together, and then print the product. This program will be similar to the program of <span class="figNum inoutnum"></span> that computes the sum of two numbers.
 					</p>
+					
+					<div class="exerciseDiv 5"></div>
 				</li>
 
 				<li>
-					<p>
+					<p class="exercise solvable 6">
 						Write a Watson JavaScript program to convert a temperature from degrees Fahrenheit to Celsius. The conversion is defined by the formula <span class="Italicized">C = 5/9 (F-32)</span> &nbsp;
 					</p>
+					
+					<div class="exerciseDiv 6"></div>
 				</li>
 
 				<li>
-					<p>
+					<p class="exercise solvable 7">
 						Write a Watson JavaScript program to compute the area of a rectangle given its height and width, in inches, as input. <span class="Footnote" title="Footnote: It is interesting to note that before the invention of spreadsheets, programmers spent much of their time writing little special purpose programs, not much more complex than those in problems 3 and 4. These programs, which generally computed tables of values based on various formulas, were used for engineering design, financial analysis, and economic modeling. Today, most of these tasks can be accomplished with general-purpose spreadsheets."><a href="#ftn3" id="body_ftn3">[3]</a></span>
 					</p>
+					
+					<div class="exerciseDiv 7"></div>
 				</li>
 			</ol>
 			
@@ -274,17 +281,15 @@
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "javascript";
+				var sectID = "javascriptExpressions";
 				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("javascriptExpressions");		// get arrow paths
+					setupExerciseButtons(sectID);
 				});	
 				
-			</script>
-			
-			
-			<script>
 			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -292,6 +297,7 @@
 			
 			  ga('create', 'UA-50062005-1', 'latech.edu');
 			  ga('send', 'pageview');
+			  
 			</script>
 
 	</body>

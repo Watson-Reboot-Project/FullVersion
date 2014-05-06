@@ -687,7 +687,7 @@
 	<!--Opening Tag for Chapter Six-->
 	<chapter>
 		<id>graphics</id>
-		<name>Developing Algorithms</name>
+		<name>Developing Graphical Algorithms</name>
 		<path>../graphics/graphics.html</path>
 		<sections>
 			<!--Start of Sections-->
@@ -2052,7 +2052,7 @@
 									</section>
 									<section><!--Chapter Fifteen Section Five Sub-section Three Part Three-->
 										<id>futurePredictions3b3</id>
-										<name>Ray Kurzweilaposs singularity will not take place by 2050, or even by 2100</name>
+										<name>Ray Kurzweil's singularity will not take place by 2050, or even by 2100</name>
 										<path>../future/futurePredictions3b3.html</path>
 									</section>
 								</sections>

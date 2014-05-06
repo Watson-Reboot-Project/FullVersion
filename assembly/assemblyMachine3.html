@@ -24,6 +24,8 @@
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -99,31 +101,31 @@
 				Exercises for <span class="contentNum assemblyMachine3"></span>
 			</p>
 			
-			<ol>
+			<ol id="exerciseList">
 				<li>
 					Translate the program of <span class="figNum assemblydec"></span> from the assembly language level to the machine language level.
-				</li>
 				<br/>
+				</li>
 				<li>
 					Trace through the program of <span class="figNum assemblydec"></span> outlining the actions taken during each pass through the instruction cycle.  Be sure to clearly indicate any changes made to the values held in registers or main memory locations.
-				</li>
 				<br/>
+				</li>
 				<li>
 					Translate the program of <span class="figNum minorcode"></span> from the assembly language level to the machine language level.
+					<br/>
 				</li>
-				<br/>
 				<li>
-					Given the following machine language program, reassemble it into a Watson assembly language program.  Note that the program is assumed to be stored at the top of memory, beginning in location zero, and the first executable statement occurs on the <span class="Ital">second</span> line of code.
-					<br/>
-					<br/>
-					<img src="images/ex11-5-num4.png" alt="" class="Image">
+					<div class="exercise solvable 11">
+						Given the following machine language program, reassemble it into a Watson assembly language program.  Note that the program is assumed to be stored at the top of memory, beginning in location zero, and the first executable statement occurs on the <span class="Ital">second</span> line of code.
+						<br/>
+						<br/>
+						<img src="images/ex11-5-num4.png" alt="" class="Image">
+					</div>
 					
-			<!--table of stuff
-			<table border="0" cellspacing="0" cellpadding="0" class="Table71">
-			<colgroup><col width="63"/><col width="63"/><col width="63"/><col width="64"/></colgroup><tr class="Table711"><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">0000</p></td><td style="text-align:left;width:0.566in; " class="Table71_A1"><p class="Subfigure">0000</p></td><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">0000</p></td><td style="text-align:left;width:0.5729in; " class="Table71_D1"><p class="Subfigure">1010</p></td></tr><tr class="Table711"><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">0001</p></td><td style="text-align:left;width:0.566in; " class="Table71_A1"><p class="Subfigure">1010</p></td><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">0000</p></td><td style="text-align:left;width:0.5729in; " class="Table71_D1"><p class="Subfigure">0000</p></td></tr><tr class="Table711"><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">1010</p></td><td style="text-align:left;width:0.566in; " class="Table71_A1"><p class="Subfigure">1010</p></td><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">1010</p></td><td style="text-align:left;width:0.5729in; " class="Table71_D1"><p class="Subfigure">0001</p></td></tr><tr class="Table711"><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">0010</p></td><td style="text-align:left;width:0.566in; " class="Table71_A1"><p class="Subfigure">1010</p></td><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">0000</p></td><td style="text-align:left;width:0.5729in; " class="Table71_D1"><p class="Subfigure">0000</p></td></tr><tr class="Table711"><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">1111</p></td><td style="text-align:left;width:0.566in; " class="Table71_A1"><p class="Subfigure">0000</p></td><td style="text-align:left;width:0.5653in; " class="Table71_A1"><p class="Subfigure">0000</p></td><td style="text-align:left;width:0.5729in; " class="Table71_D1"><p class="Subfigure">0000</p></td></tr></table>
-				-->
-				</li>
+					<div class="exerciseDiv 11"></div>
+					
 				<br/>
+				</li>
 				<li>
 					Describe what the program of problem 4 does.  Do so using a single English sentence that even your grandmother could understand.
 				</li>
@@ -140,19 +142,15 @@
 			<script>
 				var pageObj;											// do NOT change name of variable
 				var chapID = "assembly";
-
+				var sectID = "assemblyMachine3";
+				
 				$(document).ready(function() {
 					populateNav();										// populate nav content
 					populateSpans();									// populate figure/content spans
-					pageObj = getArrowPathsByPage("assemblyMachine3");		// get arrow paths
-					
-
+					pageObj = getArrowPathsByPage(sectID);		// get arrow paths
+					setupExerciseButtons(sectID);
 				});	
 				
-			</script>
-			
-			
-			<script>
 			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

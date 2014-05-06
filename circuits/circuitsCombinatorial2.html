@@ -10,29 +10,26 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-    <!-- CSS files -->
-	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
-    <link href = "../lib/css/bootstrap.css" rel = "stylesheet">
-    <link href = "../lib/css/styles.css" rel = "stylesheet">
-    <link href="../lib/css/styles.css" rel="stylesheet">
-    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
-	
-    <!-- Java Script files -->
-    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/kinetic.js"></script>
-		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
+
+	    <!-- CSS files -->
+		<link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
+	    <link href = "../lib/css/styles.css" rel = "stylesheet">
+	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
+		
+	    <!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.js"></script>
+		<script type="text/javascript" src="js/kinetic.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
-
-
+		<link href = "../lib/css/Dialogs.css" rel = "stylesheet">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
 	</head>
 
 	<body>
@@ -159,36 +156,38 @@
 				</li>
 
 				<li>
-					<p class="exercise solvable 11">
+					<div class="exercise solvable 11">
 						Construct a two-bit comparator for less than. Also, provide a truth table and Boolean equation for the circuit. &nbsp;HINT: For two-bit numbers A and B, A is less than B when&nbsp;
+						
+					<p>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (1) the high-order bit of A is less than the high-order bit of B
+					</p>
+
+					<p>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; or &nbsp; &nbsp;
+					</p>
+
+					<p>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (2.1) the high-order bits of A and B are identical
+					</p>
+
+					<p>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and &nbsp;
+					</p>
+
+					<p>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (2.2) the low-order bit of A is less than the low-order bit of B
+					</p>
+
+					<p>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 					</p>
 					
+					</div>
+					
 					<div class="exerciseDiv 11"></div>
+
 				</li>
-
-				<p>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (1) the high-order bit of A is less than the high-order bit of B
-				</p>
-
-				<p>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; or &nbsp; &nbsp;
-				</p>
-
-				<p>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (2.1) the high-order bits of A and B are identical
-				</p>
-
-				<p>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and &nbsp;
-				</p>
-
-				<p>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (2.2) the low-order bit of A is less than the low-order bit of B
-				</p>
-
-				<p>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-				</p>
 
 				<li>
 					<p class="exercise solvable 12">
@@ -221,7 +220,8 @@
 		<!-- Figure js -->
 		<script src="js/visibility.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
-		<script src="js/WatsonDataStore.js"></script>
+		<script src="../lib/js/WatsonDataStore.js"></script>
+		<script src="../lib/js/WatsonDialogs.js"></script>
 		<script src="js/Serializer.js"></script>
 		<script src="js/Controller.js"></script>
 		<script src="js/AndGate.js"></script>

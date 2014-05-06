@@ -26,7 +26,7 @@
 *								in terms of digital circuits.
 ***************************************************************************************/
 
-function Controller(setup, truthTable, draggable, displayMode, exerID) {
+function Controller(setup, truthTable, draggable, displayMode, exerID, container) {
 
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; VARIABLE DECLARATIONS/DEFINITIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -165,7 +165,10 @@ function Controller(setup, truthTable, draggable, displayMode, exerID) {
 	//------------------------------------
 	
 	function compMouseDown(event, comp) {
-		alert(comp.probe());
+		var str = comp.probe();
+		//alert(str);
+		var alert = new Alert();
+		alert.open("Boolean Probe", str, true, (function() { }), document.getElementById(container));
 	}
 	
 	//------------------------------------

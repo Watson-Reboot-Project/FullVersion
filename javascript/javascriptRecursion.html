@@ -10,24 +10,26 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-		<!-- CSS files -->
+	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
-		<link href="../lib/css/bootstrap.css" rel = "stylesheet">
-		<link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
-		<link href="../lib/css/ch08.css" rel = "stylesheet">
-		<link href="../lib/css/styles.css" rel = "stylesheet">
-		<link href="../lib/css/styles.css" rel="stylesheet">
-		<link href="../lib/css/generalmedia.css" rel = "stylesheet">
-		<!-- Java Script files -->
-		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script src="../lib/js/jquery-ui.js"></script>
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
+	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/styles.css" rel = "stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/grid.css" rel = "stylesheet">
+	    <!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/master.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.min.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
-
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -138,7 +140,7 @@
 			&nbsp; </span>document.writeln(“Later...”);
 			</p>
 			-->
-			<div id="fig30Div" class="divness"></div>
+			<div id="JSFigure-30" class="divness"></div>
 
 			<p class="Figure">
 				<span class="figNum beertailrecursive"></span> &nbsp; Beer – the tail recursive version
@@ -268,7 +270,7 @@
 				(3) &nbsp; The “else” block holds the statement: <span class="Subfigure">document.writeln(“We’re out of beer.”);</span>
 			</p>
 
-			<div id="fig32Div" class="divness"></div>
+			<div id="JSFigure-32" class="divness"></div>
 			<p class="Figure">
 				<span class="figNum beerrecursive"></span> &nbsp; Beer – the general recursive version
 			</p>
@@ -427,12 +429,11 @@
 				Exercises for <span class="contentNum javascriptRecursion"></span>
 			</p>
 
-			<ol>
+			<ol id="exerciseList">
 				<li>
 					<p>
 						Show exactly what will be output by the following program, assuming the user enters a value of 3 at the prompt.&nbsp;
 					</p>
-				</li>
 
 				<ul class="Blockcenter">
 					<li>
@@ -483,12 +484,12 @@
 				</ul>
 
 				<br/>
+				</li>
 
 				<li>
 					<p>
 						Show exactly what would be output by the following program.&nbsp;
 					</p>
-				</li>
 
 				<ul class="Blockcenter">
 					<li>
@@ -538,11 +539,14 @@
 				</ul>
 
 				<br/>
+				</li>
 
 				<li>
-					<p>
+					<p class="exercise solvable 13">
 						Rewrite the factorial function of <span class="figNum graphicalcomp"></span> to use iteration rather than recursion.&nbsp;
 					</p>
+					
+					<div class="exerciseDiv 13"></div>
 				</li>
 			</ol>
 
@@ -561,12 +565,21 @@
 			</div> 
 			
 			<div class="blueFooterBar"></div>
-
+			<script src="js/acorn.js"></script>
+			<script src="js/interpreter.js"></script>
+			<script src="js/WatsonDataStore.js"></script>
+			<script src="js/WatsonEditor.js"></script>
+			<script src="js/JSFigures.js"></script>
+			<script src="js/WatsonDialogs.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/editor.css">
+			<link rel="stylesheet" type="text/css" href="../lib/css/Dialogs.css">
+			
 			<!-- Arrow navigation scripts -->
 			<script>
 				var pageObj;
 				// do NOT change name of variable
 				var chapID = "javascript";
+				var sectID = "javascriptRecursion";
 
 				$(document).ready(function() {
 					populateNav();
@@ -575,34 +588,21 @@
 					// populate figure/content spans
 					pageObj = getArrowPathsByPage("javascriptRecursion");
 					// get arrow paths
+					setupExerciseButtons(sectID);
 				});
 
-			</script>
 
-		<script src="js/acorn.js"></script>
-		<script src="js/interpreter.js"></script>
-		<script src="js/editor.js"></script>
-		<script src="js/figures.js"></script>
-		<script>
-			var figure30 = new Figure(30);
-			var figure32 = new Figure(32);
-		</script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		<script>
-			(function(i, s, o, g, r, a, m) {
-				i['GoogleAnalyticsObject'] = r;
-				i[r] = i[r] ||
-				function() {
-					(i[r].q = i[r].q || []).push(arguments)
-				}, i[r].l = 1 * new Date();
-				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-				a.async = 1;
-				a.src = g;
-				m.parentNode.insertBefore(a, m)
-			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+				ga('create', 'UA-50062005-1', 'latech.edu');
+				ga('send', 'pageview');
 
-			ga('create', 'UA-50062005-1', 'latech.edu');
-			ga('send', 'pageview');
+				var figure30 = new Figure(30, "beertailrecursion");
+				var figure32 = new Figure(32, "beerrecursive");
+			
 		</script>
 	</body>
 </html>

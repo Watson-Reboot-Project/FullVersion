@@ -26,6 +26,8 @@
 			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+			<script src="js/visibility.js"></script>
+			<script type="text/javascript" src="js/global.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -461,59 +463,79 @@
 				Exercises for <span class="contentNum graphicsAlgorithms2"></span>
 			</p>
 			
-			<ol>
+			<ol id="exerciseList">
 				<li>
-					<p>
-						Using the “Point”, “Line”, “Circle”, and “Polygon” buttons, together with the mouse and Drawing Window, draw a side view of a simple car. 
-					</p>
+					<div class="exercise solvable 1">
+						<p>
+							Using the “Point”, “Line”, “Circle”, and “Polygon” buttons, together with the mouse and Drawing Window, draw a side view of a simple car. 
+						</p>
+					
+						<p>
+							As you create this image interactively, observe the program code that is automatically being generated.  This code is an actual Watson Graphics Language program that represents your drawing.  When you finish the car, execute the program using the “Run” button and watch Watson redraw the picture.
+						</p>
 				
-					<p>
-						As you create this image interactively, observe the program code that is automatically being generated.  This code is an actual Watson Graphics Language program that represents your drawing.  When you finish the car, execute the program using the “Run” button and watch Watson redraw the picture.
-					</p>
-			
-					<p>
-					You just wrote a program!  Kinda’ neat isn’t it.
-					</p>
+						<p>
+						You just wrote a program!  Kinda’ neat isn’t it.
+						</p>
+					</div>
+					
+					<div class="exerciseDiv 1"></div>
 				</li>
 				
 				<li>
-					<p>
-						In this activity you are to create a program that will draw a simple stick figure.  Instead of drawing the image interactively as you did in Activity One, use the Commands (Assign, Draw, etc.) and Program Code editor to write the program.
-					</p>
-			
-					<p>
-						In order to complete the activity, it is critical that you carefully plan out what the stick figure should look like and how the commands can be used to produce that image.
-					</p>
+					<div class="exercise solvable 2">
+						<p>
+							In this activity you are to create a program that will draw a simple stick figure.  Instead of drawing the image interactively as you did in Activity One, use the Commands (Assign, Draw, etc.) and Program Code editor to write the program.
+						</p>
+				
+						<p>
+							In order to complete the activity, it is critical that you carefully plan out what the stick figure should look like and how the commands can be used to produce that image.
+						</p>
+					</div>
+					
+					<div class="exerciseDiv 2"></div>
 				</li>
 				
 				<li>
-					<p>
-						Write a program (using the Commands and Program Code editor) that will draw a simple house.  As with Activity Two, plan out what the house should look like and how you will create it before you begin entering the actual program code.
-					</p>
-			
-					<p>
-						While this planning step may seem a bit tedious right now, having a good understanding of the problem and knowing how you are going to attack it are important prerequisites for writing computer programs, especially large programs.
-					</p>
+					<div class="exercise solvable 3">
+						<p>
+							Write a program (using the Commands and Program Code editor) that will draw a simple house.  As with Activity Two, plan out what the house should look like and how you will create it before you begin entering the actual program code.
+						</p>
+				
+						<p>
+							While this planning step may seem a bit tedious right now, having a good understanding of the problem and knowing how you are going to attack it are important prerequisites for writing computer programs, especially large programs.
+						</p>
+					</div>
+					
+					<div class="exerciseDiv 3"></div>
 				</li>
 				
 				<li>
-					<p>
-						Write a program (using the Commands and Program Code editor) that will draw a circle and cause it to appear to move horizontally across the Drawing Window.  In reality, this program will draw and erase a series of circles.  It will use a loop in a manner similar to the programs of <span class="figNum growingcircle"></span> and <span class="figNum fallingline"></span>.  You might want to look back at those programs for ideas on how to proceed.
-					</p>
-			
-					<p>
-						Take your time and think about <span class="Ital">what</span> you are being asked to do as well as <span class="Ital">how</span> you can go about accomplishing the task.
-					</p>
+					<div class="exercise solvable 4">
+						<p>
+							Write a program (using the Commands and Program Code editor) that will draw a circle and cause it to appear to move horizontally across the Drawing Window.  In reality, this program will draw and erase a series of circles.  It will use a loop in a manner similar to the programs of <span class="figNum growingcircle"></span> and <span class="figNum fallingline"></span>.  You might want to look back at those programs for ideas on how to proceed.
+						</p>
+				
+						<p>
+							Take your time and think about <span class="Ital">what</span> you are being asked to do as well as <span class="Ital">how</span> you can go about accomplishing the task.
+						</p>
+					</div>
+					
+					<div class="exerciseDiv 4"></div>
 				</li>
 				
 				<li>
-					<p>
-						Write a program (using the Commands and Program Code editor) that will draw a circle in the lower left hand corner of the Drawing Window and cause it to appear to move diagonally from its starting point to the upper right hand corner of the window.  Once the circle reaches the upper right hand corner have it “bounce” off that corner moving diagonally from the upper right corner back down to the lower left hand corner where the circle originated.  This program will be similar to the one created in Activity Four.
-					</p>
-			
-					<p>
-						Remember, plan it out before you code it up!
-					</p>
+					<div class="exercise solvable 5">
+						<p>
+							Write a program (using the Commands and Program Code editor) that will draw a circle in the lower left hand corner of the Drawing Window and cause it to appear to move diagonally from its starting point to the upper right hand corner of the window.  Once the circle reaches the upper right hand corner have it “bounce” off that corner moving diagonally from the upper right corner back down to the lower left hand corner where the circle originated.  This program will be similar to the one created in Activity Four.
+						</p>
+				
+						<p>
+							Remember, plan it out before you code it up!
+						</p>
+					</div>
+					
+					<div class="exerciseDiv 5"></div>
 				</li>
 			</ol>
 			
@@ -540,33 +562,29 @@
 		<script>
 
 			var pageObj;
-			var chapID="graphics";											// do NOT change name of variable
-
-				$(document).ready(function() {
-					populateNav();										// populate nav content
-					populateSpans();									// populate figure/content spans
-					pageObj = getArrowPathsByPage("graphicsAlgorithms2");		// get arrow paths
-					console.log(pageObj.next);
-				});	
-
-		var figure3 = new setup("container3", "drawing_window3", "drawingCanvas3", "run_walk3", "run3", "walk3", "variable_window3", "var_win3", "program_window3", "program_code3", 3);
-		var figure4 = new setup("container4", "drawing_window4", "drawingCanvas4", "run_walk4", "run4", "walk4", "variable_window4", "var_win4", "program_window4", "program_code4", 4);
-		var figure5 = new setup("container5", "drawing_window5", "drawingCanvas5", "run_walk5", "run5", "walk5", "variable_window5", "var_win5", "program_window5", "program_code5", 5);
-		var figure6 = new setup("container6", "drawing_window6", "drawingCanvas6", "run_walk6", "run6", "walk6", "variable_window6", "var_win6", "program_window6", "program_code6", 6);
-
-
-		</script>
-		
-		
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			var chapID = "graphics";											// do NOT change name of variable
+			var sectID = "graphicsAlgorithms2";
 			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
+			$(document).ready(function() {
+				populateNav();										// populate nav content
+				populateSpans();									// populate figure/content spans
+				pageObj = getArrowPathsByPage(sectID);		// get arrow paths
+				setupExerciseButtons(sectID);
+			});	
+
+			var figure3 = new setup("container3", "drawing_window3", "drawingCanvas3", "run_walk3", "run3", "walk3", "variable_window3", "var_win3", "program_window3", "program_code3", 3);
+			var figure4 = new setup("container4", "drawing_window4", "drawingCanvas4", "run_walk4", "run4", "walk4", "variable_window4", "var_win4", "program_window4", "program_code4", 4);
+			var figure5 = new setup("container5", "drawing_window5", "drawingCanvas5", "run_walk5", "run5", "walk5", "variable_window5", "var_win5", "program_window5", "program_code5", 5);
+			var figure6 = new setup("container6", "drawing_window6", "drawingCanvas6", "run_walk6", "run6", "walk6", "variable_window6", "var_win6", "program_window6", "program_code6", 6);
+
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50062005-1', 'latech.edu');
+			ga('send', 'pageview');
+		</script>
 		
 	</body>
 </html>
