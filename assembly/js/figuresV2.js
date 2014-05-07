@@ -299,7 +299,7 @@ var Figure = function(figNum, figureMode) {
 	var conditions = ["EQ", "NE", "LT", "LE", "GT", "GE", "CARRY", "NEG", "ZERO", "OVER"];
 	var labels = [];
 	// The Watson Editor used in this lab
-	var editor1 = new Editor(this.codeID, "assembly", this.figNum, true, true, 1, -1, this.insertBetweenRows, this.editable, false);
+	var editor1 = new Editor(this.codeID, "assembly", this.figNum, true, true, 1, this.insertBetweenRows, this.editable, false);
 	// Used to center Dialog Boxes on the appropriate Figure
 	var editorDiv = document.getElementById(this.codeID);
 	var deleteCell;
@@ -562,12 +562,14 @@ var Figure = function(figNum, figureMode) {
     
     function fDelete(result) {
     	deleteFlag = result;
+    	console.log("Delete Index: "+deleteCell);
+    	console.log("Pre-Deletion memPointer = "+memPointer);
     	if(deleteFlag){
-			if($(this).parent().parent().parent().parent().parent().index() <= memPointer){
+			if(deleteCell < memPointer){
 				memPointer--;
 			}
 			editor1.deleteRow(deleteCell);
-			//console.log("Post-Deletion memPointer = "+memPointer);
+			console.log("Post-Deletion memPointer = "+memPointer);
 			this.edited = true;
 		}
     }
@@ -1484,8 +1486,10 @@ var Figure = function(figNum, figureMode) {
 			if($(this).hasClass("insert")){
 				if($(this).css('cursor', 'pointer')) {
 					if($(this).parent().index() >= memPointer-1){
-						editor1.selectRowByIndex($(this).parent().index())
+						editor1.selectRowByIndex($(this).parent().index(), false);
 						//console.log("Index: "+$(this).parent().index());
+						editor1.clearHighlighting();
+						this.edited = true;
 					}
 				}
 			}
@@ -1494,6 +1498,7 @@ var Figure = function(figNum, figureMode) {
 				//console.log("Pre-Deletion memPointer = "+memPointer);
 				deleteCell = $(this).parent().parent().parent().parent().parent().index();
 				createAlertBox("Delete", "Delete this line?", false, fDelete, editorDiv);
+				clickedCell = $(this);
 			}
 			else{
 				// Woo! We can use this section later! :D
@@ -3227,15 +3232,18 @@ tabsstuff.controller(assemblycontroller,
 	};
 
 	$scope.walk = function() {
-		//console.log("Edited Status: "+self.edited);
-		if(self.edited) {
-			editor1.selectRowByIndex(editor1.getRowCount(),true);
+		console.log("Edited Status: "+this.edited);
+		if(this.edited) {
+			console.log("It's been edited. Need to preprocess.");
+			editor1.selectRowByIndex(editor1.getRowCount()-2,false);
 			var temp = $scope.assembler.preprocessor();
 			if($scope.assembler.complete){
+				console.log("It's a complete program! Running init.");
 				var tem = $scope.assembler.init();
 				hasRan = false;
 				memoryhasran = false;
 				$scope.architecture(true);
+				this.edited = false;
 			} else {
 				//alert to user
 				$interval.cancel(intervalId);
@@ -3251,13 +3259,16 @@ tabsstuff.controller(assemblycontroller,
 			//$scope.memory[counter].set_color(1);
 			$scope.architecture(true);
 			if (hasRan) {
+				console.log("Program has ran. Resetting...")
 				var temp = $scope.assembler.reset();
-				editor1.selectRowByIndex(editor1.getRowCount(),true);
+				//editor1.selectRowByIndex(editor1.getRowCount()-2,false);
 				hasRan = false;
 			} else if ($scope.assembler.stop == false) {
+				console.log("Walking a step.");
 				var temp = $scope.assembler.walk();
 				memColor = true;
 			} else {
+				console.log("Program has finished.");
 				$interval.cancel(intervalId);
 				// console.log("I've stopped!");
 				hasRan = true;
@@ -3273,6 +3284,7 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.run = function() {
 		if (!attemptingToRun) {
+			console.log("Run sequence started");
 			running = true;
 			//$scope.assembler.run();
 			$scope.architecture(true);
@@ -3290,12 +3302,14 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.runButton = function() {
 		if (attemptingToRun) {
+			console.log("Pause Button Pressed");
 			$scope.pause();
 			runText = "Run";
 			walkText = "Walk";
 			$scope.buttons();
 			attemptingToRun = false;
 		} else {
+			console.log("Run Button Pressed");
 			runText = "Pause";
 			walkText = "Reset";
 			$scope.buttons();
@@ -3308,6 +3322,7 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.walkButton = function() {
 		if (!attemptingToRun) {
+			console.log("Walk Button Pressed");
 			var rButton = document.getElementById('runButton');
 			var wButton = document.getElementById('walkButton');
 			rButton.disabled = true;
@@ -3316,6 +3331,7 @@ tabsstuff.controller(assemblycontroller,
 			rButton.disabled = false;
 			wButton.disabled = false;
 		} else {
+			console.log("Reset Button Pressed");
 			$scope.reset();
 			runText = "Run";
 			walkText = "Walk";
