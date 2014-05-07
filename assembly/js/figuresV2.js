@@ -316,7 +316,7 @@ var Figure = function(figNum, figureMode) {
 		memPointer++;
 		this.edited = true;
 		//console.log(".WORD pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	// <label> .BLOCK <const>
@@ -328,7 +328,7 @@ var Figure = function(figNum, figureMode) {
 		memPointer++;
 		this.edited = true;
 		//console.log(".BLOCK pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	// 'empty Label' LOADIMM <reg>, <const>
@@ -340,7 +340,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;const&gt;", type:"literal const2", width:"60px"}]);
 		this.edited = true;
 		//console.log("LOADIMM pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.load = function(){
@@ -351,7 +351,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
 		//console.log("LOAD pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.store = function(){
@@ -362,7 +362,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
 		//console.log("STORE pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.loadIND = function(){
@@ -373,7 +373,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("LOADIND pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.storeIND = function(){
@@ -384,7 +384,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("STOREIND pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.add = function(){
@@ -396,7 +396,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("ADD pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.subtract = function(){
@@ -408,7 +408,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("SUBTRACT pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.and = function(){
@@ -420,7 +420,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("AND pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.or = function(){
@@ -432,7 +432,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("OR pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.not = function(){
@@ -443,7 +443,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("NOT pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.asl = function(){
@@ -455,7 +455,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;bits&gt;", type:"literal bits", width:"60px"}]);
 		this.edited = true;
 		//console.log("ASL pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.asr = function(){
@@ -467,7 +467,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;bits&gt;", type:"literal bits", width:"50px"}]);
 		this.edited = true;
 		//console.log("ASL pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.compare = function(){
@@ -478,7 +478,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("COMPARE pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.branch = function(){
@@ -489,7 +489,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", width:"60px"}]);
 		this.edited = true;
 		//console.log("BRANCH pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.jump = function(){
@@ -499,7 +499,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
 		//console.log("JUMP pressed for "+this.figNum);
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.halt = function(){
@@ -507,7 +507,7 @@ var Figure = function(figNum, figureMode) {
 				[{text:"&nbsp;", type:"label1", width:"60px"},
 				{text:"HALT", type:"keyword", width:"74px"}]);
 		this.edited = true;
-		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	/* Selector for the available <label>'s */
@@ -3316,7 +3316,7 @@ tabsstuff.controller(assemblycontroller,
 			attemptingToRun = true;
 		}
 		
-		//ga('send', 'event', 'assembly', 'run', self.uniqID);
+		ga('send', 'event', 'assembly', 'run', self.uniqID);
 	};
 
 	$scope.walkButton = function() {
@@ -3340,7 +3340,7 @@ tabsstuff.controller(assemblycontroller,
 		
 		
 		
-		//ga('send', 'event', 'assembly', 'walk', self.uniqID);
+		ga('send', 'event', 'assembly', 'walk', self.uniqID);
 	};
 
 	});
