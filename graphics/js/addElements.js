@@ -15,7 +15,7 @@ function AddElements(figNum, height) {
     //Find the container element
     var container = document.getElementById("graphicsLab" + figNum);
     //container.className = "col-md-6";
-    container.style.width = "100%";
+    container.style.width = "70%";
     container.style.paddingLeft = "25%";
 
     //Drawing window <div>
@@ -31,7 +31,8 @@ function AddElements(figNum, height) {
     //Program window <div>
     var programWindowDiv = document.createElement('div');
     programWindowDiv.id = "program_window" + figNum;
-    programWindowDiv.style.width = "95%";
+    if(figNum < 0) programWindowDiv.style.width = "95%";
+    else programWindowDiv.style.width = "120%";
     programWindowDiv.style.height = height + "px";
     programWindowDiv.style.cssFloat = "left";
 
@@ -47,7 +48,7 @@ function AddElements(figNum, height) {
     run_walkDiv.id = "run_walk" + figNum;
     run_walkDiv.style.width = "220px";
     if(figNum < 0) run_walkDiv.style.left = "55%";
-    else run_walkDiv.style.left = "40%";
+    else run_walkDiv.style.left = "30%";
     run_walkDiv.className = "btn-group";
 
     //<p> for variable value title
@@ -72,7 +73,7 @@ function AddElements(figNum, height) {
     vvDivHolder.appendChild(varValueDiv);
     vvDivHolder.style.display = "none";
     if(figNum < 0) vvDivHolder.style.width = "108%";
-    else vvDivHolder.style.width = "95%";
+    else vvDivHolder.style.width = "120%";
     vvDivHolder.style.cssFloat = "left";
 
     //<div> for buttons on right
