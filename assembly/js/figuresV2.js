@@ -1486,9 +1486,10 @@ var Figure = function(figNum, figureMode) {
 			if($(this).hasClass("insert")){
 				if($(this).css('cursor', 'pointer')) {
 					if($(this).parent().index() >= memPointer-1){
-						editor1.selectRowByIndex($(this).parent().index())
+						editor1.selectRowByIndex($(this).parent().index(), false);
 						//console.log("Index: "+$(this).parent().index());
 						editor1.clearHighlighting();
+						this.edited = true;
 					}
 				}
 			}
@@ -3234,7 +3235,7 @@ tabsstuff.controller(assemblycontroller,
 		console.log("Edited Status: "+this.edited);
 		if(this.edited) {
 			console.log("It's been edited. Need to preprocess.");
-			editor1.selectRowByIndex(editor1.getRowCount(),true);
+			editor1.selectRowByIndex(editor1.getRowCount()-2,false);
 			var temp = $scope.assembler.preprocessor();
 			if($scope.assembler.complete){
 				console.log("It's a complete program! Running init.");
@@ -3260,7 +3261,7 @@ tabsstuff.controller(assemblycontroller,
 			if (hasRan) {
 				console.log("Program has ran. Resetting...")
 				var temp = $scope.assembler.reset();
-				editor1.selectRowByIndex(editor1.getRowCount(),true);
+				//editor1.selectRowByIndex(editor1.getRowCount()-2,false);
 				hasRan = false;
 			} else if ($scope.assembler.stop == false) {
 				console.log("Walking a step.");
