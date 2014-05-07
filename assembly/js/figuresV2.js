@@ -299,7 +299,7 @@ var Figure = function(figNum, figureMode) {
 	var conditions = ["EQ", "NE", "LT", "LE", "GT", "GE", "CARRY", "NEG", "ZERO", "OVER"];
 	var labels = [];
 	// The Watson Editor used in this lab
-	var editor1 = new Editor(this.codeID, "assembly", this.figNum, true, true, 1, -1, this.insertBetweenRows, this.editable, false);
+	var editor1 = new Editor(this.codeID, "assembly", this.figNum, true, true, 1, this.insertBetweenRows, this.editable, false);
 	// Used to center Dialog Boxes on the appropriate Figure
 	var editorDiv = document.getElementById(this.codeID);
 	var deleteCell;
@@ -316,7 +316,7 @@ var Figure = function(figNum, figureMode) {
 		memPointer++;
 		this.edited = true;
 		//console.log(".WORD pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	// <label> .BLOCK <const>
@@ -328,7 +328,7 @@ var Figure = function(figNum, figureMode) {
 		memPointer++;
 		this.edited = true;
 		//console.log(".BLOCK pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	// 'empty Label' LOADIMM <reg>, <const>
@@ -340,7 +340,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;const&gt;", type:"literal const2", width:"60px"}]);
 		this.edited = true;
 		//console.log("LOADIMM pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.load = function(){
@@ -351,7 +351,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
 		//console.log("LOAD pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.store = function(){
@@ -362,7 +362,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
 		//console.log("STORE pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.loadIND = function(){
@@ -373,7 +373,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("LOADIND pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.storeIND = function(){
@@ -384,7 +384,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("STOREIND pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.add = function(){
@@ -396,7 +396,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("ADD pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.subtract = function(){
@@ -408,7 +408,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("SUBTRACT pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.and = function(){
@@ -420,7 +420,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("AND pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.or = function(){
@@ -432,7 +432,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("OR pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.not = function(){
@@ -443,7 +443,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("NOT pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.asl = function(){
@@ -455,7 +455,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;bits&gt;", type:"literal bits", width:"60px"}]);
 		this.edited = true;
 		//console.log("ASL pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.asr = function(){
@@ -467,7 +467,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;bits&gt;", type:"literal bits", width:"50px"}]);
 		this.edited = true;
 		//console.log("ASL pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.compare = function(){
@@ -478,7 +478,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;reg&gt;", type:"reg2", width:"60px"}]);
 		this.edited = true;
 		//console.log("COMPARE pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.branch = function(){
@@ -489,7 +489,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", width:"60px"}]);
 		this.edited = true;
 		//console.log("BRANCH pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.jump = function(){
@@ -499,7 +499,7 @@ var Figure = function(figNum, figureMode) {
 				{text:"&lt;label&gt;", type:"label2", width:"60px"}]);
 		this.edited = true;
 		//console.log("JUMP pressed for "+this.figNum);
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	this.halt = function(){
@@ -507,7 +507,7 @@ var Figure = function(figNum, figureMode) {
 				[{text:"&nbsp;", type:"label1", width:"60px"},
 				{text:"HALT", type:"keyword", width:"74px"}]);
 		this.edited = true;
-		ga('send', 'event', 'assembly', 'edit', self.uniqID);
+		//ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
 	/* Selector for the available <label>'s */
@@ -562,12 +562,14 @@ var Figure = function(figNum, figureMode) {
     
     function fDelete(result) {
     	deleteFlag = result;
+    	console.log("Delete Index: "+deleteCell);
+    	console.log("Pre-Deletion memPointer = "+memPointer);
     	if(deleteFlag){
-			if($(this).parent().parent().parent().parent().parent().index() <= memPointer){
+			if(deleteCell < memPointer){
 				memPointer--;
 			}
 			editor1.deleteRow(deleteCell);
-			//console.log("Post-Deletion memPointer = "+memPointer);
+			console.log("Post-Deletion memPointer = "+memPointer);
 			this.edited = true;
 		}
     }
@@ -1486,6 +1488,7 @@ var Figure = function(figNum, figureMode) {
 					if($(this).parent().index() >= memPointer-1){
 						editor1.selectRowByIndex($(this).parent().index())
 						//console.log("Index: "+$(this).parent().index());
+						editor1.clearHighlighting();
 					}
 				}
 			}
@@ -1494,6 +1497,7 @@ var Figure = function(figNum, figureMode) {
 				//console.log("Pre-Deletion memPointer = "+memPointer);
 				deleteCell = $(this).parent().parent().parent().parent().parent().index();
 				createAlertBox("Delete", "Delete this line?", false, fDelete, editorDiv);
+				clickedCell = $(this);
 			}
 			else{
 				// Woo! We can use this section later! :D
@@ -3227,15 +3231,18 @@ tabsstuff.controller(assemblycontroller,
 	};
 
 	$scope.walk = function() {
-		//console.log("Edited Status: "+self.edited);
-		if(self.edited) {
+		console.log("Edited Status: "+this.edited);
+		if(this.edited) {
+			console.log("It's been edited. Need to preprocess.");
 			editor1.selectRowByIndex(editor1.getRowCount(),true);
 			var temp = $scope.assembler.preprocessor();
 			if($scope.assembler.complete){
+				console.log("It's a complete program! Running init.");
 				var tem = $scope.assembler.init();
 				hasRan = false;
 				memoryhasran = false;
 				$scope.architecture(true);
+				this.edited = false;
 			} else {
 				//alert to user
 				$interval.cancel(intervalId);
@@ -3251,13 +3258,16 @@ tabsstuff.controller(assemblycontroller,
 			//$scope.memory[counter].set_color(1);
 			$scope.architecture(true);
 			if (hasRan) {
+				console.log("Program has ran. Resetting...")
 				var temp = $scope.assembler.reset();
 				editor1.selectRowByIndex(editor1.getRowCount(),true);
 				hasRan = false;
 			} else if ($scope.assembler.stop == false) {
+				console.log("Walking a step.");
 				var temp = $scope.assembler.walk();
 				memColor = true;
 			} else {
+				console.log("Program has finished.");
 				$interval.cancel(intervalId);
 				// console.log("I've stopped!");
 				hasRan = true;
@@ -3273,6 +3283,7 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.run = function() {
 		if (!attemptingToRun) {
+			console.log("Run sequence started");
 			running = true;
 			//$scope.assembler.run();
 			$scope.architecture(true);
@@ -3290,12 +3301,14 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.runButton = function() {
 		if (attemptingToRun) {
+			console.log("Pause Button Pressed");
 			$scope.pause();
 			runText = "Run";
 			walkText = "Walk";
 			$scope.buttons();
 			attemptingToRun = false;
 		} else {
+			console.log("Run Button Pressed");
 			runText = "Pause";
 			walkText = "Reset";
 			$scope.buttons();
@@ -3303,11 +3316,12 @@ tabsstuff.controller(assemblycontroller,
 			attemptingToRun = true;
 		}
 		
-		ga('send', 'event', 'assembly', 'run', self.uniqID);
+		//ga('send', 'event', 'assembly', 'run', self.uniqID);
 	};
 
 	$scope.walkButton = function() {
 		if (!attemptingToRun) {
+			console.log("Walk Button Pressed");
 			var rButton = document.getElementById('runButton');
 			var wButton = document.getElementById('walkButton');
 			rButton.disabled = true;
@@ -3316,6 +3330,7 @@ tabsstuff.controller(assemblycontroller,
 			rButton.disabled = false;
 			wButton.disabled = false;
 		} else {
+			console.log("Reset Button Pressed");
 			$scope.reset();
 			runText = "Run";
 			walkText = "Walk";
@@ -3325,7 +3340,7 @@ tabsstuff.controller(assemblycontroller,
 		
 		
 		
-		ga('send', 'event', 'assembly', 'walk', self.uniqID);
+		//ga('send', 'event', 'assembly', 'walk', self.uniqID);
 	};
 
 	});
