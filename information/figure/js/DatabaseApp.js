@@ -36,11 +36,9 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
 
         // figure out where the data is coming from
         if (sessionStorage.importing != undefined && JSON.parse(sessionStorage.place).figure == div_id) {
-          console.log('importing!');
           $scope.importing = true;
           statements = JSON.parse(sessionStorage.importing);
         } else {
-          console.log('not importing!');
           $scope.importing = false;
           statements = statementService[div_id];
         }
@@ -50,7 +48,6 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
         // semi-hack: bringing in exercise information through the
         // statementService; relies on exercises being named such
         if (/exercise/.test(div_id)) {
-          console.log('exercise!');
           if ($scope.importing) {
             holding = statementService[div_id][0];
           } else {
@@ -78,7 +75,6 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
         sessionStorage.exploring = JSON.stringify(statements);
         sessionStorage.place = JSON.stringify({figure: fig_id, page: page_id});
 
-        console.log(question);
         if (question != undefined) {
           sessionStorage.question = question;
         }

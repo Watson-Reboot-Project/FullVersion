@@ -21627,6 +21627,403 @@ define('relations',[],function() {
 });
 // vim: fdm=marker
 ;
+define('statements',['angular'], function(angular) {
+  var app = angular.module('DatabaseApp', ['ui.bootstrap'])
+
+  app.service('statementService', function () {
+    var self = this;
+
+    self.select1 = [ // {{{
+      {
+        action: 'select',
+        name: 'Relation1',
+        relation: 'Students',
+        attribute: 'Major',
+        condition: '==',
+        value: 'CS'
+      }
+    ]; // }}}
+
+    self.select_exercise1 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate a relation, based on the Students relation, that '
+          + 'contains entries for all students under age 21.'
+      }
+    ]; // }}}
+
+    self.select_exercise2 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate a relation, based on the Faculty relation, that '
+          + 'contains entries for all faculty members in the Math department.'
+      }
+    ]; // }}}
+
+    self.select_exercise3 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate a relation, based on the Students relation, that '
+          + 'contains entries for all female CS students.'
+      }
+    ]; // }}}
+
+    self.select_exercise4 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate a relation, based on the Students relation, that '
+          + 'contains entries for all male CS math majors who are between the '
+          + 'ages of 19 and 23, inclusive.'
+      }
+    ]; // }}}
+
+    self.project1 = [ // {{{
+      {
+        action: 'project',
+        name: 'Relation1',
+        relation: 'Faculty',
+        attributes: ['FName', 'Phone']
+      }
+    ]; // }}}
+
+    self.project2 = [ // {{{
+      {
+        action: 'project',
+        name: 'Relation1',
+        relation: 'Courses',
+        attributes: ['Course', 'Credits']
+      }
+    ]; // }}}
+
+    self.project_exercise1 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate a list of the names of all students enrolled in '
+          + 'the university.'
+      }
+    ]; // }}}
+
+    self.project_exercise2 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate a list of the names of all courses taught at the '
+          + 'university.'
+      }
+    ]; // }}}
+
+    self.project_exercise3 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate a list of the names of all faculty employed by '
+          + 'the university.'
+      }
+    ]; // }}}
+
+    self.join1 = [ // {{{
+      {
+        action: 'join',
+        name: 'Relation1',
+        relation1: 'Faculty',
+        relation2: 'Courses',
+        attribute: 'FName'
+      }
+    ]; // }}}
+
+    self.select_project1 = [ // {{{
+      {
+        action: 'select',
+        name: 'CS_Majors',
+        relation: 'Students',
+        attribute: 'Major',
+        condition: '==',
+        value: 'CS'
+      }, {
+        action: 'project',
+        name: 'Name_of_CS_Majors',
+        relation: 'CS_Majors',
+        attributes: ['SName']
+      }
+    ]; // }}}
+
+    self.select_project2 = [ // {{{
+      {
+        action: 'select',
+        name: 'CS100',
+        relation: 'Courses',
+        attribute: 'Course',
+        condition: '==',
+        value: 'CS 100'
+      }, {
+        action: 'select',
+        name: 'CS100_2012',
+        relation: 'CS100',
+        attribute: 'Year',
+        condition: '==',
+        value: '2012'
+      }, {
+        action: 'select',
+        name: 'CS100_Fall_2012',
+        relation: 'CS100_2012',
+        attribute: 'Quarter',
+        condition: '==',
+        value: 'FALL'
+      }, {
+        action: 'project',
+        name: 'CS100_Fall_2012_Instructors',
+        relation: 'CS100_Fall_2012',
+        attributes: ['FName']
+      }
+    ]; // }}}
+
+    self.select_project_exercise1 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Where is Dr. O’Neal’s office located?'
+      }
+    ]; // }}}
+
+    self.select_project_exercise2 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'What course did Dr. Kurtz teach in fall 2013?'
+      }
+    ]; // }}}
+
+    self.select_project_exercise3 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'What are the names of all male math majors who are between '
+          + 'the ages of 19 and 21, inclusive?'
+      }
+    ]; // }}}
+
+    self.select_project_exercise4 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'What are the names and telephone numbers of faculty in the '
+          + 'math department?'
+      }
+    ]; // }}}
+
+    self.select_project_exercise5 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'List the student numbers (but no other information) of '
+          + 'female CS students.'
+      }
+    ]; // }}}
+
+    self.select_project_exercise6 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'List the salaries of computer science faculty members '
+          + '(but, to protect confidentiality, don’t include any other '
+          + 'information in the table).'
+      }
+    ]; // }}}
+
+    self.all1 = [ // {{{
+      {
+        action: 'join',
+        name: 'Rel1',
+        relation1: 'Faculty',
+        relation2: 'Courses',
+        attribute: 'FName'
+      }, {
+        action: 'select',
+        name: 'Rel2',
+        relation: 'Rel1',
+        attribute: 'Year',
+        condition: '==',
+        value: '2013'
+      }, {
+        action: 'select',
+        name: 'Rel3',
+        relation: 'Rel2',
+        attribute: 'Quarter',
+        condition: '==',
+        value: 'SPRING'
+      }, {
+        action: 'project',
+        name: 'Rel4',
+        relation: 'Rel3',
+        attributes: ['Course', 'SEQ_NO', 'FName', 'Office', 'Phone']
+      }
+    ]; // }}}
+
+    self.all2 = [ // {{{
+      {
+        action: 'select',
+        name: 'R1',
+        relation: 'Courses',
+        attribute: 'FName',
+        condition: '==',
+        value: 'Carpenter J.'
+      }, {
+        action: 'select',
+        name: 'R2',
+        relation: 'R1',
+        attribute: 'Course',
+        condition: '==',
+        value: 'MATH 241'
+      }, {
+        action: 'select',
+        name: 'R3',
+        relation: 'R2',
+        attribute: 'Quarter',
+        condition: '==',
+        value: 'SPRING'
+      }, {
+        action: 'select',
+        name: 'R4',
+        relation: 'R3',
+        attribute: 'Year',
+        condition: '==',
+        value: '2013'
+      }, {
+        action: 'project',
+        name: 'R5',
+        relation: 'R4',
+        attributes: ['SEQ_NO']
+      }, {
+        action: 'join',
+        name: 'R6',
+        relation1: 'R5',
+        relation2: 'Grades',
+        attribute: 'SEQ_NO'
+      }, {
+        action: 'project',
+        name: 'R7',
+        relation: 'R6',
+        attributes: ['ID']
+      }
+    ]; // }}}
+
+    self.all3 = [ // {{{
+      {
+        action: 'select',
+        name: 'R1',
+        relation: 'Courses',
+        attribute: 'FName',
+        condition: '==',
+        value: 'Carpenter J.'
+      }, {
+        action: 'select',
+        name: 'R2',
+        relation: 'R1',
+        attribute: 'Course',
+        condition: '==',
+        value: 'MATH 241'
+      }, {
+        action: 'select',
+        name: 'R3',
+        relation: 'R2',
+        attribute: 'Quarter',
+        condition: '==',
+        value: 'SPRING'
+      }, {
+        action: 'select',
+        name: 'R4',
+        relation: 'R3',
+        attribute: 'Year',
+        condition: '==',
+        value: '2013'
+      }, {
+        action: 'project',
+        name: 'R6',
+        relation: 'R5',
+        attributes: ['SEQ_NO']
+      }, {
+        action: 'join',
+        name: 'R7',
+        relation1: 'R6',
+        relation2: 'Grades',
+        attribute: 'SEQ_NO'
+      }, {
+        action: 'project',
+        name: 'R8',
+        relation: 'R7',
+        attributes: ['ID']
+      }, {
+        action: 'join',
+        name: 'R9',
+        relation1: 'R8',
+        relation2: 'Students',
+        attribute: 'ID'
+      }, {
+        action: 'project',
+        name: 'R10',
+        relation: 'R9',
+        attributes: ['SName', 'ID']
+      }
+    ]; // }}}
+
+    self.all_exercise1 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Produce a listing of the grades given by Dr. O’Neal '
+          + '(“ONeal M. B.”) in all of his courses. The relation you produce '
+          + 'should contain only the student names, their grades, the name of '
+          + 'the course in which they made the grade, and the quarter and '
+          + 'year of offering.'
+      }
+    ]; // }}}
+
+    self.all_exercise2 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Create a relation containing only the name, office '
+          + 'location, and phone number of the instructor who taught the '
+          + 'course with sequence number “100004”.'
+      }
+    ]; // }}}
+
+    self.all_exercise3 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Generate the fall 2012 course schedule for student number '
+          + '“55555510”. The schedule should consist of course names, '
+          + 'sequence numbers, and instructors.'
+      }
+    ]; // }}}
+
+    self.all_exercise4 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Produce an academic transcript for “Walker J.”. The '
+          + 'transcript should consist of the course name, quarter, year, '
+          + 'and grade earned for every course taken by Mr. Walker.'
+      }
+    ]; // }}}
+
+    self.all_exercise5 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'The Chair of the CS program is interested in how well his '
+          + 'students are doing. Generate a table of student names, courses '
+          + 'taken, and grades earned by every CS major in winter 2013.'
+      }
+    ]; // }}}
+
+    self.all_exercise6 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'Produce a list of the names of students who earned one or '
+          + 'more A’s in winter 2013.'
+      }
+    ]; // }}}
+
+    self.all_exercise7 = [ // {{{
+      {
+        action: 'exercise',
+        question: 'What is the SSN of the only professor who gave '
+          + '“Kleinpeter J.” a B in fall 2012?'
+      }
+    ]; // }}}
+  });
+});
+// vim: fdm=marker
+;
 /*
  * angular-ui-bootstrap
  * http://angular-ui.github.io/bootstrap/
@@ -25318,505 +25715,266 @@ define("ui-bootstrap", ["angular"], function(){});
  * @version (2014,04,04)
 }}} */
 
-define('DatabaseApp',['angular', 'relations', 'ui-bootstrap'],
-  function (angular, relations) {
+define('DatabaseApp',['angular', 'relations', 'statements', 'ui-bootstrap'],
+  function (angular, relations_import) {
+    // var app = angular.module('DatabaseApp', ['ui.bootstrap'])
+    var app = angular.module('DatabaseApp')
 
-    // make our app object
-    var app = angular.module('DatabaseApp', ['ui.bootstrap']);
+    app.controller('DatabaseController', function ($scope, statementService, Page) {
+      $scope.relations = {};
+      $scope.history = [];
+      var hist_index = 0;
 
-    // give our app a controller
-    app.controller('DatabaseController', function ($scope) {
-
-      var self = this;
-
-      // initialize our things
-      var init = function () { // {{{
-        // set the first action to be 'default'
-        $scope.action = $scope.Default();
-        // pulled in from database/js/relations.js
-        $scope.relations = relations;
-        // a list to hold the statement history
-        $scope.history = [];
-
-        if (sessionStorage.exploring != undefined) {
-          $scope.exploring = true;
-          var place = JSON.parse(sessionStorage.place);
-          self.page = '../' + place.page;
-          self.figure = place.figure;
-
-          if (sessionStorage[self.figure + '_savepoint'] != undefined) {
-            var statements = JSON.parse(sessionStorage[self.figure + '_savepoint']);
-          } else {
-            var statements = JSON.parse(sessionStorage.exploring);
-          }
-
-          // delete sessionStorage.exploring;
-          delete sessionStorage.importing;
-        } else {
-          $scope.exploring = false;
-          self.figure = 'sandbox';
-          if (sessionStorage.sandbox_savepoint != undefined) {
-            var statements = JSON.parse(sessionStorage.sandbox_savepoint);
-          } else {
-            var statements = [];
-          }
-        }
-
-        for (var i = 0; i < statements.length; i++) { // {{{
-          var stmt = statements[i];
-          switch (stmt.action){
-            case 'select':
-              var action = $scope.Select();
-              action.name = stmt.name;
-              action.relation = $scope.relations[stmt.relation];
-              action.attribute = stmt.attribute;
-              action.condition = stmt.condition;
-              action.value = stmt.value;
-              action.accept();
-              break;
-            case 'project':
-              var action = $scope.Project();
-              action.name = stmt.name;
-              action.relation = $scope.relations[stmt.relation];
-              action.attributes = stmt.attributes;
-              action.accept();
-              break;
-            case 'join':
-              var action = $scope.Join();
-              action.name = stmt.name;
-              action.relation1 = $scope.relations[stmt.relation1];
-              action.relation2 = $scope.relations[stmt.relation2];
-              action.attribute = stmt.attribute;
-              action.accept();
-              break;
-            case 'exercise':
-              // ...nothing?
-              break;
-            default:
-              $scope.error();
-              break;
-          } // }}}
-        }
-
-        if (sessionStorage.question != undefined) {
-          $scope.question = sessionStorage.question;
-        }
-      }; // }}}
-
-      $scope.error = function() { // {{{
+      $scope.error = function () { // {{{
         document.write('<h1>SOMETHING is WRONG.</h1>');
         throw new Error("something went wrong...");
-      }; // }}}
+      } // }}}
 
-      $scope.export_statements = function () { // {{{
-        save('importing');
-        delete sessionStorage[self.figure + '_savepoint'];
-        window.location.href = self.page;
-      }; // }}}
+      // declaring these at app-level, so we can load up in init and still
+      // have them when we go exploring
+      var statements,
+          fig_id,
+          page_id,
+          question;
 
-      var save = function (name) { // {{{
-        var statements = [];
-        for (var i = 0; i < $scope.history.length; i++) {
-          statements.push($scope.history[i].relation.summary);
+      $scope.init = function (div_id) { // {{{
+        $scope.relations = relations_import;
+
+        // figure out where the data is coming from
+        if (sessionStorage.importing != undefined && JSON.parse(sessionStorage.place).figure == div_id) {
+          $scope.importing = true;
+          statements = JSON.parse(sessionStorage.importing);
+        } else {
+          $scope.importing = false;
+          statements = statementService[div_id];
         }
-        sessionStorage[name] = JSON.stringify(statements);
-      }; // }}}
 
-      // supply generic names for our created relations
-      var getNextName = function () { // {{{
-        var counter = 0;
-        getNextName = function () {
-          counter += 1;
-          return 'Relation' + counter;
-        };
-        return getNextName();
-      }; // }}}
+        $scope.explore_text = 'Explore!';
 
-      // supply the possible comparison conditions
-      // needs to be removed
-      $scope.getRelConditions = function () { // {{{
-        return [
-          '<',
-          '<=',
-          '>',
-          '>=',
-          '==',
-          '!='
-        ];
-      }; // }}}
-
-      // supply possible things to compare against
-      $scope.getConditionValues = function (rel, attr) { // {{{
-        if (rel == undefined || rel.head == undefined) {
-          return;
-        }
-        var index = rel.head.indexOf(attr),
-          t = typeof(rel.rows[0][index]),
-          output = [];
-          // if (t == 'string') {
-          // we need to get that column
-          for (var i = 0; i < rel.rows.length; i++) {
-            var item = rel.rows[i][index];
-            if (output.indexOf(item) == -1) {
-              output.push(item);
-            }
-          }
-          return output.sort();
-        // } else if (t == 'number') {
-        //   // need to pull up the ng-numpad thing
-        //   // not even sure if we're still doing that.
-        //   return [];
-        // }
-      }; // }}}
-
-      // insert a statement into the history
-      var hist_insert = function (rel) { // {{{
-        var index = $scope.history.length;
-        $scope.history.push({relation: rel, remove: function () {
-          entry = $scope.history[index];
-
-          for (var i = $scope.history.length - 1; i >= index; i--) {
-            delete $scope.relations[$scope.history[i].relation.name];
-            $scope.history.pop();
-          }
-          if ($scope.history.length === 0) {
-            $scope.relation = null;
+        // semi-hack: bringing in exercise information through the
+        // statementService; relies on exercises being named such
+        if (/exercise/.test(div_id)) {
+          if ($scope.importing) {
+            holding = statementService[div_id][0];
           } else {
-            $scope.relation = $scope.history[$scope.history.length - 1].relation;
+            holding = statements[0];
+            statements = [];
+          }
+          question = holding.question;
+          $scope.explore_text = 'Solve!';
+        }
+
+        delete sessionStorage.exploring;
+        delete sessionStorage.question;
+
+        fig_id = div_id;
+        page_id = Page.value;
+
+        for (var i = 0; i < statements.length; i++){
+          hist_insert(statements[i]);
+          $scope.next();
+        }
+      }; // }}}
+
+      $scope.explore = function () { // {{{
+        // We still need a name for this mapping. 'exploring' works for now, lol
+        sessionStorage.exploring = JSON.stringify(statements);
+        sessionStorage.place = JSON.stringify({figure: fig_id, page: page_id});
+
+        if (question != undefined) {
+          sessionStorage.question = question;
+        }
+
+        window.location.href = 'editor';
+      }; // }}}
+
+      $scope.next = function () { // {{{
+        if (hist_index < $scope.history.length) {
+          item = $scope.history[hist_index];
+          hist_index += 1;
+          // Process the statement!
+          actions[item.stmt.action](item.stmt);
+          item.processed = true;
+          $scope.active = item.stmt.text;
+        } else {
+          hist_index = 0;
+          $scope.active = null;
+          $scope.relation = null;
+          for (var i=0; i < $scope.history.length; i++) {
+            $scope.history[i].processed = false;
+          }
+        }
+      } // }}}
+
+      var hist_insert = function (stmt) { // {{{
+
+        switch (stmt.action){
+          case 'select':
+            stmt.text = stmt.name + ' <- SELECT FROM ' + stmt.relation +
+              ' WHERE ' + stmt.attribute + ' ' + stmt.condition + ' ' +
+              stmt.value + ';';
+            break;
+          case 'project':
+            stmt.text = stmt.name + ' <- PROJECT ' + stmt.attributes.join(', ') +
+              ' FROM ' + stmt.relation + ';';
+            break;
+          case 'join':
+            stmt.text = stmt.name + ' <- JOIN ' + stmt.relation1 + ' AND ' +
+              stmt.relation2 + ' OVER ' + stmt.attribute + ';';
+            break;
+          default:
+            $scope.error();
+            break;
+        }
+        $scope.history.push({stmt: stmt, processed: false});
+      } // }}}
+
+      var actions = {
+        select: function (stmt) { // {{{
+
+          // declare some stuff
+          var rel = $scope.relations[stmt.relation],
+              r_name = stmt.name,
+              index = rel.head.indexOf(stmt.attribute),
+              r_out = {
+                name: r_name,
+                statement: r_name + ' <- SELECT FROM ' + rel.name +
+                    ' WHERE ' + stmt.attribute + ' ' + stmt.condition + ' ' +
+                    stmt.value + ';',
+                head: rel.head.slice(),
+                rows: []
+              };
+
+          // pull out our comparison operator
+          var filter;
+          if (stmt.condition == '<') {
+            filter = function (val1, val2) { return (val1 < val2); }
+          } else if (stmt.condition == '<=') {
+            filter = function (val1, val2) { return (val1 <= val2); }
+          } else if (stmt.condition == '>') {
+            filter = function (val1, val2) { return (val1 > val2); }
+          } else if (stmt.condition == '>=') {
+            filter = function (val1, val2) { return (val1 >= val2); }
+          } else if (stmt.condition == '==') {
+            filter = function (val1, val2) { return (val1 == val2); }
+          } else if (stmt.condition == '!=') {
+            filter = function (val1, val2) { return (val1 != val2); }
           }
 
-          $scope.action = $scope.Default();
-          save(self.figure + '_savepoint');
-        }});
-      }; // }}}
-
-      // return an object to handle a 'select' action
-      $scope.Select = function () { // {{{
-        return new function () { // {{{
-          this.type = 'Select';
-          this.page = 'partial/select.html';
-          this.relation = {name: '[relation]'};
-
-          this.setDefaults = function () {
-            this.attribute = '[attribute]';
-            this.condition = '[condition]';
-            this.value = '[value]';
-          };
-
-          this.setRelation = function (rel) {
-            this.setDefaults();
-            this.relation = rel;
-          };
-
-          this.setAttribute = function (attr) {
-            this.setDefaults();
-            this.attribute = attr;
-          };
-
-          this.setCondition = function (comp) {
-            this.condition = comp;
-          };
-
-          this.setValue = function (val) {
-            this.value = val;
-          }; // }}}
-
-          this.accept = function () { // {{{
-
-            if (this.relation.name === '[relation]' ||
-                this.attribute === '[attribute]' ||
-                this.condition === '[condition]' ||
-                this.value === '[value]') {
-              return;
+          // and filter it across our relation
+          for (var i = 0; i < rel.rows.length; i++) {
+            if (filter(rel.rows[i][index], stmt.value)) {
+              r_out.rows.push(rel.rows[i]);
             }
+          }
 
-            // declare some stuff
-            var rows = this.relation.rows,
-                r_name = (this.name)? this.name : getNextName(),
-                index = this.relation.head.indexOf(this.attribute),
-                r_out = {
-                  name: r_name,
-                  statement: r_name + ' <- SELECT FROM ' + this.relation.name +
-                      ' WHERE ' + this.attribute + ' ' + this.condition + ' ' +
-                      this.value + ';',
-                  summary: {action: 'select', name: r_name, relation:
-                      this.relation.name, attribute: this.attribute, condition:
-                      this.condition, value: this.value},
-                  head: this.relation.head.slice(),
-                  rows: []
-                };
+          // add this nice relation we've made to our list of relations
+          $scope.relations[r_out.name] = r_out;
+          // display it
+          $scope.relation = r_out;
+        }, // }}}
 
-            // pull out our comparison operator
-            var filter;
-            if (this.condition == '<') {
-              filter = function (val1, val2) { return (val1 < val2); };
-            } else if (this.condition == '<=') {
-              filter = function (val1, val2) { return (val1 <= val2); };
-            } else if (this.condition == '>') {
-              filter = function (val1, val2) { return (val1 > val2); };
-            } else if (this.condition == '>=') {
-              filter = function (val1, val2) { return (val1 >= val2); };
-            } else if (this.condition == '==') {
-              filter = function (val1, val2) { return (val1 == val2); };
-            } else if (this.condition == '!=') {
-              filter = function (val1, val2) { return (val1 != val2); };
+        project: function (stmt) { // {{{
+
+          // declare some stuff
+          var rel = $scope.relations[stmt.relation],
+              r_name = stmt.name,
+              indices = [],
+              r_out = {
+                name: r_name,
+                statement: r_name + ' <- PROJECT ' + stmt.attributes.join(', ') +
+                    ' FROM ' + rel.name + ';',
+                head: stmt.attributes,
+                rows: []
+              };
+
+          // grab the indices of the attributes we're projecting
+          for (var i = 0; i < stmt.attributes.length; i++) {
+            indices.push(rel.head.indexOf(stmt.attributes[i]));
+          }
+
+          for (var i = 0; i < rel.rows.length; i++) {
+            var row = [];
+            for (var j = 0; j < indices.length; j++) {
+              row.push(rel.rows[i][indices[j]]);
             }
+            r_out.rows.push(row);
+          }
 
-            // and filter it across our relation
-            for (var i = 0; i < rows.length; i++) {
-              if (filter(rows[i][index], this.value)) {
-                r_out.rows.push(rows[i]);
+          $scope.relations[r_out.name] = r_out;
+          $scope.relation = r_out;
+        }, // }}}
+
+        join: function (stmt) { // {{{
+
+          // a name for our resulting relation
+          var r_name = stmt.name,
+              // our input relations
+              relA = $scope.relations[stmt.relation1],
+              relB = $scope.relations[stmt.relation2],
+              // the indices of the attribute we're joining over
+              indexA = relA.head.indexOf(stmt.attribute),
+              indexB = relB.head.indexOf(stmt.attribute),
+              // a list of duplicated attributes to ignore when merging tuples
+              ignore = [],
+              // the attributes from both input tables
+              both = relA.head.concat(relB.head),
+              // the relation itself
+              r_out = {
+                name: r_name,
+                statement: r_name + ' <- JOIN ' + relA.name + ' AND ' +
+                    relB.name + ' OVER ' + stmt.attribute + ';',
+                head: [],
+                rows: []
               }
-            }
 
-            // add this nice relation we've made to our list of relations
-            $scope.relations[r_out.name] = r_out;
-            // display it
-            $scope.relation = r_out;
-            // add this statement to the history
-            hist_insert(r_out);
-            // and reset the action
-            $scope.action = $scope.Default();
-
-            save(self.figure + '_savepoint')
-          }; // }}}
-
-          this.setDefaults();
-        }();
-      }; // }}}
-
-      // return an object to handle a 'project' action
-      $scope.Project = function () { // {{{
-        return new function () { // {{{
-          this.type = 'Project';
-          this.page = 'partial/project.html';
-          this.relation = {name: '[relation]'};
-          this.dropdown = '[attribute]';
-
-          this.setDefaults = function () {
-            this.attributes = [];
-            this.available = [];
-          };
-
-          this.setRelation = function (rel) {
-            this.setDefaults();
-            this.relation = rel;
-            this.available = rel.head.slice();      // makes a copy
-          };
-
-          this.addAttribute = function (attr) {
-            this.attributes.push(attr);
-            var index = this.available.indexOf(attr);
-            if (index != -1) {
-              this.available.splice(index, 1);
+          // for each attr in 'both', if not in the resultant head, add it
+          for (var i = 0; i < both.length; i++) {
+            if (r_out.head.indexOf(both[i]) == -1) {
+              r_out.head.push(both[i]);
             } else {
-              $scope.error();
+              ignore.push(i);
             }
-          };
+          }
 
-          this.removeAttribute = function (attr) {
-            var index = this.attributes.indexOf(attr);
-            if (index != -1) {
-              this.attributes.splice(index, 1);
-            } else {
-              $scope.error();
-            }
-            this.available.push(attr);
-          }; // }}}
-
-          this.accept = function () { // {{{
-
-            if (this.relation.name === '[relation]' ||
-                this.attributes === []) {
-              return;
-            }
-
-            // declare some stuff
-            var head = this.relation.head,
-                rows = this.relation.rows,
-                r_name = (this.name)? this.name : getNextName(),
-                indices = [],
-                r_out = {
-                  name: r_name,
-                  statement: r_name + ' <- PROJECT ' + this.attributes.join(', ') +
-                      ' FROM ' + this.relation.name + ';',
-                  summary: {action: 'project', name: r_name, relation:
-                      this.relation.name, attributes: this.attributes},
-                  head: this.attributes,
-                  rows: []
-                };
-
-            // grab the indices of the attributes we're projecting
-            for (var i = 0; i < this.attributes.length; i++) {
-              indices.push(head.indexOf(this.attributes[i]));
-            }
-
-            for (var i = 0; i < rows.length; i++) {
-              var row = [];
-              for (var j = 0; j < indices.length; j++) {
-                row.push(rows[i][indices[j]]);
-              }
-              r_out.rows.push(row);
-            }
-
-            $scope.relations[r_out.name] = r_out;
-            $scope.relation = r_out;
-            hist_insert(r_out);
-            $scope.action = $scope.Default();
-            save(self.figure + '_savepoint')
-          }; // }}}
-
-          this.setDefaults();
-        }();
-      }; // }}}
-
-      // return an object to handle a 'join' action
-      $scope.Join = function () { // {{{
-        return new function () { // {{{
-          this.type = 'Join';
-          this.page = 'partial/join.html';
-          this.relation1 = {name: '[relation]'};
-          this.relation2 = {name: '[relation]'};
-          this.attribute = '[attribute]';
-          this.available = [];
-
-          this.getAvailable = function () {
-            if (!this.relation1.head || !this.relation2.head) {
-              return;
-            }
-
-            var list1 = this.relation1.head.slice(),
-                list2 = this.relation2.head.slice(),
-                listOut = [];
-
-            list1.sort();
-            list2.sort();
-
-            while (list1.length !== 0 && list2.length !== 0) {
-              if (list1[0] < list2[0]) {
-                list1.splice(0, 1);
-              } else if (list1[0] > list2[0]) {
-                list2.splice(0, 1);
-              } else {
-                listOut.push(list1[0]);
-                list1.splice(0, 1);
-                list2.splice(0, 1);
-              }
-            }
-
-            this.available = listOut;
-          };
-
-          this.getShared = function () {
-            return this.available;
-          };
-
-          this.setRelation1 = function (rel) {
-            this.attribute = '[attribute]';
-            this.relation1 = rel;
-            this.getAvailable();
-          };
-
-          this.setRelation2 = function (rel) {
-            this.attribute = '[attribute]';
-            this.relation2 = rel;
-            this.getAvailable();
-          };
-
-          this.setAttribute = function (attr) {
-            this.attribute = attr;
-          }; // }}}
-
-          // Fired when Join is active and accept is pressed
-          // joins two tables, and puts the result in $scope.relations
-          this.accept = function () { // {{{
-
-            if (this.relation1.name === '[relation]' ||
-                this.relation2.name === '[relation]' ||
-                this.attribute === '[attribute]') {
-              return;
-            }
-
-            // the attributes from both input tables
-            var both = this.relation1.head.concat(this.relation2.head),
-                // a name for our resulting relation
-                r_name = (this.name)? this.name : getNextName(),
-                // our input relations
-                relA = this.relation1,
-                relB = this.relation2,
-                // the indices of the attribute we're joining over
-                indexA = relA.head.indexOf(this.attribute),
-                indexB = relB.head.indexOf(this.attribute),
-                // a list of duplicated attributes to ignore when merging tuples
-                ignore = [],
-                // the relation itself
-                r_out = {
-                  name: r_name,
-                  statement: r_name + ' <- JOIN ' + this.relation1.name + ' AND ' +
-                      this.relation2.name + ' OVER ' + this.attribute + ';',
-                  summary: {action: 'join', name: r_name, relation1:
-                      this.relation1.name, relation2: this.relation2.name,
-                      attribute: this.attribute},
-                  head: [],
-                  rows: []
-                };
-
-            // for each attr in 'both', if not in the resultant head, add it
-            for (var i = 0; i < both.length; i++) {
-              if (r_out.head.indexOf(both[i]) == -1) {
-                r_out.head.push(both[i]);
-              } else {
-                ignore.push(i);
-              }
-            }
-
-            // for each combination of tuples:
-            for (var i = 0; i < relA.rows.length; i++) {
-              for (var j = 0; j < relB.rows.length; j++) {
-                // if the entries for our attribute-in-question are the same:
-                if (relA.rows[i][indexA] == relB.rows[j][indexB]) {
-                  // join the tuples!
-                  // 'k' keeps track through the individual tuples, 'p' keeps track
-                  // of them together (keeps us in sync w/ 'both')
-                  var p = 0,
-                      row = [];
-                  for (var k = 0; k < relA.rows[i].length; k++, p++) {
-                    if (ignore.indexOf(p) == -1) {
-                      row.push(relA.rows[i][k]);
-                    }
+          // for each combination of tuples:
+          for (var i = 0; i < relA.rows.length; i++) {
+            for (var j = 0; j < relB.rows.length; j++) {
+              // if the entries for our attribute-in-question are the same:
+              if (relA.rows[i][indexA] == relB.rows[j][indexB]) {
+                // join the tuples!
+                // 'k' keeps track through the individual tuples, 'p' keeps track
+                // of them together (keeps us in sync w/ 'both')
+                var p = 0,
+                    row = [];
+                for (var k = 0; k < relA.rows[i].length; k++, p++) {
+                  if (ignore.indexOf(p) == -1) {
+                    row.push(relA.rows[i][k]);
                   }
-                  for (var k = 0; k < relB.rows[j].length; k++, p++) {
-                    if (ignore.indexOf(p) == -1) {
-                      row.push(relB.rows[j][k]);
-                    }
-                  }
-                  r_out.rows.push(row);
                 }
+                for (var k = 0; k < relB.rows[j].length; k++, p++) {
+                  if (ignore.indexOf(p) == -1) {
+                    row.push(relB.rows[j][k]);
+                  }
+                }
+                r_out.rows.push(row)
               }
             }
+          }
 
-            $scope.relation = r_out;
-            $scope.relations[r_out.name] = r_out;
-            hist_insert(r_out);
-            $scope.action = $scope.Default();
-            save(self.figure + '_savepoint')
-          }; // }}}
-        }();
-      }; // }}}
+          $scope.relation = r_out;
+          $scope.relations[r_out.name] = r_out;
+        }, // }}}
 
-      // return an object to placehold for an action
-      $scope.Default = function () { // {{{
-        return new function () {
-          this.type = 'Action';
-          this.page = 'partial/default.html';
-        }();
-      }; // }}}
+        exercise: function (stmt) { // {{{
+          $scope.error();
+          console.log('used the exercise function!');
+        } // }}}
+      }
 
-      init();
     });
   }
 );
-
 /* vim: set fdm=marker : */
 ;
 /*!
@@ -34931,6 +35089,24 @@ return jQuery;
 
 }));
 
+define('load',['jquery'], function(jquery) {
+  return function(name, div_id) {
+    jquery.ajax({ url: name, async: false, success: function (data) {
+      data = $(data).attr('ng-init', 'init(\'' + div_id + '\')');
+      document.getElementById(div_id).innerHTML = data[0].outerHTML;
+    }});
+  };
+});
+
+define('table',['angular', 'relations', 'statements'], function (angular, relations) {
+  var app = angular.module('DatabaseApp')
+  app.controller('TableController', function ($scope) {
+    $scope.init = function (div_id) {
+      $scope.relation = relations[div_id];
+    };
+  });
+});
+
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -36888,26 +37064,60 @@ define("bootstrap", ["jquery"], function(){});
 require.config({
   baseUrl: '.',
   paths: {
-    angular:        '../lib/js/angular',
-    bootstrap:      '../lib/js/bootstrap',
-    jquery:         '../lib/js/jquery',
-    'ui-bootstrap': '../lib/js/ui-bootstrap',
-    relations:      '../common/relations',
-    DatabaseApp:    'js/DatabaseApp',
-    pause:          'js/pause'
+    angular:        'lib/js/angular',
+    bootstrap:      'lib/js/bootstrap',
+    jquery:         'lib/js/jquery',
+    'ui-bootstrap': 'lib/js/ui-bootstrap',
+    relations:      'common/relations',
+    load:           'figure/js/load',
+    DatabaseApp:    'figure/js/DatabaseApp',
+    table:          'figure/js/table',
+    statements:     'figure/js/statements',
+    pause:          'common/pause'
   },
   shim: {
     angular: {exports: 'angular', deps: ['pause']},
     'ui-bootstrap': {deps: ['angular']},
     bootstrap: {deps: ['jquery']}
+  },
+});
+
+window.name = 'NG_DEFER_BOOTSTRAP!';
+
+require(['angular', 'DatabaseApp', 'load', 'table', 'bootstrap'],
+  function(angular, app, load) {
+
+    var figure_page = 'figure/figure.html';
+    var table_page = 'figure/table.html';
+
+    var divs = [
+        {name: 'all1', page: figure_page},
+        {name: 'Grades', page: table_page},
+        {name: 'all2', page: figure_page},
+        {name: 'all3', page: figure_page},
+        {name: 'all_exercise1', page: figure_page},
+        {name: 'all_exercise2', page: figure_page},
+        {name: 'all_exercise3', page: figure_page},
+        {name: 'all_exercise4', page: figure_page},
+        {name: 'all_exercise5', page: figure_page},
+        {name: 'all_exercise6', page: figure_page},
+        {name: 'all_exercise7', page: figure_page},
+    ];
+
+    angular.module('DatabaseApp').service('Page', function () {
+      return {value: 'informationUser2b4.html'};
+    });
+
+    for (var i = 0, item; i < divs.length; i++) {
+      item = divs[i];
+      load(item.page, item.name);
+    }
+
+    angular.element(document).ready(function() {
+      angular.resumeBootstrap(['DatabaseApp']);
+    });
   }
-});
+);
 
-require(['angular', 'DatabaseApp', 'bootstrap'], function(angular, app) {
-  angular.element(document).ready(function() {
-    angular.resumeBootstrap(['DatabaseApp']);
-  });
-});
-
-define("js/main", function(){});
+define("figure/js/2b6_config", function(){});
 
