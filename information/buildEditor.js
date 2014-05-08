@@ -1,5 +1,5 @@
-require.config({
-  baseUrl: '.',
+({
+  baseUrl: 'editor',
   paths: {
     angular:        '../lib/js/angular',
     bootstrap:      '../lib/js/bootstrap',
@@ -12,15 +12,7 @@ require.config({
     angular: {exports: 'angular'},
     'ui-bootstrap': {deps: ['angular']},
     bootstrap: {deps: ['jquery']}
-  }
-});
-
-// if (typeof window == 'undefined') { window = {};}
-
-window.name = 'NG_DEFER_BOOTSTRAP!';
-
-require(['angular', 'DatabaseApp', 'bootstrap'], function(angular, app) {
-  angular.element(document).ready(function() {
-    angular.resumeBootstrap(['DatabaseApp']);
-  });
-});
+  },
+  name: "js/main",
+  out: "editor/js/main.built.js"
+})

@@ -16,6 +16,11 @@ function Run_walk(figNum) {
     var canvas;
     var interpreter;
     var variables;
+
+    //Handles resizing container for variable tracker
+    var withoutTracker = $("#graphicsLab" + figNum).height();
+    var withTracker = $("#graphicsLab" + figNum).height()+120;
+    var trackerVisible = false;
     
     //public functions
     this.walk = walk;
@@ -102,7 +107,9 @@ function Run_walk(figNum) {
                 walk();
             });
             $(".button" + figNum).attr("disabled", false);
-            $("#vvDivHolder" + figNum).slideUp("medium");
+
+            if(trackerVisible) $("#graphicsLab" + figNum).height(withoutTracker);
+            $("#vvDivHolder" + figNum).slideUp("medium", function() { trackerVisible = false });
             changeBtnState(false);
             programRunning = false;
             fresh = true;
@@ -218,9 +225,11 @@ function Run_walk(figNum) {
         }
         if (canShow > 0 && !runMode) {
             vvDiv.innerHTML = html;
-            $("#vvDivHolder" + figNum).slideDown("medium");
+            if(!trackerVisible) $("#graphicsLab" + figNum).height(withTracker);
+            $("#vvDivHolder" + figNum).slideDown("medium", function() { trackerVisible = true; });
         } else {
-            $("#vvDivHolder" + figNum).slideUp("medium");
+            if(trackerVisible) $("#graphicsLab" + figNum).height(withoutTracker);
+            $("#vvDivHolder" + figNum).slideUp("medium", function() { trackerVisible = false; });
         }
     }
 
@@ -237,7 +246,6 @@ function Run_walk(figNum) {
             document.getElementById("eraseButton" + figNum).disabled = state;
             document.getElementById("colorButton" + figNum).disabled = state;
             document.getElementById("loopButton" + figNum).disabled = state;
-            document.getElementById("resetButton" + figNum).disabled = state;
         }
     }
     
