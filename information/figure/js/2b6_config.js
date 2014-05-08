@@ -42,7 +42,7 @@ require(['angular', 'DatabaseApp', 'load', 'table', 'bootstrap'],
     ];
 
     angular.module('DatabaseApp').service('Page', function () {
-      return {value: 'informationUser2b4.html'};
+      return {value: 'informationUser2b6.html'};
     });
 
     for (var i = 0, item; i < divs.length; i++) {
