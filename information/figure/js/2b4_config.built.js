@@ -25744,6 +25744,10 @@ define('DatabaseApp',['angular', 'relations', 'statements', 'ui-bootstrap'],
         if (sessionStorage.importing != undefined && JSON.parse(sessionStorage.place).figure == div_id) {
           $scope.importing = true;
           statements = JSON.parse(sessionStorage.importing);
+          sessionStorage[div_id] = sessionStorage.importing;
+        } else if (sessionStorage[div_id] != undefined) {
+          $scope.importing = true;
+          statements = JSON.parse(sessionStorage[div_id]);
         } else {
           $scope.importing = false;
           statements = statementService[div_id];

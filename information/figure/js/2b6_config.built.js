@@ -25744,6 +25744,10 @@ define('DatabaseApp',['angular', 'relations', 'statements', 'ui-bootstrap'],
         if (sessionStorage.importing != undefined && JSON.parse(sessionStorage.place).figure == div_id) {
           $scope.importing = true;
           statements = JSON.parse(sessionStorage.importing);
+          sessionStorage[div_id] = sessionStorage.importing;
+        } else if (sessionStorage[div_id] != undefined) {
+          $scope.importing = true;
+          statements = JSON.parse(sessionStorage[div_id]);
         } else {
           $scope.importing = false;
           statements = statementService[div_id];
@@ -37105,7 +37109,7 @@ require(['angular', 'DatabaseApp', 'load', 'table', 'bootstrap'],
     ];
 
     angular.module('DatabaseApp').service('Page', function () {
-      return {value: 'informationUser2b4.html'};
+      return {value: 'informationUser2b6.html'};
     });
 
     for (var i = 0, item; i < divs.length; i++) {
