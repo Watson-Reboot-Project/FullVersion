@@ -19,10 +19,11 @@ function setupExerciseButtons(sectID) {
 				while (textContent.charCodeAt(textContent.length - 1) == 9) textContent = textContent.substring(0, textContent.length - 2);
 
 				var id = exercises[i].className.replace("exercise solvable ", "");
-				var exer = "not available";
-				exerciseFigs.push(exer);
+				var exer = new Figure("container-exer" + id, id, "javascript", id);
+				exerciseFigs.push([id, exer]);
+				//console.log(exerciseFigs.length, exer);
 				exerciseFigsText[id] = [ (j + 1), textContent ];
-				$("#container-exer" + id).slideUp();
+				$("#JSFigure-container-exer" + id).slideUp();
 			}
 		}
 	}
@@ -35,8 +36,8 @@ function populateExerciseDivs() {
 	for (var i = 0; i < divs.length; i++) {
 		var exerID = divs[i].className.replace("exerciseDiv ", "");
 		divs[i].innerHTML = '<button id="solve1" class="btn btn-sm btn-primary" onclick="solveButton(' + exerID + ')">Solve</button>\
-								<button id="toggle' + exerID + '" class="btn btn-sm btn-success" onclick="toggleView(\'toggle' + exerID + '\', \'container-exer' + exerID + '\');">View</button> \
-								<div id="container-exer' + exerID + '" class="Centered" style="margin-top:5px;"></div>\
+								<button id="toggle' + exerID + '" class="btn btn-sm btn-success" onclick="toggleView(\'toggle' + exerID + '\', \'JSFigure-container-exer' + exerID + '\');">View</button> \
+								<div id="JSFigure-container-exer' + exerID + '" class="divness" style="margin-top:5px;"></div>\
 								<br><br>';
 	}
 }
@@ -51,6 +52,14 @@ function toggleView(buttonID, divID) {
 
 function solveButton(exerID) {
 	var exercise = exerciseFigsText[exerID];
+	//console.log(exerciseFigs.length, exerID, exerciseFigsText.length);
+	
+	for(var i = 0; i < exerciseFigs.length; i++){
+		if(exerciseFigs[i][0] == exerID){
+			console.log("here19000");
+			exerciseFigs[i][1].saveEditor(true);
+		}
+	}
 	
 	localStorage.setItem("currExerNum", exerID);
 	localStorage.setItem("currExerQues", "<span class='Bolded'>Problem " + section + "." + exercise[0] + "</span><br/><br/>" + exercise[1]);
@@ -60,11 +69,11 @@ function solveButton(exerID) {
 }
 
 visibly.onVisible(function () {
-	refreshDLFigures();
+	refreshJSFigures();
 });
 
-function refreshDLFigures() {
+function refreshJSFigures() {
 	for (var i = 0; i < exerciseFigs.length; i++) {
-		//exerciseFigs[i].retieveUpdates();
+		exerciseFigs[i][1].retrieveUpdates();
 	}
 }

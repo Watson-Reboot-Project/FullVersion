@@ -19,17 +19,17 @@
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/grid.css" rel = "stylesheet">
+		<link rel="stylesheet" type="text/css" href="../lib/css/Dialogs.css">
 	    <!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom"></script>
+		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.min.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/visibility.js"></script>
-		<script type="text/javascript" src="js/global.js"></script>
-		
+
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -768,27 +768,23 @@
 
 			<ol id="exerciseList">
 				<li>
-					<p class="exercise solvable 13">
-						Write a function called <span class="Subfigure">sum</span> that returns the sum of the numbers stored in a 50-element numeric array.&nbsp;
-					</p>
-					
-					<div class="exerciseDiv 13"></div>
-				</li>
-
-				<li>
 					<p class="exercise solvable 14">
-						Modify the program of <span class="figNum watsonstack"></span> so that it can handle stacks up to size 500.&nbsp;
+						Write a function called <span class="Subfigure">sum</span> that returns the sum of the numbers stored in a 50-element numeric array.&nbsp;
 					</p>
 					
 					<div class="exerciseDiv 14"></div>
 				</li>
 
 				<li>
-					<p class="exercise solvable 15">
+					<p>
+						Modify the program of <span class="figNum watsonstack"></span> so that it can handle stacks up to size 500.&nbsp;
+					</p>
+				</li>
+
+				<li>
+					<p>
 						Modify the program of <span class="figNum watsonstack"></span> so that it implements a stack of strings, rather than a stack of numbers.&nbsp;
 					</p>
-					
-					<div class="exerciseDiv 15"></div>
 				</li>
 			</ol>
 
@@ -797,37 +793,45 @@
 			</div> 
 			
 			<div class="blueFooterBar"></div>
+
+			<!-- Arrow navigation scripts -->
+			<script>
+				var pageObj;											// do NOT change name of variable
+				var chapID = "javascript";
+				var sectID = "javascriptArrays";
+				
+				$(document).ready(function() {
+					populateNav();										// populate nav content
+					populateSpans();									// populate figure/content spans
+					pageObj = getArrowPathsByPage("javascriptArrays");		// get arrow paths
+					setupExerciseButtons(sectID);
+				});	
+				
+			</script>
+			
+			
+			<script>
+
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-50062005-1', 'latech.edu');
+			  ga('send', 'pageview');
+
+			</script>
+
 			<script src="js/acorn.js"></script>
 			<script src="js/interpreter.js"></script>
 			<script src="js/WatsonDataStore.js"></script>
 			<script src="js/WatsonEditor.js"></script>
 			<script src="js/JSFigures.js"></script>
 			<script src="js/WatsonDialogs.js"></script>
+			<script type="text/javascript" src="js/global.js"></script>
 			<link rel="stylesheet" type="text/css" href="css/editor.css">
-			<link rel="stylesheet" type="text/css" href="../lib/css/Dialogs.css">
-			
-			<!-- Arrow navigation scripts -->
 		<script>
-			var pageObj;											// do NOT change name of variable
-			var chapID = "javascript";
-			var sectID = "javascriptArrays";
-			
-			$(document).ready(function() {
-				populateNav();										// populate nav content
-				populateSpans();									// populate figure/content spans
-				pageObj = getArrowPathsByPage(sectID);		// get arrow paths
-				setupExerciseButtons(sectID);
-			});	
-
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-50062005-1', 'latech.edu');
-			ga('send', 'pageview');
-
-			var figure38 = new Figure(38, "watsonstack");
+		var figure38 = new Figure(38, "watsonstack");
 		</script>
 	</body>
 </html>

@@ -5,7 +5,15 @@
  * 	This is a modified version of the JavaScript figures to work with
  *	the Watson Editor.
  *************************************************/
-function Figure(figID, uniqueFigID) {
+function Figure(figID, uniqueFigID, chapterName, exerciseNum) {
+	//set defaults for chapterName and exerciseNum, both default to null
+	if(typeof chapterName == 'undefined'){
+		chapterName = null;
+	}
+	if(typeof exerciseNum == 'undefined'){
+		exerciseNum = null;
+	}
+
 	this.updateVariables = updateVariables;
 
 	var figDiv = document.getElementById("JSFigure-" + figID);
@@ -32,7 +40,7 @@ function Figure(figID, uniqueFigID) {
 						</div> ';
 
 	//function Editor(divID, chapterName, exerciseNum, lineNumBool, syntaxHighlightingBool, lineNumStart, insertBetweenRowsBool, editable, autoSave){
-	var editor = new Editor("fig" + figID + "Editor", null, null, true, true, 1, true, false, false);
+	var editor = new Editor("fig" + figID + "Editor", chapterName, exerciseNum, true, true, 1, true, false, false);
 	var interpreter = null;
 	var thisObj = this;
 	var programArray;
@@ -452,6 +460,18 @@ function Figure(figID, uniqueFigID) {
 		addWriteln(36, ['pop()'], 0);
 		showScope = true;
 	}
+	else{
+		if(editor.checkEditorData()){
+			retrieveUpdates();
+		}/*
+		else{
+			//insert standard comments
+			addComment(0, "JavaScript Program");
+			addBlankLine(1);
+			addComment(2, "Main Program");
+		}*/
+	}
+		
 	
 	//;;;;;;;;;;;;; Editor Add Functions ;;;;;;;;;;;;;;;;;;;;;
 	
@@ -962,18 +982,21 @@ function Figure(figID, uniqueFigID) {
 		while (true) {
 			var i;
 			for (i = 0; i < programArray.length; i++) {
-				if (state.start >= programArray[i][0] && state.end <= programArray[i][1]) break;
+				if (state.start >= programArray[i][0] && state.end <= programArray[i][1]){console.log("here1"); break;}
 			}
-			
+			console.log(num, curr, i, count);
 			if (i != curr) {
 				count++;
 				//if (count == num - 1) editor.selectRowByIndex(i);
-				if (count == num) { selectedRow = i; break; }
+				if (count == num) { selectedRow = i; console.log("here2"); break; }
 				curr = i;
 			}
 			
 			interpreter.step();
-			state = interpreter.stateStack[0].node;
+			//if(typeof interpreter.stateStack[0] != 'undefined'){
+				console.log(interpreter.stateStack[0]);
+				state = interpreter.stateStack[0].node;
+			//}
 			
 			if (globCount++ == 20) {
 				console.log("Something went wrong.");
@@ -1333,5 +1356,17 @@ function Figure(figID, uniqueFigID) {
 
 	isString = function (obj) {
 		return toString.call(obj) == '[object String]';
+	}
+	
+	this.retrieveUpdates = retrieveUpdates;
+	function retrieveUpdates(){
+		editor.loadEditor("figJSSandboxEditor", "fig" + figID + "Editor", true);
+	}
+	
+	this.saveEditor = saveEditor;
+	function saveEditor(){
+		console.log("here20000");
+		if(editor.checkEditorData(true))
+			editor.saveEditor(true);
 	}
 }

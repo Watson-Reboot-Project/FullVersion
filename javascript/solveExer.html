@@ -11,16 +11,19 @@
 
 		<!-- Google fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-		<link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
-
 	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
 	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
-	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <!--<link href="../lib/css/ch08.css" rel = "stylesheet">-->
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href="../lib/css/grid.css" rel = "stylesheet">
+	
+		<link type="text/css" rel="stylesheet" href="css/editor.css"/>
+		<link href='css/style.css' rel='stylesheet' type="text/css">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
+		<link rel="stylesheet" href="../lib/css/Dialogs.css">
+		
 	    <!-- Java Script files -->
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
@@ -29,6 +32,15 @@
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		
+		<!--JS sandbox files-->
+		<script type="text/javascript" src="js/WatsonDialogs.js"></script>
+		<script type="text/javascript" src="js/WatsonDataStore.js"></script>
+		<script type="text/javascript" src="js/controller.js"></script>
+		<script type="text/javascript" src="js/JSEditor.js"></script>
+		<script type="text/javascript" src="js/WatsonEditor.js"></script>
+		<script src="js/acorn.js"></script>
+		<script src="js/interpreter.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -44,43 +56,13 @@
 			<div id="Scratch"></div>
 			<hr>
 			<div id="JSSandbox">
-				So... a SQL query goes into a bar, walks up to two tables and asks, "Can I join you?"
-				<br>
-				<br>
-				<br>
-				No?
-				<br>
-				<br>
-				<br>
-				Okay, okay. How about this:
-				<br>
-				<br>
-				<br>
-				<b>“Knock, knock.”</b>
-				<br>
-				<br>
-				“Who’s there?”
-				<br>
-				<br>
-				<b><i>very long pause. . . </b></i>
-				<br>
-				<br>
-				“Java.”
-				<br>
-				<br>
-				<br>
-				<i>Badum tish</i>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				... but seriously, we're still working on this. . . . so leave.
+
 			</div>
 			<!-- End Sandbox -->
 			
 			<div style="text-align: center">
 				<button class="btn btn-small btn-primary" onclick="saveExercise()" style="margin-top: 10px;">Save Exercise</button>
+				<button class="btn btn-small btn-primary" onclick="clearExercise()" style="margin-top: 10px;">Clear Exercise</button>
 			</div>
 			<br>
 			
@@ -111,13 +93,17 @@
 				
 				document.getElementById("Scratch").innerHTML = exerQues;
 				
-				
 				//lab = new DigitalLogicsLab(1, exerNum);
+				lab = new Controller("JSSandbox", "javascript", exerNum);
 				
 			});
 			
 			function saveExercise() {
-				//lab.saveExercise();
+				lab.saveExercise();
+			}
+			
+			function clearExercise() {
+				lab.clearExercise();
 			}
 		</script>
 		

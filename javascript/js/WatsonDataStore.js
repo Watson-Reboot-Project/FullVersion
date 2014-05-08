@@ -14,6 +14,8 @@ function DataStore() {
 	this.loadExerciseData = loadExerciseData;
 	this.checkExerciseData = checkExerciseData;
 	this.submitExercise = submitExercise;
+	this.eraseExerciseData = eraseExerciseData;
+
 	
 	if(typeof(Storage) === "undefined")					// test to see if session storage is available for this platform
 	{
@@ -60,6 +62,13 @@ function DataStore() {
 		var key = "WatsonChapter" + chapter + "Exercise" + exercise;		// Example: WatsonChapter12Exercise3
 		return (localStorage.getItem(key) != null);									// return this key's contents
 	}
+	
+	function eraseExerciseData(chapter, exercise) { 
+        if (store == false) return null; 
+          
+        var key = "WatsonChapter" + chapter + "Exercise" + exercise;
+        localStorage.removeItem(key); 
+    } 
 	
 	/*
 	 * submitExercise()

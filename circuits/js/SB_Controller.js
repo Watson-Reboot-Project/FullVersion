@@ -1321,9 +1321,10 @@ function SB_Controller(setup, truthTable, serializer, containerNum) {
 	//------------------------------------
 	
 	function probe(comp) {
+		var alert = new Alert();
 		var str = comp.probe();
-		if (str !== null) alert(str);
-		else alert("Part of your circuit is not connected to an input!");
+		if (str !== null) alert.open("Boolean Probe", str, true, (function() { }), document.getElementById("sandbox" + containerNum));
+		else alert.open("Boolean Probe", str, true, (function() { }), document.getElementById("sandbox" + containerNum));
 	}
 	
 	//------------------------------------
