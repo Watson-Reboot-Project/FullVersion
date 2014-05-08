@@ -9,13 +9,14 @@
     load:           'figure/js/load',
     DatabaseApp:    'figure/js/DatabaseApp',
     table:          'figure/js/table',
-    statements:     'figure/js/statements'
+    statements:     'figure/js/statements',
+    pause:          'common/pause'
   },
   shim: {
-    angular: {exports: 'angular'},
+    angular: {exports: 'angular', deps: ['pause']},
     'ui-bootstrap': {deps: ['angular']},
     bootstrap: {deps: ['jquery']}
   },
   name: 'figure/js/2b6_config',
-  out: 'figure/js/2b4_config.built.js'
+  out: 'figure/js/2b6_config.built.js'
 })

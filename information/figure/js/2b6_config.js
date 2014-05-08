@@ -9,13 +9,14 @@ require.config({
     load:           'figure/js/load',
     DatabaseApp:    'figure/js/DatabaseApp',
     table:          'figure/js/table',
-    statements:     'figure/js/statements'
+    statements:     'figure/js/statements',
+    pause:          'common/pause'
   },
   shim: {
-    angular: {exports: 'angular'},
+    angular: {exports: 'angular', deps: ['pause']},
     'ui-bootstrap': {deps: ['angular']},
     bootstrap: {deps: ['jquery']}
-  }
+  },
 });
 
 window.name = 'NG_DEFER_BOOTSTRAP!';
@@ -41,7 +42,7 @@ require(['angular', 'DatabaseApp', 'load', 'table', 'bootstrap'],
     ];
 
     angular.module('DatabaseApp').service('Page', function () {
-      return {value: 'informationUser2b4.html'};
+      return {value: 'informationUser2b6.html'};
     });
 
     for (var i = 0, item; i < divs.length; i++) {
