@@ -17,6 +17,12 @@
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 		<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+
+		<!--Graphics Lab css files-->
+		<link rel="stylesheet" href="css/editor.css">
+		<link rel="stylesheet" href="css/generalMedia.css">
+        <link rel="stylesheet" href="css/Dialogs.css">
+		<link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -26,6 +32,14 @@
 			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+
+		<!--Graphics Lab js files-->
+		<script src="js/WatsonDialogs.js"></script>
+		<script src="js/jquery.mobile.custom.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="js/editor.js"></script>
+		<script src="js/WatsonDataStore.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -75,29 +89,7 @@
 			</p>
 			
 			<!-- Figure begins -->
-			<div id="container" style="height:350px;width:530px; margin: auto auto;">
-				<div id="drawing_window" style="width:300px;height:350px;float:right;">
-					
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 10px;"><u>Drawing Window</u></p>
-					<canvas class="clickable" id="drawingCanvas" width="300" height="300" style="background-color:#EEEEEE; border:solid 1px black;"></canvas>
-					
-					<div id="run_walk" style="width:220px;height:25px;float:right;">
-						<button id="run" onclick="" style="width:70px;">Run</button>
-						<button id="walk" onclick="" style="width:70px;">Walk</button>
-					</div>
-				</div>
-				
-				<div id="variable_window" style="height:100px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Variable Window</u></p>
-					<div class="clickable" id="var_win" style="height:128px;width:210px;overflow:auto;font-size:10pt;float:left;"></div>
-				</div>
-				
-				<div id="program_window" style="height:250px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Program Code</u></p>
-					<div class="clickable" id="program_code" style="height:260px;width:210px;float:left;overflow:auto;font-size:10pt;"></div>
-				</div>
-				
-			</div>
+			<div class="row"><div id="graphicsLab0"></div></div>
 			<!-- Figure ends -->
 			<p class="Figure">
 				<span class="figNum centercircle"></span>  A program that draws a circle in the center of the drawing window
@@ -508,29 +500,7 @@
 			</ul>
 			-->
 			
-			<div id="container2" style="height:390px;width:530px; margin:auto auto;">
-				<div id="drawing_window2" style="width:300px;height:350px;float:right;">
-					
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 10px;"><u>Drawing Window</u></p>
-					<canvas class="clickable" id="drawingCanvas2" width="300" height="300" style="background-color:#EEEEEE; border:solid 1px black;"></canvas>
-					
-					<div id="run_walk2" style="width:220px;height:25px;float:right;">
-						<button id="run2" onclick="" style="width:70px;">Run</button>
-						<button id="walk2" onclick="" style="width:70px;">Walk</button>
-					</div>
-				</div>
-				
-				<div id="variable_window2" style="height:100px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Variable Window</u></p>
-					<div class="clickable" id="var_win2" style="height:128px;width:210px;overflow:auto;font-size:10pt;float:left;"></div>
-				</div>
-				
-				<div id="program_window2" style="height:290px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Program Code</u></p>
-					<div class="clickable" id="program_code2" style="height:290px;width:210px;float:left;overflow:auto;font-size:10pt;"></div>
-				</div>
-				
-			</div>
+			<div id="graphicsLab1" class="Centered"></div>
 			<br/>
 
 			<p class="Figure">
@@ -608,10 +578,19 @@
 
 			</div>
 		</div>
-		<script src="js/all.js"></script>
+		
+		<script src="js/addElements.js"></script>
+		<script src="js/canvas.js"></script>
+		<script src="js/variables.js"></script>
+		<script src="js/shapes.js"></script>
+		<script src="js/run_walk.js"></script>
+		<script src="js/interpreter.js"></script>
+		<script src="js/code.js"></script>
+        <script src="js/setup.js"></script>
+
 		<script>
-		var figure1 = new setup("container", "drawing_window", "drawingCanvas", "run_walk", "run", "walk", "variable_window", "var_win", "program_window", "program_code", 1);
-		var figure2 = new setup("container2", "drawing_window2", "drawingCanvas2", "run_walk2", "run2", "walk2", "variable_window2", "var_win2", "program_window2", "program_code2", 2);
+			Setup(0, false, 130);
+			Setup(1, false, 400);
 		</script>
 		
 	</body>

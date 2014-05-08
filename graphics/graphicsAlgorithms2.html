@@ -17,6 +17,12 @@
 	    <link href = "../lib/css/styles.css" rel = "stylesheet">
 	    <link href = "../lib/css/generalmedia.css" rel = "stylesheet">
 			<link href = "../lib/css/colmn_test.css" rel = "stylesheet">
+
+		<!--Graphics Lab css files-->
+		<link rel="stylesheet" href="css/editor.css">
+		<link rel="stylesheet" href="css/generalMedia.css">
+        <link rel="stylesheet" href="css/Dialogs.css">
+		<link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css">
 			
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
@@ -28,6 +34,14 @@
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
 			<script src="js/visibility.js"></script>
 			<script type="text/javascript" src="js/global.js"></script>
+
+		<!--Graphics Lab js files-->
+		<script src="js/WatsonDialogs.js"></script>
+		<script src="js/jquery.mobile.custom.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="js/editor.js"></script>
+		<script src="js/WatsonDataStore.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -105,29 +119,7 @@
 				Notice that it is often necessary to set up the first case, or step, of the problem before entering the loop.  Within the loop, the “generic step” is executed over and over, a total of COUNTER times.  This generic step usually consists of solving the current case of the problem then setting up the next case.  This technique allows a large number of similar operations to be expressed in a clear and concise manner.<span class="Footnote" title="Footnote: One minor drawback of this problem solving approach is that it is slightly inefficient. During the last pass through the loop, the program objects are modified for a “next” case that is never performed. "><a href="#ftn5" id="body_ftn5">[5]</a></span>
 			</p>
 			
-			<div id="container3" style="height:350px;width:530px; margin:auto auto;">
-				<div id="drawing_window3" style="width:300px;height:350px;float:right;">
-					
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 10px;"><u>Drawing Window</u></p>
-					<canvas class="clickable" id="drawingCanvas3" width="300" height="300" style="background-color:#EEEEEE; border:solid 1px black;"></canvas>
-					
-					<div id="run_walk3" style="width:220px;height:25px;float:right;">
-						<button id="run3" onclick="" style="width:70px;">Run</button>
-						<button id="walk3" onclick="" style="width:70px;">Walk</button>
-					</div>
-				</div>
-				
-				<div id="variable_window3" style="height:100px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Variable Window</u></p>
-					<div class="clickable" id="var_win3" style="height:128px;width:210px;overflow:auto;font-size:10pt;float:left;"></div>
-				</div>
-				
-				<div id="program_window3" style="height:250px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Program Code</u></p>
-					<div class="clickable" id="program_code3" style="height:260px;width:210px;float:left;overflow:auto;font-size:10pt;"></div>
-				</div>
-				
-			</div>
+			<div id="graphicsLab2" class="Centered"></div>
 			<p class="Figure">
 				<span class="figNum concentricprogram"></span>  A program to draw a series of 10 concentric circles
 			</p>
@@ -269,29 +261,7 @@
 				In general, variables are needed when you want to represent an object whose value will change, or vary, over time.  An object whose value will not change can be represented by a constant.  Furthermore, in the WGL language, it is necessary to use a variable for any object you want to render, since the draw and erase statements do not accept constants.  
 			</p>
 			<!--Figure begins -->
-			<div id="container4" style="height:350px;width:530px; margin:auto auto;">
-				<div id="drawing_window4" style="width:300px;height:350px;float:right;">
-					
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 10px;"><u>Drawing Window</u></p>
-					<canvas class="clickable" id="drawingCanvas4" width="300" height="300" style="background-color:#EEEEEE; border:solid 1px black;"></canvas>
-					
-					<div id="run_walk4" style="width:220px;height:25px;float:right;">
-						<button id="run4" onclick="" style="width:70px;">Run</button>
-						<button id="walk4" onclick="" style="width:70px;">Walk</button>
-					</div>
-				</div>
-				
-				<div id="variable_window4" style="height:100px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Variable Window</u></p>
-					<div class="clickable" id="var_win4" style="height:128px;width:210px;overflow:auto;font-size:10pt;float:left;"></div>
-				</div>
-				
-				<div id="program_window4" style="height:250px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Program Code</u></p>
-					<div class="clickable" id="program_code4" style="height:200px;width:210px;float:left;overflow:auto;font-size:10pt;"></div>
-				</div>
-				
-			</div>
+			<div id="graphicsLab3" class="Centered"></div>
 			<!--Figure ends -->
 			<p class="Figure">
 				<span class="figNum concentricnop1"></span>  A variation of the program of <span class="figNum concentricprogram"></span> that eliminates <span class="Ital">p1</span>.
@@ -357,29 +327,7 @@
 				</ul>
 			</ul>
 		-->
-			<div id="container5" style="height:350px;width:530px; margin:auto auto;">
-				<div id="drawing_window5" style="width:300px;height:350px;float:right;">
-					
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 10px;"><u>Drawing Window</u></p>
-					<canvas class="clickable" id="drawingCanvas5" width="300" height="300" style="background-color:#EEEEEE; border:solid 1px black;"></canvas>
-					
-					<div id="run_walk5" style="width:220px;height:25px;float:right;">
-						<button id="run5" onclick="" style="width:70px;">Run</button>
-						<button id="walk5" onclick="" style="width:70px;">Walk</button>
-					</div>
-				</div>
-				
-				<div id="variable_window5" style="height:100px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Variable Window</u></p>
-					<div class="clickable" id="var_win5" style="height:128px;width:210px;overflow:auto;font-size:10pt;float:left;"></div>
-				</div>
-				
-				<div id="program_window5" style="height:250px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Program Code</u></p>
-					<div class="clickable" id="program_code5" style="height:200px;width:210px;float:left;overflow:auto;font-size:10pt;"></div>
-				</div>
-				
-			</div>
+			<div id="graphicsLab4" class="Centered"></div>
 			<p class="Figure">
 				<span class="figNum growingcircle"></span>  A program to animate a circle growing larger (10 frames)
 			</p>
@@ -428,29 +376,7 @@
 			<p><span class="T13">        draw (l1)                </span><span class="T2">                draws the final line on the screen</span></p>
 			
 			-->
-			<div id="container6" style="height:350px;width:580px; margin:auto auto;">
-				<div id="drawing_window6" style="width:300px;height:350px;float:right;">
-					
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 10px;"><u>Drawing Window</u></p>
-					<canvas class="clickable" id="drawingCanvas6" width="300" height="300" style="background-color:#EEEEEE; border:solid 1px black;"></canvas>
-					
-					<div id="run_walk6" style="width:220px;height:25px;float:right;">
-						<button id="run6" onclick="" style="width:70px;">Run</button>
-						<button id="walk6" onclick="" style="width:70px;">Walk</button>
-					</div>
-				</div>
-				
-				<div id="variable_window6" style="height:100px;width:210px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Variable Window</u></p>
-					<div class="clickable" id="var_win6" style="height:128px;width:210px;overflow:auto;font-size:10pt;float:left;"></div>
-				</div>
-				
-				<div id="program_window6" style="height:240px;width:250px;float:left;">
-					<p style="font-size:12px;margin-top:0px;margin-bottom:0px;margin-left: 0px;"><u>Program Code</u></p>
-					<div class="clickable" id="program_code6" style="height:200px;width:250px;float:left;overflow:auto;font-size:10pt;"></div>
-				</div>
-				
-			</div>
+			<div id="graphicsLab5" class="Centered"></div>
 			<p class="Figure">
 				<span class="figNum fallingline"></span>  A program to animate a falling blue line (21 frames)
 			</p>
@@ -557,7 +483,15 @@
 
 		<div class="blueFooterBar"></div> <!-- populates the footer -->	
 		
-		<script src="js/all.js"></script>
+		<script src="js/addElements.js"></script>
+		<script src="js/canvas.js"></script>
+		<script src="js/variables.js"></script>
+		<script src="js/shapes.js"></script>
+		<script src="js/run_walk.js"></script>
+		<script src="js/interpreter.js"></script>
+		<script src="js/code.js"></script>
+        <script src="js/setup.js"></script>
+
 		<!-- Arrow navigation scripts -->
 		<script>
 
@@ -572,10 +506,10 @@
 				setupExerciseButtons(sectID);
 			});	
 
-			var figure3 = new setup("container3", "drawing_window3", "drawingCanvas3", "run_walk3", "run3", "walk3", "variable_window3", "var_win3", "program_window3", "program_code3", 3);
-			var figure4 = new setup("container4", "drawing_window4", "drawingCanvas4", "run_walk4", "run4", "walk4", "variable_window4", "var_win4", "program_window4", "program_code4", 4);
-			var figure5 = new setup("container5", "drawing_window5", "drawingCanvas5", "run_walk5", "run5", "walk5", "variable_window5", "var_win5", "program_window5", "program_code5", 5);
-			var figure6 = new setup("container6", "drawing_window6", "drawingCanvas6", "run_walk6", "run6", "walk6", "variable_window6", "var_win6", "program_window6", "program_code6", 6);
+			Setup(2, false, 300);
+			Setup(3, false, 250);
+			Setup(4, false, 310);
+			Setup(5, false, 270);
 
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
