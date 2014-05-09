@@ -19,7 +19,7 @@ function setupExerciseButtons(sectID) {
 				while (textContent.charCodeAt(textContent.length - 1) == 9) textContent = textContent.substring(0, textContent.length - 2);
 
 				var id = exercises[i].className.replace("exercise solvable ", "");
-				var exer = Setup(1*id, 200);
+				var exer = new Setup(1*id, 200);
 				exerciseFigs.push([id, exer]);
 				exerciseFigsText[id] = [ (j + 1), textContent ];
 				$("#graphicsLab" + id).slideUp();
@@ -55,8 +55,8 @@ function solveButton(exerID) {
 	
 	for(var i = 0; i < exerciseFigs.length; i++){
 		if(exerciseFigs[i][0] == exerID){
-			console.log("here19000");
-			exerciseFigs[i][1].saveEditor(true);
+			console.log("Save the editor");
+			//exerciseFigs[i][1].saveEditor(true);
 		}
 	}
 
@@ -73,6 +73,6 @@ visibly.onVisible(function () {
 
 function refreshGLFigures() {
 	for (var i = 0; i < exerciseFigs.length; i++) {
-		exerciseFigs[i][1].retieveUpdates();
+		exerciseFigs[i][1].retrieveUpdates();
 	}
 }

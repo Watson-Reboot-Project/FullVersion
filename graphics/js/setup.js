@@ -7,6 +7,9 @@
 //Sets up new lab.
 //figNum refers to the unique figure number.
 function Setup(figNum, editorHeight) {
+    this.retrieveUpdates = retrieveUpdates;
+    this.saveExercise = saveExercise;
+
     //Initialize all variables
     var code = new Code(figNum); //Initialize code
     var variables = new Variables(figNum); //Initialize variables
@@ -20,6 +23,15 @@ function Setup(figNum, editorHeight) {
     if(figNum < 0) var editor = new Editor("program_code"+figNum, "graphics", Math.abs(figNum), true, true, 1, true, true, true); //Initialize editor
     //Figure mode
     else var editor = new Editor("program_code"+figNum, "graphics", Math.abs(figNum), true, true, 1, true, false, false); //Initialize editor
+
+    function retrieveUpdates() {
+        editor.loadEditor("program_code-" + figNum, "program_code" + figNum, true);
+        interpreter.getVariables();
+    }
+
+    function saveExercise() {
+        editor.saveEditor();
+    }
     
     /* ************Pass Objects to other classes*************** */
     

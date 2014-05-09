@@ -23,7 +23,6 @@ function Code(figNum) {
     this.getIndent = getIndent;
     this.clickFunc = clickFunc;
     this.insertClickFunc = insertClickFunc;
-    this.retrieveUpdates = retrieveUpdates;
     
 
     //Listen for click events on the table
@@ -712,15 +711,12 @@ function Code(figNum) {
         }
         return arr;
     }
+
     
     //get objects
     function getObjects(editorObj, variablesObj) {
         editor = editorObj;
         variables = variablesObj;
-    }
-
-    function retrieveUpdates() {
-        editor.loadEditor("graphicsLab-" + figNum, "graphicsLab" + figNum, true);
     }
 
     //Handles all the figures for the Graphics chapter

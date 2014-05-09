@@ -13,7 +13,6 @@ function AddElements(figNum, height) {
     this.getObjects = getObjects;
     
     //Find the container element
-    console.log(figNum);
     var container = document.getElementById("graphicsLab" + figNum);
     if(figNum >= 0) container.className = "col-md-12 col-sm-12 col-xs-12";
     else container.className = "col-md-8 col-sm-8 col-xs-12 col-md-offset-2 col-sm-offset-1";
