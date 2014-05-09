@@ -7,25 +7,24 @@
 .well{
   opacity:0.9;
   box-shadow: 1px 1px 1px #2C2E30, 2px 2px 2px #2C2E30; 
-  margin: 5% auto 5% auto;
+  margin: auto  auto;
   max-width: 90%;
   overflow: auto;
 }
-@media screen and (max-width: 959px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;margin-top: 10%;}}
+
+@media screen and (max-width: 959px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
 @media screen and (max-width: 776px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
-@media screen and (min-width: 960px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
+@media screen and (max-width: 650px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
 
 #backgroundImage{
   /*background: url(../lib/image/backgroundImage.png) center center fixed;*/
   background: url(image/backgroundImage.png) center center fixed;
   background-size: cover;
-
 }
-
-  
+ 
 #header .title{
-		color: #4E84C4;
-		text-shadow: 1px 1px 1px #2C2E30, 2px 2px 2px #2C2E30; 
+	color: #4E84C4;
+	text-shadow: 1px 1px 1px #2C2E30, 2px 2px 2px #2C2E30; 
     font-size: 90px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -117,10 +116,11 @@ li{
   margin: auto auto;
 }
 
-.push { width:100%; height:3em; position:relative; bottom:0 !important; margin-top: 5%;}
+.push { width:100%; height:.3em; position:relative; bottom:0 !important; margin-top: 5%;}
 @media screen and (max-width: 990px) { .push {  width:100%; height:50px; position:relative; bottom:0 !important; }}
 @media screen and (max-width: 586px) { .push {  width:100%; height:50px; position:relative; bottom:0 !important; }}
 @media screen and (max-width: 400px) { .push {  width:100%; height:50px; position:relative; bottom:0 !important;}}
+@media screen and (min-height: 800px) { .push {  width:100%; height:30px; position:relative; bottom:0 !important;}}
 
 
 .butn {
@@ -143,8 +143,9 @@ li{
 }
 
 .video{
-  margin: 20px;
+  margin: auto auto;
 }
+
 
 iframe{
   border: solid 2px #053d7d;
@@ -157,7 +158,7 @@ iframe{
 @media screen and (max-width: 637px) { iframe {   width:300px; height:169px; }}
 @media screen and (max-width: 485px) { iframe {   width:200px; height:113px; }}
 
-.modal-content > p, h1, h2, h3, h4, h5 {
+.modal-content > p, h1, h2, h3, h4, h5, span {
   margin: 0 0 10px;
   padding-right: 5%;
   padding-left: 5%;
@@ -186,4 +187,8 @@ iframe{
   list-style-type: disc;
   list-style-position: inside;
   margin: 0;
+}
+
+span.button-title{
+  padding: 0;
 }

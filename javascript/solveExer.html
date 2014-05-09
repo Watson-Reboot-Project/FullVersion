@@ -37,6 +37,7 @@
 		<script type="text/javascript" src="js/WatsonDialogs.js"></script>
 		<script type="text/javascript" src="js/WatsonDataStore.js"></script>
 		<script type="text/javascript" src="js/controller.js"></script>
+		<script type="text/javascript" src="js/engine.js"></script>
 		<script type="text/javascript" src="js/JSEditor.js"></script>
 		<script type="text/javascript" src="js/WatsonEditor.js"></script>
 		<script src="js/acorn.js"></script>
@@ -94,16 +95,20 @@
 				document.getElementById("Scratch").innerHTML = exerQues;
 				
 				//lab = new DigitalLogicsLab(1, exerNum);
-				lab = new Controller("JSSandbox", "javascript", exerNum);
+				//lab = new Controller("JSSandbox", "javascript", exerNum);
+				lab = new JSEditor("JSSandbox", "javascript", exerNum);
+				console.log(lab);
 				
 			});
 			
 			function saveExercise() {
-				lab.saveExercise();
+				lab.saveEditor();
 			}
 			
 			function clearExercise() {
-				lab.clearExercise();
+				console.log(lab);
+				lab.clearEditor();
+				lab = new JSEditor("JSSandbox", "javascript", exerNum);
 			}
 		</script>
 		

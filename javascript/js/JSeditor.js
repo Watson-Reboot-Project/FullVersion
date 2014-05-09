@@ -7,9 +7,166 @@
 ************************************************************************************/
 
 function JSEditor(divID, chapterName, exerciseNum) {
+
+/* begin copy from old controller.js*****************/
+	var intervalID;
+	var codeStr;
+	var runMode = false;
+	var varArr = [];
+	var scopeArr = [];
+	var thisObj = this;
+	var lastLine = -1;
+	var firstMove = true;
+	var nextRowInd = 0;
+	var slidDown = false;
+	var editCellID;
+	var shiftDown = false;
+	var showVarBox = true;
+	var showScope = false;
+	var green = "#5CB85C";
+	var greenHover = "#47A447";
+	var orange = "#F0AD4E";
+	var orangeHover = "#F09C28";
+	var red = "#D9534F";
+	var redHover = "#D2322D";
+	//var figDiv = document.getElementById("fig" + sandboxNum + "Div");
+	var figDiv = document.getElementById(divID);
 	
-	var editor = new Editor(divID, chapterName, exerciseNum, true, true, 1, true, true, true);
+	figDiv.innerHTML = '<div id="selector" style="text-align:center"></div> \
+		<h4 id="codeTitle">Code Window</h4> \
+		<div class="codeAndButtons"> \
+			<div id="buttons"> \
+				<div><button id="fig' + divID + 'AddVar"        type="button">Variable</button></div> \
+				<div><button id="fig' + divID + 'AddArr"        type="button" onclick="figure.getEditor().addVariable("array")">Array</button></div> \
+				<div><button id="fig' + divID + 'AddFunc"       type="button" onclick="figure.getEditor().addFunction()">Declare Function</button></div> \
+				<div><button id="fig' + divID + 'Assign"        type="button" onclick="figure.getEditor().addOneLineElement("assignment")">Assign</button></div> \
+				<div><button id="fig' + divID + 'Write"         type="button" onclick="figure.getEditor().addOneLineElement("write")">Write</button></div> \
+				<div><button id="fig' + divID + 'Writeln"       type="button" onclick="figure.getEditor().addOneLineElement("writeln")">Writeln</button></div> \
+				<div><button id="fig' + divID + 'StringPrompt"  type="button" onclick="figure.getEditor().addOneLineElement("stringPrompt")">String Prompt</button></div> \
+				<div><button id="fig' + divID + 'NumericPrompt" type="button" onclick="figure.getEditor().addOneLineElement("numericPrompt")">Numeric Prompt</button></div> \
+				<div><button id="fig' + divID + 'While"         type="button" onclick="figure.getEditor().addWhile()">While</button></div> \
+				<div><button id="fig' + divID + 'AddFor"        type="button" onclick="figure.getEditor().addFor()">For</button></div> \
+				<div><button id="fig' + divID + 'AddIfThen"     type="button" onclick="figure.getEditor().addIfThen()">If...Then</button></div> \
+				<div><button id="fig' + divID + 'AddIfElse"     type="button" onclick="figure.getEditor().addIfElse()">If...Else</button></div> \
+				<div><button id="fig' + divID + 'FuncCall"      type="button" onclick="figure.getEditor().addOneLineElement("functionCall")">Call Function</button></div> \
+				<div><button id="fig' + divID + 'Return"        type="button" onclick="figure.getEditor().addOneLineElement("return")">Return</button></div> \
+			</div> \
+			<div id="fig' + divID + 'Editor" class="programCode"> </div>\
+		</div> \
+		<div id="fig' + divID + 'OutVarBox" class="outterDiv"> \
+		  <h4 id="varTitle">Variables</h4> \
+		  <div id="fig' + divID + 'VarBox" class="varDiv"> \
+			<table id="fig' + divID + 'VarTable" class="normal"></table> \
+		  </div> \
+		</div> \
+		<div class="outterDiv"> \
+			<h4 id="outTitle">Output</h4> \
+			<div id="fig' + divID + 'OutputBox" class="varDiv"> \
+				<table id="fig' + divID + 'OutputTable"></table> \
+			</div> \
+		</div> \
+		<div id="runWalk" align="center"> \
+		  <button id="fig' + divID + 'Run" type="button" style="color:#FFFFFF;background-color:' + green + '">Run</button> \
+		  <button id="fig' + divID + 'Walk" type="button" style="color:#FFFFFF;background-color:' + orange + '">Walk</button> \
+		</div>';
+   
+	//subract 6 for the width of the border of .textArea, if the border ever changes, this will have to change too
+	$('#fig' + divID + 'Editor').height($('#buttons').height() - 6);
+	
+	outputTable = document.getElementById("fig" + divID + "OutputTable");
+	var outputBox = document.getElementById("fig" + divID + "OutputBox");
+	//var outputBox = document.getElementById("fig" + sandboxNum + "OutputBox");
+	var row = outputTable.insertRow(0);
+	var cell = row.insertCell(0);
+	nextRowInd++;
+	varBox = document.getElementById("fig" + divID + "VarBox");
+	varTable = document.getElementById("fig" + divID + "VarTable");
+	
+	var addVarButton = document.getElementById("fig" + divID + "AddVar");
+	var addArrButton = document.getElementById("fig" + divID + "AddArr");
+	var addFuncButton = document.getElementById("fig" + divID + "AddFunc");
+	var assignButton = document.getElementById("fig" + divID + "Assign");
+	var writeButton = document.getElementById("fig" + divID + "Write");
+	var writelnButton = document.getElementById("fig" + divID + "Writeln");
+	var stringPromptButton = document.getElementById("fig" + divID + "StringPrompt");
+	var numericPromptButton = document.getElementById("fig" + divID + "NumericPrompt");
+	var whileButton = document.getElementById("fig" + divID + "While");
+	var forButton = document.getElementById("fig" + divID + "AddFor");
+	var ifThenButton = document.getElementById("fig" + divID + "AddIfThen");
+	var ifElseButton = document.getElementById("fig" + divID + "AddIfElse");
+	var funcCallButton = document.getElementById("fig" + divID + "FuncCall");
+	var returnButton = document.getElementById("fig" + divID + "Return");
+	//var walkButtonObj = document.getElementById("fig" + divID + "Walk");
+	//var runButtonObj = document.getElementById("fig" + divID + "Run");
+	
+	addVarButton.onclick = function () { addVariable("variable"); };
+	addArrButton.onclick = function () { addVariable("array"); };
+	addFuncButton.onclick = function () { addFunction(); };
+	assignButton.onclick = function () { addOneLineElement("assignment"); };
+	writeButton.onclick = function () { addOneLineElement("write"); };
+	writelnButton.onclick = function () { addOneLineElement("writeln"); };
+	stringPromptButton.onclick = function () { addOneLineElement("stringPrompt"); };
+	numericPromptButton.onclick = function () { addOneLineElement("numericPrompt"); };
+	whileButton.onclick = function() { addWhile(); };
+	forButton.onclick = function() { addFor(); };
+	ifThenButton.onclick = function() { addIfThen(); };
+	ifElseButton.onclick = function() { addIfElse(); };
+	funcCallButton.onclick = function () { addOneLineElement("functionCall"); };
+	returnButton.onclick = function () { addOneLineElement("return"); };
+	//walkButtonObj.onclick = function() { walkButton(); }
+	//runButtonObj.onclick = function() { runButton(); }
+	
+	$(document).ready(function() {
+            $("#fig" + divID + "OutVarBox").hide(); 
+	 });
+	 	
+	// Walk button listener
+	$("#fig" + divID + "Walk").click(function() {
+		engine.walkButton();
+	});
+	
+	// Run button listener
+	$("#fig" + divID + "Run").click(function() {
+		$("#fig" + divID + "OutVarBox").slideUp(function() {
+			engine.runButton();
+			slidDown = false;
+		});
+	});
+	
+	$("#fig" + divID + "OutVarBox").slideUp("medium");
+	
+	// Mouse events for buttons
+	$("#fig" + divID + "Run").mousemove(function() {
+		var button = document.getElementById("fig" + divID + "Run");
+		
+		if (button.textContent == "Run") button.style.backgroundColor = greenHover;
+		else button.style.backgroundColor = orangeHover;
+	});
+	
+	$("#fig" + divID + "Run").mouseout(function() {
+		var button = document.getElementById("fig" + divID + "Run");
+		if (button.textContent == "Run") button.style.backgroundColor = green;
+		else button.style.backgroundColor = orange;
+	});
+
+	$("#fig" + divID + "Walk").mousemove(function() {
+		var button = document.getElementById("fig" + divID + "Walk");
+		if (button.textContent == "Walk") button.style.backgroundColor = orangeHover;
+		else button.style.backgroundColor = redHover;
+	});
+	
+	$("#fig" + divID + "Walk").mouseout(function() {
+		var button = document.getElementById("fig" + divID + "Walk");
+		if (button.textContent == "Walk") button.style.backgroundColor = orange;
+		else button.style.backgroundColor = red;
+	});
+	
+/* end copy from old controller.js*****************/
+
+	var editor = new Editor("fig" + divID + "Editor", chapterName, exerciseNum, true, true, 1, true, true, true);
 	editor.loadEditor('figcontainer-exer' + exerciseNum + 'Editor', divID, true);
+	
+	var engine = new Engine(divID, chapterName, exerciseNum, editor);
 	
 	var variableCount = 0;									// keeps count of the amount of variables
 	var funcCount = 0;										// keeps count of number of functions
@@ -120,6 +277,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
 	}
 
 	// all this does is initialize the jQuery UI dialog
+    //Is this even necessary anymore? rtodo
 	$("#selector").dialog({
 			modal: false,
 			autoOpen: false,
@@ -180,9 +338,22 @@ function JSEditor(divID, chapterName, exerciseNum) {
 			//since the editor checks to see if the insert cursor is on the line
 			// we are trying to select, all of the logic we need should be taken
 			// care of in the insertion bar cursor logic
+                                console.log("Selected row: " + selRow);
+                                console.log("insertRowNum: " + insertRowNum);
+//                                if ((insertRowNum <= programStart) && (selRow >= programStart))
+//                                programStart++;
+//                                if ((insertRowNum >= programStart) && (selRow <= programStart))
+//                                programStart--;
 			editor.selectRowByIndex(insertRowNum, true);
+                                console.log("selected row index after move: " + editor.getSelectedRowIndex());
+                                if ((editor.getSelectedRowIndex() < programStart) && (selRow >= programStart))
+                                programStart++;
+                                else if ((selRow < programStart) && (editor.getSelectedRowIndex() >= (programStart - 1)))
+                                programStart--;
             determineInsertionScope(insertRowNum);
             determineVarinx(insertRowNum);
+                                console.log("program start: " + programStart);
+			
 			/*
 			// If all condition is passed move to the specified line
 			if (insertRowNum > selRow) {
@@ -203,7 +374,8 @@ function JSEditor(divID, chapterName, exerciseNum) {
 			/* Weston variables */
 			//innerTablet = codeTable.rows[rowNum].cells[0].children[0];
 			//clickedCell = innerTablet.rows[0].cells[cellNum];
-			clickRow = editor.rowToArrayHtml(rowNum);
+			clickRow = editor.rowToArrayHtml(rowNum);   //Array of html contents of cells in clickrow
+            clickDrow = editor.rowToDOMArray(rowNum);   //Row of DOM objects for the same row as clickRow
 			clickedCell = $(this);
 			clickedCellNum = cellNum;
 			
@@ -235,6 +407,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
 						// to remove the trailing empty row.
 						var isFunction = false;
 						var funcName = "";
+                        var funcScope = 1;
 						// If the row contains the keyword function
 						// Decrease the function count
 						
@@ -243,6 +416,10 @@ function JSEditor(divID, chapterName, exerciseNum) {
 						if (clickRow[0] == "function") {
 							funcCount--;
 							funcName = clickRow[2];
+                            determineScope($(clickDrow[4])); //todo: fix this as well. part of function deletion
+                            funcScope = scope;
+                                console.log(funcScope);
+                                printScopes();
 							isFunction = true;
 						}
 
@@ -310,16 +487,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 								editor.selectRowByIndex(editor.getRowCount()-1, false);
 							}
 							
-							//if there are no more functions, delete "// Functions" and the extra line between the comment and the rest of the program
-							if(funcCount == 0){
-								deleteOneLineElement(rowNum-1);
-								deleteOneLineElement(rowNum-1);
-							}
-							//else, only delete the extra line between functions
-							else{
-								deleteOneLineElement(rowNum);
-							}
-							
 							//remove from function list
 							if(vFuns.indexOf(funcName) >= 0)
 								vFuns.splice(vFuns.indexOf(funcName), 1);
@@ -327,7 +494,29 @@ function JSEditor(divID, chapterName, exerciseNum) {
 								nFuns.splice(nFuns.indexOf(funcName), 1);
 							if(tFuns.indexOf(funcName) >= 0)
 								tFuns.splice(tFuns.indexOf(funcName), 1);
-
+                            for (fcount=0;fcount<scopes.length;fcount++) { //todo: fix this!
+                                if (scopes[fcount].scopenum == funcScope) {
+                                    scopes.splice(fcount,1);
+                                    break;
+                                }
+                            }
+                            if (scopes[0].namesUsed.indexOf(funcName) >= 0)
+                                scopes[0].namesUsed.splice(namesUsed.indexOf(funcName),1);
+                                
+                            //if there are no more functions, delete "// Functions" and the extra line between the comment and the rest of the program
+//							if(funcCount == 0){
+//								deleteOneLineElement(rowNum-1);
+//								deleteOneLineElement(rowNum-1);
+//							}
+                            if (scopes.length == 1) { //todo: fix this as well: should not be using funcCount...
+                                deleteOneLineElement(rowNum-1);
+                                deleteOneLineElement(rowNum-1);
+                            }
+                            //else, only delete the extra line between functions
+                            else{
+                                deleteOneLineElement(rowNum);
+                            }
+                            printScopes();
 							isFunction = false;
 						}
 					}
@@ -344,18 +533,35 @@ function JSEditor(divID, chapterName, exerciseNum) {
 							
 							var varName;
 							var varType;
+                            var arrayName = 0;
 							
 							//if row[0] is var, then this is a global variable
 							if(clickRow[0] == "var"){
+
+//                                console.log($(clickDrow[2]).attr('class'));
+                                determineScope($(clickDrow[4]));
+                                if ($(clickDrow[4]).hasClass('array'))
+                                    arrayName = clickRow[2] + "[]";
 								varName = clickRow[2];
 								varType = clickRow[5];
+                                if ($(clickDrow[4]).hasClass('array'))
+                                    varType = clickRow[11];
+//                                console.log(varName);
 							}
 							//else this is a function variable
 							else{
+                                determineScope($(clickDrow[5]));
+                                if ($(clickDrow[5]).hasClass('array'))
+                                    arrayName = clickRow[2] + "[]";
 								varName = clickRow[3];
 								varType = clickRow[6];
+                                if ($(clickDrow[5]).hasClass('array'))
+                                    varType = clickRow[12];
+//                                console.log(varName);
 							}
 
+                            if (arrayName)
+                                console.log(arrayName);
 							//console.log("\there7 " + varName + " " + (varName !== "ID"));
 							if (varName != "ID" && referenceCheck(varName, rowNum)) {
 								 createAlertBox("Notice", "You must not reference this variable if you want to delete it.", true, null);
@@ -365,20 +571,53 @@ function JSEditor(divID, chapterName, exerciseNum) {
 							//console.log("\there8");
 							// If we are removing a text variable then remove the variable from the text variable list
 							if (varType === "TEXT") {
-									var index = tvars.indexOf(varName);
-									tvars.splice(index, 1);
+//									var index = tvars.indexOf(varName);
+//									tvars.splice(index, 1);
+                                if (arrayName) {
+                                    var index = scopes[scope].tvars.indexOf(arrayName);
+                                    scopes[scope].tvars.splice(index,1);
+                                }
+                                else {
+                                    var index = scopes[scope].tvars.indexOf(varName);
+                                    scopes[scope].tvars.splice(index,1);
+                                }
 							}
 							// If we are removing a numeric variable then remove the variable from the numeric variable list
 							if (varType === "NUMERIC") {
-									var index = nvars.indexOf(varName);
-									nvars.splice(index, 1);
+//									var index = nvars.indexOf(varName);
+//									nvars.splice(index, 1);
+                                if (arrayName) {
+                                    var index = scopes[scope].nvars.indexOf(arrayName);
+                                    scopes[scope].nvars.splice(index,1);
+                                }
+                                else {
+                                    var index = scopes[scope].nvars.indexOf(varName);
+                                    scopes[scope].nvars.splice(index,1);
+                                }
 							}
+                            if (varType === "TYPE") {
+                                console.log(arrayName);
+                                if (arrayName) {
+                                    var index = scopes[scope].unvars.indexOf(arrayName);
+
+                                    scopes[scope].unvars.splice(index,1);
+                                }
+                                else {
+                                    var index = scopes[scope].unvars.indexOf(varName);
+                                    scopes[scope].unvars.splice(index,1);
+                                }
+                            }
 							
 							//remove the variable name from namesUsed and varsNamed
-							varsNamed.splice(varsNamed.indexOf(varName), 1);
-							namesUsed.splice(varsNamed.indexOf(varName), 1);
+//							varsNamed.splice(varsNamed.indexOf(varName), 1);
+							namesUsed.splice(namesUsed.indexOf(varName), 1);
 							
-							variableCount--;
+                            if (scope == 0) {
+                                variableCount--;
+                                console.log(variableCount);
+                            }
+                                printScopes();
+                                varinx--;
 							// Delete the current row
 							//deleteOneLineElement(rowNum);
 							deleteOneLineElement(rowNum);
@@ -411,7 +650,8 @@ function JSEditor(divID, chapterName, exerciseNum) {
 				refreshLineCount();
 				*/
 				//editor.selectRowByIndex(rowNum-1,false);
-				
+                                determineVarinx(editor.getSelectedRowIndex());
+                                determineInsertionScope(editor.getSelectedRowIndex());
 				return;
 			}
 
@@ -751,7 +991,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
 	function canInsertBefore(row){
 		if (row.length <= 0) return false;
 		if (row[0].indexOf("//") >= 0) return false;
-		if (row[0] == 'var') return false;
+		if (row.indexOf('var') >= 0) return false;
 		if (row[0] == 'function') return false;
 		if (row[0] == '&nbsp;')  return false;
 		
@@ -765,7 +1005,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
 	
 	function canInsertAfter(row){
 		if (row.length <= 0) return false;
-		if (row[0] == 'var') return false;
+		if(row[0] == 'var') return false;
 		if (row[0] == 'function') return false;
 		if (row[0] == '&nbsp;')  return false;
 		
@@ -816,7 +1056,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		var innerTable;
 
 		// if there are no variables initialized yet add some stuff
-		if (variableCount == 0) {
+		if (variableCount == 0 && varinx == 3) {
 			editor.addRow(variableCount + 2,
 				[{text:"//&nbsp;", type:"comment"},
 				{text:"Variables", type:"comment"}]);
@@ -829,36 +1069,73 @@ function JSEditor(divID, chapterName, exerciseNum) {
 			programCount += 2;
 		}
 		
-		// if the element is a variable
-		if (element == "variable") {
+        if (insertionScope == 0) {
+            // if the element is a variable
+            if (element == "variable") {
 			//adds "var ID; /*TYPE*/"
-			editor.addRow(varinx,
-				[{text:"var", type:"keyword"},
-				{text:"&nbsp;"},
-                 {text:"ID", type:"vname scope" + insertionScope}, //todo. Add this to everywhere involving variable declarations?
-				{text:";&nbsp;"},
-				{text:"&nbsp;/*", type:"datatype"},
-				{text:"TYPE", type:"datatype vtype scope" + insertionScope},
-				{text:"*/", type:"datatype"}]);
-		}
-		// if its an array
-		else if (element == "array") {
-			//add "var ID = new Array(size); /*TYPE*/"
-			editor.addRow(varinx,
-				[{text:"var", type:"keyword"},
-				{text:"&nbsp;"},
-                 {text:"ID", type:"vname array scope" + insertionScope},
-				{text:"&nbsp;=&nbsp;"},
-				{text:"new&nbsp;", type:"keyword"},
-				{text:"Array"},
-				{text:"(", type:"openParen"},
-                 {text:"SIZE", type:"size"},
-				{text:")", type:"closeParen"},
-				{text:";"},
-				{text:"&nbsp;/*", type:"datatype"},
-				{text:"TYPE", type:"datatype vtype array scope" + insertionScope},
-				{text:"*/", type:"datatype"}]);
-		}
+                editor.addRow(varinx,
+                              [{text:"var", type:"keyword"},
+                               {text:"&nbsp;"},
+                               {text:"ID", type:"vname scope" + insertionScope}, //todo. Add this to everywhere involving variable declarations?
+                               {text:";&nbsp;"},
+                               {text:"&nbsp;/*", type:"datatype"},
+                               {text:"TYPE", type:"datatype vtype scope" + insertionScope},
+                               {text:"*/", type:"datatype"}]);
+            }
+            // if its an array
+            else if (element == "array") {
+                //add "var ID = new Array(size); /*TYPE*/"
+                editor.addRow(varinx,
+                          [{text:"var", type:"keyword"},
+                           {text:"&nbsp;"},
+                           {text:"ID", type:"vname array scope" + insertionScope},
+                           {text:"&nbsp;=&nbsp;"},
+                           {text:"new&nbsp;", type:"keyword"},
+                           {text:"Array"},
+                           {text:"(", type:"openParen"},
+                           {text:"SIZE", type:"size"},
+                           {text:")", type:"closeParen"},
+                           {text:";"},
+                           {text:"&nbsp;/*", type:"datatype"},
+                           {text:"TYPE", type:"datatype vtype array scope" + insertionScope},
+                           {text:"*/", type:"datatype"}]);
+            }
+        }
+        else {
+            console.log("WTF");
+            // if the element is a variable
+            if (element == "variable") {
+                //adds "var ID; /*TYPE*/"
+                editor.addRow(varinx,
+                              [{text:findIndentation(editor.getSelectedRowIndex())},
+                               {text:"var", type:"keyword"},
+                               {text:"&nbsp;"},
+                               {text:"ID", type:"vname scope" + insertionScope}, //todo. Add this to everywhere involving variable declarations?
+                               {text:";&nbsp;"},
+                               {text:"&nbsp;/*", type:"datatype"},
+                               {text:"TYPE", type:"datatype vtype scope" + insertionScope},
+                               {text:"*/", type:"datatype"}]);
+            }
+            // if its an array
+            else if (element == "array") {
+                //add "var ID = new Array(size); /*TYPE*/"
+                editor.addRow(varinx,
+                              [{text:findIndentation(editor.getSelectedRowIndex())},
+                               {text:"var", type:"keyword"},
+                               {text:"&nbsp;"},
+                               {text:"ID", type:"vname array scope" + insertionScope},
+                               {text:"&nbsp;=&nbsp;"},
+                               {text:"new&nbsp;", type:"keyword"},
+                               {text:"Array"},
+                               {text:"(", type:"openParen"},
+                               {text:"SIZE", type:"size"},
+                               {text:")", type:"closeParen"},
+                               {text:";"},
+                               {text:"&nbsp;/*", type:"datatype"},
+                               {text:"TYPE", type:"datatype vtype array scope" + insertionScope},
+                               {text:"*/", type:"datatype"}]);
+            }
+        }
 
 		//selRow++;			// increase the selected row
         if (insertionScope == 0)
@@ -868,9 +1145,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
         varinx++;
 		//toggleEvents();		// toggle events to refresh the newly created row
 		//refreshLineCount();	// refresh the line count
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 
 	// addOneLineElement() is responsible for adding elements that only require one line (excluding variable and array declarations)
@@ -977,9 +1251,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		programCount++;
 		//toggleEvents();									// toggle events to refresh them
 		//refreshLineCount();								// and also refresh line count
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 
 
@@ -1018,9 +1289,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		programCount+=3;
 		//toggleEvents();										// toggle events
 		//refreshLineCount();									// refresh the line count
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 
 	// addIfElse() is very similar to addIfThen() except we add the 'else'
@@ -1072,9 +1340,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		programCount += 6;
 		//toggleEvents();
 		//refreshLineCount();
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 
 	// addWhile() is very similar to adding any other structure
@@ -1111,9 +1376,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		programCount += 3;
 		//toggleEvents();
 		//refreshLineCount();
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 
 	// addFor() adds a for loop to the current selected line just like addWhile()
@@ -1162,18 +1424,20 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		programCount += 3;
 		//toggleEvents();
 		//refreshLineCount();
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 
 	// addFunction() adds a new function declaration before the program start and after the variables declarations
 	function addFunction() {
 		var beginRow;
+        var saveRow = editor.getSelectedRowIndex();
+//        editor.selectRowByIndex((programStart), true);
+        console.log(programStart);
         
 		// if the user hasn't edited the main program OR selected row is less than program start, we begin at the program start line
 		//if (firstMove) {
 		if (editor.getSelectedRowIndex() < programStart) {
+            editor.selectRowByIndex(editor.getRowCount()-1, false);
+            programStart--;
 			beginRow = programStart;
 		} else {
 			beginRow = programStart-1;
@@ -1235,7 +1499,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		}*/
 		
 		//adds "function ID() /*VOID*/"
-        scopes.push(new Scope(scopes.length, ++scopeCount));
+        scopes.push(new Scope(++scopeCount, scopeCount));
 		editor.addRow(beginRow++,
 			[{text:"function", type:"keyword"},
 			{text:"&nbsp;"},
@@ -1263,9 +1527,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		functionList.push("FUNCTION");				// push FUNCTION to the function list
 		//toggleEvents();								// refresh events
 		//refreshLineCount();							// refresh the line count
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 /*
 	// addRow() takes an innerTable, a string of cell values, and a start index and populates the innerTable with these values
@@ -1302,9 +1563,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		// Delete row from the editor
 		editor.deleteRow(rowNum);
 		programCount--;
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
 	}
 
 	// isOneLineElement() checks to see if the row passed is a one line element such as an assignment
@@ -2206,7 +2464,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
 				else {
 					if (row[j].indexOf(";") >= 0) {
 						semi = row[j].indexOf(";");
-						for (var k = 0; k < semi + 1; k++) tempText += row[j].charAt(k);
 						
 						for (var k = 0; k < semi + 1; k++)
 							tempText += row[j].charAt(k);
@@ -2484,7 +2741,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
     
     function clickHandler() {
 //        printScopes(); rtodo
-        determineScope();
+        determineScope(clickedCell);
         console.log($(clickedCell).attr('class'));
         if (clickedCell.hasClass("vname"))
             vnameHandler(); //mostly implemented?
@@ -2527,12 +2784,14 @@ function JSEditor(divID, chapterName, exerciseNum) {
             createSelector("Numeric Parameter Selection", ["Constant", "Variable"], nexprCallback);
     }
     
-    function determineScope() {
+    function determineScope(cell) {
 //        determine the scope of the clicked cell (todo)
 //        console.log("Supposed to determine scope here"); rtodo
-        var j = scopes.length;
+
+        console.log(cell.attr('class'));
+        var j = scopeCount;
         for (i=0;i<j;i++) {
-            if (clickedCell.hasClass(("scope" + i))) {
+            if (cell.hasClass(("scope" + i))) {
                 scope = i;
                 console.log(scope); //rtodo
                 return;
@@ -2541,7 +2800,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
     }
     
     function vnameCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         if (result == null){
             return;
 		}
@@ -2576,22 +2835,22 @@ function JSEditor(divID, chapterName, exerciseNum) {
             }
             clickedCell.text(result);
             if (scopes.length > 1)
-                determineScope();
+                determineScope(clickedCell);
             var tCell = clickedCell;
             while (!(tCell.hasClass("vtype")))
                 tCell = tCell.next();
             if (tCell.hasClass("array")) {
-                if (tCell.text() == 'Text')
+                if (tCell.text() == 'TEXT')
                     scopes[scope].tvars.push(result.concat("[]"));
-                else if (tCell.text() == 'Numeric')
+                else if (tCell.text() == 'NUMERIC')
                     scopes[scope].nvars.push(result.concat("[]"));
                 else
                     scopes[scope].unvars.push(result.concat("[]"));
             }
             else {
-                if (tCell.text() == 'Text')
+                if (tCell.text() == 'TEXT')
                     scopes[scope].tvars.push(result);
-                else if (tCell.text() == 'Numeric')
+                else if (tCell.text() == 'NUMERIC')
                     scopes[scope].nvars.push(result);
                 else
                     scopes[scope].unvars.push(result);
@@ -2600,12 +2859,11 @@ function JSEditor(divID, chapterName, exerciseNum) {
         console.log(scopes[scope].name + ":\n\ttvars: " + scopes[scope].tvars + "\n\tnvars: " + scopes[scope].nvars + "\n\tunvars: " + scopes[scope].unvars);
         console.log("namesUsed: " + namesUsed);
 		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
+		printScopes();
     }
     
     function fnameCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         if (result == null)
             return;
         else if (namesUsed.indexOf(result) >= 0) {
@@ -2643,7 +2901,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
         else {
 //            scopes.push(new Scope(result));
             scopeAlter(scope,result);
-            printScopes();
+//            printScopes();
         }
         clickedCell.text(result);
         var tCell = clickedCell;
@@ -2656,16 +2914,13 @@ function JSEditor(divID, chapterName, exerciseNum) {
         else if (tCell.text() == 'Void')
             vFuns.push(result);
         console.log("FunctionList: " + functionList + "\ntFuns:" + tFuns + "\nnFuns:" + nFuns + "\nvFuns: " + vFuns + "\nNamesUsed: " + namesUsed);
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function vtypeCallback(result) {
         if (result == null)
             return;
         
-        determineScope();
+        determineScope(clickedCell);
         clickedCell.text(result);
 //        console.log(result); rtodo
         
@@ -2701,9 +2956,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
         }
 //        testing log
         console.log(scopes[scope].name + ":\n\ttvars: " + scopes[scope].tvars + "\n\tnvars: " + scopes[scope].nvars + "\n\tunvars: " + scopes[scope].unvars);
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function ftypeCallback(result) {
@@ -2730,10 +2982,8 @@ function JSEditor(divID, chapterName, exerciseNum) {
                 vFuns.push(nCell.text());
             }
         }
+        scopes[scope].namesUsed.push(nCell.text());
         console.log("FunctionList: " + functionList + "\ntFuns:" + tFuns + "\nnFuns:" + nFuns + "\nvFuns: " + vFuns);
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function aIDCallback(result) {
@@ -2777,9 +3027,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
             console.log("problem in aIDCallback");
         }
         console.log($(clickedCell).attr('class')); //rtodo
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
+        
     }
     
     function taIDCallback(result) {
@@ -2798,9 +3046,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
             clickedCell.text(result);
         }
         namesRef.push(result);
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function naIDCallback(result) {
@@ -2831,9 +3076,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
                 x--;
             }
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function varIDCallback(result) {
@@ -2879,13 +3121,11 @@ function JSEditor(divID, chapterName, exerciseNum) {
         }
         console.log($(clickedCell).attr('class')); //rtodo
         
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function fcallCallback(result) {
         printScopes();
-        determineScope();
+        determineScope(clickedCell);
         if (result == null)
             return;
         
@@ -2913,9 +3153,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
                 pCell = pCell.next();
             }
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function nConstantCallback(result) {
@@ -2923,13 +3160,10 @@ function JSEditor(divID, chapterName, exerciseNum) {
             return;
         
         clickedCell.text(result); //todo this probably needs MORE to it
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function indexCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         if (result == null)
             return;
         else if (result == "Constant") {
@@ -2960,13 +3194,10 @@ function JSEditor(divID, chapterName, exerciseNum) {
         else {
             console.log("Error in wexprCallback");
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function texprCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         if (result == null)
             return;
         else if (result == "Constant") {
@@ -2986,9 +3217,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
             editor.addCell(clickedCell, [{text:"&nbsp+&nbsp;"}, {text:"EXPR",type:"expr text scope" + scope}]);
             return;
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function tconstCallback(result) {
@@ -2997,18 +3225,12 @@ function JSEditor(divID, chapterName, exerciseNum) {
         else {
             clickedCell.text('"' + result + '"');
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function tvarCallback(result) {
         if (result == null)
             return;
         clickedCell.text(result);
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function tfunCallback(result) {
@@ -3030,13 +3252,10 @@ function JSEditor(divID, chapterName, exerciseNum) {
                 pCell = pCell.next();
             }
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function nexprCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         if (result == null)
             return;
         else if (result == "Constant") {
@@ -3074,9 +3293,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
             editor.addCell(clickedCell, [{text:"&nbsp;%&nbsp;"}, {text:"EXPR", type:"expr numeric scope" + scope}]);
             return;
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function nvarCallback(result) {
@@ -3090,9 +3306,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
         else {
             clickedCell.text(result);
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function nfunCallback(result) {
@@ -3114,13 +3327,10 @@ function JSEditor(divID, chapterName, exerciseNum) {
                 pCell = pCell.next();
             }
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function bexprCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         if (result == null)
             return;
         else if (result == "EXPR == EXPR") {
@@ -3165,13 +3375,10 @@ function JSEditor(divID, chapterName, exerciseNum) {
             $(clickedCell).addClass("varID");
             editor.addCell(clickedCell, [{text:"&nbsp;<=&nbsp;"}, {text:"EXPR", type:"expr scope " + scope}]);
         }
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function parenCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         console.log(scope);
         var pnum = getpnum(scope);
         console.log(pnum);
@@ -3195,13 +3402,10 @@ function JSEditor(divID, chapterName, exerciseNum) {
                         {text:"*/", type: "datatype"}]
                        );
         scopes[scope].param.push("untyped");
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function pnameCallback(result) {
-        determineScope();
+        determineScope(clickedCell);
         if (result == null){
             return;
 		}
@@ -3227,11 +3431,11 @@ function JSEditor(divID, chapterName, exerciseNum) {
 				createAlertBox("Invalid Character",result+" is invalid!",1,dummy);
 				return;
 			}
-            namesUsed.push(result);
+            scopes[scope].namesUsed.push(result);
             varExists(clickedCell.text(), scope);
             clickedCell.text(result);
             if (scopes.length > 1)
-                determineScope();
+                determineScope(clickedCell);
             var tCell = clickedCell;
             while (!(tCell.hasClass("ptype")))
                 tCell = tCell.next();
@@ -3242,18 +3446,15 @@ function JSEditor(divID, chapterName, exerciseNum) {
             else
                 scopes[scope].unvars.push(result);
         }
-        console.log(scopes[scope].name + ":\n\ttvars: " + scopes[scope].tvars + "\n\tnvars: " + scopes[scope].nvars + "\n\tunvars: " + scopes[scope].unvars);
-        console.log("namesUsed: " + namesUsed);
+//        console.log(scopes[scope].name + ":\n\ttvars: " + scopes[scope].tvars + "\n\tnvars: " + scopes[scope].nvars + "\n\tunvars: " + scopes[scope].unvars);
+//        console.log("namesUsed: " + namesUsed);
         printScopes();
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
     function ptypeCallback(result) {
         if (result == null)
             return;
-        determineScope();
+        determineScope(clickedCell);
         var pnum = determinepnum();
         console.log(pnum);
         clickedCell.text(result);
@@ -3280,9 +3481,6 @@ function JSEditor(divID, chapterName, exerciseNum) {
                 console.log("WHAT DID YOU DO?!?!?");
         }
         printScopes();
-		
-		//google analytics stuff
-		ga("send", "event", "javascript", "edit", "exercise" + exerciseNum);
     }
     
 //    function that handles the naming of variables and arrays
@@ -3420,7 +3618,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
     
     function aIDHandler() {
         console.log("choosing a variable to assign"); //rtodo
-        determineScope();
+        determineScope(clickedCell);
         var list = scopes[0].tvars.concat(scopes[0].nvars);
         if (scope != 0)
             list = list.concat(scopes[scope].tvars.concat(scopes[scope].nvars));
@@ -3429,7 +3627,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
     
     function taIDHandler() {
         console.log("choosing a text var to assign"); //rtodo
-        determineScope();
+        determineScope(clickedCell);
         var list = scopes[0].tvars;
         if (scope != 0)
             list = list.concat(scopes[scope].tvars);
@@ -3438,7 +3636,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
     
     function naIDHandler() {
         console.log("choosing a numeric var to assign"); //rtodo
-        determineScope();
+        determineScope(clickedCell);
         var list = scopes[0].nvars;
         if (scope != 0)
             list = list.concat(scopes[scope].nvars);
@@ -3447,7 +3645,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
     
     function varIDHandler() {
         console.log("choosing a var to be used in a boolean condition");
-        determineScope();
+        determineScope(clickedCell);
         
         var eCell = clickedCell;
         while (!eCell.hasClass("expr"))
@@ -3509,14 +3707,23 @@ function JSEditor(divID, chapterName, exerciseNum) {
         console.log(scopes[scope].tvars);
         console.log(scopes[scope].nvars);
         console.log(scopes[scope].unvars);
-//        todo: maybe change so that the scope is passed in with the name. Would allow for same named variables across diff scopes
-//        todo2: if above is done, must change all calls to this function
+        printScopes();
+        var tname = name;
+        if (name[name.length-1] == "]") {
+            console.log("ARRAY");
+            tname = name.substring(0,(name.length-2));
+            console.log(tname);
+        }
+        console.log(tname);
         if (scopes[scope].tvars.indexOf(name) >= 0)
             scopes[scope].tvars.splice(scopes[scope].tvars.indexOf(name), 1);
         else if (scopes[scope].nvars.indexOf(name) >= 0)
             scopes[scope].nvars.splice(scopes[scope].nvars.indexOf(name), 1);
         else if (scopes[scope].unvars.indexOf(name) >= 0)
-            scopes[scope].unvars.splice(scopes[scope].unvars.indexOf(name), 1);
+             scopes[scope].unvars.splice(scopes[scope].unvars.indexOf(name), 1);
+        if (scopes[scope].namesUsed.indexOf(tname) >= 0)
+            scopes[scope].namesUsed.splice(scopes[scope].namesUsed.indexOf(tname), 1);
+        
 //        var j = scopes.length;
 //        for (i=0;i<j;i++) {
 //            if (scopes[i].tvars.indexOf(name) >= 0) {
@@ -3556,10 +3763,11 @@ function JSEditor(divID, chapterName, exerciseNum) {
     }
     
     function scopeAlter(oldName,newName) {
+        console.log(oldName + " " + newName);
         var j = scopes.length;
-        if (oldName.isNaN)
-            namesUsed.splice(namesUsed.indexOf(oldName),1);
-        namesUsed.push(newName);
+        if (scopes[0].namesUsed.indexOf(oldName) >= 0)
+            scopes[0].namesUsed.splice(namesUsed.indexOf(oldName),1);
+        scopes[0].namesUsed.push(newName);
         for (i=1; i < j; i++) {
             if (scopes[i].name == oldName) {
                 scopes[i].name = newName;
@@ -3579,6 +3787,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
             console.log("\tunvars: " + scopes[i].unvars);
             console.log("\tparam: " + scopes[i].param);
             console.log("\tscopenum: " + scopes[i].scopenum);
+			console.log("\tnamesUsed: " + scopes[i].namesUsed);
         }
     }
     
@@ -3597,7 +3806,9 @@ function JSEditor(divID, chapterName, exerciseNum) {
             return;
         }
         var row;
+        var rowContents;
         for(var i = insertRowNum; i >= 0; i--){
+
             row = editor.rowToDOMArray(i);
             if (row.length > 3) {
                 var cell = row[4];
@@ -3630,6 +3841,8 @@ function JSEditor(divID, chapterName, exerciseNum) {
                 console.log(row[0]);
                 if (row[0] == 'function') {
                     varinx = i + 2;
+//                    if (variableCount == 0)
+//                        varinx+=2;
                     console.log("last variable row index" + varinx);
                     return;
                 }
@@ -3658,36 +3871,46 @@ function JSEditor(divID, chapterName, exerciseNum) {
         }
     }
     
-  function createSelector(title, optionS, callback) {
-        var newSel = new Selector();
-        newSel.open(title, optionS, callback, document.getElementById(divID));
-  }
-    
-  function createStringPad(title, instructions, callback) {
-        var newStrP = new StringPad();
-        newStrP.open(title, instructions, callback, document.getElementById(divID));
-  }
-    
-  function createNumPad(minValue, maxValue, titleStr, instructions, decimalAllowed, base, callback) {
+	function createSelector(title, optionS, callback) {
+		var newSel = new Selector();
+		newSel.open(title, optionS, callback, document.getElementById(divID));
+	}
+
+	function createStringPad(title, instructions, callback) {
+		var newStrP = new StringPad();
+		newStrP.open(title, instructions, callback, document.getElementById(divID));
+	}
+
+	function createNumPad(minValue, maxValue, titleStr, instructions, decimalAllowed, base, callback) {
 		var newNumpad = new NumberPad();
 		newNumpad.open(minValue, maxValue, titleStr, instructions, decimalAllowed, base, callback, document.getElementById(divID));
-   }
+	}
 
-  function createAlertBox(title, msg, bool, callback) {
-        var alert = new Alert();
-        alert.open(title, msg, bool, callback, document.getElementById(divID));
-  }
-  
-  function dummy(result){
+	function createAlertBox(title, msg, bool, callback) {
+		var alert = new Alert();
+		alert.open(title, msg, bool, callback, document.getElementById(divID));
+	}
+
+	function dummy(result){
 	return;
-  }
+	}
 
+	this.retrieveUpdates = retrieveUpdates;
+	function retrieveUpdates(){
+		editor.loadEditor("figJSSandboxEditor", "fig" + divID + "Editor", true);
+	}
+	
+	this.saveEditor = saveEditor;
+	function saveEditor(){
+		if(editor.checkEditorData(true))
+			editor.saveEditor(true);
+	}
+	
 	this.clearEditor = clearEditor;
 	function clearEditor(){
 		console.log("here2");
 		editor.clearEditor();
-		editor = new Editor(divID, chapterName, exerciseNum, true, true, 1, true, true, true);
-		//init();
+		editor = new Editor("fig" + divID + "Editor", chapterName, exerciseNum, true, true, 1, true, true, true);
 	}
 }
 
@@ -3698,6 +3921,7 @@ function Scope(myName, s) {
     var unvars;     //list of untyped vars for a scope
     var param;      //list of the types of params in order
     var scopenum;
+    var namesUsed;
     
     this.name = myName;
     this.tvars = [];
@@ -3705,4 +3929,5 @@ function Scope(myName, s) {
     this.unvars = [];
     this.param = [];
     this.scopenum = s;
+    this.namesUsed = [];
 }
