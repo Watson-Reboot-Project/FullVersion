@@ -52,7 +52,6 @@ function toggleView(buttonID, divID) {
 
 function solveButton(exerID) {
 	var exercise = exerciseFigsText[exerID];
-	//console.log(exerciseFigs.length, exerID, exerciseFigsText.length);
 	
 	for(var i = 0; i < exerciseFigs.length; i++){
 		if(exerciseFigs[i][0] == exerID){

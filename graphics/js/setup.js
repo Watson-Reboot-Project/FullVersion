@@ -6,7 +6,7 @@
 
 //Sets up new lab.
 //figNum refers to the unique figure number.
-function Setup(figNum, isEx, editorHeight) {
+function Setup(figNum, editorHeight) {
     //Initialize all variables
     var code = new Code(figNum); //Initialize code
     var variables = new Variables(figNum); //Initialize variables
@@ -19,10 +19,7 @@ function Setup(figNum, isEx, editorHeight) {
     //Sandbox version
     if(figNum < 0) var editor = new Editor("program_code"+figNum, "graphics", Math.abs(figNum), true, true, 1, true, true, true); //Initialize editor
     //Figure mode
-    else var editor = new Editor("program_code"+figNum, "graphics", Math.abs(figNum), false, true, 1, true, false, false); //Initialize editor
-    
-    //If this is an exercise, attempt to load saved data
-    if(isEx) editor.loadEditor(true);
+    else var editor = new Editor("program_code"+figNum, "graphics", Math.abs(figNum), true, true, 1, true, false, false); //Initialize editor
     
     /* ************Pass Objects to other classes*************** */
     
