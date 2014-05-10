@@ -8,35 +8,47 @@
  * @param { figNum } - The figure that you wish to create.
  * @param { mode } - True if inserting figures and false if inserting an editor.
  *******************************************************************************/
-var Figure = function(figNum, figureMode) {
+var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	this.figNum = figNum;
 	this.figureMode = figureMode;
 	
 	// ID of the div element that the code will be inserted into.
-	var editorDivID;
+	this.editorDivID;
+	
+	// Name of the chapter
+	this.chapterName = chapterName;
 	
 	// Flag that disables the Editor Window
 	var cantEdit;
+	
+	this.bootstrapName;
+	this.sandbox = sandbox;
+	
+	this.autosave;
 	
 	this.uniqID;
 	this.insertBetweenRows;
 	this.editable;
 	// Assignment of the ID name
 	if(this.figureMode){
-		editorDivID = "fig" + this.figNum + "Div";
+		this.editorDivID = "fig" + this.figNum + "Div";
+		this.bootstrapName = "fig" + this.figNum;
 		cantEdit = true;
 		this.insertBetweenRows = false;
 		this.editable = false;
-	} else {
-		editorDivID = "editor" + this.figNum;
+		this.autosave = false;
+ 	} else {
+ 		this.editorDivID = "container-exer" + this.sandbox;
+		this.bootstrapName = this.editorDivID;
 		cantEdit = false;
 		this.uniqID = "editor-"+this.figNum;
 		this.insertBetweenRows = true;
 		this.editable = true;
+		this.autosave = true;
 	}
 	
 	// Location of the Assembly code div
-	this.codeID = "code"+editorDivID;
+	this.codeID = "code"+this.editorDivID;
 
 	// Window height variable to give specified heights to code windows
 	// Mostly used for figures
@@ -279,7 +291,8 @@ var Figure = function(figNum, figureMode) {
 	</div>";
 	
 	// Locate and place the figure in the appropriate spot in the Text
-	var divName = document.getElementById(editorDivID);
+	console.log(this.editorDivID);
+	var divName = document.getElementById(this.editorDivID);
 	divName.innerHTML = this.htmlString;
 	
 	// Controller logic for editor
@@ -299,7 +312,7 @@ var Figure = function(figNum, figureMode) {
 	var conditions = ["EQ", "NE", "LT", "LE", "GT", "GE", "CARRY", "NEG", "ZERO", "OVER"];
 	var labels = [];
 	// The Watson Editor used in this lab
-	var editor1 = new Editor(this.codeID, "assembly", this.figNum, true, true, 1, this.insertBetweenRows, this.editable, false);
+	var editor1 = new Editor(this.codeID, this.chapterName, this.sandbox, true, true, 1, this.insertBetweenRows, this.editable, this.autosave);
 	// Used to center Dialog Boxes on the appropriate Figure
 	var editorDiv = document.getElementById(this.codeID);
 	var deleteCell;
@@ -1566,6 +1579,18 @@ var Figure = function(figNum, figureMode) {
 		});
 	}
 
+	
+	this.saveExercise = function() {
+			editor1.saveEditor(true);
+	};
+	
+	this.retrieveUpdates = function(){
+		if(!this.figureMode)
+			editor1.loadEditor("container-exerAssembly-Sandbox", this.editorDivID, true);
+		else
+			editor1.loadEditor(this.editorDivID, "container-exerAssembly-Sandbox", true);
+		console.log("Load");
+	}
 	
 	var assemblyName = 'assembly' + this.figNum;
 	//console.log(assemblyName);
@@ -3345,5 +3370,6 @@ tabsstuff.controller(assemblycontroller,
 	};
 
 	});
+angular.bootstrap(document.getElementById(this.bootstrapName), [assemblyName]);
 }
 // vim: ts=4 sw=4 noet nolist

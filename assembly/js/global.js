@@ -20,7 +20,7 @@ function setupExerciseButtons(sectID) {
 				while (textContent.charCodeAt(textContent.length - 1) == 9) textContent = textContent.substring(0, textContent.length - 2);
 				//console.log(textContent);
 				var id = exercises[i].className.replace("exercise solvable ", "");
-				var exer = "not available";
+				var exer = new Figure(id, false, chapID, id);
 				exerciseFigs.push(exer);
 				exerciseFigsText[id] = [ (j + 1), textContent ];
 				$("#container-exer" + id).slideUp();
@@ -61,11 +61,11 @@ function solveButton(exerID) {
 }
 
 visibly.onVisible(function () {
-	refreshDLFigures();
+	refreshASFigures();
 });
 
-function refreshDLFigures() {
+function refreshASFigures() {
 	for (var i = 0; i < exerciseFigs.length; i++) {
-		//exerciseFigs[i].retieveUpdates();
+		exerciseFigs[i].retrieveUpdates();
 	}
 }
