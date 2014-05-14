@@ -20,7 +20,7 @@ function setupExerciseButtons(sectID) {
 				while (textContent.charCodeAt(textContent.length - 1) == 9) textContent = textContent.substring(0, textContent.length - 2);
 				//console.log(textContent);
 				var id = exercises[i].className.replace("exercise solvable ", "");
-				var exer = new Figure(id, false, chapID, id);
+				var exer = new Figure(id, false, chapID, false);
 				exerciseFigs.push(exer);
 				exerciseFigsText[id] = [ (j + 1), textContent ];
 				$("#container-exer" + id).slideUp();

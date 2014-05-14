@@ -7,6 +7,9 @@
  * 
  * @param { figNum } - The figure that you wish to create.
  * @param { mode } - True if inserting figures and false if inserting an editor.
+ * @param { chapterName } - Name of the chapter, as defined by Textbook Framework.
+ * @param { sandbox } - True if the sandbox is being used, false if figure.
+ * 							Used for embedded exercises.
  *******************************************************************************/
 var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	this.figNum = figNum;
@@ -38,7 +41,11 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 		this.editable = false;
 		this.autosave = false;
  	} else {
- 		this.editorDivID = "container-exer" + this.sandbox;
+ 		if(this.sandbox){
+ 			this.editorDivID = "container-exerAssembly-Sandbox";
+ 		} else {
+ 			this.editorDivID = "container-exer" + this.figNum;
+ 		}
 		this.bootstrapName = this.editorDivID;
 		cantEdit = false;
 		this.uniqID = "editor-"+this.figNum;
@@ -312,7 +319,7 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	var conditions = ["EQ", "NE", "LT", "LE", "GT", "GE", "CARRY", "NEG", "ZERO", "OVER"];
 	var labels = [];
 	// The Watson Editor used in this lab
-	var editor1 = new Editor(this.codeID, this.chapterName, this.sandbox, true, true, 1, this.insertBetweenRows, this.editable, this.autosave);
+	var editor1 = new Editor(this.codeID, this.chapterName, this.figNum, true, true, 1, this.insertBetweenRows, this.editable, this.autosave);
 	// Used to center Dialog Boxes on the appropriate Figure
 	var editorDiv = document.getElementById(this.codeID);
 	var deleteCell;
@@ -1585,7 +1592,8 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	};
 	
 	this.retrieveUpdates = function(){
-		if(!this.figureMode)
+		console.log("Load");
+		if(!this.sandbox)
 			editor1.loadEditor("container-exerAssembly-Sandbox", this.editorDivID, true);
 		else
 			editor1.loadEditor(this.editorDivID, "container-exerAssembly-Sandbox", true);
