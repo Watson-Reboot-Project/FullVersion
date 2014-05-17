@@ -18,12 +18,12 @@
 		<link rel='stylesheet' href='../lib/css/bootstrap-3.css'>
 		<link rel='stylesheet' href='../lib/css/jquery-ui-custom.css'>
 		<link rel='stylesheet' href='../lib/css/editor.css'>
-		<link rel='stylesheet' href='../lib/css/Dialogs.css'>
 		<link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+	    <link href='../lib/css/Dialogs.css' rel='stylesheet'>
 		<script type="text/javascript" src="../lib/js/visibility.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
 		
@@ -65,6 +65,7 @@
 			
 			<div style="text-align: center">
 				<button class="btn btn-small btn-primary" onclick="saveExercise()" style="margin-top: 10px;">Save Exercise</button>
+				<!--  button class="btn btn-small btn-primary" onclick="clearExercise()" style="margin-top: 10px;">Clear Exercise</button -->
 			</div>
 			<br>
 			
@@ -96,82 +97,91 @@
 				
 				document.getElementById("Scratch").innerHTML = exerQues;
 				
-				editor7 = new Figure(exerNum, false, chapterName, true);
+				editor = new Figure(exerNum, false, chapterName, true);
 				
 			});
 			var word = function(editorName){
-				editor7.word();
+				editor.word();
 			};
 			
 			var block = function(editorName){
-				editor7.block();
+				editor.block();
 			};
 			
 			var loadIMM = function(editorName){
-				editor7.loadIMM();
+				editor.loadIMM();
 			};
 			
 			var load = function(editorName){
-				editor7.load();
+				editor.load();
 			};
 			
 			var store = function(editorName){
-				editor7.store();
+				editor.store();
 			};
 			
 			var loadIND = function(editorName){
-				editor7.loadIND();
+				editor.loadIND();
 			};
 			
 			var storeIND = function(editorName){
-				editor7.storeIND();
+				editor.storeIND();
 			};
 			
 			var add = function(editorName){
-				editor7.add();
+				editor.add();
 			};
 			
 			var subtract = function(editorName){
-				editor7.subtract();
+				editor.subtract();
 			};
 			
 			var and = function(editorName){
-				editor7.and();
+				editor.and();
 			};
 			
 			var or = function(editorName){
-				editor7.or();
+				editor.or();
 			};
 			
 			var not = function(editorName){
-				editor7.not();
+				editor.not();
 			};
 			
 			var asl = function(editorName){
-				editor7.asl();
+				editor.asl();
 			};
 			
 			var asr = function(editorName){
-				editor7.asr();
+				editor.asr();
 			};
 			
 			var compare = function(editorName){
-				editor7.compare();
+				editor.compare();
 			};
 			
 			var branch = function(editorName){
-				editor7.branch();
+				editor.branch();
 			};
 			
 			var jump = function(editorName){
-				editor7.jump();
+				editor.jump();
 			};
 			
 			var halt = function(editorName){
-				editor7.halt();
+				editor.halt();
 			};
 			function saveExercise() {
-				editor7.saveExercise();
+				editor.saveExercise();
+			}
+			
+			// Note: functionality not yet clearly defined.
+			function clearExercise() {
+				var exerNum = parseFloat(localStorage.getItem("currExerNum"));
+				var exerQues = localStorage.getItem("currExerQues");
+				
+				editor.clearExercise();
+				editor = new Figure(exerNum, false, chapterName, true);
 			}
 		</script>
 		

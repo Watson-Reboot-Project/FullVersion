@@ -45,13 +45,14 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
  			this.editorDivID = "container-exerAssembly-Sandbox";
  			this.editable = true;
  			this.autosave = true;
+ 			cantEdit = false;
  		} else {
  			this.editorDivID = "container-exer" + this.figNum;
  			this.editable = false;
  			this.autosave = false;
+ 			cantEdit = true;
  		}
 		this.bootstrapName = this.editorDivID;
-		cantEdit = false;
 		this.uniqID = "editor-"+this.figNum;
 		this.insertBetweenRows = true;
 
@@ -103,6 +104,9 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 		
 	// Used for certain cases when the 'this' keyword is out of scope
 	var self = this;
+	
+	// Flag used to determine if the program has been altered.
+	this.edited;
 	
 	// Code to be inserted into Text
 	this.htmlString = "<div ng-controller='assemblycontroller"+this.figNum+"' class='container' id='fig"+this.figNum+"'>\
@@ -168,28 +172,28 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 					<table id='btn-grid'>\
 						<tbody>\
 							<tr id='editor_button_group' class='btn-group-vertical'>\
-								<td type='button' class='btn btn-default' onclick='word(editor"+this.figNum+")'>.WORD</td>\
-								<td type='button' class='btn btn-default' onclick='load(editor"+this.figNum+")'>LOAD</td>\
-								<td type='button' class='btn btn-default' onclick='store(editor"+this.figNum+")'>STORE</td>\
-								<td type='button' class='btn btn-default' onclick='add(editor"+this.figNum+")'>ADD</td>\
-								<td type='button' class='btn btn-default' onclick='asl(editor"+this.figNum+")'>ASL</td>\
-								<td type='button' class='btn btn-default' onclick='compare(editor"+this.figNum+")'>COMPARE</td>\
+								<td type='button' class='btn btn-default' onclick='word(editor)'>.WORD</td>\
+								<td type='button' class='btn btn-default' onclick='load(editor)'>LOAD</td>\
+								<td type='button' class='btn btn-default' onclick='store(editor)'>STORE</td>\
+								<td type='button' class='btn btn-default' onclick='add(editor)'>ADD</td>\
+								<td type='button' class='btn btn-default' onclick='asl(editor)'>ASL</td>\
+								<td type='button' class='btn btn-default' onclick='compare(editor)'>COMPARE</td>\
 							</tr>\
 							<tr id='editor_button_group' class='btn-group-vertical'>\
-								<td type='button' class='btn btn-default' onclick='block(editor"+this.figNum+")'>.BLOCK</td>\
-								<td type='button' class='btn btn-default' onclick='loadIMM(editor"+this.figNum+")'>LOADIMM</td>\
-								<td type='button' class='btn btn-default' onclick='storeIND(editor"+this.figNum+")'>STOREIND</td>\
-								<td type='button' class='btn btn-default' onclick='subtract(editor"+this.figNum+")'>SUBTRACT</td>\
-								<td type='button' class='btn btn-default' onclick='asr(editor"+this.figNum+")'>ASR</td>\
-								<td type='button' class='btn btn-default' onclick='branch(editor"+this.figNum+")'>BRANCH</td>\
+								<td type='button' class='btn btn-default' onclick='block(editor)'>.BLOCK</td>\
+								<td type='button' class='btn btn-default' onclick='loadIMM(editor)'>LOADIMM</td>\
+								<td type='button' class='btn btn-default' onclick='storeIND(editor)'>STOREIND</td>\
+								<td type='button' class='btn btn-default' onclick='subtract(editor)'>SUBTRACT</td>\
+								<td type='button' class='btn btn-default' onclick='asr(editor)'>ASR</td>\
+								<td type='button' class='btn btn-default' onclick='branch(editor)'>BRANCH</td>\
 							</tr>\
 							<tr id='editor_button_group' class='btn-group-vertical'>\
-								<td type='button' class='btn btn-default' onclick='halt(editor"+this.figNum+")'>HALT</td>\
-								<td type='button' class='btn btn-default' onclick='loadIND(editor"+this.figNum+")'>LOADIND</td>\
-								<td type='button' class='btn btn-default' onclick='and(editor"+this.figNum+")'>AND</td>\
-								<td type='button' class='btn btn-default' onclick='or(editor"+this.figNum+")'>OR</td>\
-								<td type='button' class='btn btn-default' onclick='not(editor"+this.figNum+")'>NOT</td>\
-								<td type='button' class='btn btn-default' onclick='jump(editor"+this.figNum+")'>JUMP</td>\
+								<td type='button' class='btn btn-default' onclick='halt(editor)'>HALT</td>\
+								<td type='button' class='btn btn-default' onclick='loadIND(editor)'>LOADIND</td>\
+								<td type='button' class='btn btn-default' onclick='and(editor)'>AND</td>\
+								<td type='button' class='btn btn-default' onclick='or(editor)'>OR</td>\
+								<td type='button' class='btn btn-default' onclick='not(editor)'>NOT</td>\
+								<td type='button' class='btn btn-default' onclick='jump(editor)'>JUMP</td>\
 							</tr>\
 						</tbody>\
 					</table>\
@@ -336,19 +340,26 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 			this.edited = true;
 		}
 		else{
-			editor1.loadEditor(this.editorDivID, "container-exerAssembly-Sandbox", true);
+			editor1.loadEditor(this.editorDivID, "codecontainer-exerAssembly-Sandbox", true);
 			this.edited = true;
 		}
 		console.log("Load");
+		this.edited = true;
 	};
 	if(editor1.checkEditorData(true)){
 		this.retrieveUpdates();
 	}
+	
+	this.clearExercise = function(){
+			console.log("here2");
+			editor1.clearEditor();
+			editor1 = new Editor(this.codeID, this.chapterName, this.figNum, true, true, 1, this.insertBetweenRows, this.editable, this.autosave);
+	}
+	
 	// Used to center Dialog Boxes on the appropriate Figure
 	var editorDiv = document.getElementById(this.codeID);
 	var deleteCell;
-	// Flag used to determine if the program has been altered.
-	this.edited;
+	
 
 	// Insertion logic for the different commands
 	// <label> .WORD <const>
@@ -3277,8 +3288,8 @@ tabsstuff.controller(assemblycontroller,
 	};
 
 	$scope.walk = function() {
-		console.log("Edited Status: "+this.edited);
-		if(this.edited) {
+		console.log("Edited Status: "+self.edited);
+		if(self.edited) {
 			console.log("It's been edited. Need to preprocess.");
 			editor1.selectRowByIndex(editor1.getRowCount()-2,false);
 			var temp = $scope.assembler.preprocessor();
@@ -3288,7 +3299,7 @@ tabsstuff.controller(assemblycontroller,
 				hasRan = false;
 				memoryhasran = false;
 				$scope.architecture(true);
-				this.edited = false;
+				self.edited = false;
 			} else {
 				//alert to user
 				$interval.cancel(intervalId);
