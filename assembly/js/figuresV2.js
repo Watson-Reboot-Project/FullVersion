@@ -43,15 +43,18 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
  	} else {
  		if(this.sandbox){
  			this.editorDivID = "container-exerAssembly-Sandbox";
+ 			this.editable = true;
+ 			this.autosave = true;
  		} else {
  			this.editorDivID = "container-exer" + this.figNum;
+ 			this.editable = false;
+ 			this.autosave = false;
  		}
 		this.bootstrapName = this.editorDivID;
 		cantEdit = false;
 		this.uniqID = "editor-"+this.figNum;
 		this.insertBetweenRows = true;
-		this.editable = true;
-		this.autosave = true;
+
 	}
 	
 	// Location of the Assembly code div
@@ -320,6 +323,27 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	var labels = [];
 	// The Watson Editor used in this lab
 	var editor1 = new Editor(this.codeID, this.chapterName, this.figNum, true, true, 1, this.insertBetweenRows, this.editable, this.autosave);
+	
+	this.saveExercise = function() {
+			editor1.saveEditor(true);
+	};
+	
+	this.retrieveUpdates = function(){
+		console.log("Load");
+		if(!this.sandbox){
+			console.log("in load for book: " + this.editorDivID);
+			editor1.loadEditor("codecontainer-exerAssembly-Sandbox", this.editorDivID, true);
+			this.edited = true;
+		}
+		else{
+			editor1.loadEditor(this.editorDivID, "container-exerAssembly-Sandbox", true);
+			this.edited = true;
+		}
+		console.log("Load");
+	};
+	if(editor1.checkEditorData(true)){
+		this.retrieveUpdates();
+	}
 	// Used to center Dialog Boxes on the appropriate Figure
 	var editorDiv = document.getElementById(this.codeID);
 	var deleteCell;
@@ -1586,19 +1610,7 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 		});
 	}
 
-	
-	this.saveExercise = function() {
-			editor1.saveEditor(true);
-	};
-	
-	this.retrieveUpdates = function(){
-		console.log("Load");
-		if(!this.sandbox)
-			editor1.loadEditor("container-exerAssembly-Sandbox", this.editorDivID, true);
-		else
-			editor1.loadEditor(this.editorDivID, "container-exerAssembly-Sandbox", true);
-		console.log("Load");
-	}
+
 	
 	var assemblyName = 'assembly' + this.figNum;
 	//console.log(assemblyName);
