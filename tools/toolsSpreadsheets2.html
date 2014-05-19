@@ -213,7 +213,7 @@
 				Note that it is only necessary that a cell referenced by a formula <span class="Ital">yield</span> a number, not that it directly contain a number.  Hence, it is possible (and is quite often the case) that a cell referenced in a formula will itself contain a formula.  For example, the spreadsheet of <span class="figNum gradespreadsheet"></span> computes a student’s final grade in a class by averaging together three grades: the grade on exam 1 (stored in cell C2), the grade on exam 2 (stored in cell C3), and the average grade made on all homeworks (computed in cell C4).  The homework grade is, in turn, computed as the average of four individual homework grades, stored in cells F2, F3, F4, and F5.
 			</p>
 		
-			<div id="container81" style="margin-bottom:-130px; width:618px" class="container-fluid"></div>
+			<div id="container81" style="margin-bottom:-140px; width:618px" class="container-fluid"></div>
 		
 			<p class="Figure">
 				(a) Actual cell contents 
@@ -321,21 +321,10 @@
 			populateNav();										// populate nav content
 			populateSpans();									// populate figure/content spans
 			pageObj = getArrowPathsByPage("toolsSpreadsheets2");		// get arrow paths
+			if (!localFlag) runGA();
 			});	
 
-		</script>
-		
-		
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
-			
+		</script>			
 	</body>
 	<script src="js/addElements.js"></script>
 	<script src="js/jquery.mobile.custom.min.js"></script>
