@@ -56,9 +56,6 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 			"REGC", "REGD", "REGE", "REGF"];
 	var conditions = ["EQ", "NE", "LT", "LE", "GT", "GE", "CARRY", "NEG", "ZERO", "OVER"];
 	var labels = [];
-	
-	// Location of the Assembly code div
-	this.codeID = "code"+this.editorDivID;
 
 	// Window height variable to give specified heights to code windows
 	// Mostly used for figures
@@ -95,6 +92,9 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 		this.insertBetweenRows = true;
 
 	}
+
+	// Location of the Assembly code div
+	this.codeID = "code"+this.editorDivID;
 	
 	// Assignment of code window height
 	if(this.figureMode){
@@ -352,7 +352,8 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 			this.edited = true;
 		}
 		else{
-			editor1.loadEditor(this.editorDivID, "codecontainer-exerAssembly-Sandbox", true);
+			// editor1.loadEditor(this.editorDivID, "codecontainer-exerAssembly-Sandbox", true);
+			// Commented out due to the crashing bug of going to the sandbox from the text with existing code
 			this.edited = true;
 		}
 		console.log("Load");
@@ -360,7 +361,9 @@ var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	};
 	// Only load if the sandbox isn't empty.
 	if(editor1.checkEditorData(true)){
-		this.retrieveUpdates();
+		if(!this.figureMode){
+			this.retrieveUpdates();
+		}
 	}
 	
 	// Attempt at creating a function to clear the editor.
