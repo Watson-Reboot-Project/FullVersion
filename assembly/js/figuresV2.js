@@ -1,16 +1,17 @@
-/*******************************************************************************
+/*************************************************************************************
  * A function that creates a new figure based upon the specified number.
  * This number is meant to be unique for each figure or sandbox in the text.
  * 
  * Authors: Tommy Bozeman, Jeremiah Laforge, Joshua Laborde, Landon Stanley,
  *     Steven Wagner, and Richard Waller
  * 
- * @param { figNum } - The figure that you wish to create.
+ * @param { figNum } - The figure that you wish to create. Used in union with
+ * 							the div names. For figures: fig#number#div
+ * 							For sandbox: container-exer#number#
  * @param { mode } - True if inserting figures and false if inserting an editor.
  * @param { chapterName } - Name of the chapter, as defined by Textbook Framework.
- * @param { sandbox } - True if the sandbox is being used, false if figure.
- * 							Used for embedded exercises.
- *******************************************************************************/
+ * @param { sandbox } - True if the sandbox is being used, false if embedded exercise.
+ *************************************************************************************/
 var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	this.figNum = figNum;
 	this.figureMode = figureMode;
