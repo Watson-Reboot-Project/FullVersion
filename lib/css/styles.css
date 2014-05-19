@@ -4,6 +4,16 @@
     border: none;
 }
 
+/* Makes the navbar static at the top */
+.navbar {
+    position: absolute !important;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    border-radius: 0 !important;
+    z-index: 1000 !important;
+}
+
 /* Hove in nav bar, changes color when mobile screen is used */
 ul.nav a:hover { color: #000; }
 @media screen and (max-width: 640px) {.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #FFF;}}
@@ -19,8 +29,10 @@ ul.nav a:hover { color: #000; }
   text-shadow: none;
 }
 
+/* Hover color over nav bar items */
 .dropdown-menu > li > a:hover{ background-color: #4870B6; }
 
+/* Text coloring for Chapter header*/
 #main_header > h1{
   text-align: left;
   color: #4870B6;
@@ -35,11 +47,13 @@ ul.nav a:hover { color: #000; }
   margin-bottom: 3%;
 }
 
+
 #main_header_img {
   float: center;
   max-width: 30%;
 }
 
+/* Page wrapper holding all the text */
 .page-wrapper {
   width: 85%;
   margin: 0 auto;
@@ -52,10 +66,12 @@ body { padding-top: 100px;}
 @media screen and (max-width: 600px) { body { padding-top: 100px; }}
 @media screen and (max-width: 400px) { body { padding-top: 100px; }}
 
+/* Keep the text aligned upon nav bar collapse */
 .navbar .navbar-collapse {
   text-align: center;
 }
 
+/* Watson logo for non mobile devices */
 #logo_lg{
   position: absolute;
   left: 11%;
@@ -63,6 +79,7 @@ body { padding-top: 100px;}
   padding-bottom: 12px;
 }
 
+/* Watson logo for mobile devices */
 #logo_sm{
   position: absolute;
   left: 12%;
@@ -70,6 +87,7 @@ body { padding-top: 100px;}
   padding-bottom: 12px;
 }
 
+/* Logo placement */
 .navbar-right{
   padding-right: 5%;
 } 
@@ -77,6 +95,7 @@ body { padding-top: 100px;}
 @media screen and (max-width: 600px) { .navbar-right { padding-right: 3%;}}
 @media screen and (max-width: 400px) { .navbar-right { padding-right: 0%;}}
 
+/* Not sure if these are still in use */
 .small-img{ width: 10%; }
 .medium-img{ width: 50%; }
 .large-img{ width: 90%; }
@@ -89,13 +108,14 @@ body { padding-top: 100px;}
     border-color: #99B7D3;
     color: #FFF;
 }
+
 .btn-launch {
     background-color: #C6D8E9;
     border-color: #99B7D3;
     color: #FFFFFF;
 }
 
-/* Bootraps glyphicons */ 
+/* Bootstrap glyphicons */ 
 .glyphicon {   
   position: relative;  
   top: 1px;
@@ -114,19 +134,29 @@ body { padding-top: 100px;}
   padding-right: 5px; 
   position: relative; 
 }
-
+/* Keeps plus and minus font awesome icons from screwing up upon collapse */
 .fa-plus { margin-left: -300%; }
 .fa-minus{ margin-right: -300%; }
 @media screen and (max-width: 800px) { .fa-plus, .fa-minus {margin: 0;}}
 
+/* The A's image inside the plus and minus bar */
+#fontAs{
+  max-width: 50%;
+  padding: 0
+}
+@media screen and (max-width: 745px)  { #fontAs {max-width: 20px; padding: 0;}}
 
+/* Next page arrow styling */
 .fa-chevron-right {
 	position: absolute;
     bottom: relative;
 	right: 1%;
 	padding-right: 3%; padding-left: 3%;
 	font-size: 2em;
-	color:#FFF;}
+	color:#FFF;
+}
+
+/* Next chapter arrow styling */
 .fa-step-forward  {
 	position: absolute;
     bottom: relative;
@@ -135,6 +165,7 @@ body { padding-top: 100px;}
 	color: #FFF;
 	font-size: 2em;}
 
+/* Previous page arrow styling */
 .fa-chevron-left {
     position: absolute;
     bottom: relative;
@@ -145,6 +176,7 @@ body { padding-top: 100px;}
     font-size: 2em;
 }
 
+/* Previous Chapter arrow styling */
 .fa-step-backward {
     position: absolute;
     bottom: relative;
@@ -153,19 +185,6 @@ body { padding-top: 100px;}
     padding-right: 3%; padding-left: 3%;
     color: #FFF;
     font-size: 2em;
-}
-
-#fontAs{
-  max-width: 50%;
-  padding: 0
-}
-@media screen and (max-width: 745px)  { #fontAs {max-width: 20px; padding: 0;}}
-
-
-/* Banner down arrow, placement, no longer being used */
-#clickme{ 
-  padding-right: 90% !important;
-  padding-top: 0%;
 }
 
 /* Don't mind me... */
@@ -185,17 +204,6 @@ body { padding-top: 100px;}
 @media screen and (max-width: 480px) { .archive_year {cursor: pointer; list-style: none; padding-left: 1%; font-size: 85%; text-indent: -3%; }}
 @media screen and (max-width: 480px) { .archive_month { list-style-type: disc; cursor: pointer; padding-left: 3%; font-size: 80%; text-indent: -2em%; }}
 @media screen and (max-width: 480px) { .archive_posts { list-style-type: circle; padding-left: 5%; font-size: 75%; text-indent: -3%; }}
-
-
-/* below css makes the navbar static at the top */
-.navbar {
-    position: absolute !important;
-    top: 0px;
-    right: 0px;
-    width: 100%;
-    border-radius: 0 !important;
-    z-index: 1000 !important;
-}
 
 .Emphasized{
   font-weight: bold;
@@ -219,6 +227,7 @@ text-decoration: none;
   display: inline-block;
 }
 
+/* Footer (blue) fancy styles */
 .footer {
 
     position: relative;
@@ -230,12 +239,13 @@ text-decoration: none;
     background: #4870B6;
 }
 
+/* Pushes the footer to the bottom */
+.push { width:100%; height:auto; position:relative; bottom:0 !important; }
+
 html, body{
     height: 100%;
 }
-
-.push { width:100%; height:auto; position:relative; bottom:0 !important; }
-
+/* Return to top in footer */
 #returntop{
   font-size: 15px;
   letter-spacing: 0.5px;
@@ -253,14 +263,13 @@ html, body{
 
   padding-top: .5em;
 }
-
+/* Three bar dropdown toggle on mobile */
 .navbar-toggle{
   margin-right: 7%;
   margin-top: .75em;
 }
 
-/* solveEx, no longer being used */
-/* Next and prev Chapter buttons, no longer being used */
+/* solveEx button Neil used */
 .btn-blue {
   color: #fff;
   background-color: #4870B6;
@@ -278,6 +287,7 @@ html, body{
   border-color: #5482D4;
 }
 
+/* Body background image used on Chapter index pages */
 #bodyBackground{
   width:fixed;
   height:fixed;

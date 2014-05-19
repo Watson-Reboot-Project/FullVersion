@@ -32,7 +32,7 @@
 			<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 			<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 			<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-			<script src="js/visibility.js"></script>
+			<script src="../lib/js/visibility.js"></script>
 			<script type="text/javascript" src="js/global.js"></script>
 
 		<!--Graphics Lab js files-->
@@ -391,7 +391,7 @@
 			
 			<ol id="exerciseList">
 				<li>
-					<div class="exercise solvable 1">
+					<div class="exercise solvable 6">
 						<p>
 							Using the “Point”, “Line”, “Circle”, and “Polygon” buttons, together with the mouse and Drawing Window, draw a side view of a simple car. 
 						</p>
@@ -405,11 +405,11 @@
 						</p>
 					</div>
 					
-					<div class="exerciseDiv 1"></div>
+					<div class="exerciseDiv 6"></div>
 				</li>
 				
 				<li>
-					<div class="exercise solvable 2">
+					<div class="exercise solvable 7">
 						<p>
 							In this activity you are to create a program that will draw a simple stick figure.  Instead of drawing the image interactively as you did in Activity One, use the Commands (Assign, Draw, etc.) and Program Code editor to write the program.
 						</p>
@@ -419,11 +419,11 @@
 						</p>
 					</div>
 					
-					<div class="exerciseDiv 2"></div>
+					<div class="exerciseDiv 7"></div>
 				</li>
 				
 				<li>
-					<div class="exercise solvable 3">
+					<div class="exercise solvable 8">
 						<p>
 							Write a program (using the Commands and Program Code editor) that will draw a simple house.  As with Activity Two, plan out what the house should look like and how you will create it before you begin entering the actual program code.
 						</p>
@@ -433,11 +433,11 @@
 						</p>
 					</div>
 					
-					<div class="exerciseDiv 3"></div>
+					<div class="exerciseDiv 8"></div>
 				</li>
 				
 				<li>
-					<div class="exercise solvable 4">
+					<div class="exercise solvable 9">
 						<p>
 							Write a program (using the Commands and Program Code editor) that will draw a circle and cause it to appear to move horizontally across the Drawing Window.  In reality, this program will draw and erase a series of circles.  It will use a loop in a manner similar to the programs of <span class="figNum growingcircle"></span> and <span class="figNum fallingline"></span>.  You might want to look back at those programs for ideas on how to proceed.
 						</p>
@@ -447,11 +447,11 @@
 						</p>
 					</div>
 					
-					<div class="exerciseDiv 4"></div>
+					<div class="exerciseDiv 9"></div>
 				</li>
 				
 				<li>
-					<div class="exercise solvable 5">
+					<div class="exercise solvable 10">
 						<p>
 							Write a program (using the Commands and Program Code editor) that will draw a circle in the lower left hand corner of the Drawing Window and cause it to appear to move diagonally from its starting point to the upper right hand corner of the window.  Once the circle reaches the upper right hand corner have it “bounce” off that corner moving diagonally from the upper right corner back down to the lower left hand corner where the circle originated.  This program will be similar to the one created in Activity Four.
 						</p>
@@ -461,7 +461,7 @@
 						</p>
 					</div>
 					
-					<div class="exerciseDiv 5"></div>
+					<div class="exerciseDiv 10"></div>
 				</li>
 			</ol>
 			
@@ -504,20 +504,13 @@
 				populateSpans();									// populate figure/content spans
 				pageObj = getArrowPathsByPage(sectID);		// get arrow paths
 				setupExerciseButtons(sectID);
+				if (!localFlag) runGA();
 			});	
 
-			Setup(2, false, 300);
-			Setup(3, false, 250);
-			Setup(4, false, 310);
-			Setup(5, false, 270);
-
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-50062005-1', 'latech.edu');
-			ga('send', 'pageview');
+			Setup(2, 300);
+			Setup(3, 250);
+			Setup(4, 310);
+			Setup(5, 270);
 		</script>
 		
 	</body>

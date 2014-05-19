@@ -1,5 +1,7 @@
 /*
- * Adds elements such as buttons, canvas', and divs
+ * Adds all elements for application
+ * A lot of the css for these elements also resides here
+ * Authors: James Miltenberger, Jonathan Teel
  */
 
 function AddElements(figNum, height) {
@@ -14,7 +16,8 @@ function AddElements(figNum, height) {
     
     //Find the container element
     var container = document.getElementById("graphicsLab" + figNum);
-    container.className = "col-md-12 col-sm-12 col-xs-12";
+    if(figNum >= 0) container.className = "col-md-12 col-sm-12 col-xs-12";
+    else container.className = "col-md-8 col-sm-8 col-xs-12 col-md-offset-2 col-sm-offset-1";
 
     //Drawing window <div>
     var drawDiv = document.createElement('div');
@@ -22,7 +25,8 @@ function AddElements(figNum, height) {
     drawDiv.style.width = "300px";
     drawDiv.style.height = "350px";
     drawDiv.style.cssFloat = "left";
-    drawDiv.className = "col-md-offset-4 col-sm-offset-3";
+    if(figNum >= 0) drawDiv.className = "col-md-offset-4 col-sm-offset-3";
+    else drawDiv.className = "col-md-offset-3 col-sm-offset-2";
     drawDiv.style.textAlign = "center";
 
     //Program window <div>
@@ -37,24 +41,23 @@ function AddElements(figNum, height) {
     programDiv.id = "program_code" + figNum;
     programDiv.style.height = programWindowDiv.style.height;
     if(figNum >= 0) programDiv.style.width = "70%";
-    else programDiv.style.width = "50%";
+    else programDiv.style.width = "70%";
     programDiv.style.cssFloat = "left";
     if(figNum >= 0) programDiv.className = "col-md-offset-2 col-sm-offset-2";
-    else programDiv.className = "col-md-offset-1 col-sm-offset-1 col-xs-offset-1";
+
 
     //<div> for run and walk buttons
     var run_walkDiv = document.createElement('div');
     run_walkDiv.id = "run_walk" + figNum;
-    run_walkDiv.style.width = "220px";
-    run_walkDiv.className = "btn-group col-md-offset-4 col-sm-offset-4";
+    run_walkDiv.style.width = "300px";
 
     //<p> for variable value title
     var varValueTitle = document.createElement('p');
     varValueTitle.id = "varValOuterP" + figNum;
-    varValueTitle.innerHTML = '<b>&nbspInternal Variables</b>';
+    varValueTitle.innerHTML = '<b>Internal Variables</b>';
     varValueTitle.style.position = "relative";
-    varValueTitle.style.top = "15px";
-    varValueTitle.className = "col-md-offset-2 col-sm-offset-2";
+    varValueTitle.style.top = "7px";
+    if(figNum >= 0) varValueTitle.className = "col-md-offset-2 col-sm-offset-2";
 
     //<div> for variable value window
     var varValueDiv = document.createElement('div');
@@ -63,7 +66,7 @@ function AddElements(figNum, height) {
     varValueDiv.style.height = "100px";
     varValueDiv.style.width = programDiv.style.width;
     varValueDiv.style.border = "1px solid #000";
-    varValueDiv.className = "col-md-offset-2 col-sm-offset-2";
+    if(figNum >= 0) varValueDiv.className = "col-md-offset-2 col-sm-offset-2";
 
     // <div> holder for varValueDiv <div> and varValueTitle <p>
     var vvDivHolder = document.createElement('div');
@@ -211,6 +214,7 @@ function AddElements(figNum, height) {
     //center var tracker under code window
     if(figNum < 0) vvDivHolder.style.paddingLeft = $("#var_buttons"+figNum).css('width');
     
+    //This gets all objects needed for addElements.js to work properly
     function getObjects(variablesObj, canvasObj, codeObj, run_walkObj) {
         variables = variablesObj;
         canvas = canvasObj;

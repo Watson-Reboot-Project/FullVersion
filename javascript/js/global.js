@@ -27,6 +27,8 @@ function setupExerciseButtons(sectID) {
 			}
 		}
 	}
+	
+	refreshJSFigures();
 }
 
 
@@ -39,6 +41,9 @@ function populateExerciseDivs() {
 								<button id="toggle' + exerID + '" class="btn btn-sm btn-success" onclick="toggleView(\'toggle' + exerID + '\', \'JSFigure-container-exer' + exerID + '\');">View</button> \
 								<div id="JSFigure-container-exer' + exerID + '" class="divness" style="margin-top:5px;"></div>\
 								<br><br>';
+								
+		//the clear button, removed for uniformity						
+		//<button id="clear" class="btn btn-sm btn-primary" onclick="clearButton(' + exerID + ')">Clear</button>
 	}
 }
 
@@ -56,7 +61,6 @@ function solveButton(exerID) {
 	
 	for(var i = 0; i < exerciseFigs.length; i++){
 		if(exerciseFigs[i][0] == exerID){
-			console.log("here19000");
 			exerciseFigs[i][1].saveEditor(true);
 		}
 	}
@@ -66,6 +70,22 @@ function solveButton(exerID) {
 
 	var win = window.open("solveExer.html", '_blank');
 	win.focus();
+}
+
+function clearButton(exerID){
+	var exercise = exerciseFigsText[exerID];
+	//console.log(exerciseFigs.length, exerID, exerciseFigsText.length);
+	
+	for(var i = 0; i < exerciseFigs.length; i++){
+		if(exerciseFigs[i][0] == exerID){
+			exerciseFigs[i][1].clearEditor();
+			exerciseFigs[i][1] = new Figure("container-exer" + exerID, exerID, "javascript", exerID);
+			refreshJSFigures();
+		}
+	}
+	
+	localStorage.removeItem("currExerNum", exerID);
+	localStorage.removeItem("currExerQues", "<span class='Bolded'>Problem " + section + "." + exercise[0] + "</span><br/><br/>" + exercise[1]);
 }
 
 visibly.onVisible(function () {

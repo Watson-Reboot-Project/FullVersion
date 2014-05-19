@@ -1,46 +1,101 @@
-/*******************************************************************************
+/*************************************************************************************
  * A function that creates a new figure based upon the specified number.
  * This number is meant to be unique for each figure or sandbox in the text.
  * 
  * Authors: Tommy Bozeman, Jeremiah Laforge, Joshua Laborde, Landon Stanley,
  *     Steven Wagner, and Richard Waller
  * 
- * @param { figNum } - The figure that you wish to create.
+ * @param { figNum } - The figure that you wish to create. Used in union with
+ * 							the div names. For figures: fig#number#div
+ * 							For sandbox: container-exer#number#
  * @param { mode } - True if inserting figures and false if inserting an editor.
- *******************************************************************************/
-var Figure = function(figNum, figureMode) {
+ * @param { chapterName } - Name of the chapter, as defined by Textbook Framework.
+ * @param { sandbox } - True if the sandbox is being used, false if embedded exercise.
+ *************************************************************************************/
+var Figure = function(figNum, figureMode, chapterName, sandbox) {
 	this.figNum = figNum;
 	this.figureMode = figureMode;
 	
 	// ID of the div element that the code will be inserted into.
-	var editorDivID;
+	this.editorDivID;
+	
+	// Name of the chapter
+	this.chapterName = chapterName;
 	
 	// Flag that disables the Editor Window
 	var cantEdit;
 	
+	// Name used to attache the AngularJS object to the proper div element (used later)
+	this.bootstrapName;
+	this.sandbox = sandbox;
+	
+	// Used in the creation of the Watson Editor. Toggles saving for the figure.
+	this.autosave;
+	
+	// Flags used in the creation of the editor.
 	this.uniqID;
 	this.insertBetweenRows;
-	this.editable;
-	// Assignment of the ID name
-	if(this.figureMode){
-		editorDivID = "fig" + this.figNum + "Div";
-		cantEdit = true;
-		this.insertBetweenRows = false;
-		this.editable = false;
-	} else {
-		editorDivID = "editor" + this.figNum;
-		cantEdit = false;
-		this.uniqID = "editor-"+this.figNum;
-		this.insertBetweenRows = true;
-		this.editable = true;
-	}
 	
-	// Location of the Assembly code div
-	this.codeID = "code"+editorDivID;
+	// Determines if the figure will enable the buttons for editing.
+	this.editable;
+	
+	// Controller logic for Watson Editor
+	// Identifies where the .BLOCK and .WORD portions are
+	var memPointer = 0;
+	
+	// Used for code alteration with Dialog Boxes
+	var clickedCell;
+	var clickedCellNum;
+	
+	// Used for deletion
+	var deleteFlag = false;
+	
+	// Used for simple value checking
+	var registers = ["REG0", "REG1", "REG2", "REG3",
+			"REG4", "REG5", "REG6", "REG7",
+			"REG8", "REG9", "REGA", "REGB", 
+			"REGC", "REGD", "REGE", "REGF"];
+	var conditions = ["EQ", "NE", "LT", "LE", "GT", "GE", "CARRY", "NEG", "ZERO", "OVER"];
+	var labels = [];
 
 	// Window height variable to give specified heights to code windows
 	// Mostly used for figures
 	this.windowHeight;
+	
+	// Used for certain cases when the 'this' keyword is out of scope
+	var self = this;
+	
+	// Flag used to determine if the program has been altered.
+	this.edited;
+	
+	// Assignment of the ID name and enabling/disabling of features.
+	if(this.figureMode){
+		this.editorDivID = "fig" + this.figNum + "Div";
+		this.bootstrapName = "fig" + this.figNum;
+		cantEdit = true;
+		this.insertBetweenRows = false;
+		this.editable = false;
+		this.autosave = false;
+ 	} else {
+ 		if(this.sandbox){
+ 			this.editorDivID = "container-exerAssembly-Sandbox";
+ 			this.editable = true;
+ 			this.autosave = true;
+ 			cantEdit = false;
+ 		} else {
+ 			this.editorDivID = "container-exer" + this.figNum;
+ 			this.editable = false;
+ 			this.autosave = false;
+ 			cantEdit = true;
+ 		}
+		this.bootstrapName = this.editorDivID;
+		this.uniqID = "editor-"+this.figNum;
+		this.insertBetweenRows = true;
+
+	}
+
+	// Location of the Assembly code div
+	this.codeID = "code"+this.editorDivID;
 	
 	// Assignment of code window height
 	if(this.figureMode){
@@ -79,9 +134,6 @@ var Figure = function(figNum, figureMode) {
 		this.windowHeight = "250px";
 	}
 		
-	// Used for certain cases when the 'this' keyword is out of scope
-	var self = this;
-	
 	// Code to be inserted into Text
 	this.htmlString = "<div ng-controller='assemblycontroller"+this.figNum+"' class='container' id='fig"+this.figNum+"'>\
 \
@@ -146,28 +198,28 @@ var Figure = function(figNum, figureMode) {
 					<table id='btn-grid'>\
 						<tbody>\
 							<tr id='editor_button_group' class='btn-group-vertical'>\
-								<td type='button' class='btn btn-default' onclick='word(editor"+this.figNum+")'>.WORD</td>\
-								<td type='button' class='btn btn-default' onclick='load(editor"+this.figNum+")'>LOAD</td>\
-								<td type='button' class='btn btn-default' onclick='store(editor"+this.figNum+")'>STORE</td>\
-								<td type='button' class='btn btn-default' onclick='add(editor"+this.figNum+")'>ADD</td>\
-								<td type='button' class='btn btn-default' onclick='asl(editor"+this.figNum+")'>ASL</td>\
-								<td type='button' class='btn btn-default' onclick='compare(editor"+this.figNum+")'>COMPARE</td>\
+								<td type='button' class='btn btn-default' onclick='word(editor)'>.WORD</td>\
+								<td type='button' class='btn btn-default' onclick='load(editor)'>LOAD</td>\
+								<td type='button' class='btn btn-default' onclick='store(editor)'>STORE</td>\
+								<td type='button' class='btn btn-default' onclick='add(editor)'>ADD</td>\
+								<td type='button' class='btn btn-default' onclick='asl(editor)'>ASL</td>\
+								<td type='button' class='btn btn-default' onclick='compare(editor)'>COMPARE</td>\
 							</tr>\
 							<tr id='editor_button_group' class='btn-group-vertical'>\
-								<td type='button' class='btn btn-default' onclick='block(editor"+this.figNum+")'>.BLOCK</td>\
-								<td type='button' class='btn btn-default' onclick='loadIMM(editor"+this.figNum+")'>LOADIMM</td>\
-								<td type='button' class='btn btn-default' onclick='storeIND(editor"+this.figNum+")'>STOREIND</td>\
-								<td type='button' class='btn btn-default' onclick='subtract(editor"+this.figNum+")'>SUBTRACT</td>\
-								<td type='button' class='btn btn-default' onclick='asr(editor"+this.figNum+")'>ASR</td>\
-								<td type='button' class='btn btn-default' onclick='branch(editor"+this.figNum+")'>BRANCH</td>\
+								<td type='button' class='btn btn-default' onclick='block(editor)'>.BLOCK</td>\
+								<td type='button' class='btn btn-default' onclick='loadIMM(editor)'>LOADIMM</td>\
+								<td type='button' class='btn btn-default' onclick='storeIND(editor)'>STOREIND</td>\
+								<td type='button' class='btn btn-default' onclick='subtract(editor)'>SUBTRACT</td>\
+								<td type='button' class='btn btn-default' onclick='asr(editor)'>ASR</td>\
+								<td type='button' class='btn btn-default' onclick='branch(editor)'>BRANCH</td>\
 							</tr>\
 							<tr id='editor_button_group' class='btn-group-vertical'>\
-								<td type='button' class='btn btn-default' onclick='halt(editor"+this.figNum+")'>HALT</td>\
-								<td type='button' class='btn btn-default' onclick='loadIND(editor"+this.figNum+")'>LOADIND</td>\
-								<td type='button' class='btn btn-default' onclick='and(editor"+this.figNum+")'>AND</td>\
-								<td type='button' class='btn btn-default' onclick='or(editor"+this.figNum+")'>OR</td>\
-								<td type='button' class='btn btn-default' onclick='not(editor"+this.figNum+")'>NOT</td>\
-								<td type='button' class='btn btn-default' onclick='jump(editor"+this.figNum+")'>JUMP</td>\
+								<td type='button' class='btn btn-default' onclick='halt(editor)'>HALT</td>\
+								<td type='button' class='btn btn-default' onclick='loadIND(editor)'>LOADIND</td>\
+								<td type='button' class='btn btn-default' onclick='and(editor)'>AND</td>\
+								<td type='button' class='btn btn-default' onclick='or(editor)'>OR</td>\
+								<td type='button' class='btn btn-default' onclick='not(editor)'>NOT</td>\
+								<td type='button' class='btn btn-default' onclick='jump(editor)'>JUMP</td>\
 							</tr>\
 						</tbody>\
 					</table>\
@@ -279,32 +331,54 @@ var Figure = function(figNum, figureMode) {
 	</div>";
 	
 	// Locate and place the figure in the appropriate spot in the Text
-	var divName = document.getElementById(editorDivID);
+	console.log(this.editorDivID);
+	var divName = document.getElementById(this.editorDivID);
 	divName.innerHTML = this.htmlString;
 	
-	// Controller logic for editor
-	var len = 0;
-	// Identifies where the .BLOCK and .WORD portions are
-	var memPointer = 0;
-	// Used for code alteration
-	var clickedCell;
-	var clickedCellNum;
-	// Used for deletion
-	var deleteFlag = false;
-	// Used for simple value checking
-	var registers = ["REG0", "REG1", "REG2", "REG3",
-			"REG4", "REG5", "REG6", "REG7",
-			"REG8", "REG9", "REGA", "REGB", 
-			"REGC", "REGD", "REGE", "REGF"];
-	var conditions = ["EQ", "NE", "LT", "LE", "GT", "GE", "CARRY", "NEG", "ZERO", "OVER"];
-	var labels = [];
+	
 	// The Watson Editor used in this lab
-	var editor1 = new Editor(this.codeID, "assembly", this.figNum, true, true, 1, this.insertBetweenRows, this.editable, false);
+	var editor1 = new Editor(this.codeID, this.chapterName, this.figNum, true, true, 1, this.insertBetweenRows, this.editable, this.autosave);
+	
+	// Function used in saving code to localStorage.
+	this.saveExercise = function() {
+			editor1.saveEditor(true);
+	};
+	
+	// Loads code from the localStorage.
+	this.retrieveUpdates = function(){
+		console.log("Load");
+		if(!this.sandbox){
+			console.log("in load for book: " + this.editorDivID);
+			editor1.loadEditor("codecontainer-exerAssembly-Sandbox", this.editorDivID, true);
+			this.edited = true;
+		}
+		else{
+			// editor1.loadEditor(this.editorDivID, "codecontainer-exerAssembly-Sandbox", true);
+			// Commented out due to the crashing bug of going to the sandbox from the text with existing code
+			this.edited = true;
+		}
+		console.log("Load");
+		this.edited = true;
+	};
+	// Only load if the sandbox isn't empty.
+	if(editor1.checkEditorData(true)){
+		if(!this.figureMode){
+			this.retrieveUpdates();
+		}
+	}
+	
+	// Attempt at creating a function to clear the editor.
+	// Currently nonfunctional
+	this.clearExercise = function(){
+			console.log("here2");
+			editor1.clearEditor();
+			editor1 = new Editor(this.codeID, this.chapterName, this.figNum, true, true, 1, this.insertBetweenRows, this.editable, this.autosave);
+	}
+	
 	// Used to center Dialog Boxes on the appropriate Figure
 	var editorDiv = document.getElementById(this.codeID);
 	var deleteCell;
-	// Flag used to determine if the program has been altered.
-	this.edited;
+	
 
 	// Insertion logic for the different commands
 	// <label> .WORD <const>
@@ -343,6 +417,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' LOAD <reg>, <label>
 	this.load = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -354,6 +429,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' STORE <reg>, <label>
 	this.store = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -365,6 +441,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' LOADIND <reg>, <reg>
 	this.loadIND = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -376,6 +453,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' STOREIND <reg>, <reg>
 	this.storeIND = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -387,6 +465,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' ADD <reg>, <reg>, <reg>
 	this.add = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -399,6 +478,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' SUBTRACT <reg>, <reg>, <reg>
 	this.subtract = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -411,6 +491,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' AND <reg>, <reg>, <reg>
 	this.and = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -423,6 +504,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' OR <reg>, <reg>, <reg>
 	this.or = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -435,6 +517,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' NOT <reg>, <reg>
 	this.not = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -446,6 +529,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' ASL <reg>, <reg>, <bits>
 	this.asl = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -458,6 +542,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' ASR <reg>, <reg>, <bits>
 	this.asr = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -470,6 +555,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' COMPARE <reg>, <reg>
 	this.compare = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -481,6 +567,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' BRANCH <cond>, <label>
 	this.branch = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -492,6 +579,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' JUMP <label>
 	this.jump = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -502,6 +590,7 @@ var Figure = function(figNum, figureMode) {
 		ga('send', 'event', 'assembly', 'edit', self.uniqID);
 	};
 	
+	// 'empty Label' HALT
 	this.halt = function(){
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"&nbsp;", type:"label1", width:"60px"},
@@ -552,14 +641,16 @@ var Figure = function(figNum, figureMode) {
         alert.open(title, msg, bool, callback);
     }
     
+    //Function that is called when selecting a function that replaces the text of a single cell
     function fReturn(result) {
-        //Function that is called when selecting a function that replaces the text of a single cell
     	if(result != null){
     		clickedCell.text(result);
     		this.edited = true;
     	}
     }
     
+    // Function that handles the deletion of rows, taking special
+    // consideration of memory directives (.Block and .Word)
     function fDelete(result) {
     	deleteFlag = result;
     	console.log("Delete Index: "+deleteCell);
@@ -574,32 +665,33 @@ var Figure = function(figNum, figureMode) {
 		}
     }
     
+    // Function that returns results padded with a comma ','
+    // Used for arguments in the middle of commands
     function fReturnC(result) {
-    	//Function that returns results padded with a comma ','
     	if(result != null){
     		clickedCell.text(result + ',');
     		this.edited = true;
     	}
     }
     
+    // Function that stores the simple register
     function fRegister(result) {
-    	//Function that stores the simple register
     	if(result != null) {
     		clickedCell.text(result);
     		this.edited = true;
     	}
     }
     
+    // Function that stores the register and a comma
     function fRegisterC(result) {
-    	//Function that stores the register and a comma
     	if(result != null) {
     		clickedCell.text(result + ',');
     		this.edited = true;
     	}
     }
     
+    // Function that is called when creating a new label
     function fLabel(result) {
-    	// Function that is called when creating a new label
     	if(result != null){
     		if(result.length > 7) result = result.substring(0,7);
     		result = result.toUpperCase();
@@ -610,7 +702,8 @@ var Figure = function(figNum, figureMode) {
     	}
     }
 	
-	this.figCode;
+    // Giant logic step that inserts the figure into the text.
+    // If the figure is an editor it sets up the click controlers instead.
 	if (this.figNum == 113) {
 		// Editor Calls
 		editor1.addRow(editor1.getSelectedRowIndex(),
@@ -621,63 +714,63 @@ var Figure = function(figNum, figureMode) {
 				 {text:"&nbsp;", width:"50px"},
 				 {text:";", width:"5px"},
 				 {text:"reserve a block of memory one word long for 'total'", type: "comment"}]);
-	editor1.addRow(editor1.getSelectedRowIndex(),
-			[{text:"ABC", type:"label1", width:"50px"},
-			 {text:".WORD", type:"datatype", width:"74px"},
-			 {text:"2", type:"literal", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:";", width:"5px"},
-			 {text:"reserve a word of memory for variable 'abc'. Initialize to 2.", type: "comment"}]);
-	editor1.addRow(editor1.getSelectedRowIndex(),
-			[{text:"XYZ", type:"label1", width:"50px"},
-			 {text:".WORD", type:"datatype", width:"74px"},
-			 {text:"3", type:"literal", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:";", width:"5px"},
-			 {text:"reserve a word of memory for variable 'xyz'. Initialize to 3.", type: "comment"}]);
-	editor1.addRow(editor1.getSelectedRowIndex(),
-			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"LOAD", type:"keyword", width:"74px"},
-			 {text:"REGD,", width:"50px"},
-			 {text:"ABC", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:";", width:"5px"},
-			 {text:"load the value of variable 'abc' into register D.", type:"comment"}]);
-	editor1.addRow(editor1.getSelectedRowIndex(),
-			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"LOAD", type:"keyword", width:"74px"},
-			 {text:"REGE,", width:"50px"},
-			 {text:"XYZ", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:";", width:"5px"},
-			 {text:"load the value of variable 'xyz' into register D.", type:"comment"}]);
-	editor1.addRow(editor1.getSelectedRowIndex(),
-			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"ADD", type:"keyword", width:"74px"},
-			 {text:"REGF,", width:"50px"},
-			 {text:"REGD,", width:"50px"},
-			 {text:"REGE", width:"50px"},
-			 {text:";", width:"5px"},
-			 {text:"add the contents of registers D and E placing the result in F.", type:"comment"}]);
-	editor1.addRow(editor1.getSelectedRowIndex(),
-			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"STORE", type:"keyword", width:"74px"},
-			 {text:"REGF,", width:"50px"},
-			 {text:"TOTAL", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:";", width:"5px"},
-			 {text:"store the value held in register F into the variable 'total'.", type:"comment"}]);
-	editor1.addRow(editor1.getSelectedRowIndex(),
-			[{text:"&nbsp;", type:"label1", width:"50px"},
-			 {text:"HALT", type:"keyword", width:"74px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:"&nbsp;", width:"50px"},
-			 {text:";", width:"5px"},
-			 {text:"halt execution of this assembly language program.", type:"comment"}]);	
-	} else if (this.figNum == 114) {
+		editor1.addRow(editor1.getSelectedRowIndex(),
+				[{text:"ABC", type:"label1", width:"50px"},
+				 {text:".WORD", type:"datatype", width:"74px"},
+				 {text:"2", type:"literal", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:";", width:"5px"},
+				 {text:"reserve a word of memory for variable 'abc'. Initialize to 2.", type: "comment"}]);
+		editor1.addRow(editor1.getSelectedRowIndex(),
+				[{text:"XYZ", type:"label1", width:"50px"},
+				 {text:".WORD", type:"datatype", width:"74px"},
+				 {text:"3", type:"literal", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:";", width:"5px"},
+				 {text:"reserve a word of memory for variable 'xyz'. Initialize to 3.", type: "comment"}]);
+		editor1.addRow(editor1.getSelectedRowIndex(),
+				[{text:"&nbsp;", type:"label1", width:"50px"},
+				 {text:"LOAD", type:"keyword", width:"74px"},
+				 {text:"REGD,", width:"50px"},
+				 {text:"ABC", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:";", width:"5px"},
+				 {text:"load the value of variable 'abc' into register D.", type:"comment"}]);
+		editor1.addRow(editor1.getSelectedRowIndex(),
+				[{text:"&nbsp;", type:"label1", width:"50px"},
+				 {text:"LOAD", type:"keyword", width:"74px"},
+				 {text:"REGE,", width:"50px"},
+				 {text:"XYZ", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:";", width:"5px"},
+				 {text:"load the value of variable 'xyz' into register D.", type:"comment"}]);
+		editor1.addRow(editor1.getSelectedRowIndex(),
+				[{text:"&nbsp;", type:"label1", width:"50px"},
+				 {text:"ADD", type:"keyword", width:"74px"},
+				 {text:"REGF,", width:"50px"},
+				 {text:"REGD,", width:"50px"},
+				 {text:"REGE", width:"50px"},
+				 {text:";", width:"5px"},
+				 {text:"add the contents of registers D and E placing the result in F.", type:"comment"}]);
+		editor1.addRow(editor1.getSelectedRowIndex(),
+				[{text:"&nbsp;", type:"label1", width:"50px"},
+				 {text:"STORE", type:"keyword", width:"74px"},
+				 {text:"REGF,", width:"50px"},
+				 {text:"TOTAL", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:";", width:"5px"},
+				 {text:"store the value held in register F into the variable 'total'.", type:"comment"}]);
+		editor1.addRow(editor1.getSelectedRowIndex(),
+				[{text:"&nbsp;", type:"label1", width:"50px"},
+				 {text:"HALT", type:"keyword", width:"74px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:"&nbsp;", width:"50px"},
+				 {text:";", width:"5px"},
+				 {text:"halt execution of this assembly language program.", type:"comment"}]);	
+		} else if (this.figNum == 114) {
 		// Editor Calls
 		editor1.addRow(editor1.getSelectedRowIndex(),
 				[{text:"X", type:"label1", width:"50px"},
@@ -1482,7 +1575,8 @@ var Figure = function(figNum, figureMode) {
 		editor1.setCellClickListener(function(event){
 			//console.log('from index, editor1: cell click');
 			//console.log('\t' + $(this).attr('class'));
-			
+
+			// Insertion pointer listener
 			if($(this).hasClass("insert")){
 				if($(this).css('cursor', 'pointer')) {
 					if($(this).parent().index() >= memPointer-1){
@@ -1493,6 +1587,7 @@ var Figure = function(figNum, figureMode) {
 					}
 				}
 			}
+			// Deletion listener
 			else if($(this).hasClass("lineNum")){
 				//console.log($(this).parent().parent().parent().parent().parent().index());
 				//console.log("Pre-Deletion memPointer = "+memPointer);
@@ -1501,7 +1596,6 @@ var Figure = function(figNum, figureMode) {
 				clickedCell = $(this);
 			}
 			else{
-				// Woo! We can use this section later! :D
 				var cellVal = $(this).text();					// grab the cell value of clicked cell
 				var cellNum = $(this).index();					// grab the cell number of clicked cell
 				var rowNum = ($(this).parent().parent().parent().parent().parent().index());	// grab row number in codeTable of clicked cell
@@ -1566,7 +1660,8 @@ var Figure = function(figNum, figureMode) {
 		});
 	}
 
-	
+
+	// Beginning of AngularJS controler side of the Assembly lab.
 	var assemblyName = 'assembly' + this.figNum;
 	//console.log(assemblyName);
 	var assemblycontroller = 'assemblycontroller' + this.figNum;
@@ -1577,28 +1672,30 @@ var Figure = function(figNum, figureMode) {
 	.provider(
 			'assembler',
 			function() {
-
+				
+				// Interpreter for the Assembly labs.
 				var assembler = function(tableName, varTable, figureMode) {
 					this.tableName = tableName;
-
+						
+					// Used in cases where 'this' keyword is unrecognized.
 					var parser = this;
+					// Flag to tell when program is finished.
 					this.complete = false;
 					this.intervalID;
 					// Determines if in Figure or Architecture mode
 					// True for Figure, False if Architecture
 					this.figureMode = figureMode; // Outdated
 
-					// A flag indicating whether the program has been run
-					// before
+					// A flag indicating whether the program has been run before
 					// Primarily used for checking if values should be reset
 					this.done = false;
 
 					// Initial program counter
 					// Increased when .Block and .Word is used/modified
 					this.programCounter = 0;
-
 					this.previousCounter = 0;
 
+					// Used to move away from .Block directives with a size greater than 1
 					this.offSet = 0;
 
 					// Current program counter
@@ -1630,7 +1727,6 @@ var Figure = function(figNum, figureMode) {
 					// index2 = value
 					// index3 = memoryLocation
 					this.varMemory = [];
-
 					this.varRegister = [];
 
 					// List of memory labels
@@ -1663,7 +1759,7 @@ var Figure = function(figNum, figureMode) {
 					                  [ "REGC", 0, false, "REGC," ], // RegC
 					                  [ "REGD", 0, false, "REGD," ], // RegD
 					                  [ "REGE", 0, false, "REGE," ], // RegE
-					                  [ "REGF", 0, false, "REGF," ] // RegF
+					                  [ "REGF", 0, false, "REGF," ]  // RegF
 									];
 
 					// Memory storage
@@ -1769,6 +1865,11 @@ var Figure = function(figNum, figureMode) {
 					// Checks through the program to ensure that no code has been left with default values
 					this.preprocessor = function() {
 						var size = editor1.getRowCount();
+						if(size <= 0){
+							createAlertBox("ERROR!", "You have no code to run!", true, null);
+							this.complete = false;
+							return 0;
+						}
 						var errors = [];
 						for(var i = 0; i < size; i++){
 							var table = editor1.rowToArray(i);
@@ -2845,11 +2946,6 @@ var Figure = function(figNum, figureMode) {
 					this.walk = function() {
 						//var table = editor1.rowToArray(this.programCounter);
 						//console.log("Edited: "+edited);
-						//if (this.done) {
-							//this.reset();
-							// console.log("Would you like to go again?");
-							//this.done = false;
-						//}
 						if (!this.stop) {
 
 							this.previousCounter = this.programCounter;
@@ -2866,22 +2962,14 @@ var Figure = function(figNum, figureMode) {
 					// Runs through the program
 					// First checks if the code has recently been edited.
 					this.run = function() {
-						//if (edited) {
-							//var temp = this.preprocessor();
-							//if(complete){
-							//	this.init();
-							//	this.previousCounter = this.programCounter;
-							//} else {
-							//	this.stop = true;
-							//}
-						//} else if (this.done) {
-							//this.reset();
-						//}
+						// Legacy function
+						// Functionality handled in AngularJS controler
 					};
 
 					// Pauses execution of program
 					this.pause = function() {
-						// legacy function
+						// Legacy function
+						// Functionality handled in AngularJS controler
 					};
 
 					// Resets the program counter and restores program to
@@ -2965,6 +3053,7 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.tabs = [];
 
+	// This should never, never run.
 	$scope.error = function() {
 		document.write('<h1>you broke it.</h1>');
 	};
@@ -2979,13 +3068,20 @@ tabsstuff.controller(assemblycontroller,
 	// Used for highlighting memory
 	var memColor;
 
+	// Used to set the text in the Run/Walk buttons
 	var runText = "Run";
 	var walkText = "Walk";
+	
+	// ID used in the run process
 	var intervalId;
+	
+	// Flag used to determin if a program has ran
 	var hasRan = false;
 
+	// Creation of a new interpreter
 	$scope.assembler = new assembler(tableName, varTable, bool);
 
+	//Used in updating the memory in the Architecture tab
 	var memoryhasran = false;
 
 	var memory = new Array(256);
@@ -2996,12 +3092,15 @@ tabsstuff.controller(assemblycontroller,
 	
 	$scope.assembler.init();
 
+	// Function that updates the information in the Architecture tab.
+	// @param { updateCounter } - Flag for determining if the counter should be updated in the view
 	$scope.architecture = function(updateCounter) {
 
 		// var varlength = $scope.assembler.varMemory.length;
 		var varmemcount = 0;
 		var regcount = 0;
 
+		// Setup of Memory for the Figure Tab
 		$scope.varMemory = [];
 		$scope.addVarMemory = function() {
 			$scope.varMemory.push({
@@ -3011,6 +3110,7 @@ tabsstuff.controller(assemblycontroller,
 			varmemcount += 1;
 		};
 
+		// Setup of Registers for the Figure Tab
 		$scope.varRegister = [];
 		$scope.addVarRegister = function() {
 			$scope.varRegister.push({
@@ -3020,6 +3120,7 @@ tabsstuff.controller(assemblycontroller,
 			regcount += 1;
 		};
 
+		// Setup of Registers for the Architecture Tab
 		var assemblerReg = $scope.assembler.register;
 		var register = [];
 		for ( var i = 0; i < 16; i++) {
@@ -3065,6 +3166,7 @@ tabsstuff.controller(assemblycontroller,
 			}
 		};
 
+		// Setup of flags in the view
 		var overflowFlag = $scope.assembler.returnOverflowFlag();
 		$scope.overflowFlag = [ {
 			flag : overflowFlag
@@ -3090,10 +3192,6 @@ tabsstuff.controller(assemblycontroller,
 
 		$scope.varlength = $scope.assembler.varMemory.length;
 		$scope.vars = [];
-		
-		
-		
-	
 		
 		$scope.addvars = function(num) {
 
@@ -3166,6 +3264,8 @@ tabsstuff.controller(assemblycontroller,
 			} ];
 		}
 
+		// Used to highlight memory during code execution
+		// @param { num } - program counter that is passed during execution
 		$scope.set_color = function(num) {
 			if(memColor){
 				if (num == this.previousCounter) {
@@ -3181,6 +3281,8 @@ tabsstuff.controller(assemblycontroller,
 
 	// Simplified version to update memory display
 	// Only updates loations that have been changed.
+	// Proof of concept function that is currently not in use due to potential of breaking
+	// AngularJS functionality
 	$scope.updateMemory = function() {
 		var temp = $scope.assembler.memory; // Grab current memory
 		var memTable = document.getElementById(/*unique memory identifier*/); // Grab current memory display
@@ -3194,6 +3296,8 @@ tabsstuff.controller(assemblycontroller,
 		}
 	};
 
+	// Sets color of Run/Walk button based upon text
+	// @param { button } - text displayed in the button
 	$scope.buttonColor = function(button) {
 		if (button == "Run") {
 			return 'btn btn-success';
@@ -3216,12 +3320,14 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.architecture(true);
 
+	// Functionality of the Pause button
 	$scope.pause = function() {
 		// $scope.assembler.pause();
 		$scope.architecture(true);
 		$interval.cancel(intervalId);
 	};
 
+	// Functionality of the Reset button
 	$scope.reset = function() {
 		$scope.assembler.reset();
 		$scope.architecture(true);
@@ -3231,21 +3337,28 @@ tabsstuff.controller(assemblycontroller,
 
 	};
 
+	// Functionality of the walk button
+	// During Run, this function is called via a timer
 	$scope.walk = function() {
-		console.log("Edited Status: "+this.edited);
-		if(this.edited) {
+		console.log("Edited Status: "+self.edited);
+		// If the program has been edited, then it needs to be reinterpreted
+		if(self.edited) {
 			console.log("It's been edited. Need to preprocess.");
+			// Move insert bar to bottom of program
 			editor1.selectRowByIndex(editor1.getRowCount()-2,false);
+			// make sure the program is complete
+			// temp used to for the program to wait on the preprocessor
 			var temp = $scope.assembler.preprocessor();
 			if($scope.assembler.complete){
+				// The program is complete. Initialize everything to run.
 				console.log("It's a complete program! Running init.");
 				var tem = $scope.assembler.init();
 				hasRan = false;
 				memoryhasran = false;
 				$scope.architecture(true);
-				this.edited = false;
+				self.edited = false;
 			} else {
-				//alert to user
+				//alert to user the program isn't complete
 				$interval.cancel(intervalId);
 				hasRan = false;
 				attemptingToRun = false;
@@ -3282,6 +3395,7 @@ tabsstuff.controller(assemblycontroller,
 		return 0;
 	};
 
+	// Function for the Run button
 	$scope.run = function() {
 		if (!attemptingToRun) {
 			console.log("Run sequence started");
@@ -3293,6 +3407,7 @@ tabsstuff.controller(assemblycontroller,
 		}
 	};
 
+	// Assigns values for the button's text
 	$scope.buttons = function() {
 		$scope.runText = runText;
 		$scope.walkText = walkText;
@@ -3300,6 +3415,10 @@ tabsstuff.controller(assemblycontroller,
 
 	$scope.buttons();
 
+	// Functionality for the Run Button
+	// Toggled between states based upon what is currently being done
+	// If the program is attempting to run, then the button becomes a Pause button
+	// Else it is a Run button
 	$scope.runButton = function() {
 		if (attemptingToRun) {
 			console.log("Pause Button Pressed");
@@ -3320,6 +3439,9 @@ tabsstuff.controller(assemblycontroller,
 		ga('send', 'event', 'assembly', 'run', self.uniqID);
 	};
 
+	// Function for the Walk Button
+	// If the program is attempting to run, then it is a Reset button
+	// Else it is a Walk Button
 	$scope.walkButton = function() {
 		if (!attemptingToRun) {
 			console.log("Walk Button Pressed");
@@ -3340,10 +3462,11 @@ tabsstuff.controller(assemblycontroller,
 		}
 		
 		
-		
 		ga('send', 'event', 'assembly', 'walk', self.uniqID);
 	};
 
 	});
+	// Mount the Angular controler to the page. 
+	angular.bootstrap(document.getElementById(this.bootstrapName), [assemblyName]);
 }
 // vim: ts=4 sw=4 noet nolist
