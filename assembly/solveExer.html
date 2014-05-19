@@ -15,20 +15,37 @@
 
 	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
-	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
-	    <link href="../lib/css/ch08.css" rel = "stylesheet">
-	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
-		<link href="../lib/css/grid.css" rel = "stylesheet">
+		<link rel='stylesheet' href='../lib/css/bootstrap-3.css'>
+		<link rel='stylesheet' href='../lib/css/jquery-ui-custom.css'>
+		<link rel='stylesheet' href='../lib/css/editor.css'>
+		<link rel='stylesheet' href='css/assembly.css'>	
+	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	    <link rel='stylesheet' href='css/assembly.css'>	
+	    <link href="../lib/css/styles.css" rel="stylesheet">
+	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
+	    <link href='../lib/css/Dialogs.css' rel='stylesheet'>
+		<script type="text/javascript" src="../lib/js/visibility.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		
 	    <!-- Java Script files -->
-		<script type="text/javascript" src="../lib/js/master.js"></script>
-	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+	    <script type="text/javascript" src="../lib/js/angular.js"></script>
+	    <script type="text/javascript" src="../lib/js/jQuery.js"></script>
+	    <script type="text/javascript" src="../lib/js/less.js"></script>
+	    <script type="text/javascript" src="../lib/js/jquery-ui.js"></script>
+<!--
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.min.js"></script>
+-->
+	    <script type="text/javascript" src="../lib/js/ui-bootstrap-0.10.0.js"></script>
+	    <script type="text/javascript" src="../lib/js/tabs.js"></script>
+	    <script type="text/javascript" src="../lib/js/ui-bootstrap.js"></script>
+		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/master.js"></script>
+		<script type="text/javascript" src="../lib/js/editor.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
 		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
-		<script type="text/javascript" src="../lib/js/nav.js"></script>
+		<script type="text/javascript" src="../lib/js/WatsonDialogs.js"></script>
+		<script type="text/javascript" src="../lib/js/WatsonDataStore.js"></script>
+		<script type="text/javascript" src="js/figuresV2.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -43,44 +60,12 @@
 			<!-- Sandbox -->
 			<div id="Scratch"></div>
 			<hr>
-			<div id="JSSandbox">
-				So... a SQL query goes into a bar, walks up to two tables and asks, "Can I join you?"
-				<br>
-				<br>
-				<br>
-				No?
-				<br>
-				<br>
-				<br>
-				Okay, okay. How about this:
-				<br>
-				<br>
-				<br>
-				<b>“Knock, knock.”</b>
-				<br>
-				<br>
-				“Who’s there?”
-				<br>
-				<br>
-				<b><i>very long pause. . . </b></i>
-				<br>
-				<br>
-				“Java.”
-				<br>
-				<br>
-				<br>
-				<i>Badum tish</i>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				... but seriously, we're still working on this. . . . so leave.
-			</div>
+			<div id="container-exerAssembly-Sandbox"></div>
 			<!-- End Sandbox -->
 			
 			<div style="text-align: center">
 				<button class="btn btn-small btn-primary" onclick="saveExercise()" style="margin-top: 10px;">Save Exercise</button>
+				<!--  button class="btn btn-small btn-primary" onclick="clearExercise()" style="margin-top: 10px;">Clear Exercise</button -->
 			</div>
 			<br>
 			
@@ -102,6 +87,7 @@
 		
 		<script>
 			var lab;
+			var chapterName = "assembly";
 			
 			$(document).ready(function() {
 				populateNav();
@@ -114,10 +100,91 @@
 				
 				//lab = new DigitalLogicsLab(1, exerNum);
 				
+				editor = new Figure(exerNum, false, chapterName, true);
+				
 			});
+			var word = function(editorName){
+				editor.word();
+			};
 			
+			var block = function(editorName){
+				editor.block();
+			};
+			
+			var loadIMM = function(editorName){
+				editor.loadIMM();
+			};
+			
+			var load = function(editorName){
+				editor.load();
+			};
+			
+			var store = function(editorName){
+				editor.store();
+			};
+			
+			var loadIND = function(editorName){
+				editor.loadIND();
+			};
+			
+			var storeIND = function(editorName){
+				editor.storeIND();
+			};
+			
+			var add = function(editorName){
+				editor.add();
+			};
+			
+			var subtract = function(editorName){
+				editor.subtract();
+			};
+			
+			var and = function(editorName){
+				editor.and();
+			};
+			
+			var or = function(editorName){
+				editor.or();
+			};
+			
+			var not = function(editorName){
+				editor.not();
+			};
+			
+			var asl = function(editorName){
+				editor.asl();
+			};
+			
+			var asr = function(editorName){
+				editor.asr();
+			};
+			
+			var compare = function(editorName){
+				editor.compare();
+			};
+			
+			var branch = function(editorName){
+				editor.branch();
+			};
+			
+			var jump = function(editorName){
+				editor.jump();
+			};
+			
+			var halt = function(editorName){
+				editor.halt();
+			};
 			function saveExercise() {
-				//lab.saveExercise();
+				editor.saveExercise();
+			}
+			
+			// Note: functionality not yet clearly defined.
+			function clearExercise() {
+				var exerNum = parseFloat(localStorage.getItem("currExerNum"));
+				var exerQues = localStorage.getItem("currExerQues");
+				
+				editor.clearExercise();
+				editor = new Figure(exerNum, false, chapterName, true);
 			}
 		</script>
 	</body>
