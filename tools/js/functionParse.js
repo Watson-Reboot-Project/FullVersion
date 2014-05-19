@@ -37,7 +37,6 @@ this.FunctionParse = function(figNum) {
 	{
 		var details = new parseDetails();
 		//Check if first character is equal. If so, parse function
-		console.log(functionString);
 		if(functionString!==undefined && functionString!==null && functionString.charAt(0)=='=')
 		{
 			//if(functionString.indexOf("SUM")==1) //deprecated
@@ -54,7 +53,7 @@ this.FunctionParse = function(figNum) {
 			{
 	      //strip whitespaces and dollar signs
 	      var substitute = functionString.substr(1);
-	      substitute = substitute.replace(/ /g,'');
+	      //substitute = substitute.replace(/ /g,'');
 	      substitute = substitute.replace(/\$/g,'');
 	      substitute = substitute.toUpperCase();
 				//always attempt to evaluate as expressions in the most up-to-date builds.
@@ -102,8 +101,8 @@ this.FunctionParse = function(figNum) {
 			{
 	      //Include everything after '='
 	      expressionString = functionString.substr(1);
-	      details.row = expressionString.replace(/ /g,'');
-	      details.row = details.row.replace(/\$/g,'');
+	      //details.row = expressionString.replace(/ /g,'');
+	      details.row = expressionString.replace(/\$/g,'');
 	      
 			}
 			else

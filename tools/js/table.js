@@ -14,6 +14,9 @@
 	 //programs, and they are heavily intertwined.
 	 var ib = $("#functionBox" + figNum);
 	 this.ib = ib;
+	 //handles google analytics mneumonics
+	 this.gaid = "";
+	 this.WDS = new DataStore;
 	 //for performance purposes, tracks when user has made input so that
 	 //certain update functions can be skipped.
 	 var recentChanges = false; 
@@ -27,12 +30,12 @@
 	this.dependantOn = [];
 	//Note: for all dependencies, undefined is equivalent to false.
 	//stores data for format
-	var formatArray =[];
-	this.formatArray = formatArray;
+	this.formatArray = [];
 	//This keeps track of which cells are fully updated after changing the value of a cell on which
 	//others are dependant
-	var updateTable = [];
-	this.updateTable = updateTable;
+	this.updateTable = [];
+  //When a cell is a numeric value or an expression, store the value here.
+	this.pushTable = [];
 	//keeps track of whether cells are updating and which cell initiated the update cycle
 	var updateState = [false, 0, 0];
 	this.updateState = updateState;
@@ -60,7 +63,8 @@
 	  NORMAL:0,
 	  FUNCTION:1,
 	  UNDO:2,
-	  REDO:3
+	  REDO:3,
+	  PUSHUPDATES:4
 	};
 	this.URTypes = URTypes;
 	this.URArray = [];
@@ -93,8 +97,9 @@
 
 	//global variables
 	var currSelect = [0,0,0,0];
-	var funcTracker = new Array();
-	this.funcTracker = funcTracker;
+	//var funcTracker = new Array();
+	//this.funcTracker = funcTracker;
+	this.funcTracker = new Array();
 	var meditorManager;
 	var currentEditor;
 	var horDragDealer = 0;
@@ -105,11 +110,13 @@
 	switch(figNum)
 	{
     case 3:
+      T.gaid = "simplespreadsheet";
       minRow = 8;
       maxRow = 8;
       minCol = 3;
       maxCol = 3;
     case 4:
+      T.gaid = "ctofspreadsheet";
       minRow = 8;
       maxRow = 8;
       minCol = 4;
@@ -118,6 +125,7 @@
       break;
     case 81:
     case 82:
+      T.gaid = "gradespreadsheet";
       minRow = 7;
       maxRow = 7;
       minCol = 6;
@@ -125,23 +133,56 @@
       tableHeight = 350;
       break;
     case 91:
+      T.gaid = "cellpremove";
+      minRow = 3;
+      maxRow = 3;
+      minCol = 3;
+      maxCol = 3;
+      break;
     case 92:
+      T.gaid = "valpremove";
+      minRow = 3;
+      maxRow = 3;
+      minCol = 3;
+      maxCol = 3;
+      break;
     case 93:
+      T.gaid = "cellpremove";
+      minRow = 3;
+      maxRow = 3;
+      minCol = 3;
+      maxCol = 3;
+      break;
     case 94:
+      T.gaid = "valpostmove";
       minRow = 3;
       maxRow = 3;
       minCol = 3;
       maxCol = 3;
       break;
     case 131:
+      T.gaid = "actualcontents";
+      minRow = 7;
+      maxRow = 7;
+      minCol = 4;
+      maxCol = 4;
+      break;
     case 132:
+      T.gaid = "displayvalues";
       minRow = 7;
       maxRow = 7;
       minCol = 4;
       maxCol = 4;
       break;
     case 141:
+      T.gaid = "avgactualcontents";
+      minRow = 12;
+      maxRow = 12;
+      minCol = 5;
+      maxCol = 5;
+      break;
     case 142:
+      T.gaid = "avgdisplaycontents";
       minRow = 12;
       maxRow = 12;
       minCol = 5;
@@ -167,7 +208,164 @@
 	  colHeaders: true,
 	  outsideClickDeselects: false,
 	}, T);
-
+	
+	//Procedure for evaluating a cell's content.
+	//Given a value objects which includes the row,
+	//column, and function string of the cell, it changes the
+	//value object's .value attribute to the display value of the cell.
+	//also tracks related cells by updating tracking tables.
+		cellRoutine = function(value)
+		{
+	      var selected = {};
+	      selected[0] =value.row;
+	      selected[1] = value.prop;
+	      selected[2] = value.value;
+	      //when a cell is going through cellRoutine, it is being updated.
+	      //this puts all the cells that depend on it into question.
+	      //This cell in particular is in limbo until the value is acquired.
+	        T.updateTable[selected[0]*ht.countRows()+selected[1]] = null;
+	        if(T.usedBy[selected[0]]!==undefined && T.usedBy[selected[0]][selected[1]]!==undefined)
+	        {
+	        for(var i = 0; i<=T.usedBy[selected[0]][selected[1]].length; i++)
+	         {
+	          if(T.usedBy[selected[0]][selected[1]][i]!==undefined)
+	          {
+	              for(var k = 0; k<=T.usedBy[selected[0]][selected[1]][i].length; k++)
+	              {
+	                if(T.usedBy[selected[0]][selected[1]][i][k])
+	                    CF.setUpdateTable(i,k);
+	              }
+	          }
+	         }
+	        }
+	      if(T.URFlag == T.URTypes.NORMAL)
+	      {
+          fillFuncTracker(selected);
+          var func = T.funcTracker[selected[0]*ht.countRows()+selected[1]];
+          if(func!=undefined)
+            func.funcString = value.value;
+	      }
+	      //Using the cell editor does not set a cell's value until
+	      //the selected cell changes. While using the text box, I use the setData
+	      //method to change the display value of a cell. So this test prevents any
+	      //sort of function string handling while cells are being edited.
+				if(!(ib.is(":focus")))
+				{
+	        //Since the function string has changed, begin by discarding all cells this cell
+	        //previously depended on.
+	        CF.clearAssociations(selected[0],selected[1]);
+					var details = FP.functionParse(value.value);
+					if(details.function==FP.functionCall.SUM) //deprecated
+					{
+	          var cell = {};
+	          cell.row = value.row;
+	          cell.col = value.prop;
+						value.value = functionSUM(details);
+						var error = updateDependencyByDetails(details, cell);
+						if(error)
+	            value.value = "#ERROR";
+					}
+					else if(details.function==FP.functionCall.AVG) //deprecated
+					{
+	          var cell = {};
+	          cell.row = value.row;
+	          cell.col = value.prop;
+						value.value = functionAVG(details);
+						var error = updateDependencyByDetails(details, cell);
+						if(error)
+	            value.value = "#ERROR";
+					}
+					else if(details.function==FP.functionCall.EXPRESSION)
+					{
+	          var cell = {};
+	          cell.row = value.row;
+	          cell.col = value.prop;
+	          value.value = CF.evaluateTableExpression(details.row, cell);
+					}
+	        else if(details.function==FP.functionCall.ERROR)
+	        {
+	          value.value = "#ERROR";
+	        }
+          //insert the proper value into the update table.
+          //it is okay to ignore a single dollar sign in front because undo and redo
+          //may put values directly into the table in this format.
+          value2 = value.value;
+          if(typeof value2 == 'string' && value2.charAt(0)=='$')
+            value2 = value2.slice(1);
+          if(+value2 !== NaN)
+            T.updateTable[ht.countRows()*value.row+value.prop] = +value2;
+          else
+            T.updateTable[ht.countRows()*value.row+value.prop] = undefined;
+          //After a cell is changed, it needs to notify any cell that depends on it.
+          if(T.URFlag == T.URTypes.NORMAL)
+            CF.notifyDependants(value.row, value.prop);
+	        //check for format specified
+	        if(T.formatArray[selected[0]]!=undefined &&
+	        T.formatArray[selected[0]][selected[1]]!=undefined &&
+	        T.formatArray[selected[0]][selected[1]].type[T.formatArray[selected[0]][selected[1]].index]!=formatOption.FNONE &&
+	        !isNaN(parseFloat(value.value)))
+	        {
+	          var index = value.value.indexOf('.');
+	          if(index>=0)
+	          {
+	            value.value =value.value+"000";
+	          }
+	          else
+	          {
+	            index = value.value.length;
+	            value.value =value.value+".000";
+	          }
+	          var format = T.formatArray[selected[0]][selected[1]];
+	          switch(format.type[format.index])
+	          {
+	            case formatOption.ZERO:
+	              value.value = value.value.substr(0,index);
+	              break;
+	            case formatOption.ONE:
+	              value.value = value.value.substr(0,index+2);
+	              break;
+	            case formatOption.TWO:
+	              value.value = value.value.substr(0,index+3);
+	              break;
+	            case formatOption.THREE:
+	              value.value = value.value.substr(0,index+4);
+	              break;
+	            case formatOption.DOLLARS:
+	              value.value = "$"+value.value.substr(0, index+3);
+	              break;
+	          }
+	        }
+				}
+		}
+		this.cellRoutine = cellRoutine;
+		
+		//pushes the updates stored in pushTable to the cells.
+		function pushUpdates()
+		{
+      T.URFlag = T.URTypes.PUSHUPDATES;
+      var fillerArray = [];
+      var largest = 0;
+      for(var i = 0; i<=T.pushTable.length; i++)
+      {
+        fillerArray[i] = [];
+        if(T.pushTable[i]===undefined)
+          ; //just need an empty array if undefined
+        else
+        {
+          if(T.pushTable[i].length>largest)
+            largest = T.pushTable[i].length;
+          for(var k = 0; k<=T.pushTable[i].length; k++)
+          {
+            if(T.pushTable[i][k]===undefined)
+              ; //do nothing
+            else
+              fillerArray[i][k] = T.pushTable[i][k];
+          }
+        }
+      }
+      T.pushTable = [];
+      ht.populateFromArray(0,0, fillerArray, i, largest);
+		}
 	//On page load..
 	$(document).ready(function() {
 	  //Default selected cell to 0,0
@@ -190,6 +388,7 @@
 		//Listen for any changes to cells.
 		$("#" + AE.tableDiv.id).handsontable({
 			afterChange: function(changes, source) {
+        ga("send", "event", "tools", "edit", "figure-"+T.gaid; 
 	      if(T.URFlag == T.URTypes.NORMAL)
 	      {
 	        T.URArray[T.URIndex] = {};
@@ -197,11 +396,19 @@
 	        T.URIndex++;
 	        T.URArray = T.URArray.slice(0,T.URIndex);
 	      }
-	      T.URFlag = T.URTypes.NORMAL;
+	      if(T.URFlag == T.URTypes.PUSHUPDATES)
+	      {
+          T.URArray[T.URIndex] = {};
+	        T.URArray[T.URIndex].type = T.URTypes.PUSHUPDATES;
+	        T.URIndex++;
+	        T.URArray = T.URArray.slice(0,T.URIndex);
+	      }
+	      if(T.URFlag!=T.URTypes.UNDO && T.URFlag!=T.URTypes.REDO)
+          T.URFlag = T.URTypes.NORMAL;
 				var selected = ht.getSelected();
 				var isFunction = false
-				var func = funcTracker[selected[0]*ht.countRows()+selected[1]];
-				if(func!== undefined)
+				var func = T.funcTracker[selected[0]*ht.countRows()+selected[1]];
+				if(func!= undefined)
 	        isFunction = true;
 				/*for(var i = 0; i < funcTracker.length; i++) {
 					if(funcTracker[i] !== undefined && funcTracker[i].row == selected[0] && funcTracker[i].col == selected[1]) {
@@ -209,18 +416,18 @@
 						isFunction = true;
 						break;
 					}*/
-				//After a cell is changed, it needs to notify any cell that depends on it.
-				CF.notifyDependants(changes[0][0], changes[0][1]);
-				if(updateState[0] && updateState[1] == changes[0][0] && updateState[2] == changes[0][1])
+				/*if(updateState[0] && updateState[1] == changes[0][0] && updateState[2] == changes[0][1])
 				{
 	        updateState[0] = false;
 				}
 				else
-	        updateTable[changes[0][0]*ht.countRows()+changes[0][1]] = true;
+	        updateTable[changes[0][0]*ht.countRows()+changes[0][1]] = true;*/
 				if(isFunction)
 	        CF.changeInput(func.funcString);
 				if(!isFunction)
 				 CF.changeInput(ht.getDataAtCell(selected[0], selected[1]));
+				if(T.pushTable.length > 0)
+          pushUpdates();
 			}
 		});
 		
@@ -286,19 +493,15 @@
 			{
 	      if(ib.recentlyChanged)
 	      {
-	        func = funcTracker[currSelect[0]*ht.countRows()+currSelect[1]];
-	        if(func!==undefined)
+	        func = T.funcTracker[currSelect[0]*ht.countRows()+currSelect[1]];
+	        if(func!=undefined)
 	          ht.setDataAtCell(currSelect[0], currSelect[1], func.funcString);
 	        ib.recentlyChanged = false;
 	      }
 				var selected = ht.getSelected();
-	      /*if(usedBy[selected[0]]!==undefined && usedBy[selected[0]][selected[1]]!==undefined)
-	        console.log(usedBy[selected[0]][selected[1]]);
-	      if(dependantOn[selected[0]]!==undefined && dependantOn[selected[0]][selected[1]]!==undefined)
-	        console.log(dependantOn[selected[0]][selected[1]]);*/
 	      var isFunction = false;
-				var func = funcTracker[selected[0]*ht.countRows()+selected[1]];
-				if(func!== undefined)
+				var func = T.funcTracker[selected[0]*ht.countRows()+selected[1]];
+				if(func!= undefined)
 	        isFunction = true;
 				/*for(var i = 0; i < funcTracker.length; i++) {
 					if(funcTracker[i] !== undefined && funcTracker[i].row == selected[0] && funcTracker[i].col == selected[1]) {
@@ -315,117 +518,16 @@
 		});
 
 		//Instructions before setting value into a cell.
-		$("#" + AE.tableDiv.id).handsontable({
+		$("#" + AE.tableDiv.id).handsontable(
+		{
 			beforeSet: function e(value)
 			{
-	      var selected = {};
-	      selected[0] =value.row;
-	      selected[1] = value.prop;
-	      selected[2] = value.value;
-	      //this is the original cell that causes updates.
-	      if(!updateState[0])
-	      {
-	        updateTable[selected[0]*ht.countRows()+selected[1]] = true;
-	        if(T.usedBy[selected[0]]!==undefined && T.usedBy[selected[0]][selected[1]]!==undefined)
-	        {
-	        for(var i = 0; i<=T.usedBy[selected[0]][selected[1]].length; i++)
-	         {
-	          if(T.usedBy[selected[0]][selected[1]][i]!==undefined)
-	          {
-	              for(var k = 0; k<=T.usedBy[selected[0]][selected[1]][i].length; k++)
-	              {
-	                if(T.usedBy[selected[0]][selected[1]][i][k])
-	                    CF.setUpdateTable(i,k);
-	              }
-	          }
-	         }
-	        }
-	        updateState[0] = true;
-	        updateState[1] = selected[0];
-	        updateState[2] = selected[1];
-	      }
-	      fillFuncTracker(selected);
-	      var func = funcTracker[selected[0]*ht.countRows()+selected[1]];
-	      func.funcString = value.value;
-	      //Using the cell editor does not set a cell's value until
-	      //the selected cell changes. While using the text box, I use the setData
-	      //method to change the display value of a cell. So this test prevents any
-	      //sort of function string handling while cells are being edited.
-				if(!(ib.is(":focus")))
-				{
-	        //Since the function string has changed, begin by discarding all cells this cell
-	        //previously depended on.
-	        CF.clearAssociations(selected[0],selected[1]);
-					var details = FP.functionParse(value.value);
-					if(details.function==FP.functionCall.SUM) //deprecated
-					{
-	          var cell = {};
-	          cell.row = value.row;
-	          cell.col = value.prop;
-						value.value = functionSUM(details);
-						var error = updateDependencyByDetails(details, cell);
-						if(error)
-	            value.value = "#ERROR";
-					}
-					else if(details.function==FP.functionCall.AVG) //deprecated
-					{
-	          var cell = {};
-	          cell.row = value.row;
-	          cell.col = value.prop;
-						value.value = functionAVG(details);
-						var error = updateDependencyByDetails(details, cell);
-						if(error)
-	            value.value = "#ERROR";
-					}
-					else if(details.function==FP.functionCall.EXPRESSION)
-					{
-	          var cell = {};
-	          cell.row = value.row;
-	          cell.col = value.prop;
-	          value.value = CF.evaluateTableExpression(details.row, cell);
-					}
-	        else if(details.function==FP.functionCall.ERROR)
-	        {
-	          value.value = "#ERROR";
-	        }
-	        //check for format specified
-	        if(formatArray[selected[0]]!==undefined &&
-	        formatArray[selected[0]][selected[1]]!==undefined &&
-	        formatArray[selected[0]][selected[1]].type[formatArray[selected[0]][selected[1]].index]!=formatOption.FNONE &&
-	        !isNaN(parseFloat(value.value)))
-	        {
-	          var index = value.value.indexOf('.');
-	          if(index>=0)
-	          {
-	            value.value =value.value+"000";
-	          }
-	          else
-	          {
-	            index = value.value.length;
-	            value.value =value.value+".000";
-	          }
-	          var format = formatArray[selected[0]][selected[1]];
-	          switch(format.type[format.index])
-	          {
-	            case formatOption.ZERO:
-	              value.value = value.value.substr(0,index);
-	              break;
-	            case formatOption.ONE:
-	              value.value = value.value.substr(0,index+2);
-	              break;
-	            case formatOption.TWO:
-	              value.value = value.value.substr(0,index+3);
-	              break;
-	            case formatOption.THREE:
-	              value.value = value.value.substr(0,index+4);
-	              break;
-	            case formatOption.DOLLARS:
-	              value.value = "$"+value.value.substr(0, index+3);
-	              break;
-	          }
-	        }
-				}
-			}
+        if(T.URFlag!=T.URTypes.PUSHUPDATES)
+        {
+          T.cellRoutine(value);
+        }
+        //if the display value is a number, put it into the value table.
+		 }
 		});
 		
 		//Listens for double click MITCHELL'S NOTE
@@ -438,8 +540,8 @@
 			if(currSelect!==undefined && selected[0]==selected[2] && selected[1]==selected[3] &&
 			selected[0]==currSelect[0] && selected[1]==currSelect[1])
 	      meditorManager.openEditor();
-			var func = funcTracker[selected[0]*ht.countRows()+selected[1]];
-			if(func!==undefined)
+			var func = T.funcTracker[selected[0]*ht.countRows()+selected[1]];
+			if(func!=undefined)
 			{
 	      meditorManager.getActiveEditor().setValue(func.funcString);
 	    }
@@ -461,6 +563,13 @@
 	  });
 	  
 	  var fillerArray = [];
+	  var data = T.WDS.loadExerciseData(2, figNum);
+	  var reload = false;
+	  if(data != null)
+	  {
+      reload = true;
+      data = JSON.parse(data);
+	  }
 	  switch(figNum)
 	  {
       case 3:
@@ -591,6 +700,26 @@
       ht.setDataAtCell(6,3, "");
         break;
       default:
+        if(reload)
+        {
+        T.funcTracker = data.funcTracker;
+        T.formatArray = data.formTracker;
+        var rows = data.rows;
+        var cols = data.cols;
+        if(T.funcTracker.length!=0 && rows!=undefined && cols)
+        {
+        for(var i=0; i<=rows; i++)
+        {
+          fillerArray[i] = [];
+          for(var k=0; k<=cols; k++)
+          {
+            if(T.funcTracker[i*ht.countRows()+k]!=null)
+              fillerArray[i][k] = T.funcTracker[i*ht.countRows()+k].funcString;
+          }
+        }
+        ht.populateFromArray(0,0,fillerArray,rows,cols);
+        }
+        }
         break;
 	  }
     var p = ht.$table;
@@ -617,10 +746,10 @@
 
 	function fillFuncTracker(selected)
 	{
-	  if(funcTracker[selected[0]*ht.countRows()+selected[1]] === undefined)
+	  if(T.funcTracker[selected[0]*ht.countRows()+selected[1]] === undefined)
 		{
-	    funcTracker[selected[0]*ht.countRows()+selected[1]] = {};
-	    var func = funcTracker[selected[0]*ht.countRows()+selected[1]];
+	    T.funcTracker[selected[0]*ht.countRows()+selected[1]] = {};
+	    var func = T.funcTracker[selected[0]*ht.countRows()+selected[1]];
 	    func.row=selected[0];
 	    func.col=selected[1];
 		}
@@ -653,4 +782,18 @@
     AE = addElements;
     FP = functionParse;
 	}
+	
+	$(window).on("beforeunload", function()
+	{
+    T.WDS.eraseExerciseData(2,figNum);
+    var dataPayload = {};
+    dataPayload.funcTracker = T.funcTracker;
+    dataPayload.formTracker = T.formatArray;
+    dataPayload.rows = ht.countRows();
+    dataPayload.cols = ht.countRows();
+    var dataString = JSON.stringify(dataPayload);
+    console.log(dataString);
+    T.WDS.saveExerciseData(2, figNum, dataString);
+  });
+	
 }

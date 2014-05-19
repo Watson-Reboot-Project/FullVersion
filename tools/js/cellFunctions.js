@@ -49,8 +49,14 @@ function CellFunctions(figNum) {
         }
         ht.undo();
         break;
+      case T.URTypes.PUSHUPDATES:
+        ht.undo();
+        ht.undo();
+        T.URIndex--;
+        break;
     }
     T.URIndex--;
+    T.URFlag = T.URTypes.NORMAL;
     }
   }
 
@@ -63,6 +69,12 @@ function CellFunctions(figNum) {
     {
         case T.URTypes.NORMAL:
           ht.redo();
+          //look at next inde, if push updates, then push updates.
+          if(T.URArray[T.URIndex+1].type!==undefined && T.URArray[T.URIndex+1].type==T.URTypes.PUSHUPDATES)
+          {
+            ht.redo();
+            T.URIndex++;
+          }
         break;
         case T.URTypes.FUNCTION:
           var selection = T.URArray[T.URIndex].selection;
@@ -78,10 +90,16 @@ function CellFunctions(figNum) {
             }
           }
           ht.redo();
+          break;
+        case T.URTypes.PUSHUPDATES:
+          ht.redo();
+          ht.redo();
+          T.URIndex++;
         break;
       }
       T.URIndex++;
     }
+    T.URFlag = T.URTypes.NORMAL;
   }
 
   //Handles the sum operation
@@ -149,8 +167,6 @@ function CellFunctions(figNum) {
     T.URFlag = T.URTypes.FUNCTION;
     T.URArray[T.URIndex] = {};
     T.URArray[T.URIndex].type = T.URTypes.FUNCTION;
-    T.URArray[T.URIndex].selection = selected;
-    T.URIndex++;
   	if (selected != undefined)
   	{
         if(selected[0]<selected[2])
@@ -174,6 +190,8 @@ function CellFunctions(figNum) {
             var col = selected[3];
         }
   	}
+  	T.URArray[T.URIndex].selection = [row, col, endRow, endCol];
+  	T.URIndex++;
   	var options = ["No Format", "1", "1.0", "1.00", "1.000", "$1.00"];
   	var choice;
   	var div = document.getElementById("container"+figNum);
@@ -197,12 +215,12 @@ function CellFunctions(figNum) {
           choice = T.formatOption.FNONE;
         for(var i = row; i <= endRow; i++)
         {
-          if(T.formatArray[i]===undefined)
+          if(T.formatArray[i]==undefined)
             T.formatArray[i] = [];
           fillerArray[i-row] = [];
           for(var k = col; k <= endCol; k++)
           {
-            if(T.formatArray[i][k] ===undefined)
+            if(T.formatArray[i][k]==undefined)
             {
               T.formatArray[i][k] ={};
               T.formatArray[i][k].index =0;
@@ -213,14 +231,14 @@ function CellFunctions(figNum) {
             var index = T.formatArray[i][k].index;
             T.formatArray[i][k].type[index] = choice;
             
-            if(T.funcTracker[i*ht.countRows()+k]!==undefined)
+            if(T.funcTracker[i*ht.countRows()+k]!=undefined)
             {
               fillerArray[i-row][k-col] = T.funcTracker[i*ht.countRows()+k].funcString;
               //ht.setDataAtCell(i, k, T.funcTracker[i*ht.countRows()+k].funcString);
             }
           }
         }
-        ht.populateFromArray(selected[0], selected[1], fillerArray, selected[2], selected[3]);
+        ht.populateFromArray(row, col, fillerArray, endRow, endCol);
       }
   }, div);
   }
@@ -243,11 +261,11 @@ function CellFunctions(figNum) {
   	}
     for(i=row; i<=endRow; i++)
     {
-      if(T.formatArray[i]===undefined)
+      if(T.formatArray[i]==undefined)
         T.formatArray[i] = [];
         for(k=col; k<=endCol; k++)
         {
-          if(T.formatArray[i][k] ===undefined)
+          if(T.formatArray[i][k]==undefined)
             {
               T.formatArray[i][k] ={};
               T.formatArray[i][k].index =0;
@@ -430,7 +448,7 @@ function CellFunctions(figNum) {
         {
           for(var k=0; k<=T.usedBy[row][col][i].length; k++)
           {
-            //if T.updateTable[index] is true then the cell is completely up-to-date.
+            //if T.updateTable[index] is a value then the cell is completely up-to-date.
             //if false then update it.
             //if it is null, then there is a circular reference.
             if(T.usedBy[row][col][i][k] && T.updateTable[i*ht.countRows()+k]!==null)
@@ -438,7 +456,21 @@ function CellFunctions(figNum) {
               T.updateTable[i*ht.countRows()+k] = null;
               if(T.usedBy[i]===undefined || T.usedBy[i][k]===undefined ||
               T.usedBy[i][k][row]===undefined || !T.usedBy[i][k][row][col])
-                ht.setDataAtCell(i, k, T.funcTracker[i*ht.countRows()+k].funcString);
+              {
+                var value = {};
+                value.row = i;
+                value.prop = k;
+                var func = T.funcTracker[i*ht.countRows()+k]
+                if(func.funcString!=undefined)
+                  value.value = func.funcString;
+                else
+                  value.value = "";
+                T.cellRoutine(value);
+                if(T.pushTable[i]===undefined)
+                  T.pushTable[i] = [];
+                T.pushTable[i][k] = value.value;
+                
+              }
             }
             //outdated after the introduction of updated cell tracking
             /*else if(T.usedBy[row][col][i][k] && !debug)
@@ -500,6 +532,8 @@ function CellFunctions(figNum) {
     {
       for(var k =details.col;k<=details.endCol;k++)
       {
+        //Method deprecated after update table.
+        /*
         temp=ht.getDataAtCell(i, k);
         if(temp!=null && temp!=undefined)
         {
@@ -514,6 +548,20 @@ function CellFunctions(figNum) {
         {
           sum = "#REF";
           break;  
+        }
+        */
+        if(T.updateTable[ht.countRows()*i+k]!=undefined && !isNaN(T.updateTable[ht.countRows()*i+k]))
+        {
+          sum = sum+T.updateTable[ht.countRows()*i+k];
+        }
+        else
+        {
+          temp = ht.getDataAtCell(i,k);
+          if(temp==null)
+            temp = 0;
+          else
+            temp = "#ERROR";
+          sum = sum+temp;
         }
       }
     }
@@ -542,6 +590,7 @@ function CellFunctions(figNum) {
     {
       for(var k =details.col;k<=details.endCol;k++)
       {
+        /*
         temp=ht.getDataAtCell(i, k);
         if(temp!==null)
         {
@@ -553,7 +602,25 @@ function CellFunctions(figNum) {
             sum+=temp;
           }
         count++;
+        }*/
+        //if the cell has a value, all is dandy.
+        if(T.updateTable[ht.countRows()*i+k]!==undefined)
+        {
+          sum = sum+T.updateTable[ht.countRows()*i+k];
         }
+        else
+        {
+          temp = ht.getDataAtCell(i,k);
+          //if the cell is empty, the value is zero
+          if(temp==null)
+            //don't count this one.
+            count--;
+            //if the cell has a string value, however, an error is thrown.
+          else
+            temp = "#ERROR";
+          sum = sum+temp;
+        }
+        count++;
       }
     }
     if(count==0)
@@ -571,7 +638,7 @@ function CellFunctions(figNum) {
         selected[1] = selectedCell.col;
         //ignore dollar signs
         expression = expression.replace(/\$/g,'');
-        expression = expression.replace(/ /g,'');
+        //expression = expression.replace(/ /g,'');
         expression = expression.toUpperCase();
         var SUMAVG = expression.match(FP.SUMAVGRE);
         var saGet = false;
@@ -617,7 +684,14 @@ function CellFunctions(figNum) {
               if(T.updateTable[i*ht.countRows()+k]===false)
               {
                 T.updateTable[i*ht.countRows()+k] = null;
-                ht.setDataAtCell(i, k, T.funcTracker[i*ht.countRows()+k].funcString);
+                var value = {};
+                value.row = i;
+                value.prop = k;
+                value.value = T.funcTracker[i*ht.countRows()+k].funcString;
+                T.cellRoutine(value);
+                if(T.pushTable[i] === undefined)
+                  T.pushTable[i] = [];
+                T.pushTable[i][k] = value.value;
               }
               
             }
@@ -663,8 +737,14 @@ function CellFunctions(figNum) {
             //remember portion after.
             expressionEnd = expression.substr(cellNames.index+cellNames[0].length);
             //get value of cell
-            insert=ht.getDataAtCell(cellRow, cellCol);
-            insert=convertCellTextToNumber(insert);
+            //deprecated method after update table was implemented
+            //insert=ht.getDataAtCell(cellRow, cellCol);
+            //insert=convertCellTextToNumber(insert);
+            var updatedValue = T.updateTable[ht.countRows()*cellRow+cellCol];
+            if(updatedValue===undefined)
+              insert = 0;
+            else
+              insert = T.updateTable[ht.countRows()*cellRow+cellCol];
             if(insert===null)
               insert=0;
             //reform the expression string
@@ -681,7 +761,15 @@ function CellFunctions(figNum) {
             if(T.updateTable[cellRow*ht.countRows()+cellCol]===false)
             {
                   T.updateTable[cellRow*ht.countRows()+cellCol] = null;
-                  ht.setDataAtCell(cellRow, cellCol, T.funcTracker[cellRow*ht.countRows()+cellCol].funcString);
+                  T.updateTable[i*ht.countRows()+k] = null;
+                  var value = {};
+                  value.row = i;
+                  value.prop = k;
+                  value.value = T.funcTracker[i*ht.countRows()+k].funcString;
+                  T.cellRoutine(value);
+                  if(T.pushTable[i] === undefined)
+                  T.pushTable[i] = [];
+                  T.pushTable[i][k] = value.value;
             }
             //circular dependancy
             if(T.dependantOn[cellRow]!==undefined && T.dependantOn[cellRow][cellCol]!==undefined && 
@@ -709,7 +797,9 @@ function CellFunctions(figNum) {
           return "#ERROR";
         }
         else
+        {
           return eval(expression).toString();
+        }
   }
   this.evaluateTableExpression = evaluateTableExpression;
 
@@ -800,7 +890,7 @@ function CellFunctions(figNum) {
           countk = 0;
           for(var k = tempSelected[1]; k<=tempSelected[3]; k++)
           {
-              if(T.funcTracker[i*ht.countRows()+k]!==undefined)
+              if(T.funcTracker[i*ht.countRows()+k]!=undefined)
               tempCopy[counti][countk] = T.funcTracker[i*ht.countRows()+k].funcString;
               //if the function string was undefined, set to empty string so
               //it will be treated as a string.
@@ -919,7 +1009,7 @@ function CellFunctions(figNum) {
       //a valid expression, so cell references must be parsed.
       if(oldFS!==undefined && oldFS.indexOf("=")==0)
       {
-        oldFS = oldFS.replace(/ /g,'');
+        //oldFS = oldFS.replace(/ /g,'');
         oldFS = oldFS.toUpperCase();
         //calculate differences
         var rowDif = pasteRow-initialRow;
