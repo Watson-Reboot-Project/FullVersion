@@ -91,6 +91,10 @@
 
       <div id='select_project1'></div>
 
+      <p class="Figure">
+        <span class="figNum nameofcsmajors"></span>A relation containing the names of all CS majors.
+      </p>
+
       <p>
         The first command creates a table, named CS_Majors, that is based on the “Students” relation but only contains those tuples that contain information about CS majors. The second statement projects the name attribute from the “CS_Majors” relation, producing a table that contains only the names of CS majors.
       </p>
@@ -120,6 +124,10 @@
       <!-- </p> -->
 
       <div id='select_project2'></div>
+
+      <p class="Figure">
+        <span class="figNum cs100fall2012instructors"></span>A relation containing the name of the instructor who taught CS 100 in the Fall quarter of 2012.
+      </p>
 
       <p>
         The first “select” gets information on CS 100 courses. The second “select” narrows this down to CS 100 courses taught in 2012. The third “select” narrows the data even further to the sections of CS 100 taught during the fall quarter of 2012. The final statement projects only the faculty members’ names, so that the resulting relation answers the original question: “Who taught CS 100 in the Fall of 2012?”. For our example university database, the final relation consists of a single entry “ONeal M.B.” Given different data, the final table might have contained multiple entries, since it is possible that a number of different instructors could have taught separate sections of CS 100 in the fall of 2012.

@@ -11,3 +11,7 @@ Some of the open source javascript libraries used in this project are:
 - Twitter Bootstrap
 - Angular.js
 - UI Bootstrap
+
+### BUGS
+2014-05-19
+As of right now, there are no known bugs...

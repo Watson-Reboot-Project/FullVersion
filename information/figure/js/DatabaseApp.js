@@ -1,27 +1,27 @@
 /** {{{
- * DatabaseApp.js
+ * databaseapp.js
  *
- * The logic behind the Watson Database Lab. Defines the DatabaseApp angularjs
- * module, and its primary controller DatabaseController, which provides the
+ * the logic behind the watson database lab. defines the databaseapp angularjs
+ * module, and its primary controller databasecontroller, which provides the
  * interface for the webpage.
  *
- * @author Tommy Bozeman
+ * @author tommy bozeman
  * @version (2014,04,04)
 }}} */
 
 define(['angular', 'relations', 'statements', 'ui-bootstrap'],
   function (angular, relations_import) {
-    // var app = angular.module('DatabaseApp', ['ui.bootstrap'])
-    var app = angular.module('DatabaseApp')
+    // var app = angular.module('databaseapp', ['ui.bootstrap'])
+    var app = angular.module('databaseapp')
 
-    app.controller('DatabaseController', function ($scope, statementService, Page) {
+    app.controller('databasecontroller', function ($scope, statementservice, page) {
       $scope.relations = {};
       $scope.history = [];
       var hist_index = 0;
 
       $scope.error = function () { // {{{
-        document.write('<h1>SOMETHING is WRONG.</h1>');
-        throw new Error("something went wrong...");
+        document.write('<h1>something is wrong.</h1>');
+        throw new error("something went wrong...");
       } // }}}
 
       // declaring these at app-level, so we can load up in init and still
@@ -35,38 +35,38 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
         $scope.relations = relations_import;
 
         // figure out where the data is coming from
-        if (sessionStorage.importing != undefined && JSON.parse(sessionStorage.place).figure == div_id) {
+        if (sessionstorage.importing != undefined && json.parse(sessionstorage.place).figure == div_id) {
           $scope.importing = true;
-          statements = JSON.parse(sessionStorage.importing);
-          sessionStorage[div_id] = sessionStorage.importing;
-        } else if (sessionStorage[div_id] != undefined) {
+          statements = json.parse(sessionstorage.importing);
+          sessionstorage[div_id] = sessionstorage.importing;
+        } else if (sessionstorage[div_id] != undefined) {
           $scope.importing = true;
-          statements = JSON.parse(sessionStorage[div_id]);
+          statements = json.parse(sessionstorage[div_id]);
         } else {
           $scope.importing = false;
-          statements = statementService[div_id];
+          statements = statementservice[div_id];
         }
 
-        $scope.explore_text = 'Explore!';
+        $scope.explore_text = 'explore!';
 
         // semi-hack: bringing in exercise information through the
-        // statementService; relies on exercises being named such
+        // statementservice; relies on exercises being named such
         if (/exercise/.test(div_id)) {
           if ($scope.importing) {
-            holding = statementService[div_id][0];
+            holding = statementservice[div_id][0];
           } else {
             holding = statements[0];
             statements = [];
           }
           question = holding.question;
-          $scope.explore_text = 'Solve!';
+          $scope.explore_text = 'solve!';
         }
 
-        delete sessionStorage.exploring;
-        delete sessionStorage.question;
+        delete sessionstorage.exploring;
+        delete sessionstorage.question;
 
         fig_id = div_id;
-        page_id = Page.value;
+        page_id = page.value;
 
         for (var i = 0; i < statements.length; i++){
           hist_insert(statements[i]);
@@ -75,12 +75,12 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
       }; // }}}
 
       $scope.explore = function () { // {{{
-        // We still need a name for this mapping. 'exploring' works for now, lol
-        sessionStorage.exploring = JSON.stringify(statements);
-        sessionStorage.place = JSON.stringify({figure: fig_id, page: page_id});
+        // we still need a name for this mapping. 'exploring' works for now, lol
+        sessionstorage.exploring = json.stringify(statements);
+        sessionstorage.place = json.stringify({figure: fig_id, page: page_id});
 
         if (question != undefined) {
-          sessionStorage.question = question;
+          sessionstorage.question = question;
         }
 
         window.location.href = 'editor';
@@ -90,7 +90,7 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
         if (hist_index < $scope.history.length) {
           item = $scope.history[hist_index];
           hist_index += 1;
-          // Process the statement!
+          // process the statement!
           actions[item.stmt.action](item.stmt);
           item.processed = true;
           $scope.active = item.stmt.text;
@@ -108,23 +108,50 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
 
         switch (stmt.action){
           case 'select':
-            stmt.text = stmt.name + ' <- SELECT FROM ' + stmt.relation +
-              ' WHERE ' + stmt.attribute + ' ' + stmt.condition + ' ' +
+            stmt.text = stmt.name + ' <- select from ' + stmt.relation +
+              ' where ' + stmt.attribute + ' ' + stmt.condition + ' ' +
               stmt.value + ';';
             break;
           case 'project':
-            stmt.text = stmt.name + ' <- PROJECT ' + stmt.attributes.join(', ') +
-              ' FROM ' + stmt.relation + ';';
+            stmt.text = stmt.name + ' <- project ' + stmt.attributes.join(', ') +
+              ' from ' + stmt.relation + ';';
             break;
           case 'join':
-            stmt.text = stmt.name + ' <- JOIN ' + stmt.relation1 + ' AND ' +
-              stmt.relation2 + ' OVER ' + stmt.attribute + ';';
+            stmt.text = stmt.name + ' <- join ' + stmt.relation1 + ' and ' +
+              stmt.relation2 + ' over ' + stmt.attribute + ';';
             break;
           default:
             $scope.error();
             break;
         }
         $scope.history.push({stmt: stmt, processed: false});
+
+        // feed the google
+        ga('send', 'event', 'information', 'walk', 'figure-' + getneilandburtsnamething(fig_id));
+        // ga('send', 'event', 'information', 'walk', 'figure-' + fig_id);
+      } // }}}
+
+      var getNeilAndBurtsNameThing(myname) { // {{{
+        switch (myname) {
+          case 'select1':
+            return 'selectcsmajors'; break;
+          case 'project1':
+            return 'projectfaculty'; break;
+          case 'project2':
+            return 'projectcourses'; break;
+          case 'select_project1':
+            return 'nameofcsmajors'; break;
+          case 'select_project2':
+            return 'cs100fall2012instructors'; break;
+          case 'all1':
+            return 'rel4expressions'; break;
+          case 'all2':
+            return 'relationr3'; break;
+          case 'all3':
+            return 'relationr4'; break;
+          default:
+            return myname;
+        }
       } // }}}
 
       var actions = {

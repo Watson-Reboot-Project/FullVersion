@@ -163,6 +163,7 @@ define(['angular', 'relations', 'ui-bootstrap'],
       // insert a statement into the history
       var hist_insert = function (rel) { // {{{
         var index = $scope.history.length;
+        // add a function to this object that will remove it from history
         $scope.history.push({relation: rel, remove: function () {
           entry = $scope.history[index];
 
@@ -179,6 +180,8 @@ define(['angular', 'relations', 'ui-bootstrap'],
           $scope.action = $scope.Default();
           save(self.figure + '_savepoint');
         }});
+        // feed the google
+        ga('send', 'event', 'information', 'edit', 'sandbox');
       }; // }}}
 
       // return an object to handle a 'select' action
