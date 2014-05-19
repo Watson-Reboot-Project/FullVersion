@@ -16,7 +16,7 @@
 	 this.ib = ib;
 	 //handles google analytics mneumonics
 	 this.gaid = "";
-	 this.WDS = new DataStore;
+	 this.WDS = new DataStore();
 	 //for performance purposes, tracks when user has made input so that
 	 //certain update functions can be skipped.
 	 var recentChanges = false; 
@@ -388,7 +388,7 @@
 		//Listen for any changes to cells.
 		$("#" + AE.tableDiv.id).handsontable({
 			afterChange: function(changes, source) {
-        ga("send", "event", "tools", "edit", "figure-"+T.gaid; 
+        ga("send", "event", "tools", "edit", "figure-"+T.gaid); 
 	      if(T.URFlag == T.URTypes.NORMAL)
 	      {
 	        T.URArray[T.URIndex] = {};
