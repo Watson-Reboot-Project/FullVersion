@@ -25747,7 +25747,7 @@ define('DatabaseApp',['angular', 'relations', 'statements', 'ui-bootstrap'],
           sessionStorage[div_id] = sessionStorage.importing;
         } else if (sessionStorage[div_id] != undefined) {
           $scope.importing = true;
-          statements = JSON.parse(sessionStorage[div_id]);
+          statements = json.parse(sessionStorage[div_id]);
         } else {
           $scope.importing = false;
           statements = statementService[div_id];
@@ -25808,6 +25808,9 @@ define('DatabaseApp',['angular', 'relations', 'statements', 'ui-bootstrap'],
             $scope.history[i].processed = false;
           }
         }
+        // feed the google
+        ga('send', 'event', 'information', 'walk', 'figure-' + getNeilAndBurtsNameThing(fig_id));
+        // ga('send', 'event', 'information', 'walk', 'figure-' + fig_id);
       } // }}}
 
       var hist_insert = function (stmt) { // {{{
@@ -25831,6 +25834,30 @@ define('DatabaseApp',['angular', 'relations', 'statements', 'ui-bootstrap'],
             break;
         }
         $scope.history.push({stmt: stmt, processed: false});
+
+      } // }}}
+
+      var getNeilAndBurtsNameThing = function(myname) { // {{{
+        switch (myname) {
+          case 'select1':
+            return 'selectcsmajors'; break;
+          case 'project1':
+            return 'projectfaculty'; break;
+          case 'project2':
+            return 'projectcourses'; break;
+          case 'select_project1':
+            return 'nameofcsmajors'; break;
+          case 'select_project2':
+            return 'cs100fall2012instructors'; break;
+          case 'all1':
+            return 'rel4expressions'; break;
+          case 'all2':
+            return 'relationr3'; break;
+          case 'all3':
+            return 'relationr4'; break;
+          default:
+            return myname;
+        }
       } // }}}
 
       var actions = {
