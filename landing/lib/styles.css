@@ -1,31 +1,29 @@
-
+/* Nav bar coloring */
 .navbar-inverse {
     background-image: linear-gradient(to bottom, #053d7d 0%, #002B5C 100%);
     background-repeat: repeat-x;
 }
-
+/* Well holding text and video */
 .well{
   opacity:0.9;
   box-shadow: 1px 1px 1px #2C2E30, 2px 2px 2px #2C2E30; 
-  margin: 5% auto 5% auto;
+  margin: auto  auto;
   max-width: 90%;
   overflow: auto;
 }
-@media screen and (max-width: 959px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;margin-top: 10%;}}
+@media screen and (max-width: 959px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
 @media screen and (max-width: 776px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
-@media screen and (min-width: 960px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
-
+@media screen and (max-width: 650px) { .well{ width : 98%; margin-top: 5%; margin-bottom: 10%;}}
+/* Background image on index page */
 #backgroundImage{
   /*background: url(../lib/image/backgroundImage.png) center center fixed;*/
   background: url(image/backgroundImage.png) center center fixed;
   background-size: cover;
-
 }
-
-  
+/* Watson title */ 
 #header .title{
-		color: #4E84C4;
-		text-shadow: 1px 1px 1px #2C2E30, 2px 2px 2px #2C2E30; 
+	color: #4E84C4;
+	text-shadow: 1px 1px 1px #2C2E30, 2px 2px 2px #2C2E30; 
     font-size: 90px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -40,6 +38,7 @@
 @media screen and (max-width: 600px) { #header .title  { font-size: 65px; }}
 @media screen and (max-width: 400px) { #header .title  { font-size: 55px; }}
 
+/* Interactive Loading Suite text */
 .subtitle{
 	color: #4E84C4;
 	font-family: "Avenir", "Verdana", sans-serif;
@@ -50,6 +49,7 @@
 @media screen and (max-width: 753px) { .subtitle { font-size: 22px; }}
 @media screen and (max-width: 400px) { .subtitle  { font-size: 18px; }}
 
+/* Menu items withing the well */
 .menu-items{
   list-style-type: none;
   font-size: 25px;
@@ -65,14 +65,14 @@
   padding-bottom: 3%;
 }
 
-
+/* Watson Logo for non mobile devices */
 #logo_lg{
   position: absolute;
   left: 9%;
   padding-bottom: 1%;
   max-height: 40px;
 }
-
+/* Nav styling */
 .navbar {
     border: none;
     margin-bottom: 20px;
@@ -95,7 +95,6 @@ p.copyright {
 }
 
 #filltext{
-
   padding-bottom: 5%;
 }
 
@@ -117,10 +116,11 @@ li{
   margin: auto auto;
 }
 
-.push { width:100%; height:3em; position:relative; bottom:0 !important; margin-top: 5%;}
+.push { width:100%; height:.3em; position:relative; bottom:0 !important; margin-top: 5%;}
 @media screen and (max-width: 990px) { .push {  width:100%; height:50px; position:relative; bottom:0 !important; }}
 @media screen and (max-width: 586px) { .push {  width:100%; height:50px; position:relative; bottom:0 !important; }}
 @media screen and (max-width: 400px) { .push {  width:100%; height:50px; position:relative; bottom:0 !important;}}
+@media screen and (min-height: 800px) { .push {  width:100%; height:30px; position:relative; bottom:0 !important;}}
 
 
 .butn {
@@ -143,9 +143,10 @@ li{
 }
 
 .video{
-  margin: 20px;
+  margin: auto auto;
 }
 
+/* Video frame */
 iframe{
   border: solid 2px #053d7d;
   width:560px; 
@@ -156,7 +157,7 @@ iframe{
 @media screen and (max-width: 990px) { iframe {   width:460px; height:259px; }}
 @media screen and (max-width: 637px) { iframe {   width:300px; height:169px; }}
 @media screen and (max-width: 485px) { iframe {   width:200px; height:113px; }}
-
+/* Modal modal modal */
 .modal-content > p, h1, h2, h3, h4, h5 {
   margin: 0 0 10px;
   padding-right: 5%;
@@ -172,13 +173,17 @@ iframe{
 .phase_img{
   max-width: 85%;
 }
-
+/* Phases images centering */
 .Image { /* Centers images, specifically square or wider*/
 	margin: 0 auto;
 	display: block;
 	width:70%;
 }
 
+.Bold {
+  font-weight: bold;
+}
+/* List items in the Acknoledgement modal*/
 .list > ul > li{
   width: 95%;
   text-align: justify;
@@ -186,4 +191,8 @@ iframe{
   list-style-type: disc;
   list-style-position: inside;
   margin: 0;
+}
+
+span.button-title{
+  padding: 0;
 }

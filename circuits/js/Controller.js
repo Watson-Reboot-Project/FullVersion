@@ -149,7 +149,7 @@ function Controller(setup, truthTable, draggable, displayMode, exerID, container
 		if (comp.getType() == "input") {
 			comp.getGroup().on('click tap', function(event) {
 				nodeMouseDown(event, comp);
-				mainLayer.drawScene();
+				stage.draw();
 				ga("send", "event", "circuits", "walk", "figure-" + exerID);
 			});
 		}
@@ -157,6 +157,7 @@ function Controller(setup, truthTable, draggable, displayMode, exerID, container
 			comp.getGroup().on('click tap', function (event) {
 				compMouseDown(event, comp);
 				ga("send", "event", "circuits", "walk", "figure-" + exerID);
+				stage.draw();
 			});
 		}
 	}

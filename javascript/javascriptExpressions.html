@@ -13,16 +13,17 @@
 	    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	    <!-- CSS files -->
 	    <link href = "../lib/images/favicon.ico" rel="icon" type="image/png">
-	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
-	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="../lib/css/jquery-ui-1.10.4.custom.css">
 	    <link href="../lib/css/ch08.css" rel = "stylesheet">
+	    <link href="../lib/css/bootstrap.css" rel = "stylesheet">
 	    <link href="../lib/css/styles.css" rel = "stylesheet">
-	    <link href="../lib/css/styles.css" rel="stylesheet">
 	    <link href="../lib/css/generalmedia.css" rel = "stylesheet">
+		<link href="../lib/css/grid.css" rel = "stylesheet">
+		<link href="../lib/css/Dialogs.css" rel="stylesheet">
 	    <!-- Java Script files -->
 	    <script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-		<script src="../lib/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="../lib/js/jquery-ui-1.10.4.custom.min.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
@@ -30,6 +31,15 @@
 		<script type="text/javascript" src="../lib/js/visibility.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
 		
+		<script src="js/acorn.js"></script>
+		<script src="js/interpreter.js"></script>
+		<script src="js/WatsonDataStore.js"></script>
+		<script src="js/WatsonEditor.js"></script>
+		<script type="text/javascript" src="js/engine.js"></script>
+		<script src="js/JSFigures.js"></script>
+		<script src="js/WatsonDialogs.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/editor.css">
+			
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	</head>
@@ -288,16 +298,9 @@
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("javascriptExpressions");		// get arrow paths
 					setupExerciseButtons(sectID);
+					if (!localFlag) runGA();
 				});	
 				
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			  
 			</script>
 
 	</body>

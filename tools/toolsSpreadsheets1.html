@@ -10,19 +10,21 @@
 		<title>Watson</title>
 
 		<!-- Google fonts -->
-	  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	  <!--<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 	  <!-- CSS files -->
 		<link href="../lib/css/bootstrap.css" rel="stylesheet">
 		<link href="../lib/css/styles.css" rel="stylesheet">
 		<link href="../lib/css/generalmedia.css" rel="stylesheet">
 		<!-- Java Script files -->
+		<link rel="stylesheet" href="css/jquery.handsontable.full.css">
 		<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../lib/js/nav.js"></script>
 		<script type="text/javascript" src="../lib/js/master.js"></script> 
 		<script type="text/javascript" src="../lib/js/TOCGenerator.js"></script>
 		<script type="text/javascript" src="../lib/js/Numbering.js"></script>
-		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script> 
+		<script type="text/javascript" src="../lib/js/Miscellaneous.js"></script>
+		<script src="js/jquery.handsontable.full.js"></script>
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -46,12 +48,13 @@
 				A spreadsheet consists of a rectangular grid, or table, of “cells.”  The table is divided into horizontal rows (usually numbered 1, 2, 3, etc.) and vertical columns (usually labeled A, B, C, etc.).  The location of each cell in the table can be specified by its column letter and row number.  For example, the upper-left-most cell of a spreadsheet is labeled A1, since its location is column A, row 1.  Cell locations are always specified with the column designator listed first, followed by the row designator.  
 			</p>
 		
-			<img src="images/simplespreadsheet.png" alt="A simple spreadsheet" class="Image">
+			<!--<img src="images/simplespreadsheet.png" alt="A simple spreadsheet" class="Image"> -->
 		
+			<div id="container3" style="margin-bottom:-80px; width:300px" class="container"></div>
+			
 			<p class="Figure">
 				<span class="figNum simplespreadsheet"></span>  A simple spreadsheet
 			</p>
-		
 			<p>
 				A small spreadsheet containing four columns and eight rows is shown in <span class="figNum simplespreadsheet"></span>.  Notice that the word “Grades” is stored in cell B2.  The value “100” is stored in cell C3.  In order to use a spreadsheet program effectively, the first task you must master is to become comfortable with the cell reference system.
 			</p>
@@ -115,20 +118,17 @@
 			populateNav();										// populate nav content
 			populateSpans();									// populate figure/content spans
 			pageObj = getArrowPathsByPage("toolsSpreadsheets1");		// get arrow paths
+			if (!localFlag) runGA();
 			});	
 
 		</script>
-		
-		
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			  ga('create', 'UA-50062005-1', 'latech.edu');
-			  ga('send', 'pageview');
-			</script>
-
 	</body>
+	<script src="js/addElements.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+	<script src="js/table.js"></script>
+	<script src="js/cellFunctions.js"></script>
+	<script src="js/functionParse.js"></script>
+	<script src="js/setup.js"></script>
+	<script>Setup(3)</script>
 </html>
