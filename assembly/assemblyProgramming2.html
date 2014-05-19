@@ -16,12 +16,13 @@
 		<link rel='stylesheet' href='../lib/css/bootstrap-3.css'>
 		<link rel='stylesheet' href='../lib/css/jquery-ui-custom.css'>
 		<link rel='stylesheet' href='../lib/css/editor.css'>
+		<link href="../lib/css/generalmedia.css" rel="stylesheet">
 		<link rel='stylesheet' href='../lib/css/Dialogs.css'>
+		<link rel="stylesheet" href="../lib/css/jquery-ui-1.10.4.custom.css">
 		<link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 	    <link rel='stylesheet' href='css/assembly.css'>	
 	    <link href="../lib/css/styles.css" rel="stylesheet">
-	    <link href="../lib/css/generalmedia.css" rel="stylesheet">
 		<script type="text/javascript" src="../lib/js/visibility.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
 		
@@ -399,18 +400,14 @@
 					populateSpans();									// populate figure/content spans
 					pageObj = getArrowPathsByPage("assemblyProgramming2");		// get arrow paths
 					setupExerciseButtons(sectID);
+					if (!localFlag) runGA();
 				});	
 
-				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				var fig113 = new Figure(113, true);
+				var fig114 = new Figure(114, true);
+				angular.bootstrap(document.getElementById("fig113"), ['assembly113']);
+				angular.bootstrap(document.getElementById("fig114"), ['assembly114']);
 
-				ga('create', 'UA-50062005-1', 'latech.edu');
-				ga('send', 'pageview');
-
-				var fig113 = new Figure(113, true, chapID, false);
-				var fig114 = new Figure(114, true, chapID, false);
 		</script>
 	</body>
 </html>

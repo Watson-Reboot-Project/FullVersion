@@ -69,7 +69,7 @@ function JSEditor(divID, chapterName, exerciseNum) {
 		  <button id="fig' + divID + 'Run" type="button" style="color:#FFFFFF;background-color:' + green + '">Run</button> \
 		  <button id="fig' + divID + 'Walk" type="button" style="color:#FFFFFF;background-color:' + orange + '">Walk</button> \
 		</div>';
-   
+   console.log('here50000');
 	//subract 6 for the width of the border of .textArea, if the border ever changes, this will have to change too
 	$('#fig' + divID + 'Editor').height($('#buttons').height() - 6);
 	
