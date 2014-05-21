@@ -1,11 +1,20 @@
-# Database Lab
+# Watson Reboot Project - Database Lab
 ### Tommy Bozeman
+### 2013-10-04
 
-This lab uses angular.js, require.js, a little bit of jquery, and bootstrap.
-Bootstrap mainly deals w/ the css bit of it, and is relatively simple. The
-rest of it is what's complicated.
+This project aims to be a more modern revision of the Watson Database lab. As
+opposed to the java platform used in the original Watson implementation, this
+version of Watson is a web application built using javascript and associated
+libraries.
 
-## Over-all Shape
+Some of the open source javascript libraries used in this project are:
+- JQuery
+- Twitter Bootstrap
+- Angular.js
+- UI Bootstrap
+
+# Notes to the Developer --
+### Over-all Shape
 
 There are the html files at the top level. Each of those have a single JS
 requirement (that we deal with) at the bottom, pointing to `require.js` in the
@@ -15,13 +24,13 @@ that page will need. (we'll talk about this in a bit.) you can point the page
 at the "unbuilt" file to see changes to the JS live, but this is less
 efficient, and probably shouldn't be used in production.
 
-## Require.js
+### Require.js
 
 The original, "unbuilt" config files list out the interdependencies of the
 javascript files (`require.config({`), and the root of the dependency tree
 (`require([...], function(...) {`). Just go ahead and google require.js.
 
-## Angular.js
+### Angular.js
 
 Beneath the require.js dependency management is (in most places) is
 angular.js. Angular.js is a doozy. If you're not already familiar with it,
@@ -36,7 +45,7 @@ file. The main piece here that's likely to break is the partials we're using
 for the editor/sandbox, and possibly the `load.js`, both when trying to load
 from disk (`file:///`).
 
-## Building
+### Building
 
 After making changes to the JS source, to include the new code in the built
 files, use require.js's `r.js` to pull together all the files. Don't forget to
