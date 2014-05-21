@@ -41,7 +41,7 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
           sessionStorage[div_id] = sessionStorage.importing;
         } else if (sessionStorage[div_id] != undefined) {
           $scope.importing = true;
-          statements = json.parse(sessionStorage[div_id]);
+          statements = JSON.parse(sessionStorage[div_id]);
         } else {
           $scope.importing = false;
           statements = statementService[div_id];
@@ -83,7 +83,7 @@ define(['angular', 'relations', 'statements', 'ui-bootstrap'],
           sessionStorage.question = question;
         }
 
-        window.location.href = 'editor';
+        window.location.href = 'editor.html';
       }; // }}}
 
       $scope.next = function () { // {{{

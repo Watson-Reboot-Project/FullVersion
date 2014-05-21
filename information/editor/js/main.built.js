@@ -25497,7 +25497,7 @@ define('DatabaseApp',['angular', 'relations', 'ui-bootstrap'],
       $scope.Select = function () { // {{{
         return new function () { // {{{
           this.type = 'Select';
-          this.page = 'partial/select.html';
+          this.page = 'editor/partial/select.html';
           this.relation = {name: '[relation]'};
 
           this.setDefaults = function () {
@@ -25592,7 +25592,7 @@ define('DatabaseApp',['angular', 'relations', 'ui-bootstrap'],
       $scope.Project = function () { // {{{
         return new function () { // {{{
           this.type = 'Project';
-          this.page = 'partial/project.html';
+          this.page = 'editor/partial/project.html';
           this.relation = {name: '[relation]'};
           this.dropdown = '[attribute]';
 
@@ -25677,7 +25677,7 @@ define('DatabaseApp',['angular', 'relations', 'ui-bootstrap'],
       $scope.Join = function () { // {{{
         return new function () { // {{{
           this.type = 'Join';
-          this.page = 'partial/join.html';
+          this.page = 'editor/partial/join.html';
           this.relation1 = {name: '[relation]'};
           this.relation2 = {name: '[relation]'};
           this.attribute = '[attribute]';
@@ -25811,7 +25811,7 @@ define('DatabaseApp',['angular', 'relations', 'ui-bootstrap'],
       $scope.Default = function () { // {{{
         return new function () {
           this.type = 'Action';
-          this.page = 'partial/default.html';
+          this.page = 'editor/partial/default.html';
         }();
       }; // }}}
 

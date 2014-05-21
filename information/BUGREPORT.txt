@@ -1,7 +1,0 @@
-# Bugs
-
-- Issues w/ doing multiple exercises is back
-  - after answering a exercise, the resultant relations display in the ebook. so far so good.
-  - after answering a second figure, the first figure no longer displays correctly
-  - the problem is in init/export functions in figure/editor files `DatabaseApp.js`.
-  - should be creating separate relation lists for each exercise in `sessionStorage`
