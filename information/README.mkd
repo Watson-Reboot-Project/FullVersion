@@ -1,0 +1,26 @@
+# Database Lab
+### Tommy Bozeman
+
+This lab uses angular.js, require.js, a little bit of jquery, and bootstrap.
+Bootstrap mainly deals w/ the css bit of it, and is relatively simple. The
+rest of it is what's complicated.
+
+There are the html files at the top level. Each of those have a single JS
+requirement (that we deal with) at the bottom, pointing to `require.js` in the
+library, and a `data-main` attribute pointing to a "config" file. The file
+they point to currently is a "built" file, that contains all of the javascript
+that page will need. (we'll talk about this in a bit.) you can point the page
+at the "unbuilt" file to see changes to the JS live, but this is less
+efficient, and probably shouldn't be used in production. 
+
+The original, "unbuilt" config files list out the interdependencies of the
+javascript files (`require.config({`), and the root of the dependency tree
+(`require([...], function(...) {`). Just go ahead and google require.js.
+
+Beneath the require.js dependency management is (in most places) is
+angular.js. Angular.js is a doozy. If you're not already familiar with it,
+you're going to need to go read the docs before going much further. We're
+using two "apps" (one in figure mode, one in sandbox), with a single
+"controller" each, instantiated multiple times in the case of figure mode,
+and... I think two services in each? The two apps mirror each other fairly
+closely (they were split off from the same source in ancient times).
